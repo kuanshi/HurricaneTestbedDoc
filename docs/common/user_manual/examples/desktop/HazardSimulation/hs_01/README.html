@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.1. Northern San Andreas Earthquake Scenario &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="6. Bugs &amp; Feature Requests" href="../../../../bugs.html" />
+    <link rel="prev" title="5. Examples" href="../../examples.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+
+          
+            <a href="../../../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../../../_static/RDT-Logo-grey2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../usage/desktop/usage.html">3. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">5. Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.1. Northern San Andreas Earthquake Scenario</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../license.html">7. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../testbeds/anchorage/index.html">4. Anchorage, AK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../testbeds/lake_charles/index.html">5. Lake Charles, LA</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../examples.html"><span class="section-number">5. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">5.1. </span>Northern San Andreas Earthquake Scenario</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../_sources/common/user_manual/examples/desktop/HazardSimulation/hs_01/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="northern-san-andreas-earthquake-scenario">
+<span id="lblhs-example1"></span><h1><span class="section-number">5.1. </span>Northern San Andreas Earthquake Scenario<a class="headerlink" href="#northern-san-andreas-earthquake-scenario" title="Permalink to this headline">¶</a></h1>
+<p>This example will use a simulation of one Northern San Andreas (NSA) Earthquake to work through the basic functions of RDT app and user inputs. In this example, we are interested in the ground motion intensities in the Bay Area subjected to a large-magnitude earthquake from NSA. For the demonstration, 16 sites are selected in a grid roughly covering San Francisco County.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../../../../../../_images/fault_sites.png"><img alt="../../../../../../_images/fault_sites.png" src="../../../../../../_images/fault_sites.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.1.1 </span><span class="caption-text">Northern San Andreas fault and example sites</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Users are expected to provide a csv file that defines the Longitude and Latitude values of interested sites. For instance, the locations of 16 example sites are shown in the table below.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 36%" />
+<col style="width: 36%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Station</p></td>
+<td><p>Latitude</p></td>
+<td><p>Longitude</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>37.80161</p></td>
+<td><p>-122.40500</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>37.78161</p></td>
+<td><p>-122.40500</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>37.76161</p></td>
+<td><p>-122.40500</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>To create the earthquake scenario, RDT app first reads the user’s configuration of the fault. In this case, we want to select <strong>1</strong> realization from existing Earthquake Rupture Forecast (<strong>ERF</strong>) models (e.g., <strong>WGCEP (2007) UCERF2 - Single Branch</strong>), and the resulting earthquake has a magnitude between <strong>7.8</strong> and <strong>8.0</strong>.</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;Scenario&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Earthquake&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;Number&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;Generator&quot;</span><span class="p">:</span> <span class="s2">&quot;Selection&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;EqRupture&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;ERF&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Model&quot;</span><span class="p">:</span> <span class="s2">&quot;WGCEP (2007) UCERF2 - Single Branch&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;San Andreas&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;min_Mag&quot;</span><span class="p">:</span> <span class="mf">7.8</span><span class="p">,</span>
+            <span class="nt">&quot;max_Mag&quot;</span><span class="p">:</span> <span class="mf">8.0</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>RDT app currently support the following <strong>“ERF”</strong> <strong>“Model”</strong>:</dt><dd><ol class="arabic simple">
+<li><p>“WGCEP (2007) UCERF2 - Single Branch”</p></li>
+<li><p>“Mean UCERF3”</p></li>
+<li><p>“Mean UCERF3 FM3.1”</p></li>
+<li><p>“Mean UCERF3 FM3.2”</p></li>
+</ol>
+</dd>
+</dl>
+</div>
+<p>Then users are expected to provide ground motion information including number of simulations per site (<strong>“NumberPerSite”</strong>), ground motion prediction equation type (<strong>“GMPE”</strong>), intensity measure correlation models (<strong>“CorrelationModel”</strong>), and interested intensity measures (<strong>“IntensityMeasure”</strong>).</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;Event&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;NumberPerSite&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="nt">&quot;GMPE&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Chiou &amp; Youngs (2014)&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Parameters&quot;</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;CorrelationModel&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;SaInterEvent&quot;</span><span class="p">:</span> <span class="s2">&quot;Baker &amp; Jayaram (2008)&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;SaIntraEvent&quot;</span><span class="p">:</span> <span class="s2">&quot;Markhvida et al. (2017)&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;IntensityMeasure&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;SA&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Periods&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>RDT app currently support the following <strong>“GMPE”</strong>:</dt><dd><ol class="arabic simple">
+<li><p>“Abrahamson, Silva &amp; Kamai (2014)”</p></li>
+<li><p>“Boore, Stewart, Seyhan &amp; Atkinson (2014)”</p></li>
+<li><p>“Campbell &amp; Bozorgnia (2014)”</p></li>
+<li><p>“Chiou &amp; Youngs (2014)”</p></li>
+</ol>
+</dd>
+<dt>And, the following <strong>“CorrelationModel”</strong> are available:</dt><dd><ol class="arabic simple">
+<li><p>“Baker &amp; Jayaram (2008)” (inter-event)</p></li>
+<li><p>“Jayaram &amp; Baker (2009)” (intra-event)</p></li>
+<li><p>“Loth &amp; Baker (2013)” (intra-event)</p></li>
+<li><p>“Markhvida et al. (2017)” (intra-event)</p></li>
+</ol>
+</dd>
+</dl>
+<p>For more information about the spatial correlation models, please see <a class="reference internal" href="../../../../../technical_manual/desktop/spatial_correlation.html#lblcorrelation"><span class="std std-ref">Ground Motion Intensity Spatial Correlation Model Options</span></a></p>
+</div>
+<p>RDT app then computes user-defined intensity measures for all given sites. For instance, in this example, response spectra are computed for the 16 example sites.</p>
+<div class="align-center figure" id="id2">
+<a class="reference internal image-reference" href="../../../../../../_images/site_psa.png"><img alt="../../../../../../_images/site_psa.png" src="../../../../../../_images/site_psa.png" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.1.2 </span><span class="caption-text">Simulated response spectra (100 per site)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Users can provide their account information to RDT app which will download and parse PEER NGA-West records to local directory.</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>{
+    &quot;Event&quot;: {
+        [...],
+        &quot;Database&quot;: &quot;NGAWest2&quot;,
+        &quot;UserName&quot;: &quot;username@mail.com&quot;,
+        &quot;UserPassword&quot;: &quot;password&quot;,
+        &quot;OutputFormat&quot;: &quot;SimCenterEvent&quot;
+    }
+}
+</pre></div>
+</div>
+<p>Users can specify this output directory as well as input and working file directories.</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;Directory&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;Work&quot;</span><span class="p">:</span> <span class="s2">&quot;PATH/TO/HazardSimulation/&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;Input&quot;</span><span class="p">:</span> <span class="s2">&quot;PATH/TO/HazardSimulation/test/eq_input/&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;Output&quot;</span><span class="p">:</span> <span class="s2">&quot;PATH/TO/HazardSimulation/test/records/&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For instance, given the directories defined above, RDT app will prepare and save outputs in the following data structure.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>HazardSimulation
+└── test
+    └── records             # output directory
+        ├── EventGrid.csv   # site map file
+        ├── RSN63.json      # ground motion time history
+        ├── RSN169.json
+        .
+        .
+        .
+        └── scenario1       # scenario folder
+            ├── site0.csv   # site ground motion list
+            ├── site1.csv
+            .
+            .
+            .
+            └── site15.csv
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, The Regents of the University of California
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shear Building: HAZUS &amp; FEMA P58 Assessments &mdash; Hazard Simulation Application  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+
+          
+            <a href="../../../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/HazardSimulation/about.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../usage/desktop/usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../license.html">8. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Hazard Simulation Application</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Shear Building: HAZUS &amp; FEMA P58 Assessments</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../../../_sources/common/user_manual/examples/desktop/PBE/exampleShearBuilding3/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shear-building-hazus-fema-p58-assessments">
+<h1>Shear Building: HAZUS &amp; FEMA P58 Assessments<a class="headerlink" href="#shear-building-hazus-fema-p58-assessments" title="Permalink to this headline">¶</a></h1>
+<p>Consider the problem of uncertainty quantification in the following three story shear building:</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../../../../../../_images/model3.png"><img alt="../../../../../../_images/model3.png" src="../../../../../../_images/model3.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Three Story Shear Building Model (P10.2.9, “Dynamics of Structures”, A.K.Chopra)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The structure has the following uncertain properties that all follow normal distributions:</p>
+<ol class="arabic simple">
+<li><p>Weight of Typical Floor (<code class="docutils literal notranslate"><span class="pre">wFloor</span></code>): mean <span class="math notranslate nohighlight">\(\mu_E=100 \mathrm{kip}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_E =10 \mathrm{kip}\)</span> (COV = 10%)</p></li>
+<li><p>Weight of the Roof (<code class="docutils literal notranslate"><span class="pre">wRoof</span></code>): mean <span class="math notranslate nohighlight">\(\mu_E=50 \mathrm{kip}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_E =5 \mathrm{kip}\)</span> (COV = 10%)</p></li>
+<li><p>Story Stiffness (<code class="docutils literal notranslate"><span class="pre">k</span></code>): mean <span class="math notranslate nohighlight">\(\mu_k =326 \quad \mathrm{kip/in}\)</span> and a standard deviation of <span class="math notranslate nohighlight">\(\sigma_P = 25 \mathrm{kN}\)</span>, (COV = 12%).</p></li>
+</ol>
+<p>This example will use the PBE application to organize both a HAZUS, and FEMA P58 damage and loss assesment of this model when subjected to a suite of ground motions selected from the PEER NGA database.</p>
+<p>The deterministic structural analysis model for this problem is implemented with the MDOF program, which PBE provides a built-in interface for (OpenSees may also be used for this purpose, as noted throughout).</p>
+<div class="section" id="hazus-assessment-with-a-peer-ground-motion-suite">
+<h2>HAZUS Assessment with a PEER Ground Motion Suite<a class="headerlink" href="#hazus-assessment-with-a-peer-ground-motion-suite" title="Permalink to this headline">¶</a></h2>
+<p>We will first demonstrate the steps to perform a HAZUS style damage and loss assessment by sequentially walking through the input panels and highlighting their role in the workflow. The file <code class="docutils literal notranslate"><span class="pre">HAZUS_assessment.json</span></code> contains all of the data for this exercise and may be used to bypass the manual entry of data into these panels.</p>
+<div class="section" id="step-1-uq">
+<h3>Step 1: UQ<a class="headerlink" href="#step-1-uq" title="Permalink to this headline">¶</a></h3>
+<p>Upon opening the application, the <strong>UQ</strong> panel will be highlighted. This panel provides an interface to various forward propagation procedures in Dakota, which are used to strategically generate realizations of the problems random variables (i.e. “samples”) which can be used to estimate statistical properties of the deterministic model’s response. For this example, a latin hypercube procedure (<strong>LHS</strong>) is used with <code class="docutils literal notranslate"><span class="pre">100</span></code> samples and a seed of <code class="docutils literal notranslate"><span class="pre">775</span></code>.</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/UQ.png" src="../../../../../../_images/UQ.png" />
+</div>
+</div>
+<div class="section" id="step-2-gi">
+<h3>Step 2: GI<a class="headerlink" href="#step-2-gi" title="Permalink to this headline">¶</a></h3>
+<p>Next, the <strong>GI</strong> panel may be used to define metadata and other general information about the model. However, for this exercise this panel will not be used; the default values may be left as they are, and they will be automatically updated based on the information entered in the following panels.</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/GI-ex.png" src="../../../../../../_images/GI-ex.png" />
+</div>
+</div>
+<div class="section" id="step-3-sim">
+<h3>Step 3: SIM<a class="headerlink" href="#step-3-sim" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>SIM</strong> panel can now be used to define the deterministic simulation model which that parameterized in terms of our random variables. This model will run an analysis for each of the random variable realizations generated by the UQ procedure. In this example we leverage the convenient MDOF interface offered by PBE which allows an intuitive and high-level interface for defining simple parameterized structural analysis models. Either variable names, or literal values can be entered in the fields of this panel, as shown in the following figure. As we will see in step five, PBE will automatically identify non-numeric entries in this panel as random variables, and use this inference to automatically create corresponding entries for us in the <strong>RV</strong> panel.</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/SIM.png" src="../../../../../../_images/SIM.png" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To specify instead to use an OpenSees model, from the <strong>Model Generator</strong> pull down menu select <strong>OpenSees</strong>. For the fields in the panel presented enter the path to the <code class="docutils literal notranslate"><span class="pre">ShearBuilding3d.tcl</span></code> script. Also specify three Response Nodes as <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span></code> in the panel. This field will tell the model generator which nodes correspond to nodes at the four floor levels at which responses are to be obtained when using the standard earthquake EDPs.</p>
+<div class="align-center figure">
+<img alt="common\user_manual\examples\desktop\PBE\exampleShearBuilding3\figures/shearSIM-OpenSees.png" src="common\user_manual\examples\desktop\PBE\exampleShearBuilding3\figures/shearSIM-OpenSees.png" />
+</div>
+</div>
+</div>
+<div class="section" id="step-4-evt">
+<h3>Step 4: EVT<a class="headerlink" href="#step-4-evt" title="Permalink to this headline">¶</a></h3>
+<p>Next we arrive at the <strong>EVT</strong> panel, where the <strong>Load Generator</strong> pull down menu presents us with a wide variety of options for quickly orchestrating loading events for our model. In this exercise we will use the <strong>PEER NGA Records</strong> option to connect to the PEER NGA database, which will be given the target spectrum that a user defines in this panel and return an appropriate suite of ground motion records which will be piped to the simulation model defined in the previous step. The following figures depict this panel before and after a suite of records has been pulled from the database, respectively.</p>
+<a class="reference internal image-reference" href="../../../../../../_images/EVT-1.png"><img alt="../../../../../../_images/EVT-1.png" src="../../../../../../_images/EVT-1.png" style="width: 48%;" /></a>
+<a class="reference internal image-reference" href="../../../../../../_images/EVT.png"><img alt="../../../../../../_images/EVT.png" src="../../../../../../_images/EVT.png" style="width: 48%;" /></a>
+</div>
+<div class="section" id="step-5-fem">
+<h3>Step 5: FEM<a class="headerlink" href="#step-5-fem" title="Permalink to this headline">¶</a></h3>
+<p>We now proceed to the <strong>FEM</strong> panel where we are given additional options for our simulation model. We can use this panel to define a Rayleigh damping scheme with a damping ratio of <code class="docutils literal notranslate"><span class="pre">0.05</span></code>, and Rayleigh factor chosen using the first and fifth modes of our simulation model.</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/FEM.png" src="../../../../../../_images/FEM.png" />
+</div>
+</div>
+<div class="section" id="step-6-rv">
+<h3>Step 6: RV<a class="headerlink" href="#step-6-rv" title="Permalink to this headline">¶</a></h3>
+<p>Now in the <strong>RV</strong> panel we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, when this tab is opened it should contain the <code class="docutils literal notranslate"><span class="pre">wFloor</span></code>, <code class="docutils literal notranslate"><span class="pre">wRoof</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code> random variables for which we supplied variable names in previous panels.</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/RV-ex.png" src="../../../../../../_images/RV-ex.png" />
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The user cannot leave any of the distributions for these values as constant when using the Dakota UQ engine.</p>
+</div>
+</div>
+<div class="section" id="step-7-dl">
+<h3>Step 7: DL<a class="headerlink" href="#step-7-dl" title="Permalink to this headline">¶</a></h3>
+<p>We now end our journey at the <strong>DL</strong> panel. This is where we will specify our parameters for the damage and loss assessment procedure. PBE will feed the data entered into this panel to the Pelicun Python package which will run an appropriate damage and loss assessment. The following figures show the interface we are provided upon selecting a <strong>HAZUS MH</strong> style assessment from the <strong>Damage and Loss Assessment</strong> dropdown menu:</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/DL.png" src="../../../../../../_images/DL.png" />
+</div>
+</div>
+<div class="section" id="hazus-results">
+<h3>HAZUS Results<a class="headerlink" href="#hazus-results" title="Permalink to this headline">¶</a></h3>
+<p>Once a full workflow has been defined click on the <strong>Run</strong> button. When the analysis is complete the <strong>RES</strong> tab will be activated and the results will be displayed. When a HAZUS assessment has been conducted, the results panel will resemble the following figures which show both the <strong>Summary</strong> and <strong>Data</strong> tabs, respectively.</p>
+<a class="reference internal image-reference" href="../../../../../../_images/RES-HAZUS-1.png"><img alt="../../../../../../_images/RES-HAZUS-1.png" src="../../../../../../_images/RES-HAZUS-1.png" style="width: 45%;" /></a>
+<a class="reference internal image-reference" href="../../../../../../_images/RES-HAZUS-2.png"><img alt="../../../../../../_images/RES-HAZUS-2.png" src="../../../../../../_images/RES-HAZUS-2.png" style="width: 45%;" /></a>
+<p>In the <strong>Data</strong> tab of the <strong>RES</strong> panel, we are presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking on the individual columns the plot axis changes (left mouse click controls vertical axis, right mouse click the horizontal axis). If a singular column of the tabular data is selected with both right and left mouse buttons, a frequency and CDF plot will be displayed.</p>
+</div>
+</div>
+<div class="section" id="fema-p58-style-assessment">
+<h2>FEMA P58 Style Assessment<a class="headerlink" href="#fema-p58-style-assessment" title="Permalink to this headline">¶</a></h2>
+<p>We now revisit our experience with the <strong>DL</strong> panel to explore the interface PBE offers for a FEMA P58 style assessment. Similarly to the previous exercise, the file <code class="docutils literal notranslate"><span class="pre">P58_assessment.json</span></code> contains all of the problem data and may be used to bypass the manual entry of data into the UI panels.</p>
+<p>The following figure shows a tab from the alternate <strong>DL</strong> panel interface which is provided when <strong>FEMA P58</strong> is selected from the <strong>Damage and Loss Assessment</strong> dropdown menu:</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/DL-P58.png" src="../../../../../../_images/DL-P58.png" />
+</div>
+<p>When the <strong>DL</strong> panel is filled out in this manner and all other panels are left unchanged, the following results are rendered on the <strong>RES</strong> panel. Note that only some metrics are calculated by both the FEMA P58 and HAZUS style assessments while others may be absent for a given style.</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/RES-P58-1.png" src="../../../../../../_images/RES-P58-1.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Regents of the University of California
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-3', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.3. Hazard Characterization &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="2.4. Asset Representation" href="asset_representation.html" />
+    <link rel="prev" title="2.2. Asset Description" href="asset_description.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/RDT-Logo-grey2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">3. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/license.html">7. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Atlantic City, NJ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">2.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asset_description.html">2.2. Asset Description</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. Hazard Characterization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wind-modeling">2.3.1. Wind Modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storm-surge-modeling">2.3.2. Storm Surge Modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-category-analysis-mca">2.3.3. Multiple Category Analysis (MCA)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asset_representation.html">2.4. Asset Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response_simulation.html">2.5. Response Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">2.6. Damage and Loss Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">2.7. Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.8. Sample Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.9. Opportunity Areas for Future Refinements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../memphis/index.html">3. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anchorage/index.html">4. Anchorage, AK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">5. Lake Charles, LA</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">2. </span>Atlantic City, NJ</a> &raquo;</li>
+        
+      <li><span class="section-number">2.3. </span>Hazard Characterization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/common/testbeds/atlantic_city/hazard_characterization.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hazard-characterization">
+<span id="lbl-testbed-ac-hazard-characterization"></span><h1><span class="section-number">2.3. </span>Hazard Characterization<a class="headerlink" href="#hazard-characterization" title="Permalink to this headline">¶</a></h1>
+<p>Both the wind and flood hazards affect the building inventory in this testbed.
+As the initial implementation of the regional assessment workflow, the testbed mainly
+adapted the HAZUS Hurricane Damage and Loss Assessment methodology to quantify the
+hazards by two intensity measures: Peak Wind Speed (PWS), and Peak Water Depth (PWD).
+The PWS refers to maximum wind speed average over a 3-second gust and measured at 10m height
+and under the open terrain surface condition (equivalent to the Exposure C in ASCE 7-16).
+The PWD is the maximum depth of flooding during the time period of the hurricane event.
+The following sections will introduce the wind and flood fields used in this testbed.</p>
+<div class="section" id="wind-modeling">
+<h2><span class="section-number">2.3.1. </span>Wind Modeling<a class="headerlink" href="#wind-modeling" title="Permalink to this headline">¶</a></h2>
+<p>The initial implementation of the testbed utilizes the highly efficient, linear analytical
+model for the boundary layer winds of a moving hurricane developed by ([<a class="reference internal" href="#snaiki17a">Snaiki17a</a>], [<a class="reference internal" href="#snaiki17b">Snaiki17b</a>]) as
+implemented in the NJcoast Storm Hazard Projection (SHP) Tool ([<a class="reference internal" href="#njcoast20">NJCoast20</a>]). To account for the exposure in each New Jersey county, an
+effective roughness length (weighted average) of the upwind terrain is used based on the Land
+Use/Land Cover data reported by the state’s Bureau of GIS. While the model is fully height-resolving
+and time-evolving, for a given five parameter hurricane scenario, the wind hazard is characterized by
+the maximum 10-minute mean wind speed observed during the entire hurricane track. This is
+reported at the reference height of 10 m over a uniform grid (0.85-mile spacing, 1.37 km), which is
+then accordingly adjusted for compatibility with the averaging interval assumed by the HAZUS
+Hurricane Damage and Loss Model. Note the wind speed (<span class="math notranslate nohighlight">\(V(600s, 10m, z_0)\)</span>) from the
+NJcoast SHP Tool is averaged over the time window of 1 hour, so the following conversions
+was conducted for parsing the wind speed to the 3-second and open-terrain PWS (i.e., <span class="math notranslate nohighlight">\(V(3s, 10m, Exposure C)\)</span>):</p>
+<p>1. Computing <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(z_g\)</span> by ASCE 7-16 ([<a class="reference internal" href="#asce16">ASCE16</a>]) Equation C26.10-3 and C26.10-4
+taking <span class="math notranslate nohighlight">\(c_1 = 5.65, c_2 = 450\)</span> for units in m):</p>
+<div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-0">
+<span class="eqno">(2.3.1)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-0" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\alpha_{SHP} = c_1z_0^{-0.133}\\z_{g,SHP} = c2z_0^{0.125}\end{aligned}\end{align} \]</div>
+<ol class="arabic simple" start="2">
+<li><p>Computing the gradient height <span class="math notranslate nohighlight">\(V(600s, z_g, z_0)\)</span> using the power law expression:</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-1">
+<span class="eqno">(2.3.2)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-1" title="Permalink to this equation">¶</a></span>\[V(600s, z_g, z_0) = V(600s, 10m, z_0) \times (\frac{z_{g,SHP}}{10m})^{1/\alpha_{SHP}}\]</div>
+<p>3. Computing the Exposure C (open-terrain) wind speed at 10m height <span class="math notranslate nohighlight">\(V(600s, 10m, Exposure C)\)</span>, with
+<span class="math notranslate nohighlight">\(\alpha_C = 9.5\)</span> and <span class="math notranslate nohighlight">\(z_{g,C} = 274.32 m\)</span> ([<a class="reference internal" href="#asce16">ASCE16</a>]):</p>
+<div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-2">
+<span class="eqno">(2.3.3)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-2" title="Permalink to this equation">¶</a></span>\[V(600s, 10m, Exposure C) = V(600s, z_{g,C}, z_0) \times (\frac{10m}{z_g})^{1/\alpha_C}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Converting the result to 3s-gust wind speed using the ESDU conversion [<a class="reference internal" href="#esdu02">ESDU02</a>]:</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-3">
+<span class="eqno">(2.3.4)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-3" title="Permalink to this equation">¶</a></span>\[V(3s, 10m, Exposure C) = V(600s, 10m, Exposure C) \times \frac{C(3s)}{C(600s)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C(3s) = 1.52\)</span> and <span class="math notranslate nohighlight">\(C(600s) = 1.05\)</span> are the Gust Factor from the ESDU conversion.</p>
+<p>Wind fields described by either approach are then locally interpolated to the site of each parcel in the inventory.
+The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1</span></a>).
+Because the SPH model tracks the maximum wind speed over the entire hurricane time history - so the inland cities are subjected to
+slightly higher wind speed than the coastal cities.</p>
+<div class="align-center figure" id="pws" style="width: 100%">
+<img alt="../../../_images/pws.png" src="../../../_images/pws.png" />
+<p class="caption"><span class="caption-number">Fig. 2.3.1 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="storm-surge-modeling">
+<h2><span class="section-number">2.3.2. </span>Storm Surge Modeling<a class="headerlink" href="#storm-surge-modeling" title="Permalink to this headline">¶</a></h2>
+<p>Coastal hazard descriptions use the outputs of the aforementioned SHP Tool, which estimates storm
+surge and total run up due to the breaking of near-shore waves for an arbitrary hurricane scenario
+using surrogate modeling techniques ([<a class="reference internal" href="#jia13">Jia13</a>], [<a class="reference internal" href="#jia15">Jia15</a>]). The SHP Tool
+leverages the US Army Corps of Engineers (USACE) NACCS: North Atlantic Coastal
+Comprehensive Study ([<a href="#id1"><span class="problematic" id="id2">NadalCaraballo15_</span></a>]), which contains over 1000 high-fidelity
+numerical simulations of hurricanes using the ADCIRC ([<a class="reference internal" href="#luettich92">Luettich92</a>]) storm surge model,
+coupled with STWAVE ([<a class="reference internal" href="#smith01">Smith01</a>]) to capture the additional effects of waves offshore. The
+NACCS database was further enhanced with wave run-up simulations that capture the interaction of
+the waves with site-specific bathymetry/topography (2015 USGS CoNED Topobathy DEM: New
+Jersey and Delaware (1888 - 2014) dataset) to project the total run up inland, along transects spaced
+0.5 km apart along the New Jersey coast. This results in a prediction of storm surge height at the
+USACE-defined save points along the New Jersey coast that are, on average, 200 m apart, with finer
+resolution in areas with complex topographies. The SHP Tool was executed for the testbed scenario
+to estimate the depth of storm surge above ground, geospatially interpolated to 110,000 nearshore
+locations at approximately 120 m spacing, accompanied by the Limit of Moderate Wave Action
+(LiMWA) and wet-dry boundary respectively defining the extent of damaging waves and inundation
+over land at each of the transect points. These are then interpolated to the location of the coastal
+parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.2</span></a>). In the initial implementation, as demonstrated
+in this test, only the peak water depth (PWD) was considered, which will be used in the HAZUS
+Flood Damage and Loss Assessment.</p>
+<div class="align-center figure" id="pwd" style="width: 100%">
+<img alt="../../../_images/pwd.png" src="../../../_images/pwd.png" />
+<p class="caption"><span class="caption-number">Fig. 2.3.2 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="multiple-category-analysis-mca">
+<h2><span class="section-number">2.3.3. </span>Multiple Category Analysis (MCA)<a class="headerlink" href="#multiple-category-analysis-mca" title="Permalink to this headline">¶</a></h2>
+<p>Note that the resulting 3s-gust PWS values by this Category-5 hurricane is much higher than
+the design wind speed specified by ASCE 7-16 ([<a class="reference internal" href="#asce16">ASCE16</a>]) for the Atlantic County which ranges
+from 105 mph to 115 mph. Since this extreme scenario bears a small likelihood, this testbed
+also scales the wind and flood water field down to lower categories to conduct the so-called
+Multiple Category Analysis to exam the building performance under different intense scenarios.
+The PWS and PWD were scaled to Categories 2, 3, and 4 as summarized in <a class="reference internal" href="#hurricane-cat"><span class="std std-numref">Table 2.3.1</span></a>.</p>
+<table class="docutils align-default" id="hurricane-cat">
+<caption><span class="caption-number">Table 2.3.1 </span><span class="caption-text">Scaled peak wind speed and peak water depth for different hurricane categories.</span><a class="headerlink" href="#hurricane-cat" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Hurricane Category</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>Peak Wind Speed (mph)</p></td>
+<td><p>101 - 108</p></td>
+<td><p>119 - 127</p></td>
+<td><p>136 - 145</p></td>
+<td><p>178 - 191</p></td>
+</tr>
+<tr class="row-odd"><td><p>Peak Water Depth (ft)</p></td>
+<td><p>0 - 7</p></td>
+<td><p>0 - 11</p></td>
+<td><p>0 - 15</p></td>
+<td><p>0 - 18</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="citation">
+<dt class="label" id="snaiki17a"><span class="brackets">Snaiki17a</span></dt>
+<dd><p>Snaiki, R. and Wu, T. (2017a) “Modeling tropical cyclone boundary layer: Height-resolving
+pressure and wind fields,” Journal of Wind Engineering and Industrial Aerodynamics, 170, 18-27.</p>
+</dd>
+<dt class="label" id="snaiki17b"><span class="brackets">Snaiki17b</span></dt>
+<dd><p>Snaiki, R. and Wu, T. (2017b) “A linear height-resolving wind field model for tropical
+cyclone boundary layer,” Journal of Wind Engineering and Industrial Aerodynamics, 171, 248-260.</p>
+</dd>
+<dt class="label" id="atc20"><span class="brackets">ATC20</span></dt>
+<dd><p>ATC (2020b), ATC Hazards By Location, <a class="reference external" href="https://hazards.atcouncil.org/">https://hazards.atcouncil.org/</a>, Applied Technology Council, Redwood City, CA.</p>
+</dd>
+<dt class="label" id="njcoast20"><span class="brackets">NJCoast20</span></dt>
+<dd><p>NJ Coast (2020), Storm Hazard Projection Tool, NJ Coast, <a class="reference external" href="https://njcoast.us/resources-shp/">https://njcoast.us/resources-shp/</a></p>
+</dd>
+<dt class="label" id="asce16"><span class="brackets">ASCE16</span></dt>
+<dd><p>ASCE (2016), Minimum Design Loads for Buildings and Other Structures, ASCE 7-16,
+American Society of Civil Engineers.</p>
+</dd>
+<dt class="label" id="esdu02"><span class="brackets">ESDU02</span></dt>
+<dd><p>Engineering Sciences Data Unit (ESDU). (2002). “Strong winds in the atmospheric boundary
+layer—Part 2: Discrete gust speeds.” ESDU International plc, London, U.K.</p>
+</dd>
+<dt class="label" id="jia13"><span class="brackets">Jia13</span></dt>
+<dd><p>Jia G. and A. A. Taflanidis (2013) “Kriging metamodeling for approximation of high-dimensional
+wave and surge responses in real-time storm/hurricane risk assessment,” Computer Methods in
+Applied Mechanics and Engineering, V(261-262), 24-38.</p>
+</dd>
+<dt class="label" id="jia15"><span class="brackets">Jia15</span></dt>
+<dd><p>Jia G., A. A. Taflanidis, N. C. Nadal-Caraballo, J. Melby, A. Kennedy, and J. Smith (2015) “Surrogate
+modeling for peak and time dependent storm surge prediction over an extended coastal region using
+an existing database of synthetic storms,” Natural Hazards, V81, 909-938</p>
+</dd>
+</dl>
+<dl class="citation">
+<dt class="label" id="luettich92"><span class="brackets">Luettich92</span></dt>
+<dd><p>Luettich R.A, J. J. Westerink, and N. W. Scheffner (1992), ADCIRC: An advanced three-dimensional
+circulation model for shelves, coasts, and estuaries. Report 1. Theory and methodology of ADCIRC-
+2DDI and ADCIRC-3DL, Dredging Research Program Technical Report DRP-92-6, U.S Army
+Engineers Waterways Experiment Station, Vicksburg, MS.</p>
+</dd>
+<dt class="label" id="smith01"><span class="brackets">Smith01</span></dt>
+<dd><p>Smith J.M, A. R. Sherlock, and D. T. Resio (2001) “STWAVE: Steady-state spectral wave model user’s
+manual for STWAVE, Version 3.0,” Defense Technical Information Center, US Army Corps of
+Engineering, Vicksburg, MS.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, The Regents of the University of California
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

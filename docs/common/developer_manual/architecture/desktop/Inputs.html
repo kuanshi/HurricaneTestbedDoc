@@ -1,0 +1,983 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.2.1. Inputs &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="2.2.2. Workflow Applications" href="backendApplications.html" />
+    <link rel="prev" title="2. Software Architecture" href="architecture.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/RDT-Logo-grey2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">3. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">5. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/license.html">7. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/anchorage/index.html">4. Anchorage, AK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">5. Lake Charles, LA</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="architecture.html">2. Software Architecture</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#overview">2.1. Overview</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="architecture.html#rdt-backend-applications">2.2. RDT Backend Applications</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.2.1. Inputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-file">2.2.1.1. Configuration File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-source-file">2.2.1.2. Building Source File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#model-file">2.2.1.3. Model File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edp-specifications-file">2.2.1.4. EDP specifications file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event-files">2.2.1.5. Event Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hazard-simulation">2.2.1.6. Hazard Simulation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="backendApplications.html">2.2.2. Workflow Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Outputs.html">2.2.3. Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#how-to-run">2.3. How to Run</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="architecture.html"><span class="section-number">2. </span>Software Architecture</a> &raquo;</li>
+        
+      <li><span class="section-number">2.2.1. </span>Inputs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/common/developer_manual/architecture/desktop/Inputs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="inputs">
+<span id="lbluserdefinputs"></span><h1><span class="section-number">2.2.1. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h1>
+<p>The following files must be provided by the user to execute the workflow.</p>
+<div class="section" id="configuration-file">
+<h2><span class="section-number">2.2.1.1. </span>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><p>JSON file containing simulation details and specifies the application selected for each workflow step.</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>runDir</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Directory where input_data folder is located.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>path</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>localAppDir</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Directory where applications folder is located.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>path</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><ul class="simple">
+<li><p>units</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Dictionary of strings which specifiy units for force, length, and time.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>default</p></td>
+<td><p>N, m, sec</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><ul class="simple">
+<li><p>outputs</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Indicator (True/False) of which workflow outputs (EDP, DM, DV) are provided in the simulation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><em>bool</em></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Applications</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Dictionary of applications selected for each workflow step, with their associated application-specific inputs.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>dict</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="building-source-file">
+<h2><span class="section-number">2.2.1.2. </span>Building Source File<a class="headerlink" href="#building-source-file" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><p>CSV file containing building properties for the response simulation and damage/loss estimation steps of the workflow. The following headers must be included (with any one of the header options listed):</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>id</p></li>
+</ul>
+</td>
+<td colspan="2"><p>ID number of the building.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>int</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>‘Longitude’, ‘longitude’, ‘lon’, ‘Lon’</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Longitude coordinate of the building site.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>‘Latitude’, ‘latitude’, ‘lat’, ‘Lat’</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Latitude coordinate of the building site.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>‘Stories’, ‘stories’</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Number of stories in the building.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>int</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>‘Year Built’, ‘yearbuilt’, ‘yearBuilt’</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Year that the building was built.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>int</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>‘Structure Type’, ‘structure’, ‘structureType’</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Structural type of the building.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>‘Type ID’, ‘occupancy’, ‘occupancyType’</p></li>
+</ul>
+</td>
+<td colspan="2"><p>HAZUS occupancy class of the building.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>‘Area’, ‘areafootprint’, ‘areaFootprint’, ‘area’</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Floor plan/footprint area of the building.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>‘Replacement Cost’, ‘replacementCost’</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Cost of replacement of the building. If provided as ‘1.0’, then the DL assessment will return an estimate losses as a percentage of the total replacement cost.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>model_params</p></li>
+</ul>
+</td>
+<td colspan="2"><p>(Optional) Columns for additional structural parameters used in the build_model function for creating a structural analysis model of the building.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="model-file">
+<h2><span class="section-number">2.2.1.3. </span>Model File<a class="headerlink" href="#model-file" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>If the simulation application chosen is OpenSees-Simulation or OpenSeesPy-Simulation, then a model file must be provided. It consists of an OpenSees/OpenSeesPy script with functions for building and analyzing a custom structural model. See the Simulation Applications page for more details on application-specific inputs.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="edp-specifications-file">
+<h2><span class="section-number">2.2.1.4. </span>EDP specifications file<a class="headerlink" href="#edp-specifications-file" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>JSON file specifying types, locations, and directions of EDPs to record in the structural model during response simulation.The EDP specifications file is only necessary as an input if UserDefinedEDP is chosen as the EDP application.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="event-files">
+<h2><span class="section-number">2.2.1.5. </span>Event Files<a class="headerlink" href="#event-files" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><p>To specify the type, location, and intensity of each event, the following files must be provided in the input_data/records folder.</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="8"><ul class="simple">
+<li><p>EventGrid</p></li>
+</ul>
+</td>
+<td colspan="3"><p>CSV file which specifies the coordinate (latitude/longitude) location of each event site.</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>sta</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Name of event file associated with the given event site. If running time history analysis, then the name of the site file is provided instead.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>lon</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Longitude coordinate of the site location.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>lat</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Latitude coordinate of the site location.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="14"><ul class="simple">
+<li><p>Event IM Files</p></li>
+</ul>
+</td>
+<td colspan="3"><p>CSV or JSON files containing information on the intensity measure of the event.</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>name</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Name of ground motion record.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>dT</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Time step of ground motion recording.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>data_x</p></li>
+</ul>
+</td>
+<td colspan="2"><p>List of acceleration points in the x-direction ground motion record.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>list</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>data_y</p></li>
+</ul>
+</td>
+<td colspan="2"><p>List of acceleration points in the y-direction ground motion record.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>list</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>PGA_x</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Value of peak ground acceleration in the x-direction ground motion record.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>PGA_y</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Value of peak ground acceleration in the y-direction ground motion record.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="6"><ul class="simple">
+<li><p>Site Files</p></li>
+</ul>
+</td>
+<td colspan="3"><p>CSV files listing the names of the event file(s) assigned to the site for time history analysis. This file can also provide other properties, such as a ground motion scale factor.</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>GM_file</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Name of the ground motion event file (for Earthquake hazard events).</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>factor</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Factor for scaling the ground motion.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Users can use the Hazard Simulation application to simulate regional earthquake events and prepare the required Event Files in the previous section:</p>
+<div class="section" id="hazard-simulation">
+<h2><span class="section-number">2.2.1.6. </span>Hazard Simulation<a class="headerlink" href="#hazard-simulation" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="5"><p>This is an optional pre-processing application for users to simulate regional earthquake events and prepare the Event Files in the previous section. Users need to provide the a configuration json file following the schema summarized below.</p></td>
+</tr>
+<tr class="row-even"><td colspan="5"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="10"><ul class="simple">
+<li><p>Site</p></li>
+</ul>
+</td>
+<td colspan="4"><p>Location information about the sites of interest.</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Type</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Information source type, e.g., ‘From_CSV’</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>input_file</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Filename of the site information file, e.g., ‘SiteFile.csv’.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>path</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>min_ID</p></li>
+</ul>
+</td>
+<td colspan="3"><p>The first site ID in the site information file.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>int</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>max_ID</p></li>
+</ul>
+</td>
+<td colspan="3"><p>The last site ID in the site information file.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>int</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="22"><ul class="simple">
+<li><p>Scenario</p></li>
+</ul>
+</td>
+<td colspan="4"><p>Definitions of the hazard scenario(s) and earthquake source(s).</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Type</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Hazard type which in this case is ‘Earthquake’.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Number</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Number of scenarios in the simulation.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>int</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Generator</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Method of generating the scenario, currently supported: ‘Selection’.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="14"><ul class="simple">
+<li><p>EqRupture</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Earthquake rupture selection criteria</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Type</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Data source, currently supported: ‘ERF’</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Model</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Earthquake source model type, e.g., ‘WGCEP (2007) UCERF2 - Single Branch’.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Name</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Keywords in the earthquake name, e.g., ‘San Andreas’.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>min_Mag</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Minimum magnitude of interest.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>max_Mag</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Maximum magnitude of interest.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>max_Dist</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Maximum distance (to the geometric centroid of the sites) of interest.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="38"><ul class="simple">
+<li><p>Event</p></li>
+</ul>
+</td>
+<td colspan="4"><p>Specifying the ground motion prediciton models and intensity measures for selecting ground motion records.</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>NumberPerSite</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Number of simulated ground motion records per site.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>int</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="6"><ul class="simple">
+<li><p>GMPE</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Defining the ground motion prediction model.</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Type</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Ground motion prediction model name, e.g, ‘Chiou &amp; Youngs (2014)’.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Parameters</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Optional configurations for specific ground motion prediction models.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>list</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="6"><ul class="simple">
+<li><p>CorrelationModel</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Defining the intensity measure correlation model.</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>SaInterEvent</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Inter-event correlation model name, e.g, ‘Baker &amp; Jayaram (2008)’.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>SaIntraEvent</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Intra-event correlation model name, e.g, ‘Markhvida et al. (2017)’.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="6"><ul class="simple">
+<li><p>IntensityMeasure</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Defining the intensity measure type and periods (if any).</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Type</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Intensity measure name, e.g, ‘SA’.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Periods</p></li>
+</ul>
+</td>
+<td colspan="2"><p>A float number list of periods for Sa.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>list</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="6"><ul class="simple">
+<li><p>ScalingFactor</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Scaling factor limits in ground motion selection.</p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Maximum</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Maximal allowable scaling factor.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Periods</p></li>
+</ul>
+</td>
+<td colspan="2"><p>Minimal allowable scaling factor.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p><em>float</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>SaveIM</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Choice to save simulated regional intensity measures.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>boolean</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Database</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Ground motion database name, currently supported: ‘NGAWest2’.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>UserName</p></li>
+</ul>
+</td>
+<td colspan="3"><p>User name on PEER NGA-West database (optional for downloading records).</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>UserPassword</p></li>
+</ul>
+</td>
+<td colspan="3"><p>User password on PEER NGA-West database (optional for downloading records).</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>OutputFormat</p></li>
+</ul>
+</td>
+<td colspan="3"><p>Output data format, currently supported: ‘SimCenterEvent’ (optional for downloading records).</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>string</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="8"><ul class="simple">
+<li><p>Directory</p></li>
+</ul>
+</td>
+<td colspan="4"><p>Specifying the directories for the application.</p></td>
+</tr>
+<tr class="row-even"><td colspan="4"><p>properties</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Work</p></li>
+</ul>
+</td>
+<td colspan="3"><p>The main directory of the Hazard Simulation application.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>path</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Input</p></li>
+</ul>
+</td>
+<td colspan="3"><p>The directory of the site information file.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>path</em></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><ul class="simple">
+<li><p>Output</p></li>
+</ul>
+</td>
+<td colspan="3"><p>The diectory of the saved records.</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td colspan="2"><p><em>path</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Please find the example and more details in <a class="reference internal" href="../../../user_manual/examples/desktop/HazardSimulation/hs_01/README.html#lblhs-example1"><span class="std std-ref">Northern San Andreas Earthquake Scenario</span></a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, The Regents of the University of California
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>
