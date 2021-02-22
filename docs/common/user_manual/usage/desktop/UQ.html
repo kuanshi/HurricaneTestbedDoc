@@ -3,22 +3,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.9. UQ: Uncertainty Quantification &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.9. UQ: Uncertainty Quantification &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -31,8 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
@@ -42,12 +43,13 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.9.1.1. Forward Propagation Methods" href="DakotaSampling.html" />
-    <link rel="prev" title="3.8. DL: Damage and Loss" href="RDT/DL.html" />
+    <link rel="next" title="2.9.1.1. Forward Propagation Methods" href="DakotaSampling.html" />
+    <link rel="prev" title="2.8. DL: Damage and Loss" href="R2DTool/DL.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -60,23 +62,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../index.html">
-          
+  <a href="../../../../index.html">
 
-          
-            
-            <img src="../../../../_static/RDT-Logo-grey2.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,7 +90,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -96,48 +101,46 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">2. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="RDT/VIZ.html">3.1. VIZ: Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RDT/GI.html">3.2. GI: General Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RDT/HAZ.html">3.3. HAZ: Hazards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RDT/ASD.html">3.4. ASD: Asset Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RDT/HTA.html">3.5. HTA: Hazard to Asset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RDT/MOD.html">3.6. MOD: Asset Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RDT/ANA.html">3.7. ANA: Asset Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RDT/DL.html">3.8. DL: Damage and Loss</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.9. UQ: Uncertainty Quantification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#dakota-uq-engine">3.9.1. Dakota UQ Engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">3.9.1.1. Forward Propagation Methods</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#ucsd-uq-engine">3.9.3. UCSD UQ Engine</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#custom-uq-engine">3.9.4. Custom UQ Engine</a><ul class="simple">
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">3.10. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RDT/RES.html">3.11. RES: Results</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">7. Copyright and License</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Testbeds</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/anchorage/index.html">4. Anchorage, AK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">5. Lake Charles, LA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="R2DTool/VIZ.html">2.1. VIZ: Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2DTool/GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2DTool/HAZ.html">2.3. HAZ: Hazards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2DTool/ASD.html">2.4. ASD: Asset Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2DTool/HTA.html">2.5. HTA: Hazard to Asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2DTool/MOD.html">2.6. MOD: Asset Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2DTool/ANA.html">2.7. ANA: Asset Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2DTool/DL.html">2.8. DL: Damage and Loss</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.9. UQ: Uncertainty Quantification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dakota-uq-engine">2.9.1. Dakota UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">2.9.1.1. Forward Propagation Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ucsd-uq-engine">2.9.3. UCSD UQ Engine</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-uq-engine">2.9.4. Custom UQ Engine</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.10. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R2DTool/RES.html">2.11. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -150,7 +153,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -191,20 +193,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">3.9. </span>UQ: Uncertainty Quantification</li>
+      <li><span class="section-number">2.9. </span>UQ: Uncertainty Quantification</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../_sources/common/user_manual/usage/desktop/UQ.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -219,30 +223,30 @@
            <div itemprop="articleBody">
             
   <div class="section" id="uq-uncertainty-quantification">
-<h1><span class="section-number">3.9. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.9. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
 <p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel where the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. Presently the <strong>UQ Engine</strong> option supports Dakota and SimCenterUQ engine.</p>
 <div class="section" id="dakota-uq-engine">
-<h2><span class="section-number">3.9.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
-<p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of different methods. For this reason we have divided the methods into categories though a pull-down menu, as shown in <a class="reference internal" href="#figdakota"><span class="std std-numref">Fig. 3.9.1</span></a>. Once the category has been selected, a number of different methods are made available to the user.</p>
+<h2><span class="section-number">2.9.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of different methods. For this reason we have divided the methods into categories though a pull-down menu, as shown in <a class="reference internal" href="#figdakota"><span class="std std-numref">Fig. 2.9.1</span></a>. Once the category has been selected, a number of different methods are made available to the user.</p>
 <div class="align-center figure" id="id1">
 <span id="figdakota"></span><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" />
-<p class="caption"><span class="caption-number">Fig. 3.9.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.9.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following categories are available:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">3.9.1.1. Forward Propagation Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">2.9.1.1. Forward Propagation Methods</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="ucsd-uq-engine">
-<h2><span class="section-number">3.9.3. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9.3. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>This is a module developed at UCSD. This module currently offers support for Bayesian calibration using the Transitional Markov chain Monte Carlo (TMCMC) algorithm, which is also known as the Sequential Monte Carlo algorithm:</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
 <div class="section" id="custom-uq-engine">
-<h2><span class="section-number">3.9.4. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9.4. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>This option allows the user to plug different UQ engines into the quoFEM workflow such that different uncertainty quantification
 methods and tools can be easily applied within the SimCenter framework.</p>
 <div class="toctree-wrapper compound">
@@ -255,28 +259,25 @@ methods and tools can be easily applied within the SimCenter framework.</p>
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2019, The Regents of the University of California
+        &#169; Copyright 2019, The Regents of the University of California.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -302,6 +303,7 @@ methods and tools can be easily applied within the SimCenter framework.</p>
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', '...', 'auto');
+    
     ga('send', 'pageview');
     </script>
 
@@ -312,6 +314,44 @@ methods and tools can be easily applied within the SimCenter framework.</p>
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

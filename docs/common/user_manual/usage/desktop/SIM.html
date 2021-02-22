@@ -3,22 +3,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.3. SIM: Structural Model &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>SIM: Structural Model &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -31,23 +34,21 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.4. EVT: Earthquake Events" href="earthquake/earthquakeEvents.html" />
-    <link rel="prev" title="3.2. GI: General Information" href="GI.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -60,23 +61,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../index.html">
-          
+  <a href="../../../../index.html">
 
-          
-            
-            <img src="../../../../_static/RDT-Logo-grey2.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,7 +89,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -96,36 +100,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">2. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">3. User Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="UQ.html">3.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GI.html">3.2. GI: General Information</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. SIM: Structural Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#multiple-degrees-of-freedom-mdof">3.3.1. Multiple Degrees of Freedom (MDOF)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#lblopenseessim">3.3.2. OpenSees</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#steel-building-model-autosda">3.3.3. Steel Building Model (AutoSDA)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="earthquake/earthquakeEvents.html">3.4. EVT: Earthquake Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FEM.html">3.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">3.6. RV: Random Variables</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">5. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">7. Copyright and License</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Testbeds</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/anchorage/index.html">4. Anchorage, AK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">5. Lake Charles, LA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -138,7 +127,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -179,20 +167,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
-        
-      <li><span class="section-number">3.3. </span>SIM: Structural Model</li>
+      <li>SIM: Structural Model</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../_sources/common/user_manual/usage/desktop/SIM.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -207,7 +195,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="sim-structural-model">
-<h1><span class="section-number">3.3. </span>SIM: Structural Model<a class="headerlink" href="#sim-structural-model" title="Permalink to this headline">¶</a></h1>
+<h1>SIM: Structural Model<a class="headerlink" href="#sim-structural-model" title="Permalink to this headline">¶</a></h1>
 <p>The user here defines the structural system of the building. The  structural system is the part of the building provided to resist the gravity loads and those loads arising from the natural hazard. There are a number of backend applications provided for this part of the workflow, each responsible for defining the structural analysis model. The user can select the application to use from the drop-down menu at the top of this panel. As the user switches between applications, the input panel changes to reflect the inputs each particular application requires. At present, there are two backend applications available.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -217,8 +205,8 @@
 </ul>
 </div>
 <div class="section" id="multiple-degrees-of-freedom-mdof">
-<span id="lblmdofsim"></span><h2><a class="toc-backref" href="#id6"><span class="section-number">3.3.1. </span>Multiple Degrees of Freedom (MDOF)</a><a class="headerlink" href="#multiple-degrees-of-freedom-mdof" title="Permalink to this headline">¶</a></h2>
-<p>This panel is provided for users to quickly create simple shear models of a building. The panel, as shown in <a class="reference internal" href="#fig-mdof"><span class="std std-numref">Fig. 3.3.1</span></a> is divided into 3 frames:</p>
+<span id="lblmdofsim"></span><h2><a class="toc-backref" href="#id6">Multiple Degrees of Freedom (MDOF)</a><a class="headerlink" href="#multiple-degrees-of-freedom-mdof" title="Permalink to this headline">¶</a></h2>
+<p>This panel is provided for users to quickly create simple shear models of a building. The panel, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-mdof</span></code> is divided into 3 frames:</p>
 <ol class="arabic simple">
 <li><p>The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, torsional stiffness, initial stiffness, yield strength, and hardening ratio for each direction in each story. The user has the option of specifying values for eccentricity of mass in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, and eccentricities for the location of the response quantities. Here, the one and two directions are orthogonal <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes in plan view.</p></li>
 <li><p>The lower left frame allows the user to override the structural parameters above for individual floors and stories.</p></li>
@@ -226,7 +214,7 @@
 </ol>
 <div class="align-center figure" id="id3">
 <span id="fig-mdof"></span><img alt="../../../../_images/mdof_general.png" src="../../../../_images/mdof_general.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.1 </span><span class="caption-text">Multiple degrees of freedom (MDOF) building model generator.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Multiple degrees of freedom (MDOF) building model generator.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Random variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the <em>Number of floors</em>. The variable name entered will appear as a random variable in the <strong>UQ</strong> panel; it is there that the user must specify the distribution associated with the random variable.</p>
 <blockquote>
@@ -235,8 +223,8 @@
 </div></blockquote>
 </div>
 <div class="section" id="lblopenseessim">
-<span id="id1"></span><h2><a class="toc-backref" href="#id7"><span class="section-number">3.3.2. </span>OpenSees</a><a class="headerlink" href="#lblopenseessim" title="Permalink to this headline">¶</a></h2>
-<p>This panel is for users who have an existing OpenSees model of a building that performs a gravity analysis and now they wish to subject that building model to one of the <strong>EVT</strong> options provided. The input panel for this option is shown in <a class="reference internal" href="#fig-figure3"><span class="std std-numref">Fig. 3.3.2</span></a>. Users need to provide three pieces of information:</p>
+<span id="id1"></span><h2><a class="toc-backref" href="#id7">OpenSees</a><a class="headerlink" href="#lblopenseessim" title="Permalink to this headline">¶</a></h2>
+<p>This panel is for users who have an existing OpenSees model of a building that performs a gravity analysis and now they wish to subject that building model to one of the <strong>EVT</strong> options provided. The input panel for this option is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-figure3</span></code>. Users need to provide three pieces of information:</p>
 <ol class="arabic simple">
 <li><p>Main OpenSees Script: The main script that contains the building model. This script should build a model and perform any gravity analysis of the building that is required before the event is applied.</p></li>
 <li><p>Response Nodes: A list of node numbers that define a column line of interest for which the responses will be determined. The column nodes should be in order from ground floor to roof. The <a class="reference internal" href="response/EDP.html#lbledp"><span class="std std-ref">EDP</span></a> workflow application uses this information to determine nodes at which displacement, acceleration, and story drifts are calculated.</p></li>
@@ -245,19 +233,19 @@
 </ol>
 <div class="align-center figure" id="id4">
 <span id="fig-figure3"></span><img alt="../../../../_images/openSees_gen.png" src="../../../../_images/openSees_gen.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.2 </span><span class="caption-text">OpenSees Model.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">OpenSees Model.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>In OpenSees there is an option to set variables to have certain values using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command, e.g <code class="docutils literal notranslate"><span class="pre">pset</span> <span class="pre">a</span> <span class="pre">5.0</span></code> will set the variable a to have a value 5 in the OpenSees script. In RDT, any variable found in the main script to be set using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command will be assumed to be a random variable. As such, when a new main script is loaded all variables set with <code class="docutils literal notranslate"><span class="pre">pset</span></code> will appear as random variables in the <strong>UQ</strong> panel.</p>
+<p>In OpenSees there is an option to set variables to have certain values using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command, e.g <code class="docutils literal notranslate"><span class="pre">pset</span> <span class="pre">a</span> <span class="pre">5.0</span></code> will set the variable a to have a value 5 in the OpenSees script. In R2D, any variable found in the main script to be set using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command will be assumed to be a random variable. As such, when a new main script is loaded all variables set with <code class="docutils literal notranslate"><span class="pre">pset</span></code> will appear as random variables in the <strong>UQ</strong> panel.</p>
 </div>
 <div class="section" id="steel-building-model-autosda">
-<h2><a class="toc-backref" href="#id8"><span class="section-number">3.3.3. </span>Steel Building Model (AutoSDA)</a><a class="headerlink" href="#steel-building-model-autosda" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Steel Building Model (AutoSDA)</a><a class="headerlink" href="#steel-building-model-autosda" title="Permalink to this headline">¶</a></h2>
 <p>This module provides a way for a user to create a nonlinear structural model of a moment-resisting steel-framed building. The <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> computer program <a class="bibtex reference internal" href="../../../../index.html#guan2020python" id="id2">[GBS20]</a> is used for the seismic design and to generate the resulting two-dimensional structural model in <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code>. <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> automates the seismic design process and nonlinear structural model construction, generating code-conforming section sizes and detailing for beams, columns, and beam-column connections based on the user-specified input design parameters. The resulting nonlinear model is then subjected to the hazard option that is selected by the user in the <strong>EVT</strong> panel. The TCL files of the <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> model generated by <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> are located in the individual work directories in the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder that <strong>EE-UQ</strong> creates on the user’s computer.</p>
-<p>The input panel for this module is shown in <a class="reference internal" href="#fig-sda"><span class="std std-numref">Fig. 3.3.3</span></a>. Users need to provide the following information:</p>
+<p>The input panel for this module is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-sda</span></code>. Users need to provide the following information:</p>
 <ol class="arabic simple">
 <li><p>Building Information Inputs: The building information box describes the building geometry. The units for the building geometry parameters are in feet. Changing the building parameter values will update the building properties in the <strong>GI</strong> panel. Also, changing the number of building stories will add or subtract rows from the <code class="docutils literal notranslate"><span class="pre">Member</span> <span class="pre">Depth</span></code> and <code class="docutils literal notranslate"><span class="pre">Loading</span></code> tables below.</p></li>
 <li><p>Seismic Design Parameters: The seismic design parameters box contains the Equivalent Lateral Force (ELF) design parameters as specified by ASCE 7-10. <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> employs these parameters in its automated seismic design procedures. Note that the values of these ELF parameters are site-specific, and can be obtained from the <a class="reference external" href="https://seismicmaps.org">SEAOC/OSHPD Seismic Design Maps Tool</a> or the <a class="reference external" href="https://hazards.atcouncil.org">ATC Hazards by Location Tool</a>.</p></li>
 <li><p>Building Data Folder: The location of the building data folder is specified within this box. The building data folder should contain the following four CSV files that are required by <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code>: 1) Geometry.csv; 2) ELFParameters.csv; 3) MemberDepth.csv; and 4) Loads.csv. These files can be automatically created on the user’s computer by by clicking on the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">File</span></code> button. The user will be prompted to select a folder whereafter the files will be saved. Alternatively, users have the option to upload their own CSV files by selecting a folder, and then clicking on the <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">File</span></code> button. Note that users are encouraged to backup their CSV files as <strong>EE-UQ</strong> will overwrite the existing files in the selected folder. Before running an analysis, users must save or load the corresponding CSV files so that <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> can locate them.</p></li>
-<li><p>Member Depth Table: This table lists the user-specified depths for the interior columns, exterior columns, and beams. Each row in the table corresponds to a building story. The first row corresponds to the first story, the second row to the second story, etc. As shown in <a class="reference internal" href="#fig-sda"><span class="std std-numref">Fig. 3.3.3</span></a>, the member depth values need to follow nomenclature from the AISC steel shapes database, e.g., W14, W24. If multiple depths are specified, the depths need to be separated by a comma, followed by a space.</p></li>
+<li><p>Member Depth Table: This table lists the user-specified depths for the interior columns, exterior columns, and beams. Each row in the table corresponds to a building story. The first row corresponds to the first story, the second row to the second story, etc. As shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-sda</span></code>, the member depth values need to follow nomenclature from the AISC steel shapes database, e.g., W14, W24. If multiple depths are specified, the depths need to be separated by a comma, followed by a space.</p></li>
 <li><p>Loading Table: This table contains the loading values for the floors, beams and columns. As in the <code class="docutils literal notranslate"><span class="pre">Member</span> <span class="pre">Depth</span></code> table, each row in this table corresponds to its own building story. In this table, there is an option to specify the loading values as random variables. This is done by entering a unique name tag for a random variable in lieu of a numerical value. For example, in any of the the cells in the table, a user can enter the text <code class="docutils literal notranslate"><span class="pre">SomeRV.</span></code> The <code class="docutils literal notranslate"><span class="pre">SomeRV</span></code> random variable tag will then appear in the <strong>UQ</strong> panel, where the type of distribution, mean value, etc., can be specified.</p></li>
 </ol>
 <div class="admonition note">
@@ -266,7 +254,7 @@
 </div>
 <div class="align-center figure" id="id5">
 <span id="fig-sda"></span><img alt="../../../../_images/autoSDAUI.png" src="../../../../_images/autoSDAUI.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3.3 </span><span class="caption-text">Steel Building Model.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Steel Building Model.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -276,28 +264,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2019, The Regents of the University of California
+        &#169; Copyright 2019, The Regents of the University of California.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -323,6 +308,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', '...', 'auto');
+    
     ga('send', 'pageview');
     </script>
 
@@ -333,6 +319,44 @@
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

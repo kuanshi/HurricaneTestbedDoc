@@ -3,22 +3,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.2. Workflow Applications &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.2. Backend Applications &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -31,8 +34,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
@@ -42,12 +43,13 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.2.2.1. Building Applications" href="buildingApps.html" />
-    <link rel="prev" title="2.2.1. Inputs" href="Inputs.html" />
+    <link rel="next" title="2.2.1. FEM Pre-processors" href="applications/preprocFEM.html" />
+    <link rel="prev" title="2.1.2. Outputs" href="file-types/Outputs.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -60,23 +62,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../index.html">
-          
+  <a href="../../../../index.html">
 
-          
-            
-            <img src="../../../../_static/RDT-Logo-grey2.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,7 +90,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -96,23 +101,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">2. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">3. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">5. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/license.html">7. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Testbeds</span></p>
+<p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/anchorage/index.html">4. Anchorage, AK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">5. Lake Charles, LA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -122,30 +125,27 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="architecture.html">2. Software Architecture</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#overview">2.1. Overview</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="architecture.html#rdt-backend-applications">2.2. RDT Backend Applications</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Inputs.html">2.2.1. Inputs</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.2.2. Workflow Applications</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="buildingApps.html">2.2.2.1. Building Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="regionalMapApps.html">2.2.2.2. Regional Mapping Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="eventApps.html">2.2.2.3. Event Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modelingApps.html">2.2.2.4. Modeling Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="EDPApps.html">2.2.2.5. EDP Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="simulationApps.html">2.2.2.6. Simulation Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="UQApps.html">2.2.2.7. UQ Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DLApps.html">2.2.2.8. DL Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-types.html">2.1. File Types and Schemas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Backend Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="applications/buildingApps.html">2.2.8. Building Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications/regionalMapApps.html">2.2.10. Regional Mapping Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications/eventApps.html">2.2.3. Event Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications/modelingApps.html">2.2.4. Modeling Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications/EDPApps.html">2.2.5. EDP Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications/simulationApps.html">2.2.6. Simulation Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications/UQApps.html">2.2.7. UQ Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="applications/DLApps.html">2.2.9. DL Applications</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="Outputs.html">2.2.3. Outputs</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#how-to-run">2.3. How to Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html">2.3. Creating Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-manually.html">2.4. Running Manually</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c4model.html">2.5. C4 Model of Software Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#overview">2.6. Overview</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -186,6 +186,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -194,12 +196,12 @@
         
           <li><a href="architecture.html"><span class="section-number">2. </span>Software Architecture</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.2. </span>Workflow Applications</li>
+      <li><span class="section-number">2.2. </span>Backend Applications</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../_sources/common/developer_manual/architecture/desktop/backendApplications.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -213,21 +215,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="workflow-applications">
-<span id="lblbackendapps"></span><h1><span class="section-number">2.2.2. </span>Workflow Applications<a class="headerlink" href="#workflow-applications" title="Permalink to this headline">¶</a></h1>
-<p>The following pages provide more detail on the requirements for input files and types of backend applications available.</p>
+  <span class="target" id="lblbackendapps"></span><div class="section" id="backend-applications">
+<h1><span class="section-number">2.2. </span>Backend Applications<a class="headerlink" href="#backend-applications" title="Permalink to this headline">¶</a></h1>
+<p>The backend applications are categorized by function into the following workflow modules which create and populate <em>intermediate files</em> used to propagate information from one component application to the next. The modules and their intermediate files are as follows:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="applications/buildingApps.html#lblbuildingapp"><span class="std std-ref">Building Applications</span></a> - create the BIM files for every building asset, containing building properties.</p></li>
+<li><p><a class="reference internal" href="applications/regionalMapApps.html#lblregionalmapapp"><span class="std std-ref">Regional Mapping Applications</span></a> - map an intensity measure (IM) or time series for the hazard event to each building asset site.</p></li>
+<li><p><a class="reference internal" href="applications/eventApps.html#lbleventapp"><span class="std std-ref">Event Applications</span></a> - create the EVENT files for every building asset, containing loads corresponding to the hazard event(s).</p></li>
+<li><p><a class="reference internal" href="applications/modelingApps.html#lblmodelingapp"><span class="std std-ref">Modeling Applications</span></a> - create the Structural Analysis Model (SAM) files for every building asset, containing structural model parameters.</p></li>
+<li><p><a class="reference internal" href="applications/EDPApps.html#lbledpapp"><span class="std std-ref">Engineering Demand Parameter (EDP) Applications</span></a> - create the EDP files for every building asset, containing expected response outputs of the structural model.</p></li>
+<li><p><a class="reference internal" href="applications/simulationApps.html#lblsimulationapp"><span class="std std-ref">Simulation (SIM) Applications</span></a> - create the SIM files for every building asset, containing analysis settings for response simulation.</p></li>
+<li><p><a class="reference internal" href="applications/UQApps.html#lbluqapp"><span class="std std-ref">Uncertainty Quantification (UQ) Applications</span></a> - execute all steps in the workflow, with the option to quantify uncertainty with experiments using random variables.</p></li>
+<li><p><a class="reference internal" href="applications/DLApps.html#lbldlapp"><span class="std std-ref">Damage and Loss (DL) Applications</span></a> - estimate expected damages and losses from the EDP application’s output.</p></li>
+</ol>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="buildingApps.html">2.2.2.1. Building Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regionalMapApps.html">2.2.2.2. Regional Mapping Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eventApps.html">2.2.2.3. Event Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modelingApps.html">2.2.2.4. Modeling Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EDPApps.html">2.2.2.5. EDP Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simulationApps.html">2.2.2.6. Simulation Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UQApps.html">2.2.2.7. UQ Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DLApps.html">2.2.2.8. DL Applications</a></li>
-</ul>
 </div>
+<p>These applications make up the “backbone” of SimCenter workflow systems, with each one calling on a different subset of the component applications.</p>
 </div>
 
 
@@ -235,28 +238,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2019, The Regents of the University of California
+        &#169; Copyright 2019, The Regents of the University of California.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -282,6 +282,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', '...', 'auto');
+    
     ga('send', 'pageview');
     </script>
 
@@ -292,6 +293,44 @@
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>

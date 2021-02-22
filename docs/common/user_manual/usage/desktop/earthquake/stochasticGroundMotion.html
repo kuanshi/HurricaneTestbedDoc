@@ -3,22 +3,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4.1. Stochastic Ground Motions &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>Stochastic Ground Motions &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -31,8 +34,6 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
@@ -42,12 +43,11 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="3.4.2. PEER NGA" href="peerNGA.html" />
-    <link rel="prev" title="3.4. EVT: Earthquake Events" href="earthquakeEvents.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -60,23 +60,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../../index.html">
-          
+  <a href="../../../../../index.html">
 
-          
-            
-            <img src="../../../../../_static/RDT-Logo-grey2.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -85,7 +88,7 @@
   </form>
 </div>
 
-          
+
         </div>
 
         
@@ -96,39 +99,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">2. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">3. User Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../UQ.html">3.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../GI.html">3.2. GI: General Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIM.html">3.3. SIM: Structural Model</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="earthquakeEvents.html">3.4. EVT: Earthquake Events</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4.1. Stochastic Ground Motions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="peerNGA.html">3.4.2. PEER NGA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="multiplePEER.html">3.4.3. Multiple PEER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="multipleExisting.html">3.4.4. Multiple Existing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="usageS3hark.html">3.4.5. Site Response Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="usageS3hark.html#modeling-spatial-variability-uncertainty-of-soil">3.4.6. Modeling Spatial Variability Uncertainty of Soil</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../FEM.html">3.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">3.6. RV: Random Variables</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">5. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../license.html">7. Copyright and License</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Testbeds</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/anchorage/index.html">4. Anchorage, AK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/lake_charles/index.html">5. Lake Charles, LA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -141,7 +126,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -182,22 +166,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">3. </span>User Guide</a> &raquo;</li>
-        
-          <li><a href="earthquakeEvents.html"><span class="section-number">3.4. </span>EVT: Earthquake Events</a> &raquo;</li>
-        
-      <li><span class="section-number">3.4.1. </span>Stochastic Ground Motions</li>
+      <li>Stochastic Ground Motions</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../../_sources/common/user_manual/usage/desktop/earthquake/stochasticGroundMotion.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -212,7 +194,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="stochastic-ground-motions">
-<h1><span class="section-number">3.4.1. </span>Stochastic Ground Motions<a class="headerlink" href="#stochastic-ground-motions" title="Permalink to this headline">¶</a></h1>
+<h1>Stochastic Ground Motions<a class="headerlink" href="#stochastic-ground-motions" title="Permalink to this headline">¶</a></h1>
 <p>This panel allows users to generate synthetic ground motions for a
 target seismic event. In order to do so, the stochastic ground motion
 model is selected from the <code class="docutils literal notranslate"><span class="pre">drop-down</span> <span class="pre">menu</span></code>, which is as shown
@@ -223,12 +205,12 @@ model selected, the user will be asked to enter values for a number of parameter
 used to generate a seismic event. For the Vlachos er al. model users is required to input the <code class="docutils literal notranslate"><span class="pre">moment</span> <span class="pre">magnitude',</span> <span class="pre">``site</span> <span class="pre">to</span> <span class="pre">rupture</span> <span class="pre">distance</span></code> and the <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">shear</span> <span class="pre">wave</span> <span class="pre">velocity</span></code>.</p>
 <div class="align-center figure" id="id6">
 <span id="fig-stochasticvlachos-event"></span><img alt="../../../../../_images/stochasticVlachos.png" src="../../../../../_images/stochasticVlachos.png" />
-<p class="caption"><span class="caption-number">Fig. 3.4.1 </span><span class="caption-text">Vlachos et al. (2018) model inputs.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Vlachos et al. (2018) model inputs.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<p id="fig-stochasticdabaghi-event">For the Dabaghi and Der Kiureghian model geometric directivity parameters, as shown in <a class="reference internal" href="#fig-dabaghi"><span class="std std-numref">Fig. 3.4.2</span></a>, required by the Dabaghi and Der Kiureghian model are described completely in Somerville et al. (1997) <a class="bibtex reference internal" href="../../../../../index.html#somerville1997modification" id="id5">[SSGA97]</a>.</p>
+<p id="fig-stochasticdabaghi-event">For the Dabaghi and Der Kiureghian model geometric directivity parameters, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dabaghi</span></code>, required by the Dabaghi and Der Kiureghian model are described completely in Somerville et al. (1997) <a class="bibtex reference internal" href="../../../../../index.html#somerville1997modification" id="id5">[SSGA97]</a>.</p>
 <div class="align-center figure" id="id7">
 <span id="fig-dabaghi"></span><img alt="../../../../../_images/stochasticDabaghi.png" src="../../../../../_images/stochasticDabaghi.png" />
-<p class="caption"><span class="caption-number">Fig. 3.4.2 </span><span class="caption-text">Dabaghi &amp; Der Kiureghian (2018) model inputs.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Dabaghi &amp; Der Kiureghian (2018) model inputs.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Additionally, users can provide a seed for either model if they desire the same
 suite of synthetic motions to be generated on multiple occasions. If
@@ -249,28 +231,25 @@ the <strong>UQ</strong> tab.</p>
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2019, The Regents of the University of California
+        &#169; Copyright 2019, The Regents of the University of California.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -296,6 +275,7 @@ the <strong>UQ</strong> tab.</p>
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', '...', 'auto');
+    
     ga('send', 'pageview');
     </script>
 
@@ -306,6 +286,44 @@ the <strong>UQ</strong> tab.</p>
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>
