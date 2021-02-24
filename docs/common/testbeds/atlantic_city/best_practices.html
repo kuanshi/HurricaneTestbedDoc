@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2. Atlantic County, NJ &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.10. Best Practices &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="2.1. Overview" href="overview.html" />
-    <link rel="prev" title="1. San Francisco, CA" href="../sf_bay_area/index.html" />
+    <link rel="next" title="3. Memphis, TN" href="../memphis/index.html" />
+    <link rel="prev" title="2.9. Opportunity Areas for Future Refinements" href="future_refinements.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -120,7 +120,7 @@
 <p class="caption"><span class="caption-text">Testbeds</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Atlantic County, NJ</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Atlantic County, NJ</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="overview.html">2.1. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asset_description.html">2.2. Asset Description</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hazard_characterization.html">2.3. Hazard Characterization</a></li>
@@ -130,7 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">2.7. Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.8. Verification Results</a></li>
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.9. Opportunity Areas for Future Refinements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.10. Best Practices</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.10. Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../memphis/index.html">3. Memphis, TN</a></li>
@@ -196,13 +196,15 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">2. </span>Atlantic County, NJ</li>
+          <li><a href="index.html"><span class="section-number">2. </span>Atlantic County, NJ</a> &raquo;</li>
+        
+      <li><span class="section-number">2.10. </span>Best Practices</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../_sources/common/testbeds/atlantic_city/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/common/testbeds/atlantic_city/best_practices.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -215,23 +217,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="atlantic-county-nj">
-<span id="lbl-testbed-atlantic-city"></span><h1><span class="section-number">2. </span>Atlantic County, NJ<a class="headerlink" href="#atlantic-county-nj" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound" id="lbl-testbeds-manual">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">2.1. Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="asset_description.html">2.2. Asset Description</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hazard_characterization.html">2.3. Hazard Characterization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="asset_representation.html">2.4. Asset Representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="response_simulation.html">2.5. Response Simulation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="damage_and_loss.html">2.6. Damage and Loss Estimation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uncertainty_quantification.html">2.7. Uncertainty Quantification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample_results.html">2.8. Verification Results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="future_refinements.html">2.9. Opportunity Areas for Future Refinements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="best_practices.html">2.10. Best Practices</a></li>
-</ul>
-</div>
-<p>Acknowledgements text […]</p>
+  <div class="section" id="best-practices">
+<span id="lbl-testbed-ac-best-practices"></span><h1><span class="section-number">2.10. </span>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h1>
+<p>The process of constructing the <strong>Atlantic County Inventory</strong> for footprints beyond those in the
+<strong>Flood-Exposed Inventory</strong> underscored a number of tasks/issues that are commonly encountered when constructing an inventory
+in a location with sparse inventory data. Recommended best practices are summarized as follows:
+1. Inventories are based upon building footprint data which may be sourced from state/local authorities or</p>
+<blockquote>
+<div><p>third parties, which should be selected based on known accuracy. State/local data is often the most accurate
+as they have been quality assured through human oversight. In the absence of such data, select third-party
+data that is hand drawn, when possible: 2017 Microsoft footprint data is preferable since it is hand-digitized
+vs. 2018 Microsoft footprint data which is computer-generated.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Note that footprint data may still contain skewed buildings, offset outlines, individual buildings whose
+close proximity caused them to be treated as a single building outline, or outlines that include
+non-structural features. Thus footprint data may require additional processing to rectify such issues and
+any adjustments to the footprints further requires recalculation of coordinates and coordinate-dependent
+information.</p></li>
+<li><p>Triangulate data sources to improve data quality, e.g., sanity-checking building classifications in tax
+assessor data by using zoning or land use/land cover data, cross-checking state tax assessor data against
+county tax assessor data.</p></li>
+<li><p>Footprints need to be assigned parcel data from the local tax assessor. If a footprint falls within parcel,
+the footprint should receive that parcel’s attributes, noting that a parcel may have multiple footprints
+within it: If footprint falls between multiple parcels, assign it the parcel information with a higher level of
+flood risk based on the FEMA-designated flood zone, where risk goes from highest to lowest according to: VE,
+AE, AO, AH, A, X. If footprint falls between multiple parcels and both with the same FEMA flood zone,
+it receives the parcel information for the parcel with the highest overlapping area. If a footprint falls
+outside a parcel, it is assigned the attributes of the nearest parcel.</p></li>
+<li><p>Once footprints are identified, assign default values for each required attribute in the Building Inventory.
+These default values should be selected using engineering judgement to represent the most common/likely
+attribute expected or conservatively from the perspective of anticipated losses (i.e., picking the more
+vulnerable attribute option). These initial assignments are then updated if additional data is available
+to make a more faithful attribute assignment. As part of the default assignment class, pick a building
+typology that is prevalent in the locale as your default building. For example, NJDEP selected Single
+Family Dwelling/Residence, made of Wood (stud-framed) with Slab-on-Grade foundation, shingles as its roof
+covering, and siding as its wall covering (specific material types may be specified, e.g., asphalt shingle
+or vinyl siding, depending on the granularity of the damage/loss models).</p></li>
+<li><p>Flood Insurance Rate Maps (FIRMs) are used to define the FEMA-designated flood zone for the building site.
+In some locations, the most updated FIRMs may not be officially released, in which case preliminary FIRMs
+should be used as they offer the best contemporary flood hazard data.</p></li>
+<li><p>Elevation certificates may be available from local authorities and can be consulted to establish the
+elevation of the lowest horizontal structural member for food risk assessments. Most risk assessments will
+require the top of the bottom occupied floor, which will be defined relative to the lowest adjacent (finished)
+grade (LAG). Digital Elevation Models (DEMs) can also be consulted to establish building elevations. Note that
+the SimCenter’s image processing tools minimize the need for these data sources.</p></li>
+</ol>
 </div>
 
 
