@@ -7,6 +7,7 @@ Best Practices
 The process of constructing the **Atlantic County Inventory** for footprints beyond those in the 
 **Flood-Exposed Inventory** underscored a number of tasks/issues that are commonly encountered when constructing an inventory 
 in a location with sparse inventory data. Recommended best practices are summarized as follows:
+
 1. Inventories are based upon building footprint data which may be sourced from state/local authorities or 
    third parties, which should be selected based on known accuracy. State/local data is often the most accurate 
    as they have been quality assured through human oversight. In the absence of such data, select third-party 
