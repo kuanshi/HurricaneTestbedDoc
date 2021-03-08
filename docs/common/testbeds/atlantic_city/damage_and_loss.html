@@ -121,7 +121,7 @@
 <p class="caption"><span class="caption-text">Testbeds</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Atlantic City, NJ</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Atlantic County, NJ</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="overview.html">2.1. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asset_description.html">2.2. Asset Description</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hazard_characterization.html">2.3. Hazard Characterization</a></li>
@@ -131,6 +131,7 @@
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">2.7. Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.8. Verification Results</a></li>
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.9. Opportunity Areas for Future Refinements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.10. Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../memphis/index.html">3. Memphis, TN</a></li>
@@ -196,7 +197,7 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="index.html"><span class="section-number">2. </span>Atlantic City, NJ</a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">2. </span>Atlantic County, NJ</a> &raquo;</li>
         
       <li><span class="section-number">2.6. </span>Damage and Loss Estimation</li>
     
@@ -224,7 +225,7 @@ consideration of wind and storm surge (i.e., flood) damage and losses.
 Further, the calculation of wind effects does not require structural analysis to estimate EDPs,
 but rather adopts an approach where damage and losses are calculated directly from the wind speed.
 Similarly, the flood-induced loss calculation is based on the peak water depth.
-Damage and loss functions from the HAZUS Multi-hazard Loss Estimation Methodology (<a class="reference internal" href="#fema18a" id="id1"><span>[FEMA18a]</span></a>, <a class="reference internal" href="#fema18b" id="id2"><span>[FEMA18b]</span></a>)
+Damage and loss functions from the HAZUS Multi-hazard Loss Estimation Methodology (<a class="reference internal" href="overview.html#fema18a" id="id1"><span>[FEMA18a]</span></a>, <a class="reference internal" href="overview.html#fema18b" id="id2"><span>[FEMA18b]</span></a>)
 were implemented in <a class="reference external" href="https://pelicun.readthedocs.io/en/latest/">PELICUN</a> to support the damage and loss assessment.</p>
 <p>For the <strong>wind loss assessment</strong>, the HAZUS functions consist of tabular data to
 describe the fragility or expected losses as a function of peak wind speed (PWS). These
@@ -266,7 +267,7 @@ ratio curves.</p>
 <p class="caption"><span class="caption-number">Fig. 2.6.5 </span><span class="caption-text">Depth-damage ratio curves for the flood loss assessment.</span><a class="headerlink" href="#flood-ddc" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <strong>total loss</strong> from wind and flood damages are estimated by combining the “wind-only” and “flood-only”
-losses following the combination rule in <a class="reference internal" href="#fema18a" id="id4"><span>[FEMA18a]</span></a>. The primary motivation for the combined wind and
+losses following the combination rule in <a class="reference internal" href="overview.html#fema18a" id="id4"><span>[FEMA18a]</span></a>. The primary motivation for the combined wind and
 flood loss methodology is to avoid “double counting” of damage. At a minimum, the combined wind and
 flood loss must be at least the larger of the wind-only or the flood-only loss. At a maximum, the combined
 loss must be no larger than the lesser of the sum of the wind-only and flood-only losses
@@ -296,7 +297,7 @@ components into a consistent set of building sub-assemblies:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <dl class="simple">
-<dt>HAZUS building sub-assemblies (<a class="reference internal" href="#fema18a" id="id5"><span>[FEMA18a]</span></a>):</dt><dd><ol class="arabic simple">
+<dt>HAZUS building sub-assemblies (<a class="reference internal" href="overview.html#fema18a" id="id5"><span>[FEMA18a]</span></a>):</dt><dd><ol class="arabic simple">
 <li><p>Foundation: Includes site work, footings, and walls, slabs, piers or piles.</p></li>
 <li><p>Below First Floor: Items other than the foundation that are located below the first floor of the structure such as mechanical equipment, stairways, parking pads, break away flood walls, etc.</p></li>
 <li><p>Structure Framing: Includes all of the main load carrying structural members of the building below the roof framing and above the foundation.</p></li>
@@ -315,7 +316,7 @@ sum of combined sub-assembly loss ratios:</p>
 <p>where <span class="math notranslate nohighlight">\(L_{wind,i}\)</span> is the wind-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly, and
 <span class="math notranslate nohighlight">\(L_{flood,i}\)</span> is the flood-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly. These sub-assembly
 loss ratios are computed as a percent of the total building loss ratio. The percentages are based on the
-<a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 2.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 2.6.2</span></a> that are developed per the HAZUS methodology and data table (<a class="reference internal" href="#fema18a" id="id6"><span>[FEMA18a]</span></a>).</p>
+<a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 2.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 2.6.2</span></a> that are developed per the HAZUS methodology and data table (<a class="reference internal" href="overview.html#fema18a" id="id6"><span>[FEMA18a]</span></a>).</p>
 <table class="docutils align-center" id="wind-comp">
 <caption><span class="caption-number">Table 2.6.1 </span><span class="caption-text">Sub-assembly wind-only loss contribution ratio table.</span><a class="headerlink" href="#wind-comp" title="Permalink to this table">¶</a></caption>
 <colgroup>
