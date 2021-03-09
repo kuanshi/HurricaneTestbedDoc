@@ -464,9 +464,11 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
      - [DesignSafe DOI with hyperlink]
      - :download:`WindMHRulesets <data/WindMHRulesets.py>`
 
-Taking the attribute tie down (TieDown) as an example, the TieDown attribute is assigned based on a 
-ruleset that calls upon the year built from the building inventory. :numref:`td_attri`
-provides the detailed rule that maps these variables to the TieDown attribute.
+Taking the attribute tie down (TieDown) as an example, the ruleset in :numref:`td_attri` considers 
+the Year Built to determine if tie down use is governed by HUD standards based on the design 
+wind speed or if it is a voluntary action predating code requirements and thus is governed by 
+human subjects data. This provides an example of an attribute that is inferred from construction 
+practices based on when different roof cover products entered the market. 
 
 .. csv-table:: Ruleset for determining the tie down for manufactured homes.
    :name: td_attri
@@ -474,6 +476,58 @@ provides the detailed rule that maps these variables to the TieDown attribute.
    :header-rows: 1
    :align: center
 
+
+Wind Loss Attributes for Essential Facilities
+------------------------------------------------
+
+The wind loss model in HAZUS futher classifies several groupings of essential facilities:
+1. Fire Staions and Elementary Schools (HUEFFS, HUEFSS)
+2. High Schools: 2-story and 3-story (HUEFSM, HUEFSL)
+3. Hospitials: small, medium, large (HUEFHS, HUEFHM, HUEFHL)
+4. Police Stations and Emergency Operations Centers (HUEFPS, HUEFEO)
+   
+Their required attributes for wind loss modeling, the possible entries (values, terms) that can be
+assigned for those attributes, and the basis for the ruleset developed to make that assignment are summarized 
+in :numref:`hu1_attri`, :numref:`hu2_attri`, :numref:`hu3_attri`, and :numref:`hu4_attri`. 
+Note that these rulesets were developed to reflect the likely attibutes based on the year of construction and
+the code editions and construction norms at that time. The corresponding time-evolving rulesets (PDFs and Python scriots)
+are cross-referenced in :numref:`addinfo_ruleset_ef`.
+
+.. csv-table:: Additional HAZUS attributes assigned for fire stations and elementary schools: wind losses.
+   :name: hu1_attri
+   :file: data/hu1_attributes.csv
+   :header-rows: 1
+   :align: center
+
+.. csv-table:: Additional HAZUS attributes assigned for 2-story and 3-story high schools: wind losses.
+   :name: hu2_attri
+   :file: data/hu2_attributes.csv
+   :header-rows: 1
+   :align: center
+
+.. csv-table:: Additional HAZUS attributes assigned for hospitals: wind losses.
+   :name: hu3_attri
+   :file: data/hu3_attributes.csv
+   :header-rows: 1
+   :align: center
+
+.. csv-table:: Additional HAZUS attributes assigned forpolice stations and emergency operation centers: wind losses.
+   :name: hu4_attri
+   :file: data/hu4_attributes.csv
+   :header-rows: 1
+   :align: center
+
+.. list-table:: Additional details for rulesets assigning wind loss attributes for essential facilities.
+   :name: addinfo_ruleset_ef
+   :header-rows: 1
+   :align: center
+
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - HAZUS Building Attribute Rulesets - Wind (Essential Facilities)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindEFRulesets <data/WindMHRulesets.py>`
 
 
 .. [Javeline19]
