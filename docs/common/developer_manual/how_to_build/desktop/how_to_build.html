@@ -220,7 +220,7 @@
 <h2><span class="section-number">1.1. </span>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>First, ensure the following dependencies are installed:</p>
 <ul class="simple">
-<li><p><strong>C++11 compliant compiler</strong>: many of the workflow applications included use C++11 features, consequently they may need a newer C++11 compliant compiler. Fow Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with c++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.</p></li>
+<li><p><strong>C++17 compliant compiler</strong>: many of the workflow applications included use C++17 features, consequently they may need a newer C++17 compliant compiler. Fow Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.</p></li>
 <li><p><strong>OpenSees</strong>: The workflow applications require an installation of <a class="reference external" href="http://opensees.berkeley.edu/">OpenSees</a> to carry out structural analysis using the finite element method.</p></li>
 <li><p><strong>DAKOTA</strong>: The workflow applications require an installation of <a class="reference external" href="https://dakota.sandia.gov/">DAKOTA</a> to handle and propagate the uncertainties defined in the input files for the workflow applications.</p></li>
 <li><p><strong>Python</strong>: The workflow requires at least Python 3.7.</p></li>
@@ -241,32 +241,32 @@
 <ol class="arabic">
 <li><p>Add Conan <a class="reference external" href="https://bintray.com/nheri-simcenter/simcenter">SimCenter</a> and  <a class="reference external" href="https://bintray.com/bincrafters/public-conan">BinCrafters</a> repositories to the Conan remotes. You can add these remotes by typing the following commands in the terminal:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">simcenter</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">bintray</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conan</span><span class="o">/</span><span class="n">nheri</span><span class="o">-</span><span class="n">simcenter</span><span class="o">/</span><span class="n">simcenter</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter</span>
 
-<span class="n">conan</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">bincrafters</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">bintray</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conan</span><span class="o">/</span><span class="n">bincrafters</span><span class="o">/</span><span class="n">public</span><span class="o">-</span><span class="n">conan</span>
+<span class="go">conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>Create a default Conan profile if this is the first time you use Conan for building packages.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">profile</span> <span class="n">new</span> <span class="n">default</span> <span class="o">--</span><span class="n">detect</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile new default --detect</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>Check the default profile of your build environment using:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">profile</span> <span class="n">show</span> <span class="n">default</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile show default</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>If the compiler name and compiler version are <em>not</em> listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conan</span> <span class="n">profile</span> <span class="n">update</span> <span class="n">settings</span><span class="o">.</span><span class="n">compiler</span><span class="o">=</span><span class="s2">&quot;Visual Studio&quot;</span> <span class="n">default</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile update settings.compiler=&quot;Visual Studio&quot; default</span>
 
-<span class="n">conan</span> <span class="n">profile</span> <span class="n">update</span> <span class="n">settings</span><span class="o">.</span><span class="n">compiler</span><span class="o">.</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;16&quot;</span> <span class="n">default</span>
+<span class="go">conan profile update settings.compiler.version=&quot;16&quot; default</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -282,17 +282,17 @@
 </div>
 </li>
 </ol>
-<ol class="arabic" start="2">
+<ol class="arabic">
 <li><p>To build the applications you need to now navigate to the <strong>SimCenterBackendApplications</strong> folder that was created with the <strong>git clone</strong> command. Once there you will issue the following set of commands to create a <strong>build</strong> folder, change director to that folder, install needed software using conan, and finally use <strong>cmake</strong> to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):</p>
 <blockquote>
 <div><blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span>
-<span class="n">cd</span> <span class="n">build</span>
-<span class="n">conan</span> <span class="n">install</span> <span class="o">..</span> <span class="o">--</span><span class="n">build</span> <span class="n">missing</span>
-<span class="n">cmake</span> <span class="o">..</span>
-<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="n">Release</span>
-<span class="n">cmake</span> <span class="o">--</span><span class="n">install</span> <span class="o">.</span>
-<span class="n">cd</span> <span class="o">..</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir build</span>
+<span class="go">cd build</span>
+<span class="go">conan install .. --build missing</span>
+<span class="go">cmake ..</span>
+<span class="go">cmake --build . --config Release</span>
+<span class="go">cmake --install .</span>
+<span class="go">cd ..</span>
 </pre></div>
 </div>
 </div></blockquote>

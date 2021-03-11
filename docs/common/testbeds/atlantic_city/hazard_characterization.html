@@ -250,29 +250,29 @@ was conducted for parsing the wind speed to the 3-second and open-terrain PWS (i
 <p>1. Computing <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(z_g\)</span> by ASCE 7-16 ([<a class="reference internal" href="#asce16">ASCE16</a>]) Equation C26.10-3 and C26.10-4
 taking <span class="math notranslate nohighlight">\(c_1 = 5.65, c_2 = 450\)</span> for units in m):</p>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-0">
-<span class="eqno">(2.3.1)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-0" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\alpha_{SHP} = c_1z_0^{-0.133}\\z_{g,SHP} = c2z_0^{0.125}\end{aligned}\end{align} \]</div>
+<span class="eqno">(2.3.1.1)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-0" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\alpha_{SHP} = c_1z_0^{-0.133}\\z_{g,SHP} = c2z_0^{0.125}\end{aligned}\end{align} \]</div>
 <ol class="arabic simple" start="2">
 <li><p>Computing the gradient height <span class="math notranslate nohighlight">\(V(600s, z_g, z_0)\)</span> using the power law expression:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-1">
-<span class="eqno">(2.3.2)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-1" title="Permalink to this equation">¶</a></span>\[V(600s, z_g, z_0) = V(600s, 10m, z_0) \times (\frac{z_{g,SHP}}{10m})^{1/\alpha_{SHP}}\]</div>
+<span class="eqno">(2.3.1.2)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-1" title="Permalink to this equation">¶</a></span>\[V(600s, z_g, z_0) = V(600s, 10m, z_0) \times (\frac{z_{g,SHP}}{10m})^{1/\alpha_{SHP}}\]</div>
 <p>3. Computing the Exposure C (open-terrain) wind speed at 10m height <span class="math notranslate nohighlight">\(V(600s, 10m, Exposure C)\)</span>, with
 <span class="math notranslate nohighlight">\(\alpha_C = 9.5\)</span> and <span class="math notranslate nohighlight">\(z_{g,C} = 274.32 m\)</span> ([<a class="reference internal" href="#asce16">ASCE16</a>]):</p>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-2">
-<span class="eqno">(2.3.3)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-2" title="Permalink to this equation">¶</a></span>\[V(600s, 10m, Exposure C) = V(600s, z_{g,C}, z_0) \times (\frac{10m}{z_g})^{1/\alpha_C}\]</div>
+<span class="eqno">(2.3.1.3)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-2" title="Permalink to this equation">¶</a></span>\[V(600s, 10m, Exposure C) = V(600s, z_{g,C}, z_0) \times (\frac{10m}{z_g})^{1/\alpha_C}\]</div>
 <ol class="arabic simple" start="4">
 <li><p>Converting the result to 3s-gust wind speed using the ESDU conversion [<a class="reference internal" href="#esdu02">ESDU02</a>]:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-3">
-<span class="eqno">(2.3.4)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-3" title="Permalink to this equation">¶</a></span>\[V(3s, 10m, Exposure C) = V(600s, 10m, Exposure C) \times \frac{C(3s)}{C(600s)}\]</div>
+<span class="eqno">(2.3.1.4)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-3" title="Permalink to this equation">¶</a></span>\[V(3s, 10m, Exposure C) = V(600s, 10m, Exposure C) \times \frac{C(3s)}{C(600s)}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C(3s) = 1.52\)</span> and <span class="math notranslate nohighlight">\(C(600s) = 1.05\)</span> are the Gust Factor from the ESDU conversion.</p>
 <p>Wind fields described by either approach are then locally interpolated to the site of each parcel in the inventory.
-The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.13</span></a>).
+The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1.11</span></a>).
 Because the SPH model tracks the maximum wind speed over the entire hurricane time history - so the inland cities are subjected to
 slightly higher wind speed than the coastal cities.</p>
 <div class="align-center figure" id="pws" style="width: 1200px">
 <img alt="../../../_images/pws.png" src="../../../_images/pws.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.13 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.11 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="storm-surge-modeling">
@@ -281,7 +281,7 @@ slightly higher wind speed than the coastal cities.</p>
 surge and total run up due to the breaking of near-shore waves for an arbitrary hurricane scenario
 using surrogate modeling techniques (<a class="reference internal" href="#jia13" id="id1"><span>[Jia13]</span></a>, <a class="reference internal" href="#jia15" id="id2"><span>[Jia15]</span></a>). The SHP Tool
 leverages the US Army Corps of Engineers (USACE) NACCS: North Atlantic Coastal
-Comprehensive Study (<span id="id3">[NadalCaraballo15]</span>), which contains over 1000 high-fidelity
+Comprehensive Study (<a class="reference internal" href="#nadalcaraballo15" id="id3"><span>[NadalCaraballo15]</span></a>), which contains over 1000 high-fidelity
 numerical simulations of hurricanes using the ADCIRC (<a class="reference internal" href="#luettich92" id="id4"><span>[Luettich92]</span></a>) storm surge model,
 coupled with STWAVE (<a class="reference internal" href="#smith01" id="id5"><span>[Smith01]</span></a>) to capture the additional effects of waves offshore. The
 NACCS database was further enhanced with wave run-up simulations that capture the interaction of
@@ -294,12 +294,12 @@ to estimate the depth of storm surge above ground, geospatially interpolated to 
 locations at approximately 120 m spacing, accompanied by the Limit of Moderate Wave Action
 (LiMWA) and wet-dry boundary respectively defining the extent of damaging waves and inundation
 over land at each of the transect points. These are then interpolated to the location of the coastal
-parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.14</span></a>). In the initial implementation, as demonstrated
+parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.2.2</span></a>). In the initial implementation, as demonstrated
 in this test, only the peak water depth (PWD) was considered, which will be used in the HAZUS
 Flood Damage and Loss Assessment.</p>
 <div class="align-center figure" id="pwd" style="width: 1200px">
 <img alt="../../../_images/pwd.png" src="../../../_images/pwd.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.14 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.2 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="multiple-category-analysis-mca">
@@ -309,9 +309,9 @@ the design wind speed specified by ASCE 7-16 (<a class="reference internal" href
 from 105 mph to 115 mph. Since this extreme scenario bears a small likelihood, this testbed
 also scales the wind and flood water field down to lower categories to conduct the so-called
 Multiple Category Analysis to exam the building performance under different intense scenarios.
-The PWS and PWD were scaled to Categories 2, 3, and 4 as summarized in <a class="reference internal" href="#hurricane-cat"><span class="std std-numref">Table 2.3.1</span></a>.</p>
+The PWS and PWD were scaled to Categories 2, 3, and 4 as summarized in <a class="reference internal" href="#hurricane-cat"><span class="std std-numref">Table 2.3.3.1</span></a>.</p>
 <table class="docutils align-default" id="hurricane-cat">
-<caption><span class="caption-number">Table 2.3.1 </span><span class="caption-text">Scaled peak wind speed and peak water depth for different hurricane categories.</span><a class="headerlink" href="#hurricane-cat" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.3.3.1 </span><span class="caption-text">Scaled peak wind speed and peak water depth for different hurricane categories.</span><a class="headerlink" href="#hurricane-cat" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 34%" />
 <col style="width: 16%" />
@@ -373,8 +373,11 @@ Applied Mechanics and Engineering, V(261-262), 24-38.</p>
 modeling for peak and time dependent storm surge prediction over an extended coastal region using
 an existing database of synthetic storms,” Natural Hazards, V81, 909-938</p>
 </dd>
-</dl>
-<dl class="citation">
+<dt class="label" id="nadalcaraballo15"><span class="brackets"><a class="fn-backref" href="#id3">NadalCaraballo15</a></span></dt>
+<dd><p>Nadal‐Caraballo N.C, J. A. Melby, V. M. Gonzalez, and A. T. Cox (2015), North Atlantic Coast
+Comprehensive Study – Coastal Storm Hazards from Virginia to Maine, ERDC/CHL TR-15-5, U.S.
+Army Engineer Research and Development Center, Vicksburg, MS.</p>
+</dd>
 <dt class="label" id="luettich92"><span class="brackets"><a class="fn-backref" href="#id4">Luettich92</a></span></dt>
 <dd><p>Luettich R.A, J. J. Westerink, and N. W. Scheffner (1992), ADCIRC: An advanced three-dimensional
 circulation model for shelves, coasts, and estuaries. Report 1. Theory and methodology of ADCIRC-
