@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4. Hazard Characterization &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.3. Hazard Characterization &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -44,8 +44,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="2.5. Asset Representation" href="asset_representation.html" />
-    <link rel="prev" title="2.3. Asset Description" href="asset_description.html" />
+    <link rel="next" title="2.4. Asset Representation" href="asset_representation.html" />
+    <link rel="prev" title="2.2. Asset Description" href="asset_description.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -122,22 +122,21 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Atlantic County, NJ</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="preface.html">2.1. Preface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html">2.2. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="asset_description.html">2.3. Asset Description</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. Hazard Characterization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#wind-modeling">2.4.1. Wind Modeling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm-surge-modeling">2.4.2. Storm Surge Modeling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#multiple-category-analysis-mca">2.4.3. Multiple Category Analysis (MCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">2.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asset_description.html">2.2. Asset Description</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. Hazard Characterization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wind-modeling">2.3.1. Wind Modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storm-surge-modeling">2.3.2. Storm Surge Modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-category-analysis-mca">2.3.3. Multiple Category Analysis (MCA)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="asset_representation.html">2.5. Asset Representation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="response_simulation.html">2.6. Response Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">2.7. Damage and Loss Estimation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">2.8. Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.9. Verification Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asset_representation.html">2.4. Asset Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response_simulation.html">2.5. Response Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">2.6. Damage and Loss Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">2.7. Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.8. Verification Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.9. Opportunity Areas for Future Refinements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.10. Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../memphis/index.html">3. Memphis, TN</a></li>
@@ -205,7 +204,7 @@
         
           <li><a href="index.html"><span class="section-number">2. </span>Atlantic County, NJ</a> &raquo;</li>
         
-      <li><span class="section-number">2.4. </span>Hazard Characterization</li>
+      <li><span class="section-number">2.3. </span>Hazard Characterization</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -225,7 +224,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hazard-characterization">
-<span id="lbl-testbed-ac-hazard-characterization"></span><h1><span class="section-number">2.4. </span>Hazard Characterization<a class="headerlink" href="#hazard-characterization" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-ac-hazard-characterization"></span><h1><span class="section-number">2.3. </span>Hazard Characterization<a class="headerlink" href="#hazard-characterization" title="Permalink to this headline">¶</a></h1>
 <p>Both the wind and flood hazards affect the building inventory in this testbed.
 As the initial implementation of the regional assessment workflow, the testbed mainly
 adapted the HAZUS Hurricane Damage and Loss Assessment methodology to quantify the
@@ -235,7 +234,7 @@ and under the open terrain surface condition (equivalent to the Exposure C in AS
 The PWD is the maximum depth of flooding during the time period of the hurricane event.
 The following sections will introduce the wind and flood fields used in this testbed.</p>
 <div class="section" id="wind-modeling">
-<h2><span class="section-number">2.4.1. </span>Wind Modeling<a class="headerlink" href="#wind-modeling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3.1. </span>Wind Modeling<a class="headerlink" href="#wind-modeling" title="Permalink to this headline">¶</a></h2>
 <p>The initial implementation of the testbed utilizes the highly efficient, linear analytical
 model for the boundary layer winds of a moving hurricane developed by ([<a class="reference internal" href="#snaiki17a">Snaiki17a</a>], [<a class="reference internal" href="#snaiki17b">Snaiki17b</a>]) as
 implemented in the NJcoast Storm Hazard Projection (SHP) Tool ([<a class="reference internal" href="#njcoast20">NJCoast20</a>]). To account for the exposure in each New Jersey county, an
@@ -251,33 +250,33 @@ was conducted for parsing the wind speed to the 3-second and open-terrain PWS (i
 <p>1. Computing <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(z_g\)</span> by ASCE 7-16 ([<a class="reference internal" href="#asce16">ASCE16</a>]) Equation C26.10-3 and C26.10-4
 taking <span class="math notranslate nohighlight">\(c_1 = 5.65, c_2 = 450\)</span> for units in m):</p>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-0">
-<span class="eqno">(2.4.1)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-0" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\alpha_{SHP} = c_1z_0^{-0.133}\\z_{g,SHP} = c2z_0^{0.125}\end{aligned}\end{align} \]</div>
+<span class="eqno">(2.3.1)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-0" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\alpha_{SHP} = c_1z_0^{-0.133}\\z_{g,SHP} = c2z_0^{0.125}\end{aligned}\end{align} \]</div>
 <ol class="arabic simple" start="2">
 <li><p>Computing the gradient height <span class="math notranslate nohighlight">\(V(600s, z_g, z_0)\)</span> using the power law expression:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-1">
-<span class="eqno">(2.4.2)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-1" title="Permalink to this equation">¶</a></span>\[V(600s, z_g, z_0) = V(600s, 10m, z_0) \times (\frac{z_{g,SHP}}{10m})^{1/\alpha_{SHP}}\]</div>
+<span class="eqno">(2.3.2)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-1" title="Permalink to this equation">¶</a></span>\[V(600s, z_g, z_0) = V(600s, 10m, z_0) \times (\frac{z_{g,SHP}}{10m})^{1/\alpha_{SHP}}\]</div>
 <p>3. Computing the Exposure C (open-terrain) wind speed at 10m height <span class="math notranslate nohighlight">\(V(600s, 10m, Exposure C)\)</span>, with
 <span class="math notranslate nohighlight">\(\alpha_C = 9.5\)</span> and <span class="math notranslate nohighlight">\(z_{g,C} = 274.32 m\)</span> ([<a class="reference internal" href="#asce16">ASCE16</a>]):</p>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-2">
-<span class="eqno">(2.4.3)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-2" title="Permalink to this equation">¶</a></span>\[V(600s, 10m, Exposure C) = V(600s, z_{g,C}, z_0) \times (\frac{10m}{z_g})^{1/\alpha_C}\]</div>
+<span class="eqno">(2.3.3)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-2" title="Permalink to this equation">¶</a></span>\[V(600s, 10m, Exposure C) = V(600s, z_{g,C}, z_0) \times (\frac{10m}{z_g})^{1/\alpha_C}\]</div>
 <ol class="arabic simple" start="4">
 <li><p>Converting the result to 3s-gust wind speed using the ESDU conversion [<a class="reference internal" href="#esdu02">ESDU02</a>]:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-hazard-characterization-3">
-<span class="eqno">(2.4.4)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-3" title="Permalink to this equation">¶</a></span>\[V(3s, 10m, Exposure C) = V(600s, 10m, Exposure C) \times \frac{C(3s)}{C(600s)}\]</div>
+<span class="eqno">(2.3.4)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-hazard-characterization-3" title="Permalink to this equation">¶</a></span>\[V(3s, 10m, Exposure C) = V(600s, 10m, Exposure C) \times \frac{C(3s)}{C(600s)}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C(3s) = 1.52\)</span> and <span class="math notranslate nohighlight">\(C(600s) = 1.05\)</span> are the Gust Factor from the ESDU conversion.</p>
 <p>Wind fields described by either approach are then locally interpolated to the site of each parcel in the inventory.
-The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.4.2</span></a>).
+The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.13</span></a>).
 Because the SPH model tracks the maximum wind speed over the entire hurricane time history - so the inland cities are subjected to
 slightly higher wind speed than the coastal cities.</p>
 <div class="align-center figure" id="pws" style="width: 1200px">
 <img alt="../../../_images/pws.png" src="../../../_images/pws.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.2 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.13 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="storm-surge-modeling">
-<h2><span class="section-number">2.4.2. </span>Storm Surge Modeling<a class="headerlink" href="#storm-surge-modeling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3.2. </span>Storm Surge Modeling<a class="headerlink" href="#storm-surge-modeling" title="Permalink to this headline">¶</a></h2>
 <p>Coastal hazard descriptions use the outputs of the aforementioned SHP Tool, which estimates storm
 surge and total run up due to the breaking of near-shore waves for an arbitrary hurricane scenario
 using surrogate modeling techniques (<a class="reference internal" href="#jia13" id="id1"><span>[Jia13]</span></a>, <a class="reference internal" href="#jia15" id="id2"><span>[Jia15]</span></a>). The SHP Tool
@@ -295,24 +294,24 @@ to estimate the depth of storm surge above ground, geospatially interpolated to 
 locations at approximately 120 m spacing, accompanied by the Limit of Moderate Wave Action
 (LiMWA) and wet-dry boundary respectively defining the extent of damaging waves and inundation
 over land at each of the transect points. These are then interpolated to the location of the coastal
-parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.4.3</span></a>). In the initial implementation, as demonstrated
+parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.14</span></a>). In the initial implementation, as demonstrated
 in this test, only the peak water depth (PWD) was considered, which will be used in the HAZUS
 Flood Damage and Loss Assessment.</p>
 <div class="align-center figure" id="pwd" style="width: 1200px">
 <img alt="../../../_images/pwd.png" src="../../../_images/pwd.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.3 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.14 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="multiple-category-analysis-mca">
-<h2><span class="section-number">2.4.3. </span>Multiple Category Analysis (MCA)<a class="headerlink" href="#multiple-category-analysis-mca" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3.3. </span>Multiple Category Analysis (MCA)<a class="headerlink" href="#multiple-category-analysis-mca" title="Permalink to this headline">¶</a></h2>
 <p>Note that the resulting 3s-gust PWS values by this Category-5 hurricane is much higher than
 the design wind speed specified by ASCE 7-16 (<a class="reference internal" href="#asce16" id="id6"><span>[ASCE16]</span></a>) for the Atlantic County which ranges
 from 105 mph to 115 mph. Since this extreme scenario bears a small likelihood, this testbed
 also scales the wind and flood water field down to lower categories to conduct the so-called
 Multiple Category Analysis to exam the building performance under different intense scenarios.
-The PWS and PWD were scaled to Categories 2, 3, and 4 as summarized in <a class="reference internal" href="#hurricane-cat"><span class="std std-numref">Table 2.4.1</span></a>.</p>
+The PWS and PWD were scaled to Categories 2, 3, and 4 as summarized in <a class="reference internal" href="#hurricane-cat"><span class="std std-numref">Table 2.3.1</span></a>.</p>
 <table class="docutils align-default" id="hurricane-cat">
-<caption><span class="caption-number">Table 2.4.1 </span><span class="caption-text">Scaled peak wind speed and peak water depth for different hurricane categories.</span><a class="headerlink" href="#hurricane-cat" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.3.1 </span><span class="caption-text">Scaled peak wind speed and peak water depth for different hurricane categories.</span><a class="headerlink" href="#hurricane-cat" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 34%" />
 <col style="width: 16%" />
