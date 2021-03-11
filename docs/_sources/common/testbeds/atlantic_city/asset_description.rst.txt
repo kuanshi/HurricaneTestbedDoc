@@ -11,6 +11,12 @@ is to demonstrate how an inventory could be constructed and not to address poten
 inaccuracies in the source data, i.e., source data are assumed to be accurate and no additional quality 
 assurance was conducted outside of addressing glaring omissions or errors.
 
+In the process of assembling this inventory, a number of scripts were developed to facilitate the actions 
+described in the following sections. While these scripts were not intended to be production-quality 
+software and were written assuming a particular data format/endpoint which may change over time, they 
+do provide an example of the type of operations necessary to assemble a building inventory and thus 
+are made available at GitHub as an illustrative example.
+
 Phase I: Attribute Definition
 ===============================
 
@@ -28,7 +34,7 @@ e.g., a number of attributes needed for loss estimation are populated during the
 
 .. _tab-bldgInventory:
 
-.. csv-table:: Building Inventory data model developed in this testbed.
+.. csv-table:: Building Inventory data model.
    :name: bldg_inv_dm
    :file: data/building_inventory_data_model_new.csv
    :header-rows: 1
@@ -89,7 +95,8 @@ Estimator (SDE) Tool (:numref:`tab-sdeAttri`).
 
 For the Atlantic County Inventory, any buildings not included in the NJDEP footprints had attributes encompassed 
 by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called **MODIV**) as defined in 
-the MODIV User Manual. This notably affected attributes such as OccupancyClass, BuildingType and FoundationType. 
+the MODIV User Manual. This notably affected attributes such as OccupancyClass, BuildingType and FoundationType, 
+whose rulesets (PDFs and Python scripts) are cross-referenced in Table 2.2.5. 
 In all cases where attributes were derived from MODIV data, whose fields can be sparsely populated, default 
 values were initially assigned to ensure that every footprint would have the attributes required to execute 
 the workflow. These default values were selected using engineering judgement to represent the most common/likely 
@@ -97,14 +104,32 @@ attribute expected or conservatively from the perspective of anticipated losses 
 vulnerable attribute option). These initial assignments are then updated if additional data is available in 
 **MODIV** to make a more faithful attribute assignment.
 
-Some attributes in the Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus 
+.. list-table:: Additional details for rulesets assigning attributes available only in NJDEP dataset
+   :name: addinfo_ruleset_njdep
+   :header-rows: 1
+   :align: center
+
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - Building Type Rulesets
+     - `Building Type Rulesets.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/MOD%20IV%20Transformations>`_
+     - :download:`BuildingTypeRulesets <data/BuildingTypeRulesets.py>`
+   * - Foundation Type Rulesets
+     - `Foundation Type Rulesets.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/MOD%20IV%20Transformations>`_
+     - :download:`FoundationTypeRulesets <data/FoundationTypeRulesets.py>`
+   * - Occupancy Type Rulesets
+     - `Occupancy Type Rulesets <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/MOD%20IV%20Transformations>`_
+     - :download:`OccupancyTypeRulesets <data/OccupancyTypeRulesets.py>`
+
+Some attributes in the Building Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus 
 remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data 
 from the following third-party sources:
 1. **Locations of essential facilities** were sourced from NJ Office of Information Technology (part of NJGIN Open Data [NJGIN20]_)
-2. **ATC Hazards** by Location API ([ATC20]_) is used to query Design Wind Speeds as defined in ASCE 7 
+2. **ATC Hazards** by Location API ([ATC20]_) was used to query Design Wind Speeds as defined in ASCE 7 
 3. **Terrain features** (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data [NJGIN20]_)
 
-See the Transformation and Detail columns in (:numref:`tab-bldgInventory`) for specifics of how each attribute 
+See the Transformation and Detail columns in the PDFs listed in :numref:`tab-bldgInventory` for specifics of how each attribute 
 was assigned using these various third-party data sources.
 
 Phase IV: Augmentation Using Image Processing
@@ -120,8 +145,16 @@ The methodology used for each of these attributes is now described.
                            of roof line), elevation of the roof (peak of gable or apex of hip), and height of top of 
                            floor as estimated from base of door’s height, all defined with respect to grade (in feet), 
                            were estimated from streetview imagery. These geometric properties are defined visually 
-                           for common residential coastal typologies in Figure 2.2.1. The mean height of the roof system 
-                           is then derived from the aforementioned roof elevations. 
+                           for common residential coastal typologies in :numref:`building_elevation`. The mean height of the roof system 
+                           is then derived from the aforementioned roof elevations.
+                            
+                           .. figure:: figure/building_elevation.png
+                              :name: building_elevation
+                              :align: center
+                              :figclass: align-center
+                              :figwidth: 1200
+
+                              Interpolated peak wind speed (3s-gust) for each asset in the inventory.
 3. **Roof Geometry**: Roof shape and slope are not available in state inventory data and required for wind loss 
                       modeling. The SimCenter developed application Building Recognition using Artificial 
                       Intelligence at Large Scales, BRAILS ([Wang19]_), is used to interpret satellite images 

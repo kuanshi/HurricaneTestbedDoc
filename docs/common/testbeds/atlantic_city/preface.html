@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.6. Response Simulation &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.1. Preface &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="2.7. Damage and Loss Estimation" href="damage_and_loss.html" />
-    <link rel="prev" title="2.5. Asset Representation" href="asset_representation.html" />
+    <link rel="next" title="2.2. Overview" href="overview.html" />
+    <link rel="prev" title="2. Atlantic County, NJ" href="index.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -121,17 +121,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Atlantic County, NJ</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="preface.html">2.1. Preface</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. Preface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html">2.2. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asset_description.html">2.3. Asset Description</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hazard_characterization.html">2.4. Hazard Characterization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="asset_representation.html">2.5. Asset Representation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.6. Response Simulation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#level-1">2.6.1. Level 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#level-2">2.6.2. Level 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#level-3">2.6.3. Level 3</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="response_simulation.html">2.6. Response Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">2.7. Damage and Loss Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">2.8. Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.9. Verification Results</a></li>
@@ -204,13 +199,13 @@
         
           <li><a href="index.html"><span class="section-number">2. </span>Atlantic County, NJ</a> &raquo;</li>
         
-      <li><span class="section-number">2.6. </span>Response Simulation</li>
+      <li><span class="section-number">2.1. </span>Preface</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../_sources/common/testbeds/atlantic_city/response_simulation.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/common/testbeds/atlantic_city/preface.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -223,25 +218,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="response-simulation">
-<span id="lbl-testbed-ac-response-simulation"></span><h1><span class="section-number">2.6. </span>Response Simulation<a class="headerlink" href="#response-simulation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="level-1">
-<h2><span class="section-number">2.6.1. </span>Level 1<a class="headerlink" href="#level-1" title="Permalink to this headline">¶</a></h2>
-<p>The initial implementation of the hurricane testbed is limited to
-consideration of wind and storm surge (i.e., flood) damage and losses.
-Further, the calculation of wind effects does not require structural analysis to estimate EDPs,
-but rather adopts an approach where damage and losses are calculated directly from the wind speed.
-Similarly, the flood-induced loss calculation is based on the peak water depth. More
-details are introduced in <a class="reference internal" href="damage_and_loss.html#lbl-testbed-ac-damage-and-loss"><span class="std std-ref">Damage and Loss Estimation</span></a>.</p>
-</div>
-<div class="section" id="level-2">
-<h2><span class="section-number">2.6.2. </span>Level 2<a class="headerlink" href="#level-2" title="Permalink to this headline">¶</a></h2>
-<p>To be extended in the future.</p>
-</div>
-<div class="section" id="level-3">
-<h2><span class="section-number">2.6.3. </span>Level 3<a class="headerlink" href="#level-3" title="Permalink to this headline">¶</a></h2>
-<p>To be extended in the future.</p>
-</div>
+  <div class="section" id="preface">
+<span id="lbl-testbed-ac-preface"></span><h1><span class="section-number">2.1. </span>Preface<a class="headerlink" href="#preface" title="Permalink to this headline">¶</a></h1>
+<p>This documentation is intended to introduce the implementation of the SimCenter’s hurricane regional loss
+modeling workflow in the context of Atlantic City (Atlantic County), New Jersey. While certain aspects of
+the workflow are unchanged in a given application context, this testbed specifically demonstrates how
+building inventories can be constructed through automated processes that fuse different data sources to
+enrich parcel data, using SimCenter applications and heuristic rulesets grounded in local codes/standards
+and normative construction practices. Given the significance of the building inventory generation for
+this testbed, this documentation was written in response to two primary audiences/use cases:</p>
+<p><strong>Case 1</strong>: End users who wish to use the testbed to explore specific research questions such as:
+1. the impact of different hurricane scenarios beyond those provided herein
+2. the potential benefits of various mitigation efforts (changing select attribute assignments and/or damage/loss descriptions)
+3. the benefits of more refined damage/loss models, particularly for coastal hazards</p>
+<p>Such individuals may not wish to generate their own inventories, but require some background in order
+to meaningfully interpret results. This documentation will enhance their understanding of the various
+assumptions made in generating these inventories and assigning the attributes required for the adopted
+loss models. Use Case 1 generally requires skill sets in <a class="reference internal" href="hazard_characterization.html#lbl-testbed-ac-hazard-characterization"><span class="std std-ref">Hazard Characterization</span></a> and
+<a class="reference internal" href="damage_and_loss.html#lbl-testbed-ac-damage-and-loss"><span class="std std-ref">Damage and Loss Estimation</span></a>.</p>
+<p><strong>Case 2</strong>: Users who seek to develop building inventories beyond Atlantic County, NJ will benefit from a
+deeper understanding of the techniques, rulesets and scripts used to generate this building inventory.
+In addition to the explanations that follow, this documentation is accompanied by detailed rulesets used
+for building and attribute assignment
+(<a class="reference external" href="https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/">SimCenter Hurricane Testbed: Inventory Documentation</a>),
+as well as their implementation as
+Python scripts (linked to GitHub repositories). These provide templates that such users can potentially
+refine, extend and replicate this testbed’s process for Building Inventory generation beyond the current
+application in Atlantic County. Use Case 2 generally requires skill sets in <a class="reference internal" href="asset_description.html#lbl-testbed-ac-asset-description"><span class="std std-ref">Asset Description</span></a>,
+<a class="reference internal" href="asset_representation.html#lbl-testbed-ac-asset-representation"><span class="std std-ref">Asset Representation</span></a>, and <a class="reference internal" href="damage_and_loss.html#lbl-testbed-ac-damage-and-loss"><span class="std std-ref">Damage and Loss Estimation</span></a>.</p>
+<p>Before running this testbed, users are advised to review the <strong>Computational Resources Requirements</strong> to ensure
+their hardware meets minimum specifications and to understand how to properly estimate the HPC resources
+necessary to execute these testbeds and factors influencing the run time.</p>
 </div>
 
 

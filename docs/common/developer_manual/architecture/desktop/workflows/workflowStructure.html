@@ -229,7 +229,7 @@
 <li><p><strong>Set up and run simulations for each building asset.</strong> From here, the workflow begins its iterative processes of running simulations for each building asset. The workflow runs two passes for each building asset: the supporting simulation files (from the <a class="reference internal" href="../applications/eventApps.html#lbleventapp"><span class="std std-ref">Event</span></a>, <a class="reference internal" href="../applications/modelingApps.html#lblmodelingapp"><span class="std std-ref">Modeling</span></a>, <a class="reference internal" href="../applications/EDPApps.html#lbledpapp"><span class="std std-ref">EDP</span></a>, and <a class="reference internal" href="../applications/simulationApps.html#lblsimulationapp"><span class="std std-ref">Simulation</span></a> Applications) are set up in the first pass, and the workflow commands are executed in the second pass. At the end of the iteration, simulation results are used to perform damage/loss assessment (<a class="reference internal" href="../applications/DLApps.html#lbldlapp"><span class="std std-ref">DL</span></a> Application). When run remotely on DesignSafe, this iterative process is parallelized across computing resources.</p></li>
 <li><p><strong>Aggregate outputs for all building assets.</strong> After iterating through simulations, the workflow aggregates the content of individual EDP.csv, DM.csv, and DV.csv results for every building asset into single output summary files (<a class="reference internal" href="../file-types/Outputs.html#lbloutputs"><span class="std std-ref">Outputs</span></a>).</p></li>
 </ol>
-<p>The structure of a general workflow is depicted in <a class="reference internal" href="#figbackendapps"><span class="std std-numref">Fig. 2.3.15</span></a> with the following keys:</p>
+<p>The structure of a general workflow is depicted in <a class="reference internal" href="#figbackendapps"><span class="std std-numref">Fig. 2.3.14</span></a> with the following keys:</p>
 <ul class="simple">
 <li><p>User-provided input files are shown in orange.</p></li>
 <li><p>Component applications are shown in blue. File dependencies for each component application are shown with arrows.</p></li>
@@ -239,7 +239,7 @@
 </ul>
 <div class="align-center figure" id="figbackendapps">
 <img alt="../../../../../_images/backendapps.png" src="../../../../../_images/backendapps.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.15 </span><span class="caption-text">Diagram of backend applications workflow.</span><a class="headerlink" href="#figbackendapps" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.14 </span><span class="caption-text">Diagram of backend applications workflow.</span><a class="headerlink" href="#figbackendapps" title="Permalink to this image">¶</a></p>
 </div>
 <p>To view the commands associated with each step of the workflow, refer to <a class="reference internal" href="readingTheLog.html#lblreadinglog"><span class="std std-ref">Reading the Log</span></a>.</p>
 </div>
