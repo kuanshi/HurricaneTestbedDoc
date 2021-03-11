@@ -575,8 +575,8 @@ the Flood-Exposed Inventory. This inventory was then extended to include other f
 boundaries. Microsoft (MS) Footprint Database was utilized as the primary source of Non-NJDEP footprint polygons.
 One observed shortcoming of the MS Footprint Database is it incorrectly lumps together the footprints of closely
 spaced buildings. This issue was resolved by a combination of manual inspections and applying a separate roof
-segmentation algorithm to the satellite images obtained for the buildings. This resulted in the Atlantic County
-Inventory.</p>
+segmentation algorithm to the satellite images obtained for the buildings. This resulted in the
+<strong>Atlantic County Inventory</strong>.</p>
 </div>
 <div class="section" id="phase-iii-augmentation-using-third-party-data">
 <h2><span class="section-number">2.3.3. </span>Phase III: Augmentation Using Third-Party Data<a class="headerlink" href="#phase-iii-augmentation-using-third-party-data" title="Permalink to this headline">¶</a></h2>
@@ -586,8 +586,8 @@ attributes necessary to conduct standard FEMA risk assessments. Specifically, al
 Basic Attributes (<a class="reference internal" href="#tab-basicattri"><span class="std std-numref">Table 2.3.2</span></a>). A subset of the data, including Atlantic County, had additional Advanced
 Attributes required by HAZUS User Defined Facilities (UDF) Module (<a class="reference internal" href="#tab-udfattri"><span class="std std-numref">Table 2.3.3</span></a>) and FEMA Substantial Damage
 Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span class="std std-numref">Table 2.3.4</span></a>).</p>
-<span id="tab-basicattri"></span><table class="docutils align-center" id="id6">
-<caption><span class="caption-number">Table 2.3.2 </span><span class="caption-text">NJDEP basic attributes available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<span id="tab-basicattri"></span><table class="docutils align-center" id="id8">
+<caption><span class="caption-number">Table 2.3.2 </span><span class="caption-text">NJDEP basic attributes available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -642,8 +642,8 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tr>
 </tbody>
 </table>
-<span id="tab-udfattri"></span><table class="docutils align-center" id="id7">
-<caption><span class="caption-number">Table 2.3.3 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<span id="tab-udfattri"></span><table class="docutils align-center" id="id9">
+<caption><span class="caption-number">Table 2.3.3 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -818,9 +818,9 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tbody>
 </table>
 <p>For the Atlantic County Inventory, any buildings not included in the NJDEP footprints had attributes encompassed
-by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called <strong>MODIV</strong>) as defined in
-the MODIV User Manual. This notably affected attributes such as OccupancyClass, BuildingType and FoundationType,
-whose rulesets (PDFs and Python scripts) are cross-referenced in Table 2.2.5.
+by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called <strong>MODIV</strong>) (<a class="reference internal" href="#modiv" id="id1"><span>[MODIV]</span></a>) as defined in
+the MODIV User Manual (<a class="reference internal" href="#modiv18" id="id2"><span>[MODIV18]</span></a>). This notably affected attributes such as OccupancyClass, BuildingType and FoundationType,
+whose rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-njdep"><span class="std std-numref">Table 2.3.5</span></a>.
 In all cases where attributes were derived from MODIV data, whose fields can be sparsely populated, default
 values were initially assigned to ensure that every footprint would have the attributes required to execute
 the workflow. These default values were selected using engineering judgement to represent the most common/likely
@@ -858,14 +858,14 @@ vulnerable attribute option). These initial assignments are then updated if addi
 <p>Some attributes in the Building Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus
 remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data
 from the following third-party sources:
-1. <strong>Locations of essential facilities</strong> were sourced from NJ Office of Information Technology (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id1"><span>[NJGIN20]</span></a>)
-2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="#atc20" id="id2"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7
-3. <strong>Terrain features</strong> (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id3"><span>[NJGIN20]</span></a>)</p>
+1. <strong>Locations of essential facilities</strong> were sourced from NJ Office of Information Technology (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id3"><span>[NJGIN20]</span></a>)
+2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="#atc20" id="id4"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7
+3. <strong>Terrain features</strong> (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id5"><span>[NJGIN20]</span></a>)</p>
 <p>See the Transformation and Detail columns in the PDFs listed in <a class="reference internal" href="#tab-bldginventory"><span class="std std-numref">Table 2.3.1</span></a> for specifics of how each attribute
 was assigned using these various third-party data sources.</p>
 </div>
 <div class="section" id="phase-iv-augmentation-using-image-processing">
-<h2><span class="section-number">2.3.4. </span>Phase IV: Augmentation Using Image Processing<a class="headerlink" href="#phase-iv-augmentation-using-image-processing" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-testbed-ac-asset-description-phase-iv"></span><h2><span class="section-number">2.3.4. </span>Phase IV: Augmentation Using Image Processing<a class="headerlink" href="#phase-iv-augmentation-using-image-processing" title="Permalink to this headline">¶</a></h2>
 <p>A number of required attributes pertaining to externally-visible features of the building were either not
 included in the NJDEP footprints or MODIV data or were included but warranted cross validation.
 The methodology used for each of these attributes is now described.</p>
@@ -878,24 +878,31 @@ floor as estimated from base of door’s height, all defined with respect to gra
 were estimated from streetview imagery. These geometric properties are defined visually
 for common residential coastal typologies in <a class="reference internal" href="#building-elevation"><span class="std std-numref">Fig. 2.3.13</span></a>. The mean height of the roof system
 is then derived from the aforementioned roof elevations.</p>
-<div class="align-center figure" id="building-elevation" style="width: 1200px">
+<div class="align-center figure" id="building-elevation" style="width: 1000px">
 <img alt="../../../_images/building_elevation.png" src="../../../_images/building_elevation.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.13 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.13 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image">¶</a></p>
 </div>
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
+<li><dl>
 <dt><strong>Roof Geometry</strong>: Roof shape and slope are not available in state inventory data and required for wind loss</dt><dd><p>modeling. The SimCenter developed application Building Recognition using Artificial
-Intelligence at Large Scales, BRAILS (<a class="reference internal" href="#wang19" id="id4"><span>[Wang19]</span></a>), is used to interpret satellite images
+Intelligence at Large Scales, BRAILS (<a class="reference internal" href="#wang19" id="id6"><span>[Wang19]</span></a>), is used to interpret satellite images
 of building roofs, which are collected from Google Maps. The satellite images are labeled
 with shape types to form a dataset, upon which a Convolutional Neural Network (CNN) is
 trained so that it can give rapid predictions of roof types when given new images of roofs.
-Microsoft Building Footprint data (<a class="reference internal" href="#microsoft2018" id="id5"><span>[Microsoft2018]</span></a>) is used as the location index when downloading images
+The footprint centroid (Latitude and Longitude in Building Inventory) is used as the
+location index when downloading images
 automatically from Google Maps. While more complex roof shapes could in theory be classified,
 the current use of HAZUS damage and loss functions required the use of similitude measures
-to define each roof as an “effective” gable, hip or flat geometry. Using BRAILS, this
-classification was achieved with approximately 85% accuracy based on validation studies.</p>
+to define each roof as an “effective” gable, hip or flat geometry (<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 2.3.14</span></a>). Using BRAILS, this
+classification was achieved with approximately 90.3% accuracy based on validation studies.
+The detailed validation process can be found in
+<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">BRAILS online documentation</a>.</p>
+<div class="align-center figure" id="roof-shape" style="width: 800px">
+<img alt="../../../_images/roof_shape.png" src="../../../_images/roof_shape.png" />
+<p class="caption"><span class="caption-number">Fig. 2.3.14 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="#wang19" id="id7"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
+</div>
 </dd>
 </dl>
 </li>
@@ -11142,18 +11149,57 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 </tr>
 </tbody>
 </table>
+<table class="docutils align-center" id="access-inventories">
+<caption><span class="caption-number">Table 2.3.8 </span><span class="caption-text">Summary of the three building inventories.</span><a class="headerlink" href="#access-inventories" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Inventory Name</p></th>
+<th class="head"><p>DesignSafe Document</p></th>
+<th class="head"><p>Number of Assets</p></th>
+<th class="head"><p>Typical Run Time</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Atlantic County Inventory</p></td>
+<td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets">Atlantic County Inventory.pdf</a></p></td>
+<td><p>100,697</p></td>
+<td><p>~ 1,500 CPU-Hour* (please see more details in <strong>Computational Resources Requirements</strong>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flood-Exposed Inventory</p></td>
+<td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets">Flood-Exposed Inventory.pdf</a></p></td>
+<td><p>32,828</p></td>
+<td><p>~ 440 CPU-Hour</p></td>
+</tr>
+<tr class="row-even"><td><p>Exploration Inventory</p></td>
+<td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets">Exploration Inventory.pdf</a></p></td>
+<td><p>1,000</p></td>
+<td><p>~ 12 CPU-Hour</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="citation">
-<dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id2">ATC20</a></span></dt>
+<dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id4">ATC20</a></span></dt>
 <dd><p>ATC (2020b), ATC Hazards By Location, <a class="reference external" href="https://hazards.atcouncil.org/">https://hazards.atcouncil.org/</a>, Applied Technology Council, Redwood City, CA.</p>
 </dd>
-<dt class="label" id="njgin20"><span class="brackets">NJGIN20</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<dt class="label" id="njgin20"><span class="brackets">NJGIN20</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>)</span></dt>
 <dd><p>NJ Geographic Information Network, State of New Jersey, <a class="reference external" href="https://njgin.nj.gov/njgin/#!/">https://njgin.nj.gov/njgin/#!/</a></p>
 </dd>
-<dt class="label" id="wang19"><span class="brackets"><a class="fn-backref" href="#id4">Wang19</a></span></dt>
+<dt class="label" id="wang19"><span class="brackets">Wang19</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id7">2</a>)</span></dt>
 <dd><p>Wang C. (2019), NHERI-SimCenter/SURF: v0.2.0 (Version v0.2.0). Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.3463676">http://doi.org/10.5281/zenodo.3463676</a></p>
 </dd>
-<dt class="label" id="microsoft2018"><span class="brackets"><a class="fn-backref" href="#id5">Microsoft2018</a></span></dt>
+<dt class="label" id="microsoft2018"><span class="brackets">Microsoft2018</span></dt>
 <dd><p>Microsoft (2018) US Building Footprints. <a class="reference external" href="https://github.com/Microsoft/USBuildingFootprints">https://github.com/Microsoft/USBuildingFootprints</a></p>
+</dd>
+<dt class="label" id="modiv"><span class="brackets"><a class="fn-backref" href="#id1">MODIV</a></span></dt>
+<dd><p>Parcels and MOD-IV of Atlantic County, NJ. NJGIN Open Data, <a class="reference external" href="https://njogis-newjersey.opendata.arcgis.com/datasets/680b02ff9b4348409a2f4ccd4c238215">https://njogis-newjersey.opendata.arcgis.com/datasets/680b02ff9b4348409a2f4ccd4c238215</a>.</p>
+</dd>
+<dt class="label" id="modiv18"><span class="brackets"><a class="fn-backref" href="#id2">MODIV18</a></span></dt>
+<dd><p>Department of the Treasury, State of New Jersey (2018), MOD IV User Manual. <a class="reference external" href="https://www.state.nj.us/treasury/taxation/pdf/lpt/modIVmanual.pdf">https://www.state.nj.us/treasury/taxation/pdf/lpt/modIVmanual.pdf</a></p>
 </dd>
 </dl>
 </div>

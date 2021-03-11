@@ -4,13 +4,14 @@
 Preface
 ********
 
-This documentation is intended to introduce the implementation of the SimCenter’s hurricane regional loss 
-modeling workflow in the context of Atlantic City (Atlantic County), New Jersey. While certain aspects of 
-the workflow are unchanged in a given application context, this testbed specifically demonstrates how 
-building inventories can be constructed through automated processes that fuse different data sources to 
-enrich parcel data, using SimCenter applications and heuristic rulesets grounded in local codes/standards 
-and normative construction practices. Given the significance of the building inventory generation for 
-this testbed, this documentation was written in response to two primary audiences/use cases:
+This documentation is intended to introduce the implementation of the SimCenter’s hurricane 
+regional loss modeling workflow in the context of Atlantic City (Atlantic County), New Jersey. 
+While certain aspects of the workflow are unchanged in a given application context, this 
+testbed specifically demonstrates how building inventories can be constructed through 
+automated processes that fuse different data sources to enrich parcel data, using SimCenter 
+applications and heuristic rulesets grounded in local codes/standards and normative 
+construction practices. Given the significance of the building inventory generation for this 
+testbed, this documentation was written in response to two primary audiences/use cases:
 
 **Case 1**: End users who wish to use the testbed to explore specific research questions such as:
 1. the impact of different hurricane scenarios beyond those provided herein
