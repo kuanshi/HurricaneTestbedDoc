@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.8. Verification Results &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.7. Verification Results &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="2.9. Opportunity Areas for Future Refinements" href="future_refinements.html" />
-    <link rel="prev" title="2.7. Uncertainty Quantification" href="uncertainty_quantification.html" />
+    <link rel="next" title="2.8. Best Practices" href="best_practices.html" />
+    <link rel="prev" title="2.6. Damage and Loss Estimation" href="damage_and_loss.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -127,15 +127,14 @@
 <li class="toctree-l2"><a class="reference internal" href="asset_representation.html">2.4. Asset Representation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="response_simulation.html">2.5. Response Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">2.6. Damage and Loss Estimation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">2.7. Uncertainty Quantification</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.8. Verification Results</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#building-inventory">2.8.1. Building Inventory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hand-calculation">2.8.2. Hand Calculation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wind-loss-by-building-class-and-year">2.8.3. Wind Loss by Building Class and Year</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. Verification Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#building-inventory">2.7.1. Building Inventory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hand-calculation">2.7.2. Hand Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wind-loss-by-building-class-and-year">2.7.3. Wind Loss by Building Class and Year</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.9. Opportunity Areas for Future Refinements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.10. Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.8. Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.9. Standard Wind Speed Conversions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../memphis/index.html">3. Memphis, TN</a></li>
@@ -203,7 +202,7 @@
         
           <li><a href="index.html"><span class="section-number">2. </span>Atlantic County, NJ</a> &raquo;</li>
         
-      <li><span class="section-number">2.8. </span>Verification Results</li>
+      <li><span class="section-number">2.7. </span>Verification Results</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -223,7 +222,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="verification-results">
-<span id="lbl-testbed-ac-sample-results"></span><h1><span class="section-number">2.8. </span>Verification Results<a class="headerlink" href="#verification-results" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-ac-sample-results"></span><h1><span class="section-number">2.7. </span>Verification Results<a class="headerlink" href="#verification-results" title="Permalink to this headline">¶</a></h1>
 <p>This page summarizes sample results from the testbed runs with three major focuses:</p>
 <ol class="arabic simple">
 <li><p>verifying the estimated loss ratios by hand-calculations,</p></li>
@@ -231,12 +230,12 @@
 <li><p>illustrating the influence of building properties on the hurricane loss using the observations from the sample results.</p></li>
 </ol>
 <div class="section" id="building-inventory">
-<h2><span class="section-number">2.8.1. </span>Building Inventory<a class="headerlink" href="#building-inventory" title="Permalink to this headline">¶</a></h2>
-<p>From the entire building inventory, 85 buildings (<a class="reference internal" href="#sample-table"><span class="std std-numref">Table 2.8.1.1</span></a>) are selected from 5 building
-classes and 8 built eras. <a class="reference internal" href="#scatter-matrix"><span class="std std-numref">Fig. 2.8.1.2</span></a> shows the data distributions of the built year, surface
+<h2><span class="section-number">2.7.1. </span>Building Inventory<a class="headerlink" href="#building-inventory" title="Permalink to this headline">¶</a></h2>
+<p>From the entire building inventory, 85 buildings (<a class="reference internal" href="#sample-table"><span class="std std-numref">Table 2.7.1.1</span></a>) are selected from 5 building
+classes and 8 built eras. <a class="reference internal" href="#scatter-matrix"><span class="std std-numref">Fig. 2.7.1.1</span></a> shows the data distributions of the built year, surface
 roughness, peak wind speed, and peak water depth.</p>
 <table class="docutils align-center" id="sample-table">
-<caption><span class="caption-number">Table 2.8.1.1 </span><span class="caption-text">Sampled building inventory</span><a class="headerlink" href="#sample-table" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.7.1.1 </span><span class="caption-text">Sampled building inventory</span><a class="headerlink" href="#sample-table" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 2%" />
 <col style="width: 2%" />
@@ -4595,34 +4594,34 @@ roughness, peak wind speed, and peak water depth.</p>
 </table>
 <div class="align-center figure" id="scatter-matrix" style="width: 100%">
 <img alt="../../../_images/ScatterMatrix.png" src="../../../_images/ScatterMatrix.png" />
-<p class="caption"><span class="caption-number">Fig. 2.8.1.2 </span><span class="caption-text">Scatter matrix of sampled buildings.</span><a class="headerlink" href="#scatter-matrix" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.7.1.1 </span><span class="caption-text">Scatter matrix of sampled buildings.</span><a class="headerlink" href="#scatter-matrix" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="hand-calculation">
-<h2><span class="section-number">2.8.2. </span>Hand Calculation<a class="headerlink" href="#hand-calculation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7.2. </span>Hand Calculation<a class="headerlink" href="#hand-calculation" title="Permalink to this headline">¶</a></h2>
 <p>Hand calculations of wind, flood, and combined losses are conducted using the
 input building information and intensity measures for the sampled buildings.
 The calculations are made for all the four hurricane categories:</p>
-<p><a class="reference internal" href="#hand-calc"><span class="std std-numref">Fig. 2.8.2.1</span></a> compares the hand-calculated loss ratios and the simulated
+<p><a class="reference internal" href="#hand-calc"><span class="std std-numref">Fig. 2.7.2.1</span></a> compares the hand-calculated loss ratios and the simulated
 results which are in good agreement. The finite differences seen in the flood loss ratios
 are due to the random sampling process in estimating the expected loss ratios.</p>
 <div class="align-center figure" id="hand-calc" style="width: 100%">
 <img alt="../../../_images/SimuVSHandCalc.png" src="../../../_images/SimuVSHandCalc.png" />
-<p class="caption"><span class="caption-number">Fig. 2.8.2.1 </span><span class="caption-text">Hand-calculated results vs. simulated results.</span><a class="headerlink" href="#hand-calc" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.7.2.1 </span><span class="caption-text">Hand-calculated results vs. simulated results.</span><a class="headerlink" href="#hand-calc" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="wind-loss-by-building-class-and-year">
-<h2><span class="section-number">2.8.3. </span>Wind Loss by Building Class and Year<a class="headerlink" href="#wind-loss-by-building-class-and-year" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7.3. </span>Wind Loss by Building Class and Year<a class="headerlink" href="#wind-loss-by-building-class-and-year" title="Permalink to this headline">¶</a></h2>
 <p>To understand the driving factors that influence the regional loss assessment results.
 The 85 sampled buildings are grouped into five building classes and the average wind loss values
-are computed (<a class="reference internal" href="#wind-loss-bt"><span class="std std-numref">Fig. 2.8.3.1</span></a>). Regardless of the hurricane category, concrete, steel,
+are computed (<a class="reference internal" href="#wind-loss-bt"><span class="std std-numref">Fig. 2.7.3.1</span></a>). Regardless of the hurricane category, concrete, steel,
 and masonry buildings perform better than wood buildings and manufactured homes on average.</p>
 <div class="align-center figure" id="wind-loss-bt" style="width: 100%">
 <img alt="../../../_images/WindLossBuildingType.png" src="../../../_images/WindLossBuildingType.png" />
-<p class="caption"><span class="caption-number">Fig. 2.8.3.1 </span><span class="caption-text">Average expected wind losses by building class.</span><a class="headerlink" href="#wind-loss-bt" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.7.3.1 </span><span class="caption-text">Average expected wind losses by building class.</span><a class="headerlink" href="#wind-loss-bt" title="Permalink to this image">¶</a></p>
 </div>
 <p>To further investigate the influence of built year on the wind loss of wood buildings,
-<a class="reference internal" href="#wind-loss-yr"><span class="std std-numref">Fig. 2.8.3.2</span></a> shows the estimated expected wind loss ratios by the year of built.
+<a class="reference internal" href="#wind-loss-yr"><span class="std std-numref">Fig. 2.7.3.2</span></a> shows the estimated expected wind loss ratios by the year of built.
 Coupled with the hurricane category effect, in the Category 5 hurricane, the built year does not
 show as a driving factor, but in the other three scenarios, the wind losses are shown to be
 related to the built year. The worst cases are seen in 1970s and 1980s, while the building in the
@@ -4630,7 +4629,7 @@ past two decades perform much better than the other groups.  Note that this
 comparison is made for the limited sample size in this verification study.</p>
 <div class="align-center figure" id="wind-loss-yr" style="width: 100%">
 <img alt="../../../_images/WoodBuildingWindLoss.png" src="../../../_images/WoodBuildingWindLoss.png" />
-<p class="caption"><span class="caption-number">Fig. 2.8.3.2 </span><span class="caption-text">Average expected wind losses of wood buildings by built year.</span><a class="headerlink" href="#wind-loss-yr" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.7.3.2 </span><span class="caption-text">Average expected wind losses of wood buildings by built year.</span><a class="headerlink" href="#wind-loss-yr" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
