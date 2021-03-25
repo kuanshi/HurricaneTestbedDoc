@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>FEM: Finite Element Method &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.5. FEM: Finite Element Method &mdash; Earthquake Engineering with Uncertainty Quantification (EE-UQ)  documentation</title>
   
 
   
@@ -44,6 +44,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="2.6. EDP: Demand Parameters" href="response/EDP.html" />
+    <link rel="prev" title="2.4.5. Site Response Analysis" href="earthquake/usageS3hark.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -71,7 +73,7 @@
 
 
   
-  <img src="../../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+  <img src="../../../../_static/EE-UQ-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -102,26 +104,30 @@
             
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/EEUQ/about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response/EDP.html">2.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.7. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response/resEE.html">2.8. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Testbeds</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">4. Lake Charles, LA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements/EEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -134,7 +140,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -150,7 +155,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../../index.html">Regional Resilience Determination Tool</a>
+          <a href="../../../../index.html">Earthquake Engineering with Uncertainty Quantification (EE-UQ)</a>
         
       </nav>
 
@@ -183,7 +188,9 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>FEM: Finite Element Method</li>
+          <li><a href="usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">2.5. </span>FEM: Finite Element Method</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,7 +210,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fem-finite-element-method">
-<span id="lblfem"></span><h1>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
+<span id="lblfem"></span><h1><span class="section-number">2.5. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
 <p>The <strong>FEM</strong> tab will present users with a selection of FEM
 applications that will take a building model generated by the BIM
 application and the EVENT from the event application and perform a
@@ -212,10 +219,10 @@ deterministic simulation of structural response. The default application is the 
 files and use OpenSees to simulate the response, and return it in an EDP file.</p>
 <div class="align-center figure" id="id1">
 <span id="figfem"></span><img alt="../../../../_images/OpenSeesFEM.png" src="../../../../_images/OpenSeesFEM.png" />
-<p class="caption"><span class="caption-text">Options for OpenSees.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.5.1 </span><span class="caption-text">Options for OpenSees.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>For the <strong>OpenSees</strong> application the user is required to specify the
-options to be used in the transient analysis. As shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figFEM</span></code>,
+options to be used in the transient analysis. As shown in <a class="reference internal" href="#figfem"><span class="std std-numref">Fig. 2.5.1</span></a>,
 this includes the choice of:</p>
 <blockquote>
 <div><ol class="arabic">
@@ -231,7 +238,7 @@ this includes the choice of:</p>
 </ol>
 <div class="align-center figure" id="id2">
 <img alt="../../../../_images/OpenSeesFEM-Modal.png" src="../../../../_images/OpenSeesFEM-Modal.png" />
-<p class="caption"><span class="caption-text">Modal Damping Options for OpenSees</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.5.2 </span><span class="caption-text">Modal Damping Options for OpenSees</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -267,7 +274,7 @@ are obtained from the EVENT and are automatically set by the program.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, The Regents of the University of California.
+        &#169; Copyright 2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -305,7 +312,7 @@ are obtained from the EVENT and are automatically set by the program.</p>
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', '...', 'auto');
+    ga('create', 'UA-158130480-1', 'auto');
     
     ga('send', 'pageview');
     </script>

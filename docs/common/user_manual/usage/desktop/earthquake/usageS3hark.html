@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Site Response Analysis &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.4.5. Site Response Analysis &mdash; Earthquake Engineering with Uncertainty Quantification (EE-UQ)  documentation</title>
   
 
   
@@ -44,6 +44,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.5. FEM: Finite Element Method" href="../FEM.html" />
+    <link rel="prev" title="2.4.4. Multiple Existing" href="multipleExisting.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -71,7 +73,7 @@
 
 
   
-  <img src="../../../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+  <img src="../../../../../_static/EE-UQ-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -102,26 +104,52 @@
             
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/EEUQ/about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="earthquakeEvents.html">2.4. EVT: Earthquake Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticGroundMotion.html">2.4.1. Stochastic Ground Motions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="peerNGA.html">2.4.2. PEER NGA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiplePEER.html">2.4.3. Multiple PEER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multipleExisting.html">2.4.4. Multiple Existing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.5. Site Response Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#soil-column-graphic">2.4.5.1. Soil Column Graphic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fe-mesh-graphic">2.4.5.2. FE Mesh Graphic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operations-area">2.4.5.3. Operations Area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#soil-layer-table">2.4.5.4. Soil Layer Table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tabbed-area">2.4.5.5. Tabbed Area</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#analyze-button">2.4.5.6. Analyze Button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#view-results">2.4.5.7. View Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configure">2.4.5.8. Configure</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modeling-spatial-variability-uncertainty-of-soil">2.4.6. Modeling Spatial Variability Uncertainty of Soil</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#generating-gaussian-random-field">2.4.6.1. Generating Gaussian Random field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calibration-of-constitutive-model">2.4.6.2. Calibration of Constitutive Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.7. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/resEE.html">2.8. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Testbeds</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/lake_charles/index.html">4. Lake Charles, LA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../requirements/EEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -134,7 +162,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
@@ -150,7 +177,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../../../index.html">Regional Resilience Determination Tool</a>
+          <a href="../../../../../index.html">Earthquake Engineering with Uncertainty Quantification (EE-UQ)</a>
         
       </nav>
 
@@ -183,7 +210,11 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Site Response Analysis</li>
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="earthquakeEvents.html"><span class="section-number">2.4. </span>EVT: Earthquake Events</a> &raquo;</li>
+        
+      <li><span class="section-number">2.4.5. </span>Site Response Analysis</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,37 +234,37 @@
            <div itemprop="articleBody">
             
   <div class="section" id="site-response-analysis">
-<span id="lbl-usages3hark"></span><h1>Site Response Analysis<a class="headerlink" href="#site-response-analysis" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-usages3hark"></span><h1><span class="section-number">2.4.5. </span>Site Response Analysis<a class="headerlink" href="#site-response-analysis" title="Permalink to this headline">¶</a></h1>
 <p><em>s</em><sup>3</sup><em>hark</em> allows users to determine the event at the base of the building by performing an effective free-field site response analysis of a soil column.
 In this panel the user specifies a ground motion at the bottom of the soil column.
 After the soil layers have been properly defined, the motion at the ground surface are given at the end of the analysis
 and that motion can be used in the simulation of the building response.</p>
-<p>The full user graphic interface looks like what is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">ui</span></code></p>
+<p>The full user graphic interface looks like what is shown in <a class="reference internal" href="#ui"><span class="std std-numref">Fig. 2.4.5.1</span></a></p>
 <div class="align-center figure" id="id20">
 <span id="ui"></span><img alt="../../../../../_images/editing.png" src="../../../../../_images/editing.png" />
-<p class="caption"><span class="caption-text">Full Graphic Interface</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.1 </span><span class="caption-text">Full Graphic Interface</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <p>Clicking the arrow between the <a class="reference internal" href="#profilecolumn"><span class="std std-ref">Soil Column Graphic</span></a> and the <a class="reference internal" href="#mesh"><span class="std std-ref">FE Mesh Graphic</span></a> will hide the FE Mesh Graphic,
-which makes the UI look like what is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">ui2</span></code>.</p>
+which makes the UI look like what is shown in <a class="reference internal" href="#ui2"><span class="std std-numref">Fig. 2.4.5.2</span></a>.</p>
 <div class="align-center figure" id="id21">
 <span id="ui2"></span><img alt="../../../../../_images/editing2.png" src="../../../../../_images/editing2.png" />
-<p class="caption"><span class="caption-text">Collapse Graphic Interface</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.2 </span><span class="caption-text">Collapse Graphic Interface</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>The UI of <em>s</em><sup>3</sup><em>hark</em> consists of the following components:</p>
 <div class="section" id="soil-column-graphic">
-<span id="profilecolumn"></span><h2>Soil Column Graphic<a class="headerlink" href="#soil-column-graphic" title="Permalink to this headline">¶</a></h2>
+<span id="profilecolumn"></span><h2><span class="section-number">2.4.5.1. </span>Soil Column Graphic<a class="headerlink" href="#soil-column-graphic" title="Permalink to this headline">¶</a></h2>
 <p>The first graphic on the left of the panel shows a visualization of the soil column created.
 Each layer has a different randomly generated color.
 When the user add or delete a soil layer, this graphic will refresh.</p>
 </div>
 <div class="section" id="fe-mesh-graphic">
-<span id="mesh"></span><h2>FE Mesh Graphic<a class="headerlink" href="#fe-mesh-graphic" title="Permalink to this headline">¶</a></h2>
+<span id="mesh"></span><h2><span class="section-number">2.4.5.2. </span>FE Mesh Graphic<a class="headerlink" href="#fe-mesh-graphic" title="Permalink to this headline">¶</a></h2>
 <p>The second graphic on the left shows the finite element mesh and profile plots.
 Upon the finish of the analysis, selecting any of the tabs on the right inside this graphic (i.e., PGA, <span class="math notranslate nohighlight">\(\gamma max\)</span>, maxDisp, maxRu, maxRuPWP)
 will show various results from the simulation at the mesh points.</p>
 </div>
 <div class="section" id="operations-area">
-<h2>Operations Area<a class="headerlink" href="#operations-area" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.3. </span>Operations Area<a class="headerlink" href="#operations-area" title="Permalink to this headline">¶</a></h2>
 <p>The right side of this area shows some information of the created soil column, such as the total height and number of soil layers.
 The user also finds the Ground Water Table (GWT) input field, plus and minus buttons in this area.
 If the user pressed the plus button, a layer will be added below a currently selected layer.
@@ -247,7 +278,7 @@ The GWT input field allows the user to specify the level of the ground water tab
 </div>
 </div>
 <div class="section" id="soil-layer-table">
-<h2>Soil Layer Table<a class="headerlink" href="#soil-layer-table" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.4. </span>Soil Layer Table<a class="headerlink" href="#soil-layer-table" title="Permalink to this headline">¶</a></h2>
 <p>This table is where the user provides the characteristics of soil layers, such as layer thickness, density, Vs30, material type, and element size in the finite element mesh.</p>
 <p>Single click at a cell will make a soil layer selected, which will highlight the layer using green color in the table.</p>
 <p>Also the layer will be highlighted by red box in the <a class="reference internal" href="#profilecolumn"><span class="std std-ref">Soil Column Graphic</span></a>.</p>
@@ -256,7 +287,7 @@ The GWT input field allows the user to specify the level of the ground water tab
 <p>If you change the <code class="docutils literal notranslate"><span class="pre">Material</span></code> cell of a layer, the <a class="reference internal" href="#layerpropertiestab"><span class="std std-ref">Layer Properties Tab</span></a> will change correspondingly.</p>
 </div>
 <div class="section" id="tabbed-area">
-<h2>Tabbed Area<a class="headerlink" href="#tabbed-area" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.5. </span>Tabbed Area<a class="headerlink" href="#tabbed-area" title="Permalink to this headline">¶</a></h2>
 <p>This area contains the three tabbed widgets described below.</p>
 <div class="section" id="configure-tab">
 <h3>Configure Tab<a class="headerlink" href="#configure-tab" title="Permalink to this headline">¶</a></h3>
@@ -267,45 +298,45 @@ Examples of SimCenter event files are available in the <a class="reference downl
 When a ground motion file is selected from the local computer, or the path of the ground motion file is typed in,
 <em>s</em><sup>3</sup><em>hark</em> will figure out if it’s a 1D or 2D shaking file. If it’s 1D shaking, all elements will be 2D. If it’s 2D shaking,
 all elements will be 3D.
-The definition of 2D and 3D slope are different. See <code class="xref std std-numref docutils literal notranslate"><span class="pre">slope-2d</span></code> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">slope-3d</span></code>.</p>
+The definition of 2D and 3D slope are different. See <a class="reference internal" href="#slope-2d"><span class="std std-numref">Fig. 2.4.5.8.2</span></a> and <a class="reference internal" href="#slope-3d"><span class="std std-numref">Fig. 2.4.5.8.4</span></a>.</p>
 <p>More details about this tab can be found in <a class="reference internal" href="#configure"><span class="std std-ref">Configure</span></a>.</p>
 </div>
 <div class="section" id="layer-properties-tab">
 <span id="layerpropertiestab"></span><h3>Layer Properties Tab<a class="headerlink" href="#layer-properties-tab" title="Permalink to this headline">¶</a></h3>
-<p>This tab allows the user to enter additional material properties for the selected soil layer <code class="xref std std-numref docutils literal notranslate"><span class="pre">layerEditing</span></code>.</p>
+<p>This tab allows the user to enter additional material properties for the selected soil layer <a class="reference internal" href="#layerediting"><span class="std std-numref">Fig. 2.4.5.5.1</span></a>.</p>
 <div class="align-center figure" id="id22">
 <span id="layerediting"></span><img alt="../../../../../_images/editing.png" src="../../../../../_images/editing.png" />
-<p class="caption"><span class="caption-text">Layer properties</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.5.1 </span><span class="caption-text">Layer properties</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="response-tab">
 <span id="responsetab"></span><h3>Response Tab<a class="headerlink" href="#response-tab" title="Permalink to this headline">¶</a></h3>
-<p>Once the site response analysis has been performed, this tab provides information about element and nodal time varying response quantities. See <code class="xref std std-numref docutils literal notranslate"><span class="pre">response</span></code>.</p>
+<p>Once the site response analysis has been performed, this tab provides information about element and nodal time varying response quantities. See <a class="reference internal" href="#response"><span class="std std-numref">Fig. 2.4.5.5.2</span></a>.</p>
 <div class="align-center figure" id="id23">
 <span id="response"></span><img alt="../../../../../_images/response.png" src="../../../../../_images/response.png" />
-<p class="caption"><span class="caption-text">Response</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.5.2 </span><span class="caption-text">Response</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="analyze-button">
-<h2>Analyze Button<a class="headerlink" href="#analyze-button" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.6. </span>Analyze Button<a class="headerlink" href="#analyze-button" title="Permalink to this headline">¶</a></h2>
 <p>This <strong>Analyze</strong> button is located at the top-right corner of the UI and shall be used to run the simulation locally on your computer.
 A progress bar will show up at the bottom of the application indicating the status of the analysis.
-Upon the finish of the simulation, a message will be displayed (<code class="xref std std-numref docutils literal notranslate"><span class="pre">done</span></code>).</p>
+Upon the finish of the simulation, a message will be displayed (<a class="reference internal" href="#done"><span class="std std-numref">Fig. 2.4.5.6.1</span></a>).</p>
 <div class="align-center figure" id="id24">
 <span id="done"></span><img alt="../../../../../_images/analysis.png" src="../../../../../_images/analysis.png" />
-<p class="caption"><span class="caption-text">Analysis is done</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.6.1 </span><span class="caption-text">Analysis is done</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="view-results">
-<h2>View Results<a class="headerlink" href="#view-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.5.7. </span>View Results<a class="headerlink" href="#view-results" title="Permalink to this headline">¶</a></h2>
 <p>Click the button to dismiss the message window, the response tab will be activated.</p>
 <p>The user can click on any element in the mesh graphic, the selected element will be highlighted in red and the selected nodes will be pointed out by blue arrows.</p>
 <p>The time history of selected element / node will be shown in the <a class="reference internal" href="#responsetab"><span class="std std-ref">Response Tab</span></a>.</p>
-<p>This allows the user to review the ground motion predicted at selected nodes <code class="xref std std-numref docutils literal notranslate"><span class="pre">responseNode</span></code>.</p>
+<p>This allows the user to review the ground motion predicted at selected nodes <a class="reference internal" href="#responsenode"><span class="std std-numref">Fig. 2.4.5.7.1</span></a>.</p>
 <div class="align-center figure" id="id25">
 <span id="responsenode"></span><img alt="../../../../../_images/noderesponse.png" src="../../../../../_images/noderesponse.png" />
-<p class="caption"><span class="caption-text">Response at a selected node</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.7.1 </span><span class="caption-text">Response at a selected node</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -316,10 +347,10 @@ therefore no simulation is performed and there will be no ground motions provide
 </div>
 </div>
 <div class="section" id="configure">
-<span id="id1"></span><h2>Configure<a class="headerlink" href="#configure" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><span class="section-number">2.4.5.8. </span>Configure<a class="headerlink" href="#configure" title="Permalink to this headline">¶</a></h2>
 <div class="align-center figure" id="id26">
 <span id="configure-1d"></span><img alt="../../../../../_images/configure-1d.png" src="../../../../../_images/configure-1d.png" />
-<p class="caption"><span class="caption-text">Configuration with a 1D shaking motion</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.8.1 </span><span class="caption-text">Configuration with a 1D shaking motion</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the configure tab, two paths need to be specified.</p>
 <p>You can either type them or click the ‘+’ button to select them from your computer.</p>
@@ -332,63 +363,63 @@ If you don’t have a ground motion file, demos can be downloaded <a class="refe
 </ul>
 </div>
 <p>The first demo is SRT-GM-Input-Style3.json, which contains the shaking motion in one direction (1D shaking).
-If you select this files as the input motion, your tab will look like the one shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">configure-1d</span></code>.
+If you select this files as the input motion, your tab will look like the one shown in <a class="reference internal" href="#configure-1d"><span class="std std-numref">Fig. 2.4.5.8.1</span></a>.
 You can edit the slope degree <span class="math notranslate nohighlight">\(\alpha\)</span>. For flat ground the value should be set as 0.
 If 1D shaking motion provided, <em>s</em><sup>3</sup><em>hark</em> automatically treat the problem as a 2D plane strain problem.
-2D elements will be used. The slope diagram is plotted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">slope-2d</span></code>.</p>
+2D elements will be used. The slope diagram is plotted in <a class="reference internal" href="#slope-2d"><span class="std std-numref">Fig. 2.4.5.8.2</span></a>.</p>
 <div class="align-center figure" id="id27">
 <span id="slope-2d"></span><img alt="../../../../../_images/slope2d.png" src="../../../../../_images/slope2d.png" />
-<p class="caption"><span class="caption-text">Slope definition for 2D Column</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.8.2 </span><span class="caption-text">Slope definition for 2D Column</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>The second demo is SRT-GM-Input-Style3-2D.json, which contains the shaking motion in two directions (2D shaking).
-If you select this file as the input motion, your tab will look like the one shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">configure-2d</span></code>.</p>
+If you select this file as the input motion, your tab will look like the one shown in <a class="reference internal" href="#configure-2d"><span class="std std-numref">Fig. 2.4.5.8.3</span></a>.</p>
 <div class="align-center figure" id="id28">
 <span id="configure-2d"></span><img alt="../../../../../_images/configure-2d.png" src="../../../../../_images/configure-2d.png" />
-<p class="caption"><span class="caption-text">Configuration with a bi-directional shaking motion</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.8.3 </span><span class="caption-text">Configuration with a bi-directional shaking motion</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <p>You can see <em>s</em><sup>3</sup><em>hark</em> detected the file you provided is a 2D shaking,
 <em>s</em><sup>3</sup><em>hark</em> automatically treat the problem as a 3D problem.
-3D elements will be used. The slope diagram is plotted in <code class="xref std std-numref docutils literal notranslate"><span class="pre">slope-3d</span></code>:</p>
+3D elements will be used. The slope diagram is plotted in <a class="reference internal" href="#slope-3d"><span class="std std-numref">Fig. 2.4.5.8.4</span></a>:</p>
 <div class="align-center figure" id="id29">
 <span id="slope-3d"></span><img alt="../../../../../_images/slope3d.png" src="../../../../../_images/slope3d.png" />
-<p class="caption"><span class="caption-text">Slope definition for 3D Column</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.8.4 </span><span class="caption-text">Slope definition for 3D Column</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <p>For flat ground <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> should be set as 0.</p>
 </div>
 </div>
 <div class="section" id="modeling-spatial-variability-uncertainty-of-soil">
-<h1>Modeling Spatial Variability Uncertainty of Soil<a class="headerlink" href="#modeling-spatial-variability-uncertainty-of-soil" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.4.6. </span>Modeling Spatial Variability Uncertainty of Soil<a class="headerlink" href="#modeling-spatial-variability-uncertainty-of-soil" title="Permalink to this headline">¶</a></h1>
 <p>The most recent version of <em>s</em><sup>3</sup><em>hark</em> allows user to include spatial variability in the definition of soil profile.
 This functionality is achieved using several newly added SimCenter backend python scripts.</p>
 <div class="section" id="generating-gaussian-random-field">
-<h2>Generating Gaussian Random field<a class="headerlink" href="#generating-gaussian-random-field" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.6.1. </span>Generating Gaussian Random field<a class="headerlink" href="#generating-gaussian-random-field" title="Permalink to this headline">¶</a></h2>
 <p>Physical properties of soils vary from place to place within a soil deposit due to varying geologic formation
 and loading histories such as sedimentation, erosion, transportation, and weathering processes.
 This spatial variability in the soil properties cannot be simply described by a mean and variance since
 the estimation of the two statistic values does not account for the spatial variation of the soil property
 data in the soil profile. Spatial variability is often modeled using two separated components: a known deterministic
-trend and a residual variability about the trend. These components are illustrated in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig_InherentVariability</span></code>.</p>
+trend and a residual variability about the trend. These components are illustrated in <a class="reference internal" href="#fig-inherentvariability"><span class="std std-numref">Fig. 2.4.6.1.1</span></a>.</p>
 <div class="align-center figure" id="id30">
-<span id="fig-inherentvariability"></span><a class="reference internal image-reference" href="../../../../../_images/InherentVariability.png"><img alt="../../../../../_images/InherentVariability.png" src="../../../../../_images/InherentVariability.png" style="width: 433.8px; height: 409.2px;" /></a>
-<p class="caption"><span class="caption-text">Inherent soil variability (after <a class="bibtex reference internal" href="../../../../../index.html#phoon1999" id="id2">[PK99]</a>).</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<span id="fig-inherentvariability"></span><a class="reference internal image-reference" href="../../../../../_images/InherentVariability1.png"><img alt="../../../../../_images/InherentVariability1.png" src="../../../../../_images/InherentVariability1.png" style="width: 433.8px; height: 409.2px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.6.1.1 </span><span class="caption-text">Inherent soil variability (after <a class="bibtex reference internal" href="../../../../../index.html#phoon1999" id="id2">[PK99]</a>).</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>This simplified spatial variability proposed by <a class="bibtex reference internal" href="../../../../../index.html#phoon1999" id="id3">[PK99]</a> can be expressed as,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-0">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-0" title="Permalink to this equation">¶</a></span>\[\xi (z) = t(z) \; + \; w(z)\,,\]</div>
+<span class="eqno">(2.4.6.1.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-0" title="Permalink to this equation">¶</a></span>\[\xi (z) = t(z) \; + \; w(z)\,,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\xi(z)\)</span> = soil property at location <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(t(z)\)</span> = deterministic trend at <span class="math notranslate nohighlight">\(z\)</span>, and <span class="math notranslate nohighlight">\(w(z)\)</span> =
 residual variation. The trend is a smooth deterministic function that can be obtained from a regression analysis of measured data.
 The residuals are characterized statistically as random variables, usually with zero mean and non-zero variance.
 The pattern of the residuals depends on the local spatial variability of a property. The residual about a trend
 does not change erratically in a probabilistically independent way. Rather, similar property values (positive or
 negative residuals around a trend) occur together in adjacent locations characterizing the scale of fluctuation
-(or wave length of a residual along the trend) as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig_InherentVariability</span></code>.</p>
+(or wave length of a residual along the trend) as shown in <a class="reference internal" href="#fig-inherentvariability"><span class="std std-numref">Fig. 2.4.6.1.1</span></a>.</p>
 <p>Gaussian stochastic random fields are generated for the liquefiable soil layer by randomizing the assigned
 soil strength parameter over the soil layers with a certain spatial probability density.
 <a class="bibtex reference internal" href="../../../../../index.html#shin2007" id="id4">[Shi07]</a> introduced a procedure for generating stochastic random field based on the method outlined in
 <a class="bibtex reference internal" href="../../../../../index.html#yamazaki1988" id="id5">[YS88]</a> considering uncertainties in soil properties. As explained earlier, the stochastic random
 field for a soil property consists of a trend (or mean) field and a residual field,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-1">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-1" title="Permalink to this equation">¶</a></span>\[F_{stochastic} = F_{trend} \; + \; F_{residual} \,.\]</div>
+<span class="eqno">(2.4.6.1.2)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-1" title="Permalink to this equation">¶</a></span>\[F_{stochastic} = F_{trend} \; + \; F_{residual} \,.\]</div>
 <p>The trend field (<span class="math notranslate nohighlight">\(t(z)\)</span>) represents the deterministic mean field assigned by the user. To obtain the
 residual field (<span class="math notranslate nohighlight">\(w(z)\)</span>), a Gaussian random field can be generated using the algorithm proposed by <a class="bibtex reference internal" href="../../../../../index.html#yamazaki1988" id="id6">[YS88]</a>.
 A normal distribution with coefficient of variation, <em>COV</em>, is required. The scale of fluctuation is defined by corelation
@@ -402,7 +433,7 @@ Enumerated lists:</p>
 <li><p>Combine the mean field and Gaussian field to obtain a stochastic field using the following equation:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-2">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-2" title="Permalink to this equation">¶</a></span>\[F_{stochastic} = F_{mean} \; + \; F_{residual} \, = F_{mean} \; + \; COV \; F_{mean} \; F_{Gaussian}\,\]</div>
+<span class="eqno">(2.4.6.1.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-2" title="Permalink to this equation">¶</a></span>\[F_{stochastic} = F_{mean} \; + \; F_{residual} \, = F_{mean} \; + \; COV \; F_{mean} \; F_{Gaussian}\,\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -411,7 +442,7 @@ Enumerated lists:</p>
 </div>
 </div>
 <div class="section" id="calibration-of-constitutive-model">
-<h2>Calibration of Constitutive Model<a class="headerlink" href="#calibration-of-constitutive-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.6.2. </span>Calibration of Constitutive Model<a class="headerlink" href="#calibration-of-constitutive-model" title="Permalink to this headline">¶</a></h2>
 <p>Since soil properties, instead of material input parameters, are randomized, it is imperative to choose representative input parameters for constitutive models based on the random variable chosen by user.
 An independent calibration process of constitutive model should be carried out carefully. Currently, a couple of pre-calibrated correlations are included in <em>s</em><sup>3</sup><em>hark</em>, including PM4Sand and PDMY03 based on relative
 density (<span class="math notranslate nohighlight">\(D_R\)</span>). The detailed corelation can be found in <em>calibration.py</em>. The user is also encouraged to modify the script to include their own calibration of constitutive models.</p>
@@ -454,17 +485,17 @@ can result in different modulus reduction curves.</p>
 <p>On the other hand, when comprehensive laboratory tests are not available for specific sites, model calibration needs to be based on in-situ test data such as SPT blow count, CPT penetration resistance, or shear wave velocity (Vs).
 For example, <span class="math notranslate nohighlight">\(D_R\)</span> can be estimated by correlations to penetration resistances. <a class="bibtex reference internal" href="../../../../../index.html#idriss2008" id="id10">[IB08]</a> recommended the following correlation to SPT,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-3">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-3" title="Permalink to this equation">¶</a></span>\[D_R = \sqrt{\frac{(N_1)_{60}}{C_d}}\,,\]</div>
+<span class="eqno">(2.4.6.2.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-3" title="Permalink to this equation">¶</a></span>\[D_R = \sqrt{\frac{(N_1)_{60}}{C_d}}\,,\]</div>
 <p>where <span class="math notranslate nohighlight">\(C_d\)</span> is recommended to be 46. For CPT, the following correlation can be used,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-4">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-4" title="Permalink to this equation">¶</a></span>\[D_R = 0.465\Big(\frac{q_{c1N}}{C_{dq}}\Big)^{0.264} - 1.063\,,\]</div>
+<span class="eqno">(2.4.6.2.2)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-4" title="Permalink to this equation">¶</a></span>\[D_R = 0.465\Big(\frac{q_{c1N}}{C_{dq}}\Big)^{0.264} - 1.063\,,\]</div>
 <p>where <span class="math notranslate nohighlight">\(C_{dq}\)</span> is recommended to be 0.9.
 The second primary input parameter <span class="math notranslate nohighlight">\(G_o\)</span> can also be estimated from in-situ data. <a class="bibtex reference internal" href="../../../../../index.html#boulanger2015pm4sand" id="id11">[BZ15]</a> modified the correlation by <a class="bibtex reference internal" href="../../../../../index.html#andrus2000" id="id12">[AS00]</a> to constraint the extrapolation to very small <span class="math notranslate nohighlight">\((N_1)_{60}\)</span> values, as</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-5">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-5" title="Permalink to this equation">¶</a></span>\[V_{s1} = 85[(N_1)_{60} + 2.5] ^{0.25}\,.\]</div>
+<span class="eqno">(2.4.6.2.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-5" title="Permalink to this equation">¶</a></span>\[V_{s1} = 85[(N_1)_{60} + 2.5] ^{0.25}\,.\]</div>
 <p>Alternatively, a simpler expression can be used when combined with a range of typical densities as,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-6">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-6" title="Permalink to this equation">¶</a></span>\[G_o = 167\sqrt{(N_1)_{60} + 2.5}\,.\]</div>
+<span class="eqno">(2.4.6.2.4)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-6" title="Permalink to this equation">¶</a></span>\[G_o = 167\sqrt{(N_1)_{60} + 2.5}\,.\]</div>
 <p>Subsequently, <span class="math notranslate nohighlight">\(h_{po}\)</span> can be calibrated to reproduce a specific value of <span class="math notranslate nohighlight">\(CRR\)</span> that can be computed using liquefaction triggering models. Numerous liquefaction triggering models incorporating the simplified cyclic stress approach
 have been proposed in the past such as <a class="bibtex reference internal" href="../../../../../index.html#youd2001" id="id13">[YI01]</a>, <a class="bibtex reference internal" href="../../../../../index.html#cetin2004" id="id14">[CTH+04]</a>, and <a class="bibtex reference internal" href="../../../../../index.html#idriss2008" id="id15">[IB08]</a>. Once <span class="math notranslate nohighlight">\(D_R\)</span>, <span class="math notranslate nohighlight">\(G_o\)</span>, and <span class="math notranslate nohighlight">\(CRR\)</span> are chosen, the modeler should iteratively vary the value of <span class="math notranslate nohighlight">\(h_{po}\)</span> until the simulated
 <span class="math notranslate nohighlight">\(CRR\)</span> matches the targeted value. Interpolation and extrapolation are common when the variables are within or close to the range of existing calibrated sets of parameters. Secondary parameters are less common to be modified when only
@@ -484,7 +515,7 @@ interpolated to calculate the Cyclic Resistance Ratio, CRR, which was determined
 <p>The results were processed through a linear regression analysis using <em>Matlab</em> to find the correlation between the input, <span class="math notranslate nohighlight">\(D_R\)</span>, <span class="math notranslate nohighlight">\(h_{po}\)</span> and <span class="math notranslate nohighlight">\(G_o\)</span>, and the output CRR. Different combination of terms were explored and the following
 format produced the largest <span class="math notranslate nohighlight">\(R^2\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-7">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-7" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{split}
+<span class="eqno">(2.4.6.2.5)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-7" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{split}
  CRR_{3\%, K_0 = 0.5}  = &amp; 0.1282 - 0.4952D_R - 5.0565\times10^{-5}G_o + 0.0749h_{po} + 1.4665\times10^{-4}D_RG_o \\
 &amp; + 0.1323D_Rh_{po} + 0.7252D_R^2 - 0.0636h_{po}^2 \,,
  \end{split}\end{split}\]</div>
@@ -493,7 +524,7 @@ It should be noted that the magnitude of these coefficients depends directly on 
 of magnitude larger than <span class="math notranslate nohighlight">\(D_R\)</span>, which leads to much smaller coefficients for it.</p>
 <p>Then this equation can be rearranged to isolate <span class="math notranslate nohighlight">\(h_{po}\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-8">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-8" title="Permalink to this equation">¶</a></span>\[ah_{po}^2 + bh_{po}+c = 0\,,\]</div>
+<span class="eqno">(2.4.6.2.6)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-8" title="Permalink to this equation">¶</a></span>\[ah_{po}^2 + bh_{po}+c = 0\,,\]</div>
 <p>where <span class="math notranslate nohighlight">\(a = 0.0636\)</span>, <span class="math notranslate nohighlight">\(b =  -0.0749 - 0.1323D_R\)</span>, and <span class="math notranslate nohighlight">\(c = - 0.1282 + 0.4952D_R + 5.0565\times10^{-5}G_o - 1.4665\times10^{-4}D_RG_o - 0.7252D_R^2 + CRR_{3\%, K_0 = 0.5}\)</span>. This correlation becomes a quadratic equation for
 <span class="math notranslate nohighlight">\(h_{po}\)</span> that can be solved for two real roots for <span class="math notranslate nohighlight">\(h_{po}\)</span> when values of <span class="math notranslate nohighlight">\(D_R\)</span>, <span class="math notranslate nohighlight">\(G_o\)</span>, and <span class="math notranslate nohighlight">\(CRR\)</span> are given. The lesser root is the one that can be paired with <span class="math notranslate nohighlight">\(D_R\)</span> and <span class="math notranslate nohighlight">\(G_o\)</span> to yield the desired
 CRR in a calibration process. The predictive equation can be used to provide good initial <span class="math notranslate nohighlight">\(h_{po}\)</span> values and speed up the calibration process.</p>
@@ -514,7 +545,7 @@ effective overburden stress (<span class="math notranslate nohighlight">\(K\sigm
 model is based on interpolating pre calibrated parameter sets for various of relative densities.</p>
 <div class="align-center figure" id="id31">
 <a class="reference internal image-reference" href="../../../../../_images/Pdmy03_parameters.png"><img alt="../../../../../_images/Pdmy03_parameters.png" src="../../../../../_images/Pdmy03_parameters.png" style="width: 634.0px; height: 484.0px;" /></a>
-<p class="caption"><span class="caption-text">Calibrated parameters for PDMY03 (after <a class="bibtex reference internal" href="../../../../../index.html#khosravifar2018" id="id19">[KELL18]</a>).</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.6.2.1 </span><span class="caption-text">Calibrated parameters for PDMY03 (after <a class="bibtex reference internal" href="../../../../../index.html#khosravifar2018" id="id19">[KELL18]</a>).</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -536,7 +567,7 @@ model is based on interpolating pre calibrated parameter sets for various of rel
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, The Regents of the University of California.
+        &#169; Copyright 2021, The Regents of the University of California.
 
     </p>
   </div>
@@ -574,7 +605,7 @@ model is based on interpolating pre calibrated parameter sets for various of rel
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', '...', 'auto');
+    ga('create', 'UA-158130480-1', 'auto');
     
     ga('send', 'pageview');
     </script>

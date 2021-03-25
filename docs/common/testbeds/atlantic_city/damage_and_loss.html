@@ -73,7 +73,7 @@
 
 
   
-  <img src="../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+  <img src="../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -224,7 +224,7 @@ consideration of wind and storm surge (i.e., flood) damage and losses.
 Further, the calculation of wind effects does not require structural analysis to estimate EDPs,
 but rather adopts an approach where damage and losses are calculated directly from the wind speed.
 Similarly, the flood-induced loss calculation is based on the peak water depth.
-Damage and loss functions from the HAZUS Multi-hazard Loss Estimation Methodology (<span id="id1">[FEMA18a]</span>, <span id="id2">[FEMA18b]</span>)
+Damage and loss functions from the HAZUS Multi-hazard Loss Estimation Methodology (<a class="reference internal" href="overview.html#fema18a" id="id1"><span>[FEMA18a]</span></a>, <a class="reference internal" href="overview.html#fema18b" id="id2"><span>[FEMA18b]</span></a>)
 were implemented in <a class="reference external" href="https://pelicun.readthedocs.io/en/latest/">PELICUN</a> to support the damage and loss assessment.</p>
 <p>For the <strong>wind loss assessment</strong>, the HAZUS functions consist of tabular data to
 describe the fragility or expected losses as a function of peak wind speed (PWS). These
@@ -248,7 +248,7 @@ stories, a collection of attributes are used to define key features of the load 
 (e.g., roof shape, secondary water resistance, roof deck attachment, roof-wall connection, shutters,
 garage) as well as the exposure (terrain roughness previously estimated in the Wind Hazard Model)
 to assign the corresponding fragility. A rules engine was developed using a combination of historical
-New Jersey model building codes, surveys capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="asset_representation.html#javeline19" id="id3"><span>[Javeline19]</span></a>),
+New Jersey model building codes, surveys capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="#javeline19" id="id3"><span>[Javeline19]</span></a>),
 and market data to assign these attributes to each parcel based on age and
 other available building information (e.g., MOD IV data). Libraries of damage and loss functions
 associated with storm surge from the USACE and other recent studies in the literature are planned for
@@ -266,7 +266,7 @@ ratio curves.</p>
 <p class="caption"><span class="caption-number">Fig. 2.6.3 </span><span class="caption-text">Depth-damage ratio curves for the flood loss assessment.</span><a class="headerlink" href="#flood-ddc" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <strong>total loss</strong> from wind and flood damages are estimated by combining the “wind-only” and “flood-only”
-losses following the combination rule in <span id="id4">[FEMA18a]</span>. The primary motivation for the combined wind and
+losses following the combination rule in <a class="reference internal" href="overview.html#fema18a" id="id4"><span>[FEMA18a]</span></a>. The primary motivation for the combined wind and
 flood loss methodology is to avoid “double counting” of damage. At a minimum, the combined wind and
 flood loss must be at least the larger of the wind-only or the flood-only loss. At a maximum, the combined
 loss must be no larger than the lesser of the sum of the wind-only and flood-only losses
@@ -296,7 +296,7 @@ components into a consistent set of building sub-assemblies:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <dl class="simple">
-<dt>HAZUS building sub-assemblies (<span id="id5">[FEMA18a]</span>):</dt><dd><ol class="arabic simple">
+<dt>HAZUS building sub-assemblies (<a class="reference internal" href="overview.html#fema18a" id="id5"><span>[FEMA18a]</span></a>):</dt><dd><ol class="arabic simple">
 <li><p>Foundation: Includes site work, footings, and walls, slabs, piers or piles.</p></li>
 <li><p>Below First Floor: Items other than the foundation that are located below the first floor of the structure such as mechanical equipment, stairways, parking pads, break away flood walls, etc.</p></li>
 <li><p>Structure Framing: Includes all of the main load carrying structural members of the building below the roof framing and above the foundation.</p></li>
@@ -315,7 +315,7 @@ sum of combined sub-assembly loss ratios:</p>
 <p>where <span class="math notranslate nohighlight">\(L_{wind,i}\)</span> is the wind-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly, and
 <span class="math notranslate nohighlight">\(L_{flood,i}\)</span> is the flood-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly. These sub-assembly
 loss ratios are computed as a percent of the total building loss ratio. The percentages are based on the
-<a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 2.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 2.6.2</span></a> that are developed per the HAZUS methodology and data table (<span id="id6">[FEMA18a]</span>).</p>
+<a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 2.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 2.6.2</span></a> that are developed per the HAZUS methodology and data table (<a class="reference internal" href="overview.html#fema18a" id="id6"><span>[FEMA18a]</span></a>).</p>
 <table class="docutils align-center" id="wind-comp">
 <caption><span class="caption-number">Table 2.6.1 </span><span class="caption-text">Sub-assembly wind-only loss contribution ratio table.</span><a class="headerlink" href="#wind-comp" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -34584,7 +34584,7 @@ where the post-2000 buildings are found to behave much better than buildings in 
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, The Regents of the University of California.
+        &#169; Copyright 2021, The Regents of the University of California.
 
     </p>
   </div>

@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.5. Shear Building: Synthetic Ground Motion &mdash; Earthquake Engineering with Uncertainty Quantification (EE-UQ)  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="5. Requirements" href="../../../../../requirements/EEUQ.html" />
+    <link rel="prev" title="4.4. AutoSDA and Nonlinear Response Analysis" href="../eeuq-0004/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../../_static/EE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/EEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../exampleShearBuilding3/README.html">4.1. Shear Building: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../randomField/randomField.html">4.2. Including Spatial Variability in Site Response Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">4.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">4.4. AutoSDA and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.5. Shear Building: Synthetic Ground Motion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vlacho-papakonstantinou-deodatis-method">4.5.1. Vlacho-Papakonstantinou-Deodatis Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dabaghi-der-kiureghian-method">4.5.2. Dabaghi-Der Kiureghian Method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../requirements/EEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Earthquake Engineering with Uncertainty Quantification (EE-UQ)</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">4.5. </span>Shear Building: Synthetic Ground Motion</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/common/user_manual/examples/desktop/EEUQ/eeuq-0005/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shear-building-synthetic-ground-motion">
+<h1><span class="section-number">4.5. </span>Shear Building: Synthetic Ground Motion<a class="headerlink" href="#shear-building-synthetic-ground-motion" title="Permalink to this headline">¶</a></h1>
+<p>Consider the problem of uncertainty quantification in a three story shear building where the ground shaking will be
+represented by sythetic ground motion records based on two methods (<a class="reference internal" href="#vpd18" id="id1"><span>[VPD18]</span></a>, <a class="reference internal" href="#dd18" id="id2"><span>[DD18]</span></a>)</p>
+<div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="../../../../../../_images/model1.png"><img alt="../../../../../../_images/model1.png" src="../../../../../../_images/model1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.5.1 </span><span class="caption-text">Three Story Shear Building Model (P10.2.9, “Dynamics of Structures”, A.K.Chopra)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>The exercise will use the OpenSees, <a class="reference internal" href="../../../../usage/desktop/SIM.html#lblopenseessim"><span class="std std-ref">OpenSees</span></a>, structural generators. For the OpenSees generator the following model script, <a class="reference external" href="https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/ShearBuilding3.tcl">ShearBuilding3.tcl</a> , is used:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not place the file in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing this file multiple times (a copy will be made for each sample specified). If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
+</div>
+<div class="section" id="vlacho-papakonstantinou-deodatis-method">
+<h2><span class="section-number">4.5.1. </span>Vlacho-Papakonstantinou-Deodatis Method<a class="headerlink" href="#vlacho-papakonstantinou-deodatis-method" title="Permalink to this headline">¶</a></h2>
+<p>We will first demonstrate the steps to perform a sampling analysis to study the effects of earthquake magnitude, site-source distance, and soil velocity
+on structural dynamic responses, using the Vlacho-Papakonstantinou-Deodatis syntheic ground motion model.</p>
+<p>To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:</p>
+<ol class="arabic simple">
+<li><p>Upon opening the application the <strong>UQ</strong> tab will be highlighted. In is panel, keep the <strong>UQ engine</strong> as that selected,
+i.e. Dakota, and the <strong>UQ Method Category</strong> as <strong>Forward Propagation</strong>, and the <strong>Method</strong> field as <strong>LHS</strong>
+(Latin Hypercube). Change the <strong>#samples</strong> field to <code class="docutils literal notranslate"><span class="pre">100</span></code> as shown in the following figure.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/uq2.png"><img alt="../../../../../../_images/uq2.png" src="../../../../../../_images/uq2.png" style="width: 700px;" /></a>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>The <strong>GI</strong> panel will not be used for this run; For the time being leave the default values as is, and they will be automatically updated based on the information entered in the remaining tabs.</p></li>
+<li><p>Next select the <strong>SIM</strong> panel from the input panel. This will default in the MDOF model generator.
+From the <strong>Model Generator</strong> pull down menu select <strong>OpenSees</strong> and select the example
+<code class="xref download docutils literal notranslate"><span class="pre">3-story</span> <span class="pre">frame</span> <span class="pre">model</span></code>. For recording story responses, we also specify the
+node numbers on a column line (e.g., 1, 2, 3, 4 in the OpenSees model).</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/sim1.png"><img alt="../../../../../../_images/sim1.png" src="../../../../../../_images/sim1.png" style="width: 700px;" /></a>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Next select the <strong>EVT</strong> panel. From the <strong>Load Generator</strong> pull down menu select the <strong>Stochastic Ground Motion</strong>
+option. This will present a new page of stochastic loading models. We first use the “Vlachos et al. (2018)” and
+for the three earthquake parameters: magnitude, distance, and shear-wave velocity, we define variables which
+will be randomized later in the <strong>RV</strong> panel</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/evt2.png"><img alt="../../../../../../_images/evt2.png" src="../../../../../../_images/evt2.png" style="width: 700px;" /></a>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Next choose the <strong>FEM</strong> panel. Here we will change the entries to use Rayleigh damping, with Rayleigh factor chosen using the
+first and second modes.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/fem1.png"><img alt="../../../../../../_images/fem1.png" src="../../../../../../_images/fem1.png" style="width: 700px;" /></a>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>We will skip the <strong>EDP</strong> panel leaving it in it’s default condition, that being to use the <strong>Standard Earthquake</strong> EDP generator.</p></li>
+<li><p>For the <strong>RV</strong> panel, we will enter the distributions and values for our random variables. For demostration purposes,
+we assume all three variables follow normal distributions: the magnitude has a mean of 7 and standard deviation of 1;
+the distance has a mean of 20 km and standard deviation of 5 km; and the soil velocity has a mea of 259 m/s and
+standard deviation of 50 m/s.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/rv1.png"><img alt="../../../../../../_images/rv1.png" src="../../../../../../_images/rv1.png" style="width: 700px;" /></a>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch Dakota. When the analysis is complete the <strong>RES</strong> tab will be selected and the results will be displayed. The results show the values for the mean and standard deviation.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/res11.png"><img alt="../../../../../../_images/res11.png" src="../../../../../../_images/res11.png" style="width: 700px;" /></a>
+</div>
+<p>If the user selects the <strong>Data</strong> tab in the <strong>RES</strong> panel, they will be presented with both a graphical plot
+and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns
+the axis changes (left mouse click controls vertical axis, right mouse click the horizontal axis). For example,
+we can now see the influences from the magitude (<span class="math notranslate nohighlight">\(M\)</span>), distance (<span class="math notranslate nohighlight">\(R\)</span>), and soil velocity (<span class="math notranslate nohighlight">\(V\)</span>) on the 1st stroy peak story drift
+ratio (<span class="math notranslate nohighlight">\(1-PID-1-1\)</span>).</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/inf_m1.png"><img alt="../../../../../../_images/inf_m1.png" src="../../../../../../_images/inf_m1.png" style="width: 700px;" /></a>
+</div>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/inf_r1.png"><img alt="../../../../../../_images/inf_r1.png" src="../../../../../../_images/inf_r1.png" style="width: 700px;" /></a>
+</div>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/inf_v1.png"><img alt="../../../../../../_images/inf_v1.png" src="../../../../../../_images/inf_v1.png" style="width: 700px;" /></a>
+</div>
+</div>
+<div class="section" id="dabaghi-der-kiureghian-method">
+<h2><span class="section-number">4.5.2. </span>Dabaghi-Der Kiureghian Method<a class="headerlink" href="#dabaghi-der-kiureghian-method" title="Permalink to this headline">¶</a></h2>
+<p>The Dabaghi-Kiureghian model looks into the near-fault ground motion pulse feature and can generate pairs of
+synthetic pulse-like and non-pulse-like components in appropriate proportions. In this example, we would like to
+(1) understand the effects from the randomness in site-source distance (as similar
+but comparable to the first example above) and (2) compare the differences in structural responses due to the
+distinct characteristics of pulse-like and non-pulse-like records.</p>
+<ol class="arabic simple">
+<li><p>All the configurations are maintained the same as the first example except in the <strong>EVT</strong> panel, we select the
+“Dabaghi &amp; Der Kiureghian (2018)” method. And we first fix the fault type to “Stike-Slip” and enable both the
+pulse-like and non-pulse-like records.</p></li>
+<li><p>For the Depth to Top of Rupture Plane, we specify 0.0 km as a constant; and for the other earthquake parameters (
+moment magnitude,  closest distance to the site, parallel distance, and angel), we define their values as the figure
+shown in below. The random varaiable average shear-wave velocity (V) will be specified in the <strong>RV</strong> panel.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/evt21.png"><img alt="../../../../../../_images/evt21.png" src="../../../../../../_images/evt21.png" style="width: 700px;" /></a>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>In the <strong>RV</strong> panel, we specify the normal distribution for the R variable.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/rv2.png"><img alt="../../../../../../_images/rv2.png" src="../../../../../../_images/rv2.png" style="width: 700px;" /></a>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>In the <strong>RES</strong> panel, similar to the first example, the maximum story drift ratio and peak acceleration demands are
+recorded (e.g., 1st story 1-PID-1-1 and 3rd floor 1-PFA-3-1). And we could examine the influence from the site soil
+velocity on the 1st story peak story drift ratio.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/all_sdr1.png"><img alt="../../../../../../_images/all_sdr1.png" src="../../../../../../_images/all_sdr1.png" style="width: 700px;" /></a>
+</div>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/all_pfa3.png"><img alt="../../../../../../_images/all_pfa3.png" src="../../../../../../_images/all_pfa3.png" style="width: 700px;" /></a>
+</div>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/inf_v2.png"><img alt="../../../../../../_images/inf_v2.png" src="../../../../../../_images/inf_v2.png" style="width: 700px;" /></a>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>The second part of this example is to compare the pulse-like and non-pulse-like records. So, we navigate back
+to the <strong>EVT</strong> panel and first select the “Only pulse-like” and then the “Non-pulse-like only” to run the analysis
+again. As seen in the figure below, the non-pulse-like group, on average, results in 10% to 15% higher structural responses in this
+example.</p></li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../../../../_images/sdr_pfa_comp.png"><img alt="../../../../../../_images/sdr_pfa_comp.png" src="../../../../../../_images/sdr_pfa_comp.png" style="width: 700px;" /></a>
+</div>
+<dl class="citation">
+<dt class="label" id="vpd18"><span class="brackets"><a class="fn-backref" href="#id1">VPD18</a></span></dt>
+<dd><p>Vlachos, C., Papakonstantinou, K. G., &amp; Deodatis, G. (2018). Predictive model for site specific simulation of ground motions based on earthquake scenarios. Earthquake Engineering &amp; Structural Dynamics, 47(1), 195-218.</p>
+</dd>
+<dt class="label" id="dd18"><span class="brackets"><a class="fn-backref" href="#id2">DD18</a></span></dt>
+<dd></dd>
+</dl>
+<p>Dabaghi, M., &amp; Der Kiureghian, A. (2018). Simulation of orthogonal horizontal components of near‐fault ground motion for specified earthquake source and site characteristics. Earthquake Engineering &amp; Structural Dynamics, 47(6), 1369-1393.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
+
+
+</body>
+</html>

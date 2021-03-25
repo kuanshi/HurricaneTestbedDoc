@@ -73,7 +73,7 @@
 
 
   
-  <img src="../../../_static/RDT-Logo-grey3.png" class="logo" alt="Logo"/>
+  <img src="../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
@@ -132,8 +132,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#historical-storm-scenario">2.3.2. Historical Storm Scenario</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id7">Wind Modeling</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">Storm Surge Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Wind Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Storm Surge Modeling</a></li>
 </ul>
 </li>
 </ul>
@@ -313,7 +313,7 @@ Flood Damage and Loss Assessment.</p>
 <div class="section" id="multiple-category-analysis-mca">
 <h3>Multiple Category Analysis (MCA)<a class="headerlink" href="#multiple-category-analysis-mca" title="Permalink to this headline">¶</a></h3>
 <p>Note that the resulting 3s-gust PWS values by this Category-5 hurricane is much higher than
-the design wind speed specified by ASCE 7-16 (<a class="reference internal" href="pws_conversion.html#asce16" id="id6"><span>[ASCE16]</span></a>) for the Atlantic County which ranges
+the design wind speed specified by ASCE 7-16 (<a class="reference internal" href="#asce16" id="id6"><span>[ASCE16]</span></a>) for the Atlantic County which ranges
 from 105 mph to 115 mph. Since this extreme scenario bears a small likelihood, this testbed
 also scales the wind and flood water field down to lower categories to conduct the so-called
 Multiple Category Analysis to exam the building performance under different intense scenarios
@@ -355,16 +355,45 @@ Multiple Category Analysis to exam the building performance under different inte
 <p>Hindcast simulations of historical storm events are equally valuable, particularly when they are coupled
 with observations of damage and loss across an inventory. As such this testbed includes the option to use
 existing hindcast data from established community providers as input to the loss estimation workflow.
-New Jersey’s most notable storm event in recent history was Superstorm Sandy (2012). While Atlantic County was
-designated as a “Sandy-Affected Community” by FEMA and the State of New Jersey, the wind and
-storm surge intensities in the county were significantly less than those observed in the more
-northern counties. Nonetheless, these historical inputs are provided to demonstrate the workflow’s
-ability to support hindcast evaluations of damage and loss in actual storm events.</p>
-<div class="section" id="id7">
-<h3>Wind Modeling<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+New Jersey’s most notable storm event in recent history was Superstorm Sandy (2012). According to <a class="reference internal" href="#njdep15" id="id7"><span>[NJDEP15]</span></a>
+and <a class="reference internal" href="#usdoc13" id="id8"><span>[USDOC13]</span></a>, Sandy’s devastation included 346,000 homes damaged, more than 1,000 vessels sunked or abandoned,
+and more than 100 drinking water and wasterwater treatment plans affected, which led to 30 billion for repairing
+and relacing the damage cased by the storm. While Atlantic County was designated as a “Sandy-Affected Community”
+by FEMA and the State of New Jersey, the wind and storm surge intensities in the county were significantly
+less than those observed in the more northern counties. Nonetheless, these historical inputs are provided
+to demonstrate the workflow’s ability to support hindcast evaluations of damage and loss in actual storm events.</p>
+<div class="section" id="id9">
+<h3>Wind Modeling<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="#ara-pws"><span class="std std-numref">Fig. 2.3.2.2</span></a> shows the 3-s gust peak wind speed field in Atlantic County during
+the Hurricane Sandy (simulation data provided by Applied Research Associate hurricane model). The model derives wind
+speeds based on numerically solving the differential equations of a translating storm and iteratively calibrating the
+field observations. In general, the model would be refined with the hindcast within a week of the event. And the
+<a class="reference download internal" download="" href="../../../_downloads/e000feabcd03691d92efbbee9a613a6c/ARA_Example.zip"><code class="xref download docutils literal notranslate"><span class="pre">ARA_Example.zip</span></code></a> provides the peak wind speed grid that can be directly used in
+the presented hurricane workflow.</p>
+<div class="align-center figure" id="ara-pws" style="width: 500px">
+<img alt="../../../_images/ARA_PWS.png" src="../../../_images/ARA_PWS.png" />
+<p class="caption"><span class="caption-number">Fig. 2.3.2.2 </span><span class="caption-text">ARA 3-s gust peak wind speed field of Hurricane Sandy in Atlantic County.</span><a class="headerlink" href="#ara-pws" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="id8">
-<h3>Storm Surge Modeling<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Alternatively, users can also use other available wind field resources. For instance,
+<a class="reference external" href="https://www.rms.com/event-response/hwind/legacy-archive/storms">RMS Legacy Archive</a> provides access to
+historical hurricane events including the <a class="reference external" href="https://legacy-archive.rms.com/storms/sandy2012.html">Superstorm Sandy</a>
+for an alternate description of the field. Similar to the ARA peak wind speed field, in order to run the workflow, users
+would first convert the data from other resources to the format as shown in <a class="reference download internal" download="" href="../../../_downloads/e000feabcd03691d92efbbee9a613a6c/ARA_Example.zip"><code class="xref download docutils literal notranslate"><span class="pre">ARA_Example.zip</span></code></a>.</p>
+</div>
+<div class="section" id="id10">
+<h3>Storm Surge Modeling<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Alternative to the SHP Tool, the historical storm surge data can also be used in the workflow. <a class="reference internal" href="#adcirc-pwd"><span class="std std-numref">Fig. 2.3.2.3</span></a>
+shows the peak storm surge from ADCIRC (simulation data by courtesy of Dr. Westerink’s group, University of Notre Dame).
+The original simulation was focused on the New York region which had finer mesh sizes than the Atlantic County
+(<a class="reference internal" href="#adcirc-waterelev"><span class="std std-numref">Fig. 2.3.2.4</span></a>).</p>
+<div class="align-center figure" id="adcirc-pwd" style="width: 500px">
+<img alt="../../../_images/ADCIRC_PWD.png" src="../../../_images/ADCIRC_PWD.png" />
+<p class="caption"><span class="caption-number">Fig. 2.3.2.3 </span><span class="caption-text">Simulated storm surge field of Hurricane Sandy by ADCIRC (by courtesy of Dr. Westerink).</span><a class="headerlink" href="#adcirc-pwd" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="adcirc-waterelev" style="width: 500px">
+<img alt="../../../_images/ADCIRC_waterelev.png" src="../../../_images/ADCIRC_waterelev.png" />
+<p class="caption"><span class="caption-number">Fig. 2.3.2.4 </span><span class="caption-text">Simulated water elevation of Hurricane Sandy by ADCIRC (Atlantic County).</span><a class="headerlink" href="#adcirc-waterelev" title="Permalink to this image">¶</a></p>
+</div>
 <dl class="citation">
 <dt class="label" id="snaiki17a"><span class="brackets">Snaiki17a</span></dt>
 <dd><p>Snaiki, R. and Wu, T. (2017a) “Modeling tropical cyclone boundary layer: Height-resolving
@@ -414,6 +443,14 @@ Engineers Waterways Experiment Station, Vicksburg, MS.</p>
 manual for STWAVE, Version 3.0,” Defense Technical Information Center, US Army Corps of
 Engineering, Vicksburg, MS.</p>
 </dd>
+<dt class="label" id="usdoc13"><span class="brackets"><a class="fn-backref" href="#id8">USDOC13</a></span></dt>
+<dd><p>U.S. Department of Commerce (2013), Hurricne Sandy: Potential Economic Activity Lost and Gained in New
+Jersey and New York.</p>
+</dd>
+<dt class="label" id="njdep15"><span class="brackets"><a class="fn-backref" href="#id7">NJDEP15</a></span></dt>
+<dd><p>New Jersey Department of Environmental Protection (NJDEP) (2015), Damage Assessment
+Report on the Effects of Hurricane Sandy on the State of New Jersey’s Natural Resources.</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -429,7 +466,7 @@ Engineering, Vicksburg, MS.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, The Regents of the University of California.
+        &#169; Copyright 2021, The Regents of the University of California.
 
     </p>
   </div>

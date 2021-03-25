@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.2. Including Spatial Variability in Site Response Event &mdash; Earthquake Engineering with Uncertainty Quantification (EE-UQ)  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../../" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="5. Requirements" href="../../../../../requirements/EEUQ.html" />
+    <link rel="prev" title="4.1. Shear Building: Sampling, Reliability and Sensitivity" href="../exampleShearBuilding3/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../../_static/EE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/EEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../exampleShearBuilding3/README.html">4.1. Shear Building: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Including Spatial Variability in Site Response Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement">4.2.1. Problem Statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general-workflow-for-global-sensitivity-analysis">4.2.2. General Workflow for Global Sensitivity Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-spatial-variability">4.2.3. Adding Spatial Variability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#case-1-using-elasticisotropic-material">4.2.3.1. Case 1: using ElasticIsotropic material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-2-using-pm4sand-material">4.2.3.2. Case 2: using PM4Sand material</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../requirements/EEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">Earthquake Engineering with Uncertainty Quantification (EE-UQ)</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">4.2. </span>Including Spatial Variability in Site Response Event</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../../_sources/common/user_manual/examples/desktop/EEUQ/randomField/randomField.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="including-spatial-variability-in-site-response-event">
+<span id="lbl-example-randomfield"></span><h1><span class="section-number">4.2. </span>Including Spatial Variability in Site Response Event<a class="headerlink" href="#including-spatial-variability-in-site-response-event" title="Permalink to this headline">¶</a></h1>
+<p>This page shows two examples on how to incorporate spatial variability into UQ analysis by using various special materials, namely ElasticIsotropic,
+PM4Sand, and PDMY03, in Site Response option under EVENT tab.</p>
+<div class="section" id="problem-statement">
+<h2><span class="section-number">4.2.1. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
+<p>Site response analysis is commonly performed to analyze the propagation of seismic wave through soil. As shown in <a class="reference internal" href="#fig-siteresponse"><span class="std std-numref">Fig. 4.2.1.1</span></a>,
+one-dimensional response analyses, as a simplified method, assume that all boundaries are horizontal and that the response of a soil deposit is
+predominately caused by SH-waves propagating vertically from the underlying bedrock. Ground surface response is usually the major output from
+these analyses, together with profile plots such as peak horizontal acceleration along the soil profile. When liquefiable soils are presenting,
+maximum shear strain and excess pore pressure ratio plots are also important.</p>
+<p>In the real world condition, physical properties of soils vary from place to place within a soil deposit due to varying geologic formation and loading histories such as sedimentation, erosion, transportation,
+and weathering processes. This spatial variability in the soil properties cannot be simply described by a mean and variance, as commonly adopted in UQ analyses,
+since the estimation of the two statistic values does not account for the spatial variation of the soil property data in the soil profile.
+Spatial variability is often modeled using two separated components: a known deterministic trend and a residual variability about the trend.
+These components are illustrated in <a class="reference internal" href="../../../../usage/desktop/earthquake/usageS3hark.html#fig-inherentvariability"><span class="std std-numref">Fig. 2.4.6.1.1</span></a>.</p>
+<div class="align-center figure" id="id2">
+<span id="fig-siteresponse"></span><a class="reference internal image-reference" href="../../../../../../_images/siteResponse.png"><img alt="../../../../../../_images/siteResponse.png" src="../../../../../../_images/siteResponse.png" style="width: 538.0px; height: 287.5px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2.1.1 </span><span class="caption-text">Simplified 1D site response analysis (courtesy of Pedro Arduino)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id3">
+<span id="fig-inherentvariability"></span><a class="reference internal image-reference" href="../../../../../../_images/InherentVariability.png"><img alt="../../../../../../_images/InherentVariability.png" src="../../../../../../_images/InherentVariability.png" style="width: 433.8px; height: 409.2px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2.1.2 </span><span class="caption-text">Inherent soil variability (after <a class="bibtex reference internal" href="../../../../../../index.html#phoon1999" id="id1">[PK99]</a>).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>A summary of the random field preparation procedure for the site response event analysis is summarized here:</p>
+<ol class="arabic simple">
+<li><p>Generate mean field using mean target soil property, e.g., relative density (Dr) or shear wave velocity (Vs)</p></li>
+<li><p>Generate Gaussian random field for target soil property using <em>Gauss1D.py</em> with mean = 0.0 and <span class="math notranslate nohighlight">\(\sigma\)</span> = 1.0</p></li>
+<li><p>Interpolate Gaussian field to FEM mesh</p></li>
+<li><p>Combine the mean (trend) field and Gaussian (residual variability) field to obtain a stochastic field</p></li>
+<li><p>Generate material input for site response analysis based on predefined model calibration methods</p></li>
+<li><p>Perform site response analysis using the randomized material input and obtain acceleration response at the surface of soil column for subsequent UQ analysis</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Currently only <strong>2D</strong> plain-strain materials (including PDMY03 and ElasticIsotropic) are supported when using random field. Therefore, 1-component motion is required.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="general-workflow-for-global-sensitivity-analysis">
+<h2><span class="section-number">4.2.2. </span>General Workflow for Global Sensitivity Analysis<a class="headerlink" href="#general-workflow-for-global-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
+<p>In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest.
+This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.</p>
+<p>root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions.</p>
+<p>To perform a Global Sensitivity analysis the user would perform the following steps:</p>
+<p>The steps involved:</p>
+<p>1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. From the UQ Method Category drop down menu
+select Sensitivity Analysis, Keeping the method as LHS (Latin Hypercube). Change the <strong># Samples</strong> to 20 and the <strong>Seed</strong> to 273 as shown in the figure. The seed specification allows a user to obtain repeatable
+results from multiple runs.</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/randomField-UQ.png" src="../../../../../../_images/randomField-UQ.png" />
+</div>
+<p>2. Next select the <strong>GI</strong> panel. In this panel the building properties and units are set. For this example enter <strong>1</strong> for the number of stories, <strong>144</strong> for building height, <strong>360</strong> fow building width,
+and <strong>360</strong> for building depth.</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/randomField-GI.png" src="../../../../../../_images/randomField-GI.png" />
+</div>
+<p>3. Next select the <strong>SIM</strong> tab from the input panel. This will default in the MDOF model generator.
+Define other input variables as shown in figure:</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/randomField-SIM.png" src="../../../../../../_images/randomField-SIM.png" />
+</div>
+<p>3. Next select the <strong>EVT</strong> panel. From the Load Generator pull down menu select the <strong>Site Response</strong> option. Define soil profile, ground water table (GWT), and mesh. Then select interested material, e.g.,
+<em>PM4Sand_Random</em>, <em>PDMY03_Random</em>, or <em>Elastic_Random</em>. Under <strong>Configure</strong> tab, select path to the input motion.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>A reasonable mesh resolution is recommended. Selection of element size should consider several factors, including but not limited to, layer shear wave velocity (for frequency resolution), corelation length (for random field resolution), and computation efficiency.</p></li>
+</ul>
+</div>
+<div class="align-center figure">
+<img alt="../../../../../../_images/randomField-EVT.png" src="../../../../../../_images/randomField-EVT.png" />
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Next choose the <strong>FEM</strong> panel. Here we will change the entries to use Rayleigh damping, with rayleigh factor chosen using <strong>1</strong> mode.</p></li>
+</ol>
+<div class="align-center figure">
+<img alt="../../../../../../_images/randomField-FEM.png" src="../../../../../../_images/randomField-FEM.png" />
+</div>
+<ol class="arabic simple" start="4">
+<li><p>We will skip the <strong>EDP</strong> panel leaving it in it’s default condition, that being to use the <strong>Standard Earthquake</strong> EDP generator.</p></li>
+</ol>
+<div class="align-center figure">
+<img alt="../../../../../../_images/randomField-EDP.png" src="../../../../../../_images/randomField-EDP.png" />
+</div>
+<p>5. For the <strong>RV</strong> panel, we will enter the distributions and values for our random variables. If only the uncertainty related to spatial variability is interested, a dummy random variable can be defined in this tab.
+Then all the variability shown in the response will solely be due to spatial variability in the site response analysis.</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/randomField-RV.png" src="../../../../../../_images/randomField-RV.png" />
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The user cannot leave any of the distributions for these values as constant for the Dakota UQ engine.</p>
+</div>
+<p>5. Next click on the ‘Run’ button. This will cause the backend application to launch dakota. When done the <strong>RES</strong> tab will be selected and the results will be displayed. The results show the values the mean and standard deviation.
+The peak displacement of the roof, is the quantity <strong>PFD</strong>. The <strong>PFA</strong> and <strong>PFD</strong> quantity defines peak floor acceleration and displacement, respectively, and the <strong>PID</strong> quantity corresponds to peak interstory drift.</p>
+<div class="align-center figure">
+<img alt="../../../../../../_images/Elastic-RES.png" src="../../../../../../_images/Elastic-RES.png" />
+</div>
+</div>
+<div class="section" id="adding-spatial-variability">
+<h2><span class="section-number">4.2.3. </span>Adding Spatial Variability<a class="headerlink" href="#adding-spatial-variability" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="case-1-using-elasticisotropic-material">
+<h3><span class="section-number">4.2.3.1. </span>Case 1: using ElasticIsotropic material<a class="headerlink" href="#case-1-using-elasticisotropic-material" title="Permalink to this headline">¶</a></h3>
+<p>For the <strong>Elastic_Random</strong> material, shear wave velocity (Vs) can be selected to be randomized. Then select the <strong>Mean</strong> and <strong>COV</strong> (coefficient of variation <span class="math notranslate nohighlight">\(=\frac{\sigma}{\mu}\)</span>) for shear wave velocity.
+<strong>Correlation length</strong> defines how shear wave velocities are vertically correlated. Subsequently, Young’s modulus is calculated based the stochastic shear velocity profile at the center of each element. No special calibration is required.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Vs is bounded between 50 and 1500 m/s. These limits can be modified in <em>calibration.py</em>.</p></li>
+</ul>
+</div>
+<div class="align-center figure" id="id4">
+<a class="reference internal image-reference" href="../../../../../../_images/Elastic-Random.png"><img alt="../../../../../../_images/Elastic-Random.png" src="../../../../../../_images/Elastic-Random.png" style="width: 916.1999999999999px; height: 404.4px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2.3.1.1 </span><span class="caption-text">Define inputs for Elastic_Random material.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#fig-elastic-average-respspect"><span class="std std-numref">Fig. 4.2.3.1.3</span></a> presents the profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.
+Ru are always zero since there is no volumetric strain in ElasticIsotropic material. <a class="reference internal" href="#fig-elastic-average-respspect"><span class="std std-numref">Fig. 4.2.3.1.3</span></a> depicts the mean and each individual response spectra (5% damping) at surface obtained from 20 realizations.</p>
+<div class="align-center figure" id="id5">
+<span id="fig-elastic-average-profile"></span><a class="reference internal image-reference" href="../../../../../../_images/Elastic-Average-Profile.png"><img alt="../../../../../../_images/Elastic-Average-Profile.png" src="../../../../../../_images/Elastic-Average-Profile.png" style="width: 880.0px; height: 640.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2.3.1.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id6">
+<span id="fig-elastic-average-respspect"></span><a class="reference internal image-reference" href="../../../../../../_images/Elastic-Average-RespSpect.png"><img alt="../../../../../../_images/Elastic-Average-RespSpect.png" src="../../../../../../_images/Elastic-Average-RespSpect.png" style="width: 480.0px; height: 240.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2.3.1.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="case-2-using-pm4sand-material">
+<h3><span class="section-number">4.2.3.2. </span>Case 2: using PM4Sand material<a class="headerlink" href="#case-2-using-pm4sand-material" title="Permalink to this headline">¶</a></h3>
+<p>For the <strong>PM4Sand_Random</strong> material, relative density (Dr) can be selected to be randomized. Then select the <strong>Mean</strong> and <strong>COV</strong> (coefficient of variation <span class="math notranslate nohighlight">\(COV=\frac{\sigma}{\mu}\)</span>) for shear wave velocity.
+<strong>Correlation length</strong> defines how shear wave velocities are vertically correlated. In ths current calibration procedure, all the other parameters are kept as input except for the contraction rate
+parameter hpo, that is calibrated based on the empirical triggering model proposed by Idriss and Boulanger 2008.</p>
+<p><a class="reference internal" href="#fig-pm4sand-average-respspect"><span class="std std-numref">Fig. 4.2.3.2.3</span></a> presents the profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.
+Comparing to elastic material, more variability are shown among these realizations. <a class="reference internal" href="#fig-pm4sand-average-respspect"><span class="std std-numref">Fig. 4.2.3.2.3</span></a> depicts the mean and each individual response spectra (5% damping) at surface obtained from 20 realizations.</p>
+<div class="align-center figure" id="id7">
+<a class="reference internal image-reference" href="../../../../../../_images/PM4Sand-Random.png"><img alt="../../../../../../_images/PM4Sand-Random.png" src="../../../../../../_images/PM4Sand-Random.png" style="width: 856.1999999999999px; height: 405.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2.3.2.1 </span><span class="caption-text">Define inputs for PM4Sand_Random material.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Dr is bounded between 0.2 and 0.95. These limits can be modified in <em>calibration.py</em>.</p></li>
+</ul>
+</div>
+<div class="align-center figure" id="id8">
+<span id="fig-pm4sand-average-profile"></span><a class="reference internal image-reference" href="../../../../../../_images/PM4Sand-Average-Profile.png"><img alt="../../../../../../_images/PM4Sand-Average-Profile.png" src="../../../../../../_images/PM4Sand-Average-Profile.png" style="width: 880.0px; height: 640.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2.3.2.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id9">
+<span id="fig-pm4sand-average-respspect"></span><a class="reference internal image-reference" href="../../../../../../_images/PM4Sand-Average-RespSpect.png"><img alt="../../../../../../_images/PM4Sand-Average-RespSpect.png" src="../../../../../../_images/PM4Sand-Average-RespSpect.png" style="width: 480.0px; height: 240.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.2.3.2.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
+
+
+</body>
+</html>
