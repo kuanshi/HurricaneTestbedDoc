@@ -219,13 +219,26 @@
             
   <div class="section" id="damage-and-loss-estimation">
 <span id="lbl-testbed-ac-damage-and-loss"></span><h1><span class="section-number">2.6. </span>Damage and Loss Estimation<a class="headerlink" href="#damage-and-loss-estimation" title="Permalink to this headline">¶</a></h1>
-<p>The initial implementation of the hurricane testbed, which is described here, is limited to
-consideration of wind and storm surge (i.e., flood) damage and losses.
+<p>Damage and loss functions from the HAZUS Hurricane Damage and Loss Model (<a class="reference internal" href="#fema18a" id="id1"><span>[FEMA18a]</span></a>, <a class="reference internal" href="#fema18b" id="id2"><span>[FEMA18b]</span></a>) were implemented
+in PELICUN to support HAZUS’s 3520 different wooden building configurations available for hurricane loss
+modeling.  The HAZUS functions consist of tabular data to describe the fragility or expected losses as a
+function of wind speed. These data were used to calibrate coupled damage and loss models to estimate the
+damage state and the corresponding expected loss ratio for each building configuration in <a class="reference external" href="https://pelicun.readthedocs.io/en/latest/">PELICUN</a>.
+Continuous functions (Normal or Lognormal cumulative density functions) were fit to the synthetic data
+by maximizing the likelihood of the observations assuming a Binomial distribution of outcomes at each
+discrete wind speed in the HAZUS database. Only data up to 200 mph wind speeds were used because the
+substantial reduction in the number of observations introduces significant measurement error above that
+level. Coupling the damage and loss models in this way ensures more realistic outcomes (e.g., a
+building with no damage cannot have total loss when the two models are coupled), and the parameterized
+models allow for more efficient storage and computations within the workflow.</p>
+<blockquote>
+<div><p>consideration of wind and storm surge (i.e., flood) damage and losses.
 Further, the calculation of wind effects does not require structural analysis to estimate EDPs,
 but rather adopts an approach where damage and losses are calculated directly from the wind speed.
 Similarly, the flood-induced loss calculation is based on the peak water depth.
-Damage and loss functions from the HAZUS Multi-hazard Loss Estimation Methodology (<a class="reference internal" href="overview.html#fema18a" id="id1"><span>[FEMA18a]</span></a>, <a class="reference internal" href="overview.html#fema18b" id="id2"><span>[FEMA18b]</span></a>)
+Damage and loss functions from the HAZUS Multi-hazard Loss Estimation Methodology (<a class="reference internal" href="#fema18a" id="id3"><span>[FEMA18a]</span></a>, <a class="reference internal" href="#fema18b" id="id4"><span>[FEMA18b]</span></a>)
 were implemented in <a class="reference external" href="https://pelicun.readthedocs.io/en/latest/">PELICUN</a> to support the damage and loss assessment.</p>
+</div></blockquote>
 <p>For the <strong>wind loss assessment</strong>, the HAZUS functions consist of tabular data to
 describe the fragility or expected losses as a function of peak wind speed (PWS). These
 data were used to calibrate coupled damage and loss models to estimate the damage
@@ -248,7 +261,7 @@ stories, a collection of attributes are used to define key features of the load 
 (e.g., roof shape, secondary water resistance, roof deck attachment, roof-wall connection, shutters,
 garage) as well as the exposure (terrain roughness previously estimated in the Wind Hazard Model)
 to assign the corresponding fragility. A rules engine was developed using a combination of historical
-New Jersey model building codes, surveys capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="#javeline19" id="id3"><span>[Javeline19]</span></a>),
+New Jersey model building codes, surveys capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="#javeline19" id="id6"><span>[Javeline19]</span></a>),
 and market data to assign these attributes to each parcel based on age and
 other available building information (e.g., MOD IV data). Libraries of damage and loss functions
 associated with storm surge from the USACE and other recent studies in the literature are planned for
@@ -266,7 +279,7 @@ ratio curves.</p>
 <p class="caption"><span class="caption-number">Fig. 2.6.3 </span><span class="caption-text">Depth-damage ratio curves for the flood loss assessment.</span><a class="headerlink" href="#flood-ddc" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <strong>total loss</strong> from wind and flood damages are estimated by combining the “wind-only” and “flood-only”
-losses following the combination rule in <a class="reference internal" href="overview.html#fema18a" id="id4"><span>[FEMA18a]</span></a>. The primary motivation for the combined wind and
+losses following the combination rule in <a class="reference internal" href="#fema18a" id="id7"><span>[FEMA18a]</span></a>. The primary motivation for the combined wind and
 flood loss methodology is to avoid “double counting” of damage. At a minimum, the combined wind and
 flood loss must be at least the larger of the wind-only or the flood-only loss. At a maximum, the combined
 loss must be no larger than the lesser of the sum of the wind-only and flood-only losses
@@ -296,7 +309,7 @@ components into a consistent set of building sub-assemblies:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <dl class="simple">
-<dt>HAZUS building sub-assemblies (<a class="reference internal" href="overview.html#fema18a" id="id5"><span>[FEMA18a]</span></a>):</dt><dd><ol class="arabic simple">
+<dt>HAZUS building sub-assemblies (<a class="reference internal" href="#fema18a" id="id8"><span>[FEMA18a]</span></a>):</dt><dd><ol class="arabic simple">
 <li><p>Foundation: Includes site work, footings, and walls, slabs, piers or piles.</p></li>
 <li><p>Below First Floor: Items other than the foundation that are located below the first floor of the structure such as mechanical equipment, stairways, parking pads, break away flood walls, etc.</p></li>
 <li><p>Structure Framing: Includes all of the main load carrying structural members of the building below the roof framing and above the foundation.</p></li>
@@ -315,7 +328,7 @@ sum of combined sub-assembly loss ratios:</p>
 <p>where <span class="math notranslate nohighlight">\(L_{wind,i}\)</span> is the wind-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly, and
 <span class="math notranslate nohighlight">\(L_{flood,i}\)</span> is the flood-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly. These sub-assembly
 loss ratios are computed as a percent of the total building loss ratio. The percentages are based on the
-<a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 2.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 2.6.2</span></a> that are developed per the HAZUS methodology and data table (<a class="reference internal" href="overview.html#fema18a" id="id6"><span>[FEMA18a]</span></a>).</p>
+<a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 2.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 2.6.2</span></a> that are developed per the HAZUS methodology and data table (<a class="reference internal" href="#fema18a" id="id9"><span>[FEMA18a]</span></a>).</p>
 <table class="docutils align-center" id="wind-comp">
 <caption><span class="caption-number">Table 2.6.1 </span><span class="caption-text">Sub-assembly wind-only loss contribution ratio table.</span><a class="headerlink" href="#wind-comp" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -34562,13 +34575,13 @@ where the post-2000 buildings are found to behave much better than buildings in 
 <p class="caption"><span class="caption-number">Fig. 2.6.16 </span><span class="caption-text">Average expected wind loss ratios (Ventor City).</span><a class="headerlink" href="#wl-ventor" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
-<dt class="label" id="fema18a"><span class="brackets">FEMA18a</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id4">2</a>,<a href="#id5">3</a>,<a href="#id6">4</a>)</span></dt>
+<dt class="label" id="fema18a"><span class="brackets">FEMA18a</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>,<a href="#id7">3</a>,<a href="#id8">4</a>,<a href="#id9">5</a>)</span></dt>
 <dd><p>FEMA (2018), HAZUS – Multi-hazard Loss Estimation Methodology 2.1, Hurricane Model Technical Manual, Federal Emergency Management Agency, Washington D.C., 718p.</p>
 </dd>
-<dt class="label" id="fema18b"><span class="brackets"><a class="fn-backref" href="#id2">FEMA18b</a></span></dt>
+<dt class="label" id="fema18b"><span class="brackets">FEMA18b</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>)</span></dt>
 <dd><p>FEMA (2018), HAZUS – Multi-hazard Loss Estimation Methodology 2.1, Flood Model Technical Manual, Federal Emergency Management Agency, Washington D.C., 569p.</p>
 </dd>
-<dt class="label" id="javeline19"><span class="brackets"><a class="fn-backref" href="#id3">Javeline19</a></span></dt>
+<dt class="label" id="javeline19"><span class="brackets"><a class="fn-backref" href="#id6">Javeline19</a></span></dt>
 <dd><p>Javeline, D. and Kijewski-Correa, T. (2019) “Coastal Homeowners in a Changing Climate,” Climatic Change. 152(2), 259-276 <a class="reference external" href="https://doi.org/10.1007/s10584-018-2257-4">https://doi.org/10.1007/s10584-018-2257-4</a></p>
 </dd>
 </dl>
