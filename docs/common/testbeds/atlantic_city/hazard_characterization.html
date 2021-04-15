@@ -243,7 +243,7 @@ either a historical scenario or a synthetic storm scenario, as discussed in the 
 Note that as part of the Asset Representation Process (see <a class="reference internal" href="asset_representation.html#lbl-testbed-ac-asset-representation"><span class="std std-ref">Asset Representation</span></a>), the design wind speeds from
 ASCE 7 are already included for each building footprint for reference.</p>
 <div class="section" id="sythetic-storm-scenario">
-<h2><span class="section-number">2.3.1. </span>Sythetic Storm Scenario<a class="headerlink" href="#sythetic-storm-scenario" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-testbed-ac-hazard-characterization-synthetic"></span><h2><span class="section-number">2.3.1. </span>Sythetic Storm Scenario<a class="headerlink" href="#sythetic-storm-scenario" title="Permalink to this headline">¶</a></h2>
 <p>An Atlantic City landfall scenario was generated using the Storm Hazard Projection Tool developed in the
 NJcoast project ([<a class="reference internal" href="#njcoast20">NJCoast20</a>]). The constructed hazard scenario uses NJcoast’s basic simulation option,
 which identifies the 25 hurricane tracks from the SHP tool’s surrogate model that match the targeted
@@ -258,7 +258,9 @@ locales. The SHP Tool generates these through the following underlying computati
 layer winds of a moving hurricane developed by Snaiki and Wu ([<a class="reference internal" href="#snaiki17a">Snaiki17a</a>], [<a class="reference internal" href="#snaiki17b">Snaiki17b</a>]).
 To account for the exposure in each New Jersey county, an effective roughness length (weighted average)
 of the upwind terrain is used based on the Land Use/Land Cover data reported by the state’s Bureau of
-GIS. In order to generate a wind field, this model requires the following inputs: . While the model is
+GIS. In order to generate a wind field, this model requires the time-evolving hurricane track,
+characterized by the position (latitude, longitude), the central pressure, the radius of maximum winds,
+and the forward speed. While the model is
 fully height-resolving and time-evolving, for a given input hurricane scenario, the wind hazard is
 characterized by the maximum 10-minute mean wind speed observed during the entire hurricane track.
 This is reported at the reference height of 10 m over a uniform grid (0.85-mile spacing, 1.37 km)
@@ -394,8 +396,8 @@ which were resolved with a finer mesh than more southern counties like Atlantic 
 <div><p>vs. ~3 km (Southern counties) between two closest nodes. In futher constrast with the NACCS ADCIRC runs referenced in <a class="reference internal" href="#lbl-testbed-ac-hazard-characterization-storm"><span class="std std-ref">Storm Surge Modeling</span></a>,</p>
 </div></blockquote>
 <p>the grids adopted for the Sandy hindcast in this region of New Jersey did not extend into the riverine systems. Noting these
-limits of the simulation, storm surge values in the riverine systems and at any point inland of the grid points shown
-in <a class="reference internal" href="#adcirc-waterelev"><span class="std std-numref">Fig. 2.3.2.4</span></a> are set to zero (<a class="reference internal" href="#adcirc-sitepwd"><span class="std std-numref">Fig. 2.3.2.5</span></a>). And the
+limits of the simulation, peak water depth over land displayed in <a class="reference internal" href="#adcirc-sitepwd"><span class="std std-numref">Fig. 2.3.2.5</span></a> assumes zero values in the rivering
+systems and at any point inland of the grid points shown in <a class="reference internal" href="#adcirc-waterelev"><span class="std std-numref">Fig. 2.3.2.4</span></a>. The
 <a class="reference download internal" download="" href="../../../_downloads/130bb4ce868cf8d46c7a6df5124c80e8/ADCIRC_Example.zip"><code class="xref download docutils literal notranslate"><span class="pre">ADCIRC_Example.zip</span></code></a> provides the peak water depth grid that can be used in
 the presented hurricane workflow.</p>
 <div class="align-center figure" id="adcirc-pwd" style="width: 500px">
