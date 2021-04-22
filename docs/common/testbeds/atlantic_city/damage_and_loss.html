@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.6. Damage and Loss Estimation &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>1.6. Damage and Loss Estimation &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -44,8 +44,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="2.7. Verification Results" href="sample_results.html" />
-    <link rel="prev" title="2.5. Response Simulation" href="response_simulation.html" />
+    <link rel="next" title="1.7. Uncertainty Quantification" href="uncertainty_quantification.html" />
+    <link rel="prev" title="1.5. Response Simulation" href="response_simulation.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -120,21 +120,20 @@
 </ul>
 <p class="caption"><span class="caption-text">Testbeds</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Atlantic County, NJ</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="overview.html">2.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="asset_description.html">2.2. Asset Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hazard_characterization.html">2.3. Hazard Characterization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="asset_representation.html">2.4. Asset Representation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="response_simulation.html">2.5. Response Simulation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.6. Damage and Loss Estimation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.7. Verification Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.8. Best Practices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.9. Standard Wind Speed Conversions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Atlantic County, NJ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asset_description.html">1.2. Asset Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hazard_characterization.html">1.3. Hazard Characterization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asset_representation.html">1.4. Asset Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response_simulation.html">1.5. Response Simulation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.6. Damage and Loss Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">1.7. Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_results.html">1.8. Verification Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">1.9. Example Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="best_practices.html">1.10. Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">1.11. Standard Wind Speed Conversions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">4. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -196,9 +195,9 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="index.html"><span class="section-number">2. </span>Atlantic County, NJ</a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">1. </span>Atlantic County, NJ</a> &raquo;</li>
         
-      <li><span class="section-number">2.6. </span>Damage and Loss Estimation</li>
+      <li><span class="section-number">1.6. </span>Damage and Loss Estimation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -218,81 +217,58 @@
            <div itemprop="articleBody">
             
   <div class="section" id="damage-and-loss-estimation">
-<span id="lbl-testbed-ac-damage-and-loss"></span><h1><span class="section-number">2.6. </span>Damage and Loss Estimation<a class="headerlink" href="#damage-and-loss-estimation" title="Permalink to this headline">¶</a></h1>
-<p>Damage and loss functions from the HAZUS Hurricane Damage and Loss Model (<a class="reference internal" href="#fema18a" id="id1"><span>[FEMA18a]</span></a>, <a class="reference internal" href="#fema18b" id="id2"><span>[FEMA18b]</span></a>) were implemented
-in PELICUN to support HAZUS’s 3520 different wooden building configurations available for hurricane loss
-modeling.  The HAZUS functions consist of tabular data to describe the fragility or expected losses as a
-function of wind speed. These data were used to calibrate coupled damage and loss models to estimate the
-damage state and the corresponding expected loss ratio for each building configuration in <a class="reference external" href="https://pelicun.readthedocs.io/en/latest/">PELICUN</a>.
+<span id="lbl-testbed-ac-damage-and-loss"></span><h1><span class="section-number">1.6. </span>Damage and Loss Estimation<a class="headerlink" href="#damage-and-loss-estimation" title="Permalink to this headline">¶</a></h1>
+<p>Damage and loss functions from the HAZUS Hurricane Damage and Loss Model ([<a class="reference internal" href="#fema18a">FEMA18a</a>], [<a class="reference internal" href="#fema18b">FEMA18b</a>])
+were implemented in <a class="reference external" href="https://pelicun.readthedocs.io/en/latest/">PELICUN</a> to support loss assessment for
+all configurations of buildings currently supported by HAZUS for wind and flood hazards. These
+configurations represent all the possible unique configurations of building attributes associated
+with each building class (defined by material) and subclass (defined by occupancy), as discussed in
+<span class="xref std std-ref">testbed_AC_asset_representation</span>. For example, wood (class) single-family homes 1-2+ stories
+(subclass) would have damage and loss functions associated with each unique combination of attributes
+used to define key features of the load path and components (e.g., roof shape, secondary water resistance,
+roof deck attachment, roof-wall connection, shutters, garage), as well as the exposure (terrain roughness).</p>
+<p>The HAZUS damage and loss functions consist of tabular data to describe the fragility or expected losses as a
+function of hazard intensity. These data were used to calibrate coupled damage and loss models to estimate
+the damage state and the corresponding expected loss ratio for each building configuration in PELICUN.
 Continuous functions (Normal or Lognormal cumulative density functions) were fit to the synthetic data
 by maximizing the likelihood of the observations assuming a Binomial distribution of outcomes at each
-discrete wind speed in the HAZUS database. Only data up to 200 mph wind speeds were used because the
-substantial reduction in the number of observations introduces significant measurement error above that
-level. Coupling the damage and loss models in this way ensures more realistic outcomes (e.g., a
-building with no damage cannot have total loss when the two models are coupled), and the parameterized
-models allow for more efficient storage and computations within the workflow.</p>
-<blockquote>
-<div><p>consideration of wind and storm surge (i.e., flood) damage and losses.
-Further, the calculation of wind effects does not require structural analysis to estimate EDPs,
-but rather adopts an approach where damage and losses are calculated directly from the wind speed.
-Similarly, the flood-induced loss calculation is based on the peak water depth.
-Damage and loss functions from the HAZUS Multi-hazard Loss Estimation Methodology (<a class="reference internal" href="#fema18a" id="id3"><span>[FEMA18a]</span></a>, <a class="reference internal" href="#fema18b" id="id4"><span>[FEMA18b]</span></a>)
-were implemented in <a class="reference external" href="https://pelicun.readthedocs.io/en/latest/">PELICUN</a> to support the damage and loss assessment.</p>
-</div></blockquote>
-<p>For the <strong>wind loss assessment</strong>, the HAZUS functions consist of tabular data to
-describe the fragility or expected losses as a function of peak wind speed (PWS). These
-data were used to calibrate coupled damage and loss models to estimate the damage
-state and the corresponding expected loss ratio for each building configuration in PELICUN.
-Continuous functions (Normal or Lognormal cumulative density functions) were fit to the synthetic
-data by maximizing the likelihood of the observations assuming a Binomial distribution of outcomes
-at each discrete wind speed in the HAZUS database. Only data up to 200 mph wind speeds were used
-because the substantial reduction in the number of observations introduces significant measurement
-error above that level (<a class="reference internal" href="#wind-df"><span class="std std-numref">Fig. 2.6.2</span></a>). Coupling the damage and loss models in this way ensures more realistic
-outcomes (e.g., a building with no damage cannot have total loss when the two models are coupled),
-and the parameterized models allow for more efficient storage and computations within the
-workflow.</p>
-<div class="align-center figure" id="wind-df" style="width: 1200px">
+discrete hazard intensity in the HAZUS database. Coupling the damage and loss models in this way ensures
+more realistic outcomes (e.g., a building with no damage cannot have total loss when the two models are
+coupled), and the parameterized models allow for more efficient storage and computations within the workflow.</p>
+<ol class="arabic simple">
+<li><p>For the <strong>wind loss assessment</strong>, the HAZUS functions consist of tabular data to
+describe the fragility or expected losses as a function of peak wind speed (PWS).
+Only data up to 200 mph wind speeds were used because the substantial reduction in the
+number of observations introduces significant measurement error above that level (<a class="reference internal" href="#wind-df"><span class="std std-numref">Fig. 1.6.1</span></a>).</p></li>
+</ol>
+<div class="align-center figure" id="wind-df" style="width: 1000px">
 <img alt="../../../_images/wind_damage_functions.png" src="../../../_images/wind_damage_functions.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.2 </span><span class="caption-text">Fitted HAZUS wind damage functions for example building classes.</span><a class="headerlink" href="#wind-df" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.6.1 </span><span class="caption-text">Fitted HAZUS wind damage functions for example building classes.</span><a class="headerlink" href="#wind-df" title="Permalink to this image">¶</a></p>
 </div>
-<p>The HAZUS damage and loss functions are grouped into five main classes by building material, with
-additional subclasses by building type. For each building class, e.g., wood single-family homes 1-2+
-stories, a collection of attributes are used to define key features of the load path and components
-(e.g., roof shape, secondary water resistance, roof deck attachment, roof-wall connection, shutters,
-garage) as well as the exposure (terrain roughness previously estimated in the Wind Hazard Model)
-to assign the corresponding fragility. A rules engine was developed using a combination of historical
-New Jersey model building codes, surveys capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="#javeline19" id="id6"><span>[Javeline19]</span></a>),
-and market data to assign these attributes to each parcel based on age and
-other available building information (e.g., MOD IV data). Libraries of damage and loss functions
-associated with storm surge from the USACE and other recent studies in the literature are planned for
-future releases of PELICUN. Eventually, these damage and loss descriptions will be supplemented
-with more advanced models as the testbed is progressively refined to include component-based
-fragilities and fault-trees that capture cascading damage sequences resulting from breaches of the
-building envelope.</p>
-<p>For the <strong>flood loss assessment</strong>, the HAZUS functions are in the form of depth-damage ratio curves, relating
+<ol class="arabic simple" start="2">
+<li><p>For the <strong>flood loss assessment</strong>, the HAZUS functions are in the form of depth-damage ratio curves, relating
 the peak water depth (PWD) of flooding (in feet), as measured from the top of the first finished floor,
-to a percent of the total replacement cost of the asset. These depth-damage ratio curves are provided
-for each building class as listed in <a class="reference internal" href="asset_representation.html#flood-bldg-class"><span class="std std-numref">Table 2.4.1.2</span></a>. <a class="reference internal" href="#flood-ddc"><span class="std std-numref">Fig. 2.6.3</span></a> shows the depth-damage
-ratio curves.</p>
-<div class="align-center figure" id="flood-ddc" style="width: 1200px">
+to a percent of the total replacement cost of the asset (<a class="reference internal" href="#flood-ddc"><span class="std std-numref">Fig. 1.6.2</span></a>).</p></li>
+</ol>
+<div class="align-center figure" id="flood-ddc" style="width: 1000px">
 <img alt="../../../_images/flood_depth_damage_curves.png" src="../../../_images/flood_depth_damage_curves.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.3 </span><span class="caption-text">Depth-damage ratio curves for the flood loss assessment.</span><a class="headerlink" href="#flood-ddc" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.6.2 </span><span class="caption-text">Depth-damage ratio curves for the flood loss assessment.</span><a class="headerlink" href="#flood-ddc" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <strong>total loss</strong> from wind and flood damages are estimated by combining the “wind-only” and “flood-only”
-losses following the combination rule in <a class="reference internal" href="#fema18a" id="id7"><span>[FEMA18a]</span></a>. The primary motivation for the combined wind and
+losses following the combination rule in <a class="reference internal" href="#fema18a" id="id1"><span>[FEMA18a]</span></a>. The primary motivation for the combined wind and
 flood loss methodology is to avoid “double counting” of damage. At a minimum, the combined wind and
 flood loss must be at least the larger of the wind-only or the flood-only loss. At a maximum, the combined
 loss must be no larger than the lesser of the sum of the wind-only and flood-only losses
 or 100% of the building (or contents) replacement value. These constraints can be written
 as:</p>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-damage-and-loss-0">
-<span class="eqno">(2.6.1)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-damage-and-loss-0" title="Permalink to this equation">¶</a></span>\[max(L_{wind}, L_{flood}) \leq L_{combined} \leq min(L_{wind}+L_{flood}, 1.00)\]</div>
+<span class="eqno">(1.6.1)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-damage-and-loss-0" title="Permalink to this equation">¶</a></span>\[max(L_{wind}, L_{flood}) \leq L_{combined} \leq min(L_{wind}+L_{flood}, 1.00)\]</div>
 <p>where <span class="math notranslate nohighlight">\(L_{wind}\)</span> is the wind-only loss ratio, <span class="math notranslate nohighlight">\(L_{flood}\)</span> is the flood-only loss ratio, and <span class="math notranslate nohighlight">\(L_{combined}\)</span>
 is the combined loss ratio. The HAZUS combination rule first assumes that the wind-induced damage and flood-induced damage
 are spread uniformly and randomly over a building. In this idealized case, the two damage mechanisms can be treated as
 independent, and the expected combined loss ratio is simply as:</p>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-damage-and-loss-1">
-<span class="eqno">(2.6.2)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-damage-and-loss-1" title="Permalink to this equation">¶</a></span>\[L_{combined} = L_{wind} + L_{flood} - L_{wind} \times L_{flood}\]</div>
+<span class="eqno">(1.6.2)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-damage-and-loss-1" title="Permalink to this equation">¶</a></span>\[L_{combined} = L_{wind} + L_{flood} - L_{wind} \times L_{flood}\]</div>
 <p>However,  it is nonetheless clear that neither wind nor storm surge damages are
 uniformly and randomly distributed throughout a structure. Wind damage is most
 frequently initiated at the roof and fenestrations (i.e., windows,
@@ -309,7 +285,7 @@ components into a consistent set of building sub-assemblies:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <dl class="simple">
-<dt>HAZUS building sub-assemblies (<a class="reference internal" href="#fema18a" id="id8"><span>[FEMA18a]</span></a>):</dt><dd><ol class="arabic simple">
+<dt>HAZUS building sub-assemblies (<a class="reference internal" href="#fema18a" id="id2"><span>[FEMA18a]</span></a>):</dt><dd><ol class="arabic simple">
 <li><p>Foundation: Includes site work, footings, and walls, slabs, piers or piles.</p></li>
 <li><p>Below First Floor: Items other than the foundation that are located below the first floor of the structure such as mechanical equipment, stairways, parking pads, break away flood walls, etc.</p></li>
 <li><p>Structure Framing: Includes all of the main load carrying structural members of the building below the roof framing and above the foundation.</p></li>
@@ -324,13 +300,13 @@ components into a consistent set of building sub-assemblies:</p>
 <p>Hence, the combination is conducted at each sub-assembly level and the total combined loss ratio is the
 sum of combined sub-assembly loss ratios:</p>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-damage-and-loss-2">
-<span class="eqno">(2.6.3)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-damage-and-loss-2" title="Permalink to this equation">¶</a></span>\[L_{combined} = \sum\limits_{i=1}^7 L_{wind,i} + L_{flood,i} - L_{wind,i} \times L_{flood,i}\]</div>
+<span class="eqno">(1.6.3)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-damage-and-loss-2" title="Permalink to this equation">¶</a></span>\[L_{combined} = \sum\limits_{i=1}^7 L_{wind,i} + L_{flood,i} - L_{wind,i} \times L_{flood,i}\]</div>
 <p>where <span class="math notranslate nohighlight">\(L_{wind,i}\)</span> is the wind-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly, and
 <span class="math notranslate nohighlight">\(L_{flood,i}\)</span> is the flood-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly. These sub-assembly
 loss ratios are computed as a percent of the total building loss ratio. The percentages are based on the
-<a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 2.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 2.6.2</span></a> that are developed per the HAZUS methodology and data table (<a class="reference internal" href="#fema18a" id="id9"><span>[FEMA18a]</span></a>).</p>
+<a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 1.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 1.6.2</span></a> that are developed per the HAZUS methodology and data table (<a class="reference internal" href="#fema18a" id="id3"><span>[FEMA18a]</span></a>).</p>
 <table class="docutils align-center" id="wind-comp">
-<caption><span class="caption-number">Table 2.6.1 </span><span class="caption-text">Sub-assembly wind-only loss contribution ratio table.</span><a class="headerlink" href="#wind-comp" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 1.6.1 </span><span class="caption-text">Sub-assembly wind-only loss contribution ratio table.</span><a class="headerlink" href="#wind-comp" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 10%" />
@@ -8346,7 +8322,7 @@ loss ratios are computed as a percent of the total building loss ratio. The perc
 </tbody>
 </table>
 <table class="docutils align-center" id="flood-comp">
-<caption><span class="caption-number">Table 2.6.2 </span><span class="caption-text">Sub-assembly flood-only loss contribution ratio table.</span><a class="headerlink" href="#flood-comp" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 1.6.2 </span><span class="caption-text">Sub-assembly flood-only loss contribution ratio table.</span><a class="headerlink" href="#flood-comp" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 9%" />
 <col style="width: 9%" />
@@ -34513,75 +34489,14 @@ loss ratios are computed as a percent of the total building loss ratio. The perc
 </tr>
 </tbody>
 </table>
-<p>The estimated wind-only, flood-only, and total losses under the four hurricane
-scenarios (<a class="reference internal" href="hazard_characterization.html#hurricane-cat"><span class="std std-numref">Table 2.3.1.1</span></a>) are shown in <a class="reference internal" href="#dl-c2"><span class="std std-numref">Fig. 2.6.4</span></a> to <a class="reference internal" href="#dl-c5"><span class="std std-numref">Fig. 2.6.7</span></a>.</p>
-<div class="align-center figure" id="dl-c2" style="width: 100%">
-<img alt="../../../_images/DL_category2.png" src="../../../_images/DL_category2.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.4 </span><span class="caption-text">Estimated regional loss maps for the <strong>Category 2</strong> hurricane.</span><a class="headerlink" href="#dl-c2" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="dl-c3" style="width: 100%">
-<img alt="../../../_images/DL_category3.png" src="../../../_images/DL_category3.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.5 </span><span class="caption-text">Estimated regional loss maps for the <strong>Category 3</strong> hurricane.</span><a class="headerlink" href="#dl-c3" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="dl-c4" style="width: 100%">
-<img alt="../../../_images/DL_category4.png" src="../../../_images/DL_category4.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.6 </span><span class="caption-text">Estimated regional loss maps for the <strong>Category 4</strong> hurricane.</span><a class="headerlink" href="#dl-c4" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="dl-c5" style="width: 100%">
-<img alt="../../../_images/DL_category5.png" src="../../../_images/DL_category5.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.7 </span><span class="caption-text">Estimated regional loss maps for the <strong>Category 5</strong> hurricane.</span><a class="headerlink" href="#dl-c5" title="Permalink to this image">¶</a></p>
-</div>
-<p>Average expected loss ratios are also computed for individual cities, which are
-summarized in <a class="reference internal" href="#cl-c2"><span class="std std-numref">Fig. 2.6.8</span></a> to <a class="reference internal" href="#cl-c5"><span class="std std-numref">Fig. 2.6.11</span></a></p>
-<div class="align-center figure" id="cl-c2" style="width: 100%">
-<img alt="../../../_images/city_loss_c2.png" src="../../../_images/city_loss_c2.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.8 </span><span class="caption-text">City-wise average expected loss ratios (<strong>Category 2</strong> hurricane).</span><a class="headerlink" href="#cl-c2" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="cl-c3" style="width: 100%">
-<img alt="../../../_images/city_loss_c3.png" src="../../../_images/city_loss_c3.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.9 </span><span class="caption-text">City-wise average expected loss ratios (<strong>Category 3</strong> hurricane).</span><a class="headerlink" href="#cl-c3" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="cl-c4" style="width: 100%">
-<img alt="../../../_images/city_loss_c4.png" src="../../../_images/city_loss_c4.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.10 </span><span class="caption-text">City-wise average expected loss ratios (<strong>Category 4</strong> hurricane).</span><a class="headerlink" href="#cl-c4" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="cl-c5" style="width: 100%">
-<img alt="../../../_images/city_loss_c5.png" src="../../../_images/city_loss_c5.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.11 </span><span class="caption-text">City-wise average expected loss ratios (<strong>Category 5</strong> hurricane).</span><a class="headerlink" href="#cl-c5" title="Permalink to this image">¶</a></p>
-</div>
-<p>For the top five cities with most assets in the building inventory, the average
-expected wind losses are computed for different built eras. Buildings before 1980s generally
-have relatively higher wind loss ratios where 1970s is found to be the worst decade for
-Atlantic City, Brigantine, and Galloway. Since 1980, the building performance is improved
-where the post-2000 buildings are found to behave much better than buildings in the other groups.</p>
-<div class="align-center figure" id="wl-atlantic" style="width: 100%">
-<img alt="../../../_images/atlantic_wind_loss.png" src="../../../_images/atlantic_wind_loss.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.12 </span><span class="caption-text">Average expected wind loss ratios (Atlantic City).</span><a class="headerlink" href="#wl-atlantic" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="wl-brigantine" style="width: 100%">
-<img alt="../../../_images/brigantine_wind_loss.png" src="../../../_images/brigantine_wind_loss.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.13 </span><span class="caption-text">Average expected wind loss ratios (Brigantine).</span><a class="headerlink" href="#wl-brigantine" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="wl-galloway" style="width: 100%">
-<img alt="../../../_images/galloway_wind_loss.png" src="../../../_images/galloway_wind_loss.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.14 </span><span class="caption-text">Average expected wind loss ratios (Galloway).</span><a class="headerlink" href="#wl-galloway" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="wl-margate" style="width: 100%">
-<img alt="../../../_images/margate_wind_loss.png" src="../../../_images/margate_wind_loss.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.15 </span><span class="caption-text">Average expected wind loss ratios (Margate City).</span><a class="headerlink" href="#wl-margate" title="Permalink to this image">¶</a></p>
-</div>
-<div class="align-center figure" id="wl-ventor" style="width: 100%">
-<img alt="../../../_images/ventor_wind_loss.png" src="../../../_images/ventor_wind_loss.png" />
-<p class="caption"><span class="caption-number">Fig. 2.6.16 </span><span class="caption-text">Average expected wind loss ratios (Ventor City).</span><a class="headerlink" href="#wl-ventor" title="Permalink to this image">¶</a></p>
-</div>
 <dl class="citation">
-<dt class="label" id="fema18a"><span class="brackets">FEMA18a</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>,<a href="#id7">3</a>,<a href="#id8">4</a>,<a href="#id9">5</a>)</span></dt>
+<dt class="label" id="fema18a"><span class="brackets">FEMA18a</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>
 <dd><p>FEMA (2018), HAZUS – Multi-hazard Loss Estimation Methodology 2.1, Hurricane Model Technical Manual, Federal Emergency Management Agency, Washington D.C., 718p.</p>
 </dd>
-<dt class="label" id="fema18b"><span class="brackets">FEMA18b</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>)</span></dt>
+<dt class="label" id="fema18b"><span class="brackets">FEMA18b</span></dt>
 <dd><p>FEMA (2018), HAZUS – Multi-hazard Loss Estimation Methodology 2.1, Flood Model Technical Manual, Federal Emergency Management Agency, Washington D.C., 569p.</p>
 </dd>
-<dt class="label" id="javeline19"><span class="brackets"><a class="fn-backref" href="#id6">Javeline19</a></span></dt>
+<dt class="label" id="javeline19"><span class="brackets">Javeline19</span></dt>
 <dd><p>Javeline, D. and Kijewski-Correa, T. (2019) “Coastal Homeowners in a Changing Climate,” Climatic Change. 152(2), 259-276 <a class="reference external" href="https://doi.org/10.1007/s10584-018-2257-4">https://doi.org/10.1007/s10584-018-2257-4</a></p>
 </dd>
 </dl>
@@ -34648,6 +34563,7 @@ where the post-2000 buildings are found to behave much better than buildings in 
   </style>
 
 <script>
+    /*
     let selectedFilters = [];
     const images  = document.getElementsByClassName("gallery-item");
     const filters = [...document.querySelectorAll('.filter select')];
@@ -34684,6 +34600,7 @@ where the post-2000 buildings are found to behave much better than buildings in 
             };
         })
     };
+    */
 </script>
 
 
