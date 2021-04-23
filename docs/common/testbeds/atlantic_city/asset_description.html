@@ -106,8 +106,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/about/R2D/about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">2. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">3. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -583,8 +583,8 @@ attributes necessary to conduct standard FEMA risk assessments. Specifically, al
 Basic Attributes (<a class="reference internal" href="#tab-basicattri"><span class="std std-numref">Table 1.2.3.1</span></a>). A subset of the data, including Atlantic County, had additional Advanced
 Attributes required by HAZUS User Defined Facilities (UDF) Module (<a class="reference internal" href="#tab-udfattri"><span class="std std-numref">Table 1.2.3.2</span></a>) and FEMA Substantial Damage
 Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span class="std std-numref">Table 1.2.3.3</span></a>).</p>
-<span id="tab-basicattri"></span><table class="docutils align-center" id="id8">
-<caption><span class="caption-number">Table 1.2.3.1 </span><span class="caption-text">NJDEP basic attributes available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<span id="tab-basicattri"></span><table class="docutils align-center" id="id12">
+<caption><span class="caption-number">Table 1.2.3.1 </span><span class="caption-text">NJDEP basic attributes available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -639,8 +639,8 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tr>
 </tbody>
 </table>
-<span id="tab-udfattri"></span><table class="docutils align-center" id="id9">
-<caption><span class="caption-number">Table 1.2.3.2 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<span id="tab-udfattri"></span><table class="docutils align-center" id="id13">
+<caption><span class="caption-number">Table 1.2.3.2 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -891,6 +891,24 @@ detections and calculates the confidence level associated with each detection. A
 that converts stacks of neighboring bounding boxes into floor counts was developed to convert
 this output into floor counts. Recognizing an image may contain multiple buildings at a time,
 this post-processor was designed to perform counts at the individual building-level.</p>
+<p>For a random building image dataset, where images were captured using arbitrary camera
+orientations (also termed “in-the-wild” images), the developed floor detection model
+was determined to identify the number of stories with an accuracy of 86%.
+:numref:<a href="#id6"><span class="problematic" id="id7">`</span></a>num_story_confusion`(a) provides a breakdown of this accuracy measure for different
+prediction classes (i.e., the confusion matrix of model classifications).
+It was also observed that if the image dataset is established such that building
+images are captured with minimal obstructions, the building is at the center of the
+image, and perspective distortions are limited (termed “cleaned” data), the model
+identified the number of stories at an accuracy level of 94.7%.
+:numref:<a href="#id8"><span class="problematic" id="id9">`</span></a>num_story_confusion`(b)  shows the confusion matrix for the model predicting on the
+“cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images
+randomly selected across all New Jersey counties, excluding Atlantic County, was utilized.</p>
+<div class="align-center figure" id="num-story-confusion" style="width: 1000px">
+<img alt="../../../_images/num_story_confusion.png" src="../../../_images/num_story_confusion.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.4.7 </span><span class="caption-text">Confusion matrices for the number of stories predictor. The maxtrix one the left shows
+the model’s prediction accuracy when tested on “in-the-wild” images. The matrix on the
+right depicts the model accuracy on the “cleaned” imagery.</span><a class="headerlink" href="#num-story-confusion" title="Permalink to this image">¶</a></p>
+</div>
 </dd>
 </dl>
 </li>
@@ -900,24 +918,30 @@ in the NJDEP inventory. Hence, the elevation of the bottom plane of the roof (lo
 of roof line), elevation of the roof (peak of gable or apex of hip), and height of first of
 floor as determined from base of door’s height, all defined with respect to grade (in feet),
 were estimated from street-level imagery. These geometric properties are defined visually
-for common residential coastal typologies in <a class="reference internal" href="#building-elevation"><span class="std std-numref">Fig. 1.2.4.7</span></a>. The mean height of the roof system
+for common residential coastal typologies in <a class="reference internal" href="#building-elevation"><span class="std std-numref">Fig. 1.2.4.8</span></a>. The mean height of the roof system
 is then derived from the aforementioned roof elevations.</p>
 <div class="align-center figure" id="building-elevation" style="width: 1000px">
 <img alt="../../../_images/building_elevation.png" src="../../../_images/building_elevation.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.4.7 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.4.8 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image">¶</a></p>
 </div>
 <p>As in any single-image metrology application, extracting the building elevations require:
 1. Rectification of image perspective distortions, typically introduced during image capture,
 2. Determining the pixel count representing the distance between ends of the objects or surface of interest
 1. (e.g., for first-floor height, the orthogonal distance between the ground and first-floor levels)
 3. Converting these pixel counts to real-world dimensions by matching a reference measurement with the corresponding pixel count</p>
-<p>Given the number of street-level imagery available for a building can be limited and sparsely
-spaced, a single image rectification approach was deemed most applicable for regional-scale
-inventory development. The support vector model implemented for image rectification focuses on
-the street-facing plane of a building in an image and based on the Manhattan World
-assumption, (i.e., all surfaces in the world are aligned with two horizontal and one vertical
-dominant directions) iteratively transforms an image such that horizontal edges on the facade
-plain lie parallel to each other, and its vertical edges are orthogonal to the horizontal edges.</p>
+<p>Given that the number of street-level images available for a building can be limited
+and sparsely spaced, this single image rectification approach was deemed most applicable for
+regional-scale inventory development. The first step in image rectification requires
+detecting line segments on the front face of the building. This is performed by using
+the L-CNN end-to-end wireframe parsing method. Once the segments are detected, vertical
+and horizontal lines on the front face of the building are automatically detected using
+RANSAC line fitting based on the assumptions that line segments on this face are the
+predominant source of line segments in the image and the orientation of these line
+segments change linearly with their horizontal or vertical position depending on their
+predominant orientation. Invoking the Manhattan World assumption (i.e., all surfaces in
+the world are aligned with two horizontal and one vertical dominant directions), we
+iteratively transform the image such that horizontal edges on the facade plain lie
+parallel to each other, and its vertical edges are orthogonal to the horizontal edges.</p>
 <p>In order to automate the process of obtaining the pixel counts for the ground elevations, a
 face segmentation model was trained to auotmatically label ground, facade, door, windwos and roof
 pixels in an image. The segmentation model was trained using DeepLabV3 architecture on a ResNet-101
@@ -926,12 +950,15 @@ backbone, pretrained on PASCAL VOC 2012 segmentation dataset, using a facade seg
 0.001 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world
 dimensions were attained by use of edge detections
 performed on satellite images.</p>
+<p>The conversion between pixel dimensions and real-world dimensions were attained by use of
+edge detections performed on satellite images.</p>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt><strong>Roof Geometry</strong>: Roof shape and slope are not available in state inventory data and required for wind loss</dt><dd><p>modeling. The SimCenter developed application Building Recognition using Artificial
-Intelligence at Large Scales, BRAILS (<a class="reference internal" href="#wang19" id="id6"><span>[Wang19]</span></a>), is used to interpret satellite images
+<dt><strong>Roof Geometry</strong>: Roof shape and slope are not available in state inventory data and required for wind loss</dt><dd><blockquote>
+<div><p>modeling. The SimCenter developed application Building Recognition using Artificial
+Intelligence at Large Scales, BRAILS (<a class="reference internal" href="#wang19" id="id10"><span>[Wang19]</span></a>), is used to interpret satellite images
 of building roofs, which are collected from Google Maps. The satellite images are labeled
 with shape types to form a dataset, upon which a Convolutional Neural Network (CNN) is
 trained so that it can give rapid predictions of roof types when given new images of roofs.
@@ -939,25 +966,50 @@ The footprint centroid (Latitude and Longitude in Building Inventory) is used as
 location index when downloading images
 automatically from Google Maps. While more complex roof shapes could in theory be classified,
 the current use of HAZUS damage and loss functions required the use of similitude measures
-to define each roof as an “effective” gable, hip or flat geometry (<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 1.2.4.8</span></a>). Using BRAILS, this
+to define each roof as an “effective” gable, hip or flat geometry (<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 1.2.4.9</span></a>). Using BRAILS, this
 classification was achieved with approximately 90.3% accuracy based on validation studies.
 The detailed validation process can be found in
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">BRAILS online documentation</a>.</p>
 <div class="align-center figure" id="roof-shape" style="width: 800px">
 <img alt="../../../_images/roof_shape.png" src="../../../_images/roof_shape.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.4.8 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="#wang19" id="id7"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.4.9 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="#wang19" id="id11"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
 </div>
+</div></blockquote>
+<p>Roof slope is calculated as the ratio between the roof height and half the depth of the
+building, i.e., length of the building orthogonal to the roadline in front of the building.
+Roof height is calculated by determining the difference between the bottom plane and apex
+elevations of the roof as defined in the Building Elevations section. Plan dimensions of
+the building are determined by first obtaining the camera location of the street-level
+image to determine road-parallel and -perpendicular dimensions of the building footprint,
+then setting the average of the road-perpendicular dimensions as the building depth. This
+is deemed a more accurate way of establishing the plan geometry than using the footprints
+themselves.</p>
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
-<dt><strong>Window Area</strong>: The proportion of windows to the overall surface area is not available in state inventory data</dt><dd><p>and required for wind loss modeling. Generally, window area can be assumed based on the
-building occupancy class given Department of Energy industry databases. This property can also
-be estimated from Google streetview imagery, under the assumption that the proportion of
-surface area occupied by windows at the front of the building is representative of the amount
-of window openings on the sides and rear of the building, an assumption that may hold for
-single family residential buildings, but possibly not for other commercial construction where
-street fronts have higher proportions of glass.</p>
+<li><dl>
+<dt><strong>Window Area</strong>: The proportion of windows to the overall surface area is not available in inventory and</dt><dd><p>assessor datasets though required for wind loss modeling. Generally, window area can be
+assumed based on the building occupancy class given Department of Energy industry databases.
+This property can also be estimated from street-level imagery, by taking advantage of the
+window masks generated as part of the segmentation performed when determining building
+elevations. For this application, window area is defined as a percentage of the total
+facade area as the ratio of the area of windows masks to the area of the front facade
+of the building. The underlying assumption is that the proportion of surface area occupied
+by windows at the front of the building is representative of the amount of window openings
+on the sides and rear of the building. This enables the ratio calculated for the front
+face of the building to be used for the whole building. This assumption may hold for single
+family residential buildings, but possibly not for other commercial construction where
+street fronts have higher proportions of glass. In lieu of this computer vision approach,
+users may choose to adopt industry norms for their window areas (see callout box below).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Industry Norms on Window Area</strong>: Engineered residential buildings can be assumed to have low window to wall
+area ratios (WWR) based on the information for Reference Buildings in Baltimore, MD from the
+<a class="reference external" href="https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment">Office of Energy Efficiency and Renewable Energy</a>. Reference Buildings were created for select cities
+based on climate profile; of the available cities, Baltimore is selected since its climate is most
+similar to Atlantic City, NJ. Office buildings (used as a test case for commercial), have WWR of
+33% and apartments (used as a test case for residential) have WWR of 15%.</p>
+</div>
 </dd>
 </dl>
 </li>
@@ -11210,17 +11262,17 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Atlantic County Inventory</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/cx4l0f0wnu7gx09supmwu4hzi9xrns2u">Atlantic County Inventory.pdf</a></p></td>
+<td><p><a class="reference download internal" download="" href="../../../_downloads/2a28d89a8a8ed6a89c8bb3a80e01d199/AtlanticCountyInventory.csv"><code class="xref download docutils literal notranslate"><span class="pre">Atlantic</span> <span class="pre">County</span> <span class="pre">Inventory</span></code></a></p></td>
 <td><p>100,721</p></td>
 <td><p>~ 1,500 CPU-Hour* (please see more details in <strong>Computational Resources Requirements</strong>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Flood-Exposed Inventory</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/ic2q1ru8d7qqkr4uz1ny07h905mqh1bv">Flood-Exposed Inventory.pdf</a></p></td>
+<td><p><a class="reference download internal" download="" href="../../../_downloads/2654e2d702fb35a3ffb60a6640ca565a/FloodExposedInventory.csv"><code class="xref download docutils literal notranslate"><span class="pre">Flood-Exposed</span> <span class="pre">Inventory</span></code></a></p></td>
 <td><p>32,828</p></td>
 <td><p>~ 440 CPU-Hour</p></td>
 </tr>
 <tr class="row-even"><td><p>Exploration Inventory</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/ic2q1ru8d7qqkr4uz1ny07h905mqh1bv">Exploration Inventory.pdf</a></p></td>
+<td><p><a class="reference download internal" download="" href="../../../_downloads/c9f7056c8b692604aafd0bb10bb3ca42/ExplorationInventory.csv"><code class="xref download docutils literal notranslate"><span class="pre">Exploration</span> <span class="pre">Inventory</span></code></a></p></td>
 <td><p>1,000</p></td>
 <td><p>~ 12 CPU-Hour</p></td>
 </tr>
@@ -11233,7 +11285,7 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <dt class="label" id="njgin20"><span class="brackets">NJGIN20</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>)</span></dt>
 <dd><p>NJ Geographic Information Network, State of New Jersey, <a class="reference external" href="https://njgin.nj.gov/njgin/#!/">https://njgin.nj.gov/njgin/#!/</a></p>
 </dd>
-<dt class="label" id="wang19"><span class="brackets">Wang19</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id7">2</a>)</span></dt>
+<dt class="label" id="wang19"><span class="brackets">Wang19</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id11">2</a>)</span></dt>
 <dd><p>Wang C. (2019), NHERI-SimCenter/SURF: v0.2.0 (Version v0.2.0). Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.3463676">http://doi.org/10.5281/zenodo.3463676</a></p>
 </dd>
 <dt class="label" id="microsoft2018"><span class="brackets">Microsoft2018</span></dt>
