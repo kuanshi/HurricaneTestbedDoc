@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Opportunity Areas for Future Refinements &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>1.10. Opportunity Areas for Future Refinements &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -43,6 +43,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1.11. Best Practices" href="best_practices.html" />
+    <link rel="prev" title="1.9. Example Outputs" href="example_outputs.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -116,11 +118,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Testbeds</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../sf_bay_area/index.html">1. San Francisco, CA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">2. Atlantic County, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">4. Lake Charles, LA</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. Atlantic County, NJ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asset_description.html">1.2. Asset Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hazard_characterization.html">1.3. Hazard Characterization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asset_representation.html">1.4. Asset Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response_simulation.html">1.5. Response Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">1.6. Damage and Loss Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">1.7. Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_results.html">1.8. Verification Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">1.9. Example Outputs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.10. Opportunity Areas for Future Refinements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="best_practices.html">1.11. Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">1.12. Standard Wind Speed Conversions</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -182,7 +195,9 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Opportunity Areas for Future Refinements</li>
+          <li><a href="index.html"><span class="section-number">1. </span>Atlantic County, NJ</a> &raquo;</li>
+        
+      <li><span class="section-number">1.10. </span>Opportunity Areas for Future Refinements</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -202,8 +217,54 @@
            <div itemprop="articleBody">
             
   <div class="section" id="opportunity-areas-for-future-refinements">
-<span id="lbl-testbed-ac-future-refinements"></span><h1>Opportunity Areas for Future Refinements<a class="headerlink" href="#opportunity-areas-for-future-refinements" title="Permalink to this headline">¶</a></h1>
-<p>[…]</p>
+<span id="lbl-testbed-ac-future-refinements"></span><h1><span class="section-number">1.10. </span>Opportunity Areas for Future Refinements<a class="headerlink" href="#opportunity-areas-for-future-refinements" title="Permalink to this headline">¶</a></h1>
+<p>This testbed and its backing workflows should be viewed as a sandbox and scaffold,
+respectively, within which the community can explore different scenarios and develop
+new capabilities. The following list itemizes some areas where contribution from the
+community is especially welcome:</p>
+<ol class="arabic simple">
+<li><p>The current use of HAZUS for damage and loss modeling limits the buildings under
+consideration to 6 stories and under. Thus the user community is invited to support
+the extension of PELICUN to buildings taller than 6 stories.</p></li>
+<li><p>Extensions to taller buildings will require further expansion of the building
+inventory’s fields to capture attributes relevant to those classes of construction.
+Methods to mine relevant data from imagery or other third party data sources, e.g.,
+Emporis, will provide welcome extensions to the Asset Description approaches described herein.</p></li>
+<li><p>The testbed would benefit from validation studies that include ground truthing the
+generated inventories as well as the projected damage and loss. Those with access to
+damage data, particularly in areas affected significantly by Superstorm Sandy, may use
+the testbed to conduct such validation studies. The methodologies used to construct the
+inventory for Atlantic County can easily be repeated in more northern counties of the state,
+where damage was more significant, as all the flood-exposed inventory data and hazard descriptions
+available through the SimCenter have coverage over the entire state. The rulesets are similarly
+applicable statewide.</p></li>
+<li><p>Currently the workflow calculates damage and monetary loss; coupling the workflow with other
+social, societal or economic models, will provide opportunities to more robustly explore the
+impacts of hazard events, mitigation investments and development decisions on community resilience.
+The creation of techniques to automatically scrape and fuse data from the social, human and behavioral
+sciences will ensure those datasets can be generated in a manner similar to those used for the
+building inventory itself.</p></li>
+<li><p>A number of approximations and assumptions were made in the generation of the building inventory
+(see <a class="reference internal" href="asset_description.html#lbl-testbed-ac-asset-description"><span class="std std-ref">Asset Description</span></a>). There is considerable opportunity to expand, enrich and improve upon
+methodologies for automated inventory generation, particularly to generate other attributes necessary
+as the workflow advances toward component level damage quantification.</p></li>
+<li><p>The SimCenter aspires to incorporate increasing levels of fidelity in its characterization of hazards,
+modeling of buildings (to support application of pressures/loads and structural analysis), and ability
+to describe damage at the component level, with fault-trees that capture cascading damage sequences
+resulting from breaches of the building envelope. Thus there is considerable need for community
+research contributions such as libraries of fragilities, archetype building models, and catalogs
+of high-fidelity hazard simulations (hindcasts of historical events or synthetic storm data).
+This is especially the case of coastal hazards. With aspirations to replicate this workflow in other
+regions, these contributions need not be confined to New Jersey/Atlantic Coast. Their integration into
+the testbed can demonstrate how the contributions of individual researchers can aggregate to evaluate
+impact on much larger scales.</p></li>
+<li><p>The testbed does not explicitly treat the effects of debris (wind-borne or surge-transported), nor
+are any of the flow fields translated into pressures acting on individual buildings to enable the
+execution of structural analyses. Extending the workflow to tall buildings creates opportunities for
+response simulation to estimate drifts or other EDPs for more dynamically sensitive structures under
+wind. However, similar opportunities to translate geospatially varying hazards into loads on a given
+structure can be seized to increase the workflow’s overall fidelity.</p></li>
+</ol>
 </div>
 
 
