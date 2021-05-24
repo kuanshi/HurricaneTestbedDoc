@@ -137,8 +137,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../testbeds/lake_charles/index.html">4. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -234,16 +232,25 @@
 <p>Shown in <a class="reference internal" href="#fig-r2dpelicundlpanel"><span class="std std-numref">Fig. 2.8.1.1</span></a>, the <strong>Pelicun Damage and Loss</strong> application has the following inputs:</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p><strong>Damage and Loss Methodology:</strong> The type of damage and loss methodology to use. The following damage and loss methodologies are available:</p>
+<li><p><strong>Damage and Loss Methodology:</strong> The type of damage and loss methodology to use. Currently, the following damage and loss methodologies are available:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Hazus MH EQ</p></li>
-<li><p>Hazus MH EQ IM</p></li>
+<li><dl class="simple">
+<dt>Hazus MH EQ</dt><dd><p>The <strong>Hazus MH EQ</strong> option, expects the inputs to include standard engineering demand parameters (EDPs) for earthquakes such as peak interstory drift ratio (PID), peak floor acceleration (PFA), peak roof drift (PRD), and peak floor displacement (PFD). Use this option if performing a building response analysis.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Hazus MH EQ IM</dt><dd><p>The <strong>Hazus MH EQ IM</strong> option is more rudimentary, and only expects an intensity measure (IM) as an input, e.g., peak ground acceleration (PGA). Use this option if you are NOT performing a building response analysis, i.e., the Building Modeling type is set to <strong>None</strong> in the <strong>MOD</strong> tab. Also, in the <strong>ANA</strong> tab, the Building Analysis Engine type should be <strong>IMasEDP</strong> when using this option.</p>
+</dd>
+</dl>
+</li>
 </ul>
+<p>Both the <strong>Hazus MH EQ</strong> and the <strong>Hazus MH EQ IM</strong> options employ data from the <em>Hazards U.S. Multi-Hazard project</em> (HAZUS-MH), and are intended for damage and loss analysis of buildings subjected to earthquakes.</p>
 </div></blockquote>
 </li>
 <li><p><strong>Event Time:</strong> Select event time ‘on’ or ‘off’. Selecting the event time to ‘on’ defines the time of the event in YYYY-MM-DD:HH format. ‘off’ turns all time-effects off.</p></li>
-<li><p><strong>Number of Realizations:</strong> The number of loss realizations to generate in the analysis.</p></li>
+<li><p><strong>Number of Realizations:</strong> The number of loss realizations to generate in an analysis.</p></li>
 <li><p><strong>Output Detailed Results:</strong> Checking this box will output detailed results.</p></li>
 <li><p><strong>Create Log File:</strong> Checking this box will create a log file of the analysis.</p></li>
 <li><p><strong>Include Ground Failure:</strong> Checking this box will include ground failure in the analysis. If ground failure is included, fragility groups associated with ground failure are added in the auto-population phase. Note that such analysis requires peak ground displacement (PGD) values as inputs.</p></li>

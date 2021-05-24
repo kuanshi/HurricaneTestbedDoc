@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1.7. Example Outputs &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="2. Atlantic County, NJ" href="../atlantic_city/index.html" />
+    <link rel="prev" title="1.6. Uncertainty Quantification" href="uncertainty_quantification.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../index.html">
+
+
+
+  
+  <img src="../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. San Francisco, CA</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asset_description.html">1.2. Asset Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hazard_characterization.html">1.3. Hazard Characterization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response_simulation.html">1.4. Response Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">1.5. Damage and Loss Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">1.6. Uncertainty Quantification</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.7. Example Outputs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#damage-state">1.7.1. Damage State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expected-loss-ratio">1.7.2. Expected Loss Ratio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">1. </span>San Francisco, CA</a> &raquo;</li>
+        
+      <li><span class="section-number">1.7. </span>Example Outputs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/common/testbeds/sf_bay_area/example_outputs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="example-outputs">
+<span id="lbl-testbed-sf-example-outputs"></span><h1><span class="section-number">1.7. </span>Example Outputs<a class="headerlink" href="#example-outputs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="damage-state">
+<h2><span class="section-number">1.7.1. </span>Damage State<a class="headerlink" href="#damage-state" title="Permalink to this headline">¶</a></h2>
+<div class="align-center figure" id="id2">
+<span id="fig-s-ds"></span><a class="reference internal image-reference" href="../../../_images/ExpectedDSStruct.png"><img alt="../../../_images/ExpectedDSStruct.png" src="../../../_images/ExpectedDSStruct.png" style="width: 1000px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.7.1.1 </span><span class="caption-text">Expected structural damage states from San Francisco testbed.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id3">
+<span id="fig-ns-ds"></span><a class="reference internal image-reference" href="../../../_images/ExpectedDSNonStruct.png"><img alt="../../../_images/ExpectedDSNonStruct.png" src="../../../_images/ExpectedDSNonStruct.png" style="width: 1000px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.7.1.2 </span><span class="caption-text">Expected non-structural damage states from San Francisco testbed.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="expected-loss-ratio">
+<h2><span class="section-number">1.7.2. </span>Expected Loss Ratio<a class="headerlink" href="#expected-loss-ratio" title="Permalink to this headline">¶</a></h2>
+<p>An example of the resulting losses calculated for the Mw 7.0
+Hayward scenario are shown in <a class="reference internal" href="#fig-loss-ratio-comp"><span class="std std-numref">Fig. 1.7.2.1</span></a>. The color shading
+represents the loss ratios for each building, calculated as the
+mean repair costs normalized by the building replacement
+value. Also shown in the figure is a comparison to the loss
+ratios reported in the USGS Mw 7.0 Haywired Earthquake
+Scenario (<a class="reference internal" href="#hudnut18" id="id1"><span>[Hudnut18]</span></a>). Exposure and losses in
+the Haywired scenario were calculated using the HAZUS
+software. While it is instructive to compare results between
+the two studies, there are differences in the input data, scope
+and goals of the studies which are important to keep in
+mind. As the main purpose of the SimCenter testbed was
+to assemble and exercise the computational workflow, the
+models and results in the SimCenter study are preliminary,
+based on readily available information and implemented by
+a small team over a couple months. This contrasts with
+the multi-year multi-investigator Haywired study, whose goal
+is to inform earthquake planning and preparedness for the
+San Francisco Bay Area.</p>
+<div class="align-center figure" id="id4">
+<span id="fig-loss-ratio-comp"></span><a class="reference internal image-reference" href="../../../_images/LossRatioComp.png"><img alt="../../../_images/LossRatioComp.png" src="../../../_images/LossRatioComp.png" style="width: 1000px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.7.2.1 </span><span class="caption-text">Comparison of building loss ratios from San Francisco testbed - SimCenter (left), USGS-Haywired (right).</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Both studies were based on Mw 7.0 Hayward fault ruptures
+simulated using the SW4 software by the LLNL research group,
+however, the ground motion time histories are different for the
+two studies. Epicenters for the two earthquake scenarios are close
+(East Oakland and San Leandro for Haywired and SimCenter,
+respectively), but other rupture characteristics are different and
+the SimCenter ground motions were simulated with more recent
+versions of the SW4 engine and the USGS geophysical model
+of the Bay Area. In general, the ground motions used in
+the SimCenter study are less severe than those used in the
+earlier Haywired study, and they are in better agreement with
+expectations based on past earthquake data.</p>
+<p>The Haywired study extends over an area including the
+counties of Monterey, Sacramento, and Sonoma, whereas the
+SimCenter testbed is limited to the central six counties from
+Santa Clara to Marin. Due to the larger coverage, the Haywired
+study had a larger total building population (3.04 M), but
+the number of buildings in the six central counties in the
+Haywired study (1.71 M) is comparable to the number in
+the SimCenter database (1.84M). There are, however, large
+differences in the total square footage (in the central six counties)
+and inventory value (replacement values) between the building
+exposure databases, which make comparisons of total losses
+between the two studies questionable.</p>
+<p>To reduce the influence of the differences in the building
+exposure values in the two studies, the comparison is limited to
+damage and loss ratios in the six central counties. The average loss
+ratio over the entire building population is less in the SimCenter
+testbed (~ 3% of replacement value) as compared to theHaywired
+study (~ 5% of replacement value). Nevertheless, as shown in
+<a class="reference internal" href="#fig-loss-ratio-comp"><span class="std std-numref">Fig. 1.7.2.1</span></a>, the geographical distribution of losses shows good
+agreement between the two. The SimCenter study predicts a
+larger ratio of non-structural to structural damage (7.5:1 vs. 4.5:1
+in the Haywired study) and considerably smaller fractions of the
+building stock being collapsed (less than 0.01 vs. 0.8%) and redtagged
+(0.1 vs. 10%). Accordingly, the proportion of buildings
+that sustain minor or no damage is higher in the SimCenter
+study compared to Haywired (58 vs. 49%). These results are
+consistent with the less intense ground motions in the SimCenter
+scenario, and they highlight the sensitivity of results of such
+complex studies to inventory data, models for response, damage,
+and losses, and the input ground motions.</p>
+<p>An important distinction between the HAZUS-based
+Haywired study and the SimCenter workflow simulation is
+the level of resolution in the assessment and the propagation
+of various sources of uncertainty throughout the simulation.
+Whereas the HAZUS-based study aggregates building damage
+and losses based on census track (zip code) data, the SimCenter
+workflow has resolution down to the building parcel level, and
+it can disaggregate losses within a building down to individual
+components on each floor. This feature, coupled with a detailed
+description of the probability distributions of damage and losses
+for each building, can allow urban planners and policy makers
+to query various possible outcomes–including the rare, but
+catastrophic ones–of the earthquake scenario. High-resolution
+results (see upper panels in <a class="reference internal" href="#fig-loss-ratio-comp"><span class="std std-numref">Fig. 1.7.2.1</span></a>) provide valuable data for
+exercises in emergency response, and simulations of post-disaster
+recovery. In addition, the SimCenter workflow and underlying
+tools facilitate the combination of models with varying levels
+of fidelity, where for example, performance for some buildings
+can be determined using simplified HAZUS type loss functions,
+while performance for other buildings can be determined using
+the detailed non-linear structural analysis models and FEMA
+P-58 component-based damage and loss functions. As such, the
+high-resolution and multi-fidelity workflow simulations offer
+increased opportunities to explore questions related to land use
+planning and zoning, seismic design and retrofit requirements,
+public policy and administrative initiatives, and other actions to
+enhance community resilience.</p>
+<dl class="citation">
+<dt class="label" id="hudnut18"><span class="brackets"><a class="fn-backref" href="#id1">Hudnut18</a></span></dt>
+<dd><p>Hudnut, K. W., Wein, A. M., Cox, D. A., Porter, K. A., Johnson, L. A., Perry, S. C., et al. (2018).
+The HayWired earthquake scenario – We can outsmart disaster, USGS, Fact Sheet 2018-3016. Virginia, VA: USGS.
+doi: 10.3133/fs20183016</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

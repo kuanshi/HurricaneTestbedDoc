@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1.2. Asset Description &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1.3. Hazard Characterization" href="hazard_characterization.html" />
+    <link rel="prev" title="1.1. Overview" href="overview.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../index.html">
+
+
+
+  
+  <img src="../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">1. San Francisco, CA</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1.1. Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.2. Asset Description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#phase-i-attribute-definition">1.2.1. Phase I: Attribute Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase-ii-footprint-selection">1.2.2. Phase II: Footprint Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase-iii-augmentation-using-third-party-data">1.2.3. Phase III: Augmentation Using Third-Party Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase-iv-augmentation-using-computer-vision-methods">1.2.4. Phase IV: Augmentation Using Computer Vision Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#populated-inventories">1.2.5. Populated Inventories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hazard_characterization.html">1.3. Hazard Characterization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response_simulation.html">1.4. Response Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">1.5. Damage and Loss Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">1.6. Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">1.7. Example Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">1. </span>San Francisco, CA</a> &raquo;</li>
+        
+      <li><span class="section-number">1.2. </span>Asset Description</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/common/testbeds/sf_bay_area/asset_description.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="asset-description">
+<span id="lbl-testbed-ac-asset-description"></span><h1><span class="section-number">1.2. </span>Asset Description<a class="headerlink" href="#asset-description" title="Permalink to this headline">¶</a></h1>
+<p>This section describes how a large-scale building inventory was constructed using a phased approach that
+augments tax assessor data, using machine learning and computer vision algorithm to address errors/omissions and
+generate all attributes required for the corresponding loss assessment. It is emphasized that the intent
+is to demonstrate how an inventory could be constructed and not to address potential errors, omissions or
+inaccuracies in the source data, i.e., source data are assumed to be accurate and no additional quality
+assurance was conducted outside of addressing glaring omissions or errors.</p>
+<p>In the process of assembling this inventory, a number of scripts were developed to facilitate the actions
+described in the following sections. While these scripts were not intended to be production-quality
+software and were written assuming a particular data format/endpoint which may change over time, they
+do provide an example of the type of operations necessary to assemble a building inventory and thus
+are made available at GitHub as an illustrative example.</p>
+<div class="section" id="phase-i-attribute-definition">
+<h2><span class="section-number">1.2.1. </span>Phase I: Attribute Definition<a class="headerlink" href="#phase-i-attribute-definition" title="Permalink to this headline">¶</a></h2>
+<p>All the attributes required for loss estimation were first identified to develop the Building Inventory
+data model, which catalogs each attribute, its purpose, its format (alphanumeric, floating point number,
+etc.), the data source used to define that attribute and the field(s) needed from that data source, any
+transformations of that source data necessary to align with the units or conventions used in the Building
+Inventory, and any relevant details explaining notations, assumptions, or reference documents.  These
+fields are summarized in <a class="reference internal" href="../atlantic_city/asset_description.html#tab-bldginventory"><span class="std std-numref">Table 2.2.1.1</span></a> with full details of each field
+available on DesignSafe, for both the Atlantic County Inventory and the Flood-Exposed/Exploratory Inventory.
+The Building Inventory data model should be comprehensive, encompassing all attributes required for loss
+estimation, although these may be populated in the Building Inventory at different points in the workflow,
+e.g., a number of attributes needed for loss estimation are populated during the Asset Representation stage
+(see <a class="reference internal" href="../atlantic_city/asset_representation.html#lbl-testbed-ac-asset-representation"><span class="std std-ref">Asset Representation</span></a>).</p>
+</div>
+<div class="section" id="phase-ii-footprint-selection">
+<h2><span class="section-number">1.2.2. </span>Phase II: Footprint Selection<a class="headerlink" href="#phase-ii-footprint-selection" title="Permalink to this headline">¶</a></h2>
+<p>Inventory development initiated with the Footprint Data generated by the New Jersey Department of
+Environmental Protection (NJDEP). These NJDEP footprints include flood-exposed properties cataloged
+in two geodatabases encompassing approximately 453,000 footprints across the entire state:</p>
+<p>1. <strong>BF_NJDEP_20190612</strong>: all building footprints within 1% annual chance (AC) floodplain, as defined by FEMA Flood
+Insurance Rate Maps (FIRMs).</p>
+<p>2. <strong>02pct_20190520 Building_Footprints_02pct</strong>: buildings that are not in the first dataset but fall within a
+200-ft buffer of the 1% AC floodplain boundary.</p>
+<p>These databases were then combined, with only properties within the limits of Atlantic County retained to form
+the Flood-Exposed Inventory. This inventory was then extended to include other footprints within the county
+boundaries. Microsoft (MS) Footprint Database was utilized as the primary source of Non-NJDEP footprint polygons.
+One observed shortcoming of the MS Footprint Database is it incorrectly lumps together the footprints of closely
+spaced buildings. This issue was resolved by a combination of manual inspections and applying a separate roof
+segmentation algorithm to the satellite images obtained for the buildings. This resulted in the
+<strong>Atlantic County Inventory</strong>.</p>
+</div>
+<div class="section" id="phase-iii-augmentation-using-third-party-data">
+<h2><span class="section-number">1.2.3. </span>Phase III: Augmentation Using Third-Party Data<a class="headerlink" href="#phase-iii-augmentation-using-third-party-data" title="Permalink to this headline">¶</a></h2>
+<p>Attributes were then parsed from third-party data providers to populate all required attributes in the Building
+Inventory data model. For the Flood-Exposed Inventory, NJDEP had already enriched these footprints with various
+attributes necessary to conduct standard FEMA risk assessments. Specifically, all footprints included a set of
+Basic Attributes (<a class="reference internal" href="../atlantic_city/asset_description.html#tab-basicattri"><span class="std std-numref">Table 2.2.3.1</span></a>). A subset of the data, including Atlantic County, had additional Advanced
+Attributes required by HAZUS User Defined Facilities (UDF) Module (<a class="reference internal" href="../atlantic_city/asset_description.html#tab-udfattri"><span class="std std-numref">Table 2.2.3.2</span></a>) and FEMA Substantial Damage
+Estimator (SDE) Tool (<a class="reference internal" href="../atlantic_city/asset_description.html#tab-sdeattri"><span class="std std-numref">Table 2.2.3.3</span></a>).</p>
+<p>For the Atlantic County Inventory, any buildings not included in the NJDEP footprints had attributes encompassed
+by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called <strong>MODIV</strong>) (<a class="reference internal" href="#modiv" id="id1"><span>[MODIV]</span></a>) as defined in
+the MODIV User Manual (<a class="reference internal" href="#modiv18" id="id2"><span>[MODIV18]</span></a>). This notably affected attributes such as OccupancyClass, BuildingType and FoundationType,
+whose rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-njdep"><span class="std std-numref">Table 1.2.3.1</span></a>.
+In all cases where attributes were derived from MODIV data, whose fields can be sparsely populated, default
+values were initially assigned to ensure that every footprint would have the attributes required to execute
+the workflow. These default values were selected using engineering judgement to represent the most common/likely
+attribute expected or conservatively from the perspective of anticipated losses (i.e., picking the more
+vulnerable attribute option). These initial assignments were then updated if additional data is available in
+<strong>MODIV</strong> to make a more faithful attribute assignment.</p>
+<table class="docutils align-center" id="addinfo-ruleset-njdep">
+<caption><span class="caption-number">Table 1.2.3.1 </span><span class="caption-text">Additional details for rulesets assigning attributes available only in NJDEP dataset</span><a class="headerlink" href="#addinfo-ruleset-njdep" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Ruleset Name</p></th>
+<th class="head"><p>Ruleset Definition Table</p></th>
+<th class="head"><p>Python script</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Building Type Rulesets</p></td>
+<td><p><a class="reference external" href="https://berkeley.box.com/s/hvsfx308svz7mi8g1sccnchjslsm58b8">Building Type Rulesets.pdf</a></p></td>
+<td><p><code class="xref download docutils literal notranslate"><span class="pre">BuildingTypeRulesets</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Foundation Type Rulesets</p></td>
+<td><p><a class="reference external" href="https://berkeley.box.com/s/vz2yxx2bu5uphf9xqbxm9ajdx664ndr5">Foundation Type Rulesets.pdf</a></p></td>
+<td><p><code class="xref download docutils literal notranslate"><span class="pre">FoundationTypeRulesets</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Occupancy Type Rulesets</p></td>
+<td><p><a class="reference external" href="https://berkeley.box.com/s/p50txdj9oor7399iesc5lawj7cykj1jb">Occupancy Type Rulesets.pdf</a></p></td>
+<td><p><code class="xref download docutils literal notranslate"><span class="pre">OccupancyTypeRulesets</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Some attributes in the Building Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus
+remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data
+from the following third-party sources:
+1. <strong>Locations of essential facilities</strong> were sourced from NJ Office of Information Technology (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id3"><span>[NJGIN20]</span></a>)
+2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="#atc20" id="id4"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7
+3. <strong>Terrain features</strong> (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id5"><span>[NJGIN20]</span></a>)</p>
+<p>See the Transformation and Detail columns in the PDFs listed in <a class="reference internal" href="../atlantic_city/asset_description.html#tab-bldginventory"><span class="std std-numref">Table 2.2.1.1</span></a> for specifics of how each attribute
+was assigned using these various third-party data sources.</p>
+</div>
+<div class="section" id="phase-iv-augmentation-using-computer-vision-methods">
+<span id="lbl-testbed-ac-asset-description-phase-iv"></span><h2><span class="section-number">1.2.4. </span>Phase IV: Augmentation Using Computer Vision Methods<a class="headerlink" href="#phase-iv-augmentation-using-computer-vision-methods" title="Permalink to this headline">¶</a></h2>
+<p>A number of required attributes pertaining to externally-visible features of the building were either not
+included in the NJDEP footprints or MODIV data or were included but warranted cross validation.
+The methodology used for each of these attributes is now described.</p>
+<ol class="arabic">
+<li><dl>
+<dt><strong>Number of Stories</strong>: While this attribute was available only for the buildings included in the NJDEP inventory,</dt><dd><p>this attribute was sparsely reported in the MOD IV database. Even for the NJDEP inventory,
+non-integer values were often reported, creating incompatibilities with the integer
+defaults used in Hazus. Thus image-based floor detections were used to estimate this
+attribute for the larger Flood-Exposed Inventory, and as a means to cross-validate
+values reported in NJDEP and MOD IV for consistency with Hazus conventions.</p>
+<p>An object object detection model that can automatically detect rows of building windows was
+established to generate the image-based detections from street-level. The model was trained on the
+EfficientDet-D7 architecture with a dataset of 60,000 images, using 80% for training, 15%
+for validation, and 5% testing of the model. In order to ensure faster model convergence,
+initial weights of the model were set to model weights of the (pretrained) object detection
+model that, at the time, achieved state-of-the-art performance on the 2017 COCO Detection set.
+For this specific implementation, the peak model performance was achieved using the Adam optimizer
+at a learning rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="#num-stories-detection"><span class="std std-numref">Fig. 1.2.4.6</span></a> shows examples of the
+floor detections performed by the model.</p>
+<div class="align-center figure" id="num-stories-detection" style="width: 1000px">
+<img alt="common/testbeds/sf_bay_area/figure/number_of_stories_detection.png" src="common/testbeds/sf_bay_area/figure/number_of_stories_detection.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.4.6 </span><span class="caption-text">Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.</span><a class="headerlink" href="#num-stories-detection" title="Permalink to this image">¶</a></p>
+</div>
+<p>For an image, the described floor detection model generates the bounding box output for its
+detections and calculates the confidence level associated with each detection. A post-processor
+that converts stacks of neighboring bounding boxes into floor counts was developed to convert
+this output into floor counts. Recognizing an image may contain multiple buildings at a time,
+this post-processor was designed to perform counts at the individual building-level.</p>
+<p>For a random building image dataset, where images were captured using arbitrary camera
+orientations (also termed “in-the-wild” images), the developed floor detection model
+was determined to identify the number of stories with an accuracy of 86%.
+:numref:<a href="#id6"><span class="problematic" id="id7">`</span></a>num_story_confusion`(a) provides a breakdown of this accuracy measure for different
+prediction classes (i.e., the confusion matrix of model classifications).
+It was also observed that if the image dataset is established such that building
+images are captured with minimal obstructions, the building is at the center of the
+image, and perspective distortions are limited (termed “cleaned” data), the model
+identified the number of stories at an accuracy level of 94.7%.
+:numref:<a href="#id8"><span class="problematic" id="id9">`</span></a>num_story_confusion`(b)  shows the confusion matrix for the model predicting on the
+“cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images
+randomly selected across all New Jersey counties, excluding Atlantic County, was utilized.</p>
+<div class="align-center figure" id="num-story-confusion" style="width: 1000px">
+<img alt="common/testbeds/sf_bay_area/figure/num_story_confusion.png" src="common/testbeds/sf_bay_area/figure/num_story_confusion.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.4.7 </span><span class="caption-text">Confusion matrices for the number of stories predictor. The maxtrix one the left shows
+the model’s prediction accuracy when tested on “in-the-wild” images. The matrix on the
+right depicts the model accuracy on the “cleaned” imagery.</span><a class="headerlink" href="#num-story-confusion" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Building Elevations</strong>: Building elevations are not available in state inventory data and required for both</dt><dd><p>wind and flood loss modeling, with the exception of first floor height estimates provided
+in the NJDEP inventory. Hence, the elevation of the bottom plane of the roof (lowest edge
+of roof line), elevation of the roof (peak of gable or apex of hip), and height of first of
+floor as determined from base of door’s height, all defined with respect to grade (in feet),
+were estimated from street-level imagery. These geometric properties are defined visually
+for common residential coastal typologies in <a class="reference internal" href="#building-elevation"><span class="std std-numref">Fig. 1.2.4.8</span></a>. The mean height of the roof system
+is then derived from the aforementioned roof elevations.</p>
+<div class="align-center figure" id="building-elevation" style="width: 1000px">
+<img alt="common/testbeds/sf_bay_area/figure/building_elevation.png" src="common/testbeds/sf_bay_area/figure/building_elevation.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.4.8 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image">¶</a></p>
+</div>
+<p>As in any single-image metrology application, extracting the building elevations require:
+1. Rectification of image perspective distortions, typically introduced during image capture,
+2. Determining the pixel count representing the distance between ends of the objects or surface of interest
+1. (e.g., for first-floor height, the orthogonal distance between the ground and first-floor levels)
+3. Converting these pixel counts to real-world dimensions by matching a reference measurement with the corresponding pixel count</p>
+<p>Given that the number of street-level images available for a building can be limited
+and sparsely spaced, this single image rectification approach was deemed most applicable for
+regional-scale inventory development. The first step in image rectification requires
+detecting line segments on the front face of the building. This is performed by using
+the L-CNN end-to-end wireframe parsing method. Once the segments are detected, vertical
+and horizontal lines on the front face of the building are automatically detected using
+RANSAC line fitting based on the assumptions that line segments on this face are the
+predominant source of line segments in the image and the orientation of these line
+segments change linearly with their horizontal or vertical position depending on their
+predominant orientation. Invoking the Manhattan World assumption (i.e., all surfaces in
+the world are aligned with two horizontal and one vertical dominant directions), we
+iteratively transform the image such that horizontal edges on the facade plain lie
+parallel to each other, and its vertical edges are orthogonal to the horizontal edges.</p>
+<p>In order to automate the process of obtaining the pixel counts for the ground elevations, a
+face segmentation model was trained to auotmatically label ground, facade, door, windwos and roof
+pixels in an image. The segmentation model was trained using DeepLabV3 architecture on a ResNet-101
+backbone, pretrained on PASCAL VOC 2012 segmentation dataset, using a facade segmentation dataset of
+30,000 images. The peak model performance was attained using the Adam optimizer at a learning rate of
+0.001 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world
+dimensions were attained by use of edge detections
+performed on satellite images.</p>
+<p>The conversion between pixel dimensions and real-world dimensions were attained by use of
+edge detections performed on satellite images.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Roof Geometry</strong>: Roof shape and slope are not available in state inventory data and required for wind loss</dt><dd><blockquote>
+<div><p>modeling. The SimCenter developed application Building Recognition using Artificial
+Intelligence at Large Scales, BRAILS (<a class="reference internal" href="#wang19" id="id10"><span>[Wang19]</span></a>), is used to interpret satellite images
+of building roofs, which are collected from Google Maps. The satellite images are labeled
+with shape types to form a dataset, upon which a Convolutional Neural Network (CNN) is
+trained so that it can give rapid predictions of roof types when given new images of roofs.
+The footprint centroid (Latitude and Longitude in Building Inventory) is used as the
+location index when downloading images
+automatically from Google Maps. While more complex roof shapes could in theory be classified,
+the current use of HAZUS damage and loss functions required the use of similitude measures
+to define each roof as an “effective” gable, hip or flat geometry (<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 1.2.4.9</span></a>). Using BRAILS, this
+classification was achieved with approximately 90.3% accuracy based on validation studies.
+The detailed validation process can be found in
+<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">BRAILS online documentation</a>.</p>
+<div class="align-center figure" id="roof-shape" style="width: 800px">
+<img alt="common/testbeds/sf_bay_area/figure/roof_shape.png" src="common/testbeds/sf_bay_area/figure/roof_shape.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.4.9 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="#wang19" id="id11"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p>Roof slope is calculated as the ratio between the roof height and half the depth of the
+building, i.e., length of the building orthogonal to the roadline in front of the building.
+Roof height is calculated by determining the difference between the bottom plane and apex
+elevations of the roof as defined in the Building Elevations section. Plan dimensions of
+the building, as determined by the dimensions of the footprint, are determined by first
+obtaining the camera location of the street-level
+image to determine road-parallel and road-perpendicular dimensions of the building footprint,
+then setting the average of the road-perpendicular dimensions as the building depth. This
+is deemed a more accurate way of establishing the plan geometry than using the footprints
+themselves.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><strong>Window Area</strong>: The proportion of windows to the overall surface area is not available in inventory and</dt><dd><p>assessor datasets though required for wind loss modeling. Generally, window area can be
+assumed based on the building occupancy class given Department of Energy industry databases.
+This property can also be estimated from street-level imagery, by taking advantage of the
+window masks generated as part of the segmentation performed when determining building
+elevations. For this application, window area is defined as a percentage of the total
+facade area as the ratio of the area of windows masks to the area of the front facade
+of the building. The underlying assumption is that the proportion of surface area occupied
+by windows at the front of the building is representative of the amount of window openings
+on the sides and rear of the building. This enables the ratio calculated for the front
+face of the building to be used for the whole building. This assumption may hold for single
+family residential buildings, but possibly not for other commercial construction where
+street fronts have higher proportions of glass. In lieu of this computer vision approach,
+users may choose to adopt industry norms for their window areas (see callout box below).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Industry Norms on Window Area</strong>: Engineered residential buildings can be assumed to have low window to wall
+area ratios (WWR) based on the information for Reference Buildings in Baltimore, MD from the
+<a class="reference external" href="https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment">Office of Energy Efficiency and Renewable Energy</a>. Reference Buildings were created for select cities
+based on climate profile; of the available cities, Baltimore is selected since its climate is most
+similar to Atlantic City, NJ. Office buildings (used as a test case for commercial), have WWR of
+33% and apartments (used as a test case for residential) have WWR of 15%.</p>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The process of constructing the <strong>Atlantic County Inventory</strong> for footprints beyond those in the
+<strong>Flood-Exposed Inventory</strong> underscored a number of tasks/issues that are commonly encountered when constructing an inventory
+in a location with sparse inventory data. Recommended best practices are summarized in <a class="reference internal" href="../atlantic_city/best_practices.html#lbl-testbed-ac-best-practices"><span class="std std-ref">Best Practices</span></a>.</p>
+</div>
+</div>
+<div class="section" id="populated-inventories">
+<h2><span class="section-number">1.2.5. </span>Populated Inventories<a class="headerlink" href="#populated-inventories" title="Permalink to this headline">¶</a></h2>
+<p>This study used a parcel-level inventory of buildings in the Bay
+Area that was developed by UrbanSim (<a class="reference internal" href="#waddell02" id="id12"><span>[Waddell02]</span></a>) using
+public resources such as the City and County of San Francisco’s
+data portal (<a class="reference internal" href="#datasf20" id="id13"><span>[DataSF20]</span></a>) and tax assessor databases. The
+database includes locations (latitude, longitude), total floor areas,
+number of stories, year of construction, and the occupancy
+type for each building. The available information about location
+and building geometry were refined by merging the UrbanSim
+database with the publicly available Microsoft Building Footprint
+data (<a class="reference internal" href="#microsoft20" id="id14"><span>[Microsoft20]</span></a>) for the testbed area. These data were
+used to populate two additional attributes, replacement cost and
+structure type, based on a ruleset that considers local design
+practice and real estate pricing. For further details about the
+database and ruleset see <a class="reference internal" href="index.html#elhadded19" id="id15"><span>[Elhadded19]</span></a>.</p>
+<dl class="citation">
+<dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id4">ATC20</a></span></dt>
+<dd><p>ATC (2020b), ATC Hazards By Location, <a class="reference external" href="https://hazards.atcouncil.org/">https://hazards.atcouncil.org/</a>, Applied Technology Council, Redwood City, CA.</p>
+</dd>
+<dt class="label" id="njgin20"><span class="brackets">NJGIN20</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>)</span></dt>
+<dd><p>NJ Geographic Information Network, State of New Jersey, <a class="reference external" href="https://njgin.nj.gov/njgin/#!/">https://njgin.nj.gov/njgin/#!/</a></p>
+</dd>
+<dt class="label" id="wang19"><span class="brackets">Wang19</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id11">2</a>)</span></dt>
+<dd><p>Wang C. (2019), NHERI-SimCenter/SURF: v0.2.0 (Version v0.2.0). Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.3463676">http://doi.org/10.5281/zenodo.3463676</a></p>
+</dd>
+<dt class="label" id="microsoft2018"><span class="brackets">Microsoft2018</span></dt>
+<dd><p>Microsoft (2018) US Building Footprints. <a class="reference external" href="https://github.com/Microsoft/USBuildingFootprints">https://github.com/Microsoft/USBuildingFootprints</a></p>
+</dd>
+<dt class="label" id="modiv"><span class="brackets"><a class="fn-backref" href="#id1">MODIV</a></span></dt>
+<dd><p>Parcels and MOD-IV of Atlantic County, NJ. NJGIN Open Data, <a class="reference external" href="https://njogis-newjersey.opendata.arcgis.com/datasets/680b02ff9b4348409a2f4ccd4c238215">https://njogis-newjersey.opendata.arcgis.com/datasets/680b02ff9b4348409a2f4ccd4c238215</a>.</p>
+</dd>
+<dt class="label" id="modiv18"><span class="brackets"><a class="fn-backref" href="#id2">MODIV18</a></span></dt>
+<dd><p>Department of the Treasury, State of New Jersey (2018), MOD IV User Manual. <a class="reference external" href="https://www.state.nj.us/treasury/taxation/pdf/lpt/modIVmanual.pdf">https://www.state.nj.us/treasury/taxation/pdf/lpt/modIVmanual.pdf</a></p>
+</dd>
+<dt class="label" id="waddell02"><span class="brackets"><a class="fn-backref" href="#id12">Waddell02</a></span></dt>
+<dd><p>Waddell, P. (2002). UrbanSim: Modeling Urban Development for Land Use, Transportation, and Environmental Planning. J. Am. Planning Assoc. 68, 297–314.
+doi: 10.1080/01944360208976274</p>
+</dd>
+<dt class="label" id="datasf20"><span class="brackets"><a class="fn-backref" href="#id13">DataSF20</a></span></dt>
+<dd><p>DataSF (2020). Building and Infrastructure Databases. San Francisco, SF: DataSF.</p>
+</dd>
+<dt class="label" id="microsoft20"><span class="brackets"><a class="fn-backref" href="#id14">Microsoft20</a></span></dt>
+<dd><p>Microsoft (2020). Microsoft Building Footprint Database for the United States. Washington, DC.
+<a class="reference external" href="https://www.microsoft.com/en-us/maps/building-footprints">https://www.microsoft.com/en-us/maps/building-footprints</a>.</p>
+</dd>
+<dt class="label" id="elhadded19"><span class="brackets"><a class="fn-backref" href="#id15">Elhadded19</a></span></dt>
+<dd><p>Elhaddad, W., McKenna, F., Rynge, M., Lowe, J. B., Wang, C., and Zsarnoczay, A. (2019).
+NHERI-SimCenter/WorkflowRegionalEarthquake: rWHALE (Version v1.1.0). <a class="reference external" href="http://doi.org/10.5281/zenodo.2554610">http://doi.org/10.5281/zenodo.2554610</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

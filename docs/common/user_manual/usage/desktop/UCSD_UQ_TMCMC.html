@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Transitional Markov chain Monte Carlo (TMCMC) algorithm &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.9.3.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -43,6 +43,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="2.10. RV: Random Variables" href="RV.html" />
+    <link rel="prev" title="2.9.2.1. Global Sensitivity Analysis" href="SimCenterUQSensitivity.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -119,8 +121,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">4. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -182,7 +182,11 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Transitional Markov chain Monte Carlo (TMCMC) algorithm</li>
+          <li><a href="usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="UQ.html"><span class="section-number">2.9. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
+        
+      <li><span class="section-number">2.9.3.1. </span>Transitional Markov chain Monte Carlo (TMCMC) algorithm</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -202,11 +206,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="transitional-markov-chain-monte-carlo-tmcmc-algorithm">
-<span id="lblucsdtmcmc"></span><h1>Transitional Markov chain Monte Carlo (TMCMC) algorithm<a class="headerlink" href="#transitional-markov-chain-monte-carlo-tmcmc-algorithm" title="Permalink to this headline">¶</a></h1>
+<span id="lblucsdtmcmc"></span><h1><span class="section-number">2.9.3.1. </span>Transitional Markov chain Monte Carlo (TMCMC) algorithm<a class="headerlink" href="#transitional-markov-chain-monte-carlo-tmcmc-algorithm" title="Permalink to this headline">¶</a></h1>
 <p>This is an algorithm which is used to draw samples from the posterior probability distribution of random variables when performing Bayesian estimation. To use the TMCMC algorithm, select the <strong>UCSD_UQ</strong> engine in the <strong>UQ</strong> panel. Currently, only the TMCMC method is available with the <strong>UCSD_UQ</strong> engine. In the <strong>Log Likelihood Script</strong> field, the user needs to provide the path to a Python script which contains a function called <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> that returns the log-likelihood value. The user also needs to specify the number of samples that is desired to be drawn from the posterior probability distribution of the unknown parameters.</p>
 <div class="align-center figure" id="id1">
 <img alt="../../../../_images/TMCMC_UQ_Engine.png" src="../../../../_images/TMCMC_UQ_Engine.png" />
-<p class="caption"><span class="caption-text">TMCMC algorithm input panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.9.3.1.1 </span><span class="caption-text">TMCMC algorithm input panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="defining-the-log-likelihood-function">
 <h2>Defining the log-likelihood function<a class="headerlink" href="#defining-the-log-likelihood-function" title="Permalink to this headline">¶</a></h2>
