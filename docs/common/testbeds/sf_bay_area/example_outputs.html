@@ -43,7 +43,7 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="2. Atlantic County, NJ" href="../atlantic_city/index.html" />
+    <link rel="next" title="1.8. Opportunity Areas for Future Refinements" href="future_refinements.html" />
     <link rel="prev" title="1.6. Uncertainty Quantification" href="uncertainty_quantification.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -104,10 +104,10 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/about/R2D/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/ack.html">2. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">2. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">3. Abbreviations</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -131,6 +131,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#expected-loss-ratio">1.7.2. Expected Loss Ratio</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="future_refinements.html">1.8. Opportunity Areas for Future Refinements</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../atlantic_city/index.html">2. Atlantic County, NJ</a></li>
@@ -220,13 +221,42 @@
 <span id="lbl-testbed-sf-example-outputs"></span><h1><span class="section-number">1.7. </span>Example Outputs<a class="headerlink" href="#example-outputs" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="damage-state">
 <h2><span class="section-number">1.7.1. </span>Damage State<a class="headerlink" href="#damage-state" title="Permalink to this headline">¶</a></h2>
+<p>This section summarizes the resulting expected damage states of the building
+assets from the Hayward Earthquake. The expected damage state is computed as
+the weighted average over the 20,000 PELICUN realizations each of which has a predicted
+damage state metric, i.e., 0 (None), 1 (Slight), 2 (Moderate) , 3 (Extensive),
+and 4 (Complete). <a class="reference internal" href="#fig-s-ds"><span class="std std-numref">Fig. 1.7.1.1</span></a> shows expected structural damages which have a
+wide spectrum from nearly none damaged (in the South Bay regions) to Moderate/Extensive
+damage (in the East Bay region). Recalling the example 2-story wood frame residential
+building in <a class="reference internal" href="response_simulation.html#lbl-testbed-sf-response-simulation"><span class="std std-ref">Response Simulation</span></a>, it has an expected damge state of
+about 1.6 with a breakdown statics: 2.3% in None (DS0), 40.6% in Slight (DS1), 54.4% in
+Moderate (DS3), and 2.7% in Extensive (DS4). And the building is very unlikely to collapse.
+Referring to <a class="reference internal" href="damage_and_loss.html#lbl-testbed-sf-damage-and-loss"><span class="std std-ref">Damage and Loss Estimation</span></a>, this building is likely to experience plaster or gypsum-board
+cracks at corners of door and window openings; small diagonal cracks across shear wall
+panels; or/and cracks in brick chimneys or toppling of tall masonry chimneys.</p>
 <div class="align-center figure" id="id2">
-<span id="fig-s-ds"></span><a class="reference internal image-reference" href="../../../_images/ExpectedDSStruct.png"><img alt="../../../_images/ExpectedDSStruct.png" src="../../../_images/ExpectedDSStruct.png" style="width: 1000px;" /></a>
+<span id="fig-s-ds"></span><a class="reference internal image-reference" href="../../../_images/ExpectedDSStruct.png"><img alt="../../../_images/ExpectedDSStruct.png" src="../../../_images/ExpectedDSStruct.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1.7.1.1 </span><span class="caption-text">Expected structural damage states from San Francisco testbed.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
+<p><a class="reference internal" href="#fig-ns-ds"><span class="std std-numref">Fig. 1.7.1.2</span></a> shows expected non-structural damages which tend to be
+server if compared to the structural damage. For the building assets in the
+South Bay regions, Slight to Moderate non-structural damages are likely. Buildings
+located near the Hayward fault are likely to experience Moderate to Extensive
+non-structural damages. The example wood frame building is expected to have a
+Moderate damage state (DS = 2.0 with a probability of 64%). Detailed breakdown
+statistics are plotted in <a class="reference internal" href="#fig-ds"><span class="std std-numref">Fig. 1.7.1.3</span></a>. THe building is likely to experience
+the following potential damages: (1) cracks requiring repair and
+repainting; some partitions may require replacement of gypsum board or other finishes,
+(2) falling of tiles, (3) connections of exterior wall panels to structural frame
+are damaged requiring further inspection and repairs, and (4) piping leaks occur at a few locations,
+elevator machinery and rails may require realignment.</p>
 <div class="align-center figure" id="id3">
-<span id="fig-ns-ds"></span><a class="reference internal image-reference" href="../../../_images/ExpectedDSNonStruct.png"><img alt="../../../_images/ExpectedDSNonStruct.png" src="../../../_images/ExpectedDSNonStruct.png" style="width: 1000px;" /></a>
+<span id="fig-ns-ds"></span><a class="reference internal image-reference" href="../../../_images/ExpectedDSNonStruct.png"><img alt="../../../_images/ExpectedDSNonStruct.png" src="../../../_images/ExpectedDSNonStruct.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1.7.1.2 </span><span class="caption-text">Expected non-structural damage states from San Francisco testbed.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id4">
+<span id="fig-ds"></span><a class="reference internal image-reference" href="../../../_images/ds.png"><img alt="../../../_images/ds.png" src="../../../_images/ds.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.7.1.3 </span><span class="caption-text">Structural and non-structural damage states of the example wood frame.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="expected-loss-ratio">
@@ -250,9 +280,9 @@ a small team over a couple months. This contrasts with
 the multi-year multi-investigator Haywired study, whose goal
 is to inform earthquake planning and preparedness for the
 San Francisco Bay Area.</p>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id5">
 <span id="fig-loss-ratio-comp"></span><a class="reference internal image-reference" href="../../../_images/LossRatioComp.png"><img alt="../../../_images/LossRatioComp.png" src="../../../_images/LossRatioComp.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.7.2.1 </span><span class="caption-text">Comparison of building loss ratios from San Francisco testbed - SimCenter (left), USGS-Haywired (right).</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.7.2.1 </span><span class="caption-text">Comparison of building loss ratios from San Francisco testbed - SimCenter (left), USGS-Haywired (right).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Both studies were based on Mw 7.0 Hayward fault ruptures
 simulated using the SW4 software by the LLNL research group,
