@@ -13,6 +13,11 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -31,13 +36,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -109,6 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -134,8 +141,10 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -241,7 +250,7 @@ coupled), and the parameterized models allow for more efficient storage and comp
 <li><p>For the <strong>wind loss assessment</strong>, the HAZUS functions consist of tabular data to
 describe the fragility or expected losses as a function of peak wind speed (PWS).
 Only data up to 200 mph wind speeds were used because the substantial reduction in the
-number of observations introduces significant measurement error above that level (<a class="reference internal" href="#wind-df"><span class="std std-numref">Fig. 2.6.2</span></a>).</p></li>
+number of observations introduces significant measurement error above that level (<a class="reference internal" href="../lake_charles/damage_and_loss.html#wind-df"><span class="std std-numref">Fig. 3.6.1</span></a>).</p></li>
 </ol>
 <div class="align-center figure" id="wind-df" style="width: 1000px">
 <img alt="../../../_images/wind_damage_functions.png" src="../../../_images/wind_damage_functions.png" />
@@ -257,7 +266,7 @@ to a percent of the total replacement cost of the asset (<a class="reference int
 <p class="caption"><span class="caption-number">Fig. 2.6.3 </span><span class="caption-text">Depth-damage ratio curves for the flood loss assessment.</span><a class="headerlink" href="#flood-ddc" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <strong>total loss</strong> from wind and flood damages are estimated by combining the “wind-only” and “flood-only”
-losses following the combination rule in <a class="reference internal" href="overview.html#fema18a" id="id1"><span>[FEMA18a]</span></a>. The primary motivation for the combined wind and
+losses following the combination rule in <a class="reference internal" href="../lake_charles/overview.html#fema18a" id="id1"><span>[FEMA18a]</span></a>. The primary motivation for the combined wind and
 flood loss methodology is to avoid “double counting” of damage. At a minimum, the combined wind and
 flood loss must be at least the larger of the wind-only or the flood-only loss. At a maximum, the combined
 loss must be no larger than the lesser of the sum of the wind-only and flood-only losses
@@ -287,7 +296,7 @@ components into a consistent set of building sub-assemblies:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <dl class="simple">
-<dt>HAZUS building sub-assemblies (<a class="reference internal" href="overview.html#fema18a" id="id2"><span>[FEMA18a]</span></a>):</dt><dd><ol class="arabic simple">
+<dt>HAZUS building sub-assemblies (<a class="reference internal" href="../lake_charles/overview.html#fema18a" id="id2"><span>[FEMA18a]</span></a>):</dt><dd><ol class="arabic simple">
 <li><p>Foundation: Includes site work, footings, and walls, slabs, piers or piles.</p></li>
 <li><p>Below First Floor: Items other than the foundation that are located below the first floor of the structure such as mechanical equipment, stairways, parking pads, break away flood walls, etc.</p></li>
 <li><p>Structure Framing: Includes all of the main load carrying structural members of the building below the roof framing and above the foundation.</p></li>
@@ -306,7 +315,7 @@ sum of combined sub-assembly loss ratios:</p>
 <p>where <span class="math notranslate nohighlight">\(L_{wind,i}\)</span> is the wind-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly, and
 <span class="math notranslate nohighlight">\(L_{flood,i}\)</span> is the flood-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly. These sub-assembly
 loss ratios are computed as a percent of the total building loss ratio. The percentages are based on the
-<a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 2.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 2.6.2</span></a> that are developed per the HAZUS methodology and data table (<a class="reference internal" href="overview.html#fema18a" id="id3"><span>[FEMA18a]</span></a>).</p>
+<a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 2.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 2.6.2</span></a> that are developed per the HAZUS methodology and data table (<a class="reference internal" href="../lake_charles/overview.html#fema18a" id="id3"><span>[FEMA18a]</span></a>).</p>
 <table class="docutils align-center" id="wind-comp">
 <caption><span class="caption-number">Table 2.6.1 </span><span class="caption-text">Sub-assembly wind-only loss contribution ratio table.</span><a class="headerlink" href="#wind-comp" title="Permalink to this table">¶</a></caption>
 <colgroup>

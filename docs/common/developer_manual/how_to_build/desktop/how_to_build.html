@@ -13,6 +13,11 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -31,6 +36,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
@@ -104,10 +110,11 @@
               <p class="caption"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/R2D/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">2. Copyright and License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">2. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">3. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -121,6 +128,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -213,13 +221,13 @@
             
   <div class="section" id="how-to-build">
 <span id="lblhowtobuild"></span><h1><span class="section-number">1. </span>How to Build<a class="headerlink" href="#how-to-build" title="Permalink to this headline">¶</a></h1>
-<p>SimCenter tools all comprise a frontend UI and some backend applications. They are kept in seperate github repositories and are also built seperately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.</p>
+<p>SimCenter tools all comprise a frontend UI and some backend applications. They are kept in separate GitHub repositories and are also built separately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.</p>
 <div class="section" id="install-dependencies">
 <h2><span class="section-number">1.1. </span>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>First, ensure the following dependencies are installed:</p>
 <ul class="simple">
-<li><p><strong>C++17 compliant compiler</strong>: many of the workflow applications included use C++17 features, consequently they may need a newer C++17 compliant compiler. Fow Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.</p></li>
-<li><p><strong>OpenSees</strong>: The workflow applications require an installation of <a class="reference external" href="http://opensees.berkeley.edu/">OpenSees</a> to carry out structural analysis using the finite element method.</p></li>
+<li><p><strong>C++17 compliant compiler</strong>: many of the workflow applications included use C++17 features; consequently, they may need a newer C++17 compliant compiler. For Windows users, MSVC in <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio (Community Edition)</a> can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.</p></li>
+<li><p><strong>OpenSees</strong>: The workflow applications require an installation of <a class="reference external" href="http://opensees.berkeley.edu/">OpenSees</a> to carry out a structural analysis using the finite element method.</p></li>
 <li><p><strong>DAKOTA</strong>: The workflow applications require an installation of <a class="reference external" href="https://dakota.sandia.gov/">DAKOTA</a> to handle and propagate the uncertainties defined in the input files for the workflow applications.</p></li>
 <li><p><strong>Python</strong>: The workflow requires at least Python 3.7.</p></li>
 <li><p><strong>Conan</strong>: This repository uses <a class="reference external" href="https://conan.io/">Conan</a> for dependency management. Conan is a python library and can be installed using the following <a class="reference external" href="https://docs.conan.io/en/latest/installation.html">instructions</a>. Version 1.25 or later is recommended.</p></li>
@@ -258,7 +266,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p>If the compiler name and compiler version are <em>not</em> listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:</p>
+<li><p>If the compiler name and compiler version are <em>not</em> listed, you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:</p>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">conan profile update settings.compiler=&quot;Visual Studio&quot; default</span>
 
@@ -279,7 +287,7 @@
 </li>
 </ol>
 <ol class="arabic">
-<li><p>To build the applications you need to now navigate to the <strong>SimCenterBackendApplications</strong> folder that was created with the <strong>git clone</strong> command. Once there you will issue the following set of commands to create a <strong>build</strong> folder, change director to that folder, install needed software using conan, and finally use <strong>cmake</strong> to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):</p>
+<li><p>To build the applications, you need to navigate the <strong>SimCenterBackendApplications</strong> folder created with the <strong>git clone</strong> command. Once there, you will issue the following set of commands to create a <strong>build</strong> folder, change directory to that folder, install needed software using Conan, and finally use <strong>cmake</strong> to build and install the applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):</p>
 <blockquote>
 <div><blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir build</span>
@@ -295,7 +303,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic">
-<li><p>On Windows it is necessary to specify a compiler for CMake. To do this you need to add additional arguments to line 4, i.e. if you have Visual Studio 2019 you would instead type:</p>
+<li><p>On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">G</span> <span class="s2">&quot;Visual Studio 16 2019&quot;</span>
 </pre></div>
 </div>
@@ -316,12 +324,12 @@
 </div></blockquote>
 </li>
 </ol>
-<p>If building and installation were successful you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it.   The name of this folder should not be changed.</p>
+<p>If building and installation were successful, you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it.   The name of this folder should not be changed.</p>
 </div>
 </div>
 <div class="section" id="build-the-user-interface">
 <h2><span class="section-number">1.3. </span>Build the User Interface<a class="headerlink" href="#build-the-user-interface" title="Permalink to this headline">¶</a></h2>
-<p>To build the interface you first need to download the repo and a companion repo(SimCenterCommon) from github using our <a class="reference external" href="https://github.com/NHERI-SimCenter">github repos</a>. In a folder in which you wish to build the application, issue the following two commands.</p>
+<p>To build the interface, you first need to download the repo and a companion repo(SimCenterCommon) from Github using our <a class="reference external" href="https://github.com/NHERI-SimCenter">github repos</a>. In a folder in which you wish to build the application, issue the following two commands.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">SimCenterCommon</span><span class="o">.</span><span class="n">git</span>
 <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">APP_NAME</span><span class="o">.</span><span class="n">git</span>
@@ -330,7 +338,7 @@
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo’s, you should fork the latter repo and then clone your forked repo. Forking a repo at <strong>github</strong> is done through your browser.</p>
+<p>Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo’s, you should fork the latter repo and then clone your forked repo. Forking a repo at <strong>GitHub</strong> is done through your browser.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YOUR_GITHUB_NAME</span><span class="o">/</span><span class="n">APP_NAME</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
@@ -340,26 +348,26 @@
 <p>You now have two ways to build the application: (1) using the <strong>Qt Creator</strong> desktop application provided by <strong>Qt</strong> and (2) from terminal application.</p>
 <ol class="arabic simple">
 <li><p>Start Qt Creator, then open the R2D.pro file located in the R2D directory that was downloaded in the previous step.</p></li>
-<li><p>Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler and configuration and following the onscreen dialog.</p></li>
-<li><p>Build the application and run it in Qt Creator IDE by using the <strong>Run</strong> button. This can be done using the keyboard shortcut <code class="docutils literal notranslate"><span class="pre">F5</span></code> to build and start the tool.</p></li>
+<li><p>Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler, and configuration and following the onscreen dialog.</p></li>
+<li><p>Build the application and run it in Qt Creator IDE using the <strong>Run</strong> button. This can be done using the keyboard shortcut <code class="docutils literal notranslate"><span class="pre">F5</span></code> to build and start the tool.</p></li>
 </ol>
 <ol class="arabic">
-<li><p>The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run <strong>qmake</strong>, and finally make (or on Windows nmake)</p>
+<li><p>The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run <strong>qmake</strong>, and finally, make (or on Windows nmake)</p>
 <blockquote>
 <div><pre class="literal-block">mkdir build
 cd build
 qmake ../R2D.pro
-     make</pre>
+make</pre>
 </div></blockquote>
 </li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic">
-<li><p>qmake is an application installed with Qt. To be able to run the command as whown, the path to the Qt bin folder needs to be added to your <strong>PATH</strong> environment variable. Alternativily you need to specify the full path to qmake, i.e. on my desktop (if I had not set my PATH variable) I would replace line 3 with the following:</p>
+<li><p>qmake is an application installed with Qt. To be able to run the command as known, the path to the Qt bin folder needs to be added to your <strong>PATH</strong> environment variable. Alternatively, you need to specify the full path to qmake, i.e., on my desktop (if I had not set my PATH variable). I would replace line 3 with the following:</p>
 <pre class="literal-block">/Users/fmckenna/Qt/5.15.2/clang_64/bin/qmake ../R2D.pro</pre>
 </li>
-<li><p>On a Windows 10 with Visual Studio, the above commands need to be performed using a <a class="reference external" href="https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160">Visual Studio x64 command prompt</a> . As a consequence you also need to replace line 4 with the following:</p>
+<li><p>On a Windows 10 with Visual Studio, the above commands need to be performed using a <a class="reference external" href="https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160">Visual Studio x64 command prompt</a> . As a consequence, you also need to replace line 4 with the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nmake</span>
 </pre></div>
 </div>
@@ -371,13 +379,13 @@ qmake ../R2D.pro
 </div>
 <div class="section" id="modify-the-user-interface-preferences">
 <h2><span class="section-number">1.4. </span>Modify the User Interface Preferences<a class="headerlink" href="#modify-the-user-interface-preferences" title="Permalink to this headline">¶</a></h2>
-<p>Once built the tool <strong>Preferences</strong> needs to be modified. To do this open the R2D tool, then click on File -&gt; Preferences in the main menu if on Windows or R2D -&gt; Preferences if on a Mac. This will bring up a dialog window shown below. You need to modify certain values:</p>
+<p>Once built, the tool <strong>Preferences</strong> needs to be modified. To do this, open the R2D tool, then click on File -&gt; Preferences in the main menu if on Windows or R2D -&gt; Preferences if on a Mac. This will bring up a dialog window shown below. You need to modify specific values:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Python: provide the full path to the python intertpreter.</p></li>
+<li><p>Python: provide the full path to the python interpreter.</p></li>
 <li><p>OpenSees: provide the full path to the OpenSees executable</p></li>
-<li><p>Dakota: provide full path to the dakota executable.</p></li>
-<li><p>Custom Local Application: Here select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder <strong>applications</strong>, which you created when building the backend applications, exists.</p></li>
+<li><p>Dakota: provide the full path to the Dakota executable.</p></li>
+<li><p>Custom Local Application: Here, select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder <strong>applications</strong>, which you created when building the backend applications, exists.</p></li>
 </ol>
 </div></blockquote>
 <div class="align-center figure" id="id3">

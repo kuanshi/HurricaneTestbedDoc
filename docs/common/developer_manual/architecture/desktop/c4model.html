@@ -13,6 +13,11 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -31,6 +36,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
@@ -108,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -121,6 +128,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -270,7 +278,7 @@
 </div>
 <p>The interaction between the frontend and the backend is best understood by looking at the sequence of events that occurs when the user presses the <code class="docutils literal notranslate"><span class="pre">Run</span></code> button. As shown in the figure below, the UI application will first perform a number of steps:</p>
 <ol class="arabic simple">
-<li><p>It will create a temporary directory in the Documents folder named <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, and inside <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> will create another dircetory <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>.</p></li>
+<li><p>It will create a temporary directory in the Documents folder named <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, and inside <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> will create another directory <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>.</p></li>
 <li><p>It will then run through all the currently selected widgets and on each invoke the <code class="docutils literal notranslate"><span class="pre">copyFiles()</span></code> method, telling these widgets to copy all files that will be needed during the workflow to the <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> directory.</p></li>
 <li><p>It will then create a JSON file and will run through the currenly selected widgets and on each invoke the methods <code class="docutils literal notranslate"><span class="pre">outputToJSON()</span></code> and <code class="docutils literal notranslate"><span class="pre">outputAppDataToJSON</span></code>, these telling the application to augment the JSOIN file with the inputs the user has provided in the widget and also the name of the widget.</p></li>
 <li><p>The UI will now start the backend application and will spin until the backend application returns with a completion signal.</p></li>
@@ -286,13 +294,13 @@
 <li><p>The UQengine will notify the UQpreprocessor that it is done.</p></li>
 <li><p>The UQpreprocessor will notify the femUQ application that it is done.</p></li>
 <li><p>The femUQ application will notify the UI that it is done.</p></li>
-<li><p>The UI will read in the reuslts and present them to the user.</p></li>
+<li><p>The UI will read in the results and present them to the user.</p></li>
 </ol>
 <div class="align-center figure" id="figsequencelocal">
 <a class="reference internal image-reference" href="../../../../_images/sequenceLocal.png"><img alt="../../../../_images/sequenceLocal.png" src="../../../../_images/sequenceLocal.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.5.4.1 </span><span class="caption-text">Sequence diagram showing what happens when a workflow runs locally.</span><a class="headerlink" href="#figsequencelocal" title="Permalink to this image">¶</a></p>
 </div>
-<p>That is for the case where the computations are performed on the local computer. When the somputations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the <a class="reference external" href="https://tapis-project.org/">TACC tapis</a> interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.</p>
+<p>That is for the case where the computations are performed on the local computer. When the computations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the <a class="reference external" href="https://tapis-project.org/">TACC tapis</a> interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.</p>
 <div class="align-center figure" id="figsequenceremote">
 <a class="reference internal image-reference" href="../../../../_images/sequenceRemote.png"><img alt="../../../../_images/sequenceRemote.png" src="../../../../_images/sequenceRemote.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.5.4.2 </span><span class="caption-text">Sequence diagram showing what happens when a workflow runs remotely.</span><a class="headerlink" href="#figsequenceremote" title="Permalink to this image">¶</a></p>

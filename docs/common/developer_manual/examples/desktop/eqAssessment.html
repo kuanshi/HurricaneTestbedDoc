@@ -13,6 +13,11 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -31,6 +36,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
@@ -108,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -121,6 +128,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -225,177 +233,93 @@
 <ol class="arabic simple">
 <li><p><strong>Configuration file</strong>: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.</p></li>
 </ol>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;rWHALE_&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;Author&quot;</span><span class="p">:</span> <span class="s2">&quot;Adam Zsarnóczay&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;WorkflowType&quot;</span><span class="p">:</span> <span class="s2">&quot;Parametric Study&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;runDir&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;localAppDir&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/rWHALE/&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;force&quot;</span><span class="p">:</span> <span class="s2">&quot;kips&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;sec&quot;</span>
-   <span class="p">},</span>
-   <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;EDP&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-    <span class="s2">&quot;DM&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-    <span class="s2">&quot;DV&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-    <span class="s2">&quot;every_realization&quot;</span><span class="p">:</span> <span class="n">false</span>
-  <span class="p">},</span>
-  <span class="s2">&quot;Applications&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;Building&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;CSV_to_BIM&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;Min&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Max&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;buildingSourceFile&quot;</span><span class="p">:</span><span class="s2">&quot;input_params.csv&quot;</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;RegionalMapping&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;NearestNeighborEvents&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;filenameEVENTgrid&quot;</span><span class="p">:</span> <span class="s2">&quot;records/EventGrid.csv&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;samples&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="s2">&quot;neighbors&quot;</span><span class="p">:</span> <span class="mi">4</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;Events&quot;</span><span class="p">:</span> <span class="p">[{</span>
-      <span class="s2">&quot;EventClassification&quot;</span><span class="p">:</span> <span class="s2">&quot;Earthquake&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;SimCenterEvent&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;pathEventData&quot;</span><span class="p">:</span> <span class="s2">&quot;records/&quot;</span>
-      <span class="p">}</span>
-    <span class="p">}],</span>
-    <span class="s2">&quot;Modeling&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSeesPyInput&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;mainScript&quot;</span><span class="p">:</span> <span class="s2">&quot;cantilever.py&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;modelPath&quot;</span><span class="p">:</span> <span class="s2">&quot;model/&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;ndm&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="s2">&quot;dofMap&quot;</span><span class="p">:</span> <span class="s2">&quot;1,2,3&quot;</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;EDP&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;UserDefinedEDP_R&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;EDPspecs&quot;</span><span class="p">:</span> <span class="s2">&quot;EDP_specs.json&quot;</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;Simulation&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSeesPy-Simulation&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;UQ&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;Dakota-UQ&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;LHS&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;samples&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-          <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;UQ&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;concurrency&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">&quot;keepSamples&quot;</span><span class="p">:</span> <span class="n">true</span>
-       <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;DL&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;pelicun&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">&quot;DL_Method&quot;</span><span class="p">:</span> <span class="s2">&quot;HAZUS MH EQ&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Realizations&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-                <span class="s2">&quot;detailed_results&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-                <span class="s2">&quot;log_file&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-                <span class="s2">&quot;coupled_EDP&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-                <span class="s2">&quot;event_time&quot;</span><span class="p">:</span> <span class="s2">&quot;off&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;ground_failure&quot;</span><span class="p">:</span> <span class="n">false</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
+<span class="linenos"> 2</span>  <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;rWHALE_&quot;</span><span class="p">,</span>
+<span class="linenos"> 3</span>  <span class="s2">&quot;Author&quot;</span><span class="p">:</span> <span class="s2">&quot;Adam Zsarnóczay&quot;</span><span class="p">,</span>
+<span class="linenos"> 4</span>  <span class="s2">&quot;WorkflowType&quot;</span><span class="p">:</span> <span class="s2">&quot;Parametric Study&quot;</span><span class="p">,</span>
+<span class="linenos"> 5</span>  <span class="s2">&quot;runDir&quot;</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="linenos"> 6</span>  <span class="s2">&quot;localAppDir&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/rWHALE/&quot;</span><span class="p">,</span>
+<span class="linenos"> 7</span>  <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 8</span>      <span class="s2">&quot;force&quot;</span><span class="p">:</span> <span class="s2">&quot;kips&quot;</span><span class="p">,</span>
+<span class="linenos"> 9</span>      <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span>
+<span class="linenos">10</span>      <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;sec&quot;</span>
+<span class="linenos">11</span>   <span class="p">},</span>
+<span class="linenos">12</span>   <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">13</span>    <span class="s2">&quot;EDP&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="linenos">14</span>    <span class="s2">&quot;DM&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="linenos">15</span>    <span class="s2">&quot;DV&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="linenos">16</span>    <span class="s2">&quot;every_realization&quot;</span><span class="p">:</span> <span class="n">false</span>
+<span class="linenos">17</span>  <span class="p">},</span>
+<span class="linenos">18</span>  <span class="s2">&quot;Applications&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">19</span>    <span class="s2">&quot;Building&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">20</span>      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;CSV_to_BIM&quot;</span><span class="p">,</span>
+<span class="linenos">21</span>      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">22</span>        <span class="s2">&quot;Min&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="linenos">23</span>        <span class="s2">&quot;Max&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+<span class="linenos">24</span>        <span class="s2">&quot;buildingSourceFile&quot;</span><span class="p">:</span><span class="s2">&quot;input_params.csv&quot;</span>
+<span class="linenos">25</span>      <span class="p">}</span>
+<span class="linenos">26</span>    <span class="p">},</span>
+<span class="linenos">27</span>    <span class="s2">&quot;RegionalMapping&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">28</span>      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;NearestNeighborEvents&quot;</span><span class="p">,</span>
+<span class="linenos">29</span>      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">30</span>        <span class="s2">&quot;filenameEVENTgrid&quot;</span><span class="p">:</span> <span class="s2">&quot;records/EventGrid.csv&quot;</span><span class="p">,</span>
+<span class="linenos">31</span>        <span class="s2">&quot;samples&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="linenos">32</span>        <span class="s2">&quot;neighbors&quot;</span><span class="p">:</span> <span class="mi">4</span>
+<span class="linenos">33</span>      <span class="p">}</span>
+<span class="linenos">34</span>    <span class="p">},</span>
+<span class="linenos">35</span>    <span class="s2">&quot;Events&quot;</span><span class="p">:</span> <span class="p">[{</span>
+<span class="linenos">36</span>      <span class="s2">&quot;EventClassification&quot;</span><span class="p">:</span> <span class="s2">&quot;Earthquake&quot;</span><span class="p">,</span>
+<span class="linenos">37</span>      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;SimCenterEvent&quot;</span><span class="p">,</span>
+<span class="linenos">38</span>      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">39</span>        <span class="s2">&quot;pathEventData&quot;</span><span class="p">:</span> <span class="s2">&quot;records/&quot;</span>
+<span class="linenos">40</span>      <span class="p">}</span>
+<span class="linenos">41</span>    <span class="p">}],</span>
+<span class="linenos">42</span>    <span class="s2">&quot;Modeling&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">43</span>      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSeesPyInput&quot;</span><span class="p">,</span>
+<span class="linenos">44</span>      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">45</span>        <span class="s2">&quot;mainScript&quot;</span><span class="p">:</span> <span class="s2">&quot;cantilever.py&quot;</span><span class="p">,</span>
+<span class="linenos">46</span>        <span class="s2">&quot;modelPath&quot;</span><span class="p">:</span> <span class="s2">&quot;model/&quot;</span><span class="p">,</span>
+<span class="linenos">47</span>        <span class="s2">&quot;ndm&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="linenos">48</span>        <span class="s2">&quot;dofMap&quot;</span><span class="p">:</span> <span class="s2">&quot;1,2,3&quot;</span>
+<span class="linenos">49</span>      <span class="p">}</span>
+<span class="linenos">50</span>    <span class="p">},</span>
+<span class="linenos">51</span>    <span class="s2">&quot;EDP&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">52</span>      <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;UserDefinedEDP_R&quot;</span><span class="p">,</span>
+<span class="linenos">53</span>      <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">54</span>        <span class="s2">&quot;EDPspecs&quot;</span><span class="p">:</span> <span class="s2">&quot;EDP_specs.json&quot;</span>
+<span class="linenos">55</span>      <span class="p">}</span>
+<span class="linenos">56</span>    <span class="p">},</span>
+<span class="linenos">57</span>    <span class="s2">&quot;Simulation&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">58</span>       <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSeesPy-Simulation&quot;</span><span class="p">,</span>
+<span class="linenos">59</span>       <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">60</span>       <span class="p">}</span>
+<span class="linenos">61</span>    <span class="p">},</span>
+<span class="linenos">62</span>    <span class="s2">&quot;UQ&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">63</span>       <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;Dakota-UQ&quot;</span><span class="p">,</span>
+<span class="linenos">64</span>       <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">65</span>          <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;LHS&quot;</span><span class="p">,</span>
+<span class="linenos">66</span>          <span class="s2">&quot;samples&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="linenos">67</span>          <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;UQ&quot;</span><span class="p">,</span>
+<span class="linenos">68</span>          <span class="s2">&quot;concurrency&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos">69</span>          <span class="s2">&quot;keepSamples&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="linenos">70</span>       <span class="p">}</span>
+<span class="linenos">71</span>    <span class="p">},</span>
+<span class="linenos">72</span>    <span class="s2">&quot;DL&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">73</span>            <span class="s2">&quot;Application&quot;</span><span class="p">:</span> <span class="s2">&quot;pelicun&quot;</span><span class="p">,</span>
+<span class="linenos">74</span>            <span class="s2">&quot;ApplicationData&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">75</span>                <span class="s2">&quot;DL_Method&quot;</span><span class="p">:</span> <span class="s2">&quot;HAZUS MH EQ&quot;</span><span class="p">,</span>
+<span class="linenos">76</span>                <span class="s2">&quot;Realizations&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="linenos">77</span>                <span class="s2">&quot;detailed_results&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+<span class="linenos">78</span>                <span class="s2">&quot;log_file&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="linenos">79</span>                <span class="s2">&quot;coupled_EDP&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+<span class="linenos">80</span>                <span class="s2">&quot;event_time&quot;</span><span class="p">:</span> <span class="s2">&quot;off&quot;</span><span class="p">,</span>
+<span class="linenos">81</span>                <span class="s2">&quot;ground_failure&quot;</span><span class="p">:</span> <span class="n">false</span>
+<span class="linenos">82</span>            <span class="p">}</span>
+<span class="linenos">83</span>        <span class="p">}</span>
+<span class="linenos">84</span>    <span class="p">}</span>
+<span class="linenos">85</span><span class="p">}</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <ol class="arabic simple" start="2">
 <li><p><strong>Building Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/buildingApps.html#lblbuildingapp"><span class="std std-ref">CSV_to_BIM</span></a> building application. In the configuration file, the Max and Min parameters are set to run the full set of 20 buildings, and the name of the building source file is provided as “input_params.csv”. In the <a class="reference internal" href="../../architecture/desktop/file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">building source file</span></a>, input parameters for (a) the response simulation (weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>) and for (b) the DL assessment (e.g., <code class="docutils literal notranslate"><span class="pre">NumberofStories</span></code>, <code class="docutils literal notranslate"><span class="pre">YearBuilt</span></code>, <code class="docutils literal notranslate"><span class="pre">OccupancyClass</span></code>, <code class="docutils literal notranslate"><span class="pre">StructureType</span></code>, <code class="docutils literal notranslate"><span class="pre">PlanArea</span></code>, <code class="docutils literal notranslate"><span class="pre">ReplacementCost</span></code>) are specified.</p></li>
 </ol>
@@ -790,674 +714,345 @@
 <li><p><strong>Modeling Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/modelingApps.html#lblmodelingapp"><span class="std std-ref">OpenSeesPyInput</span></a> modeling application. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>. Functions are included which record the peak response as EDPs for each of the EDP types specified in the EDP_specs.json file.</p></li>
 </ol>
 <p><strong>Model file:</strong></p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
- 39
- 40
- 41
- 42
- 43
- 44
- 45
- 46
- 47
- 48
- 49
- 50
- 51
- 52
- 53
- 54
- 55
- 56
- 57
- 58
- 59
- 60
- 61
- 62
- 63
- 64
- 65
- 66
- 67
- 68
- 69
- 70
- 71
- 72
- 73
- 74
- 75
- 76
- 77
- 78
- 79
- 80
- 81
- 82
- 83
- 84
- 85
- 86
- 87
- 88
- 89
- 90
- 91
- 92
- 93
- 94
- 95
- 96
- 97
- 98
- 99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280
-281
-282
-283
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span>
-<span class="kn">from</span> <span class="nn">openseespy.opensees</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-
-<span class="sd">&#39;&#39;&#39; FUNCTION: build_model ------------------------------------------------------</span>
-<span class="sd">Generates OpenSeesPy model of an elastic-perfectly plastic SDOF system and runs</span>
-<span class="sd">gravity analysis.</span>
-<span class="sd">Inputs: in model_params</span>
-<span class="sd">	W - weight of structure</span>
-<span class="sd">	f_yield - yield stiffness</span>
-<span class="sd">	T1 - fundamental period</span>
-<span class="sd">Outputs:</span>
-
-<span class="sd">-----------------------------------------------------------------------------&#39;&#39;&#39;</span>
-
-<span class="k">def</span> <span class="nf">build_model</span><span class="p">(</span><span class="n">model_params</span><span class="p">):</span>
-
-	<span class="n">G</span> <span class="o">=</span> <span class="mf">386.1</span>
-	<span class="n">W</span> <span class="o">=</span> <span class="n">model_params</span><span class="p">[</span><span class="s2">&quot;W&quot;</span><span class="p">]</span>
-	<span class="n">f_yield</span> <span class="o">=</span> <span class="n">model_params</span><span class="p">[</span><span class="s2">&quot;f_yield&quot;</span><span class="p">]</span>
-	<span class="n">T1</span> <span class="o">=</span> <span class="n">model_params</span><span class="p">[</span><span class="s2">&quot;T1&quot;</span><span class="p">]</span>
-	<span class="n">m</span> <span class="o">=</span> <span class="n">W</span> <span class="o">/</span> <span class="n">G</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
-
-	<span class="c1"># set model dimensions and deg of freedom</span>
-	<span class="n">model</span><span class="p">(</span><span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="s1">&#39;-ndm&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;-ndf&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-
-	<span class="c1"># define nodes</span>
-	<span class="n">base_node_tag</span> <span class="o">=</span> <span class="mi">10000</span>
-	<span class="n">top_node_tag</span> <span class="o">=</span> <span class="mi">10001</span>
-	<span class="n">height</span> <span class="o">=</span> <span class="mf">240.</span> <span class="c1"># in</span>
-	<span class="n">node</span><span class="p">(</span><span class="n">base_node_tag</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
-	<span class="n">node</span><span class="p">(</span><span class="n">top_node_tag</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
-
-	<span class="c1"># define fixities</span>
-	<span class="n">fix</span><span class="p">(</span><span class="n">base_node_tag</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-	<span class="n">fix</span><span class="p">(</span><span class="n">top_node_tag</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-	<span class="c1"># define bilinear (elastic-perfectly plastic) material</span>
-	<span class="n">material_tag</span> <span class="o">=</span> <span class="mi">100</span>
-	<span class="n">stiffmat</span> <span class="o">=</span> <span class="mi">110</span>
-	<span class="n">K</span> <span class="o">=</span> <span class="n">m</span> <span class="o">/</span> <span class="p">(</span><span class="n">T1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;K: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">K</span><span class="p">))</span>
-	<span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;Steel01&#39;</span><span class="p">,</span> <span class="n">material_tag</span><span class="p">,</span> <span class="n">f_yield</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
-	<span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;Elastic&#39;</span><span class="p">,</span> <span class="n">stiffmat</span><span class="p">,</span> <span class="mf">1.e9</span><span class="p">)</span>
-
-	<span class="c1"># define element</span>
-	<span class="n">element_tag</span> <span class="o">=</span> <span class="mi">1000</span>
-	<span class="n">element</span><span class="p">(</span><span class="s1">&#39;twoNodeLink&#39;</span><span class="p">,</span> <span class="n">element_tag</span><span class="p">,</span> <span class="n">base_node_tag</span><span class="p">,</span> <span class="n">top_node_tag</span><span class="p">,</span> <span class="s1">&#39;-mat&#39;</span><span class="p">,</span> <span class="n">stiffmat</span><span class="p">,</span> <span class="n">material_tag</span><span class="p">,</span> <span class="n">material_tag</span><span class="p">,</span> <span class="s1">&#39;-dir&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;-orient&#39;</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;-doRayleigh&#39;</span><span class="p">)</span>
-
-	<span class="c1"># define mass</span>
-	<span class="n">mass</span><span class="p">(</span><span class="n">top_node_tag</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
-
-	<span class="c1"># define gravity loads</span>
-	<span class="c1"># W = m * 386.01 # g</span>
-	<span class="n">timeSeries</span><span class="p">(</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-	<span class="n">pattern</span><span class="p">(</span><span class="s1">&#39;Plain&#39;</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-	<span class="n">load</span><span class="p">(</span><span class="n">top_node_tag</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="n">W</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
-
-	<span class="c1"># define damping based on first eigenmode</span>
-	<span class="n">damp_ratio</span> <span class="o">=</span> <span class="mf">0.05</span>
-	<span class="n">angular_freq</span> <span class="o">=</span> <span class="n">eigen</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mf">0.5</span>
-	<span class="n">beta_k</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">damp_ratio</span> <span class="o">/</span> <span class="n">angular_freq</span>
-	<span class="n">rayleigh</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">beta_k</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
-
-	<span class="c1"># run gravity analysis</span>
-	<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-8</span>                          <span class="c1"># convergence tolerance for test</span>
-	<span class="nb">iter</span> <span class="o">=</span> <span class="mi">100</span>                          <span class="c1"># max number of iterations</span>
-	<span class="n">nstep</span> <span class="o">=</span> <span class="mi">100</span>               		    <span class="c1"># apply gravity loads in 10 steps</span>
-	<span class="n">incr</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">nstep</span>          			<span class="c1"># first load increment</span>
-
-	<span class="c1"># analysis settings</span>
-	<span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Transformation&#39;</span><span class="p">)</span>       <span class="c1"># enforce boundary conditions using transformation constraint handler</span>
-	<span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>			            <span class="c1"># renumbers dof&#39;s to minimize band-width (optimization)</span>
-	<span class="n">system</span><span class="p">(</span><span class="s1">&#39;BandGeneral&#39;</span><span class="p">)</span>		        <span class="c1"># stores system of equations as 1D array of size bandwidth x number of unknowns</span>
-	<span class="n">test</span><span class="p">(</span><span class="s1">&#39;EnergyIncr&#39;</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># tests for convergence using dot product of solution vector and norm of right-hand side of matrix equation</span>
-	<span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;Newton&#39;</span><span class="p">)</span>                 <span class="c1"># use Newton&#39;s solution algorithm: updates tangent stiffness at every iteration</span>
-	<span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;LoadControl&#39;</span><span class="p">,</span> <span class="n">incr</span><span class="p">)</span>     <span class="c1"># determine the next time step for an analysis # apply gravity in 10 steps</span>
-	<span class="n">analysis</span><span class="p">(</span><span class="s1">&#39;Static&#39;</span><span class="p">)</span>		            <span class="c1"># define type of analysis, static or transient</span>
-	<span class="n">analyze</span><span class="p">(</span><span class="n">nstep</span><span class="p">)</span>	          			<span class="c1"># perform gravity analysis</span>
-
-	<span class="c1"># after gravity analysis, change time and tolerance for the dynamic analysis</span>
-	<span class="n">loadConst</span><span class="p">(</span><span class="s1">&#39;-time&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
-
-
-
-
-
-
-<span class="c1"># FUNCTION: PeakDriftRecorder --------------------------------------------------</span>
-<span class="c1"># saves envelope of interstory drift ratio for each story at one analysis step</span>
-<span class="c1"># ------------------------------------------------------------------------------</span>
-
-<span class="k">def</span> <span class="nf">PeakDriftRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">envDict</span><span class="p">):</span>
-    <span class="c1"># inputs:</span>
-    <span class="c1"># EDP_specs = dictionary of EDP type, location, direction</span>
-    <span class="c1"># envDict = dictionary of envelope values</span>
-
-
-    <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PID&#39;</span><span class="p">]:</span>
-        <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">dof</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PID&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">]:</span>
-            <span class="n">storynodes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PID&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">dof</span><span class="p">]]</span>
-            <span class="c1"># print(&quot;computing drifts for nodes: {}&quot;.format(storynodes))</span>
-            <span class="n">story_height</span> <span class="o">=</span> <span class="n">nodeCoord</span><span class="p">(</span><span class="n">storynodes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">nodeCoord</span><span class="p">(</span><span class="n">storynodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span>
-            <span class="c1"># compute drift</span>
-            <span class="n">topDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">storynodes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">dof</span><span class="p">)</span>
-            <span class="n">botDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">storynodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">dof</span><span class="p">)</span>
-            <span class="n">new_drift</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">((</span><span class="n">topDisp</span><span class="o">-</span><span class="n">botDisp</span><span class="p">)</span><span class="o">/</span><span class="n">story_height</span><span class="p">)</span>
-            <span class="c1"># update dictionary</span>
-            <span class="n">curr_drift</span> <span class="o">=</span> <span class="n">envDict</span><span class="p">[</span><span class="s1">&#39;PID&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">pos</span><span class="p">]</span>
-            <span class="n">new_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">new_drift</span><span class="p">,</span> <span class="n">curr_drift</span><span class="p">)</span>
-            <span class="n">envDict</span><span class="p">[</span><span class="s1">&#39;PID&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_max</span>
-            <span class="n">pos</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">return</span> <span class="n">envDict</span>
-
-
-
-<span class="c1"># FUNCTION: AccelHistoryRecorder -----------------------------------------------</span>
-<span class="c1"># saves time history of relative floor acceleration for each story at one analysis step</span>
-<span class="c1"># ------------------------------------------------------------------------------</span>
-
-<span class="k">def</span> <span class="nf">AccelHistoryRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">histDict</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
-    <span class="c1"># inputs:</span>
-    <span class="c1"># histDict = dictionary of time histories</span>
-    <span class="c1"># recorderNodes = list of nodes where EDP is recorded</span>
-    <span class="c1"># count = current count in the time history</span>
-
-    <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">dof</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">]:</span>
-            <span class="n">storynode</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">dof</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-            <span class="c1"># obtain acceleration</span>
-            <span class="n">new_acc</span> <span class="o">=</span> <span class="n">nodeAccel</span><span class="p">(</span><span class="n">storynode</span><span class="p">,</span> <span class="n">dof</span><span class="p">)</span>
-            <span class="n">histDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">dof</span><span class="p">][</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_acc</span>
-
-
-    <span class="k">return</span> <span class="n">histDict</span>
-
-
-
-<span class="c1"># FUNCTION: RunDynamicAnalysis -------------------------------------------------</span>
-<span class="c1"># performs dynamic analysis and records EDPs in dictionary</span>
-<span class="c1"># ------------------------------------------------------------------------------</span>
-
-<span class="k">def</span> <span class="nf">RunDynamicAnalysis</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="nb">iter</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">driftLimit</span><span class="p">,</span><span class="n">EDP_specs</span><span class="p">,</span><span class="n">subSteps</span><span class="p">,</span><span class="n">GMX</span><span class="p">,</span><span class="n">GMZ</span><span class="p">):</span>
-    <span class="c1"># inputs:</span>
-    <span class="c1"># tol = tolerance criteria to check for convergence</span>
-    <span class="c1"># iter = max number of iterations to check</span>
-    <span class="c1"># dt = time increment for analysis</span>
-    <span class="c1"># driftLimit = percent interstory drift limit indicating collapse</span>
-    <span class="c1"># recorderNodes = vector of node labels used to check global drifts and record EDPs</span>
-    <span class="c1"># subSteps = number of subdivisions in cases of ill convergence</span>
-    <span class="c1"># GMX = list of GM acceleration ordinates in X direction</span>
-    <span class="c1"># GMZ = list of GM acceleration ordinates in Z direction</span>
-
-    <span class="c1"># pad shorter record with zeros (free vibration) such that two horizontal records are the same length</span>
-    <span class="n">nsteps</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">GMX</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">GMZ</span><span class="p">))</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">GMX</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">nsteps</span><span class="p">:</span>
-        <span class="n">diff</span> <span class="o">=</span> <span class="n">nsteps</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">GMX</span><span class="p">)</span>
-        <span class="n">GMX</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">diff</span><span class="p">))</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">GMZ</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">nsteps</span><span class="p">:</span>
-        <span class="n">diff</span> <span class="o">=</span> <span class="n">nsteps</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">GMZ</span><span class="p">)</span>
-        <span class="n">GMZ</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">diff</span><span class="p">))</span>
-
-
-    <span class="c1"># generate time array from recording</span>
-    <span class="n">time_record</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nsteps</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="n">nsteps</span><span class="p">,</span><span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-    <span class="c1"># initialize dictionary of envelope EDPs</span>
-    <span class="n">envelopeDict</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">for</span> <span class="n">edp</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">:</span>
-        <span class="n">envelopeDict</span><span class="p">[</span><span class="n">edp</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="n">edp</span><span class="p">]:</span>
-            <span class="n">numdof</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">[</span><span class="n">edp</span><span class="p">][</span><span class="n">loc</span><span class="p">])</span>
-            <span class="n">envelopeDict</span><span class="p">[</span><span class="n">edp</span><span class="p">][</span><span class="n">loc</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numdof</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">envelopeDict</span><span class="p">)</span>
-
-    <span class="c1"># initialize dictionary of time history EDPs</span>
-    <span class="n">historyDict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;accel&#39;</span><span class="p">:{}}</span>
-    <span class="n">time_analysis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">]:</span>
-        <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">dof</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">]:</span>
-            <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">dof</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
-
-    <span class="c1"># number of diaphragm levels</span>
-    <span class="n">levels</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">])</span>
-    <span class="n">CODnodes</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">]:</span>
-        <span class="n">CODnodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">)</span>
-
-
-    <span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Transformation&#39;</span><span class="p">)</span>            <span class="c1"># handles boundary conditions based on transformation equation method</span>
-    <span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>                          <span class="c1"># renumber dof&#39;s to minimize band-width (optimization)</span>
-    <span class="n">system</span><span class="p">(</span><span class="s1">&#39;UmfPack&#39;</span><span class="p">)</span>                        <span class="c1"># constructs sparse system of equations using UmfPack solver</span>
-    <span class="n">test</span><span class="p">(</span><span class="s1">&#39;NormDispIncr&#39;</span><span class="p">,</span><span class="n">tol</span><span class="p">,</span><span class="nb">iter</span><span class="p">)</span>            <span class="c1"># tests for convergence using norm of left-hand side of matrix equation</span>
-    <span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;NewtonLineSearch&#39;</span><span class="p">)</span>            <span class="c1"># use Newton&#39;s solution algorithm: updates tangent stiffness at every iteration</span>
-    <span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;Newmark&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>         <span class="c1"># Newmark average acceleration method for numerical integration</span>
-    <span class="n">analysis</span><span class="p">(</span><span class="s1">&#39;Transient&#39;</span><span class="p">)</span>                    <span class="c1"># define type of analysis: time-dependent</span>
-
-    <span class="c1"># initialize variables</span>
-    <span class="n">maxDiv</span> <span class="o">=</span> <span class="mi">1024</span>
-    <span class="n">minDiv</span> <span class="o">=</span> <span class="n">subSteps</span>
-    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">ok</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">breaker</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">maxDrift</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">while</span> <span class="n">step</span><span class="o">&lt;</span><span class="n">nsteps</span> <span class="ow">and</span> <span class="n">ok</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">breaker</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-        <span class="n">step</span> <span class="o">=</span> <span class="n">step</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># take 1 step</span>
-        <span class="n">ok</span> <span class="o">=</span> <span class="mi">2</span>
-        <span class="n">div</span> <span class="o">=</span> <span class="n">minDiv</span>
-        <span class="n">length</span> <span class="o">=</span> <span class="n">maxDiv</span>
-        <span class="k">while</span> <span class="n">div</span><span class="o">&lt;=</span><span class="n">maxDiv</span> <span class="ow">and</span> <span class="n">length</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">breaker</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-            <span class="n">stepSize</span> <span class="o">=</span> <span class="n">dt</span><span class="o">/</span><span class="n">div</span>
-            <span class="n">ok</span> <span class="o">=</span> <span class="n">analyze</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stepSize</span><span class="p">)</span>               <span class="c1"># perform analysis for one increment; will return 0 if no convergence issues</span>
-            <span class="k">if</span> <span class="n">ok</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-                <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
-                <span class="n">length</span> <span class="o">=</span> <span class="n">length</span> <span class="o">-</span> <span class="n">maxDiv</span><span class="o">/</span><span class="n">div</span>
-                <span class="c1"># check if drift limits are satisfied</span>
-                <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
-                <span class="k">while</span> <span class="n">level</span> <span class="o">&lt;</span> <span class="n">levels</span><span class="p">:</span>
-                    <span class="n">story_height</span> <span class="o">=</span> <span class="n">nodeCoord</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">nodeCoord</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span>
-                    <span class="c1"># check X direction drifts (direction 1)</span>
-                    <span class="n">topDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
-                    <span class="n">botDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
-                    <span class="n">deltaDisp</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">topDisp</span><span class="o">-</span><span class="n">botDisp</span><span class="p">)</span>
-                    <span class="n">drift</span> <span class="o">=</span> <span class="n">deltaDisp</span><span class="o">/</span><span class="n">story_height</span>
-                    <span class="k">if</span> <span class="n">drift</span> <span class="o">&gt;=</span> <span class="n">driftLimit</span><span class="p">:</span>
-                        <span class="n">breaker</span> <span class="o">=</span> <span class="mi">1</span>
-                    <span class="c1"># check Y direction drifts (direction 2)</span>
-                    <span class="n">topDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span>
-                    <span class="n">botDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span>
-                    <span class="n">deltaDisp</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">topDisp</span><span class="o">-</span><span class="n">botDisp</span><span class="p">)</span>
-                    <span class="n">drift</span> <span class="o">=</span> <span class="n">deltaDisp</span><span class="o">/</span><span class="n">story_height</span>
-                    <span class="k">if</span> <span class="n">drift</span> <span class="o">&gt;=</span> <span class="n">driftLimit</span><span class="p">:</span>
-                        <span class="n">breaker</span> <span class="o">=</span> <span class="mi">1</span>
-                    <span class="c1"># move on to check next level</span>
-                    <span class="n">level</span> <span class="o">=</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span>
-                <span class="c1"># save parameter values in recording dictionaries at every step</span>
-                <span class="n">time_analysis</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_analysis</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">stepSize</span>
-                <span class="n">envelopeDict</span> <span class="o">=</span> <span class="n">PeakDriftRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">envelopeDict</span><span class="p">)</span>
-                <span class="n">historyDict</span> <span class="o">=</span> <span class="n">AccelHistoryRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">historyDict</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span> <span class="c1"># if ok != 0</span>
-                <span class="n">div</span> <span class="o">=</span> <span class="n">div</span><span class="o">*</span><span class="mi">2</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of increments increased to &quot;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">div</span><span class="p">))</span>
-    <span class="c1"># end analysis once drift limit has been reached</span>
-    <span class="k">if</span> <span class="n">breaker</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">ok</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collapse drift has been reached&quot;</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of analysis steps completed: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
-
-    <span class="c1"># remove extra zeros from time history</span>
-    <span class="n">time_analysis</span> <span class="o">=</span> <span class="n">time_analysis</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_analysis</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-
-    <span class="c1"># remove extra zeros from accel time history, add GM to obtain absolute acceleration, and record envelope value</span>
-    <span class="n">GMX_interp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">time_analysis</span><span class="p">,</span> <span class="n">time_record</span><span class="p">,</span> <span class="n">GMX</span><span class="p">)</span>
-    <span class="n">GMZ_interp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">time_analysis</span><span class="p">,</span> <span class="n">time_record</span><span class="p">,</span> <span class="n">GMZ</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">levels</span><span class="p">):</span>
-        <span class="c1"># X direction</span>
-        <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">GMX_interp</span>
-        <span class="n">envelopeDict</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
-        <span class="c1"># Z direction</span>
-        <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="n">GMZ_interp</span>
-        <span class="n">envelopeDict</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
-
-
-    <span class="k">return</span> <span class="n">envelopeDict</span>
-
-
-
-<span class="c1"># MAIN: run_analysis -----------------------------------------------------------</span>
-<span class="c1"># runs dynamic analysis for single event and returns dictionary of envelope EDPs</span>
-<span class="c1"># ------------------------------------------------------------------------------</span>
-
-<span class="k">def</span> <span class="nf">run_analysis</span><span class="p">(</span><span class="n">GM_dt</span><span class="p">,</span> <span class="n">GM_npts</span><span class="p">,</span> <span class="n">TS_List</span><span class="p">,</span> <span class="n">EDP_specs</span><span class="p">):</span>
-    <span class="c1"># inputs:</span>
-    <span class="c1"># GM_dt = time step of GM record</span>
-    <span class="c1"># GM_npts = number of steps in GM record</span>
-    <span class="c1"># TS_List = 1x2 list where first component is a list of GMX acceleration points, second component is a list of GMZ acceleration points (scaled and multipled by G)</span>
-    <span class="n">GMX_points</span> <span class="o">=</span> <span class="n">TS_List</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">GMZ_points</span> <span class="o">=</span> <span class="n">TS_List</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-    <span class="c1"># print(EDP_specs)</span>
-
-    <span class="n">wipeAnalysis</span><span class="p">()</span>
-
-
-    <span class="c1"># define parameters for dynamic analysis</span>
-    <span class="n">driftLimit</span> <span class="o">=</span> <span class="mf">0.20</span>   <span class="c1"># %</span>
-    <span class="n">toler</span> <span class="o">=</span> <span class="mf">1.e-08</span>
-    <span class="n">maxiter</span> <span class="o">=</span> <span class="mi">30</span>
-    <span class="n">subSteps</span> <span class="o">=</span> <span class="mi">2</span>
-
-    <span class="n">envdata</span> <span class="o">=</span> <span class="n">RunDynamicAnalysis</span><span class="p">(</span><span class="n">toler</span><span class="p">,</span><span class="n">maxiter</span><span class="p">,</span><span class="n">GM_dt</span><span class="p">,</span><span class="n">driftLimit</span><span class="p">,</span><span class="n">EDP_specs</span><span class="p">,</span><span class="n">subSteps</span><span class="p">,</span><span class="n">GMX_points</span><span class="p">,</span><span class="n">GMZ_points</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">envdata</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">envdata</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos">  2</span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span>
+<span class="linenos">  3</span><span class="kn">from</span> <span class="nn">openseespy.opensees</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos">  5</span>
+<span class="linenos">  6</span>
+<span class="linenos">  7</span><span class="sd">&#39;&#39;&#39; FUNCTION: build_model ------------------------------------------------------</span>
+<span class="linenos">  8</span><span class="sd">Generates OpenSeesPy model of an elastic-perfectly plastic SDOF system and runs</span>
+<span class="linenos">  9</span><span class="sd">gravity analysis.</span>
+<span class="linenos"> 10</span><span class="sd">Inputs: in model_params</span>
+<span class="linenos"> 11</span><span class="sd">	W - weight of structure</span>
+<span class="linenos"> 12</span><span class="sd">	f_yield - yield stiffness</span>
+<span class="linenos"> 13</span><span class="sd">	T1 - fundamental period</span>
+<span class="linenos"> 14</span><span class="sd">Outputs:</span>
+<span class="linenos"> 15</span>
+<span class="linenos"> 16</span><span class="sd">-----------------------------------------------------------------------------&#39;&#39;&#39;</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="k">def</span> <span class="nf">build_model</span><span class="p">(</span><span class="n">model_params</span><span class="p">):</span>
+<span class="linenos"> 19</span>
+<span class="linenos"> 20</span>	<span class="n">G</span> <span class="o">=</span> <span class="mf">386.1</span>
+<span class="linenos"> 21</span>	<span class="n">W</span> <span class="o">=</span> <span class="n">model_params</span><span class="p">[</span><span class="s2">&quot;W&quot;</span><span class="p">]</span>
+<span class="linenos"> 22</span>	<span class="n">f_yield</span> <span class="o">=</span> <span class="n">model_params</span><span class="p">[</span><span class="s2">&quot;f_yield&quot;</span><span class="p">]</span>
+<span class="linenos"> 23</span>	<span class="n">T1</span> <span class="o">=</span> <span class="n">model_params</span><span class="p">[</span><span class="s2">&quot;T1&quot;</span><span class="p">]</span>
+<span class="linenos"> 24</span>	<span class="n">m</span> <span class="o">=</span> <span class="n">W</span> <span class="o">/</span> <span class="n">G</span>
+<span class="linenos"> 25</span>	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;m: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="linenos"> 26</span>
+<span class="linenos"> 27</span>	<span class="c1"># set model dimensions and deg of freedom</span>
+<span class="linenos"> 28</span>	<span class="n">model</span><span class="p">(</span><span class="s1">&#39;basic&#39;</span><span class="p">,</span> <span class="s1">&#39;-ndm&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;-ndf&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="linenos"> 29</span>
+<span class="linenos"> 30</span>	<span class="c1"># define nodes</span>
+<span class="linenos"> 31</span>	<span class="n">base_node_tag</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="linenos"> 32</span>	<span class="n">top_node_tag</span> <span class="o">=</span> <span class="mi">10001</span>
+<span class="linenos"> 33</span>	<span class="n">height</span> <span class="o">=</span> <span class="mf">240.</span> <span class="c1"># in</span>
+<span class="linenos"> 34</span>	<span class="n">node</span><span class="p">(</span><span class="n">base_node_tag</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="linenos"> 35</span>	<span class="n">node</span><span class="p">(</span><span class="n">top_node_tag</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="linenos"> 36</span>
+<span class="linenos"> 37</span>	<span class="c1"># define fixities</span>
+<span class="linenos"> 38</span>	<span class="n">fix</span><span class="p">(</span><span class="n">base_node_tag</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 39</span>	<span class="n">fix</span><span class="p">(</span><span class="n">top_node_tag</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span>	<span class="c1"># define bilinear (elastic-perfectly plastic) material</span>
+<span class="linenos"> 42</span>	<span class="n">material_tag</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="linenos"> 43</span>	<span class="n">stiffmat</span> <span class="o">=</span> <span class="mi">110</span>
+<span class="linenos"> 44</span>	<span class="n">K</span> <span class="o">=</span> <span class="n">m</span> <span class="o">/</span> <span class="p">(</span><span class="n">T1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+<span class="linenos"> 45</span>	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;K: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">K</span><span class="p">))</span>
+<span class="linenos"> 46</span>	<span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;Steel01&#39;</span><span class="p">,</span> <span class="n">material_tag</span><span class="p">,</span> <span class="n">f_yield</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+<span class="linenos"> 47</span>	<span class="n">uniaxialMaterial</span><span class="p">(</span><span class="s1">&#39;Elastic&#39;</span><span class="p">,</span> <span class="n">stiffmat</span><span class="p">,</span> <span class="mf">1.e9</span><span class="p">)</span>
+<span class="linenos"> 48</span>
+<span class="linenos"> 49</span>	<span class="c1"># define element</span>
+<span class="linenos"> 50</span>	<span class="n">element_tag</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="linenos"> 51</span>	<span class="n">element</span><span class="p">(</span><span class="s1">&#39;twoNodeLink&#39;</span><span class="p">,</span> <span class="n">element_tag</span><span class="p">,</span> <span class="n">base_node_tag</span><span class="p">,</span> <span class="n">top_node_tag</span><span class="p">,</span> <span class="s1">&#39;-mat&#39;</span><span class="p">,</span> <span class="n">stiffmat</span><span class="p">,</span> <span class="n">material_tag</span><span class="p">,</span> <span class="n">material_tag</span><span class="p">,</span> <span class="s1">&#39;-dir&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;-orient&#39;</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;-doRayleigh&#39;</span><span class="p">)</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span>	<span class="c1"># define mass</span>
+<span class="linenos"> 54</span>	<span class="n">mass</span><span class="p">(</span><span class="n">top_node_tag</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="linenos"> 55</span>
+<span class="linenos"> 56</span>	<span class="c1"># define gravity loads</span>
+<span class="linenos"> 57</span>	<span class="c1"># W = m * 386.01 # g</span>
+<span class="linenos"> 58</span>	<span class="n">timeSeries</span><span class="p">(</span><span class="s1">&#39;Linear&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 59</span>	<span class="n">pattern</span><span class="p">(</span><span class="s1">&#39;Plain&#39;</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 60</span>	<span class="n">load</span><span class="p">(</span><span class="n">top_node_tag</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="n">W</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span>	<span class="c1"># define damping based on first eigenmode</span>
+<span class="linenos"> 63</span>	<span class="n">damp_ratio</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="linenos"> 64</span>	<span class="n">angular_freq</span> <span class="o">=</span> <span class="n">eigen</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="linenos"> 65</span>	<span class="n">beta_k</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">damp_ratio</span> <span class="o">/</span> <span class="n">angular_freq</span>
+<span class="linenos"> 66</span>	<span class="n">rayleigh</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">beta_k</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="linenos"> 67</span>
+<span class="linenos"> 68</span>	<span class="c1"># run gravity analysis</span>
+<span class="linenos"> 69</span>	<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-8</span>                          <span class="c1"># convergence tolerance for test</span>
+<span class="linenos"> 70</span>	<span class="nb">iter</span> <span class="o">=</span> <span class="mi">100</span>                          <span class="c1"># max number of iterations</span>
+<span class="linenos"> 71</span>	<span class="n">nstep</span> <span class="o">=</span> <span class="mi">100</span>               		    <span class="c1"># apply gravity loads in 10 steps</span>
+<span class="linenos"> 72</span>	<span class="n">incr</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">nstep</span>          			<span class="c1"># first load increment</span>
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span>	<span class="c1"># analysis settings</span>
+<span class="linenos"> 75</span>	<span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Transformation&#39;</span><span class="p">)</span>       <span class="c1"># enforce boundary conditions using transformation constraint handler</span>
+<span class="linenos"> 76</span>	<span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>			            <span class="c1"># renumbers dof&#39;s to minimize band-width (optimization)</span>
+<span class="linenos"> 77</span>	<span class="n">system</span><span class="p">(</span><span class="s1">&#39;BandGeneral&#39;</span><span class="p">)</span>		        <span class="c1"># stores system of equations as 1D array of size bandwidth x number of unknowns</span>
+<span class="linenos"> 78</span>	<span class="n">test</span><span class="p">(</span><span class="s1">&#39;EnergyIncr&#39;</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="nb">iter</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># tests for convergence using dot product of solution vector and norm of right-hand side of matrix equation</span>
+<span class="linenos"> 79</span>	<span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;Newton&#39;</span><span class="p">)</span>                 <span class="c1"># use Newton&#39;s solution algorithm: updates tangent stiffness at every iteration</span>
+<span class="linenos"> 80</span>	<span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;LoadControl&#39;</span><span class="p">,</span> <span class="n">incr</span><span class="p">)</span>     <span class="c1"># determine the next time step for an analysis # apply gravity in 10 steps</span>
+<span class="linenos"> 81</span>	<span class="n">analysis</span><span class="p">(</span><span class="s1">&#39;Static&#39;</span><span class="p">)</span>		            <span class="c1"># define type of analysis, static or transient</span>
+<span class="linenos"> 82</span>	<span class="n">analyze</span><span class="p">(</span><span class="n">nstep</span><span class="p">)</span>	          			<span class="c1"># perform gravity analysis</span>
+<span class="linenos"> 83</span>
+<span class="linenos"> 84</span>	<span class="c1"># after gravity analysis, change time and tolerance for the dynamic analysis</span>
+<span class="linenos"> 85</span>	<span class="n">loadConst</span><span class="p">(</span><span class="s1">&#39;-time&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="linenos"> 86</span>
+<span class="linenos"> 87</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span>
+<span class="linenos"> 92</span><span class="c1"># FUNCTION: PeakDriftRecorder --------------------------------------------------</span>
+<span class="linenos"> 93</span><span class="c1"># saves envelope of interstory drift ratio for each story at one analysis step</span>
+<span class="linenos"> 94</span><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="linenos"> 95</span>
+<span class="linenos"> 96</span><span class="k">def</span> <span class="nf">PeakDriftRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">envDict</span><span class="p">):</span>
+<span class="linenos"> 97</span>    <span class="c1"># inputs:</span>
+<span class="linenos"> 98</span>    <span class="c1"># EDP_specs = dictionary of EDP type, location, direction</span>
+<span class="linenos"> 99</span>    <span class="c1"># envDict = dictionary of envelope values</span>
+<span class="linenos">100</span>
+<span class="linenos">101</span>
+<span class="linenos">102</span>    <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PID&#39;</span><span class="p">]:</span>
+<span class="linenos">103</span>        <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">104</span>        <span class="k">for</span> <span class="n">dof</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PID&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">]:</span>
+<span class="linenos">105</span>            <span class="n">storynodes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PID&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">dof</span><span class="p">]]</span>
+<span class="linenos">106</span>            <span class="c1"># print(&quot;computing drifts for nodes: {}&quot;.format(storynodes))</span>
+<span class="linenos">107</span>            <span class="n">story_height</span> <span class="o">=</span> <span class="n">nodeCoord</span><span class="p">(</span><span class="n">storynodes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">nodeCoord</span><span class="p">(</span><span class="n">storynodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">108</span>            <span class="c1"># compute drift</span>
+<span class="linenos">109</span>            <span class="n">topDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">storynodes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">dof</span><span class="p">)</span>
+<span class="linenos">110</span>            <span class="n">botDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">storynodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">dof</span><span class="p">)</span>
+<span class="linenos">111</span>            <span class="n">new_drift</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">((</span><span class="n">topDisp</span><span class="o">-</span><span class="n">botDisp</span><span class="p">)</span><span class="o">/</span><span class="n">story_height</span><span class="p">)</span>
+<span class="linenos">112</span>            <span class="c1"># update dictionary</span>
+<span class="linenos">113</span>            <span class="n">curr_drift</span> <span class="o">=</span> <span class="n">envDict</span><span class="p">[</span><span class="s1">&#39;PID&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">pos</span><span class="p">]</span>
+<span class="linenos">114</span>            <span class="n">new_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">new_drift</span><span class="p">,</span> <span class="n">curr_drift</span><span class="p">)</span>
+<span class="linenos">115</span>            <span class="n">envDict</span><span class="p">[</span><span class="s1">&#39;PID&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_max</span>
+<span class="linenos">116</span>            <span class="n">pos</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">117</span>
+<span class="linenos">118</span>    <span class="k">return</span> <span class="n">envDict</span>
+<span class="linenos">119</span>
+<span class="linenos">120</span>
+<span class="linenos">121</span>
+<span class="linenos">122</span><span class="c1"># FUNCTION: AccelHistoryRecorder -----------------------------------------------</span>
+<span class="linenos">123</span><span class="c1"># saves time history of relative floor acceleration for each story at one analysis step</span>
+<span class="linenos">124</span><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="linenos">125</span>
+<span class="linenos">126</span><span class="k">def</span> <span class="nf">AccelHistoryRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">histDict</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+<span class="linenos">127</span>    <span class="c1"># inputs:</span>
+<span class="linenos">128</span>    <span class="c1"># histDict = dictionary of time histories</span>
+<span class="linenos">129</span>    <span class="c1"># recorderNodes = list of nodes where EDP is recorded</span>
+<span class="linenos">130</span>    <span class="c1"># count = current count in the time history</span>
+<span class="linenos">131</span>
+<span class="linenos">132</span>    <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">]:</span>
+<span class="linenos">133</span>        <span class="k">for</span> <span class="n">dof</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">]:</span>
+<span class="linenos">134</span>            <span class="n">storynode</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">dof</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos">135</span>            <span class="c1"># obtain acceleration</span>
+<span class="linenos">136</span>            <span class="n">new_acc</span> <span class="o">=</span> <span class="n">nodeAccel</span><span class="p">(</span><span class="n">storynode</span><span class="p">,</span> <span class="n">dof</span><span class="p">)</span>
+<span class="linenos">137</span>            <span class="n">histDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">dof</span><span class="p">][</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_acc</span>
+<span class="linenos">138</span>
+<span class="linenos">139</span>
+<span class="linenos">140</span>    <span class="k">return</span> <span class="n">histDict</span>
+<span class="linenos">141</span>
+<span class="linenos">142</span>
+<span class="linenos">143</span>
+<span class="linenos">144</span><span class="c1"># FUNCTION: RunDynamicAnalysis -------------------------------------------------</span>
+<span class="linenos">145</span><span class="c1"># performs dynamic analysis and records EDPs in dictionary</span>
+<span class="linenos">146</span><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="linenos">147</span>
+<span class="linenos">148</span><span class="k">def</span> <span class="nf">RunDynamicAnalysis</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="nb">iter</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">driftLimit</span><span class="p">,</span><span class="n">EDP_specs</span><span class="p">,</span><span class="n">subSteps</span><span class="p">,</span><span class="n">GMX</span><span class="p">,</span><span class="n">GMZ</span><span class="p">):</span>
+<span class="linenos">149</span>    <span class="c1"># inputs:</span>
+<span class="linenos">150</span>    <span class="c1"># tol = tolerance criteria to check for convergence</span>
+<span class="linenos">151</span>    <span class="c1"># iter = max number of iterations to check</span>
+<span class="linenos">152</span>    <span class="c1"># dt = time increment for analysis</span>
+<span class="linenos">153</span>    <span class="c1"># driftLimit = percent interstory drift limit indicating collapse</span>
+<span class="linenos">154</span>    <span class="c1"># recorderNodes = vector of node labels used to check global drifts and record EDPs</span>
+<span class="linenos">155</span>    <span class="c1"># subSteps = number of subdivisions in cases of ill convergence</span>
+<span class="linenos">156</span>    <span class="c1"># GMX = list of GM acceleration ordinates in X direction</span>
+<span class="linenos">157</span>    <span class="c1"># GMZ = list of GM acceleration ordinates in Z direction</span>
+<span class="linenos">158</span>
+<span class="linenos">159</span>    <span class="c1"># pad shorter record with zeros (free vibration) such that two horizontal records are the same length</span>
+<span class="linenos">160</span>    <span class="n">nsteps</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">GMX</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">GMZ</span><span class="p">))</span>
+<span class="linenos">161</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">GMX</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">nsteps</span><span class="p">:</span>
+<span class="linenos">162</span>        <span class="n">diff</span> <span class="o">=</span> <span class="n">nsteps</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">GMX</span><span class="p">)</span>
+<span class="linenos">163</span>        <span class="n">GMX</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">diff</span><span class="p">))</span>
+<span class="linenos">164</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">GMZ</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">nsteps</span><span class="p">:</span>
+<span class="linenos">165</span>        <span class="n">diff</span> <span class="o">=</span> <span class="n">nsteps</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">GMZ</span><span class="p">)</span>
+<span class="linenos">166</span>        <span class="n">GMZ</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">diff</span><span class="p">))</span>
+<span class="linenos">167</span>
+<span class="linenos">168</span>
+<span class="linenos">169</span>    <span class="c1"># generate time array from recording</span>
+<span class="linenos">170</span>    <span class="n">time_record</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nsteps</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="n">nsteps</span><span class="p">,</span><span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">171</span>
+<span class="linenos">172</span>    <span class="c1"># initialize dictionary of envelope EDPs</span>
+<span class="linenos">173</span>    <span class="n">envelopeDict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos">174</span>    <span class="k">for</span> <span class="n">edp</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">:</span>
+<span class="linenos">175</span>        <span class="n">envelopeDict</span><span class="p">[</span><span class="n">edp</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos">176</span>        <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="n">edp</span><span class="p">]:</span>
+<span class="linenos">177</span>            <span class="n">numdof</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">[</span><span class="n">edp</span><span class="p">][</span><span class="n">loc</span><span class="p">])</span>
+<span class="linenos">178</span>            <span class="n">envelopeDict</span><span class="p">[</span><span class="n">edp</span><span class="p">][</span><span class="n">loc</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">numdof</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="linenos">179</span>
+<span class="linenos">180</span>    <span class="nb">print</span><span class="p">(</span><span class="n">envelopeDict</span><span class="p">)</span>
+<span class="linenos">181</span>
+<span class="linenos">182</span>    <span class="c1"># initialize dictionary of time history EDPs</span>
+<span class="linenos">183</span>    <span class="n">historyDict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;accel&#39;</span><span class="p">:{}}</span>
+<span class="linenos">184</span>    <span class="n">time_analysis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos">185</span>    <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">]:</span>
+<span class="linenos">186</span>        <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="linenos">187</span>        <span class="k">for</span> <span class="n">dof</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">]:</span>
+<span class="linenos">188</span>            <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="n">dof</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nsteps</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos">189</span>
+<span class="linenos">190</span>    <span class="c1"># number of diaphragm levels</span>
+<span class="linenos">191</span>    <span class="n">levels</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">])</span>
+<span class="linenos">192</span>    <span class="n">CODnodes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">193</span>    <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">]:</span>
+<span class="linenos">194</span>        <span class="n">CODnodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">loc</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="linenos">195</span>
+<span class="linenos">196</span>    <span class="nb">print</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">)</span>
+<span class="linenos">197</span>
+<span class="linenos">198</span>
+<span class="linenos">199</span>    <span class="n">constraints</span><span class="p">(</span><span class="s1">&#39;Transformation&#39;</span><span class="p">)</span>            <span class="c1"># handles boundary conditions based on transformation equation method</span>
+<span class="linenos">200</span>    <span class="n">numberer</span><span class="p">(</span><span class="s1">&#39;RCM&#39;</span><span class="p">)</span>                          <span class="c1"># renumber dof&#39;s to minimize band-width (optimization)</span>
+<span class="linenos">201</span>    <span class="n">system</span><span class="p">(</span><span class="s1">&#39;UmfPack&#39;</span><span class="p">)</span>                        <span class="c1"># constructs sparse system of equations using UmfPack solver</span>
+<span class="linenos">202</span>    <span class="n">test</span><span class="p">(</span><span class="s1">&#39;NormDispIncr&#39;</span><span class="p">,</span><span class="n">tol</span><span class="p">,</span><span class="nb">iter</span><span class="p">)</span>            <span class="c1"># tests for convergence using norm of left-hand side of matrix equation</span>
+<span class="linenos">203</span>    <span class="n">algorithm</span><span class="p">(</span><span class="s1">&#39;NewtonLineSearch&#39;</span><span class="p">)</span>            <span class="c1"># use Newton&#39;s solution algorithm: updates tangent stiffness at every iteration</span>
+<span class="linenos">204</span>    <span class="n">integrator</span><span class="p">(</span><span class="s1">&#39;Newmark&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>         <span class="c1"># Newmark average acceleration method for numerical integration</span>
+<span class="linenos">205</span>    <span class="n">analysis</span><span class="p">(</span><span class="s1">&#39;Transient&#39;</span><span class="p">)</span>                    <span class="c1"># define type of analysis: time-dependent</span>
+<span class="linenos">206</span>
+<span class="linenos">207</span>    <span class="c1"># initialize variables</span>
+<span class="linenos">208</span>    <span class="n">maxDiv</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="linenos">209</span>    <span class="n">minDiv</span> <span class="o">=</span> <span class="n">subSteps</span>
+<span class="linenos">210</span>    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">211</span>    <span class="n">ok</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">212</span>    <span class="n">breaker</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">213</span>    <span class="n">maxDrift</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">214</span>    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">215</span>
+<span class="linenos">216</span>    <span class="k">while</span> <span class="n">step</span><span class="o">&lt;</span><span class="n">nsteps</span> <span class="ow">and</span> <span class="n">ok</span><span class="o">==</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">breaker</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+<span class="linenos">217</span>        <span class="n">step</span> <span class="o">=</span> <span class="n">step</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># take 1 step</span>
+<span class="linenos">218</span>        <span class="n">ok</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">219</span>        <span class="n">div</span> <span class="o">=</span> <span class="n">minDiv</span>
+<span class="linenos">220</span>        <span class="n">length</span> <span class="o">=</span> <span class="n">maxDiv</span>
+<span class="linenos">221</span>        <span class="k">while</span> <span class="n">div</span><span class="o">&lt;=</span><span class="n">maxDiv</span> <span class="ow">and</span> <span class="n">length</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">breaker</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+<span class="linenos">222</span>            <span class="n">stepSize</span> <span class="o">=</span> <span class="n">dt</span><span class="o">/</span><span class="n">div</span>
+<span class="linenos">223</span>            <span class="n">ok</span> <span class="o">=</span> <span class="n">analyze</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stepSize</span><span class="p">)</span>               <span class="c1"># perform analysis for one increment; will return 0 if no convergence issues</span>
+<span class="linenos">224</span>            <span class="k">if</span> <span class="n">ok</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+<span class="linenos">225</span>                <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">226</span>                <span class="n">length</span> <span class="o">=</span> <span class="n">length</span> <span class="o">-</span> <span class="n">maxDiv</span><span class="o">/</span><span class="n">div</span>
+<span class="linenos">227</span>                <span class="c1"># check if drift limits are satisfied</span>
+<span class="linenos">228</span>                <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">229</span>                <span class="k">while</span> <span class="n">level</span> <span class="o">&lt;</span> <span class="n">levels</span><span class="p">:</span>
+<span class="linenos">230</span>                    <span class="n">story_height</span> <span class="o">=</span> <span class="n">nodeCoord</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">nodeCoord</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">231</span>                    <span class="c1"># check X direction drifts (direction 1)</span>
+<span class="linenos">232</span>                    <span class="n">topDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">233</span>                    <span class="n">botDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">234</span>                    <span class="n">deltaDisp</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">topDisp</span><span class="o">-</span><span class="n">botDisp</span><span class="p">)</span>
+<span class="linenos">235</span>                    <span class="n">drift</span> <span class="o">=</span> <span class="n">deltaDisp</span><span class="o">/</span><span class="n">story_height</span>
+<span class="linenos">236</span>                    <span class="k">if</span> <span class="n">drift</span> <span class="o">&gt;=</span> <span class="n">driftLimit</span><span class="p">:</span>
+<span class="linenos">237</span>                        <span class="n">breaker</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">238</span>                    <span class="c1"># check Y direction drifts (direction 2)</span>
+<span class="linenos">239</span>                    <span class="n">topDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">240</span>                    <span class="n">botDisp</span> <span class="o">=</span> <span class="n">nodeDisp</span><span class="p">(</span><span class="n">CODnodes</span><span class="p">[</span><span class="n">level</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">241</span>                    <span class="n">deltaDisp</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">topDisp</span><span class="o">-</span><span class="n">botDisp</span><span class="p">)</span>
+<span class="linenos">242</span>                    <span class="n">drift</span> <span class="o">=</span> <span class="n">deltaDisp</span><span class="o">/</span><span class="n">story_height</span>
+<span class="linenos">243</span>                    <span class="k">if</span> <span class="n">drift</span> <span class="o">&gt;=</span> <span class="n">driftLimit</span><span class="p">:</span>
+<span class="linenos">244</span>                        <span class="n">breaker</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">245</span>                    <span class="c1"># move on to check next level</span>
+<span class="linenos">246</span>                    <span class="n">level</span> <span class="o">=</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">247</span>                <span class="c1"># save parameter values in recording dictionaries at every step</span>
+<span class="linenos">248</span>                <span class="n">time_analysis</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_analysis</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">stepSize</span>
+<span class="linenos">249</span>                <span class="n">envelopeDict</span> <span class="o">=</span> <span class="n">PeakDriftRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">envelopeDict</span><span class="p">)</span>
+<span class="linenos">250</span>                <span class="n">historyDict</span> <span class="o">=</span> <span class="n">AccelHistoryRecorder</span><span class="p">(</span><span class="n">EDP_specs</span><span class="p">,</span> <span class="n">historyDict</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+<span class="linenos">251</span>            <span class="k">else</span><span class="p">:</span> <span class="c1"># if ok != 0</span>
+<span class="linenos">252</span>                <span class="n">div</span> <span class="o">=</span> <span class="n">div</span><span class="o">*</span><span class="mi">2</span>
+<span class="linenos">253</span>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of increments increased to &quot;</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">div</span><span class="p">))</span>
+<span class="linenos">254</span>    <span class="c1"># end analysis once drift limit has been reached</span>
+<span class="linenos">255</span>    <span class="k">if</span> <span class="n">breaker</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">256</span>        <span class="n">ok</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">257</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collapse drift has been reached&quot;</span><span class="p">)</span>
+<span class="linenos">258</span>
+<span class="linenos">259</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of analysis steps completed: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+<span class="linenos">260</span>
+<span class="linenos">261</span>    <span class="c1"># remove extra zeros from time history</span>
+<span class="linenos">262</span>    <span class="n">time_analysis</span> <span class="o">=</span> <span class="n">time_analysis</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">263</span>    <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_analysis</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="linenos">264</span>
+<span class="linenos">265</span>    <span class="c1"># remove extra zeros from accel time history, add GM to obtain absolute acceleration, and record envelope value</span>
+<span class="linenos">266</span>    <span class="n">GMX_interp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">time_analysis</span><span class="p">,</span> <span class="n">time_record</span><span class="p">,</span> <span class="n">GMX</span><span class="p">)</span>
+<span class="linenos">267</span>    <span class="n">GMZ_interp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">time_analysis</span><span class="p">,</span> <span class="n">time_record</span><span class="p">,</span> <span class="n">GMZ</span><span class="p">)</span>
+<span class="linenos">268</span>    <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">levels</span><span class="p">):</span>
+<span class="linenos">269</span>        <span class="c1"># X direction</span>
+<span class="linenos">270</span>        <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">271</span>        <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">GMX_interp</span>
+<span class="linenos">272</span>        <span class="n">envelopeDict</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
+<span class="linenos">273</span>        <span class="c1"># Z direction</span>
+<span class="linenos">274</span>        <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">275</span>        <span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="n">GMZ_interp</span>
+<span class="linenos">276</span>        <span class="n">envelopeDict</span><span class="p">[</span><span class="s1">&#39;PFA&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">historyDict</span><span class="p">[</span><span class="s1">&#39;accel&#39;</span><span class="p">][</span><span class="n">level</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+<span class="linenos">277</span>
+<span class="linenos">278</span>
+<span class="linenos">279</span>    <span class="k">return</span> <span class="n">envelopeDict</span>
+<span class="linenos">280</span>
+<span class="linenos">281</span>
+<span class="linenos">282</span>
+<span class="linenos">283</span><span class="c1"># MAIN: run_analysis -----------------------------------------------------------</span>
+<span class="linenos">284</span><span class="c1"># runs dynamic analysis for single event and returns dictionary of envelope EDPs</span>
+<span class="linenos">285</span><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="linenos">286</span>
+<span class="linenos">287</span><span class="k">def</span> <span class="nf">run_analysis</span><span class="p">(</span><span class="n">GM_dt</span><span class="p">,</span> <span class="n">GM_npts</span><span class="p">,</span> <span class="n">TS_List</span><span class="p">,</span> <span class="n">EDP_specs</span><span class="p">):</span>
+<span class="linenos">288</span>    <span class="c1"># inputs:</span>
+<span class="linenos">289</span>    <span class="c1"># GM_dt = time step of GM record</span>
+<span class="linenos">290</span>    <span class="c1"># GM_npts = number of steps in GM record</span>
+<span class="linenos">291</span>    <span class="c1"># TS_List = 1x2 list where first component is a list of GMX acceleration points, second component is a list of GMZ acceleration points (scaled and multipled by G)</span>
+<span class="linenos">292</span>    <span class="n">GMX_points</span> <span class="o">=</span> <span class="n">TS_List</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">293</span>    <span class="n">GMZ_points</span> <span class="o">=</span> <span class="n">TS_List</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">294</span>
+<span class="linenos">295</span>    <span class="c1"># print(EDP_specs)</span>
+<span class="linenos">296</span>
+<span class="linenos">297</span>    <span class="n">wipeAnalysis</span><span class="p">()</span>
+<span class="linenos">298</span>
+<span class="linenos">299</span>
+<span class="linenos">300</span>    <span class="c1"># define parameters for dynamic analysis</span>
+<span class="linenos">301</span>    <span class="n">driftLimit</span> <span class="o">=</span> <span class="mf">0.20</span>   <span class="c1"># %</span>
+<span class="linenos">302</span>    <span class="n">toler</span> <span class="o">=</span> <span class="mf">1.e-08</span>
+<span class="linenos">303</span>    <span class="n">maxiter</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="linenos">304</span>    <span class="n">subSteps</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">305</span>
+<span class="linenos">306</span>    <span class="n">envdata</span> <span class="o">=</span> <span class="n">RunDynamicAnalysis</span><span class="p">(</span><span class="n">toler</span><span class="p">,</span><span class="n">maxiter</span><span class="p">,</span><span class="n">GM_dt</span><span class="p">,</span><span class="n">driftLimit</span><span class="p">,</span><span class="n">EDP_specs</span><span class="p">,</span><span class="n">subSteps</span><span class="p">,</span><span class="n">GMX_points</span><span class="p">,</span><span class="n">GMZ_points</span><span class="p">)</span>
+<span class="linenos">307</span>    <span class="nb">print</span><span class="p">(</span><span class="n">envdata</span><span class="p">)</span>
+<span class="linenos">308</span>
+<span class="linenos">309</span>    <span class="k">return</span> <span class="n">envdata</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <ol class="arabic simple" start="6">
 <li><p><strong>EDP Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/EDPApps.html#lbledpapp"><span class="std std-ref">UserDefinedEDP</span></a> EDP application. Custom EDPs are specified in the EDP specifications file. The EDP types are peak interstory drift (PID) and peak floor acceleration (PFA), recorded at the base and top node of the structural model in two horizontal directions (1,2).</p></li>
 </ol>
 <p><strong>EDP specifications file:</strong></p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;locations&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;0&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="mi">10000</span><span class="p">,</span>
-            <span class="mi">10001</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;EDP_types&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;PID&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;0&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="mi">1</span><span class="p">,</span>
-                <span class="mi">2</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;PFA&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;0&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="mi">1</span><span class="p">,</span>
-                <span class="mi">2</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="s2">&quot;locations&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 3</span>        <span class="s2">&quot;0&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos"> 4</span>            <span class="mi">10000</span><span class="p">,</span>
+<span class="linenos"> 5</span>            <span class="mi">10001</span>
+<span class="linenos"> 6</span>        <span class="p">]</span>
+<span class="linenos"> 7</span>    <span class="p">},</span>
+<span class="linenos"> 8</span>    <span class="s2">&quot;EDP_types&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 9</span>        <span class="s2">&quot;PID&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">10</span>            <span class="s2">&quot;0&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos">11</span>                <span class="mi">1</span><span class="p">,</span>
+<span class="linenos">12</span>                <span class="mi">2</span>
+<span class="linenos">13</span>            <span class="p">]</span>
+<span class="linenos">14</span>        <span class="p">},</span>
+<span class="linenos">15</span>        <span class="s2">&quot;PFA&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">16</span>            <span class="s2">&quot;0&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos">17</span>                <span class="mi">1</span><span class="p">,</span>
+<span class="linenos">18</span>                <span class="mi">2</span>
+<span class="linenos">19</span>            <span class="p">]</span>
+<span class="linenos">20</span>        <span class="p">}</span>
+<span class="linenos">21</span>    <span class="p">}</span>
+<span class="linenos">22</span><span class="p">}</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <ol class="arabic simple" start="7">
 <li><p><strong>Simulation Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/simulationApps.html#lblsimulationapp"><span class="std std-ref">OpenSeesPySimulation</span></a> simulation application, which corresponds to the <strong>OpenSeesPyInput</strong> modeling application. It reads the <code class="docutils literal notranslate"><span class="pre">build_model</span></code> and <code class="docutils literal notranslate"><span class="pre">run_analysis</span></code> functions from the model file to perform the response simulation.</p></li>
 <li><p><strong>UQ Application</strong>: This example uses the <a class="reference internal" href="../../architecture/desktop/applications/UQApps.html#lbluqapp"><span class="std std-ref">Dakota-UQ</span></a> UQ application to run the response simulation. In the configuration file, the number of samples specified for the UQ application should match the number of ground motion samples per building asset specified for the RegionalMapping application.</p></li>

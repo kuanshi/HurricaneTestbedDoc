@@ -1,0 +1,950 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.4. Asset Representation &mdash; Regional Resilience Determination Tool  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.5. Response Simulation" href="response_simulation.html" />
+    <link rel="prev" title="3.3. Hazard Characterization" href="hazard_characterization.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../index.html">
+
+
+
+  
+  <img src="../../../_static/R2D-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/about/R2D/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Lake Charles, LA</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">3.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asset_description.html">3.2. Asset Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hazard_characterization.html">3.3. Hazard Characterization</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.4. Asset Representation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#building-classifications">3.4.1. Building Classifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-attributes">3.4.2. Building Attributes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wind-loss-attributes-for-wood-buildings">Wind Loss Attributes for Wood Buildings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="response_simulation.html">3.5. Response Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">3.6. Damage and Loss Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">3.7. Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_results.html">3.8. Verification Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">3.9. Example Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_refinements.html">3.10. Opportunity Areas for Future Refinements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="best_practices.html">3.11. Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">3.12. Feedback and Data Request</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Regional Resilience Determination Tool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">3. </span>Lake Charles, LA</a> &raquo;</li>
+        
+      <li><span class="section-number">3.4. </span>Asset Representation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/common/testbeds/lake_charles/asset_representation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="asset-representation">
+<span id="lbl-testbed-lc-asset-representation"></span><h1><span class="section-number">3.4. </span>Asset Representation<a class="headerlink" href="#asset-representation" title="Permalink to this headline">¶</a></h1>
+<p>This section discusses the translation of asset descriptions into representations
+of structures suitable for simulation within workflow, in this case consistent with
+the HAZUS description of building classes and associated attributes, which becomes
+the default data schema. Thus the description of assets below is organized according
+to the HAZUS conventions for classifying buildings and organizing damage and loss data
+according to attributes associated with those building classes.</p>
+<p>The following discussion will reference a number of rulesets developed for this testbed
+to enable various assignments of these HAZUS building classes and corresponding attributes.
+Details of these rulesets are available to users in one of two forms:</p>
+<ol class="arabic simple">
+<li><p>Rulest definition tables (PDFs) curated in DesignSafe that include additional documentation
+justifying the proposed rule, with provenance information for any sources engaged in that
+rule’s development.</p></li>
+<li><p>Scripts (in Python) curated in GitHub that implement the ruleset’s logic for this testbed.</p></li>
+</ol>
+<p>Each section provides a table linking the relevant Tables and Scripts. Note that as well
+that all of the rulesets introduced herein are tiered, initiating by assigning all assets
+a default value for its building classification or a given attribute based on the primary
+rule. This ensures that every asset receives a HAZUS building class and related attribute
+assignments, regardless of data sparsity.</p>
+<div class="section" id="building-classifications">
+<span id="lbl-testbed-lc-asset-representation-building-classification"></span><h2><span class="section-number">3.4.1. </span>Building Classifications<a class="headerlink" href="#building-classifications" title="Permalink to this headline">¶</a></h2>
+<p>HAZUS classifies buildings based on a more nuanced interpretation of Occupancy Class
+(see building inventory field <strong>OccupancyClass</strong>) based on other attributes of relevance
+for a given hazard type.</p>
+<p>For wind losses, HAZUS groups buildings into 5 main types by primary building material/construction
+mode (wood, masonry, concrete, steel, manufactured home). Buildings must then be sub-classified
+into one of 55 corresponding HAZUS building classes (<strong>HazusClass-W</strong>) based on characteristics
+such as occupancy, number of stories and footprint size, using rulesets that call upon various
+fields in the building inventory. The HAZUS building classifications for wind losses are listed
+in <a class="reference internal" href="#bldg-class"><span class="std std-numref">Table 3.4.1.1</span></a>, and the corresponding rulesets (PDFs and Python scripts) are cross-referenced
+later in <a class="reference internal" href="#addinfo-ruleset"><span class="std std-numref">Table 3.4.1.2</span></a>. Note that while rulesets were developed for marginally and non-engineered
+building classes in HAZUS, these classes are not used in the current implementation of this testbed.</p>
+<table class="docutils align-center" id="bldg-class">
+<caption><span class="caption-number">Table 3.4.1.1 </span><span class="caption-text">HAZUS building classification for wind loss assessment.</span><a class="headerlink" href="#bldg-class" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>BuildingDescription</p></th>
+<th class="head"><p>HazusClass-W</p></th>
+<th class="head"><p>OccupancyClass</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wood, Single-Family Homes 1 story</p></td>
+<td><p>WSF1</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wood, Single-Family Homes 2+ stories</p></td>
+<td><p>WSF2</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>Wood, Multi-Unit/Hotel/Motel 1 story</p></td>
+<td><p>WMUH1</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wood, Multi-Unit/Hotel/Motel 2 stories</p></td>
+<td><p>WMUH2</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-even"><td><p>Wood, Multi-Unit/Hotel/Motel 3+ stories</p></td>
+<td><p>WMUH3</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wood Marginally- or Non-Engineered Multi-Unit/Hotel/Motel 1 story</p></td>
+<td><p>WMUH1NE</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-even"><td><p>Wood Marginally- or Non-Engineered Multi-Unit/Hotel/Motel 2 stories</p></td>
+<td><p>WMUH2NE</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wood Marginally- or Non-Engineered Multi-Unit/Hotel/Motel 3 stories</p></td>
+<td><p>WMUH3NE</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-even"><td><p>Wood Marginally- or Non-Engineered Multi-Unit/Hotel/Motel 4 stories</p></td>
+<td><p>WMUH4NE</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Masonry, Single Family Homes 1 story</p></td>
+<td><p>MSF1</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>Masonry, Single Family Homes 2+ stories</p></td>
+<td><p>MSF2</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Masonry, Multi-Unit/Hotel/Motel 1 story</p></td>
+<td><p>MMUH1</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-even"><td><p>Masonry, Multi-Unit/Hotel/Motel 2 stories</p></td>
+<td><p>MMUH2</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Masonry, Multi-Unit/Hotel/Motel 3+ stories</p></td>
+<td><p>MMUH3</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-even"><td><p>Masonry, Low-Rise Strip Mall height &lt; 15 ft</p></td>
+<td><p>MLRM1</p></td>
+<td><p>COM1, COM2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Masonry, Low-Rise Strip Mall height &gt; 15 ft</p></td>
+<td><p>MLRM2</p></td>
+<td><p>COM1, COM2</p></td>
+</tr>
+<tr class="row-even"><td><p>Masonry, Low-Rise Industrial/Warehouse/Factory Building</p></td>
+<td><p>MLRI</p></td>
+<td><p>IND*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Masonry, Engineered Residential Building, Low-Rise (1-2 Stories)</p></td>
+<td><p>MERBL</p></td>
+<td><p>RES*</p></td>
+</tr>
+<tr class="row-even"><td><p>Masonry, Engineered Residential Building, Mid-Rise (3-5 Stories)</p></td>
+<td><p>MERBM</p></td>
+<td><p>RES*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Masonry, Engineered Residential Building, High-Rise (6+ Stories)</p></td>
+<td><p>MERBH</p></td>
+<td><p>RES*</p></td>
+</tr>
+<tr class="row-even"><td><p>Masonry, Engineered Commercial Building, Low-Rise (1-2 Stories)</p></td>
+<td><p>MECBL</p></td>
+<td><p>COM*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Masonry, Engineered Commercial Building, Mid-Rise (3-5 Stories)</p></td>
+<td><p>MECBM</p></td>
+<td><p>COM*</p></td>
+</tr>
+<tr class="row-even"><td><p>Masonry, Engineered Commercial Building, High-Rise (6+ Stories)</p></td>
+<td><p>MECBH</p></td>
+<td><p>COM*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Masonry Marginally- or Non-Engineered Multi-Unit/Hotel/Motel 1 story</p></td>
+<td><p>MMUH1NE</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-even"><td><p>Masonry Marginally- or Non-Engineered Multi-Unit/Hotel/Motel 2 stories</p></td>
+<td><p>MMUH2NE</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Masonry Marginally- or Non-Engineered Multi-Unit/Hotel/Motel 3 stories</p></td>
+<td><p>MMUH3NE</p></td>
+<td><p>RES3*, RES5, RES6, COM8</p></td>
+</tr>
+<tr class="row-even"><td><p>Concrete, Engineered Residential Building, Low-Rise (1-2 Stories)</p></td>
+<td><p>CERBL</p></td>
+<td><p>RES*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Concrete, Engineered Residential Building, Mid-Rise (3-5 Stories)</p></td>
+<td><p>CERBM</p></td>
+<td><p>RES*</p></td>
+</tr>
+<tr class="row-even"><td><p>Concrete, Engineered Residential Building, High-Rise (6+ Stories)</p></td>
+<td><p>CERBH</p></td>
+<td><p>RES*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Concrete, Engineered Commercial Building, Low-Rise (1-2 Stories)</p></td>
+<td><p>CECBL</p></td>
+<td><p>COM*</p></td>
+</tr>
+<tr class="row-even"><td><p>Concrete, Engineered Commercial Building, Mid-Rise (3-5 Stories)</p></td>
+<td><p>CECBM</p></td>
+<td><p>COM*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Concrete, Engineered Commercial Building, High-Rise (6+ Stories)</p></td>
+<td><p>CECBH</p></td>
+<td><p>COM*</p></td>
+</tr>
+<tr class="row-even"><td><p>Steel, Pre-Engineered Metal Building, Small</p></td>
+<td><p>SPMBS</p></td>
+<td><p>COM*, IND*, EDU*, AGR*, REL*, GOV*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Steel, Pre-Engineered Metal Building, Medium</p></td>
+<td><p>SPMBM</p></td>
+<td><p>COM*, IND*, EDU*, AGR*, REL*, GOV*</p></td>
+</tr>
+<tr class="row-even"><td><p>Steel, Pre-Engineered Metal Building, Large</p></td>
+<td><p>SPMBL</p></td>
+<td><p>COM*, IND*, EDU*, AGR*, REL*, GOV*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Steel, Engineered Residential Building, Low-Rise (1-2 Stories)</p></td>
+<td><p>SERBL</p></td>
+<td><p>RES*</p></td>
+</tr>
+<tr class="row-even"><td><p>Steel, Engineered Residential Building, Mid-Rise (3-5 Stories)</p></td>
+<td><p>SERBM</p></td>
+<td><p>RES*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Steel, Engineered Residential Building, High-Rise (6+ Stories)</p></td>
+<td><p>SERBH</p></td>
+<td><p>RES*</p></td>
+</tr>
+<tr class="row-even"><td><p>Steel, Engineered Commercial Building, Low-Rise (1-2 Stories)</p></td>
+<td><p>SECBL</p></td>
+<td><p>COM*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Steel, Engineered Commercial Building, Mid-Rise (3-5 Stories)</p></td>
+<td><p>SECBM</p></td>
+<td><p>COM*</p></td>
+</tr>
+<tr class="row-even"><td><p>Steel, Engineered Commercial Building, High-Rise (6+ Stories)</p></td>
+<td><p>SECBH</p></td>
+<td><p>COM*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Manufactured Home, Pre-HUD</p></td>
+<td><p>MHPHUD</p></td>
+<td><p>RES2</p></td>
+</tr>
+<tr class="row-even"><td><p>Manufactured Home, 1976 HUD</p></td>
+<td><p>MH76HUD</p></td>
+<td><p>RES2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Manufactured Home, 1994 HUD - Wind Zone I</p></td>
+<td><p>MH94HUD-I</p></td>
+<td><p>RES2</p></td>
+</tr>
+<tr class="row-even"><td><p>Manufactured Home, 1994 HUD - Wind Zone II</p></td>
+<td><p>MH94HUD-II</p></td>
+<td><p>RES2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Manufactured Home, 1994 HUD - Wind Zone III</p></td>
+<td><p>MH94HUD-III</p></td>
+<td><p>RES2</p></td>
+</tr>
+<tr class="row-even"><td><p>Essential Facility - Fire Station</p></td>
+<td><p>HUEFFS</p></td>
+<td><p>GOV2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Essential Facility - Elementary School</p></td>
+<td><p>HUEFSS</p></td>
+<td><p>EDU1</p></td>
+</tr>
+<tr class="row-even"><td><p>Essential Facility - High School (2 Story)</p></td>
+<td><p>HUEFSM</p></td>
+<td><p>EDU1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Essential Facility - High School (3 Story)</p></td>
+<td><p>HUEFSL</p></td>
+<td><p>EDU1</p></td>
+</tr>
+<tr class="row-even"><td><p>Essential Facility - Hospital Small (&lt;50 beds)</p></td>
+<td><p>HUEFHS</p></td>
+<td><p>COM6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Essential Facility - Hospital Medium (50-150 beds)</p></td>
+<td><p>HUEFHM</p></td>
+<td><p>COM6</p></td>
+</tr>
+<tr class="row-even"><td><p>Essential Facility - Hospital Large (&gt;150 beds)</p></td>
+<td><p>HUEFHL</p></td>
+<td><p>COM6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Essential Facility - Police Station</p></td>
+<td><p>HUEFPS</p></td>
+<td><p>GOV2</p></td>
+</tr>
+<tr class="row-even"><td><p>Essential Facility - Emergency Operation Centers</p></td>
+<td><p>HUEFEO</p></td>
+<td><p>GOV2</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-center" id="addinfo-ruleset">
+<caption><span class="caption-number">Table 3.4.1.2 </span><span class="caption-text">Additional details for rulesets assigning HAZUS building class</span><a class="headerlink" href="#addinfo-ruleset" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Ruleset Name</p></th>
+<th class="head"><p>Ruleset Definition Table</p></th>
+<th class="head"><p>Python script</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Building Class Rulesets - Wind</p></td>
+<td><p><a class="reference external" href="https://berkeley.box.com/s/602imclyqm1ohvfqliqro0bzq4v0wdj3">HAZUS Building Class Rulesets - Wind.pdf</a></p></td>
+<td><p><a class="reference download internal" download="" href="../../../_downloads/36bd9ca5b167ff4967b38fa8a75f62dc/WindClassRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindClassRulesets</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="building-attributes">
+<h2><span class="section-number">3.4.2. </span>Building Attributes<a class="headerlink" href="#building-attributes" title="Permalink to this headline">¶</a></h2>
+<p>Within each of these building classes, e.g., wood single-family homes 1-2+ stories, the HAZUS Hurricane
+Technical Manual (HHTM) further differentiates buildings based on asset attributes and the hazard type
+(e.g., wind vs. flood) for the purpose of loss estimation. These attributes define key features of the
+load path and components (e.g., roof shape, secondary water resistance, roof deck attachment, roof-wall
+connection, shutters, garage), and the number of attributes necessary to describe a given building varies.</p>
+<p>As these attributes are beyond what is typically encompassed in a building inventory, this testbed developed
+and implemented a library of rulesets to infer the HAZUS-required attributes based upon the fields available
+in the Building Inventory, legacy building codes in New Jersey, local construction practices/norms, surveys
+capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="damage_and_loss.html#javeline19" id="id1"><span>[Javeline19]</span></a>) and market/industry data.
+Where possible, the rulesets are time-evolving, considering the age of construction to determine the governing
+code edition and availability of specific mitigation measures in the market. Though reliant on engineering
+judgement and historical data availability, each rule provides detailed notes cross-referencing the various
+documents and practices that governed that era of construction and thus informed the ruleset formation.
+In cases where engineering judgment was required, rules were assigned based on what was understood to be
+the most common construction practice. In cases where that was not clear, the ruleset assigned the most
+vulnerable configuration for a more conservative approach to loss estimation.</p>
+<table class="docutils align-center" id="wind-bldg-attri">
+<caption><span class="caption-number">Table 3.4.2.1 </span><span class="caption-text">Building attributes for wind loss assessment.</span><a class="headerlink" href="#wind-bldg-attri" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Format</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HazusClass-W</p></td>
+<td><p>Hazus building classes as defined for wind hazards</p></td>
+<td><p>CHOICES: WSF1, WSF2, WMUH1, WMUH2, WMUH3, WMUH1NE, WMUH2NE, WMUH3NE, WMUH4NE, MSF1, MSF2, MMUH1, MMUH2, MMUH3, MLRM1, MLRM2, MLRI, MERBL, MERBM, MERBH, MECBL, MECBM, MECBH, MMUH1NE, MMUH2NE, MMUH3NE, CERBL, CERBM, CERBH, CECBL, CECBM, CECBH, SPMBS, SPMBM, SPMBL, SERBL, SERBM, SERBH, SECBL, SECBM, SECBH, MHPHUD, MH76HUD, MH94HUD-I, MH94HUD-II, MH94HUD-III, HUEFFS, HUEFSS, HUEFSM, HUEFSL, HUEFHS, HUEFHM, HUEFHL, HUEFPS, HUEFEO</p></td>
+</tr>
+<tr class="row-odd"><td><p>RoofSystem</p></td>
+<td><p>Underlying roof structure, applies only to masonry buildings</p></td>
+<td><p>Choices: Wood, OWSJ</p></td>
+</tr>
+<tr class="row-even"><td><p>HPR</p></td>
+<td><p>Defines Hazard Prone Regions (HPR) for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
+<td><p>Choices: yes, no</p></td>
+</tr>
+<tr class="row-odd"><td><p>WBD</p></td>
+<td><p>Defines Wind Borne Debris (WBD) for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
+<td><p>Choices: yes, no</p></td>
+</tr>
+<tr class="row-even"><td><p>SWR</p></td>
+<td><p>Defines Secondary Water Resistance (SWR) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MSF1-2, MMUH1-3</p></td>
+<td><p>Choices: yes, no</p></td>
+</tr>
+<tr class="row-odd"><td><p>RoofCvr</p></td>
+<td><p>Defines roof cover for the purposes of Hazus wind vulnerability assignments for WMUH1-3, MMUH1-3, MERBL-M-H, MECBL-M-H, MLRI, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL)  and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
+<td><p>Choices: N/A, BUR, SPM</p></td>
+</tr>
+<tr class="row-even"><td><p>RoofQual</p></td>
+<td><p>Defines roof cover quality for the purposes of Hazus wind vulnerability assignments for WMUH1-3, MMUH1-3, MLRI</p></td>
+<td><p>Choices: N/A, poor, good</p></td>
+</tr>
+<tr class="row-odd"><td><p>RDA-Wood</p></td>
+<td><p>Defines Roof Deck Attachment (RDA) for wood for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2</p></td>
+<td><p>Choices: A, B, C, D</p></td>
+</tr>
+<tr class="row-even"><td><p>RDA-OWSJ</p></td>
+<td><p>Defines Roof Deck Attachment (RDA) for OWSJ for the purposes of Hazus wind vulnerability assignments for MSF1-2</p></td>
+<td><p>Choices: smtl standard, smtl superior, cshl standard, cshl superior</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2WC</p></td>
+<td><p>Defines Roof to Wall Connection (R2WC) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2</p></td>
+<td><p>Choices: strap, toe-nail</p></td>
+</tr>
+<tr class="row-even"><td><p>shutters</p></td>
+<td><p>Defines use of window opening protection for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MERBL-M-H, MECBL-M-H, MMUH1-3,MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H, SPMBS-M-L, MH94HUDI-II-III, MH76HUD, MHPHUD and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL)  and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
+<td><p>Choices: yes, no</p></td>
+</tr>
+<tr class="row-odd"><td><p>Agarage</p></td>
+<td><p>Defines presence of attached garage for the purposes of Hazus wind vulnerability assignments for WSF1-2, MSF1-2</p></td>
+<td><p>Choices: none, SFBC 1994, standard, weak</p></td>
+</tr>
+<tr class="row-even"><td><p>Mreinf</p></td>
+<td><p>Defines presence of reinforcement in masonry walls for the purposes of Hazus wind vulnerability assignments for MSF1-2, MLRI, MLRM1, MLRM2, MMUH1-3</p></td>
+<td><p>Choices: yes, no</p></td>
+</tr>
+<tr class="row-odd"><td><p>OWSJ-r</p></td>
+<td><p>Defines property of OWSJ required for Hazus wind vulnerability assignments for MSF1-2</p></td>
+<td><p>Choices: cshl, smtl</p></td>
+</tr>
+<tr class="row-even"><td><p>Metal-RDA</p></td>
+<td><p>Defines Metal Roof Deck Attachment (RDA) for purposes of Hazus wind vulnerability assessments for MLRI, MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, SPMBS-M-L and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL) and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
+<td><p>Choices: standard, superior</p></td>
+</tr>
+<tr class="row-odd"><td><p>RDage</p></td>
+<td><p>Defines roof deck age for the purposes of Hazus wind vulnerability assessments for MLRM1, MLRM2, SPMBS-M-L and Fire Stations (HUEFFS), Elementary Schools (HUEFSS)</p></td>
+<td><p>Choices: new/avg, old</p></td>
+</tr>
+<tr class="row-even"><td><p>UnitClass</p></td>
+<td><p>Defines number of units in strip mall for purposes of Hazus wind vulnerability assessments for MLRM2</p></td>
+<td><p>Choices: single, multi</p></td>
+</tr>
+<tr class="row-odd"><td><p>JoistSpace</p></td>
+<td><p>Defines joist spacing for multi-unit strip malls for purposes of Hazus wind vulnerability assessments for MLRM2</p></td>
+<td><p>Choices: N/A, 4, 6</p></td>
+</tr>
+<tr class="row-even"><td><p>WindDebris</p></td>
+<td><p>Defines likely sources of wind debris for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL) and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
+<td><p>Choices: Res/Comm, Varies by Direction, Residential, None, A, B, C, D</p></td>
+</tr>
+<tr class="row-odd"><td><p>WWR</p></td>
+<td><p>Defines window to wall ratio (WWR) for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
+<td><p>Choices: low, medium, high</p></td>
+</tr>
+<tr class="row-even"><td><p>TieDowns</p></td>
+<td><p>Defines use of ties to connect mobile homes to foundations per HUD guidelnes for purpose of Hazus wind vulnerability assessments for MH94HUDI-II-III, MH76HUD, MHPHUD</p></td>
+<td><p>Choices: yes, no</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note that rulesets for assigning wind loss attributes call upon two meta-variables relevant to wind losses
+for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based the design wind
+speed at the asset location (Building Inventory field “DSWII”) and the flood zone (building inventory field
+<strong>FloodZone</strong>), per New Jersey code. These rules used to assign these meta-variables are provided in
+<a class="reference internal" href="#addinfo-ruleset-metavar"><span class="std std-numref">Table 3.4.2.2</span></a>. Also note that the roof shape (building inventory field <strong>RoofShape</strong>),
+derived from aerial imagery, and terrain roughness (building inventory field <strong>Terrain</strong>), derived from
+Land Use Land Cover data, are also attributes required by the HAZUS wind loss model. As these were already
+assigned in the <a class="reference internal" href="../atlantic_city/asset_description.html#lbl-testbed-ac-asset-description"><span class="std std-ref">Asset Description</span></a>, they are not discussed again herein.</p>
+<table class="docutils align-center" id="addinfo-ruleset-metavar">
+<caption><span class="caption-number">Table 3.4.2.2 </span><span class="caption-text">Additional details for rulesets for meta-variables in wind loss attribute assignment in HAZUS</span><a class="headerlink" href="#addinfo-ruleset-metavar" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Ruleset Name</p></th>
+<th class="head"><p>Ruleset Definition Table</p></th>
+<th class="head"><p>Python script</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Attribute Assignment - Wind (Meta-Variable)</p></td>
+<td><p><a class="reference external" href="https://berkeley.box.com/s/l4vdnfoakq8xsv4rmj64x4m2kxqritu7">Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf</a></p></td>
+<td><p><a class="reference download internal" download="" href="../../../_downloads/35f2066c3932d729676fa4365cd6932c/WindMetaVarRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindMetaVarRulesets</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
+<p>Finally, all of the rulesets used to assign attributes include a default value that can be updated based
+on available data, ensuring that each asset receives all the attribute assignments necessary to identify
+the appropriate Hazus fragility description. The following sections summarize the rulesets used for
+attribute assignments for specific classes of buildings. Additional attributes assigned to assets are
+discussed in the following subsections, organized by hazard and building class, where applicable.</p>
+<div class="section" id="wind-loss-attributes-for-wood-buildings">
+<h3>Wind Loss Attributes for Wood Buildings<a class="headerlink" href="#wind-loss-attributes-for-wood-buildings" title="Permalink to this headline">¶</a></h3>
+<p>The wind loss model in HAZUS classifies wooden buildings into five building classes:</p>
+<ol class="arabic simple">
+<li><p>two single family homes (WSF1 and WSF2) and</p></li>
+<li><p>three for multi-unit homes (WMUH1, WMUH2, and WMUH3)</p></li>
+</ol>
+<p>Their required attributes for wind loss modeling, the possible entries (values, terms) that can be
+assigned for those attributes, and the basis for the ruleset developed to make that assignment are
+summarized in <a class="reference internal" href="#wsf-attri"><span class="std std-numref">Table 3.4.2.3</span></a> and <a class="reference internal" href="#wmuh-attri"><span class="std std-numref">Table 3.4.2.4</span></a>. Note that these rulesets were developed
+to reflect the likely attributes based on the year of construction and the code editions and
+construction norms at that time. The corresponding time-evolving rulesets (PDFs and Python scripts)
+are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-wood"><span class="std std-numref">Table 3.4.2.5</span></a>.</p>
+<table class="docutils align-center" id="wsf-attri">
+<caption><span class="caption-number">Table 3.4.2.3 </span><span class="caption-text">Additional HAZUS attributes assigned for wood single family (WSF) homes: wind losses.</span><a class="headerlink" href="#wsf-attri" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Valid Entries</p></th>
+<th class="head"><p>Basis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>secondary water resistance (SWR)</p></td>
+<td><p>yes | no</p></td>
+<td><p>Codes/standards/human subjects data</p></td>
+</tr>
+<tr class="row-odd"><td><p>roof deck attachment</p></td>
+<td><p>6d &#64; 6”/12” | 8d &#64; 6”/12”| 6d/8d mix &#64; 6”/6” | 8d &#64; 6”/6”</p></td>
+<td><p>Codes/standards</p></td>
+</tr>
+<tr class="row-even"><td><p>roof-wall connection</p></td>
+<td><p>strap | toe-nail</p></td>
+<td><p>Codes/standards</p></td>
+</tr>
+<tr class="row-odd"><td><p>shutters</p></td>
+<td><p>yes | no</p></td>
+<td><p>Codes/standards/human subjects data</p></td>
+</tr>
+<tr class="row-even"><td><p>garage</p></td>
+<td><p>shuttered houses = garage II (SFBC 1994, none) | unshuttered house = garage I (none, weak, standard)</p></td>
+<td><p>Trends/norms</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-center" id="wmuh-attri">
+<caption><span class="caption-number">Table 3.4.2.4 </span><span class="caption-text">Additional HAZUS attributes assigned for wood multi-unit home (WMUH): wind losses.</span><a class="headerlink" href="#wmuh-attri" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Valid Entries</p></th>
+<th class="head"><p>Basis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>secondary water resistance (SWR)</p></td>
+<td><p>yes | no</p></td>
+<td><p>Codes/standards</p></td>
+</tr>
+<tr class="row-odd"><td><p>roof cover</p></td>
+<td><p>N/A | BUR | SPM</p></td>
+<td><p>Trends/norms</p></td>
+</tr>
+<tr class="row-even"><td><p>roof quality</p></td>
+<td><p>N/A | poor | good</p></td>
+<td><p>Trends/norms</p></td>
+</tr>
+<tr class="row-odd"><td><p>roof deck attachment</p></td>
+<td><p>6d &#64; 6”/12” | 8d &#64; 6”/12” | 6d/8d mix &#64; 6”/6” | 8D &#64; 6”/6”</p></td>
+<td><p>Codes/standards</p></td>
+</tr>
+<tr class="row-even"><td><p>roof-wall connection</p></td>
+<td><p>strap | toe-nail</p></td>
+<td><p>Codes/standards</p></td>
+</tr>
+<tr class="row-odd"><td><p>shutters</p></td>
+<td><p>yes | no</p></td>
+<td><p>Codes/standards/human subjects data</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-center" id="addinfo-ruleset-wood">
+<caption><span class="caption-number">Table 3.4.2.5 </span><span class="caption-text">Additional details for rulesets assigning wind loss attributes for wood buildings</span><a class="headerlink" href="#addinfo-ruleset-wood" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Ruleset Name</p></th>
+<th class="head"><p>Ruleset Definition Table</p></th>
+<th class="head"><p>Python script</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (WSF1-2)</p></td>
+<td><p><a class="reference external" href="https://berkeley.box.com/s/nod73v7shtj9x7ox7xw7b7nvmrs3e8oc">Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf</a></p></td>
+<td><p><a class="reference download internal" download="" href="../../../_downloads/793531fec3c4fdf843b268c5a3391643/WindWSFRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindWSFRulesets</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (WMUH1-3)</p></td>
+<td><p><a class="reference external" href="https://berkeley.box.com/s/4v7405rit2u475daorayy9w6ssuezbz9">Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf</a></p></td>
+<td><p><a class="reference download internal" download="" href="../../../_downloads/38a1ede675f7462c728b24201aec322d/WindWMUHRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindWMUHRulesets</span></code></a></p></td>
+</tr>
+</tbody>
+</table>
+<p>Taking the attribute Second Water Resistance (SWR) as an example, the SWR attribute is assigned by
+a series of time-evolving rules calling upon four fields in the building inventory: year built,
+roof shape, roof slope, and average temperature in January. <a class="reference internal" href="#swr-attri"><span class="std std-numref">Table 3.4.2.6</span></a> provides the
+detailed rules that map these four variables to the Second Water Resistance (SWR) attribute.
+This example demonstrates an instance where the attribute is assigned as a random variable,
+based on the fact that secondary water resistance is not required by code, though surveys
+of homeowners in hurricane-prone areas can be used to infer how many may have voluntarily
+adopted this mitigation practice.</p>
+<table class="docutils align-center" id="swr-attri">
+<caption><span class="caption-number">Table 3.4.2.6 </span><span class="caption-text">Ruleset for determining the Second Water Resistance attribute for WSF homes.</span><a class="headerlink" href="#swr-attri" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Time Period</p></th>
+<th class="head"><p>YearBuiltNJDEP &gt; 2000</p></th>
+<th class="head"><p>1983 &lt; YearBuiltNJDEP &lt; 2000</p></th>
+<th class="head"><p>YearBuilt &lt;= 1983</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ruleset</p></td>
+<td><p>Assign as a Random Variable (RV)
+IF RoofShape = Gable OR Hip, SWR = yes (RV = 60%) 
+IF RoofShape = Gable OR Hip, SWR = no (RV = 40%)</p></td>
+<td><p>IF RoofShape=Flat, SWR=yes
+ELSEIF RoofShape=(Gable or Hip) &amp; RoofSlope &lt;= 0.17, SWR=yes
+ELSEIF RoofShape=(Gable or Hip) &amp; RoofSlope (&gt; 0.17 &amp; &lt; 0.33) &amp; AvgJanTemp=Below, SWR=yes
+ELSEIF RoofShape=(Gable or Hip) &amp; RoofSlope (&gt; 0.17 &amp; &lt; 0.33) &amp; AvgJanTemp=Above, SWR=no
+ELSEIF RoofShape=(Gable or Hip) &amp; RoofSlope &gt;= 0.33, SWR=no</p></td>
+<td><p>SWR = no</p></td>
+</tr>
+<tr class="row-odd"><td><p>Note</p></td>
+<td><p>Minimum drainage recommendations are in place in NJ (See below). However, SWR indicates a code-plus practice. Use homeowner compliance data from NC Coastal Homeowner Survey (2017) to capture potential human behavior (% of sealed roofs in NC dataset). Minimum Code Requirements: R903.4 Roof Drainage. Unless roofs are sloped to drain over roof edges, roof drains shall be installed at each low point of the roof: R903.4.1 Secondary (Emergency Overflow) Drains or Scuppers: Where roof drains are required, secondary emergency overflow roof drains or scuppers shall be provided where the roof perimeter construction extends above the roof in such a manner that water will be entrapped if the primary drains allow buildup for any reason.</p></td>
+<td><p>This rule applies until 1984, for anything from 1983 or earlier, there is no information available so this rule will continue to be applied.</p>
+<p>According to 903.2 in the 1995 CABO, for roofs with slopes between 2:12 and 4:12, an underlayment consisting of two layers of No. 15 felt must be applied. In severe climates (less than or equal to 25 degrees average in January), these two layers must be cemented together. According to 903.3 in the 1995 CABO, roofs with slopes greater than or equal to 4:12 shall have an underlayment of not less than one ply of No. 15 felt. Two layers of felt cemented together is considered to be secondary water resistance. This ruleset is for asphalt shingles. Almost all other roof types require underlayment of some sort, but the ruleset is based on asphalt shingles because it is most conservative.</p>
+<p>According to table No. R-803.4 in 1992 CABO, for roofs with slopes between 2:12 and 4:12 in severe climates (less than or equal to 25 degrees average in January), one layer no 40 coated roofing or coated glass base sheet from the eves to 12 inches inside the exterior wall line is required. The rule used for asphalt shingles is assumed to apply to every roof because more specific requirements based on roofing type were not specified.</p>
+<p>According to R-803.3  in the 1989 CABO, for roofs with slopes between 2:12 and 4:12, an underlayment consisting of two layers of No. 15 felt must be applied. In severe climates (less than or equal to 25 degrees average in January), these two layers must be cemented together. According to R803.2  in the 1989 CABO, roofs with slopes greater than or equal to 4:12 shall have an underlayment of not less than one ply of No. 15 felt. Two layers of felt cemented together is considered to be secondary water resistance. This ruleset is for asphalt shingles. Almost all other roof types require underlayment of some sort, but the ruleset is based on asphalt shingles because it is most conservative.</p>
+<p>According to R-803.3 in 1986 CABO, for roofs with slopes between 2:12 and 4:12 in severe climates (less than or equal to 25 degrees average in January), one layer no 40 coated roofing or coated glass base sheet from the eves to 12 inches inside the exterior wall line is required. The rule used for asphalt shingles is assumed to apply to every roof because more specific requirements based on roofing type were not specified. According to R-803.1 and R-803.2 in 1983 CABO, for roofs with slopes between 2:12 and 4:12 in severe climates (less than or equal to 25 degrees average in January), two layers of Type 15 felt must be applied and cemented together from the eaves up the roof to overlie a point twenty four inches inside the interior of the building.</p>
+</td>
+<td><p>Default</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="citation">
+<dt class="label" id="javeline19"><span class="brackets"><a class="fn-backref" href="#id1">Javeline19</a></span></dt>
+<dd><p>Javeline, D., &amp; Kijewski-Correa, T. (2019). Coastal homeowners in a changing climate. Climatic Change, 152(2), 259-274.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '...', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

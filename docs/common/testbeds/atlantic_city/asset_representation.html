@@ -13,6 +13,11 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -31,6 +36,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
@@ -108,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -146,8 +153,10 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -262,8 +271,8 @@ mode (wood, masonry, concrete, steel, manufactured home). Buildings must then be
 into one of 55 corresponding HAZUS building classes (<strong>HazusClass-W</strong>) based on characteristics
 such as occupancy, number of stories and footprint size, using rulesets that call upon various
 fields in the building inventory. The HAZUS building classifications for wind losses are listed
-in <a class="reference internal" href="#bldg-class"><span class="std std-numref">Table 2.4.1.1</span></a>, and the corresponding rulesets (PDFs and Python scripts) are cross-referenced
-later in <a class="reference internal" href="#addinfo-ruleset"><span class="std std-numref">Table 2.4.1.4</span></a>. Note that while rulesets were developed for marginally and non-engineered
+in <a class="reference internal" href="../lake_charles/asset_representation.html#bldg-class"><span class="std std-numref">Table 3.4.1.1</span></a>, and the corresponding rulesets (PDFs and Python scripts) are cross-referenced
+later in <a class="reference internal" href="../lake_charles/asset_representation.html#addinfo-ruleset"><span class="std std-numref">Table 3.4.1.2</span></a>. Note that while rulesets were developed for marginally and non-engineered
 building classes in HAZUS, these classes are not used in the current implementation of this testbed.</p>
 <table class="docutils align-center" id="bldg-class">
 <caption><span class="caption-number">Table 2.4.1.1 </span><span class="caption-text">HAZUS building classification for wind loss assessment.</span><a class="headerlink" href="#bldg-class" title="Permalink to this table">¶</a></caption>
@@ -505,7 +514,7 @@ building classes in HAZUS, these classes are not used in the current implementat
 and other features. A separate ruleset was developed to assign buildings into one of these classes
 associated with inundation by water (<strong>HazusClass-IN</strong>). The HAZUS building classifications for flood
 losses are listed in <a class="reference internal" href="#flood-bldg-class"><span class="std std-numref">Table 2.4.1.2</span></a>, and the corresponding rulesets (PDFs and Python scripts)
-are cross-referenced later in <a class="reference internal" href="#addinfo-ruleset"><span class="std std-numref">Table 2.4.1.4</span></a>.</p>
+are cross-referenced later in <a class="reference internal" href="../lake_charles/asset_representation.html#addinfo-ruleset"><span class="std std-numref">Table 3.4.1.2</span></a>.</p>
 <table class="docutils align-center" id="flood-bldg-class">
 <caption><span class="caption-number">Table 2.4.1.2 </span><span class="caption-text">HAZUS building classification for flood loss assessment.</span><a class="headerlink" href="#flood-bldg-class" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -702,7 +711,7 @@ are cross-referenced later in <a class="reference internal" href="#addinfo-rules
 use, construction material and number of stories. A separate ruleset was developed to assign buildings
 into one of these classes associated with losses driven by wave action (<strong>HazusClass-WA</strong>). The HAZUS
 building classifications for wave-induced losses are listed in <a class="reference internal" href="#wave-bldg-class"><span class="std std-numref">Table 2.4.1.3</span></a>, and the corresponding
-rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference internal" href="#addinfo-ruleset"><span class="std std-numref">Table 2.4.1.4</span></a>.</p>
+rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference internal" href="../lake_charles/asset_representation.html#addinfo-ruleset"><span class="std std-numref">Table 3.4.1.2</span></a>.</p>
 <table class="docutils align-center" id="wave-bldg-class">
 <caption><span class="caption-number">Table 2.4.1.3 </span><span class="caption-text">HAZUS building classification for wave-induced loss assessment.</span><a class="headerlink" href="#wave-bldg-class" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -786,14 +795,14 @@ connection, shutters, garage), and the number of attributes necessary to describ
 <p>As these attributes are beyond what is typically encompassed in a building inventory, this testbed developed
 and implemented a library of rulesets to infer the HAZUS-required attributes based upon the fields available
 in the Building Inventory, legacy building codes in New Jersey, local construction practices/norms, surveys
-capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="damage_and_loss.html#javeline19" id="id1"><span>[Javeline19]</span></a>) and market/industry data.
+capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="../lake_charles/damage_and_loss.html#javeline19" id="id1"><span>[Javeline19]</span></a>) and market/industry data.
 Where possible, the rulesets are time-evolving, considering the age of construction to determine the governing
 code edition and availability of specific mitigation measures in the market. Though reliant on engineering
 judgement and historical data availability, each rule provides detailed notes cross-referencing the various
 documents and practices that governed that era of construction and thus informed the ruleset formation.
-In cases where engineering judgement was required, rules were assigned based on what was understood to be
+In cases where engineering judgment was required, rules were assigned based on what was understood to be
 the most common construction practice. In cases where that was not clear, the ruleset assigned the most
-vulnerable configuration for a more conservative approach to loss estimation. <a class="reference internal" href="#wind-bldg-attri"><span class="std std-numref">Table 2.4.2.1</span></a>
+vulnerable configuration for a more conservative approach to loss estimation. <a class="reference internal" href="../lake_charles/asset_representation.html#wind-bldg-attri"><span class="std std-numref">Table 3.4.2.1</span></a>
 and <a class="reference internal" href="#flood-bldg-attri"><span class="std std-numref">Table 2.4.2.2</span></a> list the attributes for the wind and flood loss assessments.</p>
 <table class="docutils align-center" id="wind-bldg-attri">
 <caption><span class="caption-number">Table 2.4.2.1 </span><span class="caption-text">Building attributes for wind loss assessment.</span><a class="headerlink" href="#wind-bldg-attri" title="Permalink to this table">¶</a></caption>
@@ -980,10 +989,10 @@ Coastal/V-Zone</p></td>
 for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based the design wind
 speed at the asset location (Building Inventory field “DSWII”) and the flood zone (building inventory field
 <strong>FloodZone</strong>), per New Jersey code. These rules used to assign these meta-variables are provided in
-<a class="reference internal" href="#addinfo-ruleset-metavar"><span class="std std-numref">Table 2.4.2.3</span></a>. Also note that the roof shape (building inventory field <strong>RoofShape</strong>),
+<a class="reference internal" href="../lake_charles/asset_representation.html#addinfo-ruleset-metavar"><span class="std std-numref">Table 3.4.2.2</span></a>. Also note that the roof shape (building inventory field <strong>RoofShape</strong>),
 derived from aerial imagery, and terrain roughness (building inventory field <strong>Terrain</strong>), derived from
 Land Use Land Cover data, are also attributes required by the HAZUS wind loss model. As these were already
-assigned in the <a class="reference internal" href="../sf_bay_area/asset_description.html#lbl-testbed-ac-asset-description"><span class="std std-ref">Asset Description</span></a>, they are not discussed again herein.</p>
+assigned in the <a class="reference internal" href="asset_description.html#lbl-testbed-ac-asset-description"><span class="std std-ref">Asset Description</span></a>, they are not discussed again herein.</p>
 <table class="docutils align-center" id="addinfo-ruleset-metavar">
 <caption><span class="caption-number">Table 2.4.2.3 </span><span class="caption-text">Additional details for rulesets for meta-variables in wind loss attribute assignment in HAZUS</span><a class="headerlink" href="#addinfo-ruleset-metavar" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -1018,10 +1027,10 @@ discussed in the following subsections, organized by hazard and building class, 
 </ol>
 <p>Their required attributes for wind loss modeling, the possible entries (values, terms) that can be
 assigned for those attributes, and the basis for the ruleset developed to make that assignment are
-summarized in <a class="reference internal" href="#wsf-attri"><span class="std std-numref">Table 2.4.2.4</span></a> and <a class="reference internal" href="#wmuh-attri"><span class="std std-numref">Table 2.4.2.5</span></a>. Note that these rulesets were developed
+summarized in <a class="reference internal" href="../lake_charles/asset_representation.html#wsf-attri"><span class="std std-numref">Table 3.4.2.3</span></a> and <a class="reference internal" href="../lake_charles/asset_representation.html#wmuh-attri"><span class="std std-numref">Table 3.4.2.4</span></a>. Note that these rulesets were developed
 to reflect the likely attributes based on the year of construction and the code editions and
 construction norms at that time. The corresponding time-evolving rulesets (PDFs and Python scripts)
-are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-wood"><span class="std std-numref">Table 2.4.2.6</span></a>.</p>
+are cross-referenced in <a class="reference internal" href="../lake_charles/asset_representation.html#addinfo-ruleset-wood"><span class="std std-numref">Table 3.4.2.5</span></a>.</p>
 <table class="docutils align-center" id="wsf-attri">
 <caption><span class="caption-number">Table 2.4.2.4 </span><span class="caption-text">Additional HAZUS attributes assigned for wood single family (WSF) homes: wind losses.</span><a class="headerlink" href="#wsf-attri" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -1124,7 +1133,7 @@ are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-woo
 </table>
 <p>Taking the attribute Second Water Resistance (SWR) as an example, the SWR attribute is assigned by
 a series of time-evolving rules calling upon four fields in the building inventory: year built,
-roof shape, roof slope, and average temperature in January. <a class="reference internal" href="#swr-attri"><span class="std std-numref">Table 2.4.2.7</span></a> provides the
+roof shape, roof slope, and average temperature in January. <a class="reference internal" href="../lake_charles/asset_representation.html#swr-attri"><span class="std std-numref">Table 3.4.2.6</span></a> provides the
 detailed rules that map these four variables to the Second Water Resistance (SWR) attribute.
 This example demonstrates an instance where the attribute is assigned as a random variable,
 based on the fact that secondary water resistance is not required by code, though surveys
@@ -2166,7 +2175,7 @@ in <a class="reference internal" href="#ef-attri"><span class="std std-numref">T
 <p>The flood loss model in HAZUS focuses on a collection of attributes, some of which are already defined in
 the building inventory (number of stories and occupancy type as defined in <a class="reference internal" href="#lbl-testbed-ac-asset-representation-building-classification"><span class="std std-ref">Building Classifications</span></a>),
 while other building inventory fields like first floor elevation require adjustment. The new or adjusted
-attributes required for the flood model are itemised in <a class="reference internal" href="#flood-attri"><span class="std std-numref">Table 2.4.2.34</span></a> with their possible
+attributes required for the flood model are itemized in <a class="reference internal" href="#flood-attri"><span class="std std-numref">Table 2.4.2.34</span></a> with their possible
 assignments (values, terms) and the ruleset developed to make those assignments. Note that these attributes
 are generally not time evolving, with the exception of considering if the building was constructed after
 Flood Insurance Rate Maps (FIRMs) were adopted (date varies by municipality). The corresponding
@@ -2233,7 +2242,7 @@ rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference i
 </table>
 <p>Taking the attribute first floor flood elevation (FirstFloorElev) as an example,
 the FirstFloorElev attribute is assigned by adapting the building inventory field (FirstFloorHt1),
-defined by computer vision methods (see <a class="reference internal" href="../sf_bay_area/asset_description.html#lbl-testbed-ac-asset-description-phase-iv"><span class="std std-ref">Phase IV: Augmentation Using Computer Vision Methods</span></a>),
+defined by computer vision methods (see <a class="reference internal" href="asset_description.html#lbl-testbed-ac-asset-description-phase-iv"><span class="std std-ref">Phase IV: Augmentation Using Computer Vision Methods</span></a>),
 and adjusting it based on the conventions used to define this quantity based on the flood zone
 (A-Zone vs. V-Zone), as summarized in <a class="reference internal" href="#ffh-attri"><span class="std std-numref">Table 2.4.2.36</span></a>.</p>
 <table class="docutils align-center" id="ffh-attri">

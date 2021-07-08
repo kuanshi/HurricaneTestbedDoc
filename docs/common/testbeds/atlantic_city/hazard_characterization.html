@@ -13,6 +13,11 @@
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -31,13 +36,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -109,6 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -147,8 +154,10 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -278,12 +287,12 @@ users have two ways to engage this model to generate wind fields for this testbe
 1. analytical model to generate a customized windfield for use with this testbed.</p>
 <p>Wind fields described by either approach are then locally interpolated to the coordiantes associated with each
 footprint. The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated
-Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1.11</span></a>). Because the SPH model tracks the maximum wind speed over the
+Category-5 hurricane event (<a class="reference internal" href="#pws"><span class="std std-numref">Fig. 2.3.1.15</span></a>). Because the SPH model tracks the maximum wind speed over the
 entire hurricane time history - so the inland cities are subjected to slightly higher wind speed than
 the coastal cities.</p>
 <div class="align-center figure" id="pws" style="width: 1000px">
 <img alt="../../../_images/pws.png" src="../../../_images/pws.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.1.11 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.15 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="storm-surge-modeling">
@@ -309,18 +318,18 @@ to estimate the depth of storm surge above ground, geospatially interpolated to 
 locations at approximately 120 m spacing, accompanied by the Limit of Moderate Wave Action
 (LiMWA) and wet-dry boundary respectively defining the extent of damaging waves and inundation
 over land at each of the transect points. These are then interpolated to the location of the coastal
-parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.1.12</span></a>). In the initial implementation, as demonstrated
+parcels to express the property exposure to storm surge (<a class="reference internal" href="#pwd"><span class="std std-numref">Fig. 2.3.1.16</span></a>). In the initial implementation, as demonstrated
 in this test, only the peak water depth (PWD) was considered, which will be used in the HAZUS
 Flood Damage and Loss Assessment.</p>
 <div class="align-center figure" id="pwd" style="width: 1000px">
 <img alt="../../../_images/pwd.png" src="../../../_images/pwd.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3.1.12 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.16 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="multiple-category-analysis-mca">
 <h3>Multiple Category Analysis (MCA)<a class="headerlink" href="#multiple-category-analysis-mca" title="Permalink to this headline">¶</a></h3>
 <p>Note that the resulting 3s-gust PWS values by this Category-5 hurricane is much higher than
-the design wind speed specified by ASCE 7-16 (<a class="reference internal" href="pws_conversion.html#asce16" id="id6"><span>[ASCE16]</span></a>) for the Atlantic County which ranges
+the design wind speed specified by ASCE 7-16 (<a class="reference internal" href="../lake_charles/overview.html#asce16" id="id6"><span>[ASCE16]</span></a>) for the Atlantic County which ranges
 from 105 mph to 115 mph. Since this extreme scenario bears a small likelihood, this testbed
 also scales the wind and flood water field down to lower categories to conduct the so-called
 Multiple Category Analysis to exam the building performance under different intense scenarios

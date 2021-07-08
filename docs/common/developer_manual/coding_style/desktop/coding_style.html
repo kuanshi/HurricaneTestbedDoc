@@ -13,6 +13,11 @@
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -31,6 +36,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
@@ -108,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/releasenotes.html">6. Release Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -121,6 +128,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic County, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">3. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -213,36 +221,36 @@
             
   <div class="section" id="coding-style">
 <span id="lblcodingstyle"></span><h1><span class="section-number">5. </span>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h1>
-<p>The SimCenter frontend applications are written in <strong>C++</strong>. The applications that run in the backend are written in a mixture of languages: <strong>Python</strong>, <strong>C</strong>, and <strong>C++</strong>. The SimCenter strives to use a common style across the applications. This section outlines that style. Consistency is the most important aspect of style. The second most important aspect is following a style that the average programmer is used to reading. Not all code will follow th guide,</p>
+<p>The SimCenter frontend applications are written in <strong>C++</strong>. The applications that run in the backend are written in a mixture of languages: <strong>Python</strong>, <strong>C</strong>, and <strong>C++</strong>. The SimCenter strives to use a standard style across the applications. This section outlines that style. Consistency is the most important aspect of style. The second most important aspect is following a style that the average programmer is used to reading. Not all code will follow the guide,</p>
 <div class="section" id="python-style">
 <h2><span class="section-number">5.1. </span>Python Style<a class="headerlink" href="#python-style" title="Permalink to this headline">¶</a></h2>
-<p>For code written in Python SimCenter programmers follow the widely used
+<p>For code written in Python, SimCenter programmers follow the widely used
 <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">Guide PEP 8</a></p>
 </div>
 <div class="section" id="c-c-style">
 <h2><span class="section-number">5.2. </span>C/C++ Style<a class="headerlink" href="#c-c-style" title="Permalink to this headline">¶</a></h2>
-<p>Unlike Python, C/C++ do not have a widely accepted style guideline. Some guidelines of note include the <a class="reference external" href="https://google.github.io/styleguide/cppguide.html">Google Style</a>, the <a class="reference external" href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html">C++ Core Guidelines</a> (edited by Stroustrup and Sutter), and an older
+<p>Unlike Python, C/C++ does not have a widely accepted style guideline. Some guidelines of note include the <a class="reference external" href="https://google.github.io/styleguide/cppguide.html">Google Style</a>, the <a class="reference external" href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html">C++ Core Guidelines</a> (edited by Stroustrup and Sutter), and an older
 C++</p>
 <div class="section" id="comments">
 <h3><span class="section-number">5.2.1. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
-<p>It goes without saying that you must use them. Try to use <code class="code docutils literal notranslate"><span class="pre">//</span></code> as opposed to <code class="code docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code>, as it makes it easier to comment out a block of code when debugging.</p>
+<p>It goes without saying that you must use them. Try to use <code class="code docutils literal notranslate"><span class="pre">//</span></code> as opposed to <code class="code docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code>, making it easier to comment out a block of code when debugging.</p>
 </div>
 <div class="section" id="naming-conventions">
 <h3><span class="section-number">5.2.2. </span>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h3>
-<p>All names should be meaningful and Follow a camel case approach. For classes the names start with an uppercase letter, all class methods, functions, and variables shall start with a lowercase letter. The exception is constant variables, which should be all uppercase, e.g. <code class="code docutils literal notranslate"><span class="pre">const</span> <span class="pre">double</span> <span class="pre">PI=3.14159265358979323;</span></code></p>
+<p>All names should be meaningful and Follow a camel case approach. For classes, the names start with an uppercase letter; all class methods, functions, and variables shall begin with a lowercase letter. The exception is constant variables, which should be all uppercase, e.g. <code class="code docutils literal notranslate"><span class="pre">const</span> <span class="pre">double</span> <span class="pre">PI=3.14159265358979323;</span></code></p>
 </div>
 <div class="section" id="files">
 <h3><span class="section-number">5.2.3. </span>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Use a <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> extension for code files and a <code class="docutils literal notranslate"><span class="pre">.h</span></code> extension for interface files.</p></li>
 <li><p>All files should include at the start the <a class="reference internal" href="../../../front-matter/license.html#lbllicense"><span class="std std-ref">Copyright and License</span></a></p></li>
-<li><p>All file should contain some comments about what the file contains, and the name of the developers who worked substantially on the code.</p></li>
-<li><p>Use indentation to make the code easier to read, the <strong>Qt</strong> editor has a nice feature that will auto indent code for you.</p></li>
+<li><p>All files should contain some comments about what the file contains and the name of the developers who worked substantially on the code.</p></li>
+<li><p>Use indentation to make the code easier to read; the <strong>Qt</strong> editor has a nice feature that will auto-indent code for you.</p></li>
 <li><p>In addition, when writing header files:</p>
 <ol class="arabic simple">
 <li><p>Never ever ever use <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span></code> in a header.</p></li>
-<li><p>All header files should additionally include documentation as the the purpose of the class and the methods. The returns and args to the functions should be documented.</p></li>
-<li><p>Header files <strong>MUST</strong> contain a distinctly-named include guard to avoid problems with including the same header multiple times and to prevent conflicts with headers from other projects.</p></li>
+<li><p>All header files should additionally include documentation as the purpose of the class and the methods. The returns and args to the functions should be documented.</p></li>
+<li><p>Header files <strong>MUST</strong> contain a distinctly named include guard to avoid problems with including the same header multiple times and to prevent conflicts with headers from other projects.</p></li>
 <li><p>The comments should be in a <a class="reference external" href="http://www.doxygen.nl/manual/docblocks.html">Doxygen format</a>.</p></li>
 <li><p>Assign default values with <code class="docutils literal notranslate"><span class="pre">=</span></code> or <code class="docutils literal notranslate"><span class="pre">{}</span></code>, a C++11 feature.</p></li>
 <li><p>All variables defined in the header must be private.</p></li>
