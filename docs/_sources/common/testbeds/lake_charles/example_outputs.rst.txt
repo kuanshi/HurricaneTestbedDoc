@@ -36,7 +36,7 @@ the NSI dataset, `SURF <https://github.com/NHERI-SimCenter/SURF>`_ is employed t
 network and used it to predict year built information based on the spatial patterns in the NSI dataset.
 
 In parallel to this exploration, `Zillow <https://www.zillow.com/>`_ also provides the year built information for 
-many of the residual buildings in the studied region. <<Describing scraper and if the data csv could be shared here>>.
+many of the residual buildings in the studied region.
 
 Similar to the implementation of NSI dataset, the 1182 data points of year built from Zillow are used to train a 
 neural network, :numref:`surf_ yb_test` shows the verification of the trained neural network (predicted vs. true values,
