@@ -26,7 +26,8 @@ under open terrain conditions.
 For Lake Charles itself, the ARA wind field is first mapped to a rectangular grid with 0.01 to 0.02 
 degree intervals.  Then peak wind speed at each building site is then randomly sampled from its nearest 
 4 neighboring grid points. :numref:`pws_interp` shows the averaged peak wind speed from 1000 random samples for 
-each building site in our area of interest. 
+each building site in our area of interest. The wind speed is relative stable in the region, 
+ranging from :math:`131 mph` to :math:`135 mph`.
 
 .. figure:: figure/PeakWindSpeed.png
    :name: pws_interp
