@@ -235,42 +235,47 @@
   <div class="section" id="overview">
 <span id="lbl-testbed-lc-overview"></span><h1><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p>This testbed for regional hurricane risk assessment of Lake Charles, LA under wind hazards adopts an approach
-consistent with that developed for earthquake hazards. Its intent is to demonstrate the computational scaffolding
-upon which community developers can progressively contribute refinements that increase the fidelity and capabities
+consistent with that developed for the Atlantic County testbed. Its intent is to (1) explore the possibility
+of using advanced machine learning and artificial intelligence techniques to populate/predict important
+building features that are limited by the tax assessor and open inventory data, (2) further validate the developed
+workflow with a recent hurricane event with field investigation data, and (3) identifying potential research
+needs for refining/upgrading/extending damage assessment methods and models at parcel levels. Similar to the general
+idea of other testbeds, community developers can progressively contribute refinements that increase the fidelity and capacities
 of the backend regional resilience assessment workflow. This documentation specifically demonstrates the process of:
-(1) asset description, (2) hazard characeterization, (3) asset representation, (4) damage and loss modeling for
-the Lake Carles inventory. Sample results are presented to verify the workflow and demonstrate its usage.</p>
+(1) asset description, (2) hazard characterization, (3) asset representation, (4) damage and loss modeling for
+the Lake Charles inventory. Sample results are presented to verify the workflow and validate its different aspects
+against multiple published datasets.</p>
 <div class="section" id="rationale">
 <h2><span class="section-number">3.1.1. </span>Rationale<a class="headerlink" href="#rationale" title="Permalink to this headline">¶</a></h2>
 <p>As detailed in <a class="reference internal" href="#roueche20" id="id1"><span>[Roueche20]</span></a>, Hurricane Laura made landfall as a strong Category 4 storm near Cameron, LA in the
 early hours of 27 August 2020, tying the Last Island Hurricane of 1856 as the strongest land-falling hurricane
 in Louisiana history. Wind speeds are estimated to have reached or exceeded the design wind speeds for Risk
 Category II buildings and other structures, as defined in ASCE 7-16 (<a class="reference internal" href="#asce16" id="id2"><span>[ASCE16]</span></a>) and the 2018 International Building
-Code (MRI = 700 years) (<a class="reference internal" href="#icc18" id="id3"><span>[ICC18]</span></a>), by as much as <span class="math notranslate nohighlight">\(8 km/h\)</span> (<span class="math notranslate nohighlight">\(5 mph\)</span>) near Lake Charles, LA (specifically),
-northeastern Calcasieu Parish and the eastern half of Beauregard Parish) (ARA 2020). Meanwhile, storm sruge
+Code (MRI = 700 years) (<a class="reference internal" href="#icc18" id="id3"><span>[ICC18]</span></a>), by as much as <span class="math notranslate nohighlight">\(8 km/h\)</span> (<span class="math notranslate nohighlight">\(5 mph\)</span>) near Lake Charles, LA (specifically,
+northeastern Calcasieu Parish and the eastern half of Beauregard Parish) (<a class="reference internal" href="#ara20" id="id4"><span>[ARA20]</span></a>). Meanwhile, storm surge
 resulted in high water marks of over <span class="math notranslate nohighlight">\(5 m\)</span> (<span class="math notranslate nohighlight">\(17 ft\)</span>) above ground in Oak Grove, LA in Cameron Parish
-(<a class="reference internal" href="#pasch21" id="id4"><span>[Pasch21]</span></a>). These combined hazards resulted in substantial impacts to port and industrial facilities serving the
-oil and gas sector, widespread damages in the residential sector, and sustaned outages of water and power impacting
+(<a class="reference internal" href="#pasch21" id="id5"><span>[Pasch21]</span></a>). These combined hazards resulted in substantial impacts to port and industrial facilities serving the
+oil and gas sector, widespread damages in the residential sector, and sustained outages of water and power impacting
 the operation of hospitals providing critical care during a pandemic. Notable damage was reported to commercial
-facilities, particularly to hetels, including high-rise buildings in Lake Charles associated with casinos and
-resorts. As the storm’s well-predicted track facilities coordinated, multi-entity surface measurements of wind
-fields (surface observation networks and mobile rada) and storm surge, Laura is one of the best documented storm
+facilities, particularly to hotels, including high-rise buildings in Lake Charles associated with casinos and
+resorts. As the storm’s well-predicted track facilitated coordinated, multi-entity surface measurements of wind
+fields (surface observation networks and mobile radar) and storm surge, Laura is one of the best documented storm
 events and thus provides novel opportunities to understand the vulnerabilities underpinning losses across a diversity
 of building occupancies and other critical infrastructure.</p>
-<p>This testbed builds upon existing relationships between SimCenter and the Structural Extreme Events Response (StEER)
-Network, which made available various reconnaissance data in the affected region available for initial validation. The
+<p>This testbed builds upon existing relationships between SimCenter and the Structural Extreme Events Reconnaissance (StEER)
+Network, which made various reconnaissance data in the affected region available for initial validation. The
 validation did not take advantage of the extensive street-level panoramas (available in Google Maps) that can provide
 an even richer validation data set for this hurricane. Notably, the areas impacted by Laura were previously impacted by
 Hurricane Rita (2005), with many structures reconstructed or repaired and unfortunately again damaged. As a large
 swath of modern (post-IBC/IRC construction) single-family residential structures were impacted by design-level winds
 during Hurricane Laura, underscoring vulnerabilities to garage doors and high rates of roof cover losses, the
-current implementation focuses on estabilishing the residential inventories, though other building classes warrant
+current implementation mainly focuses on establishing the residential inventories, though other building classes warrant
 future investigation, including mobile homes where even Zone II anchorages were observed to fail. Notably,
-regrettably low rates of impact-resistant fenestration was observed by StEER across the region, futher suggesting
-opportunities to expore this attribute in the ensuring losses.</p>
-<p>Thist testbed also demonstrates the challenges of creating inventories in areas where tax assessor and other open
+regrettably low rates of impact-resistant fenestration was observed by StEER across the region, further suggesting
+opportunities to explore this attribute in the ensuing losses.</p>
+<p>This testbed also demonstrates the challenges of creating inventories in areas where tax assessor and other open
 inventory data are limited. Thus, the experience creating this testbed models best practices and strategies for
-augenting sparse inventory data in a given region, e.g., semantically describing assets using information inferred
+augmenting sparse inventory data in a given region, e.g., semantically describing assets using information inferred
 by artificial intelligence.</p>
 </div>
 <div class="section" id="capabilities-supported-hazards">
@@ -278,9 +283,10 @@ by artificial intelligence.</p>
 <p>The testbed supports the transition from census-block-level loss projections to asset-level projections that assess
 the damage to individual buildings under hurricane-induced wind hazards. Water penetration due to the breach of building
 envelopes and/or wind-borne debris impact are also captured in the damage and loss modeling, though the physics of
-these phenomena themselves are not explicitly modeled. Storm surge, flood and other focuses only on wood-frame
+these phenomena themselves are not explicitly modeled. Storm surge, flood and other rainfall-induced hazards are
+not included in the current implementation. Moreover, the inventory focuses only on wood-frame
 residential construction. These intentional focuses of the current implementation leave ample room for further
-community-led development. The adoption of HAZUS loss estimation frameworks takes advantage of a process developed
+community-led development. The adoption of HAZUS loss estimation frameworks <a class="reference internal" href="#fema18" id="id6"><span>[FEMA18]</span></a> takes advantage of a process developed
 in Atlantic County, NJ for assigning attributes to specific building footprints using time-evolving heuristic
 rulesets grounded in local codes/standards and normative practice. As this testbed demonstrates a quick
 “spin-up” after a hurricane, the rulesets from New Jersey are directly applied; while many of the practices
@@ -290,7 +296,7 @@ specific regulations and mitigation measures in Lake Charles.</p>
 <div class="section" id="current-implementation">
 <h2><span class="section-number">3.1.3. </span>Current Implementation<a class="headerlink" href="#current-implementation" title="Permalink to this headline">¶</a></h2>
 <p>For the initial implementation of the backend workflow, asset description adopts an augmented parcel and
-available hindcast windfields provide the Peak Wind Speed (PWS) during the hurricane (used as hazard
+available hindcast wind fields provide the Peak Wind Speed (PWS) during the hurricane (used as hazard
 intensity measure). In lieu of a structural analysis model, assets are assigned attributes associated
 with various HAZUS-consistent building classifications. The adoption of HAZUS damage and loss assessment
 methodology for hurricanes thus enables these intensity measures to be related to probabilities of
@@ -298,17 +304,19 @@ damage and loss, based on the building class and assigned attributes.</p>
 </div>
 <div class="section" id="available-inventories">
 <h2><span class="section-number">3.1.4. </span>Available Inventories<a class="headerlink" href="#available-inventories" title="Permalink to this headline">¶</a></h2>
-<p>The constructed building inventory developed for Lake Charles wiil be accessable via DesignSafe.
-This testbed includes 30,072 assets in the city of Lake Charles. <a class="reference internal" href="#fig-yearbuilt"><span class="std std-numref">Fig. 3.1.4.1</span></a> visualizes the
-built years of the buildings in the inventory.  <a class="reference internal" href="#fig-occupancyclass"><span class="std std-numref">Fig. 3.1.4.2</span></a> shows the geospatial distribution
+<p>The constructed building inventory developed for Lake Charles is accessible via DesignSafe.
+This testbed includes 30,078 buildings including 26,517 residential buildings and 3,561 commercial buildings
+(classified by BRAILS, more details will be introduced in ref:<cite>lbl-testbed_LC_asset_description</cite>)
+in the city of Lake Charles. <a class="reference internal" href="#fig-yearbuilt"><span class="std std-numref">Fig. 3.1.4.1</span></a> visualizes the
+Year Built of the buildings in the inventory.  <a class="reference internal" href="#fig-occupancyclass"><span class="std std-numref">Fig. 3.1.4.2</span></a> shows the geospatial distribution
 of the occupancy classes in the inventory.</p>
-<div class="align-center figure" id="id5" style="width: 1000px">
+<div class="align-center figure" id="id7" style="width: 1000px">
 <span id="fig-yearbuilt"></span><img alt="../../../_images/YearBuilt.png" src="../../../_images/YearBuilt.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.4.1 </span><span class="caption-text">Geospatial visualization of the building inventory by year built.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.4.1 </span><span class="caption-text">Geospatial visualization of the building inventory by year built.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id6" style="width: 1000px">
+<div class="align-center figure" id="id8" style="width: 1000px">
 <span id="fig-occupancyclass"></span><img alt="../../../_images/OccupancyClass.png" src="../../../_images/OccupancyClass.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1.4.2 </span><span class="caption-text">Geospatial visualization of the building inventory by occupancy class.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.4.2 </span><span class="caption-text">Geospatial visualization of the building inventory by occupancy class.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="roueche20"><span class="brackets"><a class="fn-backref" href="#id1">Roueche20</a></span></dt>
@@ -320,20 +328,14 @@ of the occupancy classes in the inventory.</p>
 <dt class="label" id="icc18"><span class="brackets"><a class="fn-backref" href="#id3">ICC18</a></span></dt>
 <dd><p>International Code Council. (2018). International building code. Falls Church, Va. :International Code Council,</p>
 </dd>
-<dt class="label" id="pasch21"><span class="brackets"><a class="fn-backref" href="#id4">Pasch21</a></span></dt>
+<dt class="label" id="pasch21"><span class="brackets"><a class="fn-backref" href="#id5">Pasch21</a></span></dt>
 <dd><p>Pasch, R. J., Berg, R., Roberts, D. P., &amp; Papin, P. P. (2021). National Hurricane Center Tropical Cyclone Report (Hurricane Laura). National Hurricane Center. <a class="reference external" href="https://www.nhc.noaa.gov/data/tcr/AL132020_Laura.pdf">https://www.nhc.noaa.gov/data/tcr/AL132020_Laura.pdf</a></p>
 </dd>
-<dt class="label" id="fema18a"><span class="brackets">FEMA18a</span></dt>
+<dt class="label" id="fema18"><span class="brackets"><a class="fn-backref" href="#id6">FEMA18</a></span></dt>
 <dd><p>FEMA (2018), HAZUS – Multi-hazard Loss Estimation Methodology 2.1, Hurricane Model Technical Manual, Federal Emergency Management Agency, Washington D.C., 718p.</p>
 </dd>
-<dt class="label" id="fema18b"><span class="brackets">FEMA18b</span></dt>
-<dd><p>FEMA (2018), HAZUS – Multi-hazard Loss Estimation Methodology 2.1, Flood Model Technical Manual, Federal Emergency Management Agency, Washington D.C., 569p.</p>
-</dd>
-<dt class="label" id="kijewskicorrea19"><span class="brackets">KijewskiCorrea19</span></dt>
-<dd><p>Kijewski-Correa, T., Taflanidis, A., Vardeman, C., Sweet, J., Zhang, J., Snaiki, R., … &amp; Kennedy, A. (2020). Geospatial environments for hurricane risk assessment: applications to situational awareness and resilience planning in New Jersey. Frontiers in Built Environment, 6, 549106.</p>
-</dd>
-<dt class="label" id="njcoast20"><span class="brackets">NJCoast20</span></dt>
-<dd><p>NJ Coast (2020), Storm Hazard Projection Tool, NJ Coast, <a class="reference external" href="https://njcoast.us/resources-shp/">https://njcoast.us/resources-shp/</a></p>
+<dt class="label" id="ara20"><span class="brackets"><a class="fn-backref" href="#id4">ARA20</a></span></dt>
+<dd><p>ARA. (2020). Hurricane Laura Rapid Response Windfield Estimate, Preliminary Windfield Release 3, National Institutes of Standards and Testing &amp; Applied Research Associates, September 4, <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Recon%20Portal/2020%20Hurricane%20Laura%20Cameron%20Louisiana%20USA">https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Recon%20Portal/2020%20Hurricane%20Laura%20Cameron%20Louisiana%20USA</a>.</p>
 </dd>
 </dl>
 </div>

@@ -5,7 +5,7 @@ Verification Results
 ********************
 
 This page summarizes sample results from the 
-testbed runs with the focuse on verifying the estimated loss ratios by hand-calculations.
+testbed runs with the focuses on verifying the estimated loss ratios by hand-calculations.
 
 Building Inventory
 ===================

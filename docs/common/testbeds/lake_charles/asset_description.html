@@ -138,12 +138,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#phase-iii-augmentation-using-third-party-data-site-specific-observations-and-existing-knowledge">3.2.3. Phase III: Augmentation Using Third-Party Data, Site-specific Observations, and Existing Knowledge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#dswii">DSWII</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#lulc">LULC</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#year-built">Year Built</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#garage">Garage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#buildingtype">BuildingType</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#avgjantemp">AvgJanTemp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attribute-dswii">Attribute: DSWII</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attribute-lulc">Attribute: LULC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attribute-yearbuilt">Attribute: YearBuilt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attribute-garage">Attribute: Garage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attribute-buildingtype">Attribute: BuildingType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attribute-avgjantemp">Attribute: AvgJanTemp</a></li>
 </ul>
 </li>
 </ul>
@@ -245,24 +245,20 @@
   <div class="section" id="asset-description">
 <span id="lbl-testbed-lc-asset-description"></span><h1><span class="section-number">3.2. </span>Asset Description<a class="headerlink" href="#asset-description" title="Permalink to this headline">¶</a></h1>
 <p>This section describes how a large-scale building inventory was constructed in two phases. The initial
-phase of this work involved identifying the attributes needed and the second phase involved work to
-obtain these attributes for each building. The second phase involved the use of machine learning and
+phase of this work involved identifying the attributes needed. The second phase involved work to
+obtain these attributes for each building using machine learning and
 techniques from computer vision to create an initial set of attributes. The remaining attributes were
-then obtained using other data sources as will be discussed. For The Lake Charles testbed only wood
-residential houses were considered.</p>
+then obtained using other data sources as discussed below.</p>
 <div class="section" id="phase-i-attribute-definition">
 <h2><span class="section-number">3.2.1. </span>Phase I: Attribute Definition<a class="headerlink" href="#phase-i-attribute-definition" title="Permalink to this headline">¶</a></h2>
 <p>All the attributes required for loss estimation were first identified to develop the Building Inventory
-data model. These attributes are presented in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>. For each attribute a
+data model. This Building Inventory data model presented in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>
+provides a set of attributes that will be assigned to each asset to form the building inventory file
+serving as input to the workflow. For each attribute a
 row in the table is provided. Each row has a number of columns: the attribute name, description,
-format (alphanumeric, floating point number, etc.), the data source used to define that attribute
-and the field(s) needed from that data source. This Building Inventory data model presented in
-<a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a> provides a set of attributes needed for the columns in an input
-asset description file provided to the workflow. Those attributes in white background are the minimal
-attributes needed, additional attributes shown in yellow can be provided in the input file or are
-automatically provided by rulesets in the running workflow.</p>
-<span id="tab-bldg-inv-data-model-lc"></span><table class="docutils align-center" id="id20">
-<caption><span class="caption-number">Table 3.2.1.1 </span><span class="caption-text">Building inventory data model, detailed for Lake Charles Inventory.</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
+format (alphanumeric, floating point number, etc.), the data source used to define that attribute.</p>
+<span id="tab-bldg-inv-data-model-lc"></span><table class="docutils align-center" id="id9">
+<caption><span class="caption-number">Table 3.2.1.1 </span><span class="caption-text">Building inventory data model, detailed for Lake Charles Inventory.</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -277,72 +273,72 @@ automatically provided by rulesets in the running workflow.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>ID</p></td>
+<tr class="row-even"><td><p><strong>ID</strong></p></td>
 <td><p>Building unique ID.</p></td>
 <td></td>
-<td></td>
+<td><p>User defined</p></td>
 </tr>
-<tr class="row-odd"><td><p>Latitude</p></td>
+<tr class="row-odd"><td><p><strong>Latitude</strong></p></td>
 <td><p>Latitude of the Building Centroid (inside polygon).</p></td>
 <td><p>Floating point number (Decimal Degrees)</p></td>
-<td></td>
+<td><p><a class="reference external" href="https://github.com/microsoft/USBuildingFootprints">Microsoft Maps</a></p></td>
 </tr>
-<tr class="row-even"><td><p>Longitude</p></td>
+<tr class="row-even"><td><p><strong>Longitude</strong></p></td>
 <td><p>Longitude of the Building Centroid (inside polygon).</p></td>
 <td><p>Floating point number (Decimal Degrees)</p></td>
-<td></td>
+<td><p><a class="reference external" href="https://github.com/microsoft/USBuildingFootprints">Microsoft Maps</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>OccupancyClass</p></td>
+<tr class="row-odd"><td><p><strong>OccupancyClass</strong></p></td>
 <td><p>Subclassifications of buildings across various categories of Residential (RES), Commercial (COM).</p></td>
 <td><p>Choices: RES1, RES3, COM1</p></td>
 <td><p>StreetView</p></td>
 </tr>
-<tr class="row-even"><td><p>BuildingType</p></td>
+<tr class="row-even"><td><p><strong>BuildingType</strong></p></td>
 <td><p>Core construction material type</p></td>
 <td><p>Choices: Wood, Concrete, Steel, Masony, Manufactured Housing</p></td>
 <td><p>Assume all in wood</p></td>
 </tr>
-<tr class="row-odd"><td><p>YearBuilt</p></td>
+<tr class="row-odd"><td><p><strong>YearBuilt</strong></p></td>
 <td><p>Year of Construction</p></td>
 <td><p>Integer (4-digit)</p></td>
 <td><p>StreetView</p></td>
 </tr>
-<tr class="row-even"><td><p>NumberofStories</p></td>
+<tr class="row-even"><td><p><strong>NumberofStories</strong></p></td>
 <td><p>Number of stories estimated via image processing</p></td>
 <td><p>Integer (4-digit)</p></td>
 <td><p>StreetView</p></td>
 </tr>
-<tr class="row-odd"><td><p>DSWII</p></td>
+<tr class="row-odd"><td><p><strong>DSWII</strong></p></td>
 <td><p>DesignWindSpeed II in mph</p></td>
 <td><p>Floating point number</p></td>
 <td><p>ATC API (ASCE 7)</p></td>
 </tr>
-<tr class="row-even"><td><p>AvgJanTemp</p></td>
+<tr class="row-even"><td><p><strong>AvgJanTemp</strong></p></td>
 <td><p>Average temperature in January below or above critial value of 25F.</p></td>
 <td><p>Choices: Above, Below</p></td>
-<td></td>
+<td><p>User specified</p></td>
 </tr>
-<tr class="row-odd"><td><p>RoofShape</p></td>
+<tr class="row-odd"><td><p><strong>RoofShape</strong></p></td>
 <td><p>Roof classified into equivalent hip, gable or flat</p></td>
 <td><p>Choices: Hip, Gable, Flat</p></td>
 <td><p>Aerial Imagery</p></td>
 </tr>
-<tr class="row-even"><td><p>RoofSlope</p></td>
+<tr class="row-even"><td><p><strong>RoofSlope</strong></p></td>
 <td><p>Slope of roof (ratio of rise/vertical over run/horizontal dimensions) covering the majority of the dwelling.</p></td>
 <td><p>Floating point number</p></td>
 <td><p>Aerial + StreetView Imagery</p></td>
 </tr>
-<tr class="row-odd"><td><p>MeanRoofHt</p></td>
+<tr class="row-odd"><td><p><strong>MeanRoofHt</strong></p></td>
 <td><p>Mean height of roof system in ft</p></td>
 <td><p>Floating point number</p></td>
 <td><p>Aerial + StreetView Imagery</p></td>
 </tr>
-<tr class="row-even"><td><p>Garage</p></td>
+<tr class="row-even"><td><p><strong>Garage</strong></p></td>
 <td><p>Assessor-provided type of garage.</p></td>
 <td><p>Floating point number</p></td>
 <td><p>Random sampled based on statistics</p></td>
 </tr>
-<tr class="row-odd"><td><p>LULC</p></td>
+<tr class="row-odd"><td><p><strong>LULC</strong></p></td>
 <td><p>Land Use Land Cover class</p></td>
 <td><p>1:’Urban or Built-Up Land’,
 11:’Residential’,
@@ -390,67 +386,67 @@ automatically provided by rulesets in the running workflow.</p>
 9:’Perennial Snow and Ice’,
 91:’Perennial Snowfields’,
 92:’Glaciers’</p></td>
-<td><p><a class="reference external" href="http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html">http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html</a></p></td>
+<td><p><a class="reference external" href="http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html">WebGIS</a></p></td>
 </tr>
 <tr class="row-even"><td><p>AnalysisDefault</p></td>
 <td><p>Defines the default level of fidelity for analysis</p></td>
 <td><p>Choices: 1, 2, 3</p></td>
-<td></td>
+<td><p>User defined</p></td>
 </tr>
 <tr class="row-odd"><td><p>HazusClass-W</p></td>
 <td><p>Hazus building classes as defined for wind hazards</p></td>
 <td><p>CHOICES: WSF1, WSF2, WMUH1, WMUH2, WMUH3, WMUH1NE, WMUH2NE, WMUH3NE, WMUH4NE, MSF1, MSF2, MMUH1, MMUH2, MMUH3, MLRM1, MLRM2, MLRI, MERBL, MERBM, MERBH, MECBL, MECBM, MECBH, MMUH1NE, MMUH2NE, MMUH3NE, CERBL, CERBM, CERBH, CECBL, CECBM, CECBH, SPMBS, SPMBM, SPMBL, SERBL, SERBM, SERBH, SECBL, SECBM, SECBH, MHPHUD, MH76HUD, MH94HUD-I, MH94HUD-II, MH94HUD-III, HUEFFS, HUEFSS, HUEFSM, HUEFSL, HUEFHS, HUEFHM, HUEFHL, HUEFPS, HUEFEO</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p>HPR</p></td>
 <td><p>Defines Hazard Prone Regions (HPR) for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
 <td><p>Choices: yes, no</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>WBD</p></td>
 <td><p>Defines Wind Borne Debris (WBD) for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
 <td><p>Choices: yes, no</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p>SWR</p></td>
 <td><p>Defines Secondary Water Resistance (SWR) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MSF1-2, MMUH1-3</p></td>
 <td><p>Choices: yes, no</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>RoofCvr</p></td>
 <td><p>Defines roof cover for the purposes of Hazus wind vulnerability assignments for WMUH1-3, MMUH1-3, MERBL-M-H, MECBL-M-H, MLRI, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL)  and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
 <td><p>Choices: N/A, BUR, SPM</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p>RoofQual</p></td>
 <td><p>Defines roof cover quality for the purposes of Hazus wind vulnerability assignments for WMUH1-3, MMUH1-3, MLRI</p></td>
 <td><p>Choices: N/A, poor, good</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>RDA-Wood</p></td>
 <td><p>Defines Roof Deck Attachment (RDA) for wood for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2</p></td>
 <td><p>Choices: A, B, C, D</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p>RDA-OWSJ</p></td>
 <td><p>Defines Roof Deck Attachment (RDA) for OWSJ for the purposes of Hazus wind vulnerability assignments for MSF1-2</p></td>
 <td><p>Choices: smtl standard, smtl superior, cshl standard, cshl superior</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>R2WC</p></td>
 <td><p>Defines Roof to Wall Connection (R2WC) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2</p></td>
 <td><p>Choices: strap, toe-nail</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p>shutters</p></td>
 <td><p>Defines use of window opening protection for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MERBL-M-H, MECBL-M-H, MMUH1-3,MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H, SPMBS-M-L, MH94HUDI-II-III, MH76HUD, MHPHUD and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL)  and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
 <td><p>Choices: yes, no</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Agarage</p></td>
 <td><p>Defines presence of attached garage for the purposes of Hazus wind vulnerability assignments for WSF1-2, MSF1-2</p></td>
 <td><p>Choices: none, SFBC 1994, standard, weak</p></td>
-<td></td>
+<td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 </tbody>
 </table>
@@ -459,7 +455,7 @@ automatically provided by rulesets in the running workflow.</p>
 <h2><span class="section-number">3.2.2. </span>Phase II: Inventory Generation<a class="headerlink" href="#phase-ii-inventory-generation" title="Permalink to this headline">¶</a></h2>
 <p>This section describes how the large-scale building inventory was constructed for Lake Charles using
 a phased approach that used machine learning, computer vision algorithm and data distributions to
-generate all attributes (attributes in white in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>) required for
+generate all attributes (attributes in bold letters in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>) required for
 the corresponding loss assessment. It is emphasized that the intent is to demonstrate how an
 inventory could be constructed and not to address potential errors, omissions or inaccuracies in
 the source data, i.e., source data are assumed to be accurate and no additional quality assurance
@@ -467,21 +463,20 @@ was conducted outside of addressing glaring omissions or errors. In the process 
 inventory, a number of scripts were developed to facilitate the actions described in the following
 sections. While these scripts were not intended to be production-quality software and were written
 assuming a particular data format/endpoint which may change over time, they do provide an example
-of the type of operations necessary to assemble a building inventory and thus are made available
+of the type of operations necessary to assemble a building inventory and thus will be made available
 at GitHub as an illustrative example.</p>
-<p>For each of the attributes identified in Table 2.2.1 the attribute, a description of the attribute
-and information on how the data was identified and validated is presented.</p>
+<p>For each of the attributes identified in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>,
+a description of the attribute and information on how the data was identified and validated is presented.</p>
 <div class="section" id="ai-ml-techniques-combined-with-computer-vision">
 <h3>AI/ML Techniques combined with Computer Vision<a class="headerlink" href="#ai-ml-techniques-combined-with-computer-vision" title="Permalink to this headline">¶</a></h3>
 <p>Many of those attributes were generated with the SimCenter’s
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/index.html">BRAILS</a> CityBuilder application.
-To avoid replication in the text, for those attributes the following describes how those attributes
+To avoid replication in the text, the following describes how those attributes
 were obtained. The sections below will present the validation of the data.</p>
 <p>CityBuilder is a python application that incorporates different AI/ML modules from BRAILS for performing
 specific tasks. The user creates a python script importing City Builder, constructing a CityBuilder
-object and then asking that object to build the inventory. An example script, as shown below, albeit
-our GoogleMapAPIKey removed, will create a  building inventory file for use in the workflow.
-The example file:</p>
+object and then asking that object to build the inventory. The example script shown below, albeit
+our GoogleMapAPIKey removed, will create a building inventory file for use in the workflow.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module from BRAILS</span>
 <span class="kn">from</span> <span class="nn">brails.CityBuilder</span> <span class="kn">import</span> <span class="n">CityBuilder</span>
 <span class="c1"># Initialize the CityBuilder</span>
@@ -492,82 +487,74 @@ The example file:</p>
 <span class="n">BIM</span> <span class="o">=</span> <span class="n">cityBuilder</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>When running CityBuilder will do the following:</p>
+<p>Upon execution, CityBuilder will:</p>
 <ol class="arabic simple">
 <li><p>Download footprints for all buildings in the interested region, Lake Charles, from the
 <a class="reference external" href="https://github.com/microsoft/USBuildingFootprints">Microsoft Footprint Dataset</a>.</p></li>
-<li><p>Based on the footprint information, CityBuilder calculates the coordinate (Latitude,
-Longitude) for each building’s centroid.</p></li>
-<li><p>These coordinates are then used as a reference for downloading both a satellite image and
-a street view image for each building using Google API’s.</p></li>
-<li><p>A series of pre-trained AI models are then called to perform computations on the images to
-obtain the interested building attributes.</p></li>
+<li><p>Calculates the coordinate (Latitude, Longitude) for each building’s centroid, based on the footprint information.</p></li>
+<li><p>Download both a satellite image and a street view image for each building using Google API’s and the extracted coordinates.</p></li>
+<li><p>Perform computations on the images to obtain the interested building attributes using a series of pre-trained AI models.</p></li>
 </ol>
-<div class="section" id="roofshape">
-<h4>RoofShape<a class="headerlink" href="#roofshape" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="attribute-roofshape">
+<h4>Attribute: RoofShape<a class="headerlink" href="#attribute-roofshape" title="Permalink to this headline">¶</a></h4>
 <p>The RoofShape is obtained by CityBuilder using the BRAILS Roof shape module. The roof shape module
-determines roof shape based on a satellite image obtained for the asset. The module uses machine
+determines roof shape based on a satellite image obtained for the building. The module uses machine
 learning, specifically it utilizes a convolutional neural network that has been trained on satellite
 images. In AI/ML terminology the Roof Shape module is an image classifier: it takes an image and
-classifies it into 1 of several categories. This classifier identifies the buildings as gabled,
-hipped, and flat. The original training of the AI model utilized 6,000 images obtained from google
+classifies it into one of three categories used in HAZUS: gable, hip, or flat as shown in
+<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 3.2.2.1</span></a>. The original training of the AI model utilized 6,000 images obtained from google
 satellite imagery in conjunction with roof labels obtained from
-<a class="reference external" href="https://www.openstreetmap.org/">Open Street Maps</a>. While more complex roof shapes could in
-theory be classified, Hazus defines roofs in one of three classes (gable, hip or flat as shown in
-<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 3.2.2.1</span></a>), so a similitude measure is used to determine which of these roof
-geometries is the best match to a given roof. More details of the classifier can be found
+<a class="reference external" href="https://www.openstreetmap.org/">Open Street Maps</a>. As many roofs have more complex shapes, a
+similitude measure is used to determine which of these roof geometries is the best match to a given roof.
+More details of the classifier can be found
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/roofClassifier.html">here</a>.
 The trained classifier was employed here to classify the roof information for Lake Charles.</p>
 <div class="align-center figure" id="roof-shape" style="width: 600px">
 <img alt="../../../_images/RoofShape.png" src="../../../_images/RoofShape.png" />
 <p class="caption"><span class="caption-number">Fig. 3.2.2.1 </span><span class="caption-text">Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by Hazus.</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
 </div>
-<p>The performance of the roof shape classifier was validated against a ground truth dataset comprising 125
-manually labeled satellite images from the U.S comprising images with unobstructed views of building roofs
-(a cleaned dataset).  The validation was documented
+<p>The performance of the roof shape classifier was validated against two ground truth datasets.
+The first is comprised of 125 manually labeled satellite images sampled from OpenStreetMap from
+across the US, retaining only those with unobstructed views of building roofs (a cleaned dataset).
+The second is 56 residences assessed by StEER for which roof types were one of the three HAZUS classes,
+e.g., removing all roofs labeled as “Complex” according to StEER’s distinct image labeling standards.
+The validation process is documented
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">here</a>.
-The confusion matrix, which presents visually    the predictions versus actual data from the original
-125 image validation set is as shown in :numref:<a href="#id2"><span class="problematic" id="id3">`</span></a>roof_shape_vali`a below.
-:numref:<a href="#id4"><span class="problematic" id="id5">`</span></a>roof_shape_vali`b shows predictions for Lake Charles testbed against data for
-56 buildings that were obtained from StEER dataset. It should be noted that
-the labeling systems are different for the BRAILS RoofShape model and the StEER dataset. In addition
-to flat, gabled, and hipped, there are hybrid types (e.g., Gable-Hip Combo). To compare the performance
-of the model, we removed those labels from StEER, resulting in 56 ground truth labels.</p>
+The confusion matrices are presented in <a class="reference internal" href="#roof-shape-vali"><span class="std std-numref">Fig. 3.2.2.2</span></a>. These matrices visually present
+the comparison between the predictions and actual data and should have values of 1.0 along the diagonal
+if the classification is perfect, affirming the accuracy of the classification by the roof shape classifier.</p>
 <div class="align-center figure" id="roof-shape-vali" style="width: 600px">
 <img alt="../../../_images/RoofShapeVali.png" src="../../../_images/RoofShapeVali.png" />
 <p class="caption"><span class="caption-number">Fig. 3.2.2.2 </span><span class="caption-text">Validation of BRAILS predicted roof shapes to roof shapes from OpenStreetMap and StEER.</span><a class="headerlink" href="#roof-shape-vali" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="occupancyclass">
-<h4>OccupancyClass<a class="headerlink" href="#occupancyclass" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="attribute-occupancyclass">
+<h4>Attribute: OccupancyClass<a class="headerlink" href="#attribute-occupancyclass" title="Permalink to this headline">¶</a></h4>
 <p>The occupancy class attribute is also determined by CityBuilder using the occupancy class classifier
-module in BRAILS. The occupancy classifier is also a convolutional neural network. The training data
-for this network was done using 15,743 google street view images with labels gained from OpenStreetMaps
-and the NJDEP dataset. This classifier labels buildings as one of: RES1 (single family building), RES3
-(multi-family building), COM1(Commercial building). More details of the classifier can be found
-<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/occupancyClassifier.html">here</a>.
-This classifier was used to classify the buildings in this dataset.</p>
+module in BRAILS. The occupancy classifier is also a convolutional neural network. This network trained
+using 15,743 google street view images with labels derived from OpenStreetMaps and the NJDEP dataset in
+the Atlantic County Testbed (see <a class="reference internal" href="../atlantic_city/asset_description.html#lbl-testbed-ac-asset-description"><span class="std std-ref">Asset Description</span></a>).
+This classifier labels buildings as one of: RES1 (single family building), RES3
+(multi-family building), COM1 (Commercial building). More details of the classifier can be found
+<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/occupancyClassifier.html">here</a>.</p>
 <p>The performance of the classifier was validated against a ground truth dataset that contains 293 street
 view images from the United States with unobstructed views of the buildings (cleaned data). The full
 validation was documented <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/occupancy.html">here</a>.
 The confusion matrix, which presents visually the predictions versus actual data from the original
-293 image validation set is as shown in :numref:<a href="#id8"><span class="problematic" id="id9">`</span></a>occ_class_vali`a below.
-:numref:<a href="#id10"><span class="problematic" id="id11">`</span></a>occ_class_vali`b shows the confusion matrix for the validation against the NJDEP dataset.
-:numref:<a href="#id12"><span class="problematic" id="id13">`</span></a>occ_class_vali`c shows how well the classifier captures occupancy classes for 121
-(117 single-family residential and 4 commercial) buildings contained in the Lake Charles StEER dataset.</p>
-<div class="align-center figure" id="occ-class-vali" style="width: 900px">
+293 image validation set, is as shown in <a class="reference internal" href="#occ-class-vali"><span class="std std-numref">Fig. 3.2.2.3</span></a> for OpenStreetMaps (see plot a), and
+the NJDEP dataset (see plot b). <a class="reference internal" href="#occ-class-pred"><span class="std std-numref">Fig. 3.2.2.4</span></a> displays the BRAILS occupancy predictions for
+Lake Charles for a selected region.</p>
+<div class="align-center figure" id="occ-class-vali" style="width: 600px">
 <img alt="../../../_images/OccupancyClassVali.png" src="../../../_images/OccupancyClassVali.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2.2.3 </span><span class="caption-text">Validation of BRAILS predicted occupancy classes to OpenStreetMap, NJDEP, and StEER.</span><a class="headerlink" href="#occ-class-vali" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.2.3 </span><span class="caption-text">Validation of BRAILS predicted occupancy classes to OpenStreetMap and NJDEP.</span><a class="headerlink" href="#occ-class-vali" title="Permalink to this image">¶</a></p>
 </div>
-<p>The occupancy predictions from AI for Lake Charles is plotted on the map for a selected region as shown
-in <a class="reference internal" href="#occ-class-pred"><span class="std std-numref">Fig. 3.2.2.4</span></a>.</p>
 <div class="align-center figure" id="occ-class-pred" style="width: 600px">
 <img alt="../../../_images/OccupancyClassPred.png" src="../../../_images/OccupancyClassPred.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2.2.4 </span><span class="caption-text">AI predicted occupancy types from street view images.</span><a class="headerlink" href="#occ-class-pred" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.2.4 </span><span class="caption-text">AI predicted occupancy types from street view images in Lake Charles.</span><a class="headerlink" href="#occ-class-pred" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="numberofstories">
-<h4>NumberOfStories<a class="headerlink" href="#numberofstories" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="attribute-numberofstories">
+<h4>Attribute: NumberOfStories<a class="headerlink" href="#attribute-numberofstories" title="Permalink to this headline">¶</a></h4>
 <p>This attribute is determined using CityBuilder using an object detection procedure. A detection model that
 can automatically detect rows of building windows was established to generate the image-based detections
 of visible floor locations from street-level images. The model was trained on the
@@ -592,12 +579,12 @@ designed to perform counts at the individual building level.</p>
 <p>For a random image dataset of buildings captured using arbitrary camera orientations (also
 termed in the wild images), the developed floor detection model was determined to capture
 the number of floors information of buildings with an accuracy of 86%.
-:numref:<a href="#id14"><span class="problematic" id="id15">`</span></a>num_stories_vali`a provides a breakdown of this accuracy measure for
+<a class="reference internal" href="#num-stories-vali"><span class="std std-numref">Fig. 3.2.2.6</span></a> (a) provides a breakdown of this accuracy measure for
 different prediction classes (i.e. the confusion matrix of model classifications).
 It was also observed that if the image dataset is established such that building images
 are captured with minimal obstructions, the building is at the center of the image, and
 perspective distortions are limited, the number of floors detections were performed at an
-accuracy level of 94.7% by the model. :numref:<a href="#id16"><span class="problematic" id="id17">`</span></a>num_stories_vali`b
+accuracy level of 94.7% by the model. <a class="reference internal" href="#num-stories-vali"><span class="std std-numref">Fig. 3.2.2.6</span></a> (b)
 shows the confusion matrix for the model predicting on the “cleaned” image data.
 In quantifying both accuracy levels, a test set of 3,000 images randomly selected
 across all New Jersey counties, excluding Atlantic County, was utilized.</p>
@@ -606,8 +593,8 @@ across all New Jersey counties, excluding Atlantic County, was utilized.</p>
 <p class="caption"><span class="caption-number">Fig. 3.2.2.6 </span><span class="caption-text">Confusion matrices for the number of floors predictor used in this study.</span><a class="headerlink" href="#num-stories-vali" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="meanroofht">
-<h4>MeanRoofHt<a class="headerlink" href="#meanroofht" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="attribute-meanroofht">
+<h4>Attribute: MeanRoofHt<a class="headerlink" href="#attribute-meanroofht" title="Permalink to this headline">¶</a></h4>
 <p>The elevation of the bottom plane of the roof (lowest edge of roof line) and elevation of the roof
 (peak of gable or apex of hip) are estimated with respect to grade (in feet) from street-level imagery.
 These geometric properties are defined visually for common residential coastal typologies in
@@ -659,8 +646,8 @@ dataset. The peak model performance was attained using the Adam optimizer at a l
 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world dimensions were
 attained by use of edge detections performed on satellite images.</p>
 </div>
-<div class="section" id="roofslope">
-<h4>RoofSlope<a class="headerlink" href="#roofslope" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="attribute-roofslope">
+<h4>Attribute: RoofSlope<a class="headerlink" href="#attribute-roofslope" title="Permalink to this headline">¶</a></h4>
 <p>Similar to the MeanRoofHt, two approaches are explored for determining the roof slope. First, RoofSlope is
 developed based on RoofShape and a uniform distribution: if the RoofShape is “flat” a slope of 0.0 is assigned;
 if Roof Shape is Hipped or Gabled, the roof slope is drawn from a uniform distribution of between 1/12 and 1/3.</p>
@@ -680,18 +667,18 @@ the dimensions of the building footprint. <a class="reference internal" href="#m
 <p>The AI generated building inventory is further augmented with multiple sources of information, including the
 third-party datasets, site-specific statistics summarized from observations, and existing knowledge and
 engineering judgement. The following attributes are obtained or derived from third-party data.</p>
-<div class="section" id="dswii">
-<h3>DSWII<a class="headerlink" href="#dswii" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="attribute-dswii">
+<h3>Attribute: DSWII<a class="headerlink" href="#attribute-dswii" title="Permalink to this headline">¶</a></h3>
 <p>Design Wind Speed II in mph (ASCE 7), was obtained by queries to the
 <a class="reference external" href="https://hazards.atcouncil.org/">ATC Hazards by Location API</a>.</p>
 </div>
-<div class="section" id="lulc">
-<h3>LULC<a class="headerlink" href="#lulc" title="Permalink to this headline">¶</a></h3>
-<p>Land use code is downloaded from the <a class="reference external" href="http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html">webgis website</a>.
+<div class="section" id="attribute-lulc">
+<h3>Attribute: LULC<a class="headerlink" href="#attribute-lulc" title="Permalink to this headline">¶</a></h3>
+<p>Land use code is downloaded from <a class="reference external" href="http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html">WebGIS</a>.
 Each land use class is represented by a integer as listed in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a></p>
 </div>
-<div class="section" id="year-built">
-<h3>Year Built<a class="headerlink" href="#year-built" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="attribute-yearbuilt">
+<h3>Attribute: YearBuilt<a class="headerlink" href="#attribute-yearbuilt" title="Permalink to this headline">¶</a></h3>
 <p>We derived the year built information based on the National Structure Inventory (NSI), which contains year
 built information for geocoded addresses in the region of interest. It should be noted that not all buildings
 are included in the NSI dataset and the geocodes of the addresses do not match perfectly with buildings,
@@ -705,16 +692,16 @@ network on the year built information from
 National Structure Inventory (NSI). The neural network is then used to predict the year built
 information for each building based on the spatial patterns it learned from the NSI dataset.
 The theory of using neural networks to learn the spatial patterns in data and to predict for
-missing values is detailed <a class="reference external" href="https://doi.org/10.1016/j.autcon.2020.103474">hear</a>.
+missing values is detailed <a class="reference external" href="https://doi.org/10.1016/j.autcon.2020.103474">here</a>.
 The result is shown in <a class="reference internal" href="#year-built-comp"><span class="std std-numref">Fig. 3.2.3.2</span></a>.</p>
 <div class="align-center figure" id="year-built-comp" style="width: 600px">
 <img alt="../../../_images/YearBuiltComp.png" src="../../../_images/YearBuiltComp.png" />
 <p class="caption"><span class="caption-number">Fig. 3.2.3.2 </span><span class="caption-text">Comparison of year built between NSI and SURF.</span><a class="headerlink" href="#year-built-comp" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="garage">
-<h3>Garage<a class="headerlink" href="#garage" title="Permalink to this headline">¶</a></h3>
-<p>The garage type is assumed based on Hazus Inventory Technical Manual and Statistics of 100 randomly
+<div class="section" id="attribute-garage">
+<h3>Attribute: Garage<a class="headerlink" href="#attribute-garage" title="Permalink to this headline">¶</a></h3>
+<p>The garage type is assumed based on HAZUS Inventory Technical Manual and Statistics of 100 randomly
 selected residential buildings in Lake Charles. The random selection is performed by the sample function
 provided by the pandas module of python. The locations of these random buildings are plotted as dots in
 <a class="reference internal" href="#garage-loc"><span class="std std-numref">Fig. 3.2.3.3</span></a>.</p>
@@ -729,8 +716,8 @@ Examples of different types can be found in <a class="reference internal" href="
 All street view images can be found <a class="reference external" href="https://berkeley.app.box.com/folder/134698333377">here</a>.
 A csv file of coordinates and classifications of each building can be found
 <a class="reference external" href="https://berkeley.app.box.com/file/794299957489">here</a>.</p>
-<span id="tab-garage-statistics"></span><table class="docutils align-center" id="id21">
-<caption><span class="caption-number">Table 3.2.3.1 </span><span class="caption-text">Statistics of 100 randomly sampled garages in Lake Charles.</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<span id="tab-garage-statistics"></span><table class="docutils align-center" id="id10">
+<caption><span class="caption-number">Table 3.2.3.1 </span><span class="caption-text">Statistics of 100 randomly sampled garages in Lake Charles.</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -765,20 +752,20 @@ A csv file of coordinates and classifications of each building can be found
 <img alt="../../../_images/GarageExample.png" src="../../../_images/GarageExample.png" />
 <p class="caption"><span class="caption-number">Fig. 3.2.3.4 </span><span class="caption-text">Examples of different types garages.</span><a class="headerlink" href="#garage-eg" title="Permalink to this image">¶</a></p>
 </div>
-<p>The Table 5-12 in Hazus Inventory Technical Manual provides the statistics of garages in the south
+<p>The Table 5-12 in HAZUS Inventory Technical Manual provides the statistics of garages in the south
 of the United States. It shows that 8% single-family residential buildings have carports, 35% have
-no garages. In our validation dataset, there are 7% carports which is close to Hazus Inventory
+no garages. In our validation dataset, there are 7% carports which is close to HAZUS Inventory
 Technical Manual. But we notice there are as high as 61% that have no garages.
 We used the statistics in Table to generate values for garages in the testbed.</p>
 </div>
-<div class="section" id="buildingtype">
-<h3>BuildingType<a class="headerlink" href="#buildingtype" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="attribute-buildingtype">
+<h3>Attribute: BuildingType<a class="headerlink" href="#attribute-buildingtype" title="Permalink to this headline">¶</a></h3>
 <p>Based on information found in the National Structure Inventory, 89% of residential buildings
 (single-family and multi-family) are wood, the rest are masonry. In the analysis, we conservatively
 assume all residential buildings are wood.</p>
 </div>
-<div class="section" id="avgjantemp">
-<h3>AvgJanTemp<a class="headerlink" href="#avgjantemp" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="attribute-avgjantemp">
+<h3>Attribute: AvgJanTemp<a class="headerlink" href="#attribute-avgjantemp" title="Permalink to this headline">¶</a></h3>
 <p>The average temperature in Lake Charles in January is above the critical value of 25F,
 based on NOAA average daily temperature.</p>
 <dl class="citation">

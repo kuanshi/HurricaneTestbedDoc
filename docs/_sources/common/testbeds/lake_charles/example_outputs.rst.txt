@@ -7,27 +7,26 @@ Example Outputs
 Regional Results (NSI-Based Year Built)
 ========================================
 
-The estimated wind damage states and losses under the Hurricane Laura
-are shown in :numref:`dl_1` and :numref:`dl_2`.
+The geospatial distribution of estimated wind damage states and losses under the Hurricane Laura
+are shown in :numref:`dl_and_cdf` (a) and :numref:`dl_and_cdf` (b), respectively. Referring  to :numref:`dl_and_cdf` (c), most of the buildings 
+in the studied region (85%) have relatively low and moderate damage (expected Damage State less than 2.0) 
+due to the wind hazard. Referring to :numref:`pds_cdf`, about 20% buildings would have 50% or higher probability of 
+exceeding Damage State 2, and about 5% buildings would have 50% or higher chance of exceeding Damage State 3. 
+The CDF of resulting loss ratios is shown in :numref:`dl_and_cdf` (d) where about 40% buildings would expect 
+a loss less than 10% of the reconstruction cost, and about 30% buildings could see a loss more than 20% of the total 
+reconstruction cost. The following sections will present comparative, sensitivity, and validation studies to investigate potential influences of important building attributes (e.g., year built) and 
+and compare the results to available damage assessment datasets from StEER and FEMA.
 
-.. figure:: figure/ExpectedDS.png
-   :name: dl_1
+.. figure:: figure/DS_LS_CDF.png
+   :name: dl_and_cdf
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :figwidth: 1200
 
-   Estimated regional damage state map.
-
-.. figure:: figure/ExpectedLoss.png
-   :name: dl_2
-   :align: center
-   :figclass: align-center
-   :figwidth: 800
-
-   Estimated loss ratio map.
+   Estimated regional damage states and loss ratios.
 
 
-SURF-Zilow Year Built Results
+SURF-Zillow Year Built Results
 =============================
 
 As discussed in :ref:`lbl-testbed_LC_asset_description`, the National Structural Inventory (NSI) is used for 
@@ -39,7 +38,7 @@ In parallel to this exploration, `Zillow <https://www.zillow.com/>`_ also provid
 many of the residual buildings in the studied region.
 
 Similar to the implementation of NSI dataset, the 1182 data points of year built from Zillow are used to train a 
-neural network, :numref:`surf_ yb_test` shows the verification of the trained neural network (predicted vs. true values,
+neural network, :numref:`surf_yb_test` shows the verification of the trained neural network (predicted vs. true values,
 Zillow dataset). More than :math:`85%` buildings have prediction errors less than 20 years.  
 
 .. figure:: figure/SURF_YearBuiltTest.png
@@ -53,7 +52,7 @@ Zillow dataset). More than :math:`85%` buildings have prediction errors less tha
 The neural network is used to predict the year built information for the entire Lake Charles inventory. :numref:`surf_yb_comp`
 contrast the resulting SURF-Zillow and the SURF-NSI year built spatial distribution. The difference in year built is relatively 
 small for the downtown buildings (~1960s) but increases at the bounds with a maximum of 80 years. The year built information 
-from SURF-Zillow dataset is used for an extra round of simulation, the spatial disribution of damage states of SURF-Zillow set 
+from SURF-Zillow dataset is used for an extra round of simulation, the spatial distribution of damage states of SURF-Zillow set 
 is shown in :numref:`ds_zillow_comp` and contrasted against the SURF-NSI result (:numref:`dl_1`). Note that the difference is not 
 prominent in the downtown Lake Charles. The major spot of divergent results are seen in southwest of the city where the SURF-Zillow set 
 predicts relatively lower damage states. Provided in :numref:`pds_cdf` are the CDF distributions of probability of exceeding DS-2 
@@ -89,7 +88,7 @@ Validation: StEER
 ==================
 
 For the Hurricane Laura, the StEER has released the report of the visual inspection and damage estimation 
-for sample buildings in Lake Charles (refered as StEER buildings). There are 99 StEER buildings also 
+for sample buildings in Lake Charles (refereed as StEER buildings). There are 99 StEER buildings also 
 included in this testbed, which offers an opportunity to validate the workflow. In the meantime, the relatively 
 small sample size also offers the convenience of investigating the influence of different modeling parameters 
 on the estimated damage states and related them to corresponding field observations to help understand the 
@@ -97,20 +96,20 @@ dominant trends in the data. As will be illustrated, some of these trends valida
 methodology and others indicate potential measures to improve the wind resistance.
 
 :numref:`influential_var` plots the estimated damage states against key building attributes that are found
-to influence the resulting damage state under the hurricane wind hazard. Major obsered trends are as follows:
+to influence the resulting damage state under the hurricane wind hazard. Major observed trends are as follows:
 
 #. In general, the damage state is negatively correlated to the year built. Buildings with built year after 2000 
-   are found to have prominant improvement in the wind resistance and have lower damage states. This is reasoned 
+   are found to have prominent improvement in the wind resistance and have lower damage states. This is reasoned 
    by the authors to be led by the assumption in the ruleset that the post-2000 buildings would have shutter 
    measures and stronger roof deck attachment.
 #. The surface roughness, i.e., terrain feature, is found to be a key variable when considering the potential 
    damage from the hurricane to the building. Even moving from open terrain to light suburban, following the 
-   damage fuctions in HAZUS, we see about 50% reduction in the average damage state.
+   damage functions in HAZUS, we see about 50% reduction in the average damage state.
 #. Shutters could significantly help reduce the potential wind-induced damage: average damage state is reduced 
    from 2.2 to 1.2
 #. Garage type also would influence the building performance against the wind hazard: garages per SFBC 1994 are 
    found to have much better behaviors than the standard and wake garages.
-#. Roof deck attachement using a tighter nail spacing (6 in vs. 12 in) is found to perform much better.
+#. Roof deck attachment using a tighter nail spacing (6 in vs. 12 in) is found to perform much better.
 #. Gable roof is found to have slightly worse performance than the hip and flat roofs.
 
 .. figure:: figure/InflVari.png
@@ -124,11 +123,11 @@ to influence the resulting damage state under the hurricane wind hazard. Major o
 It is noted that the trends observed in :numref:`influential_var` is based on a so-called "median" model representing 
 our best estimates of building attributes. However, in reality, because of the lack of high-resolution or multiple 
 data resources, we may not have 100% confidence about certain building attributes or hazard fields, e.g., year built 
-or peak wind speed at a specific site. Hence, the esimated "median" damage state from the "median: model may not give 
+or peak wind speed at a specific site. Hence, the estimated "median" damage state from the "median: model may not give 
 the full representation of the real damage potential.  As illustrated in :numref:`ds_uq`, if considering the uncertainty 
-in the year built (instead of a deterministic value, asssuming it follows a normal distribution with a standard devidation 
+in the year built (instead of a deterministic value, assuming it follows a normal distribution with a standard deviation 
 of 10 years), we could sample year built from the distribution and repeat the damage assessment by sufficient times to 
-estimated the distrbution of damage state.
+estimated the distribution of damage state.
 
 .. figure:: figure/DS_uq.png
    :name: ds_uq
@@ -140,9 +139,9 @@ estimated the distrbution of damage state.
 
 Following this idea, for each of the 99 StEER buildings, we sampled 100 year built from a distribution with the mean of 
 the given year built value and a standard deviation of 10 years and run the damage assessment for each sampled case.
-:numref:`ds_uq_yb` summarizes the comparison between the mean and 95-precentile of estimated damage state and the 
-StEER damage state. Similar exercises (:numref:`ds_uq_pws`) are conducted for the peak wind speed where we sampled 100 PWS from a disribution 
-with a standard deviation of 20 mph.
+:numref:`ds_uq_yb` summarizes the comparison between the mean and 95-percentile of estimated damage state and the 
+StEER damage state. Similar exercises (:numref:`ds_uq_pws`) are conducted for the peak wind speed where we sampled 100 PWS from a 
+distribution with a standard deviation of 20 mph.
 
 .. figure:: figure/DS_uq_yb.png
    :name: ds_uq_yb
@@ -200,21 +199,21 @@ in this testbed. :numref:`fema_damage_subset` is a subset of data obtained from
    :header-rows: 1
    :align: center
 
-:numref:`fema_dc` shows the damage categories collected from the FEMA Damage Assessmet Database, where most buildings 
+:numref:`fema_dc` shows the damage categories collected from the FEMA Damage Assessment Database, where most buildings 
 are in low damage levels, i.e., No Damage or Affected. Also noted from :numref:`fema_damage_subset` is that all these 
 buildings are subject to CAT-4 gust wind speed, which is consistent with our input wind field where the 3-s gust peak 
 wind speed is about 130 :math:`mph` (please see :ref:`lbl-testbed_LC_hazard_characterization`).
 
 To compare these damage categories with the estimated damage states by the workflow in this testbed, we assume that the 
-five damage categories are mapped to the five damage states in the HAZUS wind damage functions, assuming the inudation is 
+five damage categories are mapped to the five damage states in the HAZUS wind damage functions, assuming the inundation is 
 not cause prominent flood-induced damage to the buildings. While this assumption is subjected to future validation, 
 :numref:`fema_ds_comp` summarizes (1) the expected damage states of the 573 buildings, (2) the spatial distribution of difference between the FEMA 
-Damage Categories and esitmated damage states, and (3) the statistic distribution of the difference between the two.
+Damage Categories and estimated damage states, and (3) the statistic distribution of the difference between the two.
 Given the FEMA set is based on a discrete (category-based) description while the testbed set is based on probabilistic 
 estimates, the two results have fairly good agreement except the FEMA set has buildings predicted as no damage (DS-0). 
-This overprediction of DS-0 is also seen in StEER set resuls (:numref:`ds_uq_yb` and :numref:`ds_uq_pws`). The uncertainty 
-in the year built and wind speed, to some extent, can help explain this overprediction. Future investigations are still 
-needed to consider other possible factors causing this mismatch in predicted DS-0, e.g., the surface roughness (for these 573 buildinsg, 
+This over-prediction of DS-0 is also seen in StEER set results (:numref:`ds_uq_yb` and :numref:`ds_uq_pws`). The uncertainty 
+in the year built and wind speed, to some extent, can help explain this over-prediction. Future investigations are still 
+needed to consider other possible factors causing this mismatch in predicted DS-0, e.g., the surface roughness (for these 573 buildings, 
 the terrain inferred from LULC and used to determine the fragility function is "Open").
 
 .. figure:: figure/FEMA_DC.png

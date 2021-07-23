@@ -13,7 +13,7 @@ In Asset Representation
 ==============================
 
 As discussed in :ref:`lbl-testbed_LC_asset_representation`, the HAZUS Hurricane Technical Manual differentiates 
-buildings based on asset attibutes for the subjected hazard type (wind or storm surge). These attributes 
+buildings based on asset attributes for the subjected hazard type (wind or storm surge). These attributes 
 are the buildings properties or structure features that would influence the 
 resulting damage and loss of the asset under the given hazard. Among these key attributes, some are 
 determined by developed rulesets with more basic building information.  These rules are based on the statistics 
@@ -21,7 +21,7 @@ in the available data. Taking the shutters of assets that were built before 2000
 indicates that roughly 45% of house owners were likely to apply shutters on some or all of their windows before a hurricane makes landfall.  Accordingly, in the 
 asset representation (ruleset), a pre-2000 house has 45% probability to be assigned to have shutters, and 55% 
 probability to be assigned with no shutter. Note that the resulting HAZUS building type is deterministic for 
-each individual sample while the uncertainty induced by different possible attribute options are evaluted 
+each individual sample while the uncertainty induced by different possible attribute options are evaluated 
 via multiple random realizations. :numref:`uq_rulesets` summarizes the three building attributes whose values
 are randomly generated in this testbed. 
 
@@ -59,7 +59,7 @@ In Damage and Loss Assessment
 
 The testbed implemented :ref:`pelicun<https://pelicun.readthedocs.io/en/latest/index.html>` (Probabilistic Estimation of Losses, Injuries, and Community resilience Under 
 Natural disasters) to quantify damage (damage states) and loss (in the form of decision variables, e.g., loss ratio). 
-Uncertainty from the hazard characterization step is first considered by the random sampling module in pelicun to 
+Uncertainty from the hazard characterization step is first considered by the random sampling module in PELICUN to 
 numerically sample the (joint) distribution of intensity measures (which are treated as engineering parameter 
 demands, EDPs in the HAZUS method). In specific, 1000 samples of combined wind speed and storm surge pairs are generated 
 for each asset in this testbed. Second, the corresponding damage and loss models are populated for each asset from HAZUS 
