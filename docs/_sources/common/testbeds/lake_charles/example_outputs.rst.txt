@@ -147,7 +147,7 @@ distribution with a standard deviation of 20 mph.
    :name: ds_uq_yb
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :figwidth: 400
 
    Influence of uncertainty in year built on the estimated damage state.
 
