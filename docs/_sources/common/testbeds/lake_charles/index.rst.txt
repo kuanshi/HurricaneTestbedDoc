@@ -61,6 +61,8 @@ of this application and associated SimCenter software as listed in :numref:`soft
      - v1.1.0
    * - SimCenterBackendApplication
      - v2.3.0
+   * - pelicun
+     - v2.5
 
 Given the 
 significance of the building inventory generation for this testbed, this documentation was written in response to 

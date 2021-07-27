@@ -826,8 +826,8 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tbody>
 </table>
 <p>For the Atlantic County Inventory, any buildings not included in the NJDEP footprints had attributes encompassed
-by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called <strong>MODIV</strong>) (<a class="reference internal" href="../lake_charles/asset_description.html#modiv" id="id1"><span>[MODIV]</span></a>) as defined in
-the MODIV User Manual (<a class="reference internal" href="../lake_charles/asset_description.html#modiv18" id="id2"><span>[MODIV18]</span></a>). This notably affected attributes such as OccupancyClass, BuildingType and FoundationType,
+by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called <strong>MODIV</strong>) (<a class="reference internal" href="#modiv" id="id1"><span>[MODIV]</span></a>) as defined in
+the MODIV User Manual (<a class="reference internal" href="#modiv18" id="id2"><span>[MODIV18]</span></a>). This notably affected attributes such as OccupancyClass, BuildingType and FoundationType,
 whose rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-njdep"><span class="std std-numref">Table 2.2.3.4</span></a>.
 In all cases where attributes were derived from MODIV data, whose fields can be sparsely populated, default
 values were initially assigned to ensure that every footprint would have the attributes required to execute
@@ -866,9 +866,9 @@ vulnerable attribute option). These initial assignments were then updated if add
 <p>Some attributes in the Building Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus
 remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data
 from the following third-party sources:
-1. <strong>Locations of essential facilities</strong> were sourced from NJ Office of Information Technology (part of NJGIN Open Data <a class="reference internal" href="../lake_charles/asset_description.html#njgin20" id="id3"><span>[NJGIN20]</span></a>)
-2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="../lake_charles/asset_description.html#atc20" id="id4"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7
-3. <strong>Terrain features</strong> (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data <a class="reference internal" href="../lake_charles/asset_description.html#njgin20" id="id5"><span>[NJGIN20]</span></a>)</p>
+1. <strong>Locations of essential facilities</strong> were sourced from NJ Office of Information Technology (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id3"><span>[NJGIN20]</span></a>)
+2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="#atc20" id="id4"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7
+3. <strong>Terrain features</strong> (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id5"><span>[NJGIN20]</span></a>)</p>
 <p>See the Transformation and Detail columns in the PDFs listed in <a class="reference internal" href="#tab-bldginventory"><span class="std std-numref">Table 2.2.1.1</span></a> for specifics of how each attribute
 was assigned using these various third-party data sources.</p>
 </div>
@@ -891,7 +891,7 @@ for validation, and 5% testing of the model. In order to ensure faster model con
 initial weights of the model were set to model weights of the (pretrained) object detection
 model that, at the time, achieved state-of-the-art performance on the 2017 COCO Detection set.
 For this specific implementation, the peak model performance was achieved using the Adam optimizer
-at a learning rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a> shows examples of the
+at a learning rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="#num-stories-detection"><span class="std std-numref">Fig. 2.2.4.1</span></a> shows examples of the
 floor detections performed by the model.</p>
 <div class="align-center figure" id="num-stories-detection" style="width: 1000px">
 <img alt="../../../_images/number_of_stories_detection.png" src="../../../_images/number_of_stories_detection.png" />
@@ -929,7 +929,7 @@ in the NJDEP inventory. Hence, the elevation of the bottom plane of the roof (lo
 of roof line), elevation of the roof (peak of gable or apex of hip), and height of first of
 floor as determined from base of door’s height, all defined with respect to grade (in feet),
 were estimated from street-level imagery. These geometric properties are defined visually
-for common residential coastal typologies in <a class="reference internal" href="../lake_charles/asset_description.html#building-elevation"><span class="std std-numref">Fig. 3.2.2.7</span></a>. The mean height of the roof system
+for common residential coastal typologies in <a class="reference internal" href="#building-elevation"><span class="std std-numref">Fig. 2.2.4.3</span></a>. The mean height of the roof system
 is then derived from the aforementioned roof elevations.</p>
 <div class="align-center figure" id="building-elevation" style="width: 1000px">
 <img alt="../../../_images/building_elevation.png" src="../../../_images/building_elevation.png" />
@@ -969,7 +969,7 @@ edge detections performed on satellite images.</p>
 <li><dl>
 <dt><strong>Roof Geometry</strong>: Roof shape and slope are not available in state inventory data and required for wind loss</dt><dd><blockquote>
 <div><p>modeling. The SimCenter developed application Building Recognition using Artificial
-Intelligence at Large Scales, BRAILS (<a class="reference internal" href="../lake_charles/asset_description.html#wang19" id="id10"><span>[Wang19]</span></a>), is used to interpret satellite images
+Intelligence at Large Scales, BRAILS (<a class="reference internal" href="#wang19" id="id10"><span>[Wang19]</span></a>), is used to interpret satellite images
 of building roofs, which are collected from Google Maps. The satellite images are labeled
 with shape types to form a dataset, upon which a Convolutional Neural Network (CNN) is
 trained so that it can give rapid predictions of roof types when given new images of roofs.
@@ -977,13 +977,13 @@ The footprint centroid (Latitude and Longitude in Building Inventory) is used as
 location index when downloading images
 automatically from Google Maps. While more complex roof shapes could in theory be classified,
 the current use of HAZUS damage and loss functions required the use of similitude measures
-to define each roof as an “effective” gable, hip or flat geometry (<a class="reference internal" href="../lake_charles/asset_description.html#roof-shape"><span class="std std-numref">Fig. 3.2.2.1</span></a>). Using BRAILS, this
+to define each roof as an “effective” gable, hip or flat geometry (<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 2.2.4.4</span></a>). Using BRAILS, this
 classification was achieved with approximately 90.3% accuracy based on validation studies.
 The detailed validation process can be found in
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">BRAILS online documentation</a>.</p>
 <div class="align-center figure" id="roof-shape" style="width: 800px">
 <img alt="../../../_images/roof_shape.png" src="../../../_images/roof_shape.png" />
-<p class="caption"><span class="caption-number">Fig. 2.2.4.4 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="../lake_charles/asset_description.html#wang19" id="id11"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.4.4 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="#wang19" id="id11"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>Roof slope is calculated as the ratio between the roof height and half the depth of the
