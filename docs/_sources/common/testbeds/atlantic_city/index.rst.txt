@@ -9,7 +9,7 @@ Atlantic County, NJ
 
 A number of members of the SimCenter Team assisted with this testbed’s development and its documentation: 
 Adam Zsarnoczay, Ajay Harish, Barbaros Cetiner, Charles Wang, Claudio Perez, Joanna Zou, Kuanshi Zhong, Stevan Gavrilovic, and Wael Elhaddad. 
-The testbed conceptualization was guided by Tracy Tracy Kijewski-Correa (University of Notre Dame), 
+The testbed conceptualization was guided by Tracy Kijewski-Correa (University of Notre Dame), 
 with implementation supervised by Frank McKenna (University of California Berkeley). 
 Additional guidance was offered by Greg Deierlein (Stanford University), Andrew Kennedy 
 (University of Notre Dame), and Matt Schoettler (University of California Berkeley). 
