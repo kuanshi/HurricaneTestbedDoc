@@ -59,7 +59,7 @@ of this application and associated SimCenter software as listed in :numref:`soft
      - Version
    * - R2D
      - v1.1.0
-   * - SimCenterBackendApplication
+   * - SimCenterBackendApplications
      - v2.3.0
    * - pelicun
      - v2.5
