@@ -257,8 +257,8 @@ provides a set of attributes that will be assigned to each asset to form the bui
 serving as input to the workflow. For each attribute a
 row in the table is provided. Each row has a number of columns: the attribute name, description,
 format (alphanumeric, floating point number, etc.), the data source used to define that attribute.</p>
-<span id="tab-bldg-inv-data-model-lc"></span><table class="docutils align-center" id="id13">
-<caption><span class="caption-number">Table 3.2.1.1 </span><span class="caption-text">Building inventory data model, detailed for Lake Charles Inventory.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<span id="tab-bldg-inv-data-model-lc"></span><table class="docutils align-center" id="id12">
+<caption><span class="caption-number">Table 3.2.1.1 </span><span class="caption-text">Building inventory data model, detailed for Lake Charles Inventory.</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -712,14 +712,14 @@ provided by the pandas module of python. The locations of these random buildings
 <p>We downloaded the street view images for each building from Google Maps and manually classified the images
 into the following attached garage (AG) features: None, AG-open, AG-standard, Carport. We didn’t find any detached garages in
 the 100 samples. Examples of different types can be found in <a class="reference internal" href="#garage-eg"><span class="std std-numref">Fig. 3.2.3.4</span></a>.
-All street view images can be found <a class="reference external" href="https://berkeley.app.box.com/folder/134698333377">here</a>.
+All street view images can be found <a class="reference download internal" download="" href="../../../_downloads/48ce9d6cdcfec49bd03bc1b30f372717/garage100_lakecharles.csv"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>
 Note that AG-open assumes that the garage shares the same primary roof as the home,
 whereas a carport has its own roof system.
 Detailed statistics can be found in <a class="reference internal" href="#tab-garage-statistics"><span class="std std-numref">Table 3.2.3.1</span></a>.
 A csv file of coordinates and classifications of each building can be found
 <a class="reference external" href="https://berkeley.app.box.com/file/794299957489">here</a>.</p>
-<span id="tab-garage-statistics"></span><table class="docutils align-center" id="id14">
-<caption><span class="caption-number">Table 3.2.3.1 </span><span class="caption-text">Statistics of 100 randomly sampled garages in Lake Charles.</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<span id="tab-garage-statistics"></span><table class="docutils align-center" id="id13">
+<caption><span class="caption-number">Table 3.2.3.1 </span><span class="caption-text">Statistics of 100 randomly sampled garages in Lake Charles.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -757,7 +757,7 @@ A csv file of coordinates and classifications of each building can be found
 <p>The Table 5-12 in HAZUS Inventory Technical Manual provides the statistics of garages in the south
 of the United States. It shows that 8% single-family residential buildings have carports, 35% have
 no garages. In our validation dataset, there are 7% carports which is close to HAZUS Inventory
-Technical Manual (<a class="reference internal" href="#fema21" id="id10"><span>[FEMA21]</span></a>). But we notice there are as high as 61% that have no garages. As a result,
+Technical Manual (<a class="reference internal" href="asset_representation.html#fema21" id="id9"><span>[FEMA21]</span></a>). But we notice there are as high as 61% that have no garages. As a result,
 we used the statistics in <a class="reference internal" href="#tab-garage-statistics"><span class="std std-numref">Table 3.2.3.1</span></a> to generate values for garages in the
 testbed.</p>
 </div>
@@ -765,7 +765,7 @@ testbed.</p>
 <h3>Attribute: BuildingType<a class="headerlink" href="#attribute-buildingtype" title="Permalink to this headline">¶</a></h3>
 <p>Based on information found in the National Structure Inventory, 89% of residential buildings
 (single-family and multi-family) are wood, the rest are masonry. In the analysis, we conservatively
-assume all residential buildings are wood. Referring <a href="#id11"><span class="problematic" id="id12">:numref:`tab-bldg_inv_data_model_lc`_</span></a>, we used
+assume all residential buildings are wood. Referring <a href="#id10"><span class="problematic" id="id11">:numref:`tab-bldg_inv_data_model_lc`_</span></a>, we used
 “Above” for the buildings in the studied inventory.</p>
 </div>
 <div class="section" id="attribute-avgjantemp">
@@ -782,7 +782,7 @@ based on NOAA average daily temperature.</p>
 <dt class="label" id="microsoft18"><span class="brackets"><a class="fn-backref" href="#id2">Microsoft18</a></span></dt>
 <dd><p>Microsoft (2018), US Building Footprints. <a class="reference external" href="https://github.com/Microsoft/USBuildingFootprints">https://github.com/Microsoft/USBuildingFootprints</a></p>
 </dd>
-<dt class="label" id="fema21"><span class="brackets"><a class="fn-backref" href="#id10">FEMA21</a></span></dt>
+<dt class="label" id="fema21"><span class="brackets"><a class="fn-backref" href="#id9">FEMA21</a></span></dt>
 <dd><p>FEMA (2021), Hazus Inventory Technical Manual. Hazus 4.2 Service Pack 3. Federal Emergency Management Agency, Washington D.C.</p>
 </dd>
 </dl>

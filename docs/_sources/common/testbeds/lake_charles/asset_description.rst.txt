@@ -365,7 +365,7 @@ provided by the pandas module of python. The locations of these random buildings
 We downloaded the street view images for each building from Google Maps and manually classified the images 
 into the following attached garage (AG) features: None, AG-open, AG-standard, Carport. We didn’t find any detached garages in 
 the 100 samples. Examples of different types can be found in :numref:`garage_eg`. 
-All street view images can be found `here <https://berkeley.app.box.com/folder/134698333377>`_. 
+All street view images can be found :download:`here <table/garage100_lakecharles.csv>` 
 Note that AG-open assumes that the garage shares the same primary roof as the home, 
 whereas a carport has its own roof system.
 Detailed statistics can be found in :numref:`tab-garage_statistics`. 
