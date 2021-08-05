@@ -330,7 +330,7 @@ as shown in :numref:`year_built_nsi`.
 
    National Structure Inventory data points.
 
-To address this issue, `SURF <https://github.com/NHERI-SimCenter/SURF>`_([Wang19]_) is employed to construct and train a neural 
+To address this issue, `SURF <https://github.com/NHERI-SimCenter/SURF>`_ ([Wang19]_) is employed to construct and train a neural 
 network on the year built information from 
 National Structure Inventory (NSI). The neural network is then used to predict the year built 
 information for each building based on the spatial patterns it learned from the NSI dataset. 

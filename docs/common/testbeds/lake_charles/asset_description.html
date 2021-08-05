@@ -257,8 +257,8 @@ provides a set of attributes that will be assigned to each asset to form the bui
 serving as input to the workflow. For each attribute a
 row in the table is provided. Each row has a number of columns: the attribute name, description,
 format (alphanumeric, floating point number, etc.), the data source used to define that attribute.</p>
-<span id="tab-bldg-inv-data-model-lc"></span><table class="docutils align-center" id="id12">
-<caption><span class="caption-number">Table 3.2.1.1 </span><span class="caption-text">Building inventory data model, detailed for Lake Charles Inventory.</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<span id="tab-bldg-inv-data-model-lc"></span><table class="docutils align-center" id="id14">
+<caption><span class="caption-number">Table 3.2.1.1 </span><span class="caption-text">Building inventory data model, detailed for Lake Charles Inventory.</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -687,12 +687,12 @@ as shown in <a class="reference internal" href="#year-built-nsi"><span class="st
 <img alt="../../../_images/YearBuiltNSI.png" src="../../../_images/YearBuiltNSI.png" />
 <p class="caption"><span class="caption-number">Fig. 3.2.3.1 </span><span class="caption-text">National Structure Inventory data points.</span><a class="headerlink" href="#year-built-nsi" title="Permalink to this image">¶</a></p>
 </div>
-<p>To address this issue, <a class="reference external" href="https://doi.org/10.1016/j.autcon.2020.103474">SURF &lt;https://github.com/NHERI-SimCenter/SURF&gt;`_([Wang19]_) is employed to construct and train a neural
+<p>To address this issue, <a class="reference external" href="https://github.com/NHERI-SimCenter/SURF">SURF</a> (<a class="reference internal" href="#wang19" id="id8"><span>[Wang19]</span></a>) is employed to construct and train a neural
 network on the year built information from
 National Structure Inventory (NSI). The neural network is then used to predict the year built
 information for each building based on the spatial patterns it learned from the NSI dataset.
 The theory of using neural networks to learn the spatial patterns in data and to predict for
-missing values is detailed `here</a>.
+missing values is detailed <a class="reference external" href="https://doi.org/10.1016/j.autcon.2020.103474">here</a>.
 The result is shown in <a class="reference internal" href="#year-built-comp"><span class="std std-numref">Fig. 3.2.3.2</span></a>.</p>
 <div class="align-center figure" id="year-built-comp" style="width: 600px">
 <img alt="../../../_images/YearBuiltComp.png" src="../../../_images/YearBuiltComp.png" />
@@ -734,8 +734,8 @@ whereas a carport has its own roof system.
 Detailed statistics can be found in <a class="reference internal" href="#tab-garage-statistics"><span class="std std-numref">Table 3.2.3.1</span></a>.
 A csv file of coordinates and classifications of each building can be found
 <a class="reference external" href="https://berkeley.app.box.com/file/794299957489">here</a>.</p>
-<span id="tab-garage-statistics"></span><table class="docutils align-center" id="id13">
-<caption><span class="caption-number">Table 3.2.3.1 </span><span class="caption-text">Statistics of 100 randomly sampled garages in Lake Charles.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<span id="tab-garage-statistics"></span><table class="docutils align-center" id="id15">
+<caption><span class="caption-number">Table 3.2.3.1 </span><span class="caption-text">Statistics of 100 randomly sampled garages in Lake Charles.</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -773,7 +773,7 @@ A csv file of coordinates and classifications of each building can be found
 <p>The Table 5-12 in HAZUS Inventory Technical Manual provides the statistics of garages in the south
 of the United States. It shows that 8% single-family residential buildings have carports, 35% have
 no garages. In our validation dataset, there are 7% carports which is close to HAZUS Inventory
-Technical Manual (<a class="reference internal" href="#fema21" id="id9"><span>[FEMA21]</span></a>). But we notice there are as high as 61% that have no garages. As a result,
+Technical Manual (<a class="reference internal" href="#fema21" id="id11"><span>[FEMA21]</span></a>). But we notice there are as high as 61% that have no garages. As a result,
 we used the statistics in <a class="reference internal" href="#tab-garage-statistics"><span class="std std-numref">Table 3.2.3.1</span></a> to generate values for garages in the
 testbed.</p>
 </div>
@@ -781,7 +781,7 @@ testbed.</p>
 <h3>Attribute: BuildingType<a class="headerlink" href="#attribute-buildingtype" title="Permalink to this headline">¶</a></h3>
 <p>Based on information found in the National Structure Inventory, 89% of residential buildings
 (single-family and multi-family) are wood, the rest are masonry. In the analysis, we conservatively
-assume all residential buildings are wood. Referring <a href="#id10"><span class="problematic" id="id11">:numref:`tab-bldg_inv_data_model_lc`_</span></a>, we used
+assume all residential buildings are wood. Referring <a href="#id12"><span class="problematic" id="id13">:numref:`tab-bldg_inv_data_model_lc`_</span></a>, we used
 “Above” for the buildings in the studied inventory.</p>
 </div>
 <div class="section" id="attribute-avgjantemp">
@@ -792,13 +792,13 @@ based on NOAA average daily temperature.</p>
 <dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id6">ATC20</a></span></dt>
 <dd><p>ATC (2020b), ATC Hazards By Location, <a class="reference external" href="https://hazards.atcouncil.org/">https://hazards.atcouncil.org/</a>, Applied Technology Council, Redwood City, CA.</p>
 </dd>
-<dt class="label" id="wang19"><span class="brackets">Wang19</span></dt>
+<dt class="label" id="wang19"><span class="brackets"><a class="fn-backref" href="#id8">Wang19</a></span></dt>
 <dd><p>Wang C. (2019), NHERI-SimCenter/SURF: v0.2.0 (Version v0.2.0). Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.3463676">http://doi.org/10.5281/zenodo.3463676</a></p>
 </dd>
 <dt class="label" id="microsoft18"><span class="brackets"><a class="fn-backref" href="#id2">Microsoft18</a></span></dt>
 <dd><p>Microsoft (2018), US Building Footprints. <a class="reference external" href="https://github.com/Microsoft/USBuildingFootprints">https://github.com/Microsoft/USBuildingFootprints</a></p>
 </dd>
-<dt class="label" id="fema21"><span class="brackets"><a class="fn-backref" href="#id9">FEMA21</a></span></dt>
+<dt class="label" id="fema21"><span class="brackets"><a class="fn-backref" href="#id11">FEMA21</a></span></dt>
 <dd><p>FEMA (2021), Hazus Inventory Technical Manual. Hazus 4.2 Service Pack 3. Federal Emergency Management Agency, Washington D.C.</p>
 </dd>
 </dl>
