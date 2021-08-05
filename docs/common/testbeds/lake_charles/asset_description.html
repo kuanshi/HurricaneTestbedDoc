@@ -698,20 +698,36 @@ The result is shown in <a class="reference internal" href="#year-built-comp"><sp
 <img alt="../../../_images/YearBuiltComp.png" src="../../../_images/YearBuiltComp.png" />
 <p class="caption"><span class="caption-number">Fig. 3.2.3.2 </span><span class="caption-text">Comparison of year built between NSI and SURF.</span><a class="headerlink" href="#year-built-comp" title="Permalink to this image">¶</a></p>
 </div>
+<p>In parallel to this exploration, <a class="reference external" href="https://www.zillow.com/">Zillow</a> also provides the year built information for
+many of the residual buildings in the studied region.</p>
+<p>Similar to the implementation of NSI dataset, the 1182 data points of year built from Zillow are used to train a
+neural network, <a class="reference internal" href="#surf-yb-test"><span class="std std-numref">Fig. 3.2.3.3</span></a> shows the verification of the trained neural network (predicted vs. true values,
+Zillow dataset). More than <span class="math notranslate nohighlight">\(85%\)</span> buildings have prediction errors less than 20 years.</p>
+<div class="align-center figure" id="surf-yb-test" style="width: 700px">
+<img alt="../../../_images/SURF_YearBuiltTest.png" src="../../../_images/SURF_YearBuiltTest.png" />
+<p class="caption"><span class="caption-number">Fig. 3.2.3.3 </span><span class="caption-text">SURF-predicted vs. original year built from Zillow dataset.</span><a class="headerlink" href="#surf-yb-test" title="Permalink to this image">¶</a></p>
+</div>
+<p>The neural network is used to predict the year built information for the entire Lake Charles inventory. <a class="reference internal" href="#surf-yb-comp"><span class="std std-numref">Fig. 3.2.3.4</span></a>
+contrast the resulting SURF-Zillow and the SURF-NSI year built spatial distribution. The difference in year built is relatively
+small for the downtown buildings (~1960s) but increases at the bounds with a maximum of 80 years.</p>
+<div class="align-center figure" id="surf-yb-comp" style="width: 1200px">
+<img alt="../../../_images/YearBuilt_NSI_SURFZS.png" src="../../../_images/YearBuilt_NSI_SURFZS.png" />
+<p class="caption"><span class="caption-number">Fig. 3.2.3.4 </span><span class="caption-text">SURF-NSI vs. SURF-Zillow: year built information.</span><a class="headerlink" href="#surf-yb-comp" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="attribute-garage">
 <h3>Attribute: Garage<a class="headerlink" href="#attribute-garage" title="Permalink to this headline">¶</a></h3>
 <p>The garage type is assumed based on HAZUS Inventory Technical Manual and Statistics of 100 randomly
 selected residential buildings in Lake Charles. The random selection is performed by the sample function
 provided by the pandas module of python. The locations of these random buildings are plotted as dots in
-<a class="reference internal" href="#garage-loc"><span class="std std-numref">Fig. 3.2.3.3</span></a>.</p>
+<a class="reference internal" href="#garage-loc"><span class="std std-numref">Fig. 3.2.3.5</span></a>.</p>
 <div class="align-center figure" id="garage-loc" style="width: 600px">
 <img alt="../../../_images/GarageLoc.png" src="../../../_images/GarageLoc.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2.3.3 </span><span class="caption-text">Locations of 100 randomly selected single-family residential buildings.</span><a class="headerlink" href="#garage-loc" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.5 </span><span class="caption-text">Locations of 100 randomly selected single-family residential buildings.</span><a class="headerlink" href="#garage-loc" title="Permalink to this image">¶</a></p>
 </div>
 <p>We downloaded the street view images for each building from Google Maps and manually classified the images
 into the following attached garage (AG) features: None, AG-open, AG-standard, Carport. We didn’t find any detached garages in
-the 100 samples. Examples of different types can be found in <a class="reference internal" href="#garage-eg"><span class="std std-numref">Fig. 3.2.3.4</span></a>.
+the 100 samples. Examples of different types can be found in <a class="reference internal" href="#garage-eg"><span class="std std-numref">Fig. 3.2.3.6</span></a>.
 All street view images can be found <a class="reference download internal" download="" href="../../../_downloads/48ce9d6cdcfec49bd03bc1b30f372717/garage100_lakecharles.csv"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>
 Note that AG-open assumes that the garage shares the same primary roof as the home,
 whereas a carport has its own roof system.
@@ -752,12 +768,12 @@ A csv file of coordinates and classifications of each building can be found
 </table>
 <div class="align-center figure" id="garage-eg" style="width: 600px">
 <img alt="../../../_images/GarageExample.png" src="../../../_images/GarageExample.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2.3.4 </span><span class="caption-text">Examples of different types garages.</span><a class="headerlink" href="#garage-eg" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.6 </span><span class="caption-text">Examples of different types garages.</span><a class="headerlink" href="#garage-eg" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Table 5-12 in HAZUS Inventory Technical Manual provides the statistics of garages in the south
 of the United States. It shows that 8% single-family residential buildings have carports, 35% have
 no garages. In our validation dataset, there are 7% carports which is close to HAZUS Inventory
-Technical Manual (<a class="reference internal" href="asset_representation.html#fema21" id="id9"><span>[FEMA21]</span></a>). But we notice there are as high as 61% that have no garages. As a result,
+Technical Manual (<a class="reference internal" href="#fema21" id="id9"><span>[FEMA21]</span></a>). But we notice there are as high as 61% that have no garages. As a result,
 we used the statistics in <a class="reference internal" href="#tab-garage-statistics"><span class="std std-numref">Table 3.2.3.1</span></a> to generate values for garages in the
 testbed.</p>
 </div>

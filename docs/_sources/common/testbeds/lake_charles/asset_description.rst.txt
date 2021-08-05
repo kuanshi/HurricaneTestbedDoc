@@ -346,6 +346,33 @@ The result is shown in :numref:`year_built_comp`.
 
    Comparison of year built between NSI and SURF.
 
+In parallel to this exploration, `Zillow <https://www.zillow.com/>`_ also provides the year built information for 
+many of the residual buildings in the studied region.
+
+Similar to the implementation of NSI dataset, the 1182 data points of year built from Zillow are used to train a 
+neural network, :numref:`surf_yb_test` shows the verification of the trained neural network (predicted vs. true values,
+Zillow dataset). More than :math:`85%` buildings have prediction errors less than 20 years.  
+
+.. figure:: figure/SURF_YearBuiltTest.png
+   :name: surf_yb_test
+   :align: center
+   :figclass: align-center
+   :figwidth: 700
+
+   SURF-predicted vs. original year built from Zillow dataset.
+
+The neural network is used to predict the year built information for the entire Lake Charles inventory. :numref:`surf_yb_comp`
+contrast the resulting SURF-Zillow and the SURF-NSI year built spatial distribution. The difference in year built is relatively 
+small for the downtown buildings (~1960s) but increases at the bounds with a maximum of 80 years.
+
+.. figure:: figure/YearBuilt_NSI_SURFZS.png
+   :name: surf_yb_comp
+   :align: center
+   :figclass: align-center
+   :figwidth: 1200
+
+   SURF-NSI vs. SURF-Zillow: year built information.
+
 Attribute: Garage
 ------------------
 
