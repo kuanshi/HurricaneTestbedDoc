@@ -35,3 +35,15 @@ ranging from :math:`131 mph` to :math:`135 mph`.
    :figwidth: 600
 
    Peak wind speeds interpolated to footprint locations of building inventory.
+
+Users can access the the interpolated wind field inputs for the defined scenario via :numref:`lc_wind_data`.
+
+.. list-table:: Access point for Hurricane Laura wind scenario file
+   :name: lc_wind_data
+   :header-rows: 1
+   :align: center
+
+   * - Hazard
+     - Access Point
+   * - Wind Field
+     - :download:`Interpolated Hurricane Laura wind data <data/IMs.zip>`

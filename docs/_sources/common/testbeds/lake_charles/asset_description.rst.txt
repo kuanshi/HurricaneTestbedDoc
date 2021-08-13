@@ -426,7 +426,7 @@ Attribute: BuildingType
 
 Based on information found in the National Structure Inventory, 89% of residential buildings 
 (single-family and multi-family) are wood, the rest are masonry. In the analysis, we conservatively 
-assume all residential buildings are wood. Referring :numref:`tab-bldg_inv_data_model_lc`_, we used 
+assume all residential buildings are wood. Referring :numref:`tab-bldg_inv_data_model_lc`, we used 
 "Above" for the buildings in the studied inventory.
 
 Attribute: AvgJanTemp
@@ -434,6 +434,20 @@ Attribute: AvgJanTemp
 
 The average temperature in Lake Charles in January is above the critical value of 25F, 
 based on NOAA average daily temperature.
+
+
+Populated Inventories
+========================
+
+Executing this three-phase process resulted in the assignment of all required attributes at the asset description 
+stage of the workflow for the Lake Charles building inventory, and :numref:`bldg_inv_lc` shows example data samples. 
+The entire inventory can be downloaded :download:`here <data/BIM_LakeCharles_Full.zip>`.
+
+.. csv-table:: Illustrative sample of building in Lake Charles Inventory.
+   :name: bldg_inv_lc
+   :file: data/example_inventory_lc.csv
+   :header-rows: 1
+   :align: center
 
 
 .. [ATC20]

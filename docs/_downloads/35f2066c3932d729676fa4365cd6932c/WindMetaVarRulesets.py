@@ -160,7 +160,7 @@ def parse_BIM(BIM_in):
 
 
     # Number of Stories
-    alname_nstories = ['stories', 'NumberofStories0', 'NumberofStories']
+    alname_nstories = ['stories', 'NumberofStories0', 'NumberOfStories']
     try:
         nstories = BIM_in['NumberofStories1']
     except:

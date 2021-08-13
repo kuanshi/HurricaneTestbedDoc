@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
-        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -146,6 +145,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#attribute-avgjantemp">Attribute: AvgJanTemp</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#populated-inventories">3.2.4. Populated Inventories</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="hazard_characterization.html">3.3. Hazard Characterization</a></li>
@@ -154,7 +154,7 @@
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">3.6. Damage and Loss Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">3.7. Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample_results.html">3.8. Verification Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">3.9. Example Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">3.9. Validation Results</a></li>
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">3.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">3.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feedback_request.html">3.12. Feedback and Data Request</a></li>
@@ -257,8 +257,8 @@ provides a set of attributes that will be assigned to each asset to form the bui
 serving as input to the workflow. For each attribute a
 row in the table is provided. Each row has a number of columns: the attribute name, description,
 format (alphanumeric, floating point number, etc.), the data source used to define that attribute.</p>
-<span id="tab-bldg-inv-data-model-lc"></span><table class="docutils align-center" id="id14">
-<caption><span class="caption-number">Table 3.2.1.1 </span><span class="caption-text">Building inventory data model, detailed for Lake Charles Inventory.</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<span id="tab-bldg-inv-data-model-lc"></span><table class="docutils align-center" id="id12">
+<caption><span class="caption-number">Table 3.2.1.1 </span><span class="caption-text">Building inventory data model, detailed for Lake Charles Inventory.</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -734,8 +734,8 @@ whereas a carport has its own roof system.
 Detailed statistics can be found in <a class="reference internal" href="#tab-garage-statistics"><span class="std std-numref">Table 3.2.3.1</span></a>.
 A csv file of coordinates and classifications of each building can be found
 <a class="reference external" href="https://berkeley.app.box.com/file/794299957489">here</a>.</p>
-<span id="tab-garage-statistics"></span><table class="docutils align-center" id="id15">
-<caption><span class="caption-number">Table 3.2.3.1 </span><span class="caption-text">Statistics of 100 randomly sampled garages in Lake Charles.</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<span id="tab-garage-statistics"></span><table class="docutils align-center" id="id13">
+<caption><span class="caption-number">Table 3.2.3.1 </span><span class="caption-text">Statistics of 100 randomly sampled garages in Lake Charles.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -781,13 +781,1864 @@ testbed.</p>
 <h3>Attribute: BuildingType<a class="headerlink" href="#attribute-buildingtype" title="Permalink to this headline">¶</a></h3>
 <p>Based on information found in the National Structure Inventory, 89% of residential buildings
 (single-family and multi-family) are wood, the rest are masonry. In the analysis, we conservatively
-assume all residential buildings are wood. Referring <a href="#id12"><span class="problematic" id="id13">:numref:`tab-bldg_inv_data_model_lc`_</span></a>, we used
+assume all residential buildings are wood. Referring <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>, we used
 “Above” for the buildings in the studied inventory.</p>
 </div>
 <div class="section" id="attribute-avgjantemp">
 <h3>Attribute: AvgJanTemp<a class="headerlink" href="#attribute-avgjantemp" title="Permalink to this headline">¶</a></h3>
 <p>The average temperature in Lake Charles in January is above the critical value of 25F,
 based on NOAA average daily temperature.</p>
+</div>
+</div>
+<div class="section" id="populated-inventories">
+<h2><span class="section-number">3.2.4. </span>Populated Inventories<a class="headerlink" href="#populated-inventories" title="Permalink to this headline">¶</a></h2>
+<p>Executing this three-phase process resulted in the assignment of all required attributes at the asset description
+stage of the workflow for the Lake Charles building inventory, and <a class="reference internal" href="#bldg-inv-lc"><span class="std std-numref">Table 3.2.4.1</span></a> shows example data samples.
+The entire inventory can be downloaded <a class="reference download internal" download="" href="../../../_downloads/ae4e01e121567a2af22def6c35e543de/BIM_LakeCharles_Full.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
+<table class="docutils align-center" id="bldg-inv-lc">
+<caption><span class="caption-number">Table 3.2.4.1 </span><span class="caption-text">Illustrative sample of building in Lake Charles Inventory.</span><a class="headerlink" href="#bldg-inv-lc" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>RoofShape</p></th>
+<th class="head"><p>FloodZone</p></th>
+<th class="head"><p>Area</p></th>
+<th class="head"><p>Longitude</p></th>
+<th class="head"><p>Latitude</p></th>
+<th class="head"><p>Terrain</p></th>
+<th class="head"><p>DSWII</p></th>
+<th class="head"><p>BuildingType</p></th>
+<th class="head"><p>AvgJanTemp</p></th>
+<th class="head"><p>Garage</p></th>
+<th class="head"><p>NumberOfStories</p></th>
+<th class="head"><p>YearBuilt</p></th>
+<th class="head"><p>RoofSlope</p></th>
+<th class="head"><p>MeanRoofHt</p></th>
+<th class="head"><p>geometry</p></th>
+<th class="head"><p>OccupancyClass</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>744.5722689</p></td>
+<td><p>-93.18640624</p></td>
+<td><p>30.2696026</p></td>
+<td><p>43</p></td>
+<td><p>128.6965056</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>2020</p></td>
+<td><p>0.008059281</p></td>
+<td><p>12.14653239</p></td>
+<td><p>POLYGON ((-93.186341 30.269573, -93.18626 30.269613, -93.186367 30.26977, -93.186542 30.269681, -93.186471 30.269576, -93.18649600000001 30.269444, -93.186369 30.269425, -93.186341 30.269573))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>250.2085432</p></td>
+<td><p>-93.188197</p></td>
+<td><p>30.2600155</p></td>
+<td><p>11</p></td>
+<td><p>129.0177507</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1960</p></td>
+<td><p>0.189460697</p></td>
+<td><p>15.44473995</p></td>
+<td><p>POLYGON ((-93.18811700000001 30.259961, -93.18811700000001 30.26007, -93.188277 30.26007, -93.188277 30.259961, -93.18811700000001 30.259961))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>170.4410381</p></td>
+<td><p>-93.1875115</p></td>
+<td><p>30.260485</p></td>
+<td><p>11</p></td>
+<td><p>129.0016647</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>1.1</p></td>
+<td><p>1</p></td>
+<td><p>1955</p></td>
+<td><p>0.266831653</p></td>
+<td><p>16.8514846</p></td>
+<td><p>POLYGON ((-93.187462 30.260425, -93.187462 30.260545, -93.187561 30.260545, -93.187561 30.260425, -93.187462 30.260425))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>141.9476119</p></td>
+<td><p>-93.182886</p></td>
+<td><p>30.2601355</p></td>
+<td><p>11</p></td>
+<td><p>129.0106391</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>2010</p></td>
+<td><p>0.245703973</p></td>
+<td><p>16.46734496</p></td>
+<td><p>POLYGON ((-93.182835 30.260184, -93.182937 30.260184, -93.182937 30.260087, -93.182835 30.260087, -93.182835 30.260184))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>269.7609607</p></td>
+<td><p>-93.182324</p></td>
+<td><p>30.2644015</p></td>
+<td><p>11</p></td>
+<td><p>128.8680228</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1992</p></td>
+<td><p>0.307154558</p></td>
+<td><p>29.58462833</p></td>
+<td><p>POLYGON ((-93.18224499999999 30.264461, -93.18240299999999 30.264461, -93.18240299999999 30.264342, -93.18224499999999 30.264342, -93.18224499999999 30.264461))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>159.6617626</p></td>
+<td><p>-93.1756955</p></td>
+<td><p>30.26638</p></td>
+<td><p>11</p></td>
+<td><p>128.7987239</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>1.1</p></td>
+<td><p>1</p></td>
+<td><p>2020</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.175642 30.266328, -93.175642 30.266432, -93.175749 30.266432, -93.175749 30.266328, -93.175642 30.266328))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>775.8241426</p></td>
+<td><p>-93.21577825</p></td>
+<td><p>30.23527698</p></td>
+<td><p>14</p></td>
+<td><p>129.8658385</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1948</p></td>
+<td><p>0.165076061</p></td>
+<td><p>15.00138294</p></td>
+<td><p>POLYGON ((-93.21554999999999 30.235219, -93.215552 30.235338, -93.21600599999999 30.235335, -93.216005 30.235216, -93.21554999999999 30.235219))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>256.5563324</p></td>
+<td><p>-93.2124775</p></td>
+<td><p>30.2240395</p></td>
+<td><p>11</p></td>
+<td><p>130.2374356</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1992</p></td>
+<td><p>0.097731933</p></td>
+<td><p>13.77694424</p></td>
+<td><p>POLYGON ((-93.212433 30.223939, -93.212433 30.22414, -93.21252200000001 30.22414, -93.21252200000001 30.223939, -93.212433 30.223939))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>142.6138632</p></td>
+<td><p>-93.2100785</p></td>
+<td><p>30.224935</p></td>
+<td><p>11</p></td>
+<td><p>130.2052157</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>2</p></td>
+<td><p>1967</p></td>
+<td><p>0.229385792</p></td>
+<td><p>16.17065076</p></td>
+<td><p>POLYGON ((-93.210022 30.224891, -93.210022 30.224979, -93.21013499999999 30.224979, -93.21013499999999 30.224891, -93.210022 30.224891))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>3796.099474</p></td>
+<td><p>-93.21050357</p></td>
+<td><p>30.22796288</p></td>
+<td><p>12</p></td>
+<td><p>130.1047807</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1917</p></td>
+<td><p>0.145779552</p></td>
+<td><p>14.6505373</p></td>
+<td><p>POLYGON ((-93.210014 30.2277, -93.20999399999999 30.227809, -93.210052 30.227817, -93.210007 30.228058, -93.210184 30.228083, -93.21022000000001 30.227893, -93.210251 30.227898, -93.210269 30.227868, -93.21036599999999 30.227881, -93.21032700000001 30.22809, -93.21041200000001 30.228129, -93.210509 30.228142, -93.21053499999999 30.228099, -93.210572 30.227905, -93.210649 30.227916, -93.21060799999999 30.228135, -93.21111500000001 30.228205, -93.211169 30.228118, -93.21113699999999 30.228103, -93.211147 30.228048, -93.210742 30.227991, -93.210758 30.227905, -93.210708 30.227882, -93.210594 30.227866, -93.21060799999999 30.227792, -93.21043 30.227767, -93.21043899999999 30.22772, -93.210381 30.227712, -93.210374 30.22775, -93.210014 30.2277))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>682.0294412</p></td>
+<td><p>-93.20910746</p></td>
+<td><p>30.2284303</p></td>
+<td><p>12</p></td>
+<td><p>130.0878559</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>1.1</p></td>
+<td><p>1</p></td>
+<td><p>1918</p></td>
+<td><p>0.316570472</p></td>
+<td><p>17.75582676</p></td>
+<td><p>POLYGON ((-93.209186 30.22829, -93.209011 30.228286, -93.209005 30.228469, -93.20905500000001 30.22847, -93.209051 30.228565, -93.209146 30.228568, -93.20914500000001 30.228607, -93.209222 30.228609, -93.20922400000001 30.228555, -93.209176 30.228554, -93.209186 30.22829))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>290.2391711</p></td>
+<td><p>-93.20923187</p></td>
+<td><p>30.22946231</p></td>
+<td><p>11</p></td>
+<td><p>130.0535873</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1925</p></td>
+<td><p>0.149526591</p></td>
+<td><p>14.71866528</p></td>
+<td><p>POLYGON ((-93.20920099999999 30.229397, -93.209174 30.229396, -93.20917 30.229546, -93.20929 30.229549, -93.209295 30.229399, -93.209255 30.229398, -93.209256 30.229358, -93.209202 30.229357, -93.20920099999999 30.229397))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>229.0780601</p></td>
+<td><p>-93.2133255</p></td>
+<td><p>30.230271</p></td>
+<td><p>12</p></td>
+<td><p>130.0305833</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1925</p></td>
+<td><p>0.202236584</p></td>
+<td><p>15.6770288</p></td>
+<td><p>POLYGON ((-93.21326500000001 30.230205, -93.21326500000001 30.230337, -93.213386 30.230337, -93.213386 30.230205, -93.21326500000001 30.230205))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>213.247151</p></td>
+<td><p>-93.19954381</p></td>
+<td><p>30.25157263</p></td>
+<td><p>11</p></td>
+<td><p>129.3074126</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1940</p></td>
+<td><p>0.021140141</p></td>
+<td><p>12.3843662</p></td>
+<td><p>POLYGON ((-93.199502 30.251514, -93.199501 30.251567, -93.19945199999999 30.251566, -93.199451 30.25162, -93.19961499999999 30.251622, -93.199617 30.251516, -93.199502 30.251514))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>124.5181088</p></td>
+<td><p>-93.191472</p></td>
+<td><p>30.250321</p></td>
+<td><p>11</p></td>
+<td><p>129.3433967</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1928</p></td>
+<td><p>0.239022484</p></td>
+<td><p>16.34586334</p></td>
+<td><p>POLYGON ((-93.19141 30.250356, -93.191534 30.250356, -93.191534 30.250286, -93.19141 30.250286, -93.19141 30.250356))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>128.1044736</p></td>
+<td><p>-93.191178</p></td>
+<td><p>30.2503315</p></td>
+<td><p>11</p></td>
+<td><p>129.3428427</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1930</p></td>
+<td><p>0.16494629</p></td>
+<td><p>14.99902346</p></td>
+<td><p>POLYGON ((-93.191131 30.250284, -93.191131 30.250379, -93.191225 30.250379, -93.191225 30.250284, -93.191131 30.250284))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>17</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>202.1001726</p></td>
+<td><p>-93.19349711</p></td>
+<td><p>30.25135044</p></td>
+<td><p>11</p></td>
+<td><p>129.3104631</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1960</p></td>
+<td><p>0.118594326</p></td>
+<td><p>14.15626047</p></td>
+<td><p>POLYGON ((-93.193478 30.251382, -93.193591 30.251382, -93.193591 30.25131, -93.193414 30.25131, -93.193414 30.251403, -93.193478 30.251403, -93.193478 30.251382))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>18</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>98.41107328</p></td>
+<td><p>-93.190796</p></td>
+<td><p>30.2519185</p></td>
+<td><p>11</p></td>
+<td><p>129.2896441</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1935</p></td>
+<td><p>0.118498329</p></td>
+<td><p>26.15451507</p></td>
+<td><p>POLYGON ((-93.190726 30.251943, -93.190866 30.251943, -93.190866 30.251894, -93.190726 30.251894, -93.190726 30.251943))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>19</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>193.3654044</p></td>
+<td><p>-93.1956713</p></td>
+<td><p>30.25220118</p></td>
+<td><p>11</p></td>
+<td><p>129.2835978</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1917</p></td>
+<td><p>0.03140253</p></td>
+<td><p>12.57095508</p></td>
+<td><p>POLYGON ((-93.195745 30.252244, -93.195745 30.252149, -93.195632 30.252149, -93.195632 30.252195, -93.195576 30.252195, -93.195576 30.252244, -93.195745 30.252244))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>302.9017657</p></td>
+<td><p>-93.1942065</p></td>
+<td><p>30.254505</p></td>
+<td><p>11</p></td>
+<td><p>129.2056361</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1928</p></td>
+<td><p>0.312523585</p></td>
+<td><p>17.68224699</p></td>
+<td><p>POLYGON ((-93.194103 30.254556, -93.19431 30.254556, -93.19431 30.254454, -93.194103 30.254454, -93.194103 30.254556))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>21</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>224.2427133</p></td>
+<td><p>-93.2031505</p></td>
+<td><p>30.2419995</p></td>
+<td><p>11</p></td>
+<td><p>129.6299855</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1968</p></td>
+<td><p>0.242669055</p></td>
+<td><p>28.41216464</p></td>
+<td><p>POLYGON ((-93.203247 30.241959, -93.20305399999999 30.241959, -93.20305399999999 30.24204, -93.203247 30.24204, -93.203247 30.241959))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-odd"><td><p>22</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>288.1650454</p></td>
+<td><p>-93.2036205</p></td>
+<td><p>30.2435765</p></td>
+<td><p>13</p></td>
+<td><p>129.5777249</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1935</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.20354 30.243639, -93.20370200000001 30.243638, -93.203701 30.243514, -93.20353900000001 30.243515, -93.20354 30.243639))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>23</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>107.8856731</p></td>
+<td><p>-93.2005485</p></td>
+<td><p>30.2447545</p></td>
+<td><p>11</p></td>
+<td><p>129.5359047</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1909</p></td>
+<td><p>0.257640616</p></td>
+<td><p>16.68437483</p></td>
+<td><p>POLYGON ((-93.200514 30.244809, -93.20058299999999 30.244809, -93.20058299999999 30.2447, -93.200514 30.2447, -93.200514 30.244809))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>24</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>204.2468667</p></td>
+<td><p>-93.200298</p></td>
+<td><p>30.2488785</p></td>
+<td><p>11</p></td>
+<td><p>129.3979957</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>1931</p></td>
+<td><p>0.246384433</p></td>
+<td><p>16.47971696</p></td>
+<td><p>POLYGON ((-93.20023500000001 30.248935, -93.200361 30.248935, -93.200361 30.248822, -93.20023500000001 30.248822, -93.20023500000001 30.248935))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>25</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>209.5419606</p></td>
+<td><p>-93.186534</p></td>
+<td><p>30.242957</p></td>
+<td><p>11</p></td>
+<td><p>129.5852691</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>1.1</p></td>
+<td><p>1</p></td>
+<td><p>1915</p></td>
+<td><p>0.252106729</p></td>
+<td><p>16.58375871</p></td>
+<td><p>POLYGON ((-93.186617 30.242913, -93.18645100000001 30.242913, -93.18645100000001 30.243001, -93.186617 30.243001, -93.186617 30.242913))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>26</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>277.7070776</p></td>
+<td><p>-93.189906</p></td>
+<td><p>30.243263</p></td>
+<td><p>11</p></td>
+<td><p>129.5775093</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1926</p></td>
+<td><p>0.075730855</p></td>
+<td><p>13.37692463</p></td>
+<td><p>POLYGON ((-93.189796 30.243219, -93.189796 30.243307, -93.190016 30.243307, -93.190016 30.243219, -93.189796 30.243219))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>27</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>575.4525162</p></td>
+<td><p>-93.18855743</p></td>
+<td><p>30.24558805</p></td>
+<td><p>11</p></td>
+<td><p>129.4991099</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1939</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.188642 30.245464, -93.188492 30.245464, -93.188492 30.245576, -93.188446 30.245576, -93.188446 30.245657, -93.18848699999999 30.245657, -93.18848699999999 30.245705, -93.188642 30.245705, -93.188642 30.245464))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>28</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>153.3744816</p></td>
+<td><p>-93.192235</p></td>
+<td><p>30.2461055</p></td>
+<td><p>11</p></td>
+<td><p>129.4845038</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>1.1</p></td>
+<td><p>1</p></td>
+<td><p>1924</p></td>
+<td><p>0.319993708</p></td>
+<td><p>17.81806742</p></td>
+<td><p>POLYGON ((-93.192301 30.246146, -93.192301 30.246065, -93.19216900000001 30.246065, -93.19216900000001 30.246146, -93.192301 30.246146))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>29</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>95.39630797</p></td>
+<td><p>-93.1795635</p></td>
+<td><p>30.249672</p></td>
+<td><p>11</p></td>
+<td><p>129.357232</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1953</p></td>
+<td><p>0.177775647</p></td>
+<td><p>15.23228449</p></td>
+<td><p>POLYGON ((-93.17951600000001 30.249637, -93.17951600000001 30.249707, -93.17961099999999 30.249707, -93.17961099999999 30.249637, -93.17951600000001 30.249637))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>30</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>361.593247</p></td>
+<td><p>-93.17740182</p></td>
+<td><p>30.25113278</p></td>
+<td><p>43</p></td>
+<td><p>129.3073381</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1993</p></td>
+<td><p>0.191358526</p></td>
+<td><p>15.47924593</p></td>
+<td><p>POLYGON ((-93.17748400000001 30.251227, -93.177483 30.25106, -93.177302 30.251061, -93.17730299999999 30.251174, -93.177395 30.251173, -93.177396 30.251228, -93.17748400000001 30.251227))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>31</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>189.593332</p></td>
+<td><p>-93.184871</p></td>
+<td><p>30.252637</p></td>
+<td><p>11</p></td>
+<td><p>129.261808</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1917</p></td>
+<td><p>0.138187732</p></td>
+<td><p>14.51250423</p></td>
+<td><p>POLYGON ((-93.184815 30.252578, -93.184815 30.252696, -93.184927 30.252696, -93.184927 30.252578, -93.184815 30.252578))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>32</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>548.2420001</p></td>
+<td><p>-93.1819504</p></td>
+<td><p>30.25355213</p></td>
+<td><p>11</p></td>
+<td><p>129.2295158</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1950</p></td>
+<td><p>0.174797206</p></td>
+<td><p>15.17813103</p></td>
+<td><p>POLYGON ((-93.181827 30.253493, -93.181827 30.253637, -93.182057 30.253637, -93.182057 30.253444, -93.18195299999999 30.253444, -93.18195299999999 30.253493, -93.181827 30.253493))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>33</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>531.0766149</p></td>
+<td><p>-93.181038</p></td>
+<td><p>30.2574315</p></td>
+<td><p>11</p></td>
+<td><p>129.099733</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1963</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.181121 30.257543, -93.181121 30.25732, -93.180955 30.25732, -93.180955 30.257543, -93.181121 30.257543))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-odd"><td><p>34</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>263.0118574</p></td>
+<td><p>-93.1766525</p></td>
+<td><p>30.2461635</p></td>
+<td><p>14</p></td>
+<td><p>129.4720991</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1957</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.176749 30.246116, -93.17655600000001 30.246116, -93.17655600000001 30.246211, -93.176749 30.246211, -93.176749 30.246116))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-even"><td><p>35</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>104.7745979</p></td>
+<td><p>-93.1844055</p></td>
+<td><p>30.24635</p></td>
+<td><p>11</p></td>
+<td><p>129.4708851</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1927</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.18444700000001 30.246394, -93.18444700000001 30.246306, -93.184364 30.246306, -93.184364 30.246394, -93.18444700000001 30.246394))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>36</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>162.4135654</p></td>
+<td><p>-93.1829255</p></td>
+<td><p>30.247235</p></td>
+<td><p>11</p></td>
+<td><p>129.4404516</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1936</p></td>
+<td><p>0.201423095</p></td>
+<td><p>15.66223809</p></td>
+<td><p>POLYGON ((-93.182849 30.247272, -93.183002 30.247272, -93.183002 30.247198, -93.182849 30.247198, -93.182849 30.247272))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>37</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>559.0095817</p></td>
+<td><p>-93.1759797</p></td>
+<td><p>30.24868587</p></td>
+<td><p>43</p></td>
+<td><p>129.3878624</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1943</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.17610999999999 30.248603, -93.175944 30.248602, -93.175944 30.248637, -93.17583399999999 30.248637, -93.175833 30.248757, -93.176109 30.248758, -93.17610999999999 30.248603))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>38</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>85.72676274</p></td>
+<td><p>-93.185991</p></td>
+<td><p>30.2487475</p></td>
+<td><p>11</p></td>
+<td><p>129.3921177</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1948</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.18595500000001 30.248789, -93.186027 30.248789, -93.186027 30.248706, -93.18595500000001 30.248706, -93.18595500000001 30.248789))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>39</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>355.2444761</p></td>
+<td><p>-93.185044</p></td>
+<td><p>30.2489065</p></td>
+<td><p>11</p></td>
+<td><p>129.3861955</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1945</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.185126 30.248982, -93.185126 30.248831, -93.184962 30.248831, -93.184962 30.248982, -93.185126 30.248982))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-odd"><td><p>40</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>177.4327103</p></td>
+<td><p>-93.2026435</p></td>
+<td><p>30.2313315</p></td>
+<td><p>11</p></td>
+<td><p>129.9852129</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1958</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.202713 30.231376, -93.202713 30.231287, -93.202574 30.231287, -93.202574 30.231376, -93.202713 30.231376))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>41</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>253.693881</p></td>
+<td><p>-93.19925903</p></td>
+<td><p>30.23187106</p></td>
+<td><p>11</p></td>
+<td><p>129.9642564</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1974</p></td>
+<td><p>0.060176072</p></td>
+<td><p>13.0941104</p></td>
+<td><p>POLYGON ((-93.199178 30.231867, -93.199178 30.231934, -93.199326 30.231934, -93.199326 30.2318, -93.19920999999999 30.2318, -93.19920999999999 30.231867, -93.199178 30.231867))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>42</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>89.15484322</p></td>
+<td><p>-93.201258</p></td>
+<td><p>30.232476</p></td>
+<td><p>11</p></td>
+<td><p>129.9458704</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1978</p></td>
+<td><p>0.086346452</p></td>
+<td><p>13.56993549</p></td>
+<td><p>POLYGON ((-93.201184 30.232497, -93.20133199999999 30.232497, -93.20133199999999 30.232455, -93.201184 30.232455, -93.201184 30.232497))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>43</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>263.6849528</p></td>
+<td><p>-93.19761907</p></td>
+<td><p>30.23505685</p></td>
+<td><p>14</p></td>
+<td><p>129.8568083</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1918</p></td>
+<td><p>0.18915438</p></td>
+<td><p>27.43917055</p></td>
+<td><p>POLYGON ((-93.197687 30.234981, -93.19756099999999 30.234981, -93.19756099999999 30.235141, -93.19766300000001 30.235141, -93.19766300000001 30.235067, -93.197687 30.235067, -93.197687 30.234981))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>44</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>90.70757663</p></td>
+<td><p>-93.205492</p></td>
+<td><p>30.236498</p></td>
+<td><p>11</p></td>
+<td><p>129.8155684</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1912</p></td>
+<td><p>0.053001568</p></td>
+<td><p>12.96366487</p></td>
+<td><p>POLYGON ((-93.20554300000001 30.236467, -93.20544099999999 30.236467, -93.20544099999999 30.236529, -93.20554300000001 30.236529, -93.20554300000001 30.236467))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>45</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>366.4040943</p></td>
+<td><p>-93.20473971</p></td>
+<td><p>30.23711091</p></td>
+<td><p>11</p></td>
+<td><p>129.7944625</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>1.1</p></td>
+<td><p>1</p></td>
+<td><p>2018</p></td>
+<td><p>0.049698935</p></td>
+<td><p>12.903617</p></td>
+<td><p>POLYGON ((-93.20473800000001 30.23715, -93.20473800000001 30.237181, -93.204848 30.237181, -93.204848 30.237055, -93.204615 30.237055, -93.204615 30.23715, -93.20473800000001 30.23715))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>46</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>178.5526717</p></td>
+<td><p>-93.2036278</p></td>
+<td><p>30.23990882</p></td>
+<td><p>11</p></td>
+<td><p>129.7001604</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1922</p></td>
+<td><p>0.312867023</p></td>
+<td><p>17.68849133</p></td>
+<td><p>POLYGON ((-93.203577 30.23995, -93.203609 30.23995, -93.203609 30.239984, -93.20367299999999 30.239984, -93.20367299999999 30.239843, -93.203577 30.239843, -93.203577 30.23995))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>47</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>276.9876349</p></td>
+<td><p>-93.18760867</p></td>
+<td><p>30.23229356</p></td>
+<td><p>11</p></td>
+<td><p>129.9405465</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1928</p></td>
+<td><p>0.009320271</p></td>
+<td><p>12.16945947</p></td>
+<td><p>POLYGON ((-93.187575 30.232207, -93.187575 30.232256, -93.18754 30.232256, -93.18754 30.23237, -93.187669 30.23237, -93.187669 30.232207, -93.187575 30.232207))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>48</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>210.9974031</p></td>
+<td><p>-93.19204333</p></td>
+<td><p>30.23269778</p></td>
+<td><p>11</p></td>
+<td><p>129.9306721</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1910</p></td>
+<td><p>0.06181718</p></td>
+<td><p>13.12394873</p></td>
+<td><p>POLYGON ((-93.19211300000001 30.232722, -93.19211300000001 30.232639, -93.19198400000001 30.232639, -93.19198400000001 30.232766, -93.192075 30.232766, -93.192075 30.232722, -93.19211300000001 30.232722))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>49</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>184.0998666</p></td>
+<td><p>-93.19112475</p></td>
+<td><p>30.23400355</p></td>
+<td><p>11</p></td>
+<td><p>129.8865245</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1920</p></td>
+<td><p>0.025085634</p></td>
+<td><p>12.45610243</p></td>
+<td><p>POLYGON ((-93.191199 30.233961, -93.191052 30.233959, -93.19105 30.234046, -93.191198 30.234048, -93.191199 30.233961))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>50</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>196.9155004</p></td>
+<td><p>-93.18899453</p></td>
+<td><p>30.23407495</p></td>
+<td><p>11</p></td>
+<td><p>129.8824619</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1972</p></td>
+<td><p>0.220486877</p></td>
+<td><p>28.00885231</p></td>
+<td><p>POLYGON ((-93.188911 30.234119, -93.189069 30.234119, -93.189069 30.234024, -93.18897200000001 30.234024, -93.18897200000001 30.234045, -93.188911 30.234045, -93.188911 30.234119))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>51</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>298.4527882</p></td>
+<td><p>-93.19229</p></td>
+<td><p>30.235049</p></td>
+<td><p>11</p></td>
+<td><p>129.8526963</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1903</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.192239 30.234947, -93.192239 30.235151, -93.192341 30.235151, -93.192341 30.234947, -93.192239 30.234947))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>52</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>309.5307343</p></td>
+<td><p>-93.2053295</p></td>
+<td><p>30.2229735</p></td>
+<td><p>11</p></td>
+<td><p>130.2658207</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1957</p></td>
+<td><p>0.134830135</p></td>
+<td><p>14.45145701</p></td>
+<td><p>POLYGON ((-93.205234 30.22303, -93.20542500000001 30.22303, -93.20542500000001 30.222917, -93.205234 30.222917, -93.205234 30.22303))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>53</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>161.4718054</p></td>
+<td><p>-93.2039845</p></td>
+<td><p>30.2240865</p></td>
+<td><p>12</p></td>
+<td><p>130.2275217</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1946</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.20394400000001 30.224156, -93.204025 30.224156, -93.204025 30.224017, -93.20394400000001 30.224017, -93.20394400000001 30.224156))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-odd"><td><p>54</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>197.4840662</p></td>
+<td><p>-93.1977805</p></td>
+<td><p>30.224367</p></td>
+<td><p>12</p></td>
+<td><p>130.2124181</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1924</p></td>
+<td><p>0.284216725</p></td>
+<td><p>17.16757682</p></td>
+<td><p>POLYGON ((-93.19771299999999 30.224418, -93.19784799999999 30.224418, -93.19784799999999 30.224316, -93.19771299999999 30.224316, -93.19771299999999 30.224418))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>55</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>2363.759035</p></td>
+<td><p>-93.20366278</p></td>
+<td><p>30.22476522</p></td>
+<td><p>12</p></td>
+<td><p>130.2046484</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1944</p></td>
+<td><p>0.20805064</p></td>
+<td><p>15.78273891</p></td>
+<td><p>POLYGON ((-93.204064 30.22477, -93.20373600000001 30.224772, -93.203734 30.224625, -93.20353 30.224627, -93.203529 30.224514, -93.20334 30.224516, -93.203343 30.224781, -93.203525 30.22478, -93.203525 30.224817, -93.203598 30.224816, -93.203599 30.224972, -93.20381500000001 30.22497, -93.20381500000001 30.224926, -93.204066 30.224924, -93.204064 30.22477))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-odd"><td><p>56</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>591.6004079</p></td>
+<td><p>-93.2079219</p></td>
+<td><p>30.22819821</p></td>
+<td><p>12</p></td>
+<td><p>130.0944514</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>1943</p></td>
+<td><p>0.046328276</p></td>
+<td><p>12.8423323</p></td>
+<td><p>POLYGON ((-93.207882 30.228071, -93.207882 30.228207, -93.20778900000001 30.228208, -93.20779 30.228335, -93.207886 30.228335, -93.207886 30.228265, -93.208032 30.228265, -93.208032 30.22807, -93.207882 30.228071))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>57</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>316.16337</p></td>
+<td><p>-93.199182</p></td>
+<td><p>30.2295815</p></td>
+<td><p>11</p></td>
+<td><p>130.040365</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1917</p></td>
+<td><p>0.023504568</p></td>
+<td><p>12.42735579</p></td>
+<td><p>POLYGON ((-93.199116 30.229498, -93.199116 30.229665, -93.199248 30.229665, -93.199248 30.229498, -93.199116 30.229498))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-odd"><td><p>58</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>285.2168864</p></td>
+<td><p>-93.1924455</p></td>
+<td><p>30.221197</p></td>
+<td><p>11</p></td>
+<td><p>130.3127865</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1947</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.192502 30.221109, -93.19238900000001 30.221109, -93.19238900000001 30.221285, -93.192502 30.221285, -93.192502 30.221109))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>59</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>105.0638489</p></td>
+<td><p>-93.1921275</p></td>
+<td><p>30.221711</p></td>
+<td><p>11</p></td>
+<td><p>130.2954638</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1932</p></td>
+<td><p>0.30925911</p></td>
+<td><p>17.62289291</p></td>
+<td><p>POLYGON ((-93.192177 30.221674, -93.192078 30.221674, -93.192078 30.221748, -93.192177 30.221748, -93.192177 30.221674))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>60</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>180.8451197</p></td>
+<td><p>-93.190707</p></td>
+<td><p>30.2229145</p></td>
+<td><p>11</p></td>
+<td><p>130.2543158</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1933</p></td>
+<td><p>0.238792642</p></td>
+<td><p>16.3416844</p></td>
+<td><p>POLYGON ((-93.190642 30.222963, -93.190772 30.222963, -93.190772 30.222866, -93.190642 30.222866, -93.190642 30.222963))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>61</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>134.9114753</p></td>
+<td><p>-93.1869295</p></td>
+<td><p>30.2242825</p></td>
+<td><p>11</p></td>
+<td><p>130.2057489</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1919</p></td>
+<td><p>0.122212455</p></td>
+<td><p>14.22204463</p></td>
+<td><p>POLYGON ((-93.18697 30.224229, -93.18687300000001 30.224241, -93.18688899999999 30.224336, -93.186986 30.224324, -93.18697 30.224229))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>62</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>134.8141157</p></td>
+<td><p>-93.195513</p></td>
+<td><p>30.226494</p></td>
+<td><p>12</p></td>
+<td><p>130.139746</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1911</p></td>
+<td><p>0</p></td>
+<td><p>24</p></td>
+<td><p>POLYGON ((-93.19556 30.226444, -93.195466 30.226444, -93.195466 30.226544, -93.19556 30.226544, -93.19556 30.226444))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>63</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>109.1997341</p></td>
+<td><p>-93.187182</p></td>
+<td><p>30.2267645</p></td>
+<td><p>12</p></td>
+<td><p>130.1236799</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1916</p></td>
+<td><p>0.201355033</p></td>
+<td><p>15.6610006</p></td>
+<td><p>POLYGON ((-93.187229 30.226805, -93.187229 30.226724, -93.187135 30.226724, -93.187135 30.226805, -93.187229 30.226805))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-odd"><td><p>64</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>192.6369864</p></td>
+<td><p>-93.1763025</p></td>
+<td><p>30.2318855</p></td>
+<td><p>11</p></td>
+<td><p>129.9456101</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>2</p></td>
+<td><p>1951</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.17636299999999 30.231941, -93.17636299999999 30.23183, -93.176242 30.23183, -93.176242 30.231941, -93.17636299999999 30.231941))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>65</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>153.3803993</p></td>
+<td><p>-93.1788215</p></td>
+<td><p>30.2223185</p></td>
+<td><p>12</p></td>
+<td><p>130.2641628</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1923</p></td>
+<td><p>0.051438169</p></td>
+<td><p>12.93523944</p></td>
+<td><p>POLYGON ((-93.178764 30.222365, -93.17887899999999 30.222365, -93.17887899999999 30.222272, -93.178764 30.222272, -93.178764 30.222365))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>66</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>417.6902072</p></td>
+<td><p>-93.18588583</p></td>
+<td><p>30.22553327</p></td>
+<td><p>11</p></td>
+<td><p>130.1634334</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1932</p></td>
+<td><p>0.268732572</p></td>
+<td><p>16.88604676</p></td>
+<td><p>POLYGON ((-93.186027 30.225503, -93.18589799999999 30.225503, -93.18589799999999 30.225454, -93.185772 30.225454, -93.185772 30.225593, -93.186027 30.225593, -93.186027 30.225503))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>67</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>233.5705876</p></td>
+<td><p>-93.18321691</p></td>
+<td><p>30.22563559</p></td>
+<td><p>11</p></td>
+<td><p>130.1578792</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1909</p></td>
+<td><p>0.094401678</p></td>
+<td><p>25.71639415</p></td>
+<td><p>POLYGON ((-93.183189 30.225575, -93.183189 30.225603, -93.183133 30.225603, -93.183133 30.225688, -93.183291 30.225688, -93.183291 30.225575, -93.183189 30.225575))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>68</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>157.8921993</p></td>
+<td><p>-93.1854585</p></td>
+<td><p>30.2276915</p></td>
+<td><p>12</p></td>
+<td><p>130.091542</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>1.1</p></td>
+<td><p>2</p></td>
+<td><p>1917</p></td>
+<td><p>0.241092181</p></td>
+<td><p>16.38349421</p></td>
+<td><p>POLYGON ((-93.185408 30.227637, -93.185408 30.227746, -93.185509 30.227746, -93.185509 30.227637, -93.185408 30.227637))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-even"><td><p>69</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>91.77588163</p></td>
+<td><p>-93.1706955</p></td>
+<td><p>30.2285185</p></td>
+<td><p>12</p></td>
+<td><p>130.0531056</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>1.1</p></td>
+<td><p>3</p></td>
+<td><p>1920</p></td>
+<td><p>0.24041617</p></td>
+<td><p>16.37120309</p></td>
+<td><p>POLYGON ((-93.17073600000001 30.228558, -93.17073600000001 30.228479, -93.170655 30.228479, -93.170655 30.228558, -93.17073600000001 30.228558))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-odd"><td><p>70</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>2494.952723</p></td>
+<td><p>-93.25314017</p></td>
+<td><p>30.21245287</p></td>
+<td><p>14</p></td>
+<td><p>130.6721255</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1972</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.252878 30.212327, -93.252875 30.212754, -93.25301 30.212755, -93.253012 30.212562, -93.253158 30.212563, -93.253158 30.212587, -93.253292 30.212587, -93.253293 30.212497, -93.253435 30.212498, -93.25343700000001 30.212308, -93.25348200000001 30.212308, -93.253483 30.212246, -93.253164 30.212244, -93.253163 30.21232, -93.253097 30.21232, -93.253097 30.212368, -93.253018 30.212368, -93.253018 30.212328, -93.252878 30.212327))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>71</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>434.0667533</p></td>
+<td><p>-93.27585791</p></td>
+<td><p>30.18611633</p></td>
+<td><p>11</p></td>
+<td><p>131.5840885</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1983</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.275764 30.186231, -93.27585000000001 30.186232, -93.275851 30.186172, -93.27593400000001 30.186172, -93.275935 30.186098, -93.27597 30.186098, -93.275971 30.18601, -93.275885 30.18601, -93.275884 30.186056, -93.275766 30.186055, -93.275764 30.186231))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-odd"><td><p>72</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>80.34683702</p></td>
+<td><p>-93.27479242</p></td>
+<td><p>30.18669974</p></td>
+<td><p>11</p></td>
+<td><p>131.5629809</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1987</p></td>
+<td><p>0.284756369</p></td>
+<td><p>17.17738852</p></td>
+<td><p>POLYGON ((-93.274832 30.186664, -93.27475800000001 30.18666, -93.274753 30.186736, -93.274827 30.186739, -93.274832 30.186664))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>73</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>762.2320792</p></td>
+<td><p>-93.26509578</p></td>
+<td><p>30.19523963</p></td>
+<td><p>11</p></td>
+<td><p>131.2636792</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1999</p></td>
+<td><p>0.13640546</p></td>
+<td><p>14.48009928</p></td>
+<td><p>POLYGON ((-93.26497000000001 30.19537, -93.265126 30.195368, -93.265124 30.195273, -93.265263 30.195271, -93.265261 30.195141, -93.264966 30.195145, -93.26497000000001 30.19537))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-odd"><td><p>74</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>283.5012404</p></td>
+<td><p>-93.26874719</p></td>
+<td><p>30.18320723</p></td>
+<td><p>43</p></td>
+<td><p>131.6694302</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2014</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.26881299999999 30.183293, -93.268805 30.183129, -93.268666 30.183134, -93.268669 30.183209, -93.268704 30.183208, -93.268708 30.183296, -93.26881299999999 30.183293))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>75</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>507.4067671</p></td>
+<td><p>-93.26472474</p></td>
+<td><p>30.18410544</p></td>
+<td><p>11</p></td>
+<td><p>131.6333192</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2004</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.26462100000001 30.184191, -93.264836 30.184184, -93.26482900000001 30.18402, -93.264613 30.184027, -93.26462100000001 30.184191))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>76</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>544.406325</p></td>
+<td><p>-93.26827592</p></td>
+<td><p>30.18521828</p></td>
+<td><p>43</p></td>
+<td><p>131.6019159</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>2020</p></td>
+<td><p>0.078669217</p></td>
+<td><p>13.43034941</p></td>
+<td><p>POLYGON ((-93.268182 30.185334, -93.26827299999999 30.185333, -93.26827299999999 30.185288, -93.26841 30.185287, -93.26840900000001 30.185228, -93.268365 30.185229, -93.26836400000001 30.185117, -93.268181 30.185118, -93.268182 30.185334))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>77</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>375.13553</p></td>
+<td><p>-93.2651645</p></td>
+<td><p>30.1872335</p></td>
+<td><p>11</p></td>
+<td><p>131.5301367</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1990</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.26526 30.187165, -93.265069 30.187165, -93.265069 30.187302, -93.26526 30.187302, -93.26526 30.187165))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>78</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>91.3363099</p></td>
+<td><p>-93.271569</p></td>
+<td><p>30.1875945</p></td>
+<td><p>11</p></td>
+<td><p>131.5281147</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1993</p></td>
+<td><p>0.153888071</p></td>
+<td><p>14.79796492</p></td>
+<td><p>POLYGON ((-93.271523 30.187629, -93.271614 30.18763, -93.271615 30.18756, -93.271524 30.187559, -93.271523 30.187629))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>79</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>231.5994994</p></td>
+<td><p>-93.25989125</p></td>
+<td><p>30.18641458</p></td>
+<td><p>11</p></td>
+<td><p>131.5492652</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1974</p></td>
+<td><p>0.249673584</p></td>
+<td><p>16.53951972</p></td>
+<td><p>POLYGON ((-93.259973 30.186359, -93.25984200000001 30.186359, -93.25984200000001 30.186412, -93.25978499999999 30.186412, -93.25978499999999 30.186461, -93.259973 30.186461, -93.259973 30.186359))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>80</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>208.5904775</p></td>
+<td><p>-93.2527015</p></td>
+<td><p>30.186603</p></td>
+<td><p>42</p></td>
+<td><p>131.5322534</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2008</p></td>
+<td><p>0.214007762</p></td>
+<td><p>15.89105023</p></td>
+<td><p>POLYGON ((-93.25275000000001 30.186528, -93.252653 30.186528, -93.252653 30.186678, -93.25275000000001 30.186678, -93.25275000000001 30.186528))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>81</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>550.6970846</p></td>
+<td><p>-93.2549801</p></td>
+<td><p>30.18986241</p></td>
+<td><p>11</p></td>
+<td><p>131.4274688</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1997</p></td>
+<td><p>0.101311801</p></td>
+<td><p>13.84203275</p></td>
+<td><p>POLYGON ((-93.254853 30.189764, -93.254853 30.189832, -93.254909 30.189832, -93.254909 30.189975, -93.255073 30.189975, -93.255073 30.189764, -93.254853 30.189764))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>82</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>497.8756055</p></td>
+<td><p>-93.25209418</p></td>
+<td><p>30.19161376</p></td>
+<td><p>11</p></td>
+<td><p>131.3650993</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1972</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.252162 30.191516, -93.251977 30.191514, -93.251975 30.191658, -93.25212399999999 30.191659, -93.25212399999999 30.191738, -93.252235 30.191739, -93.252235 30.191668, -93.25216 30.191668, -93.252162 30.191516))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-even"><td><p>83</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>613.1255907</p></td>
+<td><p>-93.25492614</p></td>
+<td><p>30.19213791</p></td>
+<td><p>11</p></td>
+<td><p>131.3518061</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>1976</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.255032 30.19225, -93.25502400000001 30.192023, -93.25485 30.192027, -93.25485399999999 30.192139, -93.254779 30.19214, -93.25478099999999 30.192222, -93.25494 30.192217, -93.254941 30.192252, -93.255032 30.19225))</p></td>
+<td><p>RES3</p></td>
+</tr>
+<tr class="row-odd"><td><p>84</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>702.6457129</p></td>
+<td><p>-93.29908476</p></td>
+<td><p>30.17008177</p></td>
+<td><p>42</p></td>
+<td><p>132.1558156</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2010</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.299296 30.169993, -93.298945 30.170002, -93.298951 30.170196, -93.29914599999999 30.170192, -93.299142 30.170068, -93.29929799999999 30.170064, -93.299296 30.169993))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>85</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>739.4944746</p></td>
+<td><p>-93.30597067</p></td>
+<td><p>30.14767973</p></td>
+<td><p>61</p></td>
+<td><p>132.9078281</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2020</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.30607000000001 30.147507, -93.305978 30.147517, -93.305997 30.147637, -93.30578800000001 30.147661, -93.305806 30.147777, -93.30588400000001 30.147768, -93.305887 30.14779, -93.30611 30.147764, -93.30607000000001 30.147507))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>86</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>501.69281</p></td>
+<td><p>-93.29851741</p></td>
+<td><p>30.15290023</p></td>
+<td><p>61</p></td>
+<td><p>132.7223747</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2020</p></td>
+<td><p>0.270281395</p></td>
+<td><p>28.91420718</p></td>
+<td><p>POLYGON ((-93.29842499999999 30.152768, -93.29842499999999 30.152963, -93.29850399999999 30.152963, -93.29850399999999 30.153014, -93.298621 30.153014, -93.298621 30.152858, -93.298519 30.152858, -93.298519 30.152768, -93.29842499999999 30.152768))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>87</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>445.8535905</p></td>
+<td><p>-93.291721</p></td>
+<td><p>30.1676845</p></td>
+<td><p>11</p></td>
+<td><p>132.2222476</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2020</p></td>
+<td><p>0.221926594</p></td>
+<td><p>16.03502898</p></td>
+<td><p>POLYGON ((-93.29182400000001 30.16776, -93.29182400000001 30.167609, -93.291618 30.167609, -93.291618 30.16776, -93.29182400000001 30.16776))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>88</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>387.2852649</p></td>
+<td><p>-93.276809</p></td>
+<td><p>30.1671235</p></td>
+<td><p>21</p></td>
+<td><p>132.2151684</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>1.1</p></td>
+<td><p>1</p></td>
+<td><p>2020</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.27673900000001 30.167027, -93.27673900000001 30.16722, -93.27687899999999 30.16722, -93.27687899999999 30.167027, -93.27673900000001 30.167027))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>89</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>414.4766277</p></td>
+<td><p>-93.27853773</p></td>
+<td><p>30.16739173</p></td>
+<td><p>11</p></td>
+<td><p>132.2092302</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2020</p></td>
+<td><p>0.19130947</p></td>
+<td><p>15.47835399</p></td>
+<td><p>POLYGON ((-93.27856300000001 30.167426, -93.27865199999999 30.167426, -93.27865199999999 30.167333, -93.278566 30.167333, -93.278566 30.167301, -93.27845600000001 30.167301, -93.27845600000001 30.167493, -93.27856300000001 30.167493, -93.27856300000001 30.167426))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>90</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>344.7672521</p></td>
+<td><p>-93.27501232</p></td>
+<td><p>30.1675997</p></td>
+<td><p>21</p></td>
+<td><p>132.1964179</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>1</p></td>
+<td><p>2020</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.275085 30.167694, -93.27508899999999 30.167526, -93.274912 30.167523, -93.27491000000001 30.167599, -93.27497200000001 30.1676, -93.27497 30.167692, -93.275085 30.167694))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>91</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>110.3812936</p></td>
+<td><p>-93.2824645</p></td>
+<td><p>30.1677425</p></td>
+<td><p>11</p></td>
+<td><p>132.2043194</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2003</p></td>
+<td><p>0.096446964</p></td>
+<td><p>13.75358117</p></td>
+<td><p>POLYGON ((-93.28249 30.167667, -93.282439 30.167667, -93.282439 30.167818, -93.28249 30.167818, -93.28249 30.167667))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-odd"><td><p>92</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>334.140279</p></td>
+<td><p>-93.265636</p></td>
+<td><p>30.1764115</p></td>
+<td><p>11</p></td>
+<td><p>131.8897347</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1996</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.265573 30.176504, -93.265699 30.176504, -93.265699 30.176319, -93.265573 30.176319, -93.265573 30.176504))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>93</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>477.9137818</p></td>
+<td><p>-93.26855515</p></td>
+<td><p>30.18173267</p></td>
+<td><p>43</p></td>
+<td><p>131.7180569</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>1.1</p></td>
+<td><p>1</p></td>
+<td><p>1995</p></td>
+<td><p>0.22753976</p></td>
+<td><p>16.13708654</p></td>
+<td><p>POLYGON ((-93.268441 30.181786, -93.26857200000001 30.181786, -93.26857200000001 30.181849, -93.26864999999999 30.181849, -93.26864999999999 30.18165, -93.268441 30.18165, -93.268441 30.181786))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>94</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>372.7214014</p></td>
+<td><p>-93.26299823</p></td>
+<td><p>30.18195268</p></td>
+<td><p>22</p></td>
+<td><p>131.7020373</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1998</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.262905 30.181886, -93.262905 30.182041, -93.262969 30.182041, -93.262969 30.182006, -93.263103 30.182006, -93.263103 30.181886, -93.262905 30.181886))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>95</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>404.8312527</p></td>
+<td><p>-93.25281619</p></td>
+<td><p>30.1746023</p></td>
+<td><p>11</p></td>
+<td><p>131.9294644</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1974</p></td>
+<td><p>0.090910159</p></td>
+<td><p>13.65291198</p></td>
+<td><p>POLYGON ((-93.252707 30.174673, -93.252911 30.174673, -93.252911 30.174508, -93.252836 30.174508, -93.252836 30.17455, -93.252707 30.17455, -93.252707 30.174673))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>96</p></td>
+<td><p>Flat</p></td>
+<td><p>X</p></td>
+<td><p>717.525081</p></td>
+<td><p>-93.2537015</p></td>
+<td><p>30.1771065</p></td>
+<td><p>11</p></td>
+<td><p>131.8481071</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>1996</p></td>
+<td><p>0.101567736</p></td>
+<td><p>13.84668611</p></td>
+<td><p>POLYGON ((-93.253631 30.177284, -93.253772 30.177284, -93.253772 30.176929, -93.253631 30.176929, -93.253631 30.177284))</p></td>
+<td><p>COM1</p></td>
+</tr>
+<tr class="row-even"><td><p>97</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>168.7917137</p></td>
+<td><p>-93.2627065</p></td>
+<td><p>30.1772395</p></td>
+<td><p>11</p></td>
+<td><p>131.8576898</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2020</p></td>
+<td><p>0.031950913</p></td>
+<td><p>12.58092569</p></td>
+<td><p>POLYGON ((-93.262744 30.177161, -93.262669 30.177161, -93.262669 30.177318, -93.262744 30.177318, -93.262744 30.177161))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>98</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>615.4670524</p></td>
+<td><p>-93.26120502</p></td>
+<td><p>30.17795089</p></td>
+<td><p>22</p></td>
+<td><p>131.83179</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>2</p></td>
+<td><p>2020</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>POLYGON ((-93.261184 30.177829, -93.261084 30.17783, -93.26108499999999 30.177912, -93.261133 30.177911, -93.261134 30.177962, -93.261099 30.177962, -93.261101 30.178053, -93.261323 30.17805, -93.26132 30.177871, -93.261185 30.177873, -93.261184 30.177829))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-even"><td><p>99</p></td>
+<td><p>Hip</p></td>
+<td><p>X</p></td>
+<td><p>513.6106114</p></td>
+<td><p>-93.25975748</p></td>
+<td><p>30.1793027</p></td>
+<td><p>22</p></td>
+<td><p>131.784792</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>2.1</p></td>
+<td><p>2</p></td>
+<td><p>2020</p></td>
+<td><p>0.049399836</p></td>
+<td><p>12.89817884</p></td>
+<td><p>POLYGON ((-93.259852 30.179203, -93.259681 30.179203, -93.259681 30.179298, -93.259648 30.179298, -93.259648 30.179394, -93.259852 30.179394, -93.259852 30.179203))</p></td>
+<td><p>RES1</p></td>
+</tr>
+<tr class="row-odd"><td><p>100</p></td>
+<td><p>Gable</p></td>
+<td><p>X</p></td>
+<td><p>432.0319473</p></td>
+<td><p>-93.26126886</p></td>
+<td><p>30.17978654</p></td>
+<td><p>22</p></td>
+<td><p>131.7711196</p></td>
+<td><p>Wood</p></td>
+<td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>2018</p></td>
+<td><p>0.157647803</p></td>
+<td><p>14.86632368</p></td>
+<td><p>POLYGON ((-93.26119799999999 30.179898, -93.261315 30.179897, -93.261314 30.179842, -93.261349 30.179841, -93.261347 30.179685, -93.261196 30.179686, -93.26119799999999 30.179898))</p></td>
+<td><p>RES1</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="citation">
 <dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id6">ATC20</a></span></dt>
 <dd><p>ATC (2020b), ATC Hazards By Location, <a class="reference external" href="https://hazards.atcouncil.org/">https://hazards.atcouncil.org/</a>, Applied Technology Council, Redwood City, CA.</p>
@@ -802,7 +2653,6 @@ based on NOAA average daily temperature.</p>
 <dd><p>FEMA (2021), Hazus Inventory Technical Manual. Hazus 4.2 Service Pack 3. Federal Emergency Management Agency, Washington D.C.</p>
 </dd>
 </dl>
-</div>
 </div>
 </div>
 
