@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.9. Example Outputs &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>3.9. Validation Results &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
-        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -138,7 +137,7 @@
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">3.6. Damage and Loss Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">3.7. Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample_results.html">3.8. Verification Results</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.9. Example Outputs</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.9. Validation Results</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#regional-results-nsi-based-year-built">3.9.1. Regional Results (NSI-Based Year Built)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#surf-zillow-year-built-results">3.9.2. SURF-Zillow Year Built Results</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#validation-steer">3.9.3. Validation: StEER</a></li>
@@ -213,7 +212,7 @@
         
           <li><a href="index.html"><span class="section-number">3. </span>Lake Charles, LA</a> &raquo;</li>
         
-      <li><span class="section-number">3.9. </span>Example Outputs</li>
+      <li><span class="section-number">3.9. </span>Validation Results</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -232,22 +231,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="example-outputs">
-<span id="lbl-testbed-ac-example-outputs"></span><h1><span class="section-number">3.9. </span>Example Outputs<a class="headerlink" href="#example-outputs" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="validation-results">
+<span id="lbl-testbed-ac-example-outputs"></span><h1><span class="section-number">3.9. </span>Validation Results<a class="headerlink" href="#validation-results" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="regional-results-nsi-based-year-built">
 <h2><span class="section-number">3.9.1. </span>Regional Results (NSI-Based Year Built)<a class="headerlink" href="#regional-results-nsi-based-year-built" title="Permalink to this headline">¶</a></h2>
 <p>The geospatial distribution of estimated wind damage states and losses under Hurricane Laura
-are shown in <a class="reference internal" href="#dl-and-cdf"><span class="std std-numref">Fig. 3.9.1.1</span></a> (a) and (b), respectively. Referring to <a class="reference internal" href="#dl-and-cdf"><span class="std std-numref">Fig. 3.9.1.1</span></a> (c), most of the buildings
+are shown in <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.9.1.1</span></a> (a) and (b), respectively. Referring to <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.9.1.1</span></a> (c), most of the buildings
 in the studied region (85%) have relatively low to moderate damage (expected Damage State less than 2.0)
-due to the wind hazard. Referring to <a class="reference internal" href="#dl-and-cdf"><span class="std std-numref">Fig. 3.9.1.1</span></a> (c), about 20% buildings would expected damage states lower than
+due to the wind hazard. Referring to <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.9.1.1</span></a> (c), about 20% buildings would expected damage states lower than
 DS-1 and only about 5% buildings would expect to have damage states exceeding DS-3.
-The CDF of resulting loss ratios is shown in <a class="reference internal" href="#dl-and-cdf"><span class="std std-numref">Fig. 3.9.1.1</span></a> (d) where about 40% buildings would expect
+The CDF of resulting loss ratios is shown in <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.9.1.1</span></a> (d) where about 40% buildings would expect
 a loss less than 10% of the total reconstruction cost, and about 30% buildings could see a loss more than 20% of the total
 reconstruction cost. The following sections will present comparative, sensitivity, and validation studies to investigate potential influences of important building attributes (e.g., year built) and
 and compare the results to available field observations of damage.</p>
-<div class="align-center figure" id="dl-and-cdf" style="width: 1500px">
+<div class="align-center figure" id="dl-and-cdf-lc" style="width: 1500px">
 <img alt="../../../_images/DS_LS_CDF.png" src="../../../_images/DS_LS_CDF.png" />
-<p class="caption"><span class="caption-number">Fig. 3.9.1.1 </span><span class="caption-text">Estimated regional damage states and loss ratios.</span><a class="headerlink" href="#dl-and-cdf" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.9.1.1 </span><span class="caption-text">Estimated regional damage states and loss ratios.</span><a class="headerlink" href="#dl-and-cdf-lc" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="surf-zillow-year-built-results">
@@ -281,14 +280,14 @@ small sample size also offers the convenience of investigating the influence of 
 on the estimated damage states and relating them to corresponding field observations to help understand the
 dominant trends in the data. As will be illustrated, some of these trends validate the effectiveness of the
 methodology and others indicate potential measures to improve the wind resistance.</p>
-<p>Before presenting results, it is important to note, as discussed in StEER’s report on Hurricane Laura (<span id="id2">[Rouche21]</span>),
+<p>Before presenting results, it is important to note, as discussed in StEER’s report on Hurricane Laura (<a class="reference internal" href="#roueche21" id="id2"><span>[Roueche21]</span></a>),
 that StEER’s assessments for Laura were conducted virtually from streetview imagery due to COVID-19 restrictions
 on travel; thus this “ground truth” is less reliable in discerning some aspects of the damage than a traditional
 StEER mission with in-person, up-close forensic assessments. Also note that since rulesets from New Jersey are
 applied to assign attributes and are not consistent with the historical regulatory environment in Louisiana,
 the predicted damage states are also likely to be lower, particularly for construction older than 2006 (the
 year Louisiana first implemented its statewide building codes linked to IBC/IRC). Finally, as also discussed in
-StEER’s report (<span id="id3">[Rouche21]</span>), there were low rates of compliance with shuttering requirements in the affected
+StEER’s report (<a class="reference internal" href="#roueche21" id="id3"><span>[Roueche21]</span></a>), there were low rates of compliance with shuttering requirements in the affected
 area (based on observations immediately after landfall). Thus it is likely that the shutter attributes are
 assigned in this workflow at a rate higher than actually observed in the event, leading to lower rates of
 predicted damage than those observed in the field.</p>
@@ -299,7 +298,7 @@ to influence the resulting damage state under the hurricane wind hazard. Major o
 are found to have prominent improvement in the wind resistance and have lower damage states. This is reasoned
 by the authors to be led by the assumption in the ruleset that the post-2000 buildings would have shutter
 measures and stronger roof deck attachment. It is import to note, however, that this effect predicted based on
-New Jersey rulesets will not be observed in Louisiana unitl at least 2006 when statewise codes were enacted,
+New Jersey rulesets will not be observed in Louisiana until at least 2006 when statewise codes were enacted,
 and further, is likely to not be pronounced given the earlier observation about low rates of compliance with shuttering
 requirements.</p></li>
 <li><p>The surface roughness, i.e., terrain feature, is found to be a key variable when considering the potential
@@ -326,7 +325,7 @@ or peak wind speed at a specific site. Hence, the estimated “median” damage 
 the full representation of the real damage potential.  As illustrated in <a class="reference internal" href="#ds-uq"><span class="std std-numref">Fig. 3.9.3.2</span></a>, if considering the uncertainty
 in the year built (instead of a deterministic value, assuming it follows a normal distribution with a standard deviation
 of 10 years), we could sample year built from the distribution and repeat the damage assessment by sufficient number of times to
-estimate the distribution of the damage state. This however assumes differences are attibutable to uncertainties in
+estimate the distribution of the damage state. This however assumes differences are attributable to uncertainties in
 the year built and neglects the fact that the predictors are biased by attribute assignments using rulesets that are derived from
 a difference regulatory environment (New Jersey) with a longer history of adopting and enforcing model building codes
 statewide. This fact may explain why the predicted damage states bias toward lower levels of damage (assuming less
@@ -25134,7 +25133,7 @@ needed to consider other possible factors causing this mismatch in predicted DS-
 <p class="caption"><span class="caption-number">Fig. 3.9.4.3 </span><span class="caption-text">Comparison: FEMA Damage Category vs. expected damage state by the workflow (for the 573 buildings).</span><a class="headerlink" href="#fema-ds-comp" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
-<dt class="label" id="roueche21"><span class="brackets"><a class="fn-backref" href="#id1">Roueche21</a></span></dt>
+<dt class="label" id="roueche21"><span class="brackets">Roueche21</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>
 <dd><p>Roueche, D. Kameshwar, S. Vorce, M. Kijewski-Correa, T. Marshall, J. Mashrur, N. Ambrose, K. Brown, C. Childress, O. Fox, D. Morris,
 K. Rawajfih, H. Rodriguez, L. (2021) “Field Assessment Structural Teams: FAST-1, FAST-2, FAST-3”, in StEER - Hurricane Laura.
 DesignSafe-CI. <a class="reference external" href="https://doi.org/10.17603/ds2-dha4-g845">https://doi.org/10.17603/ds2-dha4-g845</a></p>

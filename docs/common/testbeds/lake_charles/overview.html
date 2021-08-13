@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
-        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -144,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">3.6. Damage and Loss Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">3.7. Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample_results.html">3.8. Verification Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">3.9. Example Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">3.9. Validation Results</a></li>
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">3.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">3.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feedback_request.html">3.12. Feedback and Data Request</a></li>
@@ -286,7 +285,7 @@ envelopes and/or wind-borne debris impact are also captured in the damage and lo
 these phenomena themselves are not explicitly modeled. Storm surge, flood and other rainfall-induced hazards are
 not included in the current implementation. Moreover, the inventory focuses only on wood-frame
 residential construction. These intentional focuses of the current implementation leave ample room for further
-community-led development. The adoption of HAZUS loss estimation frameworks <a class="reference internal" href="../sf_bay_area/overview.html#fema18" id="id6"><span>[FEMA18]</span></a> takes advantage of a process developed
+community-led development. The adoption of HAZUS loss estimation frameworks <a class="reference internal" href="#fema18" id="id6"><span>[FEMA18]</span></a> takes advantage of a process developed
 in Atlantic County, NJ for assigning attributes to specific building footprints using time-evolving heuristic
 rulesets grounded in local codes/standards and normative practice. As this testbed demonstrates a quick
 “spin-up” after a hurricane, the rulesets from New Jersey are directly applied; while many of the practices
@@ -306,17 +305,26 @@ damage and loss, based on the building class and assigned attributes.</p>
 <h2><span class="section-number">3.1.4. </span>Available Inventories<a class="headerlink" href="#available-inventories" title="Permalink to this headline">¶</a></h2>
 <p>The constructed building inventory developed for Lake Charles is accessible via DesignSafe.
 This testbed includes 30,078 buildings including 26,517 residential buildings and 3,561 commercial buildings
-(classified by BRAILS, more details will be introduced in ref:<cite>lbl-testbed_LC_asset_description</cite>)
+(classified by BRAILS, more details will be introduced in <a class="reference internal" href="asset_description.html#lbl-testbed-lc-asset-description"><span class="std std-ref">Asset Description</span></a>)
 in the city of Lake Charles. <a class="reference internal" href="#fig-yearbuilt"><span class="std std-numref">Fig. 3.1.4.1</span></a> visualizes the
 Year Built of the buildings in the inventory.  <a class="reference internal" href="#fig-occupancyclass"><span class="std std-numref">Fig. 3.1.4.2</span></a> shows the geospatial distribution
 of the occupancy classes in the inventory.</p>
-<div class="align-center figure" id="id7" style="width: 1000px">
+<div class="align-center figure" id="id7" style="width: 800px">
 <span id="fig-yearbuilt"></span><img alt="../../../_images/YearBuilt.png" src="../../../_images/YearBuilt.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1.4.1 </span><span class="caption-text">Geospatial visualization of the building inventory by year built.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id8" style="width: 1000px">
+<div class="align-center figure" id="id8" style="width: 800px">
 <span id="fig-occupancyclass"></span><img alt="../../../_images/OccupancyClass.png" src="../../../_images/OccupancyClass.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1.4.2 </span><span class="caption-text">Geospatial visualization of the building inventory by occupancy class.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#fig-inventorypinechart"><span class="std std-numref">Fig. 3.1.4.3</span></a> summarizes characteristics of the testbed inventory, including distribution by
+year built, occupancy class, and number of stories.
+Notably, these inventories are typified by older vintages of construction (85% of buildings were constructed
+before 1980), with a dominance of low-rise (1-2 stories) buildings (approximately
+98% of inventory buildings). About 88% of buildings are of residential use.</p>
+<div class="align-center figure" id="id9" style="width: 900px">
+<span id="fig-inventorypinechart"></span><img alt="../../../_images/InventoryPineChart.png" src="../../../_images/InventoryPineChart.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1.4.3 </span><span class="caption-text">Distribution of building characteristics of the building inventory.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="roueche20"><span class="brackets"><a class="fn-backref" href="#id1">Roueche20</a></span></dt>

@@ -1,24 +1,24 @@
 .. _lbl-testbed_AC_example_outputs:
 
 **************************
-Example Outputs
+Validation Results
 **************************
 
 Regional Results (NSI-Based Year Built)
 ========================================
 
 The geospatial distribution of estimated wind damage states and losses under Hurricane Laura
-are shown in :numref:`dl_and_cdf` (a) and (b), respectively. Referring to :numref:`dl_and_cdf` (c), most of the buildings 
+are shown in :numref:`dl_and_cdf_lc` (a) and (b), respectively. Referring to :numref:`dl_and_cdf_lc` (c), most of the buildings 
 in the studied region (85%) have relatively low to moderate damage (expected Damage State less than 2.0) 
-due to the wind hazard. Referring to :numref:`dl_and_cdf` (c), about 20% buildings would expected damage states lower than 
+due to the wind hazard. Referring to :numref:`dl_and_cdf_lc` (c), about 20% buildings would expected damage states lower than 
 DS-1 and only about 5% buildings would expect to have damage states exceeding DS-3. 
-The CDF of resulting loss ratios is shown in :numref:`dl_and_cdf` (d) where about 40% buildings would expect 
+The CDF of resulting loss ratios is shown in :numref:`dl_and_cdf_lc` (d) where about 40% buildings would expect 
 a loss less than 10% of the total reconstruction cost, and about 30% buildings could see a loss more than 20% of the total 
 reconstruction cost. The following sections will present comparative, sensitivity, and validation studies to investigate potential influences of important building attributes (e.g., year built) and 
 and compare the results to available field observations of damage.
 
 .. figure:: figure/DS_LS_CDF.png
-   :name: dl_and_cdf
+   :name: dl_and_cdf_lc
    :align: center
    :figclass: align-center
    :figwidth: 1500
@@ -69,14 +69,14 @@ on the estimated damage states and relating them to corresponding field observat
 dominant trends in the data. As will be illustrated, some of these trends validate the effectiveness of the 
 methodology and others indicate potential measures to improve the wind resistance.
 
-Before presenting results, it is important to note, as discussed in StEER’s report on Hurricane Laura ([Rouche21]_), 
+Before presenting results, it is important to note, as discussed in StEER’s report on Hurricane Laura ([Roueche21]_), 
 that StEER’s assessments for Laura were conducted virtually from streetview imagery due to COVID-19 restrictions 
 on travel; thus this “ground truth” is less reliable in discerning some aspects of the damage than a traditional 
 StEER mission with in-person, up-close forensic assessments. Also note that since rulesets from New Jersey are 
 applied to assign attributes and are not consistent with the historical regulatory environment in Louisiana, 
 the predicted damage states are also likely to be lower, particularly for construction older than 2006 (the 
 year Louisiana first implemented its statewide building codes linked to IBC/IRC). Finally, as also discussed in 
-StEER’s report ([Rouche21]_), there were low rates of compliance with shuttering requirements in the affected 
+StEER’s report ([Roueche21]_), there were low rates of compliance with shuttering requirements in the affected 
 area (based on observations immediately after landfall). Thus it is likely that the shutter attributes are 
 assigned in this workflow at a rate higher than actually observed in the event, leading to lower rates of 
 predicted damage than those observed in the field.
@@ -88,7 +88,7 @@ to influence the resulting damage state under the hurricane wind hazard. Major o
    are found to have prominent improvement in the wind resistance and have lower damage states. This is reasoned 
    by the authors to be led by the assumption in the ruleset that the post-2000 buildings would have shutter 
    measures and stronger roof deck attachment. It is import to note, however, that this effect predicted based on 
-   New Jersey rulesets will not be observed in Louisiana unitl at least 2006 when statewise codes were enacted, 
+   New Jersey rulesets will not be observed in Louisiana until at least 2006 when statewise codes were enacted, 
    and further, is likely to not be pronounced given the earlier observation about low rates of compliance with shuttering 
    requirements.
 #. The surface roughness, i.e., terrain feature, is found to be a key variable when considering the potential 
@@ -119,7 +119,7 @@ or peak wind speed at a specific site. Hence, the estimated "median" damage stat
 the full representation of the real damage potential.  As illustrated in :numref:`ds_uq`, if considering the uncertainty 
 in the year built (instead of a deterministic value, assuming it follows a normal distribution with a standard deviation 
 of 10 years), we could sample year built from the distribution and repeat the damage assessment by sufficient number of times to 
-estimate the distribution of the damage state. This however assumes differences are attibutable to uncertainties in 
+estimate the distribution of the damage state. This however assumes differences are attributable to uncertainties in 
 the year built and neglects the fact that the predictors are biased by attribute assignments using rulesets that are derived from 
 a difference regulatory environment (New Jersey) with a longer history of adopting and enforcing model building codes 
 statewide. This fact may explain why the predicted damage states bias toward lower levels of damage (assuming less 

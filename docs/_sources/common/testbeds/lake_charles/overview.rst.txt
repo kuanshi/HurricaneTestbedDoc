@@ -83,7 +83,7 @@ Available Inventories
 
 The constructed building inventory developed for Lake Charles is accessible via DesignSafe. 
 This testbed includes 30,078 buildings including 26,517 residential buildings and 3,561 commercial buildings 
-(classified by BRAILS, more details will be introduced in ref:`lbl-testbed_LC_asset_description`) 
+(classified by BRAILS, more details will be introduced in :ref:`lbl-testbed_LC_asset_description`) 
 in the city of Lake Charles. :numref:`fig-yearBuilt` visualizes the 
 Year Built of the buildings in the inventory.  :numref:`fig-occupancyClass` shows the geospatial distribution 
 of the occupancy classes in the inventory.
@@ -93,7 +93,7 @@ of the occupancy classes in the inventory.
 .. figure:: figure/YearBuilt.png
    :align: center
    :figclass: align-center
-   :figwidth: 1000
+   :figwidth: 800
 
    Geospatial visualization of the building inventory by year built.
 
@@ -102,9 +102,24 @@ of the occupancy classes in the inventory.
 .. figure:: figure/OccupancyClass.png
    :align: center
    :figclass: align-center
-   :figwidth: 1000
+   :figwidth: 800
 
    Geospatial visualization of the building inventory by occupancy class.
+
+:numref:`fig-inventoryPineChart` summarizes characteristics of the testbed inventory, including distribution by 
+year built, occupancy class, and number of stories. 
+Notably, these inventories are typified by older vintages of construction (85% of buildings were constructed 
+before 1980), with a dominance of low-rise (1-2 stories) buildings (approximately 
+98% of inventory buildings). About 88% of buildings are of residential use. 
+
+.. _fig-inventoryPineChart:
+
+.. figure:: figure/InventoryPineChart.png
+   :align: center
+   :figclass: align-center
+   :figwidth: 900
+
+   Distribution of building characteristics of the building inventory.
 
 .. [Roueche20]
    Roueche, D., Kameshwar, S., Marshall, J., Mashrur, N., Kijewski-Correa, T., Gurley, K., et al. (2020). Hybrid Preliminary Virtual Reconnaissance Report-Early Access Reconnaissance Report (PVRR-EARR). StEER - Hurricane Laura. DesignSafe-CI. doi:10.17603/ds2-ng93-se16
