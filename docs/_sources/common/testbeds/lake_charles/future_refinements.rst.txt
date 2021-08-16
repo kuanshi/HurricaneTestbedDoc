@@ -43,6 +43,9 @@ community is especially welcome:
    extension to other building classes in a manner similar to that exercised in the 
    :ref:`bl-testbed_Atlantic_City` testbed.
 
+#. The current pre-trained BRAILS models could be extended to new regions where construction practices may differ. 
+   Please refer to the discussion on the `generalization of BRAILS models <https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/understand.html>`_
+
 #. More importantly, the rulesets used to demonstrate how a hindcast testbed could be swiftly implemented 
    were ported over from New Jersey. The rulesets warrant updating to match the regulatory environment in 
    Louisiana and also to capture the behaviors and norms in this region, e.g., the low rates of window 
@@ -65,12 +68,6 @@ community is especially welcome:
    response simulation to estimate drifts or other EDPs for more dynamically sensitive structures under 
    wind. However, similar opportunities to translate geospatially varying hazards into loads on a given 
    structure can be seized to increase the workflow's overall fidelity.
-
-
-.. note::
-
-   Community members who wish to contribute to the hurricane testbed in any of the above (or other) areas can 
-   express their interest by completing this `survey <https://docs.google.com/forms/d/e/1FAIpQLSdVnnqYvDfpYyFunQSbNTkqqWR9WlzL-VjV_Pe9A21o1Iw4Aw/viewform>`_.
 
 
 .. [Roueche21]

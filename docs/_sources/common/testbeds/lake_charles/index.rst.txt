@@ -106,8 +106,9 @@ to expand the capabilities of this community software.
    response_simulation
    damage_and_loss
    uncertainty_quantification
-   sample_results
    example_outputs
+   sample_results
+   validation_results
    future_refinements
    best_practices
    feedback_request

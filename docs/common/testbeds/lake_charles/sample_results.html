@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.8. Verification Results &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>3.9. Verification Results &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
-        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
@@ -49,8 +48,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="3.9. Example Outputs" href="example_outputs.html" />
-    <link rel="prev" title="3.7. Uncertainty Quantification" href="uncertainty_quantification.html" />
+    <link rel="next" title="3.10. Validation Results" href="validation_results.html" />
+    <link rel="prev" title="3.8. Validation Results" href="example_outputs.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -136,15 +135,16 @@
 <li class="toctree-l2"><a class="reference internal" href="response_simulation.html">3.5. Response Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">3.6. Damage and Loss Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">3.7. Uncertainty Quantification</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.8. Verification Results</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#building-inventory">3.8.1. Building Inventory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hand-calculation">3.8.2. Hand Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">3.8. Validation Results</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.9. Verification Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#building-inventory">3.9.1. Building Inventory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hand-calculation">3.9.2. Hand Calculation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">3.9. Example Outputs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="future_refinements.html">3.10. Opportunity Areas for Future Refinements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="best_practices.html">3.11. Best Practices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">3.12. Feedback and Data Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validation_results.html">3.10. Validation Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_refinements.html">3.11. Opportunity Areas for Future Refinements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="best_practices.html">3.12. Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">3.13. Feedback</a></li>
 </ul>
 </li>
 </ul>
@@ -210,7 +210,7 @@
         
           <li><a href="index.html"><span class="section-number">3. </span>Lake Charles, LA</a> &raquo;</li>
         
-      <li><span class="section-number">3.8. </span>Verification Results</li>
+      <li><span class="section-number">3.9. </span>Verification Results</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -230,16 +230,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="verification-results">
-<span id="lbl-testbed-lc-sample-results"></span><h1><span class="section-number">3.8. </span>Verification Results<a class="headerlink" href="#verification-results" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-lc-sample-results"></span><h1><span class="section-number">3.9. </span>Verification Results<a class="headerlink" href="#verification-results" title="Permalink to this headline">¶</a></h1>
 <p>This page summarizes sample results from the
 testbed runs with the emphasis on verifying the estimated loss ratios by hand-calculations.</p>
 <div class="section" id="building-inventory">
-<h2><span class="section-number">3.8.1. </span>Building Inventory<a class="headerlink" href="#building-inventory" title="Permalink to this headline">¶</a></h2>
-<p>From the entire building inventory, 109 buildings (<a class="reference internal" href="#sample-table"><span class="std std-numref">Table 3.8.1.1</span></a>) are randomly selected.
-<a class="reference internal" href="#scatter-matrix"><span class="std std-numref">Fig. 3.8.1.1</span></a> shows the data distributions of the built year, surface
+<h2><span class="section-number">3.9.1. </span>Building Inventory<a class="headerlink" href="#building-inventory" title="Permalink to this headline">¶</a></h2>
+<p>From the entire building inventory, 109 buildings (<a class="reference internal" href="#sample-table"><span class="std std-numref">Table 3.9.1.1</span></a>) are randomly selected.
+<a class="reference internal" href="#scatter-matrix"><span class="std std-numref">Fig. 3.9.1.1</span></a> shows the data distributions of the built year, surface
 roughness (i.e., Terrain), roof shape, number of stories, and occupancy class.</p>
 <table class="docutils align-center" id="sample-table">
-<caption><span class="caption-number">Table 3.8.1.1 </span><span class="caption-text">Sampled building inventory</span><a class="headerlink" href="#sample-table" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.9.1.1 </span><span class="caption-text">Sampled building inventory</span><a class="headerlink" href="#sample-table" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 6%" />
 <col style="width: 6%" />
@@ -2246,18 +2246,18 @@ roughness (i.e., Terrain), roof shape, number of stories, and occupancy class.</
 </table>
 <div class="align-center figure" id="scatter-matrix" style="width: 700px">
 <img alt="../../../_images/ScatterMatrix1.png" src="../../../_images/ScatterMatrix1.png" />
-<p class="caption"><span class="caption-number">Fig. 3.8.1.1 </span><span class="caption-text">Scatter matrix of sampled buildings.</span><a class="headerlink" href="#scatter-matrix" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.9.1.1 </span><span class="caption-text">Scatter matrix of sampled buildings.</span><a class="headerlink" href="#scatter-matrix" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="hand-calculation">
-<h2><span class="section-number">3.8.2. </span>Hand Calculation<a class="headerlink" href="#hand-calculation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.9.2. </span>Hand Calculation<a class="headerlink" href="#hand-calculation" title="Permalink to this headline">¶</a></h2>
 <p>Hand calculations of wind loss ratios are conducted using the
 input building information and intensity measures for the sampled buildings.
-<a class="reference internal" href="#hand-calc"><span class="std std-numref">Fig. 3.8.2.1</span></a> compares the hand-calculated loss ratios and the simulated
+<a class="reference internal" href="#hand-calc"><span class="std std-numref">Fig. 3.9.2.1</span></a> compares the hand-calculated loss ratios and the simulated
 results, which are in good agreement.</p>
 <div class="align-center figure" id="hand-calc" style="width: 400px">
 <img alt="../../../_images/SimuVSHandCalc1.png" src="../../../_images/SimuVSHandCalc1.png" />
-<p class="caption"><span class="caption-number">Fig. 3.8.2.1 </span><span class="caption-text">Hand-calculated results vs. simulated results.</span><a class="headerlink" href="#hand-calc" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.9.2.1 </span><span class="caption-text">Hand-calculated results vs. simulated results.</span><a class="headerlink" href="#hand-calc" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

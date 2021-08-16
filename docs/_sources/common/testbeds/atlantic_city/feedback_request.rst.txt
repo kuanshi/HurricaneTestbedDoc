@@ -12,8 +12,3 @@ When creating a **New Topic** it would be helpful if you could place an indicati
    the workflow it pertains to such as Hazard Characterization.
 #. Extensions, e.g., EXTENSION: discuss possible extensions of features in current testbeds or new geographical 
    areas where you plan to apply the testbed capabilities.
-
-.. note::
-
-   Community members who wish to contribute to the hurricane testbed are also welcome to 
-   express their interest by completing this `survey <https://docs.google.com/forms/d/e/1FAIpQLSdVnnqYvDfpYyFunQSbNTkqqWR9WlzL-VjV_Pe9A21o1Iw4Aw/viewform>`_.
