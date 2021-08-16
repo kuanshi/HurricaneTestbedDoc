@@ -1,7 +1,7 @@
 .. _lbl-testbed_AC_feedback_request:
 
 ******************************
-Feedback and Data Request
+Feedback
 ******************************
 
 If you have any feedback, data requests, or questions, please post on please post on the `SimCenter Regional Testbeds <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=22.0>`_. 
