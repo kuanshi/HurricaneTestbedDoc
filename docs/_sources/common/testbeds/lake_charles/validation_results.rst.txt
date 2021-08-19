@@ -18,7 +18,7 @@ by Zillow. Note that the difference is not prominent in downtown Lake Charles, t
 southwest of the city where the Zillow set predicts relatively lower damage states. Provided in 
 :numref:`PDS_cdf` are the the CDF distributions of probability of exceeding DS-2 and DS-3. 
 
-.. figure:: figure/DS_Zillow_COM.png
+.. figure:: figure/DS_Zillow_Comp.png
    :name: ds_zillow_COM1p
    :align: center
    :figclass: align-center
@@ -199,7 +199,7 @@ needed to consider other possible factors causing this mismatch in predicted DS-
 
    FEMA Damage Category in the Geospatial Damage Assessment Database (for the 573 buildings).
 
-.. figure:: figure/FEMA_DS_COM1p.png
+.. figure:: figure/FEMA_DS_comp.png
    :name: fema_ds_COM1p
    :align: center
    :figclass: align-center
