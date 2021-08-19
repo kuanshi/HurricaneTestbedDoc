@@ -350,11 +350,15 @@ def parse_BIM(BIM_in):
             terrain = 3
         elif ((BIM['Terrain'] >= 50) and (BIM['Terrain'] <= 59)):
             terrain = 3 # Open
-        elif ((BIM['Terrain'] == 44) or (BIM['Terrain'] == 62)) or (BIM['Terrain'] == 76):
+        elif ((BIM['Terrain'] >= 30) and (BIM['Terrain'] <= 39)):
+            terrain = 3 # Open
+        elif ((BIM['Terrain'] >= 70) and (BIM['Terrain'] <= 79)):
+            terrain = 3 # Open
+        elif (BIM['Terrain'] == 62):
             terrain = 3 # Open
         elif ((BIM['Terrain'] >= 20) and (BIM['Terrain'] <= 29)):
             terrain = 15 # Light suburban
-        elif (BIM['Terrain'] == 11) or (BIM['Terrain'] == 61):
+        elif ((BIM['Terrain'] >= 11) and (BIM['Terrain'] <= 15)) or (BIM['Terrain'] == 61):
             terrain = 35 # Suburban
         elif ((BIM['Terrain'] >= 41) and (BIM['Terrain'] <= 43)) or (BIM['Terrain'] in [16, 17]):
             terrain = 70 # light trees
