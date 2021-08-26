@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.11. RES: Results &mdash; Regional Resilience Determination Tool  documentation</title>
+  <title>2.10. RES: Results &mdash; Regional Resilience Determination Tool  documentation</title>
   
 
   
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
-        <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
@@ -50,7 +49,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="3. Troubleshooting" href="../../../troubleshooting/desktop/troubleshooting.html" />
-    <link rel="prev" title="2.10. RV: Random Variables" href="../RV.html" />
+    <link rel="prev" title="2.9.3.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm" href="../UCSD_UQ_TMCMC.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -129,16 +128,16 @@
 <li class="toctree-l2"><a class="reference internal" href="ANA.html">2.7. ANA: Asset Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="DL.html">2.8. DL: Damage and Loss</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.9. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.10. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.11. RES: Results</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pelicun-damage-and-loss">2.11.1. Pelicun Damage and Loss</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.10. RES: Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pelicun-damage-and-loss">2.10.1. Pelicun Damage and Loss</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/R2D.html">5. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
 <ul>
@@ -208,7 +207,7 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">2.11. </span>RES: Results</li>
+      <li><span class="section-number">2.10. </span>RES: Results</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -228,7 +227,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="res-results">
-<h1><span class="section-number">2.11. </span>RES: Results<a class="headerlink" href="#res-results" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.10. </span>RES: Results<a class="headerlink" href="#res-results" title="Permalink to this headline">¶</a></h1>
 <p>The <strong>Results</strong> panel is where the user can review the results of an analysis. Currently, the results post-processor supports output from the following applications:</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -236,8 +235,8 @@
 </ul>
 </div>
 <div class="section" id="pelicun-damage-and-loss">
-<h2><a class="toc-backref" href="#id2"><span class="section-number">2.11.1. </span>Pelicun Damage and Loss</a><a class="headerlink" href="#pelicun-damage-and-loss" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#fig-r2drespanel"><span class="std std-numref">Fig. 2.11.1.1</span></a> shows the results panel for the <strong>Pelicun Damage and Loss</strong> application. The results panel is comprised of several docking windows that can be moved, rearranged, resized, and opened and closed by the user. The results panel contains these main docks:</p>
+<h2><a class="toc-backref" href="#id2"><span class="section-number">2.10.1. </span>Pelicun Damage and Loss</a><a class="headerlink" href="#pelicun-damage-and-loss" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#fig-r2drespanel"><span class="std std-numref">Fig. 2.10.1.1</span></a> shows the results panel for the <strong>Pelicun Damage and Loss</strong> application. The results panel is comprised of several docking windows that can be moved, rearranged, resized, and opened and closed by the user. The results panel contains these main docks:</p>
 <blockquote>
 <div><ol class="arabic">
 <li><p><strong>Regional Map Dock:</strong> Geographic map of the region. The assets are colored according to their loss ratio. Clicking on an asset will produce a popup showing the detailed information of that asset.</p></li>
@@ -249,7 +248,7 @@
 <li><p><em>Economic Losses:</em> Bar chart providing the losses in a region according to damage states, <em>DS</em>, where <em>DS</em> = 1..4, and where <em>DS</em> =1 is the least severe and <em>DS</em> = 4 is the most severe damage state. Moreover, the losses are grouped into losses resulting from damage to structural components, damage to non-structural drift sensitive components, and damage to non-structural acceleration sensitive components.</p></li>
 <li><p><em>Relative Frequency Diagram of the Losses:</em> Line chart of the relative frequency diagram of the total losses of each building.</p></li>
 </ol>
-<p>To switch between the charts, the user can click on the <strong>Chart Selection Tabs</strong> shown in <a class="reference internal" href="#fig-r2drespanel"><span class="std std-numref">Fig. 2.11.1.1</span></a></p>
+<p>To switch between the charts, the user can click on the <strong>Chart Selection Tabs</strong> shown in <a class="reference internal" href="#fig-r2drespanel"><span class="std std-numref">Fig. 2.10.1.1</span></a></p>
 </div></blockquote>
 </li>
 <li><p><strong>Detailed Building Results Dock:</strong> Table showing the detailed building results. For each building, the table provides the:</p>
@@ -264,7 +263,7 @@
 <li><p>Loss Ratio</p></li>
 </ul>
 </div></blockquote>
-<p>The <strong>Table Sort</strong> combo box, shown in <a class="reference internal" href="#fig-r2drespanel"><span class="std std-numref">Fig. 2.11.1.1</span></a>, sorts the table in descending order according to the selected filter, e.g., repair cost.</p>
+<p>The <strong>Table Sort</strong> combo box, shown in <a class="reference internal" href="#fig-r2drespanel"><span class="std std-numref">Fig. 2.10.1.1</span></a>, sorts the table in descending order according to the selected filter, e.g., repair cost.</p>
 </div></blockquote>
 </li>
 </ol>
@@ -273,7 +272,7 @@
 <p>The <strong>Export to PDF</strong> file box and button allows for the creation of a PDF containing the regional summary, charts, and building results table for future reference. The user can specify the folder to which to save the results by pressing on the <strong>Browse</strong> button. By default, the file will be saved as <code class="docutils literal notranslate"><span class="pre">Results.pdf</span></code>. Clicking on the <strong>Export to PDF</strong> button creates the PDF in the specified folder.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-r2drespanel"></span><img alt="../../../../../_images/R2DRESPanel.png" src="../../../../../_images/R2DRESPanel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.11.1.1 </span><span class="caption-text">Pelicun results visualization panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.10.1.1 </span><span class="caption-text">Pelicun results visualization panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

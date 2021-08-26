@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\css\lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\css\lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\jquery-1.11.0.min.js"></script>
-        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\js\lightbox.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2\dist\js\lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images\LightBox2\lightbox2-customize\jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
@@ -122,7 +121,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">5. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reqments/R2D.html">5. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Testbeds</span></p>
 <ul class="current">
@@ -153,7 +153,7 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
@@ -771,15 +771,15 @@ rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference i
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Building Class Rulesets - Wind</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/602imclyqm1ohvfqliqro0bzq4v0wdj3">HAZUS Building Class Rulesets - Wind.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/120e521afaec5b6db38449fd0bb661c5/WindClassRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindClassRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Wind.pdf">HAZUS Building Class Rulesets - Wind.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindClassRulesets.py">WindClassRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Building Class Rulesets - Flood</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/6gqyu66b9d74ctto6x1k74i95q2wksrb">HAZUS Building Class Rulesets - Flood.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/e9734388b05cd90802519b4e818296d1/FloodClassRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">FloodClassRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Flood.pdf">HAZUS Building Class Rulesets - Flood.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/FloodClassRulesets.py">FloodClassRulesets</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Building Class Rulesets - Wave</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/sr8p05yp230qwcyodeh1w39wxw6qurp6">HAZUS Building Class Rulesets - Wave.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Wave.pdf">HAZUS Building Class Rulesets - Wave.pdf</a></p></td>
 <td><p>To be released.</p></td>
 </tr>
 </tbody>
@@ -795,7 +795,7 @@ connection, shutters, garage), and the number of attributes necessary to describ
 <p>As these attributes are beyond what is typically encompassed in a building inventory, this testbed developed
 and implemented a library of rulesets to infer the HAZUS-required attributes based upon the fields available
 in the Building Inventory, legacy building codes in New Jersey, local construction practices/norms, surveys
-capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="../lake_charles/damage_and_loss.html#javeline19" id="id1"><span>[Javeline19]</span></a>) and market/industry data.
+capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="../lake_charles/asset_representation.html#javeline19" id="id1"><span>[Javeline19]</span></a>) and market/industry data.
 Where possible, the rulesets are time-evolving, considering the age of construction to determine the governing
 code edition and availability of specific mitigation measures in the market. Though reliant on engineering
 judgement and historical data availability, each rule provides detailed notes cross-referencing the various
@@ -1008,8 +1008,8 @@ assigned in the <a class="reference internal" href="asset_description.html#lbl-t
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Attribute Assignment - Wind (Meta-Variable)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/l4vdnfoakq8xsv4rmj64x4m2kxqritu7">Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/297385842c9317747121a56f6a5466e7/WindMetaVarRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindMetaVarRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20Meta-Variables.pdf">Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMetaVarRulesets.py">WindMetaVarRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1122,12 +1122,12 @@ are cross-referenced in <a class="reference internal" href="../lake_charles/asse
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (WSF1-2)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/nod73v7shtj9x7ox7xw7b7nvmrs3e8oc">Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/eeefd3b54be79f25882834839caff0dc/WindWSFRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindWSFRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WSF1-2.pdf">Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindWSFRulesets.py">WindWSFRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (WMUH1-3)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/4v7405rit2u475daorayy9w6ssuezbz9">Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/d70dadee70a3546f8249c9d286f0d0c5/WindWMUHRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindWMUHRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WMUH1-3.pdf">Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindWMUHRulesets.py">WindWMUHRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1461,32 +1461,32 @@ cross-referenced in <a class="reference internal" href="#addinfo-ruleset-masonry
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (MSF1-2)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/8wayd687fxexa5am1zcig4d8lm37j3yq">Hazus Building Attribute Rulesets - Wind - MSF1-2.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/2bc4891810b89c88996fd7aa6d0e3a32/WindMSFRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindMSFRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MSF1-2.pdf">Hazus Building Attribute Rulesets - Wind - MSF1-2.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMSFRulesets.py">WindMSFRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (MMUH1-3)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/4s8adtuxv09il3tomhi5l8temtvi5h0a">Hazus Building Attribute Rulesets - Wind - MMUH1-3.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/269c83111fe9f62b0e4dec71705f33d4/WindMMUHRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindMMUHRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MMUH1-3.pdf">Hazus Building Attribute Rulesets - Wind - MMUH1-3.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMMUHRulesets.py">WindMMUHRulesets</a></p></td>
 </tr>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (MLRM1)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/8ml2y60o2foe6vg6myuisuzfqhfu5v23">Hazus Building Attribute Rulesets - Wind - MLRM1.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/56d014528366a26030914dc5b77c5b41/WindMLRMRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindMLRMRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MLRM1.pdf">Hazus Building Attribute Rulesets - Wind - MLRM1.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMLRMRulesets.py">WindMLRMRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (MLRM1)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/uqove169jtocgu52okerwuhffgkx8kd0">Hazus Building Attribute Rulesets - Wind - MLRM2.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/56d014528366a26030914dc5b77c5b41/WindMLRMRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindMLRMRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MLRM2.pdf">Hazus Building Attribute Rulesets - Wind - MLRM2.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMLRMRulesets.py">WindMLRMRulesets</a></p></td>
 </tr>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (MERBL-M-H)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/nzqdg77vamhn75n95kzjmumt0tlgz4zo">Hazus Building Attribute Rulesets - Wind - MERBL-M-H.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/6603f4ee8ac6691d90a7bd5d78a1ec21/WindMERBRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindMERBRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MERBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - MERBL-M-H.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMERBRulesets.py">WindMERBRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (MECBL-M-H)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/2jgsttwc29gppg8rna35yhwctztn3hwp">Hazus Building Attribute Rulesets - Wind - MECBL-M-H.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/97868372b51f075c88334b133fd96759/WindMECBRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindMECBRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MECBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - MECBL-M-H.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMECBRulesets.py">WindMECBRulesets</a></p></td>
 </tr>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (MLRI)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/hn377m3o1pcgsi464xuwe4zwz0vhgjwa">Hazus Building Attribute Rulesets - Wind - MLRI.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/9a7af4e0c20d489fa2045bf35d1cef94/WindMLRIRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindMLRIRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MLRI.pdf">Hazus Building Attribute Rulesets - Wind - MLRI.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMLRIRulesets.py">WindMLRIRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1659,16 +1659,16 @@ scripts) are cross-referenced in <a class="reference internal" href="#addinfo-ru
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (SERBL-M-H)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/ien050gsa67tlsjrhgvdqjhl3b3thh4f">Hazus Building Attribute Rulesets - Wind - SERBL-M-H.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/be1be48c944d449dff9d212769bf9086/WindSERBRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindSERBRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20SERBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - SERBL-M-H.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindSERBRulesets.py">WindSERBRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (SECBL-M-H)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/7a32df1o9iqx5mzwqqcu94povgabjd8v">Hazus Building Attribute Rulesets - Wind - SECBL-M-H.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/113f319c894db95961393cf5067453da/WindSECBRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindSECBRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20SECBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - SECBL-M-H.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindSECBRulesets.py">WindSECBRulesets</a></p></td>
 </tr>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (SPMBS-M-L)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/3bgxtrr9t5dh1tn6izksdpjxt62zv3wv">Hazus Building Attribute Rulesets - Wind - SPMBS-M-L.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/4e34c5fca8b23a75cd5af75792e19fb9/WindSPMBRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindSPMBRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20SPMBS-M-L.pdf">Hazus Building Attribute Rulesets - Wind - SPMBS-M-L.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindSPMBRulesets.py">WindSPMBRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1806,12 +1806,12 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (CERBL-M-H)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/sbcgkw8q4ps1mncu9bu87oz83lr5mga3">Hazus Building Attribute Rulesets - Wind - CERBL-M-H.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/fcd54e3b61bddaff1a7c0d5622ff5e22/WindCERBRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindCERBRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20CERBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - CERBL-M-H.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindCERBRulesets.py">WindCERBRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (CECBL-M-H)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/scuv8u64atudekvxpda9mh8aol1wuphk">Hazus Building Attribute Rulesets - Wind - CECBL-M-H.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/622f529c9c00b489955dfe71d5d095c5/WindCECBRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindCECBRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20CECBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - CECBL-M-H.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindCECBRulesets.py">WindCECBRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1912,10 +1912,10 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (Manufactured Homes)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/qfde2jo5ry65ev349fu7bkuz5w2c3162">Hazus Building Attribute Rulesets - Wind - MH76HUD.pdf</a>,
-<a class="reference external" href="https://berkeley.box.com/s/guop1ln5le5rrjqy4l2xk3p3b2b40n55">Hazus Building Attribute Rulesets - Wind - MH94HUDI-II-III.pdf</a>,
-<a class="reference external" href="https://berkeley.box.com/s/4vz0a7pirgxaunyvt7ot39d5aty7wtan">Hazus Building Attribute Rulesets - Wind - MHPHUD.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/a9a709b6f2f8dbf99ff032f476fc1093/WindMHRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindMHRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20WIND%20-%20MH76HUD.pdf">Hazus Building Attribute Rulesets - Wind - MH76HUD.pdf</a>,
+<a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MH94HUDI-II-III.pdf">Hazus Building Attribute Rulesets - Wind - MH94HUDI-II-III.pdf</a>,
+<a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20WIND%20-%20MHPHUD.pdf">Hazus Building Attribute Rulesets - Wind - MHPHUD.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMHRulesets.py">WindMHRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2125,11 +2125,11 @@ are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-ef"
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (Essential Facilities)</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/jjjjzr6rhyz7a253qcxrnn7n3vdxv6n5">Hazus Building Attribute Rulesets - Wind - HUEFFS-HUEFSS.pdf</a>,
-<a class="reference external" href="https://berkeley.box.com/s/pumhmup0j60m3skgcdlfthmeg5u3o5pk">Hazus Building Attribute Rulesets - Wind - HUEFHS-M-L.pdf</a>,
-<a class="reference external" href="https://berkeley.box.com/s/2s7g2x3iot4bajfdprxwzrxu4m6nbulg">Hazus Building Attribute Rulesets - Wind - HUEFPS-HUEFEO.pdf</a>,
-<a class="reference external" href="https://berkeley.box.com/s/ffs4gj1hf4bji1y0vzvj3hu93kvw00kt">Hazus Building Attribute Rulesets - Wind - HUEFSM-L.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/9e86c8c762ce5518a7351f56c7299926/WindEFRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">WindEFRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFFS-HUEFSS.pdf">Hazus Building Attribute Rulesets - Wind - HUEFFS-HUEFSS.pdf</a>,
+<a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFHS-M-L.pdf">Hazus Building Attribute Rulesets - Wind - HUEFHS-M-L.pdf</a>,
+<a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFPS-HUEFEO.pdf">Hazus Building Attribute Rulesets - Wind - HUEFPS-HUEFEO.pdf</a>,
+<a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFSM-L.pdf">Hazus Building Attribute Rulesets - Wind - HUEFSM-L.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindEFRulesets.py">WindEFRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2235,8 +2235,8 @@ rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference i
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Flood</p></td>
-<td><p><a class="reference external" href="https://berkeley.box.com/s/1n75p4c37dtet7kvtj44e422aqjs7woa">Hazus Building Attribute Rulesets - Flood - All Classes.pdf</a></p></td>
-<td><p><a class="reference download internal" download="" href="../../../_downloads/c7a15fdb055ad1b4958a48db2cece2f7/FloodRulesets.py"><code class="xref download docutils literal notranslate"><span class="pre">FloodRulesets</span></code></a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Flood%20-%20All%20Classes.pdf">Hazus Building Attribute Rulesets - Flood - All Classes.pdf</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/FloodRulesets.py">FloodRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
