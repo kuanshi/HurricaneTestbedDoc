@@ -241,7 +241,7 @@ of using advanced machine learning and artificial intelligence techniques to pop
 building features that are limited by the tax assessor and open inventory data, (2) further validate the developed
 workflow with a recent hurricane event with field investigation data, and (3) identifying potential research
 needs for refining/upgrading/extending damage assessment methods and models at parcel levels. Similar to the general
-idea of other testbeds, COM1munity developers can progressively contribute refinements that increase the fidelity and capacities
+idea of other testbeds, community developers can progressively contribute refinements that increase the fidelity and capacities
 of the backend regional resilience assessment workflow. This documentation specifically demonstrates the process of:
 (1) asset description, (2) hazard characterization, (3) asset representation, (4) damage and loss modeling for
 the Lake Charles inventory. Sample results are presented to verify the workflow and validate its different aspects
@@ -255,9 +255,9 @@ Category II buildings and other structures, as defined in ASCE 7-16 (<a class="r
 Code (MRI = 700 years) (<a class="reference internal" href="#icc18" id="id3"><span>[ICC18]</span></a>), by as much as <span class="math notranslate nohighlight">\(8 km/h\)</span> (<span class="math notranslate nohighlight">\(5 mph\)</span>) near Lake Charles, LA (specifically,
 northeastern Calcasieu Parish and the eastern half of Beauregard Parish) (<a class="reference internal" href="#ara20" id="id4"><span>[ARA20]</span></a>). Meanwhile, storm surge
 resulted in high water marks of over <span class="math notranslate nohighlight">\(5 m\)</span> (<span class="math notranslate nohighlight">\(17 ft\)</span>) above ground in Oak Grove, LA in Cameron Parish
-(<a class="reference internal" href="#pasch21" id="id5"><span>[Pasch21]</span></a>). These COM1bined hazards resulted in substantial impacts to port and industrial facilities serving the
+(<a class="reference internal" href="#pasch21" id="id5"><span>[Pasch21]</span></a>). These combined hazards resulted in substantial impacts to port and industrial facilities serving the
 oil and gas sector, widespread damages in the residential sector, and sustained outages of water and power impacting
-the operation of hospitals providing critical care during a pandemic. Notable damage was reported to COM1mercial
+the operation of hospitals providing critical care during a pandemic. Notable damage was reported to commercial
 facilities, particularly to hotels, including high-rise buildings in Lake Charles associated with casinos and
 resorts. As the storm’s well-predicted track facilitated coordinated, multi-entity surface measurements of wind
 fields (surface observation networks and mobile radar) and storm surge, Laura is one of the best documented storm
@@ -287,11 +287,11 @@ envelopes and/or wind-borne debris impact are also captured in the damage and lo
 these phenomena themselves are not explicitly modeled. Storm surge, flood and other rainfall-induced hazards are
 not included in the current implementation. Moreover, the inventory focuses only on wood-frame
 residential construction. These intentional focuses of the current implementation leave ample room for further
-COM1munity-led development. The adoption of HAZUS loss estimation frameworks <a class="reference internal" href="../sf_bay_area/overview.html#fema18" id="id6"><span>[FEMA18]</span></a> takes advantage of a process developed
+community-led development. The adoption of HAZUS loss estimation frameworks <a class="reference internal" href="#fema18" id="id6"><span>[FEMA18]</span></a> takes advantage of a process developed
 in Atlantic County, NJ for assigning attributes to specific building footprints using time-evolving heuristic
 rulesets grounded in local codes/standards and normative practice. As this testbed demonstrates a quick
 “spin-up” after a hurricane, the rulesets from New Jersey are directly applied; while many of the practices
-are COM1mon, further refinements of the workflow should revise these rulesets to reflect the phasing of
+are common, further refinements of the workflow should revise these rulesets to reflect the phasing of
 specific regulations and mitigation measures in Lake Charles.</p>
 </div>
 <div class="section" id="current-implementation">
@@ -306,17 +306,17 @@ damage and loss, based on the building class and assigned attributes.</p>
 <div class="section" id="available-inventories">
 <h2><span class="section-number">3.1.4. </span>Available Inventories<a class="headerlink" href="#available-inventories" title="Permalink to this headline">¶</a></h2>
 <p>The constructed building inventory developed for Lake Charles is accessible via DesignSafe.
-This testbed includes 30,078 buildings including 26,517 residential buildings and 3,561 COM1mercial buildings
+This testbed includes 30,078 buildings including 26,517 residential buildings and 3,561 commercial buildings
 (classified by BRAILS, more details will be introduced in <a class="reference internal" href="asset_description.html#lbl-testbed-lc-asset-description"><span class="std std-ref">Asset Description</span></a>)
 in the city of Lake Charles. <a class="reference internal" href="#fig-yearbuilt"><span class="std std-numref">Fig. 3.1.4.1</span></a> visualizes the
 Year Built of the buildings in the inventory.  <a class="reference internal" href="#fig-occupancyclass"><span class="std std-numref">Fig. 3.1.4.2</span></a> shows the geospatial distribution
 of the occupancy classes in the inventory.</p>
-<div class="align-center figure" id="id7" style="width: 800px">
-<span id="fig-yearbuilt"></span><img alt="../../../_images/YearBuilt.png" src="../../../_images/YearBuilt.png" />
+<div class="align-center figure" id="id7">
+<span id="fig-yearbuilt"></span><a class="reference internal image-reference" href="../../../_images/YearBuilt.png"><img alt="../../../_images/YearBuilt.png" src="../../../_images/YearBuilt.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.4.1 </span><span class="caption-text">Geospatial visualization of the building inventory by year built.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id8" style="width: 800px">
-<span id="fig-occupancyclass"></span><img alt="../../../_images/OccupancyClass.png" src="../../../_images/OccupancyClass.png" />
+<div class="align-center figure" id="id8">
+<span id="fig-occupancyclass"></span><a class="reference internal image-reference" href="../../../_images/OccupancyClass.png"><img alt="../../../_images/OccupancyClass.png" src="../../../_images/OccupancyClass.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.4.2 </span><span class="caption-text">Geospatial visualization of the building inventory by occupancy class.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p><a class="reference internal" href="#fig-inventorypinechart"><span class="std std-numref">Fig. 3.1.4.3</span></a> summarizes characteristics of the testbed inventory, including distribution by
@@ -324,8 +324,8 @@ year built, occupancy class, and number of stories.
 Notably, these inventories are typified by older vintages of construction (85% of buildings were constructed
 before 1980), with a dominance of low-rise (1-2 stories) buildings (approximately
 98% of inventory buildings). About 88% of buildings are of residential use.</p>
-<div class="align-center figure" id="id9" style="width: 900px">
-<span id="fig-inventorypinechart"></span><img alt="../../../_images/InventoryPineChart.png" src="../../../_images/InventoryPineChart.png" />
+<div class="align-center figure" id="id9">
+<span id="fig-inventorypinechart"></span><a class="reference internal image-reference" href="../../../_images/InventoryPineChart.png"><img alt="../../../_images/InventoryPineChart.png" src="../../../_images/InventoryPineChart.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.1.4.3 </span><span class="caption-text">Distribution of building characteristics of the building inventory.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
@@ -345,7 +345,7 @@ before 1980), with a dominance of low-rise (1-2 stories) buildings (approximatel
 <dd><p>FEMA (2018), HAZUS – Multi-hazard Loss Estimation Methodology 2.1, Hurricane Model Technical Manual, Federal Emergency Management Agency, Washington D.C., 718p.</p>
 </dd>
 <dt class="label" id="ara20"><span class="brackets"><a class="fn-backref" href="#id4">ARA20</a></span></dt>
-<dd><p>ARA. (2020). Hurricane Laura Rapid Response Windfield Estimate, Preliminary Windfield Release 3, National Institutes of Standards and Testing &amp; Applied Research Associates, September 4, <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.COM1munity/Recon%20Portal/2020%20Hurricane%20Laura%20Cameron%20Louisiana%20USA">https://www.designsafe-ci.org/data/browser/public/designsafe.storage.COM1munity/Recon%20Portal/2020%20Hurricane%20Laura%20Cameron%20Louisiana%20USA</a>.</p>
+<dd><p>ARA. (2020). Hurricane Laura Rapid Response Windfield Estimate, Preliminary Windfield Release 3, National Institutes of Standards and Testing &amp; Applied Research Associates, September 4, <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Recon%20Portal/2020%20Hurricane%20Laura%20Cameron%20Louisiana%20USA">https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Recon%20Portal/2020%20Hurricane%20Laura%20Cameron%20Louisiana%20USA</a>.</p>
 </dd>
 </dl>
 </div>

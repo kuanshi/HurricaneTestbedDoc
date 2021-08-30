@@ -145,7 +145,7 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
@@ -249,7 +249,7 @@ indicates that roughly 45% of house owners were likely to apply shutters on some
 asset representation (ruleset), a pre-2000 house has 45% probability to be assigned to have shutters, and 55%
 probability to be assigned with no shutter. Note that the resulting HAZUS building type is deterministic for
 each individual sample while the uncertainty induced by different possible attribute options are evaluted
-via multiple random realizations. <a class="reference internal" href="../lake_charles/uncertainty_quantification.html#uq-rulesets"><span class="std std-numref">Table 3.7.1.1</span></a> summarizes the three building attributes whose values
+via multiple random realizations. <a class="reference internal" href="#uq-rulesets"><span class="std std-numref">Table 2.7.1.1</span></a> summarizes the three building attributes whose values
 are randomly generated in this testbed.</p>
 <table class="docutils align-center" id="uq-rulesets">
 <caption><span class="caption-number">Table 2.7.1.1 </span><span class="caption-text">Random sampling in the rulesets.</span><a class="headerlink" href="#uq-rulesets" title="Permalink to this table">¶</a></caption>
@@ -289,19 +289,19 @@ and (2) the inherent variation in observing the random events at the site (which
 uncertainty). Both these two uncertainty sources can be taken into account for in the introduced workflow.</p>
 <p>For the epistemic uncertainty, multiple scenarios can be simulated using the synthetic simulation methods as
 introduced in <a class="reference internal" href="hazard_characterization.html#lbl-testbed-ac-hazard-characterization-synthetic"><span class="std std-ref">Synthetic Storm Scenario</span></a>. For instance, the linear analytical simulation
-for the boundary layer winds ([<a href="#id1"><span class="problematic" id="id2">Snaiki17a_</span></a>], [<a href="#id3"><span class="problematic" id="id4">Snaiki17b_</span></a>]) can be performed with randomly sampled storm properties
+for the boundary layer winds (<a class="reference internal" href="hazard_characterization.html#snaiki17a" id="id1"><span>[Snaiki17a]</span></a>, <a class="reference internal" href="hazard_characterization.html#snaiki17b" id="id2"><span>[Snaiki17b]</span></a>) can be performed with randomly sampled storm properties
 (e.g., central pressure) to generate multiple realizations of peak wind speed that are possible at the given site.
 These multiple realizations are then randomly sampled and used as the EDP in simulating the damage and loss
 assessment (more details in the next section).</p>
 <p>For the aleatory uncertainty, this workflow adapts a nearest-neighbors method to propagate uncertainty through the workflow, as
-illustrated in <a class="reference internal" href="../sf_bay_area/uncertainty_quantification.html#nearestneighbors"><span class="std std-numref">Fig. 1.6.1.1</span></a>. The peak wind speed and storm surge values are simulated
+illustrated in <a class="reference internal" href="#nearestneighbors"><span class="std std-numref">Fig. 2.7.2.1</span></a>. The peak wind speed and storm surge values are simulated
 on a prescribed grid (wind fields) or pre-selected save points (storm surge) (blue round dots), and for each selected asset location (red square dot),
 the workflow  randomly selects 5 samples of
 the intensity measure (wind speed and storm surge) from the 4 nearest neighbors (yellow circles). Note this random
 sampling is performed along with the multiple realizations from the epistemic uncertainty quantification, so the
 two uncertainty sources are considered simultaneously.</p>
-<div class="align-center figure" id="nearestneighbors" style="width: 800px">
-<img alt="../../../_images/nn.png" src="../../../_images/nn.png" />
+<div class="align-center figure" id="nearestneighbors">
+<a class="reference internal image-reference" href="../../../_images/nn.png"><img alt="../../../_images/nn.png" src="../../../_images/nn.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.7.2.1 </span><span class="caption-text">Nearest-neighbors method for sampling site hazard uncertainty.</span><a class="headerlink" href="#nearestneighbors" title="Permalink to this image">¶</a></p>
 </div>
 </div>

@@ -39,6 +39,7 @@ e.g., a number of attributes needed for loss estimation are populated during the
    :file: data/building_inventory_data_model_new.csv
    :header-rows: 1
    :align: center
+   :widths: 15, 60, 25
 
 Phase II: Footprint Selection
 ===============================
@@ -84,6 +85,7 @@ Estimator (SDE) Tool (:numref:`tab-sdeAttri`).
    :file: data/udf_attributes.csv
    :header-rows: 1
    :align: center
+   :widths: 15, 85
 
 .. _tab-sdeAttri:
 
@@ -162,7 +164,7 @@ The methodology used for each of these attributes is now described.
                               :name: num_stories_detection
                               :align: center
                               :figclass: align-center
-                              :figwidth: 1000
+                              :width: 600
 
                               Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.
 
@@ -189,7 +191,7 @@ The methodology used for each of these attributes is now described.
                               :name: num_story_confusion
                               :align: center
                               :figclass: align-center
-                              :figwidth: 1000
+                              :width: 600
 
                               Confusion matrices for the number of stories predictor. The maxtrix one the left shows
                               the model's prediction accuracy when tested on "in-the-wild" images. The matrix on the
@@ -208,7 +210,7 @@ The methodology used for each of these attributes is now described.
                               :name: building_elevation
                               :align: center
                               :figclass: align-center
-                              :figwidth: 1000
+                              :width: 600
 
                               Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.
 
@@ -263,7 +265,7 @@ The methodology used for each of these attributes is now described.
                               :name: roof_shape
                               :align: center
                               :figclass: align-center
-                              :figwidth: 800
+                              :width: 500
 
                               Roof type classification by BRAILS ([Wang19]_).
 
@@ -312,29 +314,37 @@ Populated Inventories
 ========================
 
 Executing this four-phase process resulted in the assignment of all required attributes at the asset description 
-stage of the workflow for both the **Atlantic County Inventory** and the **Flood-Exposed Inventory**. :numref:`bldg_inv_ac` 
-and :numref:`bldg_inv_fei` provide respective examples of each of these inventories. 
+stage of the workflow for both the **Atlantic County Inventory** and the **Flood-Exposed Inventory**. 
+:numref:`bldg_inv_ac` and :numref:`bldg_inv_fei` provide respective examples of each of these inventories. 
 The Flood-Exposed Inventory then was used to extract out the subset of buildings defining the  
-**Exploration Inventory** (see example in :numref:`bldg_inv_ei`). The full inventories can be found 
+**Exploration Inventory** (see example in :numref:`bldg_inv_ei`). The full inventories can be downloaded 
 `here <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/full_inventories.zip>`_.
 
 .. csv-table:: Illustrative sample of building in Atlantic Inventory.
    :name: bldg_inv_ac
    :file: data/example_inventory_ac.csv
-   :header-rows: 1
    :align: center
+   :widths: 8, 8, 10, 10, 8, 10, 10, 10, 10
+
+.. raw:: latex
+
+    \begin{landscape}
+    \begin{tiny}
 
 .. csv-table:: Illustrative sample of building in Flood-Exposed Inventory.
    :name: bldg_inv_fei
    :file: data/example_inventory.csv
-   :header-rows: 1
    :align: center
 
 .. csv-table:: Illustrative sample of building in Exploration Inventory.
    :name: bldg_inv_ei
    :file: data/example_inventory_exploration.csv
-   :header-rows: 1
    :align: center
+
+.. raw:: latex
+
+    \end{tiny}
+    \end{landscape}
 
 .. list-table:: Summary of the three building inventories.
    :name: access_inventories
@@ -348,7 +358,7 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
    * - Atlantic County Inventory
      - `Atlantic County Inventory <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/AtlanticCountyInventory.csv>`_
      - 100,721
-     - ~ 1,500 CPU-Hour* (please see more details in **Computational Resources Requirements**)
+     - ~ 1,500 CPU-Hour
    * - Flood-Exposed Inventory
      - `Flood-Exposed Inventory <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/FloodExposedInventory.csv>`_
      - 32,828

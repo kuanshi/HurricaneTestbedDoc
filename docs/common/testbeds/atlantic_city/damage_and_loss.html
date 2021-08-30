@@ -141,7 +141,7 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
@@ -252,8 +252,8 @@ describe the fragility or expected losses as a function of peak wind speed (PWS)
 Only data up to 200 mph wind speeds were used because the substantial reduction in the
 number of observations introduces significant measurement error above that level (<a class="reference internal" href="../lake_charles/damage_and_loss.html#wind-df"><span class="std std-numref">Fig. 3.6.1</span></a>).</p></li>
 </ol>
-<div class="align-center figure" id="wind-df" style="width: 1000px">
-<img alt="../../../_images/wind_damage_functions.png" src="../../../_images/wind_damage_functions.png" />
+<div class="align-center figure" id="wind-df">
+<a class="reference internal image-reference" href="../../../_images/wind_damage_functions.png"><img alt="../../../_images/wind_damage_functions.png" src="../../../_images/wind_damage_functions.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.6.2 </span><span class="caption-text">Fitted HAZUS wind damage functions for example building classes.</span><a class="headerlink" href="#wind-df" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="2">
@@ -261,8 +261,8 @@ number of observations introduces significant measurement error above that level
 the peak water depth (PWD) of flooding (in feet), as measured from the top of the first finished floor,
 to a percent of the total replacement cost of the asset (<a class="reference internal" href="#flood-ddc"><span class="std std-numref">Fig. 2.6.3</span></a>).</p></li>
 </ol>
-<div class="align-center figure" id="flood-ddc" style="width: 1000px">
-<img alt="../../../_images/flood_depth_damage_curves.png" src="../../../_images/flood_depth_damage_curves.png" />
+<div class="align-center figure" id="flood-ddc">
+<a class="reference internal image-reference" href="../../../_images/flood_depth_damage_curves.png"><img alt="../../../_images/flood_depth_damage_curves.png" src="../../../_images/flood_depth_damage_curves.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.6.3 </span><span class="caption-text">Depth-damage ratio curves for the flood loss assessment.</span><a class="headerlink" href="#flood-ddc" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <strong>total loss</strong> from wind and flood damages are estimated by combining the “wind-only” and “flood-only”
@@ -316,7 +316,7 @@ sum of combined sub-assembly loss ratios:</p>
 <span class="math notranslate nohighlight">\(L_{flood,i}\)</span> is the flood-only loss ratio of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sub-assembly. These sub-assembly
 loss ratios are computed as a percent of the total building loss ratio. The percentages are based on the
 <a class="reference internal" href="#wind-comp"><span class="std std-numref">Table 2.6.1</span></a> and <a class="reference internal" href="#flood-comp"><span class="std std-numref">Table 2.6.2</span></a> that are developed per the HAZUS methodology and data table (<a class="reference internal" href="../lake_charles/damage_and_loss.html#fema18a" id="id3"><span>[FEMA18a]</span></a>).</p>
-<table class="docutils align-center" id="wind-comp">
+<table class="colwidths-given docutils align-center" id="wind-comp">
 <caption><span class="caption-number">Table 2.6.1 </span><span class="caption-text">Sub-assembly wind-only loss contribution ratio table.</span><a class="headerlink" href="#wind-comp" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
@@ -8332,7 +8332,7 @@ loss ratios are computed as a percent of the total building loss ratio. The perc
 </tr>
 </tbody>
 </table>
-<table class="docutils align-center" id="flood-comp">
+<table class="colwidths-given docutils align-center" id="flood-comp">
 <caption><span class="caption-number">Table 2.6.2 </span><span class="caption-text">Sub-assembly flood-only loss contribution ratio table.</span><a class="headerlink" href="#flood-comp" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 9%" />

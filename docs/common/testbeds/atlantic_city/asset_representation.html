@@ -153,7 +153,7 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
@@ -274,12 +274,12 @@ fields in the building inventory. The HAZUS building classifications for wind lo
 in <a class="reference internal" href="../lake_charles/asset_representation.html#bldg-class"><span class="std std-numref">Table 3.4.1.1</span></a>, and the corresponding rulesets (PDFs and Python scripts) are cross-referenced
 later in <a class="reference internal" href="../lake_charles/asset_representation.html#addinfo-ruleset"><span class="std std-numref">Table 3.4.1.2</span></a>. Note that while rulesets were developed for marginally and non-engineered
 building classes in HAZUS, these classes are not used in the current implementation of this testbed.</p>
-<table class="docutils align-center" id="bldg-class">
+<table class="colwidths-given docutils align-center" id="bldg-class">
 <caption><span class="caption-number">Table 2.4.1.1 </span><span class="caption-text">HAZUS building classification for wind loss assessment.</span><a class="headerlink" href="#bldg-class" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 40%" />
+<col style="width: 20%" />
+<col style="width: 40%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>BuildingDescription</p></th>
@@ -804,12 +804,12 @@ In cases where engineering judgment was required, rules were assigned based on w
 the most common construction practice. In cases where that was not clear, the ruleset assigned the most
 vulnerable configuration for a more conservative approach to loss estimation. <a class="reference internal" href="../lake_charles/asset_representation.html#wind-bldg-attri"><span class="std std-numref">Table 3.4.2.1</span></a>
 and <a class="reference internal" href="#flood-bldg-attri"><span class="std std-numref">Table 2.4.2.2</span></a> list the attributes for the wind and flood loss assessments.</p>
-<table class="docutils align-center" id="wind-bldg-attri">
+<table class="colwidths-given docutils align-center" id="wind-bldg-attri">
 <caption><span class="caption-number">Table 2.4.2.1 </span><span class="caption-text">Building attributes for wind loss assessment.</span><a class="headerlink" href="#wind-bldg-attri" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Attribute</p></th>
@@ -820,96 +820,96 @@ and <a class="reference internal" href="#flood-bldg-attri"><span class="std std-
 <tbody>
 <tr class="row-even"><td><p>HazusClass-W</p></td>
 <td><p>Hazus building classes as defined for wind hazards</p></td>
-<td><p>CHOICES: WSF1, WSF2, WMUH1, WMUH2, WMUH3, WMUH1NE, WMUH2NE, WMUH3NE, WMUH4NE, MSF1, MSF2, MMUH1, MMUH2, MMUH3, MLRM1, MLRM2, MLRI, MERBL, MERBM, MERBH, MECBL, MECBM, MECBH, MMUH1NE, MMUH2NE, MMUH3NE, CERBL, CERBM, CERBH, CECBL, CECBM, CECBH, SPMBS, SPMBM, SPMBL, SERBL, SERBM, SERBH, SECBL, SECBM, SECBH, MHPHUD, MH76HUD, MH94HUD-I, MH94HUD-II, MH94HUD-III, HUEFFS, HUEFSS, HUEFSM, HUEFSL, HUEFHS, HUEFHM, HUEFHL, HUEFPS, HUEFEO</p></td>
+<td><p>Choices: HazusClass-W in <a class="reference internal" href="../lake_charles/asset_representation.html#bldg-class"><span class="std std-numref">Table 3.4.1.1</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>RoofSystem</p></td>
 <td><p>Underlying roof structure, applies only to masonry buildings</p></td>
 <td><p>Choices: Wood, OWSJ</p></td>
 </tr>
 <tr class="row-even"><td><p>HPR</p></td>
-<td><p>Defines Hazard Prone Regions (HPR) for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
+<td><p>Hazard Prone Regions for WSF1-2</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
 <tr class="row-odd"><td><p>WBD</p></td>
-<td><p>Defines Wind Borne Debris (WBD) for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
+<td><p>Wind Borne Debris for WSF1-2</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
 <tr class="row-even"><td><p>SWR</p></td>
-<td><p>Defines Secondary Water Resistance (SWR) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MSF1-2, MMUH1-3</p></td>
+<td><p>Secondary Water Resistance for WSF1-2, WMUH1-3, MSF1-2, MMUH1-3</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
 <tr class="row-odd"><td><p>RoofCvr</p></td>
-<td><p>Defines roof cover for the purposes of Hazus wind vulnerability assignments for WMUH1-3, MMUH1-3, MERBL-M-H, MECBL-M-H, MLRI, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL)  and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
+<td><p>Roof cover for WMUH1-3, MMUH1-3, MERBL-M-H, MECBL-M-H, MLRI, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations, Elementary Schools, 2-story High School and 3-story High School and Hospitals and Police Stations, Emergency Operation Centers</p></td>
 <td><p>Choices: N/A, BUR, SPM</p></td>
 </tr>
 <tr class="row-even"><td><p>RoofQual</p></td>
-<td><p>Defines roof cover quality for the purposes of Hazus wind vulnerability assignments for WMUH1-3, MMUH1-3, MLRI</p></td>
+<td><p>Roof cover quality for WMUH1-3, MMUH1-3, MLRI</p></td>
 <td><p>Choices: N/A, poor, good</p></td>
 </tr>
 <tr class="row-odd"><td><p>RDA-Wood</p></td>
-<td><p>Defines Roof Deck Attachment (RDA) for wood for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2</p></td>
+<td><p>Roof Deck Attachment for wood for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2</p></td>
 <td><p>Choices: A, B, C, D</p></td>
 </tr>
 <tr class="row-even"><td><p>RDA-OWSJ</p></td>
-<td><p>Defines Roof Deck Attachment (RDA) for OWSJ for the purposes of Hazus wind vulnerability assignments for MSF1-2</p></td>
+<td><p>Roof Deck Attachment for OWSJ for MSF1-2</p></td>
 <td><p>Choices: smtl standard, smtl superior, cshl standard, cshl superior</p></td>
 </tr>
 <tr class="row-odd"><td><p>R2WC</p></td>
-<td><p>Defines Roof to Wall Connection (R2WC) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2</p></td>
+<td><p>Roof to Wall Connection for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2</p></td>
 <td><p>Choices: strap, toe-nail</p></td>
 </tr>
 <tr class="row-even"><td><p>shutters</p></td>
-<td><p>Defines use of window opening protection for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MERBL-M-H, MECBL-M-H, MMUH1-3,MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H, SPMBS-M-L, MH94HUDI-II-III, MH76HUD, MHPHUD and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL)  and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
+<td><p>Use of window opening protection for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MERBL-M-H, MECBL-M-H, MMUH1-3,MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H, SPMBS-M-L, MH94HUDI-II-III, MH76HUD, MHPHUD and Fire Stations, Elementary Schools, 2-story High School and 3-story High School and Hospitals and Police Stations, Emergency Operation Centers</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
 <tr class="row-odd"><td><p>Agarage</p></td>
-<td><p>Defines presence of attached garage for the purposes of Hazus wind vulnerability assignments for WSF1-2, MSF1-2</p></td>
+<td><p>Attached garage for WSF1-2, MSF1-2</p></td>
 <td><p>Choices: none, SFBC 1994, standard, weak</p></td>
 </tr>
 <tr class="row-even"><td><p>Mreinf</p></td>
-<td><p>Defines presence of reinforcement in masonry walls for the purposes of Hazus wind vulnerability assignments for MSF1-2, MLRI, MLRM1, MLRM2, MMUH1-3</p></td>
+<td><p>Reinforcement in masonry walls for MSF1-2, MLRI, MLRM1, MLRM2, MMUH1-3</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
 <tr class="row-odd"><td><p>OWSJ-r</p></td>
-<td><p>Defines property of OWSJ required for Hazus wind vulnerability assignments for MSF1-2</p></td>
+<td><p>OWSJ required for MSF1-2</p></td>
 <td><p>Choices: cshl, smtl</p></td>
 </tr>
 <tr class="row-even"><td><p>Metal-RDA</p></td>
-<td><p>Defines Metal Roof Deck Attachment (RDA) for purposes of Hazus wind vulnerability assessments for MLRI, MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, SPMBS-M-L and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL) and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
+<td><p>Metal Roof Deck Attachment  for MLRI, MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, SPMBS-M-L and Fire Stations, Elementary Schools, 2-story High School and 3-story High School and Hospitals and Police Stations, Emergency Operation Centers</p></td>
 <td><p>Choices: standard, superior</p></td>
 </tr>
 <tr class="row-odd"><td><p>RDage</p></td>
-<td><p>Defines roof deck age for the purposes of Hazus wind vulnerability assessments for MLRM1, MLRM2, SPMBS-M-L and Fire Stations (HUEFFS), Elementary Schools (HUEFSS)</p></td>
+<td><p>Defines roof deck age  for MLRM1, MLRM2, SPMBS-M-L and Fire Stations (HUEFFS), Elementary Schools (HUEFSS)</p></td>
 <td><p>Choices: new/avg, old</p></td>
 </tr>
 <tr class="row-even"><td><p>UnitClass</p></td>
-<td><p>Defines number of units in strip mall for purposes of Hazus wind vulnerability assessments for MLRM2</p></td>
+<td><p>Number of units in strip mall  for MLRM2</p></td>
 <td><p>Choices: single, multi</p></td>
 </tr>
 <tr class="row-odd"><td><p>JoistSpace</p></td>
-<td><p>Defines joist spacing for multi-unit strip malls for purposes of Hazus wind vulnerability assessments for MLRM2</p></td>
+<td><p>Joist spacing for multi-unit strip malls  for MLRM2</p></td>
 <td><p>Choices: N/A, 4, 6</p></td>
 </tr>
 <tr class="row-even"><td><p>WindDebris</p></td>
-<td><p>Defines likely sources of wind debris for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL) and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
+<td><p>Likely sources of wind debris  for MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations, Elementary Schools , 2-story High School and 3-story High School and Hospitals and Police Stations, Emergency Operation Centers</p></td>
 <td><p>Choices: Res/Comm, Varies by Direction, Residential, None, A, B, C, D</p></td>
 </tr>
 <tr class="row-odd"><td><p>WWR</p></td>
-<td><p>Defines window to wall ratio (WWR) for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
+<td><p>Window to wall ratio (WWR)  for MERBL-M-H, MECBL-M-H, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Police Stations, Emergency Operation Centers</p></td>
 <td><p>Choices: low, medium, high</p></td>
 </tr>
 <tr class="row-even"><td><p>TieDowns</p></td>
-<td><p>Defines use of ties to connect mobile homes to foundations per HUD guidelnes for purpose of Hazus wind vulnerability assessments for MH94HUDI-II-III, MH76HUD, MHPHUD</p></td>
+<td><p>Use of ties to connect mobile homes to foundations per HUD guidelnes  for MH94HUDI-II-III, MH76HUD, MHPHUD</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
 </tbody>
 </table>
-<table class="docutils align-center" id="flood-bldg-attri">
+<table class="colwidths-given docutils align-center" id="flood-bldg-attri">
 <caption><span class="caption-number">Table 2.4.2.2 </span><span class="caption-text">Building attributes for flood loss assessment.</span><a class="headerlink" href="#flood-bldg-attri" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 15%" />
+<col style="width: 20%" />
+<col style="width: 65%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Attribute</p></th>
@@ -958,30 +958,6 @@ Coastal/V-Zone</p></td>
 <tr class="row-odd"><td><p>Wave Velocity</p></td>
 <td><p>Definition of wave velocity in ft/s for Hazus Analysis</p></td>
 <td><p>Floating Point Number</p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -1123,11 +1099,11 @@ are cross-referenced in <a class="reference internal" href="../lake_charles/asse
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (WSF1-2)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WSF1-2.pdf">Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindWSFRulesets.py">WindWSFRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindWSFRulesets.py">WindWSFRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (WMUH1-3)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WMUH1-3.pdf">Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindWMUHRulesets.py">WindWMUHRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindWMUHRulesets.py">WindWMUHRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1139,22 +1115,20 @@ This example demonstrates an instance where the attribute is assigned as a rando
 based on the fact that secondary water resistance is not required by code, though surveys
 of homeowners in hurricane-prone areas can be used to infer how many may have voluntarily
 adopted this mitigation practice.</p>
-<table class="docutils align-center" id="swr-attri">
+<table class="colwidths-given docutils align-center" id="swr-attri">
 <caption><span class="caption-number">Table 2.4.2.7 </span><span class="caption-text">Ruleset for determining the Second Water Resistance attribute for WSF homes.</span><a class="headerlink" href="#swr-attri" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Time Period</p></th>
-<th class="head"><p>YearBuiltNJDEP &gt; 2000</p></th>
-<th class="head"><p>1983 &lt; YearBuiltNJDEP &lt; 2000</p></th>
-<th class="head"><p>YearBuilt &lt;= 1983</p></th>
-</tr>
-</thead>
 <tbody>
+<tr class="row-odd"><td><p>Time Period</p></td>
+<td><p>YearBuiltNJDEP &gt; 2000</p></td>
+<td><p>1983 &lt; YearBuiltNJDEP &lt; 2000</p></td>
+<td><p>YearBuilt &lt;= 1983</p></td>
+</tr>
 <tr class="row-even"><td><p>Ruleset</p></td>
 <td><p>Assign as a Random Variable (RV)
 IF RoofShape = Gable OR Hip, SWR = yes (RV = 60%) 
@@ -1462,31 +1436,31 @@ cross-referenced in <a class="reference internal" href="#addinfo-ruleset-masonry
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (MSF1-2)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MSF1-2.pdf">Hazus Building Attribute Rulesets - Wind - MSF1-2.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMSFRulesets.py">WindMSFRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMSFRulesets.py">WindMSFRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (MMUH1-3)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MMUH1-3.pdf">Hazus Building Attribute Rulesets - Wind - MMUH1-3.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMMUHRulesets.py">WindMMUHRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMMUHRulesets.py">WindMMUHRulesets</a></p></td>
 </tr>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (MLRM1)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MLRM1.pdf">Hazus Building Attribute Rulesets - Wind - MLRM1.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMLRMRulesets.py">WindMLRMRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMLRMRulesets.py">WindMLRMRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (MLRM1)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MLRM2.pdf">Hazus Building Attribute Rulesets - Wind - MLRM2.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMLRMRulesets.py">WindMLRMRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMLRMRulesets.py">WindMLRMRulesets</a></p></td>
 </tr>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (MERBL-M-H)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MERBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - MERBL-M-H.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMERBRulesets.py">WindMERBRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMERBRulesets.py">WindMERBRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (MECBL-M-H)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MECBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - MECBL-M-H.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMECBRulesets.py">WindMECBRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMECBRulesets.py">WindMECBRulesets</a></p></td>
 </tr>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (MLRI)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MLRI.pdf">Hazus Building Attribute Rulesets - Wind - MLRI.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMLRIRulesets.py">WindMLRIRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMLRIRulesets.py">WindMLRIRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1660,15 +1634,15 @@ scripts) are cross-referenced in <a class="reference internal" href="#addinfo-ru
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (SERBL-M-H)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20SERBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - SERBL-M-H.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindSERBRulesets.py">WindSERBRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindSERBRulesets.py">WindSERBRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (SECBL-M-H)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20SECBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - SECBL-M-H.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindSECBRulesets.py">WindSECBRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindSECBRulesets.py">WindSECBRulesets</a></p></td>
 </tr>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (SPMBS-M-L)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20SPMBS-M-L.pdf">Hazus Building Attribute Rulesets - Wind - SPMBS-M-L.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindSPMBRulesets.py">WindSPMBRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindSPMBRulesets.py">WindSPMBRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1678,12 +1652,12 @@ provides the detailed rule that maps this variable to the WWR attribute. Note th
 that can be estimated from streetview data, but this rule also demonstrates how the value can be estimated
 based on industry norms (see explanation surrounding default value). This attribute is not assumed to evolve
 with time.</p>
-<table class="docutils align-center" id="wwr-attri">
+<table class="colwidths-given docutils align-center" id="wwr-attri">
 <caption><span class="caption-number">Table 2.4.2.20 </span><span class="caption-text">Ruleset for determining the window to wall ratio for steel engineered commercial buildings.</span><a class="headerlink" href="#wwr-attri" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+<col style="width: 15%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Time Period</p></th>
@@ -1706,7 +1680,7 @@ Low:  20% &lt;= WWR &lt; 33%
 Medium:  33% &lt;= WWR &lt; 50%
 High: WWR &lt;= 50%</p>
 <p>If WindowArea information available in Custom Inventory from street view data, this should be used to determine the Window Area being low, medium, or high. If this information is not available, all engineered residential buildings are assumed to have low window area. This ruleset was created from the information on the Reference Buildings from the Office of Energy Efficiency and Renewable Energy. Baltimore, MD was used as the test city because the climate was the most similar to Atlantic City of the data available. Office buildings (used as a test case for commercial), have 33% WWR and apartments (used as a test case for residential) have 15% WWR. Therefore, commercial is assumed to have medium window area, whereas residential buildings are assumed to have low window area.</p>
-<p>Source: <a class="reference external" href="https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment">https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment</a></p>
+<p><a class="reference external" href="https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment">More details</a></p>
 </td>
 <td><p>Default</p></td>
 </tr>
@@ -1807,11 +1781,11 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (CERBL-M-H)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20CERBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - CERBL-M-H.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindCERBRulesets.py">WindCERBRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindCERBRulesets.py">WindCERBRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (CECBL-M-H)</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20CECBL-M-H.pdf">Hazus Building Attribute Rulesets - Wind - CECBL-M-H.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindCECBRulesets.py">WindCECBRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindCECBRulesets.py">WindCECBRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1820,12 +1794,12 @@ ruleset that calls upon the roof shape and year built from the building inventor
 provides the detailed rule that maps these variables to the RoofCvr attribute. This provides an example of an
 attribute that is inferred from construction practices based on when different roof cover products entered
 the market.</p>
-<table class="docutils align-center" id="rc-attri">
+<table class="colwidths-given docutils align-center" id="rc-attri">
 <caption><span class="caption-number">Table 2.4.2.24 </span><span class="caption-text">Ruleset for determining the window to wall ratio for concrete engineered residential buildings.</span><a class="headerlink" href="#rc-attri" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 15%" />
+<col style="width: 42%" />
+<col style="width: 42%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Time Period</p></th>
@@ -1897,12 +1871,12 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
 </tr>
 </tbody>
 </table>
-<table class="docutils align-center" id="addinfo-ruleset-mh">
+<table class="colwidths-given docutils align-center" id="addinfo-ruleset-mh">
 <caption><span class="caption-number">Table 2.4.2.26 </span><span class="caption-text">Additional details for rulesets assigning wind loss attributes for manufactured homes.</span><a class="headerlink" href="#addinfo-ruleset-mh" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Ruleset Name</p></th>
@@ -1915,7 +1889,7 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20WIND%20-%20MH76HUD.pdf">Hazus Building Attribute Rulesets - Wind - MH76HUD.pdf</a>,
 <a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MH94HUDI-II-III.pdf">Hazus Building Attribute Rulesets - Wind - MH94HUDI-II-III.pdf</a>,
 <a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20WIND%20-%20MHPHUD.pdf">Hazus Building Attribute Rulesets - Wind - MHPHUD.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMHRulesets.py">WindMHRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMHRulesets.py">WindMHRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1952,11 +1926,11 @@ TieDown = no (RV = 55%)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Notes</p></td>
 <td><p>3280.306 (d) Requirements for ties. Manufactured homes in Wind Zone I require only diagonal ties. These ties shall be placed along the main frame and below the outer side walls. All manufactured homes designed to be located in Wind Zones II and III shall have a vertical tie installed at each diagonal tie location. Wind Zones I, II and III are defined as having design wind speeds of 70mph, 100mph and 110 mph, respectively. (Table 3280.305)
-The HUD Code was amended in 1994 with requirements that manufactured homes meet building and installation standards to provide wind safety safeguards in pre-designated storm regions of the country. Manufactured homes produced since 1994 have been proven to be equal and, in many respects, safer than site-built homes during tornadoes and hurricanes. <a class="reference external" href="http://www.homespotonline.com/blog/what-you-need-know-about-manufactured-homes/">http://www.homespotonline.com/blog/what-you-need-know-about-manufactured-homes/</a></p></td>
+The HUD Code was amended in 1994 with requirements that manufactured homes meet building and installation standards to provide wind safety safeguards in pre-designated storm regions of the country. Manufactured homes produced since 1994 have been proven to be equal and, in many respects, safer than site-built homes during tornadoes and hurricanes. <a class="reference external" href="http://www.homespotonline.com/blog/what-you-need-know-about-manufactured-homes/">More details</a></p></td>
 <td><p>The HUD Code was amended in 1994 with requirements that manufactured homes meet building and installation standards to provide wind safety safeguards in pre-designated storm regions of the country, therefore tie downs were not required by code before 1994. However, it is recommended that all manufactured homes install tie downs. Therefore, this ruleset assumes roughly the same percentage voluntary compliance as shutters before 1994, meaning, 45% of  manufactured homes under the 1976 HUD codes should be randomly assigned to have tie-downs, and 55% should not. 
-(<a class="reference external" href="http://www.homespotonline.com/blog/what-you-need-know-about-manufactured-homes/">http://www.homespotonline.com/blog/what-you-need-know-about-manufactured-homes/</a>)</p></td>
+(<a class="reference external" href="http://www.homespotonline.com/blog/what-you-need-know-about-manufactured-homes/">More details</a>)</p></td>
 <td><p>The HUD Code was amended in 1994 with requirements that manufactured homes meet building and installation standards to provide wind safety safeguards in pre-designated storm regions of the country, therefore tie downs were not required by code before 1994. However, it is recommended that all manufactured homes install tie downs. Therefore, this ruleset assumes roughly the same percentage voluntary compliance as shutters before 1994, meaning, 45% of  pre-HUD manufactured homes should be randomly assigned to have tie-downs, and 55% should not. 
-(<a class="reference external" href="http://www.homespotonline.com/blog/what-you-need-know-about-manufactured-homes/">http://www.homespotonline.com/blog/what-you-need-know-about-manufactured-homes/</a>)</p></td>
+(<a class="reference external" href="http://www.homespotonline.com/blog/what-you-need-know-about-manufactured-homes/">More details</a>)</p></td>
 </tr>
 </tbody>
 </table>
@@ -2110,12 +2084,12 @@ are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-ef"
 </tr>
 </tbody>
 </table>
-<table class="docutils align-center" id="addinfo-ruleset-ef">
+<table class="colwidths-given docutils align-center" id="addinfo-ruleset-ef">
 <caption><span class="caption-number">Table 2.4.2.32 </span><span class="caption-text">Additional details for rulesets assigning wind loss attributes for essential facilities.</span><a class="headerlink" href="#addinfo-ruleset-ef" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Ruleset Name</p></th>
@@ -2129,7 +2103,7 @@ are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-ef"
 <a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFHS-M-L.pdf">Hazus Building Attribute Rulesets - Wind - HUEFHS-M-L.pdf</a>,
 <a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFPS-HUEFEO.pdf">Hazus Building Attribute Rulesets - Wind - HUEFPS-HUEFEO.pdf</a>,
 <a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFSM-L.pdf">Hazus Building Attribute Rulesets - Wind - HUEFSM-L.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindEFRulesets.py">WindEFRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindEFRulesets.py">WindEFRulesets</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2137,12 +2111,12 @@ are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-ef"
 assigned based on assumptions surrounding the zoning in areas where each essential facility class is
 commonly constructed. These are generally A: Residential/Commercial or C: Residential, as summarized
 in <a class="reference internal" href="#ef-attri"><span class="std std-numref">Table 2.4.2.33</span></a>.</p>
-<table class="docutils align-center" id="ef-attri">
+<table class="colwidths-given docutils align-center" id="ef-attri">
 <caption><span class="caption-number">Table 2.4.2.33 </span><span class="caption-text">Ruleset for determining the wind borne debris for flood essential factilites.</span><a class="headerlink" href="#ef-attri" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Essential Facility Class</p></th>
@@ -2236,7 +2210,7 @@ rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference i
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Flood</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Flood%20-%20All%20Classes.pdf">Hazus Building Attribute Rulesets - Flood - All Classes.pdf</a></p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/FloodRulesets.py">FloodRulesets</a></p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/FloodRulesets.py">FloodRulesets</a></p></td>
 </tr>
 </tbody>
 </table>

@@ -146,7 +146,7 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
@@ -233,7 +233,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="overview">
-<span id="lbl-testbed-sf-overview"></span><h1><span class="section-number">2.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-ac-overview"></span><h1><span class="section-number">2.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p>This testbed for regional hurricane risk assessment of Atlantic County, New Jersey under multiple hazards adopts
 an approach consistent with that developed for earthquake hazards. Its intent is to demonstrate the computational
 scaffolding upon which community developers can progressively contribute refinements that increase the fidelity
@@ -302,7 +302,7 @@ to the combination of wind and floodplain hazards, and includes some of the most
 county: Atlantic City, Margate City, and Ventor City which contribute to about 50% of the entire building inventory
 in Atlantic County.</p>
 <div class="align-center figure" id="id6">
-<span id="fig-buildingclassfei"></span><a class="reference internal image-reference" href="../../../_images/new_inventory_map.png"><img alt="../../../_images/new_inventory_map.png" src="../../../_images/new_inventory_map.png" style="width: 1200px;" /></a>
+<span id="fig-buildingclassfei"></span><a class="reference internal image-reference" href="../../../_images/new_inventory_map.png"><img alt="../../../_images/new_inventory_map.png" src="../../../_images/new_inventory_map.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.1.4.2 </span><span class="caption-text">Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Exploration Inventory</strong>: A subset of 1000 buildings drawn from the Flood-Exposed Inventory intended to provide
@@ -318,30 +318,30 @@ wind and floodplain hazards.</p>
 <p class="caption"><span class="caption-number">Fig. 2.1.4.3 </span><span class="caption-text">Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following figures summarize characteristics of these inventories, including distribution by municipality
-(<a class="reference internal" href="#fig-distassetmunicipality"><span class="std std-numref">Fig. 2.1.4.4</span></a>), by year built (<a class="reference internal" href="../sf_bay_area/overview.html#fig-distbuiltyear"><span class="std std-numref">Fig. 1.1.4.2</span></a>), by occupancy (<a class="reference internal" href="../sf_bay_area/overview.html#fig-occupancytype"><span class="std std-numref">Fig. 1.1.4.3</span></a>),
-by number of stories (<a class="reference internal" href="../sf_bay_area/overview.html#fig-numstory"><span class="std std-numref">Fig. 1.1.4.4</span></a>) and by primary construction material (<a class="reference internal" href="../sf_bay_area/overview.html#fig-constrmaterial"><span class="std std-numref">Fig. 1.1.4.5</span></a>).
+(<a class="reference internal" href="#fig-distassetmunicipality"><span class="std std-numref">Fig. 2.1.4.4</span></a>), by year built (<a class="reference internal" href="#fig-distbuiltyear"><span class="std std-numref">Fig. 2.1.4.5</span></a>), by occupancy (<a class="reference internal" href="#fig-occupancytype"><span class="std std-numref">Fig. 2.1.4.6</span></a>),
+by number of stories (<a class="reference internal" href="#fig-numstory"><span class="std std-numref">Fig. 2.1.4.7</span></a>) and by primary construction material (<a class="reference internal" href="#fig-constrmaterial"><span class="std std-numref">Fig. 2.1.4.8</span></a>).
 Notably, these inventories are typified by older vintages of construction (79% of Atlantic County buildings were constructed
 before 1980), with a dominance of low-rise (1-2 stories), residential, wood frame construction (approximately
 90% of Atlantic County buildings). Steel and reinforced concrete construction is more prevalent in downtown
 Atlantic City.</p>
 <div class="align-center figure" id="id8">
-<span id="fig-distassetmunicipality"></span><a class="reference internal image-reference" href="../../../_images/num_building_city_allset.png"><img alt="../../../_images/num_building_city_allset.png" src="../../../_images/num_building_city_allset.png" style="width: 1000px;" /></a>
+<span id="fig-distassetmunicipality"></span><a class="reference internal image-reference" href="../../../_images/num_building_city_allset.png"><img alt="../../../_images/num_building_city_allset.png" src="../../../_images/num_building_city_allset.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.1.4.4 </span><span class="caption-text">Distribution of number of buildings by municipality.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id9" style="width: 1200px">
-<span id="fig-distbuiltyear"></span><img alt="../../../_images/built_year_allset.png" src="../../../_images/built_year_allset.png" />
+<div class="align-center figure" id="id9">
+<span id="fig-distbuiltyear"></span><a class="reference internal image-reference" href="../../../_images/built_year_allset.png"><img alt="../../../_images/built_year_allset.png" src="../../../_images/built_year_allset.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.1.4.5 </span><span class="caption-text">Distribution of year built for buildings.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id10" style="width: 1200px">
-<span id="fig-occupancytype"></span><img alt="../../../_images/occupancy_type_allset.png" src="../../../_images/occupancy_type_allset.png" />
+<div class="align-center figure" id="id10">
+<span id="fig-occupancytype"></span><a class="reference internal image-reference" href="../../../_images/occupancy_type_allset.png"><img alt="../../../_images/occupancy_type_allset.png" src="../../../_images/occupancy_type_allset.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.1.4.6 </span><span class="caption-text">Distribution of occupancy types.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id11" style="width: 1200px">
-<span id="fig-numstory"></span><img alt="../../../_images/story_number_allset.png" src="../../../_images/story_number_allset.png" />
+<div class="align-center figure" id="id11">
+<span id="fig-numstory"></span><a class="reference internal image-reference" href="../../../_images/story_number_allset.png"><img alt="../../../_images/story_number_allset.png" src="../../../_images/story_number_allset.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.1.4.7 </span><span class="caption-text">Distribution of total story numbers for buildings.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id12" style="width: 1200px">
-<span id="fig-constrmaterial"></span><img alt="../../../_images/building_type_allset.png" src="../../../_images/building_type_allset.png" />
+<div class="align-center figure" id="id12">
+<span id="fig-constrmaterial"></span><a class="reference internal image-reference" href="../../../_images/building_type_allset.png"><img alt="../../../_images/building_type_allset.png" src="../../../_images/building_type_allset.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.1.4.8 </span><span class="caption-text">Distribution of primary construction material types.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">

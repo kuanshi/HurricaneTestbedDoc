@@ -228,12 +228,13 @@
             
   <div class="section" id="damage-and-loss-estimation">
 <span id="lbl-testbed-lc-damage-and-loss"></span><h1><span class="section-number">3.6. </span>Damage and Loss Estimation<a class="headerlink" href="#damage-and-loss-estimation" title="Permalink to this headline">¶</a></h1>
-<p>Damage and loss functions from the HAZUS Hurricane Damage and Loss Model ([<a class="reference internal" href="#fema18a">FEMA18a</a>], [<a class="reference internal" href="#fema18b">FEMA18b</a>])
+<p>Damage and loss functions from the HAZUS Hurricane Damage and Loss Model (<a class="reference internal" href="#fema18a" id="id1"><span>[FEMA18a]</span></a>, <a class="reference internal" href="#fema18b" id="id2"><span>[FEMA18b]</span></a>)
 were implemented in <a class="reference external" href="https://pelicun.readthedocs.io/en/latest/">PELICUN</a> to support loss assessment for
 all configurations of buildings currently supported by HAZUS for wind and flood hazards.</p>
 <p>These configurations represent all the possible unique configurations of building attributes associated
-with each building class (defined by material) and subclass (defined by occupancy) defined in the Atlantic
-County, NJ testbed <span class="xref std std-ref">testbed_AC_asset_representation</span>. For example, wood (class) single-family homes 1-2+ stories
+with each building class (defined by material) and subclass (defined by occupancy) defined in the
+<a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_representation.html">Atlantic County, NJ testbed</a>.
+For example, wood (class) single-family homes 1-2+ stories
 (subclass) would have damage and loss functions associated with each unique combination of attributes
 used to define key features of the load path and components (e.g., roof shape, secondary water resistance,
 roof deck attachment, roof-wall connection, shutters, garage), as well as the exposure (terrain roughness).
@@ -250,15 +251,15 @@ coupled), and the parameterized models allow for more efficient storage and comp
 describe the fragility or expected losses as a function of peak wind speed (PWS).
 Only data up to 200 mph wind speeds were used because the substantial reduction in the
 number of observations introduces significant measurement error above that level (see examples in <a class="reference internal" href="#wind-df"><span class="std std-numref">Fig. 3.6.1</span></a>).</p>
-<div class="align-center figure" id="wind-df" style="width: 900px">
-<img alt="../../../_images/wind_damage_functions1.png" src="../../../_images/wind_damage_functions1.png" />
+<div class="align-center figure" id="wind-df">
+<a class="reference internal image-reference" href="../../../_images/wind_damage_functions1.png"><img alt="../../../_images/wind_damage_functions1.png" src="../../../_images/wind_damage_functions1.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.6.1 </span><span class="caption-text">Fitted HAZUS wind damage functions for example building classes.</span><a class="headerlink" href="#wind-df" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
-<dt class="label" id="fema18a"><span class="brackets">FEMA18a</span></dt>
+<dt class="label" id="fema18a"><span class="brackets"><a class="fn-backref" href="#id1">FEMA18a</a></span></dt>
 <dd><p>FEMA (2018), HAZUS – Multi-hazard Loss Estimation Methodology 2.1, Hurricane Model Technical Manual, Federal Emergency Management Agency, Washington D.C., 718p.</p>
 </dd>
-<dt class="label" id="fema18b"><span class="brackets">FEMA18b</span></dt>
+<dt class="label" id="fema18b"><span class="brackets"><a class="fn-backref" href="#id2">FEMA18b</a></span></dt>
 <dd><p>FEMA (2018), HAZUS – Multi-hazard Loss Estimation Methodology 2.1, Flood Model Technical Manual, Federal Emergency Management Agency, Washington D.C., 569p.</p>
 </dd>
 </dl>

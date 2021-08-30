@@ -147,7 +147,7 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
@@ -259,12 +259,12 @@ The Building Inventory data model should be comprehensive, encompassing all attr
 estimation, although these may be populated in the Building Inventory at different points in the workflow,
 e.g., a number of attributes needed for loss estimation are populated during the Asset Representation stage
 (see <a class="reference internal" href="asset_representation.html#lbl-testbed-ac-asset-representation"><span class="std std-ref">Asset Representation</span></a>).</p>
-<span id="tab-bldginventory"></span><table class="docutils align-center" id="bldg-inv-dm">
+<span id="tab-bldginventory"></span><table class="colwidths-given docutils align-center" id="bldg-inv-dm">
 <caption><span class="caption-number">Table 2.2.1.1 </span><span class="caption-text">Building Inventory data model.</span><a class="headerlink" href="#bldg-inv-dm" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 15%" />
+<col style="width: 60%" />
+<col style="width: 25%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Attribute</p></th>
@@ -650,11 +650,11 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tr>
 </tbody>
 </table>
-<span id="tab-udfattri"></span><table class="docutils align-center" id="id13">
+<span id="tab-udfattri"></span><table class="colwidths-given docutils align-center" id="id13">
 <caption><span class="caption-number">Table 2.2.3.2 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 15%" />
+<col style="width: 85%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
@@ -893,8 +893,8 @@ model that, at the time, achieved state-of-the-art performance on the 2017 COCO 
 For this specific implementation, the peak model performance was achieved using the Adam optimizer
 at a learning rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a> shows examples of the
 floor detections performed by the model.</p>
-<div class="align-center figure" id="num-stories-detection" style="width: 1000px">
-<img alt="../../../_images/number_of_stories_detection.png" src="../../../_images/number_of_stories_detection.png" />
+<div class="align-center figure" id="num-stories-detection">
+<a class="reference internal image-reference" href="../../../_images/number_of_stories_detection.png"><img alt="../../../_images/number_of_stories_detection.png" src="../../../_images/number_of_stories_detection.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.4.1 </span><span class="caption-text">Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.</span><a class="headerlink" href="#num-stories-detection" title="Permalink to this image">¶</a></p>
 </div>
 <p>For an image, the described floor detection model generates the bounding box output for its
@@ -914,8 +914,8 @@ identified the number of stories at an accuracy level of 94.7%.
 :numref:<a href="#id8"><span class="problematic" id="id9">`</span></a>num_story_confusion`(b)  shows the confusion matrix for the model predicting on the
 “cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images
 randomly selected across all New Jersey counties, excluding Atlantic County, was utilized.</p>
-<div class="align-center figure" id="num-story-confusion" style="width: 1000px">
-<img alt="../../../_images/num_story_confusion.png" src="../../../_images/num_story_confusion.png" />
+<div class="align-center figure" id="num-story-confusion">
+<a class="reference internal image-reference" href="../../../_images/num_story_confusion.png"><img alt="../../../_images/num_story_confusion.png" src="../../../_images/num_story_confusion.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.4.2 </span><span class="caption-text">Confusion matrices for the number of stories predictor. The maxtrix one the left shows
 the model’s prediction accuracy when tested on “in-the-wild” images. The matrix on the
 right depicts the model accuracy on the “cleaned” imagery.</span><a class="headerlink" href="#num-story-confusion" title="Permalink to this image">¶</a></p>
@@ -931,8 +931,8 @@ floor as determined from base of door’s height, all defined with respect to gr
 were estimated from street-level imagery. These geometric properties are defined visually
 for common residential coastal typologies in <a class="reference internal" href="../lake_charles/asset_description.html#building-elevation"><span class="std std-numref">Fig. 3.2.2.7</span></a>. The mean height of the roof system
 is then derived from the aforementioned roof elevations.</p>
-<div class="align-center figure" id="building-elevation" style="width: 1000px">
-<img alt="../../../_images/building_elevation.png" src="../../../_images/building_elevation.png" />
+<div class="align-center figure" id="building-elevation">
+<a class="reference internal image-reference" href="../../../_images/building_elevation.png"><img alt="../../../_images/building_elevation.png" src="../../../_images/building_elevation.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.4.3 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image">¶</a></p>
 </div>
 <p>As in any single-image metrology application, extracting the building elevations require:
@@ -981,8 +981,8 @@ to define each roof as an “effective” gable, hip or flat geometry (<a class=
 classification was achieved with approximately 90.3% accuracy based on validation studies.
 The detailed validation process can be found in
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">BRAILS online documentation</a>.</p>
-<div class="align-center figure" id="roof-shape" style="width: 800px">
-<img alt="../../../_images/roof_shape.png" src="../../../_images/roof_shape.png" />
+<div class="align-center figure" id="roof-shape">
+<a class="reference internal image-reference" href="../../../_images/roof_shape.png"><img alt="../../../_images/roof_shape.png" src="../../../_images/roof_shape.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.2.4.4 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="../lake_charles/asset_description.html#wang19" id="id11"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
@@ -1036,42 +1036,37 @@ in a location with sparse inventory data. Recommended best practices are summari
 <div class="section" id="populated-inventories">
 <h2><span class="section-number">2.2.5. </span>Populated Inventories<a class="headerlink" href="#populated-inventories" title="Permalink to this headline">¶</a></h2>
 <p>Executing this four-phase process resulted in the assignment of all required attributes at the asset description
-stage of the workflow for both the <strong>Atlantic County Inventory</strong> and the <strong>Flood-Exposed Inventory</strong>. <a class="reference internal" href="#bldg-inv-ac"><span class="std std-numref">Table 2.2.5.1</span></a>
-and <a class="reference internal" href="#bldg-inv-fei"><span class="std std-numref">Table 2.2.5.2</span></a> provide respective examples of each of these inventories.
+stage of the workflow for both the <strong>Atlantic County Inventory</strong> and the <strong>Flood-Exposed Inventory</strong>.
+<a class="reference internal" href="#bldg-inv-ac"><span class="std std-numref">Table 2.2.5.1</span></a> and <a class="reference internal" href="#bldg-inv-fei"><span class="std std-numref">Table 2.2.5.2</span></a> provide respective examples of each of these inventories.
 The Flood-Exposed Inventory then was used to extract out the subset of buildings defining the
-<strong>Exploration Inventory</strong> (see example in <a class="reference internal" href="#bldg-inv-ei"><span class="std std-numref">Table 2.2.5.3</span></a>). The full inventories can be found
+<strong>Exploration Inventory</strong> (see example in <a class="reference internal" href="#bldg-inv-ei"><span class="std std-numref">Table 2.2.5.3</span></a>). The full inventories can be downloaded
 <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/full_inventories.zip">here</a>.</p>
-<table class="docutils align-center" id="bldg-inv-ac">
+<table class="colwidths-given docutils align-center" id="bldg-inv-ac">
 <caption><span class="caption-number">Table 2.2.5.1 </span><span class="caption-text">Illustrative sample of building in Atlantic Inventory.</span><a class="headerlink" href="#bldg-inv-ac" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 10%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
 <col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>BldgID</p></th>
-<th class="head"><p>Longitude</p></th>
-<th class="head"><p>Latitude</p></th>
-<th class="head"><p>Address</p></th>
-<th class="head"><p>City</p></th>
-<th class="head"><p>BldgClass</p></th>
-<th class="head"><p>YearBuilt</p></th>
-<th class="head"><p>NumberofStories1</p></th>
-<th class="head"><p>OccupancyClass</p></th>
-<th class="head"><p>BuildingType</p></th>
-</tr>
-</thead>
 <tbody>
-<tr class="row-even"><td><p>0101_1.01_1.01</p></td>
-<td><p>-74.51503446</p></td>
-<td><p>39.39359318</p></td>
+<tr class="row-odd"><td><p>Longitude</p></td>
+<td><p>Latitude</p></td>
+<td><p>Address</p></td>
+<td><p>City</p></td>
+<td><p>BldgClass</p></td>
+<td><p>YearBuilt</p></td>
+<td><p>NumberofStories1</p></td>
+<td><p>OccupancyClass</p></td>
+<td><p>BuildingType</p></td>
+</tr>
+<tr class="row-even"><td><p>-74.52</p></td>
+<td><p>39.39</p></td>
 <td><p>368 UPLAND AVE</p></td>
 <td><p>ABSECON CITY</p></td>
 <td><p>17</p></td>
@@ -1080,9 +1075,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 </tr>
-<tr class="row-odd"><td><p>0101_1.01_1.01</p></td>
-<td><p>-74.6881434</p></td>
-<td><p>39.65375331</p></td>
+<tr class="row-odd"><td><p>-74.69</p></td>
+<td><p>39.65</p></td>
 <td><p>368 UPLAND AVE</p></td>
 <td><p>ABSECON CITY</p></td>
 <td><p>17</p></td>
@@ -1091,9 +1085,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 </tr>
-<tr class="row-even"><td><p>0101_1.01_1.02</p></td>
-<td><p>-74.5177535</p></td>
-<td><p>39.3932035</p></td>
+<tr class="row-even"><td><p>-74.52</p></td>
+<td><p>39.39</p></td>
 <td><p>135 TENTH AVE</p></td>
 <td><p>ABSECON CITY</p></td>
 <td><p>17</p></td>
@@ -1102,9 +1095,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 </tr>
-<tr class="row-odd"><td><p>0101_1.01_1.02</p></td>
-<td><p>-74.71374499</p></td>
-<td><p>39.64733006</p></td>
+<tr class="row-odd"><td><p>-74.71</p></td>
+<td><p>39.65</p></td>
 <td><p>135 TENTH AVE</p></td>
 <td><p>ABSECON CITY</p></td>
 <td><p>17</p></td>
@@ -1113,9 +1105,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>RES1</p></td>
 <td><p>3004</p></td>
 </tr>
-<tr class="row-even"><td><p>0101_1.01_1.03</p></td>
-<td><p>-74.51888718</p></td>
-<td><p>39.39071507</p></td>
+<tr class="row-even"><td><p>-74.52</p></td>
+<td><p>39.39</p></td>
 <td><p>358 UPLAND AVE</p></td>
 <td><p>ABSECON CITY</p></td>
 <td><p>17</p></td>
@@ -1124,9 +1115,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>REL1</p></td>
 <td><p>3004</p></td>
 </tr>
-<tr class="row-odd"><td><p>0101_1.01_1.03</p></td>
-<td><p>-74.70968469</p></td>
-<td><p>39.65440102</p></td>
+<tr class="row-odd"><td><p>-74.71</p></td>
+<td><p>39.65</p></td>
 <td><p>358 UPLAND AVE</p></td>
 <td><p>ABSECON CITY</p></td>
 <td><p>17</p></td>
@@ -1135,9 +1125,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 </tr>
-<tr class="row-even"><td><p>0101_1.01_1.04</p></td>
-<td><p>-74.5250585</p></td>
-<td><p>39.3937085</p></td>
+<tr class="row-even"><td><p>-74.53</p></td>
+<td><p>39.39</p></td>
 <td><p>360 UPLAND AVE</p></td>
 <td><p>ABSECON CITY</p></td>
 <td><p>17</p></td>
@@ -1146,9 +1135,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 </tr>
-<tr class="row-odd"><td><p>0101_1.01_1.04</p></td>
-<td><p>-74.77548678</p></td>
-<td><p>39.64267177</p></td>
+<tr class="row-odd"><td><p>-74.78</p></td>
+<td><p>39.64</p></td>
 <td><p>360 UPLAND AVE</p></td>
 <td><p>ABSECON CITY</p></td>
 <td><p>17</p></td>
@@ -1157,450 +1145,9 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 </tr>
-<tr class="row-even"><td><p>0101_1.01_1.05</p></td>
-<td><p>-74.52764883</p></td>
-<td><p>39.39361624</p></td>
+<tr class="row-even"><td><p>-74.53</p></td>
+<td><p>39.39</p></td>
 <td><p>362 UPLAND AVE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1986</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_1.05</p></td>
-<td><p>-74.78028217</p></td>
-<td><p>39.64101694</p></td>
-<td><p>362 UPLAND AVE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1986</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_1.06</p></td>
-<td><p>-74.52233086</p></td>
-<td><p>39.39333521</p></td>
-<td><p>364 UPLAND AVE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1985</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_1.06</p></td>
-<td><p>-74.77804867</p></td>
-<td><p>39.63992094</p></td>
-<td><p>364 UPLAND AVE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1985</p></td>
-<td><p>1</p></td>
-<td><p>GOV1</p></td>
-<td><p>3004</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_1.07</p></td>
-<td><p>-74.52807498</p></td>
-<td><p>39.39314233</p></td>
-<td><p>366 UPLAND AVE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1985</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_1.07</p></td>
-<td><p>-74.78615217</p></td>
-<td><p>39.643841</p></td>
-<td><p>366 UPLAND AVE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1985</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_10</p></td>
-<td><p>-74.52800859</p></td>
-<td><p>39.38599874</p></td>
-<td><p>1110 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1975</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_10</p></td>
-<td><p>-74.88923019</p></td>
-<td><p>39.50375159</p></td>
-<td><p>1110 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1975</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_11</p></td>
-<td><p>-74.51772233</p></td>
-<td><p>39.40059992</p></td>
-<td><p>1112 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1974</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_11</p></td>
-<td><p>-74.918497</p></td>
-<td><p>39.487918</p></td>
-<td><p>1112 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1974</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_12</p></td>
-<td><p>-74.5172961</p></td>
-<td><p>39.40053271</p></td>
-<td><p>1114 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1976</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_12</p></td>
-<td><p>-74.9354975</p></td>
-<td><p>39.4887385</p></td>
-<td><p>1114 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1976</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_13</p></td>
-<td><p>-74.5147125</p></td>
-<td><p>39.39899</p></td>
-<td><p>1101 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1968</p></td>
-<td><p>1</p></td>
-<td><p>GOV1</p></td>
-<td><p>3004</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_13</p></td>
-<td><p>-74.92811427</p></td>
-<td><p>39.48833544</p></td>
-<td><p>1101 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1968</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_14</p></td>
-<td><p>-74.519451</p></td>
-<td><p>39.397522</p></td>
-<td><p>1103 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1972</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_14</p></td>
-<td><p>-74.93442238</p></td>
-<td><p>39.49584976</p></td>
-<td><p>1103 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1972</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_15</p></td>
-<td><p>-74.5183</p></td>
-<td><p>39.3948585</p></td>
-<td><p>1105 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1973</p></td>
-<td><p>1</p></td>
-<td><p>RES3A</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_15</p></td>
-<td><p>-74.93967</p></td>
-<td><p>39.501525</p></td>
-<td><p>1105 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1973</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_16</p></td>
-<td><p>-74.5277345</p></td>
-<td><p>39.4013845</p></td>
-<td><p>1107 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1975</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_16</p></td>
-<td><p>-74.90333849</p></td>
-<td><p>39.50495034</p></td>
-<td><p>1107 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1975</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_17</p></td>
-<td><p>-74.52074335</p></td>
-<td><p>39.39902594</p></td>
-<td><p>1109 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1973</p></td>
-<td><p>1</p></td>
-<td><p>GOV1</p></td>
-<td><p>3004</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_17</p></td>
-<td><p>-74.913056</p></td>
-<td><p>39.510618</p></td>
-<td><p>1109 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1973</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_18</p></td>
-<td><p>-74.5309655</p></td>
-<td><p>39.398919</p></td>
-<td><p>1111 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1974</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_18</p></td>
-<td><p>-74.9245365</p></td>
-<td><p>39.510431</p></td>
-<td><p>1111 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1974</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_19</p></td>
-<td><p>-74.52719857</p></td>
-<td><p>39.39823654</p></td>
-<td><p>1113 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1972</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_19</p></td>
-<td><p>-74.92673377</p></td>
-<td><p>39.50823997</p></td>
-<td><p>1113 SPRING LANE</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1972</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_2.01</p></td>
-<td><p>-74.531211</p></td>
-<td><p>39.3902545</p></td>
-<td><p>1100 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1972</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_2.01</p></td>
-<td><p>-74.79152636</p></td>
-<td><p>39.64354329</p></td>
-<td><p>1100 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1972</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_2.02</p></td>
-<td><p>-74.5209253</p></td>
-<td><p>39.38970893</p></td>
-<td><p>1102 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1994</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_2.02</p></td>
-<td><p>-74.79195782</p></td>
-<td><p>39.64242519</p></td>
-<td><p>1102 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1994</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_2.03</p></td>
-<td><p>-74.52356599</p></td>
-<td><p>39.38559084</p></td>
-<td><p>1104 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1981</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_2.03</p></td>
-<td><p>-74.79365933</p></td>
-<td><p>39.6420845</p></td>
-<td><p>1104 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1981</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_2.04</p></td>
-<td><p>-74.51530358</p></td>
-<td><p>39.40220261</p></td>
-<td><p>1106 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1993</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_2.04</p></td>
-<td><p>-74.7853345</p></td>
-<td><p>39.64078717</p></td>
-<td><p>1106 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1993</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_2.05</p></td>
-<td><p>-74.515183</p></td>
-<td><p>39.402166</p></td>
-<td><p>1108 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1989</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_2.05</p></td>
-<td><p>-74.77946003</p></td>
-<td><p>39.65537853</p></td>
-<td><p>1108 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1989</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_2.06</p></td>
-<td><p>-74.51256348</p></td>
-<td><p>39.40014734</p></td>
-<td><p>1110 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1986</p></td>
-<td><p>1</p></td>
-<td><p>GOV1</p></td>
-<td><p>3004</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_2.06</p></td>
-<td><p>-74.78071036</p></td>
-<td><p>39.65287505</p></td>
-<td><p>1110 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1986</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_2.07</p></td>
-<td><p>-74.52005752</p></td>
-<td><p>39.39859916</p></td>
-<td><p>1112 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1986</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-odd"><td><p>0101_1.01_2.07</p></td>
-<td><p>-74.79082982</p></td>
-<td><p>39.65521117</p></td>
-<td><p>1112 PLYMOUTH LANDING RD</p></td>
-<td><p>ABSECON CITY</p></td>
-<td><p>17</p></td>
-<td><p>1986</p></td>
-<td><p>1</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-</tr>
-<tr class="row-even"><td><p>0101_1.01_2.08</p></td>
-<td><p>-74.51682319</p></td>
-<td><p>39.39718954</p></td>
-<td><p>1114 PLYMOUTH LANDING RD</p></td>
 <td><p>ABSECON CITY</p></td>
 <td><p>17</p></td>
 <td><p>1986</p></td>
@@ -1613,110 +1160,84 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <table class="docutils align-center" id="bldg-inv-fei">
 <caption><span class="caption-number">Table 2.2.5.2 </span><span class="caption-text">Illustrative sample of building in Flood-Exposed Inventory.</span><a class="headerlink" href="#bldg-inv-fei" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"></th>
-<th class="head"><p>BldgID</p></th>
-<th class="head"><p>Address</p></th>
-<th class="head"><p>City</p></th>
-<th class="head"><p>State</p></th>
-<th class="head"><p>Latitude</p></th>
-<th class="head"><p>Longitude</p></th>
-<th class="head"><p>OccupancyClass</p></th>
-<th class="head"><p>BuildingType</p></th>
-<th class="head"><p>UseCode</p></th>
-<th class="head"><p>BldgClass</p></th>
-<th class="head"><p>DesignLevel</p></th>
-<th class="head"><p>YearBuiltNJDEP</p></th>
-<th class="head"><p>YearBuiltMODIV</p></th>
-<th class="head"><p>NumberofStories0</p></th>
-<th class="head"><p>NumberofStories1</p></th>
-<th class="head"><p>NoUnits</p></th>
-<th class="head"><p>PlanArea0</p></th>
-<th class="head"><p>PlanArea1</p></th>
-<th class="head"><p>FoundationType</p></th>
-<th class="head"><p>SplitLevel</p></th>
-<th class="head"><p>ElevationR0</p></th>
-<th class="head"><p>ElevationR1</p></th>
-<th class="head"><p>FirstFloorHt0</p></th>
-<th class="head"><p>FirstFloorHt1</p></th>
-<th class="head"><p>FloodZone</p></th>
-<th class="head"><p>DSWI</p></th>
-<th class="head"><p>DSWII</p></th>
-<th class="head"><p>DSWIII</p></th>
-<th class="head"><p>DSWIV</p></th>
-<th class="head"><p>WindZone</p></th>
-<th class="head"><p>AvgJanTemp</p></th>
-<th class="head"><p>RoofShape</p></th>
-<th class="head"><p>RoofSlope</p></th>
-<th class="head"><p>RoofCover</p></th>
-<th class="head"><p>RoofSystem</p></th>
-<th class="head"><p>MeanRoofHt</p></th>
-<th class="head"><p>WindowArea</p></th>
-<th class="head"><p>Garage</p></th>
-<th class="head"><p>HazusClassW</p></th>
-<th class="head"><p>HazusClassIN</p></th>
-<th class="head"><p>HazusClassWA</p></th>
-<th class="head"><p>AnalysisDefault</p></th>
-<th class="head"><p>AnalysisAdopted</p></th>
-<th class="head"><p>Modifications</p></th>
-<th class="head"><p>z0</p></th>
-</tr>
-</thead>
 <tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>NJBF000081138</p></td>
-<td><p>14 W LEE AVE</p></td>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>City</p></td>
+<td><p>State</p></td>
+<td><p>Latitude</p></td>
+<td><p>Longitude</p></td>
+<td><p>OccupancyClass</p></td>
+<td><p>BuildingType</p></td>
+<td><p>UseCode</p></td>
+<td><p>BldgClass</p></td>
+<td><p>DesignLevel</p></td>
+<td><p>YearBuiltNJDEP</p></td>
+<td><p>YearBuiltMODIV</p></td>
+<td><p>NumberofStories0</p></td>
+<td><p>NumberofStories1</p></td>
+<td><p>NoUnits</p></td>
+<td><p>PlanArea0</p></td>
+<td><p>PlanArea1</p></td>
+<td><p>FoundationType</p></td>
+<td><p>SplitLevel</p></td>
+<td><p>ElevationR0</p></td>
+<td><p>ElevationR1</p></td>
+<td><p>FirstFloorHt0</p></td>
+<td><p>FirstFloorHt1</p></td>
+<td><p>FloodZone</p></td>
+<td><p>DSWII</p></td>
+<td><p>WindZone</p></td>
+<td><p>AvgJanTemp</p></td>
+<td><p>RoofShape</p></td>
+<td><p>RoofSlope</p></td>
+<td><p>RoofCover</p></td>
+<td><p>RoofSystem</p></td>
+<td><p>MeanRoofHt</p></td>
+<td><p>WindowArea</p></td>
+<td><p>Garage</p></td>
+<td><p>z0</p></td>
+</tr>
+<tr class="row-even"><td><p>14 W LEE AVE</p></td>
 <td><p>Absecon</p></td>
 <td><p>NJ</p></td>
-<td><p>39.41770296</p></td>
-<td><p>-74.50360821</p></td>
+<td><p>39.42</p></td>
+<td><p>-74.5</p></td>
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -1727,8 +1248,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3101</p></td>
 <td><p>2</p></td>
 <td><p>1</p></td>
-<td><p>1310.670302</p></td>
-<td><p>1310.670302</p></td>
+<td><p>1311</p></td>
+<td><p>1311</p></td>
 <td><p>3505</p></td>
 <td><p>NO</p></td>
 <td><p>19.64</p></td>
@@ -1736,34 +1257,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3</p></td>
 <td><p>-2.97</p></td>
 <td><p>6112</p></td>
-<td><p>112.44902</p></td>
-<td><p>122.279935</p></td>
-<td><p>131.916872</p></td>
-<td><p>138.112949</p></td>
+<td><p>122</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Gable</p></td>
 <td><p>0</p></td>
 <td><p>5701</p></td>
 <td></td>
-<td><p>26.76835396</p></td>
+<td><p>26.8</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.35</p></td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>NJBF000080830</p></td>
-<td><p>28 W SUMMIT AVE</p></td>
+<tr class="row-odd"><td><p>28 W SUMMIT AVE</p></td>
 <td><p>Absecon</p></td>
 <td><p>NJ</p></td>
-<td><p>39.41651021</p></td>
-<td><p>-74.5040753</p></td>
+<td><p>39.42</p></td>
+<td><p>-74.5</p></td>
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -1774,8 +1284,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3101</p></td>
 <td><p>2</p></td>
 <td><p>1</p></td>
-<td><p>1061.415481</p></td>
-<td><p>1061.415481</p></td>
+<td><p>1061</p></td>
+<td><p>1061</p></td>
 <td><p>3505</p></td>
 <td><p>NO</p></td>
 <td><p>33.52</p></td>
@@ -1783,34 +1293,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3</p></td>
 <td><p>6.72</p></td>
 <td><p>6112</p></td>
-<td><p>112.447756</p></td>
-<td><p>122.28405</p></td>
-<td><p>131.921695</p></td>
-<td><p>138.122775</p></td>
+<td><p>122</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Gable</p></td>
 <td><p>0</p></td>
 <td><p>5701</p></td>
 <td></td>
-<td><p>40.49340431</p></td>
+<td><p>40.5</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.35</p></td>
 </tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>NJBF000083830</p></td>
-<td><p>6353 MONMOUTH DRIVE</p></td>
+<tr class="row-even"><td><p>6353 MONMOUTH DRIVE</p></td>
 <td><p>Hamilton</p></td>
 <td><p>NJ</p></td>
-<td><p>39.45048978</p></td>
-<td><p>-74.75018492</p></td>
+<td><p>39.45</p></td>
+<td><p>-74.75</p></td>
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -1821,8 +1320,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3101</p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
-<td><p>1047.333566</p></td>
-<td><p>1047.333566</p></td>
+<td><p>1047</p></td>
+<td><p>1047</p></td>
 <td><p>3507</p></td>
 <td><p>NO</p></td>
 <td><p>18.92</p></td>
@@ -1830,34 +1329,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>1</p></td>
 <td><p>2.02</p></td>
 <td><p>6112</p></td>
-<td><p>108.85847</p></td>
-<td><p>118.403195</p></td>
-<td><p>128.083472</p></td>
-<td><p>132.640181</p></td>
+<td><p>118</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Gable</p></td>
 <td><p>0</p></td>
 <td><p>5701</p></td>
 <td></td>
-<td><p>25.33482164</p></td>
+<td><p>25.3</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.35</p></td>
 </tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>NJBF000087414</p></td>
-<td><p>2004 SYCAMORE LANE</p></td>
+<tr class="row-odd"><td><p>2004 SYCAMORE LANE</p></td>
 <td><p>Hamilton</p></td>
 <td><p>NJ</p></td>
-<td><p>39.53318557</p></td>
-<td><p>-74.79076398</p></td>
+<td><p>39.53</p></td>
+<td><p>-74.79</p></td>
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -1868,8 +1356,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3102</p></td>
 <td><p>2</p></td>
 <td><p>1</p></td>
-<td><p>1234.317665</p></td>
-<td><p>1234.317665</p></td>
+<td><p>1234</p></td>
+<td><p>1234</p></td>
 <td><p>3507</p></td>
 <td><p>NO</p></td>
 <td><p>31.43</p></td>
@@ -1877,34 +1365,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>1</p></td>
 <td><p>1.96</p></td>
 <td><p>6112</p></td>
-<td><p>108.322128</p></td>
-<td><p>117.335658</p></td>
-<td><p>127.044237</p></td>
-<td><p>130.766349</p></td>
+<td><p>117</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Hip</p></td>
 <td><p>0</p></td>
 <td><p>5701</p></td>
 <td></td>
-<td><p>37.24709902</p></td>
+<td><p>37.2</p></td>
 <td><p>0</p></td>
 <td><p>1.1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.35</p></td>
 </tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>NJBF000083883</p></td>
-<td><p>35 PENNINGTON AVENUE</p></td>
+<tr class="row-even"><td><p>35 PENNINGTON AVENUE</p></td>
 <td><p>Hamilton</p></td>
 <td><p>NJ</p></td>
-<td><p>39.45108384</p></td>
-<td><p>-74.72759818</p></td>
+<td><p>39.45</p></td>
+<td><p>-74.73</p></td>
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -1915,8 +1392,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3103</p></td>
 <td><p>2</p></td>
 <td><p>1</p></td>
-<td><p>936.4560766</p></td>
-<td><p>936.4560766</p></td>
+<td><p>936</p></td>
+<td><p>936</p></td>
 <td><p>3505</p></td>
 <td><p>NO</p></td>
 <td><p>34.55</p></td>
@@ -1924,34 +1401,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3</p></td>
 <td><p>6.76</p></td>
 <td><p>6112</p></td>
-<td><p>109.034823</p></td>
-<td><p>118.647832</p></td>
-<td><p>128.31928</p></td>
-<td><p>133.072236</p></td>
+<td><p>119</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Gable</p></td>
 <td><p>0</p></td>
 <td><p>5701</p></td>
 <td></td>
-<td><p>40.96825807</p></td>
+<td><p>41</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.35</p></td>
 </tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>NJBF000072831</p></td>
-<td><p>135 GARNETT LANE</p></td>
+<tr class="row-odd"><td><p>135 GARNETT LANE</p></td>
 <td><p>Egg Harbor</p></td>
 <td><p>NJ</p></td>
-<td><p>39.37511675</p></td>
-<td><p>-74.58604463</p></td>
+<td><p>39.38</p></td>
+<td><p>-74.59</p></td>
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -1962,8 +1428,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3102</p></td>
 <td><p>2</p></td>
 <td><p>1</p></td>
-<td><p>2579.278413</p></td>
-<td><p>2579.278413</p></td>
+<td><p>2579</p></td>
+<td><p>2579</p></td>
 <td><p>3507</p></td>
 <td><p>NO</p></td>
 <td><p>29</p></td>
@@ -1971,34 +1437,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>1</p></td>
 <td><p>2.6</p></td>
 <td><p>6112</p></td>
-<td><p>110.96108</p></td>
-<td><p>121.28815</p></td>
-<td><p>130.953681</p></td>
-<td><p>137.12639</p></td>
+<td><p>121</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Gable</p></td>
 <td><p>0</p></td>
 <td><p>5701</p></td>
 <td></td>
-<td><p>33.21916734</p></td>
+<td><p>33.2</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.35</p></td>
 </tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p>NJBF000072900</p></td>
-<td><p>122 GARNETT LANE</p></td>
+<tr class="row-even"><td><p>122 GARNETT LANE</p></td>
 <td><p>Egg Harbor</p></td>
 <td><p>NJ</p></td>
-<td><p>39.37554697</p></td>
-<td><p>-74.58580994</p></td>
+<td><p>39.38</p></td>
+<td><p>-74.59</p></td>
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -2009,8 +1464,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3102</p></td>
 <td><p>2</p></td>
 <td><p>1</p></td>
-<td><p>2441.260454</p></td>
-<td><p>2441.260454</p></td>
+<td><p>2441</p></td>
+<td><p>2441</p></td>
 <td><p>3507</p></td>
 <td><p>NO</p></td>
 <td><p>27.38</p></td>
@@ -2018,34 +1473,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>1</p></td>
 <td><p>0.27</p></td>
 <td><p>6112</p></td>
-<td><p>110.962265</p></td>
-<td><p>121.287807</p></td>
-<td><p>130.952318</p></td>
-<td><p>137.124636</p></td>
+<td><p>121</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Hip</p></td>
 <td><p>0</p></td>
 <td><p>5701</p></td>
 <td></td>
-<td><p>30.28394272</p></td>
+<td><p>30.3</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.35</p></td>
 </tr>
-<tr class="row-odd"><td><p>8</p></td>
-<td><p>NJBF000079059</p></td>
-<td><p>332 MONTCLAIR DR</p></td>
+<tr class="row-odd"><td><p>332 MONTCLAIR DR</p></td>
 <td><p>Pleasantville</p></td>
 <td><p>NJ</p></td>
-<td><p>39.40925267</p></td>
-<td><p>-74.50079286</p></td>
+<td><p>39.41</p></td>
+<td><p>-74.5</p></td>
 <td><p>RES3C</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -2056,8 +1500,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3303</p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
-<td><p>1601.592704</p></td>
-<td><p>1601.592704</p></td>
+<td><p>1602</p></td>
+<td><p>1602</p></td>
 <td><p>3507</p></td>
 <td><p>NO</p></td>
 <td><p>16.67</p></td>
@@ -2065,34 +1509,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>1</p></td>
 <td><p>0.87</p></td>
 <td><p>6112</p></td>
-<td><p>112.572563</p></td>
-<td><p>122.417384</p></td>
-<td><p>132.068809</p></td>
-<td><p>138.300759</p></td>
+<td><p>122</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Gable</p></td>
 <td><p>0</p></td>
 <td></td>
 <td></td>
-<td><p>20.37804612</p></td>
+<td><p>20.4</p></td>
 <td><p>0</p></td>
 <td><p>1.1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.35</p></td>
 </tr>
-<tr class="row-even"><td><p>9</p></td>
-<td><p>NJBF000076320</p></td>
-<td><p>128 N FRANKLIN BLVD</p></td>
+<tr class="row-even"><td><p>128 N FRANKLIN BLVD</p></td>
 <td><p>Pleasantville</p></td>
 <td><p>NJ</p></td>
-<td><p>39.39295964</p></td>
-<td><p>-74.51789825</p></td>
+<td><p>39.39</p></td>
+<td><p>-74.52</p></td>
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -2103,8 +1536,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3101</p></td>
 <td><p>2</p></td>
 <td><p>1</p></td>
-<td><p>1062.463152</p></td>
-<td><p>1062.463152</p></td>
+<td><p>1062</p></td>
+<td><p>1062</p></td>
 <td><p>3505</p></td>
 <td><p>NO</p></td>
 <td><p>32.89</p></td>
@@ -2112,2075 +1545,101 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3</p></td>
 <td><p>8.08</p></td>
 <td><p>6112</p></td>
-<td><p>112.334907</p></td>
-<td><p>122.284643</p></td>
-<td><p>131.934622</p></td>
-<td><p>138.228883</p></td>
+<td><p>122</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Hip</p></td>
 <td><p>0</p></td>
 <td><p>5701</p></td>
 <td></td>
-<td><p>37.66345925</p></td>
+<td><p>37.7</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>10</p></td>
-<td><p>NJBF000084559</p></td>
-<td><p>1400 ROUTE 50</p></td>
-<td><p>Hamilton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.46562584</p></td>
-<td><p>-74.71979952</p></td>
-<td><p>GOV2</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td></td>
-<td><p>E</p></td>
-<td><p>1966</p></td>
-<td><p>1966</p></td>
-<td><p>3401</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>6491.408389</p></td>
-<td><p>6491.408389</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>19.76</p></td>
-<td><p>31.97</p></td>
-<td><p>1</p></td>
-<td><p>2.77</p></td>
-<td><p>6112</p></td>
-<td><p>109.068201</p></td>
-<td><p>118.621733</p></td>
-<td><p>128.280818</p></td>
-<td><p>133.010955</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>25.86659037</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>11</p></td>
-<td><p>NJBF000094986</p></td>
-<td><p>623 FAIRVIEW AVE</p></td>
-<td><p>Hammonton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.64751059</p></td>
-<td><p>-74.8025099</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1924</p></td>
-<td><p>1924</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>979.7912334</p></td>
-<td><p>979.7912334</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>37.66</p></td>
-<td><p>46.56</p></td>
-<td><p>1</p></td>
-<td><p>1.57</p></td>
-<td><p>6112</p></td>
-<td><p>107.929492</p></td>
-<td><p>116.27078</p></td>
-<td><p>126.138992</p></td>
-<td><p>129.351482</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>42.10695602</p></td>
-<td><p>0</p></td>
-<td><p>1.1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>12</p></td>
-<td><p>NJBF000094295</p></td>
-<td><p>630 E PLEASANT ST</p></td>
-<td><p>Hammonton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.64435389</p></td>
-<td><p>-74.79709601</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>2001</p></td>
-<td><p>2001</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>2095.373189</p></td>
-<td><p>2095.373189</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>41.59</p></td>
-<td><p>47.99</p></td>
-<td><p>1</p></td>
-<td><p>2.71</p></td>
-<td><p>6112</p></td>
-<td><p>107.983086</p></td>
-<td><p>116.340748</p></td>
-<td><p>126.20475</p></td>
-<td><p>129.45065</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>44.79025314</p></td>
-<td><p>0</p></td>
-<td><p>1.2</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>13</p></td>
-<td><p>NJBF000094338</p></td>
-<td><p>535 PRATT ST</p></td>
-<td><p>Hammonton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.64459394</p></td>
-<td><p>-74.80298759</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1986</p></td>
-<td><p>1986</p></td>
-<td><p>3102</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>3461.94384</p></td>
-<td><p>3461.94384</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>16.58</p></td>
-<td><p>27.48</p></td>
-<td><p>1</p></td>
-<td><p>1.17</p></td>
-<td><p>6112</p></td>
-<td><p>107.934005</p></td>
-<td><p>116.292861</p></td>
-<td><p>126.15479</p></td>
-<td><p>129.375712</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>22.02841564</p></td>
-<td><p>0</p></td>
-<td><p>1.2</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>14</p></td>
-<td><p>NJBF000083250</p></td>
-<td><p>1111 SHELBURNE AVE</p></td>
-<td><p>Galloway</p></td>
-<td><p>NJ</p></td>
-<td><p>39.44029794</p></td>
-<td><p>-74.51607199</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1967</p></td>
-<td><p>1967</p></td>
-<td><p>3102</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1857.852223</p></td>
-<td><p>1857.852223</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>21.19</p></td>
-<td><p>28.16</p></td>
-<td><p>3</p></td>
-<td><p>8.58</p></td>
-<td><p>6112</p></td>
-<td><p>112.051064</p></td>
-<td><p>121.829059</p></td>
-<td><p>131.421027</p></td>
-<td><p>137.513847</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>24.67352854</p></td>
-<td><p>0</p></td>
-<td><p>1.1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>15</p></td>
-<td><p>NJBF000094422</p></td>
-<td><p>416 4TH ST</p></td>
-<td><p>Hammonton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.64498249</p></td>
-<td><p>-74.80170663</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1960</p></td>
-<td><p>1960</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>2882.304428</p></td>
-<td><p>2882.304428</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>21.75</p></td>
-<td><p>29</p></td>
-<td><p>1</p></td>
-<td><p>0.35</p></td>
-<td><p>6112</p></td>
-<td><p>107.943361</p></td>
-<td><p>116.299325</p></td>
-<td><p>126.162637</p></td>
-<td><p>129.387355</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>25.37593068</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>16</p></td>
-<td><p>NJBF000083234</p></td>
-<td><p>345 E WHITE HORSE PIKE</p></td>
-<td><p>Galloway</p></td>
-<td><p>NJ</p></td>
-<td><p>39.44002337</p></td>
-<td><p>-74.51922424</p></td>
-<td><p>RES4</p></td>
-<td><p>3001</p></td>
-<td><p>218</p></td>
-<td></td>
-<td><p>ME</p></td>
-<td><p>1959</p></td>
-<td><p>1959</p></td>
-<td><p>3401</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>709.2436621</p></td>
-<td><p>709.2436621</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>11.13</p></td>
-<td><p>25.55</p></td>
-<td><p>1</p></td>
-<td><p>0.61</p></td>
-<td><p>6112</p></td>
-<td><p>111.989561</p></td>
-<td><p>121.777489</p></td>
-<td><p>131.364497</p></td>
-<td><p>137.455973</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td><p>18.34300615</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>17</p></td>
-<td><p>NJBF000090775</p></td>
-<td><p>1503 MAYS LANDING RD</p></td>
-<td><p>Folsom</p></td>
-<td><p>NJ</p></td>
-<td><p>39.59309484</p></td>
-<td><p>-74.83816694</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1992</p></td>
-<td><p>1992</p></td>
-<td><p>3101</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>2031.402613</p></td>
-<td><p>2031.402613</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>37.37</p></td>
-<td><p>44.09</p></td>
-<td><p>3</p></td>
-<td><p>5.3</p></td>
-<td><p>6112</p></td>
-<td><p>107.798676</p></td>
-<td><p>116.447163</p></td>
-<td><p>126.21276</p></td>
-<td><p>129.438485</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>40.73106045</p></td>
-<td><p>0</p></td>
-<td><p>1.2</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>18</p></td>
-<td><p>NJBF000084955</p></td>
-<td><p>6924 LANDIS AVENUE</p></td>
-<td><p>Hamilton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.47164001</p></td>
-<td><p>-74.84228536</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1926</p></td>
-<td><p>1926</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1366.916509</p></td>
-<td><p>1366.916509</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>34.65</p></td>
-<td><p>46.58</p></td>
-<td><p>1</p></td>
-<td><p>1.26</p></td>
-<td><p>6112</p></td>
-<td><p>108.129452</p></td>
-<td><p>117.335431</p></td>
-<td><p>127.017571</p></td>
-<td><p>130.681582</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>40.61579118</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.15</p></td>
-</tr>
-<tr class="row-even"><td><p>19</p></td>
-<td><p>NJBF000078030</p></td>
-<td><p>117 MAIN AVENUE</p></td>
-<td><p>Egg Harbor</p></td>
-<td><p>NJ</p></td>
-<td><p>39.40244716</p></td>
-<td><p>-74.59340885</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1960</p></td>
-<td><p>1960</p></td>
-<td><p>3102</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>2445.97018</p></td>
-<td><p>2445.97018</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>18.34</p></td>
-<td><p>28.4</p></td>
-<td><p>1</p></td>
-<td><p>-0.36</p></td>
-<td><p>6112</p></td>
-<td><p>110.651641</p></td>
-<td><p>120.900169</p></td>
-<td><p>130.500518</p></td>
-<td><p>136.549278</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>23.36929958</p></td>
-<td><p>0</p></td>
-<td><p>1.2</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.15</p></td>
-</tr>
-<tr class="row-odd"><td><p>20</p></td>
-<td><p>NJBF000088836</p></td>
-<td><p>102 UNEXPECTED ROAD</p></td>
-<td><p>Buena Vista</p></td>
-<td><p>NJ</p></td>
-<td><p>39.56085682</p></td>
-<td><p>-74.92888736</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1940</p></td>
-<td><p>1940</p></td>
-<td><p>3101</p></td>
-<td><p>1</p></td>
-<td><p>2</p></td>
-<td><p>1581.6</p></td>
-<td><p>1581.6</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>13.79</p></td>
-<td><p>23.03</p></td>
-<td><p>1</p></td>
-<td><p>-0.5</p></td>
-<td><p>6112</p></td>
-<td><p>107.265228</p></td>
-<td><p>115.99212</p></td>
-<td><p>125.707241</p></td>
-<td><p>128.654877</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>18.41008444</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>21</p></td>
-<td><p>NJBF000088660</p></td>
-<td><p>1401 DARMSTADT AVENUE</p></td>
-<td><p>Mullica</p></td>
-<td><p>NJ</p></td>
-<td><p>39.55785517</p></td>
-<td><p>-74.6481255</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1850</p></td>
-<td><p>1850</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>823.9203862</p></td>
-<td><p>823.9203862</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>32.61</p></td>
-<td><p>42.39</p></td>
-<td><p>1</p></td>
-<td><p>-0.3</p></td>
-<td><p>6112</p></td>
-<td><p>109.67372</p></td>
-<td><p>118.659716</p></td>
-<td><p>128.322011</p></td>
-<td><p>133.037936</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>37.50445848</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>22</p></td>
-<td><p>NJBF000087566</p></td>
-<td><p>630 LIVERPOOL AVE</p></td>
-<td><p>Egg Harbor City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.5364916</p></td>
-<td><p>-74.63984362</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1925</p></td>
-<td><p>1925</p></td>
-<td><p>3101</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>707.4272975</p></td>
-<td><p>707.4272975</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>19.25</p></td>
-<td><p>30.7</p></td>
-<td><p>3</p></td>
-<td><p>1.98</p></td>
-<td><p>6112</p></td>
-<td><p>109.818368</p></td>
-<td><p>118.977702</p></td>
-<td><p>128.603909</p></td>
-<td><p>133.523523</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>24.97256963</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>23</p></td>
-<td><p>NJBF000087401</p></td>
-<td><p>624 ST LOUIS AVE</p></td>
-<td><p>Egg Harbor City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.53290603</p></td>
-<td><p>-74.63472322</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1940</p></td>
-<td><p>1940</p></td>
-<td><p>3101</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1440.918422</p></td>
-<td><p>1440.918422</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>15.49</p></td>
-<td><p>24.07</p></td>
-<td><p>3</p></td>
-<td><p>4.03</p></td>
-<td><p>6112</p></td>
-<td><p>109.889109</p></td>
-<td><p>119.079867</p></td>
-<td><p>128.697459</p></td>
-<td><p>133.679332</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>19.78210765</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>24</p></td>
-<td><p>NJBF000087587</p></td>
-<td><p>658 LIVERPOOL AVE</p></td>
-<td><p>Egg Harbor City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.53710494</p></td>
-<td><p>-74.63912838</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1979</p></td>
-<td><p>1979</p></td>
-<td><p>3101</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>696.7252736</p></td>
-<td><p>696.7252736</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>12.79</p></td>
-<td><p>27.25</p></td>
-<td><p>3</p></td>
-<td><p>0.15</p></td>
-<td><p>6112</p></td>
-<td><p>109.826073</p></td>
-<td><p>118.980923</p></td>
-<td><p>128.607376</p></td>
-<td><p>133.528286</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>20.02320097</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>25</p></td>
-<td><p>NJBF000087378</p></td>
-<td><p>618 ST LOUIS AVE</p></td>
-<td><p>Egg Harbor City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.53256438</p></td>
-<td><p>-74.63481231</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1940</p></td>
-<td><p>1955</p></td>
-<td><p>3101</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>553.7117992</p></td>
-<td><p>553.7117992</p></td>
-<td><p>3505</p></td>
-<td><p>YES</p></td>
-<td><p>22.68</p></td>
-<td><p>29.42</p></td>
-<td><p>3</p></td>
-<td><p>0.42</p></td>
-<td><p>6112</p></td>
-<td><p>109.888628</p></td>
-<td><p>119.082075</p></td>
-<td><p>128.699296</p></td>
-<td><p>133.6828</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>26.04816128</p></td>
-<td><p>0</p></td>
-<td><p>1.1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>26</p></td>
-<td><p>NJBF000097794</p></td>
-<td><p>223 OAK RD</p></td>
-<td><p>Hammonton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.66656114</p></td>
-<td><p>-74.80423137</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1920</p></td>
-<td><p>1920</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1663.096661</p></td>
-<td><p>1663.096661</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>42.66</p></td>
-<td><p>56.93</p></td>
-<td><p>3</p></td>
-<td><p>4.56</p></td>
-<td><p>6112</p></td>
-<td><p>107.859038</p></td>
-<td><p>116.087914</p></td>
-<td><p>125.997499</p></td>
-<td><p>129.139301</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>49.79253203</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.15</p></td>
-</tr>
-<tr class="row-even"><td><p>27</p></td>
-<td><p>NJBF000084098</p></td>
-<td><p>6236 ESTELLE AVENUE</p></td>
-<td><p>Hamilton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.45487155</p></td>
-<td><p>-74.8439241</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1980</p></td>
-<td><p>1980</p></td>
-<td><p>3102</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1098.129559</p></td>
-<td><p>1098.129559</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>17.21</p></td>
-<td><p>24.87</p></td>
-<td><p>3</p></td>
-<td><p>-1.79</p></td>
-<td><p>6112</p></td>
-<td><p>108.184264</p></td>
-<td><p>117.446977</p></td>
-<td><p>127.123776</p></td>
-<td><p>130.869911</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>21.03785179</p></td>
-<td><p>0</p></td>
-<td><p>1.1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>28</p></td>
-<td><p>NJBF000081299</p></td>
-<td><p>958 GRAND AVE</p></td>
-<td><p>Hamilton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.41855289</p></td>
-<td><p>-74.64675496</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1979</p></td>
-<td><p>1979</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1659.957762</p></td>
-<td><p>1659.957762</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>36.27</p></td>
-<td><p>49.77</p></td>
-<td><p>1</p></td>
-<td><p>1.75</p></td>
-<td><p>6112</p></td>
-<td><p>109.835871</p></td>
-<td><p>119.933452</p></td>
-<td><p>129.565628</p></td>
-<td><p>135.198279</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>43.02258166</p></td>
-<td><p>0</p></td>
-<td><p>1.2</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>29</p></td>
-<td><p>NJBF000051934</p></td>
-<td><p>102 CARL ROAD</p></td>
-<td><p>Corbin City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.29979524</p></td>
-<td><p>-74.75863948</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1962</p></td>
-<td><p>1995</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1074.173298</p></td>
-<td><p>1074.173298</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>38.46</p></td>
-<td><p>45.53</p></td>
-<td><p>1</p></td>
-<td><p>1.7</p></td>
-<td><p>6112</p></td>
-<td><p>109.964489</p></td>
-<td><p>119.704786</p></td>
-<td><p>129.288628</p></td>
-<td><p>134.69391</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>41.99266435</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-</tr>
-<tr class="row-odd"><td><p>30</p></td>
-<td><p>NJBF000085603</p></td>
-<td><p>3701 OAK ROAD</p></td>
-<td><p>Buena Vista</p></td>
-<td><p>NJ</p></td>
-<td><p>39.49578346</p></td>
-<td><p>-74.93178867</p></td>
-<td><p>COM1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1435.642906</p></td>
-<td><p>1435.642906</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>18.88</p></td>
-<td><p>30.23</p></td>
-<td><p>1</p></td>
-<td><p>-0.36</p></td>
-<td><p>6112</p></td>
-<td><p>107.466678</p></td>
-<td><p>116.408197</p></td>
-<td><p>126.090064</p></td>
-<td><p>129.170937</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td><p>24.55176238</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.15</p></td>
-</tr>
-<tr class="row-even"><td><p>31</p></td>
-<td><p>NJBF000092355</p></td>
-<td><p>4557 PLEASANT MILLS ROAD</p></td>
-<td><p>Mullica</p></td>
-<td><p>NJ</p></td>
-<td><p>39.62687073</p></td>
-<td><p>-74.65653012</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1966</p></td>
-<td><p>1966</p></td>
-<td><p>3102</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>669.4393274</p></td>
-<td><p>669.4393274</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>13.86</p></td>
-<td><p>28.62</p></td>
-<td><p>1</p></td>
-<td><p>0.51</p></td>
-<td><p>6112</p></td>
-<td><p>109.386545</p></td>
-<td><p>117.837938</p></td>
-<td><p>127.637253</p></td>
-<td><p>131.842371</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>21.24254656</p></td>
-<td><p>0</p></td>
-<td><p>1.2</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>32</p></td>
-<td><p>NJBF000085695</p></td>
-<td></td>
-<td><p>Hamilton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.50078689</p></td>
-<td><p>-74.69184811</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td></td>
-<td><p>NE</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>990.468681</p></td>
-<td><p>990.468681</p></td>
-<td><p>3504</p></td>
-<td><p>NO</p></td>
-<td><p>24.02</p></td>
-<td><p>31.36</p></td>
-<td><p>-4</p></td>
-<td><p>0</p></td>
-<td><p>6112</p></td>
-<td><p>109.279385</p></td>
-<td><p>118.658502</p></td>
-<td><p>128.295837</p></td>
-<td><p>133.039632</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>27.69006206</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>33</p></td>
-<td><p>NJBF000085268</p></td>
-<td><p>6057 BLACK HORSE PIKE</p></td>
-<td><p>Hamilton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.47899714</p></td>
-<td><p>-74.71640726</p></td>
-<td><p>COM8</p></td>
-<td><p>3001</p></td>
-<td><p>740</p></td>
-<td><p>16</p></td>
-<td><p>ME</p></td>
-<td><p>1962</p></td>
-<td><p>1962</p></td>
-<td><p>3401</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1886.686507</p></td>
-<td><p>1886.686507</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>17.53</p></td>
-<td><p>26.91</p></td>
-<td><p>1</p></td>
-<td><p>0.95</p></td>
-<td><p>6112</p></td>
-<td><p>109.073583</p></td>
-<td><p>118.55273</p></td>
-<td><p>128.206436</p></td>
-<td><p>132.880755</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td><p>22.22012428</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>34</p></td>
-<td><p>NJBF000072995</p></td>
-<td><p>100 BURNSIDE DRIVE</p></td>
-<td><p>Egg Harbor</p></td>
-<td><p>NJ</p></td>
-<td><p>39.3763222</p></td>
-<td><p>-74.58891847</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>2003</p></td>
-<td><p>2003</p></td>
-<td><p>3102</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>2682.948311</p></td>
-<td><p>2682.948311</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>17.92</p></td>
-<td><p>31.9</p></td>
-<td><p>1</p></td>
-<td><p>-0.04</p></td>
-<td><p>6112</p></td>
-<td><p>110.88378</p></td>
-<td><p>121.227124</p></td>
-<td><p>130.892764</p></td>
-<td><p>137.048315</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>24.90623691</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>35</p></td>
-<td><p>NJBF000085646</p></td>
-<td><p>101 VERA KING FARRIS DR</p></td>
-<td><p>Galloway</p></td>
-<td><p>NJ</p></td>
-<td><p>39.49795458</p></td>
-<td><p>-74.52913098</p></td>
-<td><p>EDU2</p></td>
-<td><p>3003</p></td>
-<td></td>
-<td></td>
-<td><p>E</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>7126.090017</p></td>
-<td><p>7126.090017</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>37.37</p></td>
-<td><p>49.73</p></td>
-<td><p>1</p></td>
-<td><p>1.48</p></td>
-<td><p>6112</p></td>
-<td><p>111.554635</p></td>
-<td><p>121.004894</p></td>
-<td><p>130.569199</p></td>
-<td><p>136.352411</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td><p>43.54891133</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>36</p></td>
-<td><p>NJBF000085643</p></td>
-<td><p>STOCKTON STATE COLLEGE</p></td>
-<td><p>Galloway</p></td>
-<td><p>NJ</p></td>
-<td><p>39.49792365</p></td>
-<td><p>-74.52988364</p></td>
-<td><p>EDU2</p></td>
-<td><p>3003</p></td>
-<td></td>
-<td></td>
-<td><p>E</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>7116.180782</p></td>
-<td><p>7116.180782</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>44.46</p></td>
-<td><p>58.76</p></td>
-<td><p>1</p></td>
-<td><p>0.91</p></td>
-<td><p>6112</p></td>
-<td><p>111.54178</p></td>
-<td><p>120.99287</p></td>
-<td><p>130.556608</p></td>
-<td><p>136.337685</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td><p>51.60794904</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>37</p></td>
-<td><p>NJBF000085550</p></td>
-<td></td>
-<td><p>Buena Vista</p></td>
-<td><p>NJ</p></td>
-<td><p>39.49318849</p></td>
-<td><p>-74.94886879</p></td>
-<td><p>IND3</p></td>
-<td><p>3002</p></td>
-<td></td>
-<td></td>
-<td><p>E</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>5644.39303</p></td>
-<td><p>5644.39303</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>40.32</p></td>
-<td><p>53.13</p></td>
-<td><p>1</p></td>
-<td><p>2.31</p></td>
-<td><p>6112</p></td>
-<td><p>107.373291</p></td>
-<td><p>116.292209</p></td>
-<td><p>125.971324</p></td>
-<td><p>128.995288</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td><p>46.72816966</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.15</p></td>
-</tr>
-<tr class="row-odd"><td><p>38</p></td>
-<td><p>NJBF000081164</p></td>
-<td><p>11 ESTELLE AVENUE</p></td>
-<td><p>Weymouth</p></td>
-<td><p>NJ</p></td>
-<td><p>39.41783591</p></td>
-<td><p>-74.82523931</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1982</p></td>
-<td><p>1982</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1601.989409</p></td>
-<td><p>1601.989409</p></td>
-<td><p>3504</p></td>
-<td><p>NO</p></td>
-<td><p>26.32</p></td>
-<td><p>32.71</p></td>
-<td><p>-4</p></td>
-<td><p>0</p></td>
-<td><p>6112</p></td>
-<td><p>108.478353</p></td>
-<td><p>117.906671</p></td>
-<td><p>127.578843</p></td>
-<td><p>131.686804</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>29.5177291</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>39</p></td>
-<td><p>NJBF000090505</p></td>
-<td><p>2559 WEEKSTOWN ROAD</p></td>
-<td><p>Mullica</p></td>
-<td><p>NJ</p></td>
-<td><p>39.58687098</p></td>
-<td><p>-74.60991103</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1976</p></td>
-<td><p>1976</p></td>
-<td><p>3101</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>2338.407852</p></td>
-<td><p>2338.407852</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>34.64</p></td>
-<td><p>49.46</p></td>
-<td><p>3</p></td>
-<td><p>7.02</p></td>
-<td><p>6112</p></td>
-<td><p>110.070102</p></td>
-<td><p>118.837885</p></td>
-<td><p>128.517052</p></td>
-<td><p>133.338803</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>42.05448962</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>40</p></td>
-<td><p>NJBF000078796</p></td>
-<td><p>136 W THOMPSON AVE</p></td>
-<td><p>Pleasantville</p></td>
-<td><p>NJ</p></td>
-<td><p>39.40761185</p></td>
-<td><p>-74.51272043</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>14</p></td>
-<td><p>NE</p></td>
-<td><p>1925</p></td>
-<td><p>1925</p></td>
-<td><p>3101</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1531.106339</p></td>
-<td><p>1531.106339</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>14.59</p></td>
-<td><p>21.25</p></td>
-<td><p>3</p></td>
-<td><p>-2.25</p></td>
-<td><p>6112</p></td>
-<td><p>112.32906</p></td>
-<td><p>122.22382</p></td>
-<td><p>131.860155</p></td>
-<td><p>138.096257</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>17.9205783</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>41</p></td>
-<td><p>NJBF000078758</p></td>
-<td><p>135 W THOMPSON AVE</p></td>
-<td><p>Pleasantville</p></td>
-<td><p>NJ</p></td>
-<td><p>39.40735685</p></td>
-<td><p>-74.51301697</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1989</p></td>
-<td><p>1989</p></td>
-<td><p>3101</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1621.274023</p></td>
-<td><p>1621.274023</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>18.4</p></td>
-<td><p>31.43</p></td>
-<td><p>3</p></td>
-<td><p>6.67</p></td>
-<td><p>6112</p></td>
-<td><p>112.324597</p></td>
-<td><p>122.221233</p></td>
-<td><p>131.857506</p></td>
-<td><p>138.094529</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>24.91366635</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>42</p></td>
-<td><p>NJBF000092695</p></td>
-<td><p>700 N 2ND RD</p></td>
-<td><p>Hammonton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.63237177</p></td>
-<td><p>-74.83714513</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>2000</p></td>
-<td><p>2000</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>833.1805842</p></td>
-<td><p>833.1805842</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>19.36</p></td>
-<td><p>24.71</p></td>
-<td><p>3</p></td>
-<td><p>-2.95</p></td>
-<td><p>6112</p></td>
-<td><p>107.698795</p></td>
-<td><p>116.140398</p></td>
-<td><p>125.961668</p></td>
-<td><p>129.086542</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>22.03735214</p></td>
-<td><p>0</p></td>
-<td><p>1.2</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.15</p></td>
-</tr>
-<tr class="row-even"><td><p>43</p></td>
-<td><p>NJBF000092701</p></td>
-<td><p>801 14TH ST</p></td>
-<td><p>Hammonton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.6324373</p></td>
-<td><p>-74.83465715</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1997</p></td>
-<td><p>1997</p></td>
-<td><p>3102</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1716.15608</p></td>
-<td><p>1716.15608</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>21.97</p></td>
-<td><p>29.02</p></td>
-<td><p>3</p></td>
-<td><p>6.64</p></td>
-<td><p>6112</p></td>
-<td><p>107.717668</p></td>
-<td><p>116.158109</p></td>
-<td><p>125.980917</p></td>
-<td><p>129.115112</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>25.49601448</p></td>
-<td><p>0</p></td>
-<td><p>1.2</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.15</p></td>
-</tr>
-<tr class="row-odd"><td><p>44</p></td>
-<td><p>NJBF000092888</p></td>
-<td><p>3347 MOORES AVENUE</p></td>
-<td><p>Mullica</p></td>
-<td><p>NJ</p></td>
-<td><p>39.63472865</p></td>
-<td><p>-74.71492095</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1972</p></td>
-<td><p>1972</p></td>
-<td><p>3102</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>735.534263</p></td>
-<td><p>735.534263</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>19.6</p></td>
-<td><p>29.51</p></td>
-<td><p>3</p></td>
-<td><p>6.71</p></td>
-<td><p>6112</p></td>
-<td><p>108.750995</p></td>
-<td><p>117.148515</p></td>
-<td><p>126.996624</p></td>
-<td><p>130.719761</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>24.55635352</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>45</p></td>
-<td><p>NJBF000088093</p></td>
-<td><p>1201 HEIDELBERG AVENUE</p></td>
-<td><p>Mullica</p></td>
-<td><p>NJ</p></td>
-<td><p>39.54847268</p></td>
-<td><p>-74.64734046</p></td>
-<td><p>RES1</p></td>
-<td><p>3005</p></td>
-<td><p>610</p></td>
-<td></td>
-<td><p>NE</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3101</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1365.606509</p></td>
-<td><p>1365.606509</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>17.8</p></td>
-<td><p>23.93</p></td>
-<td><p>1</p></td>
-<td><p>-0.04</p></td>
-<td><p>6112</p></td>
-<td><p>109.703178</p></td>
-<td><p>118.763425</p></td>
-<td><p>128.411583</p></td>
-<td><p>133.194919</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>20.86560282</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-odd"><td><p>46</p></td>
-<td><p>NJBF000083113</p></td>
-<td><p>271 CLARKSTOWN ROAD</p></td>
-<td><p>Hamilton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.43716937</p></td>
-<td><p>-74.71503912</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1949</p></td>
-<td><p>1949</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1192.775102</p></td>
-<td><p>1192.775102</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>40.32</p></td>
-<td><p>52.68</p></td>
-<td><p>1</p></td>
-<td><p>2.72</p></td>
-<td><p>6112</p></td>
-<td><p>109.17295</p></td>
-<td><p>118.901148</p></td>
-<td><p>128.577915</p></td>
-<td><p>133.527813</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>46.49823742</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>47</p></td>
-<td><p>NJBF000092567</p></td>
-<td><p>499 S EGG HARBOR RD</p></td>
-<td><p>Hammonton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.63031087</p></td>
-<td><p>-74.79268419</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td></td>
-<td><p>NE</p></td>
-<td><p>1957</p></td>
-<td><p>1957</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1563.838243</p></td>
-<td><p>1563.838243</p></td>
-<td><p>3504</p></td>
-<td><p>NO</p></td>
-<td><p>28.21</p></td>
-<td><p>40.55</p></td>
-<td><p>-4</p></td>
-<td><p>0</p></td>
-<td><p>6112</p></td>
-<td><p>108.059464</p></td>
-<td><p>116.500438</p></td>
-<td><p>126.337764</p></td>
-<td><p>129.657249</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>34.37750129</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>48</p></td>
-<td><p>NJBF000087038</p></td>
-<td><p>7316 SMITH AVENUE</p></td>
-<td><p>Hamilton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.52426565</p></td>
-<td><p>-74.83299507</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1999</p></td>
-<td><p>1999</p></td>
-<td><p>3101</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1777.933531</p></td>
-<td><p>1777.933531</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>29.28</p></td>
-<td><p>38.75</p></td>
-<td><p>3</p></td>
-<td><p>7.84</p></td>
-<td><p>6112</p></td>
-<td><p>108.024419</p></td>
-<td><p>117.021745</p></td>
-<td><p>126.727199</p></td>
-<td><p>130.149694</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>34.0130892</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-</tr>
-<tr class="row-even"><td><p>49</p></td>
-<td><p>NJBF000090784</p></td>
-<td><p>5617 PLEASANT MILLS ROAD</p></td>
-<td><p>Mullica</p></td>
-<td><p>NJ</p></td>
-<td><p>39.59335585</p></td>
-<td><p>-74.61033955</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1956</p></td>
-<td><p>1956</p></td>
-<td><p>3101</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>630.2381368</p></td>
-<td><p>630.2381368</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>21.45</p></td>
-<td><p>31.68</p></td>
-<td><p>3</p></td>
-<td><p>5.87</p></td>
-<td><p>6112</p></td>
-<td><p>110.043995</p></td>
-<td><p>118.760161</p></td>
-<td><p>128.451036</p></td>
-<td><p>133.230234</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>26.56264486</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.15</p></td>
-</tr>
-<tr class="row-odd"><td><p>50</p></td>
-<td><p>NJBF000096931</p></td>
-<td><p>263 BASIN RD</p></td>
-<td><p>Hammonton</p></td>
-<td><p>NJ</p></td>
-<td><p>39.66090846</p></td>
-<td><p>-74.78573505</p></td>
-<td><p>AGR1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1900</p></td>
-<td><p>1900</p></td>
-<td><p>3401</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1423.4124</p></td>
-<td><p>1423.4124</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>40.04</p></td>
-<td><p>53.46</p></td>
-<td><p>1</p></td>
-<td><p>1.97</p></td>
-<td><p>6112</p></td>
-<td><p>108.029021</p></td>
-<td><p>116.279525</p></td>
-<td><p>126.185354</p></td>
-<td><p>129.413455</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td></td>
-<td><p>46.75021639</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.15</p></td>
 </tr>
 </tbody>
 </table>
 <table class="docutils align-center" id="bldg-inv-ei">
 <caption><span class="caption-number">Table 2.2.5.3 </span><span class="caption-text">Illustrative sample of building in Exploration Inventory.</span><a class="headerlink" href="#bldg-inv-ei" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
-<col style="width: 2%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"></th>
-<th class="head"><p>BldgID</p></th>
-<th class="head"><p>Address</p></th>
-<th class="head"><p>City</p></th>
-<th class="head"><p>State</p></th>
-<th class="head"><p>Latitude</p></th>
-<th class="head"><p>Longitude</p></th>
-<th class="head"><p>OccupancyClass</p></th>
-<th class="head"><p>BuildingType</p></th>
-<th class="head"><p>UseCode</p></th>
-<th class="head"><p>BldgClass</p></th>
-<th class="head"><p>DesignLevel</p></th>
-<th class="head"><p>YearBuiltNJDEP</p></th>
-<th class="head"><p>YearBuiltMODIV</p></th>
-<th class="head"><p>NumberofStories0</p></th>
-<th class="head"><p>NumberofStories1</p></th>
-<th class="head"><p>NoUnits</p></th>
-<th class="head"><p>PlanArea0</p></th>
-<th class="head"><p>PlanArea1</p></th>
-<th class="head"><p>FoundationType</p></th>
-<th class="head"><p>SplitLevel</p></th>
-<th class="head"><p>ElevationR0</p></th>
-<th class="head"><p>ElevationR1</p></th>
-<th class="head"><p>FirstFloorHt0</p></th>
-<th class="head"><p>FirstFloorHt1</p></th>
-<th class="head"><p>FloodZone</p></th>
-<th class="head"><p>DSWI</p></th>
-<th class="head"><p>DSWII</p></th>
-<th class="head"><p>DSWIII</p></th>
-<th class="head"><p>DSWIV</p></th>
-<th class="head"><p>WindZone</p></th>
-<th class="head"><p>AvgJanTemp</p></th>
-<th class="head"><p>RoofShape</p></th>
-<th class="head"><p>RoofSlope</p></th>
-<th class="head"><p>RoofCover</p></th>
-<th class="head"><p>RoofSystem</p></th>
-<th class="head"><p>MeanRoofHt</p></th>
-<th class="head"><p>WindowArea</p></th>
-<th class="head"><p>Garage</p></th>
-<th class="head"><p>HazusClassW</p></th>
-<th class="head"><p>HazusClassIN</p></th>
-<th class="head"><p>HazusClassWA</p></th>
-<th class="head"><p>AnalysisDefault</p></th>
-<th class="head"><p>AnalysisAdopted</p></th>
-<th class="head"><p>Modifications</p></th>
-<th class="head"><p>z0</p></th>
-<th class="head"><p>structureType</p></th>
-<th class="head"><p>replacementCost</p></th>
-<th class="head"><p>yearBuilt</p></th>
-<th class="head"><p>stories</p></th>
-<th class="head"><p>area</p></th>
-<th class="head"><p>occupancy</p></th>
-</tr>
-</thead>
 <tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>NJBF000071434</p></td>
-<td><p>425 N MARYLAND AVE</p></td>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>City</p></td>
+<td><p>State</p></td>
+<td><p>Latitude</p></td>
+<td><p>Longitude</p></td>
+<td><p>OccupancyClass</p></td>
+<td><p>BuildingType</p></td>
+<td><p>UseCode</p></td>
+<td><p>BldgClass</p></td>
+<td><p>DesignLevel</p></td>
+<td><p>YearBuiltNJDEP</p></td>
+<td><p>YearBuiltMODIV</p></td>
+<td><p>NumberofStories0</p></td>
+<td><p>NumberofStories1</p></td>
+<td><p>NoUnits</p></td>
+<td><p>PlanArea0</p></td>
+<td><p>PlanArea1</p></td>
+<td><p>FoundationType</p></td>
+<td><p>SplitLevel</p></td>
+<td><p>ElevationR0</p></td>
+<td><p>ElevationR1</p></td>
+<td><p>FirstFloorHt0</p></td>
+<td><p>FirstFloorHt1</p></td>
+<td><p>FloodZone</p></td>
+<td><p>DSWII</p></td>
+<td><p>WindZone</p></td>
+<td><p>AvgJanTemp</p></td>
+<td><p>RoofShape</p></td>
+<td><p>RoofSlope</p></td>
+<td><p>RoofCover</p></td>
+<td><p>RoofSystem</p></td>
+<td><p>MeanRoofHt</p></td>
+<td><p>WindowArea</p></td>
+<td><p>Garage</p></td>
+<td><p>z0</p></td>
+</tr>
+<tr class="row-even"><td><p>425 N MARYLAND AVE</p></td>
 <td><p>Atlantic City</p></td>
 <td><p>NJ</p></td>
-<td><p>39.37060793</p></td>
-<td><p>-74.42564427</p></td>
+<td><p>39.37</p></td>
+<td><p>-74.43</p></td>
 <td><p>RES1</p></td>
 <td><p>3001</p></td>
 <td><p>210</p></td>
@@ -4200,40 +1659,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3</p></td>
 <td><p>-0.83</p></td>
 <td><p>6106</p></td>
-<td><p>114.582127</p></td>
-<td><p>124.183352</p></td>
-<td><p>133.988734</p></td>
-<td><p>140.212988</p></td>
+<td><p>124</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Flat</p></td>
 <td><p>0</p></td>
 <td><p>5701</p></td>
 <td><p>Wood</p></td>
-<td><p>18.62778897</p></td>
+<td><p>18.6</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>NJBF000069199</p></td>
-<td><p>125 N FLORIDA AVE</p></td>
+<tr class="row-odd"><td><p>125 N FLORIDA AVE</p></td>
 <td><p>Atlantic City</p></td>
 <td><p>NJ</p></td>
-<td><p>39.35914703</p></td>
-<td><p>-74.44296699</p></td>
+<td><p>39.36</p></td>
+<td><p>-74.44</p></td>
 <td><p>RES3B</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -4253,40 +1695,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3</p></td>
 <td><p>-1.12</p></td>
 <td><p>6106</p></td>
-<td><p>114.345973</p></td>
-<td><p>123.988371</p></td>
-<td><p>133.764787</p></td>
-<td><p>140.105028</p></td>
+<td><p>124</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Flat</p></td>
 <td><p>0</p></td>
 <td><p>NaN</p></td>
 <td><p>Wood</p></td>
-<td><p>24.5906803</p></td>
+<td><p>24.6</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>NJBF000073099</p></td>
-<td><p>600 HURON AVE</p></td>
+<tr class="row-even"><td><p>600 HURON AVE</p></td>
 <td><p>Atlantic City</p></td>
 <td><p>NJ</p></td>
-<td><p>39.37757936</p></td>
-<td><p>-74.4295234</p></td>
+<td><p>39.38</p></td>
+<td><p>-74.43</p></td>
 <td><p>GOV2</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -4306,40 +1731,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>1</p></td>
 <td><p>2.61</p></td>
 <td><p>6102</p></td>
-<td><p>114.419245</p></td>
-<td><p>124.039359</p></td>
-<td><p>133.835327</p></td>
-<td><p>140.051978</p></td>
+<td><p>124</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Hip</p></td>
 <td><p>0</p></td>
 <td><p>NaN</p></td>
 <td><p>Wood</p></td>
-<td><p>59.2178323</p></td>
+<td><p>59.2</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>3</p></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>NJBF000072131</p></td>
-<td><p>332 N RHODE ISLAND AVE</p></td>
+<tr class="row-odd"><td><p>332 N RHODE ISLAND AVE</p></td>
 <td><p>Atlantic City</p></td>
 <td><p>NJ</p></td>
-<td><p>39.37266302</p></td>
-<td><p>-74.4195965</p></td>
+<td><p>39.37</p></td>
+<td><p>-74.42</p></td>
 <td><p>IND1</p></td>
 <td><p>3003</p></td>
 <td><p>100</p></td>
@@ -4359,40 +1767,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>1</p></td>
 <td><p>0.65</p></td>
 <td><p>6106</p></td>
-<td><p>114.687154</p></td>
-<td><p>124.272844</p></td>
-<td><p>134.089421</p></td>
-<td><p>140.279189</p></td>
+<td><p>124</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Flat</p></td>
 <td><p>0</p></td>
 <td><p>NaN</p></td>
 <td><p>Wood</p></td>
-<td><p>19.01116657</p></td>
+<td><p>19</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>NJBF000067530</p></td>
-<td><p>1 ATLANTIC OCEAN</p></td>
+<tr class="row-even"><td><p>1 ATLANTIC OCEAN</p></td>
 <td><p>Atlantic City</p></td>
 <td><p>NJ</p></td>
-<td><p>39.35374924</p></td>
-<td><p>-74.43417403</p></td>
+<td><p>39.35</p></td>
+<td><p>-74.43</p></td>
 <td><p>COM8</p></td>
 <td><p>3003</p></td>
 <td><p>738</p></td>
@@ -4412,40 +1803,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>5</p></td>
 <td><p>9.26</p></td>
 <td><p>6102</p></td>
-<td><p>114.602674</p></td>
-<td><p>124.205439</p></td>
-<td><p>133.996965</p></td>
-<td><p>140.317942</p></td>
+<td><p>124</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Flat</p></td>
 <td><p>0</p></td>
 <td><p>NaN</p></td>
 <td><p>Wood</p></td>
-<td><p>27.5964249</p></td>
+<td><p>27.6</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>NJBF000067877</p></td>
-<td><p>11 N MORRIS AVE</p></td>
+<tr class="row-odd"><td><p>11 N MORRIS AVE</p></td>
 <td><p>Atlantic City</p></td>
 <td><p>NJ</p></td>
-<td><p>39.35486056</p></td>
-<td><p>-74.44795731</p></td>
+<td><p>39.35</p></td>
+<td><p>-74.45</p></td>
 <td><p>RES3B</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -4465,40 +1839,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>-4</p></td>
 <td><p>0</p></td>
 <td><p>6106</p></td>
-<td><p>114.290475</p></td>
-<td><p>123.943662</p></td>
-<td><p>133.712312</p></td>
-<td><p>140.089522</p></td>
+<td><p>124</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Hip</p></td>
 <td><p>0</p></td>
 <td><p>NaN</p></td>
 <td><p>Wood</p></td>
-<td><p>26.73550746</p></td>
+<td><p>26.7</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1900</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p>NJBF000068827</p></td>
-<td><p>601 N ALBANY AVE</p></td>
+<tr class="row-even"><td><p>601 N ALBANY AVE</p></td>
 <td><p>Atlantic City</p></td>
 <td><p>NJ</p></td>
-<td><p>39.35771681</p></td>
-<td><p>-74.45662953</p></td>
+<td><p>39.36</p></td>
+<td><p>-74.46</p></td>
 <td><p>COM1</p></td>
 <td><p>3003</p></td>
 <td></td>
@@ -4518,40 +1875,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>1</p></td>
 <td><p>0.48</p></td>
 <td><p>6106</p></td>
-<td><p>114.066125</p></td>
-<td><p>123.756156</p></td>
-<td><p>133.511018</p></td>
-<td><p>139.908712</p></td>
+<td><p>124</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Flat</p></td>
 <td><p>0</p></td>
 <td><p>NaN</p></td>
 <td><p>Wood</p></td>
-<td><p>17.88736232</p></td>
+<td><p>17.9</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-odd"><td><p>8</p></td>
-<td><p>NJBF000070418</p></td>
-<td><p>1500-1538 ADRIATIC AVE</p></td>
+<tr class="row-odd"><td><p>1500-1538 ADRIATIC AVE</p></td>
 <td><p>Atlantic City</p></td>
 <td><p>NJ</p></td>
-<td><p>39.36703147</p></td>
-<td><p>-74.43394222</p></td>
+<td><p>39.37</p></td>
+<td><p>-74.43</p></td>
 <td><p>RES3C</p></td>
 <td><p>3004</p></td>
 <td></td>
@@ -4571,40 +1911,23 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>3</p></td>
 <td><p>8.37</p></td>
 <td><p>6106</p></td>
-<td><p>114.446193</p></td>
-<td><p>124.069174</p></td>
-<td><p>133.859987</p></td>
-<td><p>140.133075</p></td>
+<td><p>124</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Gable</p></td>
 <td><p>0</p></td>
 <td><p>NaN</p></td>
 <td><p>Wood</p></td>
-<td><p>26.2188825</p></td>
+<td><p>26.2</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-even"><td><p>9</p></td>
-<td><p>NJBF000073313</p></td>
-<td><p>900 BEACH THOROFARE</p></td>
+<tr class="row-even"><td><p>900 BEACH THOROFARE</p></td>
 <td><p>Atlantic City</p></td>
 <td><p>NJ</p></td>
-<td><p>39.37975402</p></td>
-<td><p>-74.42453449</p></td>
+<td><p>39.38</p></td>
+<td><p>-74.42</p></td>
 <td><p>GOV2</p></td>
 <td><p>3001</p></td>
 <td></td>
@@ -4624,2205 +1947,17 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <td><p>1</p></td>
 <td><p>0.84</p></td>
 <td><p>6106</p></td>
-<td><p>114.501236</p></td>
-<td><p>124.10828</p></td>
-<td><p>133.913045</p></td>
-<td><p>140.101152</p></td>
+<td><p>124</p></td>
 <td><p>I</p></td>
 <td><p>Above</p></td>
 <td><p>Flat</p></td>
 <td><p>0</p></td>
 <td><p>NaN</p></td>
 <td><p>Wood</p></td>
-<td><p>40.78026092</p></td>
+<td><p>40.8</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
 <td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>10</p></td>
-<td><p>NJBF000073035</p></td>
-<td><p>1 BORGATA WAY</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37673702</p></td>
-<td><p>-74.43505349</p></td>
-<td><p>COM8</p></td>
-<td><p>3003</p></td>
-<td><p>80</p></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1879.060694</p></td>
-<td><p>1879.060694</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>10.76</p></td>
-<td><p>20.42</p></td>
-<td><p>1</p></td>
-<td><p>-0.2</p></td>
-<td><p>6112</p></td>
-<td><p>114.310272</p></td>
-<td><p>123.946858</p></td>
-<td><p>133.732799</p></td>
-<td><p>139.974749</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>15.58973262</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>11</p></td>
-<td><p>NJBF000070587</p></td>
-<td><p>22 N VERMONT AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.36769548</p></td>
-<td><p>-74.4155228</p></td>
-<td><p>RES3D</p></td>
-<td><p>3004</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>E</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3303</p></td>
-<td><p>4</p></td>
-<td><p>1</p></td>
-<td><p>665.0906288</p></td>
-<td><p>665.0906288</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>76.24</p></td>
-<td><p>85.91</p></td>
-<td><p>3</p></td>
-<td><p>5.65</p></td>
-<td><p>6106</p></td>
-<td><p>114.831915</p></td>
-<td><p>124.399307</p></td>
-<td><p>134.224762</p></td>
-<td><p>140.410933</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>81.0745672</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>4</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>12</p></td>
-<td><p>NJBF000071302</p></td>
-<td><p>822 ADRIATIC AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37013371</p></td>
-<td><p>-74.4249531</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td><p>100</p></td>
-<td><p>NaN</p></td>
-<td><p>NE</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>2115.508277</p></td>
-<td><p>2115.508277</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>35.03</p></td>
-<td><p>48.91</p></td>
-<td><p>3</p></td>
-<td><p>0.95</p></td>
-<td><p>6106</p></td>
-<td><p>114.602423</p></td>
-<td><p>124.200968</p></td>
-<td><p>134.007765</p></td>
-<td><p>140.230525</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>41.96684013</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>13</p></td>
-<td><p>NJBF000068281</p></td>
-<td><p>1701 BOARDWALK</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35622601</p></td>
-<td><p>-74.42913186</p></td>
-<td><p>COM8</p></td>
-<td><p>3003</p></td>
-<td><p>100</p></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1182.211148</p></td>
-<td><p>1182.211148</p></td>
-<td><p>3507</p></td>
-<td><p>YES</p></td>
-<td><p>15.94</p></td>
-<td><p>25.06</p></td>
-<td><p>1</p></td>
-<td><p>1.71</p></td>
-<td><p>6106</p></td>
-<td><p>114.680286</p></td>
-<td><p>124.270854</p></td>
-<td><p>134.071307</p></td>
-<td><p>140.360231</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>20.50057463</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>14</p></td>
-<td><p>NJBF000073032</p></td>
-<td><p>1 BORGATA WAY</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37671002</p></td>
-<td><p>-74.43481749</p></td>
-<td><p>COM8</p></td>
-<td><p>3003</p></td>
-<td><p>80</p></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1034.644393</p></td>
-<td><p>1034.644393</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>29.16</p></td>
-<td><p>38.09</p></td>
-<td><p>1</p></td>
-<td><p>-0.95</p></td>
-<td><p>6112</p></td>
-<td><p>114.315643</p></td>
-<td><p>123.951461</p></td>
-<td><p>133.737847</p></td>
-<td><p>139.978972</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>33.62230206</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>15</p></td>
-<td><p>NJBF000073016</p></td>
-<td><p>600 HURON AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37654852</p></td>
-<td><p>-74.42859749</p></td>
-<td><p>GOV2</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>E</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>1893.761678</p></td>
-<td><p>1893.761678</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>46.44</p></td>
-<td><p>51.95</p></td>
-<td><p>1</p></td>
-<td><p>0.4</p></td>
-<td><p>6102</p></td>
-<td><p>114.450688</p></td>
-<td><p>124.067108</p></td>
-<td><p>133.865198</p></td>
-<td><p>140.081631</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>49.19737067</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>3</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>16</p></td>
-<td><p>NJBF000072680</p></td>
-<td><p>618 N CONNECTICUT AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37449952</p></td>
-<td><p>-74.4238115</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>NE</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>868.5192539</p></td>
-<td><p>868.5192539</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>30.29</p></td>
-<td><p>45.09</p></td>
-<td><p>3</p></td>
-<td><p>5.82</p></td>
-<td><p>6106</p></td>
-<td><p>114.576225</p></td>
-<td><p>124.176314</p></td>
-<td><p>133.984216</p></td>
-<td><p>140.187041</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>37.69262817</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>17</p></td>
-<td><p>NJBF000071245</p></td>
-<td></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.36991241</p></td>
-<td><p>-74.42513813</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>NE</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>814.36214</p></td>
-<td><p>814.36214</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>33.93</p></td>
-<td><p>39.75</p></td>
-<td><p>3</p></td>
-<td><p>3.8</p></td>
-<td><p>6106</p></td>
-<td><p>114.601067</p></td>
-<td><p>124.199901</p></td>
-<td><p>134.006394</p></td>
-<td><p>140.230744</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>36.84013057</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>18</p></td>
-<td><p>NJBF000070402</p></td>
-<td><p>1500-1538 ADRIATIC AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.36696953</p></td>
-<td><p>-74.43408199</p></td>
-<td><p>RES3C</p></td>
-<td><p>3004</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3301</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1047.135344</p></td>
-<td><p>1047.135344</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>20.16</p></td>
-<td><p>34.47</p></td>
-<td><p>3</p></td>
-<td><p>8.14</p></td>
-<td><p>6106</p></td>
-<td><p>114.443902</p></td>
-<td><p>124.067262</p></td>
-<td><p>133.857835</p></td>
-<td><p>140.13174</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>27.31446286</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>19</p></td>
-<td><p>NJBF000073509</p></td>
-<td><p>5207 HARBOR BEACH BLVD</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.38121603</p></td>
-<td><p>-74.40752613</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1987</p></td>
-<td><p>1987</p></td>
-<td><p>3103</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1585.636058</p></td>
-<td><p>1585.636058</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>38.96</p></td>
-<td><p>49.1</p></td>
-<td><p>3</p></td>
-<td><p>3.55</p></td>
-<td><p>6110</p></td>
-<td><p>114.844667</p></td>
-<td><p>124.406792</p></td>
-<td><p>134.245537</p></td>
-<td><p>140.351043</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>44.03148628</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1987</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>20</p></td>
-<td><p>NJBF000073577</p></td>
-<td><p>5110 ONTARIO DRIVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.381728</p></td>
-<td><p>-74.4063255</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>43</p></td>
-<td><p>NE</p></td>
-<td><p>1985</p></td>
-<td><p>1985</p></td>
-<td><p>3103</p></td>
-<td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>1247.359049</p></td>
-<td><p>1247.359049</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>24.54</p></td>
-<td><p>39.02</p></td>
-<td><p>3</p></td>
-<td><p>-0.32</p></td>
-<td><p>6110</p></td>
-<td><p>114.86414</p></td>
-<td><p>124.423747</p></td>
-<td><p>134.264858</p></td>
-<td><p>140.362971</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>31.77601017</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.35</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1985</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>21</p></td>
-<td><p>NJBF000073745</p></td>
-<td><p>4 MANITOBA AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.38288165</p></td>
-<td><p>-74.40613562</p></td>
-<td><p>RES3A</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>18</p></td>
-<td><p>NE</p></td>
-<td><p>2006</p></td>
-<td><p>2006</p></td>
-<td><p>3301</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>2553.805107</p></td>
-<td><p>2553.805107</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>37.36</p></td>
-<td><p>44.6</p></td>
-<td><p>3</p></td>
-<td><p>2.83</p></td>
-<td><p>6106</p></td>
-<td><p>114.855157</p></td>
-<td><p>124.415388</p></td>
-<td><p>134.256509</p></td>
-<td><p>140.350275</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>40.98307329</p></td>
-<td><p>0</p></td>
-<td><p>1.1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>2006</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>22</p></td>
-<td><p>NJBF000073749</p></td>
-<td><p>4815 ROSS DRIVE SOUTH</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.38290256</p></td>
-<td><p>-74.40068093</p></td>
-<td><p>RES3C</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>37</p></td>
-<td><p>ME</p></td>
-<td><p>1986</p></td>
-<td><p>1986</p></td>
-<td><p>3301</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1937.55861</p></td>
-<td><p>1937.55861</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>33.46</p></td>
-<td><p>44.21</p></td>
-<td><p>1</p></td>
-<td><p>-0.7</p></td>
-<td><p>6106</p></td>
-<td><p>114.969196</p></td>
-<td><p>124.516266</p></td>
-<td><p>134.369074</p></td>
-<td><p>140.435663</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>38.83397853</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1986</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>23</p></td>
-<td><p>NJBF000073271</p></td>
-<td><p>29 OCEAN DRIVE WEST</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37946962</p></td>
-<td><p>-74.40830686</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>16</p></td>
-<td><p>NE</p></td>
-<td><p>1975</p></td>
-<td><p>1975</p></td>
-<td><p>3103</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1115.517747</p></td>
-<td><p>1115.517747</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>37.68</p></td>
-<td><p>49.11</p></td>
-<td><p>3</p></td>
-<td><p>8.66</p></td>
-<td><p>6106</p></td>
-<td><p>114.847969</p></td>
-<td><p>124.410327</p></td>
-<td><p>134.247977</p></td>
-<td><p>140.36254</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>43.39541385</p></td>
-<td><p>0</p></td>
-<td><p>1.1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1975</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>24</p></td>
-<td><p>NJBF000070632</p></td>
-<td></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.36786531</p></td>
-<td><p>-74.42736843</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>NE</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3103</p></td>
-<td><p>6</p></td>
-<td><p>1</p></td>
-<td><p>1947.18178</p></td>
-<td><p>1947.18178</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>79.15</p></td>
-<td><p>92.08</p></td>
-<td><p>3</p></td>
-<td><p>-2.6</p></td>
-<td><p>6106</p></td>
-<td><p>114.577422</p></td>
-<td><p>124.180522</p></td>
-<td><p>133.983223</p></td>
-<td><p>140.224622</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>85.6142264</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>6</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>25</p></td>
-<td><p>NJBF000068931</p></td>
-<td><p>2507 ARCTIC AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35805361</p></td>
-<td><p>-74.44340273</p></td>
-<td><p>RES3B</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>1900</p></td>
-<td><p>3301</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>2442.19065</p></td>
-<td><p>2442.19065</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>25.82</p></td>
-<td><p>32.05</p></td>
-<td><p>3</p></td>
-<td><p>2.69</p></td>
-<td><p>6106</p></td>
-<td><p>114.349899</p></td>
-<td><p>123.992096</p></td>
-<td><p>133.7679</p></td>
-<td><p>140.114122</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>28.93451235</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>26</p></td>
-<td><p>NJBF000072197</p></td>
-<td><p>1817 N MISSOURI AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.3728645</p></td>
-<td><p>-74.4535545</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1900</p></td>
-<td><p>1900</p></td>
-<td><p>3101</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1134.766004</p></td>
-<td><p>1134.766004</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>25.84</p></td>
-<td><p>32.09</p></td>
-<td><p>3</p></td>
-<td><p>8.88</p></td>
-<td><p>6106</p></td>
-<td><p>113.954306</p></td>
-<td><p>123.650378</p></td>
-<td><p>133.405597</p></td>
-<td><p>139.727957</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>28.96514477</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1900</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>27</p></td>
-<td><p>NJBF000072227</p></td>
-<td><p>400 N NEW HAMPSHIRE AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37296747</p></td>
-<td><p>-74.4191288</p></td>
-<td><p>RES3C</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3301</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>6014.012796</p></td>
-<td><p>6014.012796</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>17.37</p></td>
-<td><p>29.2</p></td>
-<td><p>3</p></td>
-<td><p>3.39</p></td>
-<td><p>6106</p></td>
-<td><p>114.69356</p></td>
-<td><p>124.278259</p></td>
-<td><p>134.095682</p></td>
-<td><p>140.282283</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>23.28496809</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>28</p></td>
-<td><p>NJBF000072895</p></td>
-<td><p>837 N MASSACHUSETTS AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37550337</p></td>
-<td><p>-74.42300718</p></td>
-<td><p>RES3D</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>18</p></td>
-<td><p>ME</p></td>
-<td><p>2006</p></td>
-<td><p>2006</p></td>
-<td><p>3301</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>1357.048534</p></td>
-<td><p>1357.048534</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>37.84</p></td>
-<td><p>42.89</p></td>
-<td><p>1</p></td>
-<td><p>0.96</p></td>
-<td><p>6106</p></td>
-<td><p>114.581869</p></td>
-<td><p>124.18062</p></td>
-<td><p>133.98979</p></td>
-<td><p>140.185651</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>40.36492488</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>2006</p></td>
-<td><p>3</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>29</p></td>
-<td><p>NJBF000069283</p></td>
-<td><p>2231 ARCTIC AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35950971</p></td>
-<td><p>-74.44011018</p></td>
-<td><p>COM1</p></td>
-<td><p>3003</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>10842.04384</p></td>
-<td><p>10842.04384</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>21.89</p></td>
-<td><p>34.89</p></td>
-<td><p>1</p></td>
-<td><p>2.94</p></td>
-<td><p>6106</p></td>
-<td><p>114.403388</p></td>
-<td><p>124.036401</p></td>
-<td><p>133.817587</p></td>
-<td><p>140.144537</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>28.38958755</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>30</p></td>
-<td><p>NJBF000068521</p></td>
-<td><p>2807 DENNY ST</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35700017</p></td>
-<td><p>-74.44757492</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>27</p></td>
-<td><p>NE</p></td>
-<td><p>1900</p></td>
-<td><p>1900</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>1447.053472</p></td>
-<td><p>1447.053472</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>34.44</p></td>
-<td><p>43.9</p></td>
-<td><p>3</p></td>
-<td><p>7.74</p></td>
-<td><p>6106</p></td>
-<td><p>114.2723</p></td>
-<td><p>123.927698</p></td>
-<td><p>133.696793</p></td>
-<td><p>140.064021</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>39.16934775</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1900</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>31</p></td>
-<td><p>NJBF000072516</p></td>
-<td><p>538 N MASSACHUSETTS AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.3739549</p></td>
-<td><p>-74.42235362</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>45</p></td>
-<td><p>NE</p></td>
-<td><p>1900</p></td>
-<td><p>1900</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>1562.170649</p></td>
-<td><p>1562.170649</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>39.94</p></td>
-<td><p>52.12</p></td>
-<td><p>3</p></td>
-<td><p>8.35</p></td>
-<td><p>6106</p></td>
-<td><p>114.613535</p></td>
-<td><p>124.208743</p></td>
-<td><p>134.019618</p></td>
-<td><p>140.217751</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>46.02753727</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1900</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>32</p></td>
-<td><p>NJBF000066458</p></td>
-<td><p>4017 VENTNOR AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.349802</p></td>
-<td><p>-74.45892115</p></td>
-<td><p>COM1</p></td>
-<td><p>3004</p></td>
-<td><p>100</p></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>2121.364634</p></td>
-<td><p>2121.364634</p></td>
-<td><p>3507</p></td>
-<td><p>YES</p></td>
-<td><p>24.17</p></td>
-<td><p>33.17</p></td>
-<td><p>1</p></td>
-<td><p>1.09</p></td>
-<td><p>6106</p></td>
-<td><p>114.11498</p></td>
-<td><p>123.800095</p></td>
-<td><p>133.552295</p></td>
-<td><p>139.99249</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>28.67068861</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>33</p></td>
-<td><p>NJBF000068201</p></td>
-<td><p>2905 ARCTIC AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.355985</p></td>
-<td><p>-74.4485495</p></td>
-<td><p>RES3A</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>45</p></td>
-<td><p>NE</p></td>
-<td><p>1930</p></td>
-<td><p>1930</p></td>
-<td><p>3301</p></td>
-<td><p>2</p></td>
-<td><p>3</p></td>
-<td><p>1474.77185</p></td>
-<td><p>1474.77185</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>35.82</p></td>
-<td><p>50.53</p></td>
-<td><p>3</p></td>
-<td><p>6.9</p></td>
-<td><p>6106</p></td>
-<td><p>114.263656</p></td>
-<td><p>123.920912</p></td>
-<td><p>133.68854</p></td>
-<td><p>140.063665</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>43.17148983</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1930</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>34</p></td>
-<td><p>NJBF000072280</p></td>
-<td><p>1600 EMERSON AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37314507</p></td>
-<td><p>-74.44961931</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1959</p></td>
-<td><p>1959</p></td>
-<td><p>3101</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>2029.396069</p></td>
-<td><p>2029.396069</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>11.94</p></td>
-<td><p>23.73</p></td>
-<td><p>3</p></td>
-<td><p>0.41</p></td>
-<td><p>6106</p></td>
-<td><p>114.036589</p></td>
-<td><p>123.71893</p></td>
-<td><p>133.480575</p></td>
-<td><p>139.789225</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>17.83627987</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1959</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>35</p></td>
-<td><p>NJBF000071219</p></td>
-<td><p>914 N INDIANA AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.36979733</p></td>
-<td><p>-74.43988434</p></td>
-<td><p>RES3A</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>27</p></td>
-<td><p>NE</p></td>
-<td><p>1953</p></td>
-<td><p>1953</p></td>
-<td><p>3301</p></td>
-<td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>1687.922785</p></td>
-<td><p>1687.922785</p></td>
-<td><p>3505</p></td>
-<td><p>YES</p></td>
-<td><p>35.33</p></td>
-<td><p>43.04</p></td>
-<td><p>3</p></td>
-<td><p>5.75</p></td>
-<td><p>6106</p></td>
-<td><p>114.285753</p></td>
-<td><p>123.931614</p></td>
-<td><p>133.711171</p></td>
-<td><p>139.998133</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>39.18497199</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1953</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>36</p></td>
-<td><p>NJBF000069087</p></td>
-<td><p>2312 ARCTIC AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35871841</p></td>
-<td><p>-74.44091582</p></td>
-<td><p>COM1</p></td>
-<td><p>3003</p></td>
-<td></td>
-<td><p>45</p></td>
-<td><p>ME</p></td>
-<td><p>1920</p></td>
-<td><p>1920</p></td>
-<td><p>3401</p></td>
-<td><p>3</p></td>
-<td><p>3</p></td>
-<td><p>1267.11776</p></td>
-<td><p>1267.11776</p></td>
-<td><p>3507</p></td>
-<td><p>YES</p></td>
-<td><p>38.45</p></td>
-<td><p>48.45</p></td>
-<td><p>1</p></td>
-<td><p>1.26</p></td>
-<td><p>6106</p></td>
-<td><p>114.395626</p></td>
-<td><p>124.030176</p></td>
-<td><p>133.810075</p></td>
-<td><p>140.143393</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Gable</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>43.45236519</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1920</p></td>
-<td><p>3</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>37</p></td>
-<td><p>NJBF000069314</p></td>
-<td><p>122 N MISSISSIPPI AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35963541</p></td>
-<td><p>-74.44114268</p></td>
-<td><p>COM1</p></td>
-<td><p>3003</p></td>
-<td></td>
-<td><p>47</p></td>
-<td><p>ME</p></td>
-<td><p>1900</p></td>
-<td><p>1910</p></td>
-<td><p>3401</p></td>
-<td><p>2</p></td>
-<td><p>3</p></td>
-<td><p>3533.316075</p></td>
-<td><p>3533.316075</p></td>
-<td><p>3507</p></td>
-<td><p>YES</p></td>
-<td><p>32.4</p></td>
-<td><p>42.97</p></td>
-<td><p>1</p></td>
-<td><p>1.94</p></td>
-<td><p>6106</p></td>
-<td><p>114.379518</p></td>
-<td><p>124.016305</p></td>
-<td><p>133.795728</p></td>
-<td><p>140.126552</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>37.68833586</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1900</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>38</p></td>
-<td><p>NJBF000067661</p></td>
-<td><p>12 N MONTPELIER AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35409178</p></td>
-<td><p>-74.450722</p></td>
-<td><p>RES3B</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>45</p></td>
-<td><p>ME</p></td>
-<td><p>1908</p></td>
-<td><p>1908</p></td>
-<td><p>3301</p></td>
-<td><p>2</p></td>
-<td><p>3</p></td>
-<td><p>1577.696548</p></td>
-<td><p>1577.696548</p></td>
-<td><p>3504</p></td>
-<td><p>NO</p></td>
-<td><p>36.89</p></td>
-<td><p>50.03</p></td>
-<td><p>-4</p></td>
-<td><p>0</p></td>
-<td><p>6106</p></td>
-<td><p>114.239888</p></td>
-<td><p>123.901876</p></td>
-<td><p>133.666217</p></td>
-<td><p>140.057496</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>43.46405256</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1908</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>39</p></td>
-<td><p>NJBF000067689</p></td>
-<td><p>14 N MONTPELIER AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35417434</p></td>
-<td><p>-74.45078828</p></td>
-<td><p>RES3B</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>45</p></td>
-<td><p>ME</p></td>
-<td><p>1900</p></td>
-<td><p>1900</p></td>
-<td><p>3301</p></td>
-<td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>1539.698677</p></td>
-<td><p>1539.698677</p></td>
-<td><p>3504</p></td>
-<td><p>NO</p></td>
-<td><p>26.13</p></td>
-<td><p>39.84</p></td>
-<td><p>-4</p></td>
-<td><p>0</p></td>
-<td><p>6106</p></td>
-<td><p>114.237428</p></td>
-<td><p>123.899803</p></td>
-<td><p>133.664035</p></td>
-<td><p>140.055243</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>32.98710693</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1900</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>40</p></td>
-<td><p>NJBF000072465</p></td>
-<td><p>400 N NEW HAMPSHIRE AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37376697</p></td>
-<td><p>-74.41696374</p></td>
-<td><p>RES3C</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3301</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>3486.234049</p></td>
-<td><p>3486.234049</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>33.22</p></td>
-<td><p>42.55</p></td>
-<td><p>3</p></td>
-<td><p>8.11</p></td>
-<td><p>6106</p></td>
-<td><p>114.730283</p></td>
-<td><p>124.309735</p></td>
-<td><p>134.131251</p></td>
-<td><p>140.305114</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>37.88500131</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>41</p></td>
-<td><p>NJBF000071361</p></td>
-<td><p>141 N NEW HAMPSHIRE AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37036284</p></td>
-<td><p>-74.41401886</p></td>
-<td><p>RES3D</p></td>
-<td><p>3004</p></td>
-<td></td>
-<td><p>27</p></td>
-<td><p>E</p></td>
-<td><p>2000</p></td>
-<td><p>2000</p></td>
-<td><p>3303</p></td>
-<td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>1771.71857</p></td>
-<td><p>1771.71857</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>37.97</p></td>
-<td><p>52.11</p></td>
-<td><p>3</p></td>
-<td><p>4.35</p></td>
-<td><p>6106</p></td>
-<td><p>114.832352</p></td>
-<td><p>124.399208</p></td>
-<td><p>134.227272</p></td>
-<td><p>140.397732</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>45.03804989</p></td>
-<td><p>0</p></td>
-<td><p>1.1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>2000</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>42</p></td>
-<td><p>NJBF000067147</p></td>
-<td><p>3 N ST DAVIDS PL</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35230731</p></td>
-<td><p>-74.45456624</p></td>
-<td><p>RES3B</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>45</p></td>
-<td><p>E</p></td>
-<td><p>1900</p></td>
-<td><p>1900</p></td>
-<td><p>3303</p></td>
-<td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>1421.969062</p></td>
-<td><p>1421.969062</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>40.74</p></td>
-<td><p>49.17</p></td>
-<td><p>1</p></td>
-<td><p>2.91</p></td>
-<td><p>6106</p></td>
-<td><p>114.178444</p></td>
-<td><p>123.851606</p></td>
-<td><p>133.610149</p></td>
-<td><p>140.023565</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>44.95855826</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1900</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>43</p></td>
-<td><p>NJBF000072609</p></td>
-<td><p>1404 PENROSE AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.37426708</p></td>
-<td><p>-74.44507169</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1900</p></td>
-<td><p>1900</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1743.978387</p></td>
-<td><p>1743.978387</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>42.35</p></td>
-<td><p>53.35</p></td>
-<td><p>3</p></td>
-<td><p>4.85</p></td>
-<td><p>6106</p></td>
-<td><p>114.122337</p></td>
-<td><p>123.789865</p></td>
-<td><p>133.558834</p></td>
-<td><p>139.847478</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>47.84821412</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1900</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>44</p></td>
-<td><p>NJBF000072085</p></td>
-<td><p>2002 E RIVERSIDE DR</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.3725323</p></td>
-<td><p>-74.44528008</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>NE</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3102</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>4400.646067</p></td>
-<td><p>4400.646067</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>40.28</p></td>
-<td><p>54.56</p></td>
-<td><p>3</p></td>
-<td><p>3.54</p></td>
-<td><p>6106</p></td>
-<td><p>114.137595</p></td>
-<td><p>123.804395</p></td>
-<td><p>133.573665</p></td>
-<td><p>139.869974</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>47.41756243</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>45</p></td>
-<td><p>NJBF000071571</p></td>
-<td><p>1605 W RIVERSIDE DR</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.3709536</p></td>
-<td><p>-74.45072537</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1900</p></td>
-<td><p>1900</p></td>
-<td><p>3101</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>1627.048044</p></td>
-<td><p>1627.048044</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>44.56</p></td>
-<td><p>58.13</p></td>
-<td><p>3</p></td>
-<td><p>8.2</p></td>
-<td><p>6106</p></td>
-<td><p>114.037623</p></td>
-<td><p>123.722024</p></td>
-<td><p>133.482671</p></td>
-<td><p>139.804053</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>51.34463829</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1900</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>46</p></td>
-<td><p>NJBF000068858</p></td>
-<td><p>10 N MISSISSIPPI AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.357808</p></td>
-<td><p>-74.440426</p></td>
-<td><p>COM1</p></td>
-<td><p>3003</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>1552.892811</p></td>
-<td><p>1552.892811</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>37.39</p></td>
-<td><p>42.62</p></td>
-<td><p>1</p></td>
-<td><p>-0.23</p></td>
-<td><p>6106</p></td>
-<td><p>114.417383</p></td>
-<td><p>124.048753</p></td>
-<td><p>133.829552</p></td>
-<td><p>140.164178</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>40.00441734</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>3</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>47</p></td>
-<td><p>NJBF000068967</p></td>
-<td><p>10 N MISSISSIPPI AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.358191</p></td>
-<td><p>-74.44024029</p></td>
-<td><p>COM1</p></td>
-<td><p>3003</p></td>
-<td></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>19774.75034</p></td>
-<td><p>19774.75034</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>31.96</p></td>
-<td><p>43.7</p></td>
-<td><p>1</p></td>
-<td><p>0.15</p></td>
-<td><p>6106</p></td>
-<td><p>114.416705</p></td>
-<td><p>124.048057</p></td>
-<td><p>133.829142</p></td>
-<td><p>140.161553</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>37.82853722</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>3</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>48</p></td>
-<td><p>NJBF000067184</p></td>
-<td><p>3029 PACIFIC AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35246716</p></td>
-<td><p>-74.44786077</p></td>
-<td><p>COM1</p></td>
-<td><p>3003</p></td>
-<td><p>530</p></td>
-<td><p>NaN</p></td>
-<td><p>ME</p></td>
-<td><p>1969</p></td>
-<td><p>0</p></td>
-<td><p>3401</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>4767.595549</p></td>
-<td><p>4767.595549</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>28.01</p></td>
-<td><p>35.63</p></td>
-<td><p>1</p></td>
-<td><p>1.37</p></td>
-<td><p>6106</p></td>
-<td><p>114.322502</p></td>
-<td><p>123.971057</p></td>
-<td><p>133.73994</p></td>
-<td><p>140.126086</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>NaN</p></td>
-<td><p>Wood</p></td>
-<td><p>31.82004957</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1969</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>49</p></td>
-<td><p>NJBF000070051</p></td>
-<td><p>408 N INDIANA AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.3656245</p></td>
-<td><p>-74.4371055</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>45</p></td>
-<td><p>NE</p></td>
-<td><p>1920</p></td>
-<td><p>1920</p></td>
-<td><p>3101</p></td>
-<td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>1129.324234</p></td>
-<td><p>1129.324234</p></td>
-<td><p>3507</p></td>
-<td><p>NO</p></td>
-<td><p>26.5</p></td>
-<td><p>35.41</p></td>
-<td><p>1</p></td>
-<td><p>0.76</p></td>
-<td><p>6106</p></td>
-<td><p>114.394697</p></td>
-<td><p>124.0263</p></td>
-<td><p>133.811762</p></td>
-<td><p>140.103314</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Hip</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>30.95482958</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1920</p></td>
-<td><p>2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>50</p></td>
-<td><p>NJBF000067637</p></td>
-<td><p>405 N ANNAPOLIS AVE</p></td>
-<td><p>Atlantic City</p></td>
-<td><p>NJ</p></td>
-<td><p>39.35403396</p></td>
-<td><p>-74.46286267</p></td>
-<td><p>RES1</p></td>
-<td><p>3001</p></td>
-<td></td>
-<td><p>17</p></td>
-<td><p>NE</p></td>
-<td><p>1900</p></td>
-<td><p>1900</p></td>
-<td><p>3102</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>776.6966952</p></td>
-<td><p>776.6966952</p></td>
-<td><p>3505</p></td>
-<td><p>NO</p></td>
-<td><p>12.98</p></td>
-<td><p>22.62</p></td>
-<td><p>3</p></td>
-<td><p>2.02</p></td>
-<td><p>6106</p></td>
-<td><p>113.975231</p></td>
-<td><p>123.683311</p></td>
-<td><p>133.429558</p></td>
-<td><p>139.864088</p></td>
-<td><p>I</p></td>
-<td><p>Above</p></td>
-<td><p>Flat</p></td>
-<td><p>0</p></td>
-<td><p>5701</p></td>
-<td><p>Wood</p></td>
-<td><p>17.7978336</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td></td>
-<td><p>0.03</p></td>
-<td><p>nav</p></td>
-<td><p>1</p></td>
-<td><p>1900</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -6845,7 +1980,7 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <tr class="row-even"><td><p>Atlantic County Inventory</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/AtlanticCountyInventory.csv">Atlantic County Inventory</a></p></td>
 <td><p>100,721</p></td>
-<td><p>~ 1,500 CPU-Hour* (please see more details in <strong>Computational Resources Requirements</strong>)</p></td>
+<td><p>~ 1,500 CPU-Hour</p></td>
 </tr>
 <tr class="row-odd"><td><p>Flood-Exposed Inventory</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/FloodExposedInventory.csv">Flood-Exposed Inventory</a></p></td>
