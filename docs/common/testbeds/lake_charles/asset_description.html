@@ -485,7 +485,7 @@ if the classification is perfect, affirming the accuracy of the classification b
 <p>The occupancy class attribute is also determined by CityBuilder using the occupancy class classifier
 module in BRAILS. The occupancy classifier is also a convolutional neural network. This network trained
 using 15,743 google street view images with labels derived from OpenStreetMaps and the NJDEP dataset in
-the Atlantic County Testbed (see <a class="reference internal" href="../atlantic_city/asset_description.html#lbl-testbed-ac-asset-description"><span class="std std-ref">Asset Description</span></a>).
+the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_description.html">Atlantic County, NJ testbed Asset Description</a>.
 This classifier labels buildings as one of: RES1 (single family building), RES3
 (multi-family building), COM1 (Commercial building). More details of the classifier can be found
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/occupancyClassifier.html">here</a>.</p>
@@ -557,16 +557,8 @@ the average of these dimensions.</p>
 <a class="reference internal image-reference" href="../../../_images/BldgElev.png"><img alt="../../../_images/BldgElev.png" src="../../../_images/BldgElev.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.2.7 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image">¶</a></p>
 </div>
-<p>Two different approaches were explored in this testbed for populating the mean roof height for the inventory.
-First method is built on the closed-form equation:</p>
-<div class="math notranslate nohighlight" id="equation-common-testbeds-lake-charles-asset-description-0">
-<span class="eqno">(3.2.2.1)<a class="headerlink" href="#equation-common-testbeds-lake-charles-asset-description-0" title="Permalink to this equation">¶</a></span>\[MeanRoofHt (ft) = NumberOfStories \times 12.0 + RoofSlope / 0.33 \times 6.0\]</div>
-<p>And the second method is based on the following AI technique. <a class="reference internal" href="#mean-roof-ht-app"><span class="std std-numref">Fig. 3.2.2.8</span></a>
-shows the comparison between these two approaches.</p>
-<div class="align-center figure" id="mean-roof-ht-app">
-<a class="reference internal image-reference" href="../../../_images/MeanRoofHtApp.png"><img alt="../../../_images/MeanRoofHtApp.png" src="../../../_images/MeanRoofHtApp.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.2.8 </span><span class="caption-text">Comparison of MeanRoofHt between the two approaches.</span><a class="headerlink" href="#mean-roof-ht-app" title="Permalink to this image">¶</a></p>
-</div>
+<p>The MeanRoofHt is based on the following AI technique. <a class="reference internal" href="#mean-roof-ht-app"><span class="std std-numref">Fig. 3.2.2.8</span></a>
+plots the predicted roof height versus the number of floors of the inventory.</p>
 <p>As in any single-image metrology application, extracting the building elevations from imagery requires:</p>
 <ol class="arabic simple">
 <li><p>Rectification of image perspective distortions, typically introduced during capturing of an image capture.</p></li>
@@ -598,18 +590,21 @@ facade segmentation dataset of 30,000 images supplemented with relevant portions
 dataset. The peak model performance was attained using the Adam optimizer at a learning rate of 0.001
 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world dimensions were
 attained by use of edge detections performed on satellite images.</p>
+<div class="align-center figure" id="mean-roof-ht-app">
+<a class="reference internal image-reference" href="../../../_images/MeanRoofHtApp.png"><img alt="../../../_images/MeanRoofHtApp.png" src="../../../_images/MeanRoofHtApp.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2.2.8 </span><span class="caption-text">Predicted MeanRoofHt versus number of floors.</span><a class="headerlink" href="#mean-roof-ht-app" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="attribute-roofslope">
 <h4>Attribute: RoofSlope<a class="headerlink" href="#attribute-roofslope" title="Permalink to this headline">¶</a></h4>
-<p>First, RoofSlope is assigned based on RoofShape: if the RoofShape is “flat”, a slope of 0.0 is assigned;
-if RoofShape is “hip” or “gable”, the roof slope is drawn from a uniform distribution between 1/12 and 1/3.</p>
-<p>Second, RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained
+<p>RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the “Attribute: MeanRoofHt”
 section. Roof run is determined as half the smaller dimension of the building, as determined from
-the dimensions of the building footprint. <a class="reference internal" href="#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> shows the comparison between these two approaches.</p>
+the dimensions of the building footprint. <a class="reference internal" href="#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> shows the comparison between the
+predicted roof slope and mean roof height.</p>
 <div class="align-center figure" id="mean-slope-app">
-<a class="reference internal image-reference" href="../../../_images/RoofSlopeApp.png"><img alt="../../../_images/RoofSlopeApp.png" src="../../../_images/RoofSlopeApp.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.2.9 </span><span class="caption-text">Comparison of RoofSlope between the two approaches.</span><a class="headerlink" href="#mean-slope-app" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../_images/RoofSlopeApp.png"><img alt="../../../_images/RoofSlopeApp.png" src="../../../_images/RoofSlopeApp.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2.2.9 </span><span class="caption-text">Predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#mean-slope-app" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -795,11 +790,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>128.7</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>2</p></td>
+<td><p>-1</p></td>
 <td><p>1</p></td>
-<td><p>2020</p></td>
-<td><p>0.01</p></td>
-<td><p>12.2</p></td>
+<td><p>1962</p></td>
+<td><p>0.25</p></td>
+<td><p>15</p></td>
 <td><p>RES3</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
@@ -814,9 +809,9 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>Above</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1960</p></td>
-<td><p>0.19</p></td>
-<td><p>15.4</p></td>
+<td><p>1970</p></td>
+<td><p>0.21</p></td>
+<td><p>13</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
@@ -829,11 +824,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>129</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
+<td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1955</p></td>
-<td><p>0.27</p></td>
-<td><p>16.9</p></td>
+<td><p>1969</p></td>
+<td><p>0.22</p></td>
+<td><p>16.3</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
@@ -846,11 +841,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>129</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>0</p></td>
+<td><p>1</p></td>
 <td><p>2</p></td>
-<td><p>2010</p></td>
-<td><p>0.25</p></td>
-<td><p>16.5</p></td>
+<td><p>1974</p></td>
+<td><p>0.12</p></td>
+<td><p>34.6</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
@@ -863,11 +858,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>128.9</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1992</p></td>
-<td><p>0.31</p></td>
-<td><p>29.6</p></td>
+<td><p>1</p></td>
+<td><p>1968</p></td>
+<td><p>0.33</p></td>
+<td><p>14.2</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-odd"><td><p>6</p></td>
@@ -882,9 +877,9 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>Above</p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
-<td><p>2020</p></td>
-<td><p>0</p></td>
-<td><p>12</p></td>
+<td><p>1957</p></td>
+<td><p>0.3</p></td>
+<td><p>16.1</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-even"><td><p>7</p></td>
@@ -897,11 +892,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>129.9</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1948</p></td>
-<td><p>0.17</p></td>
-<td><p>15</p></td>
+<td><p>1</p></td>
+<td><p>1942</p></td>
+<td><p>0.13</p></td>
+<td><p>16.5</p></td>
 <td><p>COM1</p></td>
 </tr>
 <tr class="row-odd"><td><p>8</p></td>
@@ -914,11 +909,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>130.2</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>2</p></td>
+<td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1992</p></td>
-<td><p>0.1</p></td>
-<td><p>13.8</p></td>
+<td><p>1950</p></td>
+<td><p>0.16</p></td>
+<td><p>16.2</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-even"><td><p>9</p></td>
@@ -931,11 +926,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>130.2</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
+<td><p>0</p></td>
 <td><p>2</p></td>
-<td><p>2</p></td>
-<td><p>1967</p></td>
-<td><p>0.23</p></td>
-<td><p>16.2</p></td>
+<td><p>1944</p></td>
+<td><p>0.11</p></td>
+<td><p>22.7</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-odd"><td><p>10</p></td>
@@ -950,9 +945,9 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>Above</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1917</p></td>
-<td><p>0.15</p></td>
-<td><p>14.7</p></td>
+<td><p>1946</p></td>
+<td><p>0.05</p></td>
+<td><p>17</p></td>
 <td><p>COM1</p></td>
 </tr>
 <tr class="row-even"><td><p>11</p></td>
@@ -965,11 +960,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>130.1</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
+<td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1918</p></td>
-<td><p>0.32</p></td>
-<td><p>17.8</p></td>
+<td><p>1943</p></td>
+<td><p>0.12</p></td>
+<td><p>13.6</p></td>
 <td><p>COM1</p></td>
 </tr>
 <tr class="row-odd"><td><p>12</p></td>
@@ -984,9 +979,9 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>Above</p></td>
 <td><p>0</p></td>
 <td><p>2</p></td>
-<td><p>1925</p></td>
-<td><p>0.15</p></td>
-<td><p>14.7</p></td>
+<td><p>1941</p></td>
+<td><p>0.33</p></td>
+<td><p>29</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-even"><td><p>13</p></td>
@@ -1001,9 +996,9 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>Above</p></td>
 <td><p>0</p></td>
 <td><p>2</p></td>
-<td><p>1925</p></td>
-<td><p>0.2</p></td>
-<td><p>15.7</p></td>
+<td><p>1941</p></td>
+<td><p>0.45</p></td>
+<td><p>30.4</p></td>
 <td><p>RES3</p></td>
 </tr>
 <tr class="row-odd"><td><p>14</p></td>
@@ -1016,11 +1011,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>129.3</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1940</p></td>
-<td><p>0.02</p></td>
-<td><p>12.4</p></td>
+<td><p>1</p></td>
+<td><p>1959</p></td>
+<td><p>0.65</p></td>
+<td><p>13.5</p></td>
 <td><p>RES3</p></td>
 </tr>
 <tr class="row-even"><td><p>15</p></td>
@@ -1035,9 +1030,9 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>Above</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1928</p></td>
-<td><p>0.24</p></td>
-<td><p>16.4</p></td>
+<td><p>1955</p></td>
+<td><p>0.17</p></td>
+<td><p>17.2</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-odd"><td><p>16</p></td>
@@ -1050,11 +1045,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>129.3</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>0</p></td>
+<td><p>1</p></td>
 <td><p>2</p></td>
-<td><p>1930</p></td>
-<td><p>0.16</p></td>
-<td><p>15</p></td>
+<td><p>1956</p></td>
+<td><p>0.92</p></td>
+<td><p>31.5</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-even"><td><p>17</p></td>
@@ -1069,9 +1064,9 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>Above</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1960</p></td>
-<td><p>0.12</p></td>
-<td><p>14.2</p></td>
+<td><p>1959</p></td>
+<td><p>0.69</p></td>
+<td><p>16</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-odd"><td><p>18</p></td>
@@ -1086,9 +1081,9 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>Above</p></td>
 <td><p>0</p></td>
 <td><p>1</p></td>
-<td><p>1935</p></td>
-<td><p>0.12</p></td>
-<td><p>26.2</p></td>
+<td><p>1955</p></td>
+<td><p>0.65</p></td>
+<td><p>16.9</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-even"><td><p>19</p></td>
@@ -1101,11 +1096,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>129.3</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>0</p></td>
+<td><p>1</p></td>
 <td><p>2</p></td>
-<td><p>1917</p></td>
-<td><p>0.03</p></td>
-<td><p>12.6</p></td>
+<td><p>1958</p></td>
+<td><p>1.28</p></td>
+<td><p>30.1</p></td>
 <td><p>RES1</p></td>
 </tr>
 <tr class="row-odd"><td><p>20</p></td>
@@ -1118,11 +1113,11 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>129.2</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>0</p></td>
+<td><p>-1</p></td>
 <td><p>1</p></td>
-<td><p>1928</p></td>
-<td><p>0.31</p></td>
-<td><p>17.7</p></td>
+<td><p>1959</p></td>
+<td><p>0.25</p></td>
+<td><p>15</p></td>
 <td><p>RES3</p></td>
 </tr>
 </tbody>

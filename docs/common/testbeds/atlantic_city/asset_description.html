@@ -147,7 +147,7 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
@@ -594,8 +594,8 @@ attributes necessary to conduct standard FEMA risk assessments. Specifically, al
 Basic Attributes (<a class="reference internal" href="#tab-basicattri"><span class="std std-numref">Table 2.2.3.1</span></a>). A subset of the data, including Atlantic County, had additional Advanced
 Attributes required by HAZUS User Defined Facilities (UDF) Module (<a class="reference internal" href="#tab-udfattri"><span class="std std-numref">Table 2.2.3.2</span></a>) and FEMA Substantial Damage
 Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span class="std std-numref">Table 2.2.3.3</span></a>).</p>
-<span id="tab-basicattri"></span><table class="docutils align-center" id="id12">
-<caption><span class="caption-number">Table 2.2.3.1 </span><span class="caption-text">NJDEP basic attributes available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<span id="tab-basicattri"></span><table class="docutils align-center" id="id8">
+<caption><span class="caption-number">Table 2.2.3.1 </span><span class="caption-text">NJDEP basic attributes available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -650,8 +650,8 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tr>
 </tbody>
 </table>
-<span id="tab-udfattri"></span><table class="colwidths-given docutils align-center" id="id13">
-<caption><span class="caption-number">Table 2.2.3.2 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<span id="tab-udfattri"></span><table class="colwidths-given docutils align-center" id="id9">
+<caption><span class="caption-number">Table 2.2.3.2 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 85%" />
@@ -867,7 +867,7 @@ vulnerable attribute option). These initial assignments were then updated if add
 remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data
 from the following third-party sources:
 1. <strong>Locations of essential facilities</strong> were sourced from NJ Office of Information Technology (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id3"><span>[NJGIN20]</span></a>)
-2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="../lake_charles/asset_description.html#atc20" id="id4"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7
+2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="#atc20" id="id4"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7
 3. <strong>Terrain features</strong> (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id5"><span>[NJGIN20]</span></a>)</p>
 <p>See the Transformation and Detail columns in the PDFs listed in <a class="reference internal" href="#tab-bldginventory"><span class="std std-numref">Table 2.2.1.1</span></a> for specifics of how each attribute
 was assigned using these various third-party data sources.</p>
@@ -891,7 +891,7 @@ for validation, and 5% testing of the model. In order to ensure faster model con
 initial weights of the model were set to model weights of the (pretrained) object detection
 model that, at the time, achieved state-of-the-art performance on the 2017 COCO Detection set.
 For this specific implementation, the peak model performance was achieved using the Adam optimizer
-at a learning rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a> shows examples of the
+at a learning rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="#num-stories-detection"><span class="std std-numref">Fig. 2.2.4.1</span></a> shows examples of the
 floor detections performed by the model.</p>
 <div class="align-center figure" id="num-stories-detection">
 <a class="reference internal image-reference" href="../../../_images/number_of_stories_detection.png"><img alt="../../../_images/number_of_stories_detection.png" src="../../../_images/number_of_stories_detection.png" style="width: 600px;" /></a>
@@ -905,13 +905,13 @@ this post-processor was designed to perform counts at the individual building-le
 <p>For a random building image dataset, where images were captured using arbitrary camera
 orientations (also termed “in-the-wild” images), the developed floor detection model
 was determined to identify the number of stories with an accuracy of 86%.
-:numref:<a href="#id6"><span class="problematic" id="id7">`</span></a>num_story_confusion`(a) provides a breakdown of this accuracy measure for different
+<a class="reference internal" href="#num-story-confusion"><span class="std std-numref">Fig. 2.2.4.2</span></a> (a) provides a breakdown of this accuracy measure for different
 prediction classes (i.e., the confusion matrix of model classifications).
 It was also observed that if the image dataset is established such that building
 images are captured with minimal obstructions, the building is at the center of the
 image, and perspective distortions are limited (termed “cleaned” data), the model
 identified the number of stories at an accuracy level of 94.7%.
-:numref:<a href="#id8"><span class="problematic" id="id9">`</span></a>num_story_confusion`(b)  shows the confusion matrix for the model predicting on the
+<a class="reference internal" href="#num-story-confusion"><span class="std std-numref">Fig. 2.2.4.2</span></a> (b)  shows the confusion matrix for the model predicting on the
 “cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images
 randomly selected across all New Jersey counties, excluding Atlantic County, was utilized.</p>
 <div class="align-center figure" id="num-story-confusion">
@@ -929,7 +929,7 @@ in the NJDEP inventory. Hence, the elevation of the bottom plane of the roof (lo
 of roof line), elevation of the roof (peak of gable or apex of hip), and height of first of
 floor as determined from base of door’s height, all defined with respect to grade (in feet),
 were estimated from street-level imagery. These geometric properties are defined visually
-for common residential coastal typologies in <a class="reference internal" href="../lake_charles/asset_description.html#building-elevation"><span class="std std-numref">Fig. 3.2.2.7</span></a>. The mean height of the roof system
+for common residential coastal typologies in <a class="reference internal" href="#building-elevation"><span class="std std-numref">Fig. 2.2.4.3</span></a>. The mean height of the roof system
 is then derived from the aforementioned roof elevations.</p>
 <div class="align-center figure" id="building-elevation">
 <a class="reference internal image-reference" href="../../../_images/building_elevation.png"><img alt="../../../_images/building_elevation.png" src="../../../_images/building_elevation.png" style="width: 600px;" /></a>
@@ -969,7 +969,7 @@ edge detections performed on satellite images.</p>
 <li><dl>
 <dt><strong>Roof Geometry</strong>: Roof shape and slope are not available in state inventory data and required for wind loss</dt><dd><blockquote>
 <div><p>modeling. The SimCenter developed application Building Recognition using Artificial
-Intelligence at Large Scales, BRAILS (<a class="reference internal" href="../lake_charles/asset_description.html#wang19" id="id10"><span>[Wang19]</span></a>), is used to interpret satellite images
+Intelligence at Large Scales, BRAILS (<a class="reference internal" href="#wang19" id="id6"><span>[Wang19]</span></a>), is used to interpret satellite images
 of building roofs, which are collected from Google Maps. The satellite images are labeled
 with shape types to form a dataset, upon which a Convolutional Neural Network (CNN) is
 trained so that it can give rapid predictions of roof types when given new images of roofs.
@@ -977,13 +977,13 @@ The footprint centroid (Latitude and Longitude in Building Inventory) is used as
 location index when downloading images
 automatically from Google Maps. While more complex roof shapes could in theory be classified,
 the current use of HAZUS damage and loss functions required the use of similitude measures
-to define each roof as an “effective” gable, hip or flat geometry (<a class="reference internal" href="../lake_charles/asset_description.html#roof-shape"><span class="std std-numref">Fig. 3.2.2.1</span></a>). Using BRAILS, this
+to define each roof as an “effective” gable, hip or flat geometry (<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 2.2.4.4</span></a>). Using BRAILS, this
 classification was achieved with approximately 90.3% accuracy based on validation studies.
 The detailed validation process can be found in
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">BRAILS online documentation</a>.</p>
 <div class="align-center figure" id="roof-shape">
 <a class="reference internal image-reference" href="../../../_images/roof_shape.png"><img alt="../../../_images/roof_shape.png" src="../../../_images/roof_shape.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.4.4 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="../lake_charles/asset_description.html#wang19" id="id11"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.4.4 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="#wang19" id="id7"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>Roof slope is calculated as the ratio between the roof height and half the depth of the
@@ -2001,7 +2001,7 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 <dt class="label" id="njgin20"><span class="brackets">NJGIN20</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>)</span></dt>
 <dd><p>NJ Geographic Information Network, State of New Jersey, <a class="reference external" href="https://njgin.nj.gov/njgin/#!/">https://njgin.nj.gov/njgin/#!/</a></p>
 </dd>
-<dt class="label" id="wang19"><span class="brackets">Wang19</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id11">2</a>)</span></dt>
+<dt class="label" id="wang19"><span class="brackets">Wang19</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id7">2</a>)</span></dt>
 <dd><p>Wang C. (2019), NHERI-SimCenter/SURF: v0.2.0 (Version v0.2.0). Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.3463676">http://doi.org/10.5281/zenodo.3463676</a></p>
 </dd>
 <dt class="label" id="microsoft2018"><span class="brackets">Microsoft2018</span></dt>

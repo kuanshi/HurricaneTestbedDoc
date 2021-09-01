@@ -242,7 +242,7 @@ the default data schema. Thus the description of assets below is organized accor
 to the HAZUS conventions for classifying buildings and organizing damage and loss data
 according to attributes associated with those building classes.</p>
 <p>The following discussion will reference a number of rulesets initially developed for the
-<a class="reference internal" href="../atlantic_city/index.html#lbl-testbed-atlantic-city"><span class="std std-ref">Atlantic County, NJ</span></a> testbed to enable various assignments of these HAZUS building classes
+<a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a> testbed to enable various assignments of these HAZUS building classes
 and corresponding attributes.Details of these rulesets are available to users in one of two forms:</p>
 <ol class="arabic simple">
 <li><p>Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation
@@ -260,8 +260,7 @@ assignments, regardless of data sparsity.</p>
 <p>HAZUS classifies buildings based on a more nuanced interpretation of Occupancy Class
 (see building inventory field <strong>OccupancyClass</strong>) based on other attributes of relevance
 for a given hazard type.</p>
-<p>As detailed in the <a class="reference internal" href="#lbl-testbed-lc-asset-representation-building-classification"><span class="std std-ref">Building Classifications</span></a> section,
-HAZUS groups buildings into five main types by primary building material/construction
+<p>HAZUS groups buildings into five main types by primary building material/construction
 mode for projecting wind losses. Given the focus of this testbed on residential, wood
 construction, the only relevant HAZUS classes are Wood Single Family (WSF) homes and
 Wood, Multi-Unit/Hotel/Model (WMUH). These HAZUS building classifications are listed in
@@ -332,9 +331,9 @@ Technical Manual (<a class="reference internal" href="#fema21" id="id1"><span>[F
 load path and components (e.g., roof shape, secondary water resistance, roof deck attachment, roof-wall
 connection, shutters, garage), and the number of attributes necessary to describe a given building varies.</p>
 <p>As these attributes are beyond what is typically encompassed in a building inventory, a library of rulesets
-to infer the HAZUS-required attributes was developed and implemented for the <a class="reference internal" href="../atlantic_city/index.html#lbl-testbed-atlantic-city"><span class="std std-ref">Atlantic County, NJ</span></a> testbed,
+to infer the HAZUS-required attributes was developed and implemented for the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a> testbed,
 based upon the fields available in the building inventory, legacy building codes in New Jersey, local
-construction practices/norms, surveys capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="#javeline19" id="id2"><span>[Javeline19]</span></a>)
+construction practices/norms, surveys capturing owner-driven mitigation actions (e.g., <a class="reference internal" href="#javeline19" id="id3"><span>[Javeline19]</span></a>)
 and market/industry data. Where possible, the rulesets are time-evolving, considering the age of
 construction to determine the governing code edition and availability of specific mitigation measures
 in the market. Though reliant on engineering judgement and historical data availability, each rule provides
@@ -342,7 +341,7 @@ detailed notes cross-referencing the various documents and practices that govern
 and thus informed the ruleset formation. In cases where engineering judgment was required, rules were assigned
 based on what was understood to be the most common construction practice. In cases where that was not clear,
 the ruleset assigned the most vulnerable configuration for a more conservative approach to loss estimation.
-The rulesets from the <a class="reference internal" href="../atlantic_city/index.html#lbl-testbed-atlantic-city"><span class="std std-ref">Atlantic County, NJ</span></a> testbed are applied here, without modification as the purpose
+The rulesets from the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a> testbed are applied here, without modification as the purpose
 herein is solely to demonstrate the workflow. It is acknowledged that, while also grounded in the
 International Residential Code and International Building Code, Louisiana has a different regulatory
 framework and code eras that would require adaptation of the rulesets. Such adaptations are encouraged
@@ -410,7 +409,7 @@ speed at the asset location (Building Inventory field “DSWII”) and the flood
 <a class="reference internal" href="#addinfo-ruleset-metavar"><span class="std std-numref">Table 3.4.2.2</span></a>. Also note that the roof shape (building inventory field <strong>RoofShape</strong>),
 derived from aerial imagery, and terrain roughness (building inventory field <strong>Terrain</strong>), derived from
 Land Use Land Cover data, are also attributes required by the HAZUS wind loss model. As these were already
-assigned in the Atlantic County, NJ testbed <a class="reference internal" href="../atlantic_city/asset_description.html#lbl-testbed-ac-asset-description"><span class="std std-ref">Asset Description</span></a>, they are not discussed again herein.</p>
+assigned in the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_representation.html">Atlantic County, NJ testbed Asset Representation</a>, they are not discussed again herein.</p>
 <table class="docutils align-center" id="addinfo-ruleset-metavar">
 <caption><span class="caption-number">Table 3.4.2.2 </span><span class="caption-text">Additional details for rulesets for meta-variables in wind loss attribute assignment in HAZUS</span><a class="headerlink" href="#addinfo-ruleset-metavar" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -432,7 +431,7 @@ assigned in the Atlantic County, NJ testbed <a class="reference internal" href="
 </tbody>
 </table>
 <p>The following sections summarize the rulesets used for wind loss  attribute assignments for WSF and WMUH
-in this testbed. See the Atlantic County, NJ testbed <a class="reference internal" href="../atlantic_city/asset_representation.html#lbl-testbed-ac-asset-representation-building-classification"><span class="std std-ref">Building Classifications</span></a>, the source of these rulesets,
+in this testbed. See the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_representation.html">Atlantic County, NJ testbed Asset Representation</a>, the source of these rulesets,
 for additional rulesets guiding attribute assignments for other building classes and hazards.</p>
 <div class="section" id="wind-loss-attributes-for-wood-buildings">
 <h3>Wind Loss Attributes for Wood Buildings<a class="headerlink" href="#wind-loss-attributes-for-wood-buildings" title="Permalink to this headline">¶</a></h3>
@@ -596,7 +595,7 @@ ELSEIF RoofShape=(Gable or Hip) &amp; RoofSlope &gt;= 0.33, SWR=no</p></td>
 </tbody>
 </table>
 <dl class="citation">
-<dt class="label" id="javeline19"><span class="brackets"><a class="fn-backref" href="#id2">Javeline19</a></span></dt>
+<dt class="label" id="javeline19"><span class="brackets"><a class="fn-backref" href="#id3">Javeline19</a></span></dt>
 <dd><p>Javeline, D., &amp; Kijewski-Correa, T. (2019). Coastal homeowners in a changing climate. Climatic Change, 152(2), 259-274.</p>
 </dd>
 <dt class="label" id="fema21"><span class="brackets"><a class="fn-backref" href="#id1">FEMA21</a></span></dt>

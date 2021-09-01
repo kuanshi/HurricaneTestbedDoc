@@ -127,7 +127,7 @@ Attribute: OccupancyClass
 The occupancy class attribute is also determined by CityBuilder using the occupancy class classifier 
 module in BRAILS. The occupancy classifier is also a convolutional neural network. This network trained 
 using 15,743 google street view images with labels derived from OpenStreetMaps and the NJDEP dataset in 
-the Atlantic County Testbed (see :ref:`lbl-testbed_AC_asset_description`).
+the `Atlantic County, NJ testbed Asset Description <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_description.html>`_.
 This classifier labels buildings as one of: RES1 (single family building), RES3 
 (multi-family building), COM1 (Commercial building). More details of the classifier can be found 
 `here <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/occupancyClassifier.html>`_.
@@ -224,24 +224,8 @@ the average of these dimensions.
    :width: 600
    
    Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.
-
-Two different approaches were explored in this testbed for populating the mean roof height for the inventory. 
-First method is built on the closed-form equation:
-
-.. math::
-
-   MeanRoofHt (ft) = NumberOfStories \times 12.0 + RoofSlope / 0.33 \times 6.0
-
-And the second method is based on the following AI technique. :numref:`mean_roof_ht_app` 
-shows the comparison between these two approaches.
-
-.. figure:: figure/MeanRoofHtApp.png
-   :name: mean_roof_ht_app
-   :align: center
-   :figclass: align-center
-   :width: 600
-
-   Comparison of MeanRoofHt between the two approaches.
+The MeanRoofHt is based on the following AI technique. :numref:`mean_roof_ht_app` 
+plots the predicted roof height versus the number of floors of the inventory.
 
 As in any single-image metrology application, extracting the building elevations from imagery requires:
 
@@ -276,23 +260,29 @@ dataset. The peak model performance was attained using the Adam optimizer at a l
 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world dimensions were 
 attained by use of edge detections performed on satellite images.
 
+.. figure:: figure/MeanRoofHtApp.png
+   :name: mean_roof_ht_app
+   :align: center
+   :figclass: align-center
+   :width: 400
+
+   Predicted MeanRoofHt versus number of floors.
+
 Attribute: RoofSlope
 `````````````````````
-First, RoofSlope is assigned based on RoofShape: if the RoofShape is "flat", a slope of 0.0 is assigned; 
-if RoofShape is "hip" or "gable", the roof slope is drawn from a uniform distribution between 1/12 and 1/3.
-
-Second, RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
+RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the "Attribute: MeanRoofHt" 
 section. Roof run is determined as half the smaller dimension of the building, as determined from 
-the dimensions of the building footprint. :numref:`mean_slope_app` shows the comparison between these two approaches.
+the dimensions of the building footprint. :numref:`mean_slope_app` shows the comparison between the 
+predicted roof slope and mean roof height.
 
 .. figure:: figure/RoofSlopeApp.png
    :name: mean_slope_app
    :align: center
    :figclass: align-center
-   :width: 600
+   :width: 400
 
-   Comparison of RoofSlope between the two approaches.
+   Predicted RoofSlope versus mean roof height.
 
 
 Phase III: Augmentation Using Third-Party Data, Site-specific Observations, and Existing Knowledge
