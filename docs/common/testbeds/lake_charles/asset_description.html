@@ -515,7 +515,7 @@ using 80% for training, 15% for validation, and 5% testing of the model. In orde
 convergence, initial weights of the model were set to model weights of the (pretrained) object detection
 model that, at the time, achieved state-of-the-art performance on the
 <a class="reference external" href="https://cocodataset.org/#download">2017 COCO Detection set</a>. For this
-specific implementation, the peak model performance was achieved using the Adam optimizer at a learning
+specific implementation, the peak model performance was achieved using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a> at a learning
 rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a> shows examples of the
 floor detections performed by the model.</p>
 <div class="align-center figure" id="num-stories-detection">
@@ -587,12 +587,15 @@ in an image. The segmentation model was trained using
 <a class="reference external" href="https://arxiv.org/abs/1706.05587">DeepLabV3 architecture on a ResNet-101 backbone</a>, pretrained on
 <a class="reference external" href="http://host.robots.ox.ac.uk/pascal/VOC/voc2012/">PASCAL VOC 2012 segmentation dataset</a>, using a
 facade segmentation dataset of 30,000 images supplemented with relevant portions of ADE20K segmentation
-dataset. The peak model performance was attained using the Adam optimizer at a learning rate of 0.001
+dataset. The peak model performance was attained using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a> at a learning rate of 0.001
 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world dimensions were
-attained by use of edge detections performed on satellite images.</p>
+attained by use of field of view and camera distance information collected for each street-level imagery.</p>
+<p><a class="reference internal" href="#mean-roof-ht-app"><span class="std std-numref">Fig. 3.2.2.8</span></a> shows a scatter plot of the AI predicted mean roof heights vs AI-predicted number of floors.
+A general trend observed in this plot is that the roof height increases with the number of floors,
+which is in line with the general intuition.</p>
 <div class="align-center figure" id="mean-roof-ht-app">
 <a class="reference internal image-reference" href="../../../_images/MeanRoofHtApp.png"><img alt="../../../_images/MeanRoofHtApp.png" src="../../../_images/MeanRoofHtApp.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.2.8 </span><span class="caption-text">Predicted MeanRoofHt versus number of floors.</span><a class="headerlink" href="#mean-roof-ht-app" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.2.8 </span><span class="caption-text">AI-predicted MeanRoofHt versus number of floors.</span><a class="headerlink" href="#mean-roof-ht-app" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="attribute-roofslope">
@@ -600,11 +603,11 @@ attained by use of edge detections performed on satellite images.</p>
 <p>RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the “Attribute: MeanRoofHt”
 section. Roof run is determined as half the smaller dimension of the building, as determined from
-the dimensions of the building footprint. <a class="reference internal" href="#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> shows the comparison between the
-predicted roof slope and mean roof height.</p>
+the dimensions of the building footprint. <a class="reference internal" href="#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> displays the AI-predicted mean roof height versus the
+AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.</p>
 <div class="align-center figure" id="mean-slope-app">
 <a class="reference internal image-reference" href="../../../_images/RoofSlopeApp.png"><img alt="../../../_images/RoofSlopeApp.png" src="../../../_images/RoofSlopeApp.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.2.9 </span><span class="caption-text">Predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#mean-slope-app" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.2.9 </span><span class="caption-text">AI-predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#mean-slope-app" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -617,7 +620,7 @@ engineering judgement. The following attributes are obtained or derived from thi
 <div class="section" id="attribute-dswii">
 <h3>Attribute: DSWII<a class="headerlink" href="#attribute-dswii" title="Permalink to this headline">¶</a></h3>
 <p>Design Wind Speed for Risk Category II construction in mph (ASCE 7-16), was obtained by queries to the
-<a class="reference external" href="https://hazards.atcouncil.org/">ATC Hazards by Location API</a> (<a class="reference internal" href="#atc20" id="id6"><span>[ATC20]</span></a>).</p>
+<a class="reference external" href="https://hazards.atcouncil.org/">ATC Hazards by Location API</a> (<a class="reference internal" href="#atc20" id="id7"><span>[ATC20]</span></a>).</p>
 </div>
 <div class="section" id="attribute-lulc">
 <h3>Attribute: LULC<a class="headerlink" href="#attribute-lulc" title="Permalink to this headline">¶</a></h3>
@@ -634,15 +637,15 @@ as shown in <a class="reference internal" href="#year-built-nsi"><span class="st
 <a class="reference internal image-reference" href="../../../_images/YearBuiltNSI.png"><img alt="../../../_images/YearBuiltNSI.png" src="../../../_images/YearBuiltNSI.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.1 </span><span class="caption-text">National Structure Inventory data points.</span><a class="headerlink" href="#year-built-nsi" title="Permalink to this image">¶</a></p>
 </div>
-<p>To address this issue, <a class="reference external" href="https://github.com/NHERI-SimCenter/SURF">SURF</a> (<a class="reference internal" href="#wang19" id="id8"><span>[Wang19]</span></a>) is employed to construct and train a neural
+<p>To address this issue, <a class="reference external" href="https://github.com/NHERI-SimCenter/SURF">SURF</a> (<a class="reference internal" href="#wang19" id="id9"><span>[Wang19]</span></a>) is employed to construct and train a neural
 network on the year built information from
 National Structure Inventory (NSI). The neural network is then used to predict the year built
 information for each building based on the spatial patterns it learned from the NSI dataset.
 The theory of using neural networks to learn the spatial patterns in data and to predict for
 missing values is detailed <a class="reference external" href="https://doi.org/10.1016/j.autcon.2020.103474">here</a>.
 The result is shown in <a class="reference internal" href="#year-built-comp"><span class="std std-numref">Fig. 3.2.3.2</span></a>.</p>
-<div class="align-center figure" id="year-built-comp" style="width: 600px">
-<img alt="../../../_images/YearBuiltComp.png" src="../../../_images/YearBuiltComp.png" />
+<div class="align-center figure" id="year-built-comp">
+<a class="reference internal image-reference" href="../../../_images/YearBuiltComp.png"><img alt="../../../_images/YearBuiltComp.png" src="../../../_images/YearBuiltComp.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.2 </span><span class="caption-text">Comparison of year built between NSI and SURF.</span><a class="headerlink" href="#year-built-comp" title="Permalink to this image">¶</a></p>
 </div>
 <p>In parallel to this exploration, <a class="reference external" href="https://www.zillow.com/">Zillow</a> also provides the year built information for
@@ -650,79 +653,43 @@ many of the residual buildings in the studied region.</p>
 <p>Similar to the implementation of NSI dataset, the 1182 data points of year built from Zillow are used to train a
 neural network, <a class="reference internal" href="#surf-yb-test"><span class="std std-numref">Fig. 3.2.3.3</span></a> shows the verification of the trained neural network (predicted vs. true values,
 Zillow dataset). More than <span class="math notranslate nohighlight">\(85%\)</span> buildings have prediction errors less than 20 years.</p>
-<div class="align-center figure" id="surf-yb-test" style="width: 700px">
-<img alt="../../../_images/SURF_YearBuiltTest.png" src="../../../_images/SURF_YearBuiltTest.png" />
+<div class="align-center figure" id="surf-yb-test">
+<a class="reference internal image-reference" href="../../../_images/SURF_YearBuiltTest.png"><img alt="../../../_images/SURF_YearBuiltTest.png" src="../../../_images/SURF_YearBuiltTest.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.3 </span><span class="caption-text">SURF-predicted vs. original year built from Zillow dataset.</span><a class="headerlink" href="#surf-yb-test" title="Permalink to this image">¶</a></p>
 </div>
 <p>The neural network is used to predict the year built information for the entire Lake Charles inventory. <a class="reference internal" href="#surf-yb-comp"><span class="std std-numref">Fig. 3.2.3.4</span></a>
 contrast the resulting SURF-Zillow and the SURF-NSI year built spatial distribution. The difference in year built is relatively
 small for the downtown buildings (~1960s) but increases at the bounds with a maximum of 80 years.</p>
-<div class="align-center figure" id="surf-yb-comp" style="width: 1200px">
-<img alt="../../../_images/YearBuilt_NSI_SURFZS.png" src="../../../_images/YearBuilt_NSI_SURFZS.png" />
+<div class="align-center figure" id="surf-yb-comp">
+<a class="reference internal image-reference" href="../../../_images/YearBuilt_NSI_SURFZS.png"><img alt="../../../_images/YearBuilt_NSI_SURFZS.png" src="../../../_images/YearBuilt_NSI_SURFZS.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.4 </span><span class="caption-text">SURF-NSI vs. SURF-Zillow: year built information.</span><a class="headerlink" href="#surf-yb-comp" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="attribute-garage">
 <h3>Attribute: Garage<a class="headerlink" href="#attribute-garage" title="Permalink to this headline">¶</a></h3>
-<p>The garage type is assumed based on HAZUS Inventory Technical Manual and Statistics of 100 randomly
-selected residential buildings in Lake Charles. The random selection is performed by the sample function
-provided by the pandas module of python. The locations of these random buildings are plotted as dots in
-<a class="reference internal" href="#garage-loc"><span class="std std-numref">Fig. 3.2.3.5</span></a>.</p>
-<div class="align-center figure" id="garage-loc">
-<a class="reference internal image-reference" href="../../../_images/GarageLoc.png"><img alt="../../../_images/GarageLoc.png" src="../../../_images/GarageLoc.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.3.5 </span><span class="caption-text">Locations of 100 randomly selected single-family residential buildings.</span><a class="headerlink" href="#garage-loc" title="Permalink to this image">¶</a></p>
-</div>
-<p>We downloaded the street view images for each building from Google Maps and manually classified the images
-into the following attached garage (AG) features: None, AG-open, AG-standard, Carport. We didn’t find any detached garages in
-the 100 samples. Examples of different types can be found in <a class="reference internal" href="#garage-eg"><span class="std std-numref">Fig. 3.2.3.6</span></a>.
-All street view images can be found <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/table/garage100_lakecharles.csv">here</a>
-Note that AG-open assumes that the garage shares the same primary roof as the home,
-whereas a carport has its own roof system.
-Detailed statistics can be found in <a class="reference internal" href="#tab-garage-statistics"><span class="std std-numref">Table 3.2.3.1</span></a>.
-A csv file of coordinates and classifications of each building can be found
-<a class="reference external" href="https://berkeley.app.box.com/file/794299957489">here</a>.</p>
-<span id="tab-garage-statistics"></span><table class="docutils align-center" id="id14">
-<caption><span class="caption-number">Table 3.2.3.1 </span><span class="caption-text">Statistics of 100 randomly sampled garages in Lake Charles.</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Garage type</p></th>
-<th class="head"><p>Percentage</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>None</p></td>
-<td><p>61%</p></td>
-<td><p>No garage observed in the image</p></td>
-</tr>
-<tr class="row-odd"><td><p>AG-open</p></td>
-<td><p>24%</p></td>
-<td><p>Attached garage with openings</p></td>
-</tr>
-<tr class="row-even"><td><p>AG-standard</p></td>
-<td><p>8%</p></td>
-<td><p>Standard attached garage</p></td>
-</tr>
-<tr class="row-odd"><td><p>Carport</p></td>
-<td><p>7%</p></td>
-<td><p>Carports</p></td>
-</tr>
-</tbody>
-</table>
+<p>A garage detector utilizing EfficienDet object detection architecture was trained to identify the
+existence of attached garage and carport structures in street-level imagery of the buildings
+included in the Lake Charles inventory. The model was trained on the
+<a class="reference external" href="https://arxiv.org/abs/1911.09070">EfficientDet-D4 architecture</a> with
+dataset of 1,887 images, using 80% for training, 10% for validation, and 10% for testing of the model.
+Similar to the number of floors detector model, initial weights of this model were set to model weights
+of the (pretrained) object detection model that, at the time, achieved state-of-the-art performance on
+the <a class="reference external" href="https://cocodataset.org/#download">2017 COCO Detection set</a>. For this task, the peak detector
+performance was attained using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a>
+at a learning rate of 0.0001 (batch size: 2) after 25 epochs. <a class="reference internal" href="#garage-eg"><span class="std std-numref">Fig. 3.2.3.5</span></a> shows sample
+floor detections performed by the model.</p>
 <div class="align-center figure" id="garage-eg">
-<a class="reference internal image-reference" href="../../../_images/GarageExample.png"><img alt="../../../_images/GarageExample.png" src="../../../_images/GarageExample.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.3.6 </span><span class="caption-text">Examples of different types garages.</span><a class="headerlink" href="#garage-eg" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../_images/GarageDetection.png"><img alt="../../../_images/GarageDetection.png" src="../../../_images/GarageDetection.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.5 </span><span class="caption-text">Sample detections of the garage detection model showing successful identification of attached garages and carports.</span><a class="headerlink" href="#garage-eg" title="Permalink to this image">¶</a></p>
 </div>
-<p>The Table 5-12 in HAZUS Inventory Technical Manual provides the statistics of garages in the south
-of the United States. It shows that 8% single-family residential buildings have carports, 35% have
-no garages. In our validation dataset, there are 7% carports which is close to HAZUS Inventory
-Technical Manual (<a class="reference internal" href="#fema21" id="id12"><span>[FEMA21]</span></a>). But we notice there are as high as 61% that have no garages. As a result,
-we used the statistics in <a class="reference internal" href="#tab-garage-statistics"><span class="std std-numref">Table 3.2.3.1</span></a> to generate values for garages in the
-testbed.</p>
+<p>On the test set, the model achieves an accuracy of 92%. <a class="reference internal" href="#garage-cm"><span class="std std-numref">Fig. 3.2.3.6</span></a> shows the confusion matrix of the
+model classifications on the test set. On a seperate test set consisting of images from only Lake Charles,
+model performance is lower at 71%. <a class="reference internal" href="#garage-cm"><span class="std std-numref">Fig. 3.2.3.6</span></a> (b) shows the confusion matrix for model predictions on this
+latter dataset.</p>
+<div class="align-center figure" id="garage-cm">
+<a class="reference internal image-reference" href="../../../_images/GarageConfusionMatrix.png"><img alt="../../../_images/GarageConfusionMatrix.png" src="../../../_images/GarageConfusionMatrix.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.6 </span><span class="caption-text">Confusion matrices for the garage predictor used in this study. The matrix on the left (a) shows the model’s prediction accuracy when tested on a set of 189 images randomly selected from CA and NJ. The matrix on the right (b) depicts the model accuracy on images selected from the Lake Charles area.</span><a class="headerlink" href="#garage-cm" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="attribute-buildingtype">
 <h3>Attribute: BuildingType<a class="headerlink" href="#attribute-buildingtype" title="Permalink to this headline">¶</a></h3>
@@ -790,7 +757,7 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>128.7</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>-1</p></td>
+<td><p>0</p></td>
 <td><p>1</p></td>
 <td><p>1962</p></td>
 <td><p>0.25</p></td>
@@ -1113,7 +1080,7 @@ The entire inventory can be downloaded <a class="reference external" href="https
 <td><p>129.2</p></td>
 <td><p>Wood</p></td>
 <td><p>Above</p></td>
-<td><p>-1</p></td>
+<td><p>0</p></td>
 <td><p>1</p></td>
 <td><p>1959</p></td>
 <td><p>0.25</p></td>
@@ -1123,16 +1090,16 @@ The entire inventory can be downloaded <a class="reference external" href="https
 </tbody>
 </table>
 <dl class="citation">
-<dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id6">ATC20</a></span></dt>
+<dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id7">ATC20</a></span></dt>
 <dd><p>ATC (2020b), ATC Hazards By Location, <a class="reference external" href="https://hazards.atcouncil.org/">https://hazards.atcouncil.org/</a>, Applied Technology Council, Redwood City, CA.</p>
 </dd>
-<dt class="label" id="wang19"><span class="brackets"><a class="fn-backref" href="#id8">Wang19</a></span></dt>
+<dt class="label" id="wang19"><span class="brackets"><a class="fn-backref" href="#id9">Wang19</a></span></dt>
 <dd><p>Wang C. (2019), NHERI-SimCenter/SURF: v0.2.0 (Version v0.2.0). Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.3463676">http://doi.org/10.5281/zenodo.3463676</a></p>
 </dd>
 <dt class="label" id="microsoft18"><span class="brackets"><a class="fn-backref" href="#id2">Microsoft18</a></span></dt>
 <dd><p>Microsoft (2018), US Building Footprints. <a class="reference external" href="https://github.com/Microsoft/USBuildingFootprints">https://github.com/Microsoft/USBuildingFootprints</a></p>
 </dd>
-<dt class="label" id="fema21"><span class="brackets"><a class="fn-backref" href="#id12">FEMA21</a></span></dt>
+<dt class="label" id="fema21"><span class="brackets">FEMA21</span></dt>
 <dd><p>FEMA (2021), Hazus Inventory Technical Manual. Hazus 4.2 Service Pack 3. Federal Emergency Management Agency, Washington D.C.</p>
 </dd>
 </dl>
