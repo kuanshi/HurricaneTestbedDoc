@@ -58,14 +58,23 @@ of this application and associated SimCenter software as listed in :numref:`soft
 
    * - Application
      - Version
+     - DOI/Release
    * - R2D
      - v1.1.0
+     - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5033626.svg
+          :target: https://doi.org/10.5281/zenodo.5033626
    * - SimCenterBackendApplications
      - v2.3.0
+     - `Github Release <https://github.com/NHERI-SimCenter/SimCenterBackendApplications/releases/tag/V2.3.0>`_
    * - pelicun
      - v2.5
+     - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.4408588.svg
+          :target: https://doi.org/10.5281/zenodo.4408588
+   * - AssetRepresentationRulesets
+     - v1.0
+     - To be released
 
-.. list-table:: Versions of AI application (BRAILS) and models Used in the Current Version of Testbed
+.. list-table:: Versions of AI application (`BRAILS <https://doi.org/10.5281/zenodo.4570554>`_) and models Used in the Current Version of Testbed
    :name: brails_version_LC
    :header-rows: 1
    :align: center
