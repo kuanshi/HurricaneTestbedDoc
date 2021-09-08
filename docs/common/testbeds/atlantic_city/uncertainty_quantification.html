@@ -145,7 +145,7 @@
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback and Data Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback_request.html">2.13. Feedback</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../lake_charles/index.html">3. Lake Charles, LA</a></li>
@@ -249,7 +249,7 @@ indicates that roughly 45% of house owners were likely to apply shutters on some
 asset representation (ruleset), a pre-2000 house has 45% probability to be assigned to have shutters, and 55%
 probability to be assigned with no shutter. Note that the resulting HAZUS building type is deterministic for
 each individual sample while the uncertainty induced by different possible attribute options are evaluted
-via multiple random realizations. <a class="reference internal" href="#uq-rulesets"><span class="std std-numref">Table 2.7.1.1</span></a> summarizes the three building attributes whose values
+via multiple random realizations. <a class="reference internal" href="../lake_charles/uncertainty_quantification.html#uq-rulesets"><span class="std std-numref">Table 3.7.1.1</span></a> summarizes the three building attributes whose values
 are randomly generated in this testbed.</p>
 <table class="docutils align-center" id="uq-rulesets">
 <caption><span class="caption-number">Table 2.7.1.1 </span><span class="caption-text">Random sampling in the rulesets.</span><a class="headerlink" href="#uq-rulesets" title="Permalink to this table">¶</a></caption>
@@ -294,7 +294,7 @@ for the boundary layer winds (<a class="reference internal" href="hazard_charact
 These multiple realizations are then randomly sampled and used as the EDP in simulating the damage and loss
 assessment (more details in the next section).</p>
 <p>For the aleatory uncertainty, this workflow adapts a nearest-neighbors method to propagate uncertainty through the workflow, as
-illustrated in <a class="reference internal" href="#nearestneighbors"><span class="std std-numref">Fig. 2.7.2.1</span></a>. The peak wind speed and storm surge values are simulated
+illustrated in <a class="reference internal" href="../sf_bay_area/uncertainty_quantification.html#nearestneighbors"><span class="std std-numref">Fig. 1.6.1.1</span></a>. The peak wind speed and storm surge values are simulated
 on a prescribed grid (wind fields) or pre-selected save points (storm surge) (blue round dots), and for each selected asset location (red square dot),
 the workflow  randomly selects 5 samples of
 the intensity measure (wind speed and storm surge) from the 4 nearest neighbors (yellow circles). Note this random
