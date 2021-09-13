@@ -312,92 +312,97 @@ model are available on <a class="reference external" href="https://doi.org/10.17
 <td><p>Integer (4-digit)</p></td>
 <td><p>StreetView</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>DSWII</strong></p></td>
+<tr class="row-odd"><td><p><strong>DWSII</strong></p></td>
 <td><p>DesignWindSpeed II in mph</p></td>
 <td><p>Floating point number</p></td>
 <td><p>ATC API (ASCE 7)</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>AvgJanTemp</strong></p></td>
+<tr class="row-even"><td><p><strong>FloodZone</strong></p></td>
+<td><p>FEMA FloodZone designation as defined by Flood Insurance Rate Maps</p></td>
+<td><p><a class="reference external" href="https://snmapmod.snco.us/fmm/document/fema-flood-zone-definitions.pdf">FEMA designation</a></p></td>
+<td><p>User specified</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>AvgJanTemp</strong></p></td>
 <td><p>Average temperature in January below or above critial value of 25F.</p></td>
 <td><p>Choices: Above, Below</p></td>
 <td><p>User specified</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>RoofShape</strong></p></td>
+<tr class="row-even"><td><p><strong>RoofShape</strong></p></td>
 <td><p>Roof classified into equivalent hip, gable or flat</p></td>
 <td><p>Choices: Hip, Gable, Flat</p></td>
 <td><p>Aerial Imagery</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>RoofSlope</strong></p></td>
+<tr class="row-odd"><td><p><strong>RoofSlope</strong></p></td>
 <td><p>Slope of roof (ratio of rise/vertical over run/horizontal dimensions) covering the majority of the dwelling.</p></td>
 <td><p>Floating point number</p></td>
 <td><p>Aerial + StreetView Imagery</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>MeanRoofHt</strong></p></td>
+<tr class="row-even"><td><p><strong>MeanRoofHt</strong></p></td>
 <td><p>Mean height of roof system in ft</p></td>
 <td><p>Floating point number</p></td>
 <td><p>Aerial + StreetView Imagery</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Garage</strong></p></td>
+<tr class="row-odd"><td><p><strong>Garage</strong></p></td>
 <td><p>Assessor-provided type of garage.</p></td>
 <td><p>Choices: 0, 1</p></td>
 <td><p>StreetView</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>LULC</strong></p></td>
+<tr class="row-even"><td><p><strong>LULC</strong></p></td>
 <td><p>Land Use Land Cover class</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/LULC.json">LULC conversion</a></p></td>
 <td><p><a class="reference external" href="http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html">WebGIS</a></p></td>
 </tr>
-<tr class="row-even"><td><p>AnalysisDefault</p></td>
+<tr class="row-odd"><td><p><strong>AnalysisDefault</strong></p></td>
 <td><p>Defines the default level of fidelity for analysis</p></td>
 <td><p>Choices: 1, 2, 3</p></td>
 <td><p>User defined</p></td>
 </tr>
-<tr class="row-odd"><td><p>HazusClass-W</p></td>
+<tr class="row-even"><td><p><strong>HazusClass-W</strong></p></td>
 <td><p>Hazus building classes as defined for wind hazards</p></td>
 <td><p>CHOICES: WSF1-2, WMUH1-3</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
-<tr class="row-even"><td><p>HPR</p></td>
+<tr class="row-odd"><td><p><strong>HPR</strong></p></td>
 <td><p>Hazard Prone Regions for Hazus wind vulnerability assignments for WSF1-2</p></td>
 <td><p>Choices: yes, no</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
-<tr class="row-odd"><td><p>WBD</p></td>
+<tr class="row-even"><td><p><strong>WBD</strong></p></td>
 <td><p>Wind Borne Debris for Hazus wind vulnerability assignments for WSF1-2</p></td>
 <td><p>Choices: yes, no</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
-<tr class="row-even"><td><p>SWR</p></td>
+<tr class="row-odd"><td><p><strong>SWR</strong></p></td>
 <td><p>Secondary Water Resistance for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3</p></td>
 <td><p>Choices: yes, no</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
-<tr class="row-odd"><td><p>RoofCvr</p></td>
+<tr class="row-even"><td><p><strong>RoofCvr</strong></p></td>
 <td><p>Roof cover for Hazus wind vulnerability assignments for WMUH1-3</p></td>
 <td><p>Choices: N/A, BUR, SPM</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
-<tr class="row-even"><td><p>RoofQual</p></td>
+<tr class="row-odd"><td><p><strong>RoofQual</strong></p></td>
 <td><p>Roof cover quality for Hazus wind vulnerability assignments for WMUH1-3</p></td>
 <td><p>Choices: N/A, poor, good</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
-<tr class="row-odd"><td><p>RDA-Wood</p></td>
+<tr class="row-even"><td><p><strong>RDA-Wood</strong></p></td>
 <td><p>Roof Deck Attachment for wood for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3</p></td>
 <td><p>Choices: A, B, C, D</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
-<tr class="row-even"><td><p>R2WC</p></td>
+<tr class="row-odd"><td><p><strong>R2WC</strong></p></td>
 <td><p>Roof to Wall Connection for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3</p></td>
 <td><p>Choices: strap, toe-nail</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
-<tr class="row-odd"><td><p>shutters</p></td>
+<tr class="row-even"><td><p><strong>shutters</strong></p></td>
 <td><p>Window opening protection for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3</p></td>
 <td><p>Choices: yes, no</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
-<tr class="row-even"><td><p>Agarage</p></td>
+<tr class="row-odd"><td><p><strong>Agarage</strong></p></td>
 <td><p>Attached garage for Hazus wind vulnerability assignments for WSF1-2</p></td>
 <td><p>Choices: none, SFBC 1994, standard, weak</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
@@ -409,7 +414,7 @@ model are available on <a class="reference external" href="https://doi.org/10.17
 <h2><span class="section-number">3.2.2. </span>Phase II: Inventory Generation<a class="headerlink" href="#phase-ii-inventory-generation" title="Permalink to this headline">¶</a></h2>
 <p>This section describes how the large-scale building inventory was constructed for Lake Charles using
 a phased approach that used machine learning, computer vision algorithm and data distributions to
-generate all attributes (attributes in bold letters in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>) required for
+generate all attributes required for
 the corresponding loss assessment. It is emphasized that the intent is to demonstrate how an
 inventory could be constructed and not to address potential errors, omissions or inaccuracies in
 the source data, i.e., source data are assumed to be accurate and no additional quality assurance

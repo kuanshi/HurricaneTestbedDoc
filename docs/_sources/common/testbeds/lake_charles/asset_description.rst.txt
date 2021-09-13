@@ -34,7 +34,7 @@ Phase II: Inventory Generation
 
 This section describes how the large-scale building inventory was constructed for Lake Charles using 
 a phased approach that used machine learning, computer vision algorithm and data distributions to 
-generate all attributes (attributes in bold letters in :numref:`tab-bldg_inv_data_model_lc`) required for 
+generate all attributes required for 
 the corresponding loss assessment. It is emphasized that the intent is to demonstrate how an 
 inventory could be constructed and not to address potential errors, omissions or inaccuracies in 
 the source data, i.e., source data are assumed to be accurate and no additional quality assurance 
