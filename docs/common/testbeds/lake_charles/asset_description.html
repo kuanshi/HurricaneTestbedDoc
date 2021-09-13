@@ -138,7 +138,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#phase-iii-augmentation-using-third-party-data-site-specific-observations-and-existing-knowledge">3.2.3. Phase III: Augmentation Using Third-Party Data, Site-specific Observations, and Existing Knowledge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#attribute-dswii">Attribute: DSWII</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attribute-dws-ii">Attribute: DWS II</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#attribute-lulc">Attribute: LULC</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#attribute-yearbuilt">Attribute: YearBuilt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#attribute-garage">Attribute: Garage</a></li>
@@ -258,7 +258,9 @@ data model. This Building Inventory data model presented in <a class="reference 
 provides a set of attributes that will be assigned to each asset to form the building inventory file
 serving as input to the workflow. For each attribute a
 row in the table is provided. Each row has a number of columns: the attribute name, description,
-format (alphanumeric, floating point number, etc.), the data source used to define that attribute.</p>
+format (alphanumeric, floating point number, etc.), the data source used to define that attribute.
+An expanded version of <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a> with the full details of this data
+model are available on <a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">DesignSafe PRJ-3207</a>.</p>
 <table class="colwidths-given docutils align-center" id="tab-bldg-inv-data-model-lc">
 <caption><span class="caption-number">Table 3.2.1.1 </span><span class="caption-text">Building inventory data model, detailed for Lake Charles Inventory.</span><a class="headerlink" href="#tab-bldg-inv-data-model-lc" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -411,12 +413,7 @@ generate all attributes (attributes in bold letters in <a class="reference inter
 the corresponding loss assessment. It is emphasized that the intent is to demonstrate how an
 inventory could be constructed and not to address potential errors, omissions or inaccuracies in
 the source data, i.e., source data are assumed to be accurate and no additional quality assurance
-was conducted outside of addressing glaring omissions or errors. In the process of assembling this
-inventory, a number of scripts were developed to facilitate the actions described in the following
-sections. While these scripts were not intended to be production-quality software and were written
-assuming a particular data format/endpoint which may change over time, they do provide an example
-of the type of operations necessary to assemble a building inventory and thus will be made available
-at GitHub as an illustrative example.</p>
+was conducted outside of addressing glaring omissions or errors.</p>
 <p>For each of the attributes identified in <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>,
 a description of the attribute and information on how the data was identified and validated is presented.</p>
 <div class="section" id="ai-ml-techniques-combined-with-computer-vision">
@@ -495,7 +492,9 @@ validation was documented <a class="reference external" href="https://nheri-simc
 The confusion matrix, which presents visually the predictions versus actual data from the original
 293 image validation set, is as shown in <a class="reference internal" href="#occ-class-vali"><span class="std std-numref">Fig. 3.2.2.3</span></a> for OpenStreetMaps (see plot a), and
 the NJDEP dataset (see plot b). <a class="reference internal" href="#occ-class-pred"><span class="std std-numref">Fig. 3.2.2.4</span></a> displays the BRAILS occupancy predictions for
-Lake Charles for a selected region.</p>
+Lake Charles for a selected region. Note that only those classified as RES1 or RES3 are retained in
+this testbed focused on residential construction (and the COM1 is assigned to the buildings that are classified
+other than the two residential classes by BRAILS).</p>
 <div class="align-center figure" id="occ-class-vali">
 <a class="reference internal image-reference" href="../../../_images/OccupancyClassVali.png"><img alt="../../../_images/OccupancyClassVali.png" src="../../../_images/OccupancyClassVali.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.2.3 </span><span class="caption-text">Validation of BRAILS predicted occupancy classes to OpenStreetMap and NJDEP.</span><a class="headerlink" href="#occ-class-vali" title="Permalink to this image">¶</a></p>
@@ -547,7 +546,7 @@ testbed), was utilized.</p>
 </div>
 </div>
 <div class="section" id="attribute-meanroofht">
-<h4>Attribute: MeanRoofHt<a class="headerlink" href="#attribute-meanroofht" title="Permalink to this headline">¶</a></h4>
+<span id="lbl-testbed-lc-asset-description-meanroofht"></span><h4>Attribute: MeanRoofHt<a class="headerlink" href="#attribute-meanroofht" title="Permalink to this headline">¶</a></h4>
 <p>The elevation of the bottom plane of the roof (lowest edge of roof line) and elevation of the roof
 (peak of gable or apex of hip) are estimated with respect to grade (in feet) from street-level imagery.
 These geometric properties are defined visually for common residential coastal typologies in
@@ -601,7 +600,8 @@ which is in line with the general intuition.</p>
 <div class="section" id="attribute-roofslope">
 <h4>Attribute: RoofSlope<a class="headerlink" href="#attribute-roofslope" title="Permalink to this headline">¶</a></h4>
 <p>RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained
-by determining the difference between the bottom plane and apex elevations of the roof as defined in the “Attribute: MeanRoofHt”
+by determining the difference between the bottom plane and apex elevations of the roof as defined in the
+<a class="reference internal" href="#lbl-testbed-lc-asset-description-meanroofht"><span class="std std-ref">Attribute: MeanRoofHt</span></a>
 section. Roof run is determined as half the smaller dimension of the building, as determined from
 the dimensions of the building footprint. <a class="reference internal" href="#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> displays the AI-predicted mean roof height versus the
 AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.</p>
@@ -617,8 +617,8 @@ AI-precited roof pitch ratios. As expected, very little correlation between thes
 <p>The AI-generated building inventory is further augmented with multiple sources of information, including the
 third-party datasets, site-specific statistics summarized from observations, and existing knowledge and
 engineering judgement. The following attributes are obtained or derived from third-party data.</p>
-<div class="section" id="attribute-dswii">
-<h3>Attribute: DSWII<a class="headerlink" href="#attribute-dswii" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="attribute-dws-ii">
+<h3>Attribute: DWS II<a class="headerlink" href="#attribute-dws-ii" title="Permalink to this headline">¶</a></h3>
 <p>Design Wind Speed for Risk Category II construction in mph (ASCE 7-16), was obtained by queries to the
 <a class="reference external" href="https://hazards.atcouncil.org/">ATC Hazards by Location API</a> (<a class="reference internal" href="#atc20" id="id7"><span>[ATC20]</span></a>).</p>
 </div>
@@ -659,7 +659,9 @@ Zillow dataset). More than <span class="math notranslate nohighlight">\(85%\)</s
 </div>
 <p>The neural network is used to predict the year built information for the entire Lake Charles inventory. <a class="reference internal" href="#surf-yb-comp"><span class="std std-numref">Fig. 3.2.3.4</span></a>
 contrast the resulting SURF-Zillow and the SURF-NSI year built spatial distribution. The difference in year built is relatively
-small for the downtown buildings (~1960s) but increases at the bounds with a maximum of 80 years.</p>
+small for the downtown buildings (~1960s) but increases at the bounds with a maximum of 80 years.
+The Zillow-trained classifier is undergoing continued improvements and will be released with the next version of this testbed.
+The current version of the testbed will thus use the NSI data as the basis for the Year Built Attribute</p>
 <div class="align-center figure" id="surf-yb-comp">
 <a class="reference internal image-reference" href="../../../_images/YearBuilt_NSI_SURFZS.png"><img alt="../../../_images/YearBuilt_NSI_SURFZS.png" src="../../../_images/YearBuilt_NSI_SURFZS.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.4 </span><span class="caption-text">SURF-NSI vs. SURF-Zillow: year built information.</span><a class="headerlink" href="#surf-yb-comp" title="Permalink to this image">¶</a></p>
@@ -669,18 +671,19 @@ small for the downtown buildings (~1960s) but increases at the bounds with a max
 <h3>Attribute: Garage<a class="headerlink" href="#attribute-garage" title="Permalink to this headline">¶</a></h3>
 <p>A garage detector utilizing EfficienDet object detection architecture was trained to identify the
 existence of attached garage and carport structures in street-level imagery of the buildings
-included in the Lake Charles inventory. The model was trained on the
-<a class="reference external" href="https://arxiv.org/abs/1911.09070">EfficientDet-D4 architecture</a> with
+included in the Lake Charles inventory. Properties are either classified as having an attached garage
+or not having an attached garage (which includes both detached garages and homes with no garage)
+The model was trained on the <a class="reference external" href="https://arxiv.org/abs/1911.09070">EfficientDet-D4 architecture</a> with
 dataset of 1,887 images, using 80% for training, 10% for validation, and 10% for testing of the model.
 Similar to the number of floors detector model, initial weights of this model were set to model weights
 of the (pretrained) object detection model that, at the time, achieved state-of-the-art performance on
 the <a class="reference external" href="https://cocodataset.org/#download">2017 COCO Detection set</a>. For this task, the peak detector
 performance was attained using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a>
 at a learning rate of 0.0001 (batch size: 2) after 25 epochs. <a class="reference internal" href="#garage-eg"><span class="std std-numref">Fig. 3.2.3.5</span></a> shows sample
-floor detections performed by the model.</p>
+garage detections performed by the model.</p>
 <div class="align-center figure" id="garage-eg">
 <a class="reference internal image-reference" href="../../../_images/GarageDetection.png"><img alt="../../../_images/GarageDetection.png" src="../../../_images/GarageDetection.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.3.5 </span><span class="caption-text">Sample detections of the garage detection model showing successful identification of attached garages and carports.</span><a class="headerlink" href="#garage-eg" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.5 </span><span class="caption-text">Samples of the garage detection model showing successful identification of attached garages and carports.</span><a class="headerlink" href="#garage-eg" title="Permalink to this image">¶</a></p>
 </div>
 <p>On the test set, the model achieves an accuracy of 92%. <a class="reference internal" href="#garage-cm"><span class="std std-numref">Fig. 3.2.3.6</span></a> shows the confusion matrix of the
 model classifications on the test set. On a seperate test set consisting of images from only Lake Charles,
@@ -695,13 +698,13 @@ latter dataset.</p>
 <h3>Attribute: BuildingType<a class="headerlink" href="#attribute-buildingtype" title="Permalink to this headline">¶</a></h3>
 <p>Based on information found in the National Structure Inventory, 89% of residential buildings
 (single-family and multi-family) are wood, the rest are masonry. In the analysis, we conservatively
-assume all residential buildings are wood. Referring <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>, we used
-“Above” for the buildings in the studied inventory.</p>
+assume all residential buildings are wood.</p>
 </div>
 <div class="section" id="attribute-avgjantemp">
 <h3>Attribute: AvgJanTemp<a class="headerlink" href="#attribute-avgjantemp" title="Permalink to this headline">¶</a></h3>
 <p>The average temperature in Lake Charles in January is above the critical value of 25F,
-based on NOAA average daily temperature.</p>
+based on NOAA average daily temperature. Referring <a class="reference internal" href="#tab-bldg-inv-data-model-lc"><span class="std std-numref">Table 3.2.1.1</span></a>, we used
+“Above” for the buildings in the studied inventory.</p>
 </div>
 </div>
 <div class="section" id="populated-inventories">

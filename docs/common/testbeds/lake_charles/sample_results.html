@@ -269,7 +269,7 @@ roughness (i.e., Terrain), roof shape, number of stories, and occupancy class.</
 <td><p>Longitude</p></td>
 <td><p>Latitude</p></td>
 <td><p>Terrain</p></td>
-<td><p>DSWII</p></td>
+<td><p>DWSII</p></td>
 <td><p>BuildingType</p></td>
 <td><p>OccupancyClass</p></td>
 <td><p>AvgJanTemp</p></td>
@@ -630,7 +630,21 @@ roughness (i.e., Terrain), roof shape, number of stories, and occupancy class.</
 <h2><span class="section-number">3.9.2. </span>Hand Calculation<a class="headerlink" href="#hand-calculation" title="Permalink to this headline">¶</a></h2>
 <p>Hand calculations of wind loss ratios are conducted using the
 input building information and intensity measures for the sampled buildings.
-<a class="reference internal" href="#hand-calc"><span class="std std-numref">Fig. 3.9.2.1</span></a> compares the hand-calculated loss ratios and the simulated
+Note that there are two major processes in the damage and loss assessment:
+(1) translating the building inventory to corresponding HAZUS building classes
+and (2) estimating the damage and loss given the HAZUS building class and the
+intensity measure (i.e., PWS in this testbed) for each building.
+The first process is addressed by the
+<a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/tests/test_auto_HU_LA.py">pytest module</a>
+in the <a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0">AssetRepresentationRulesets</a>.
+The second process is the addressed by this section with key steps:</p>
+<ol class="arabic simple">
+<li><p>Mapping the building inventory to HAZUS building classes using the <a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0">AssetRepresentationRulesets</a></p></li>
+<li><p>Fetching the individual damage fragilities and loss ratios for each building given its HAZUS building class</p></li>
+<li><p>Sampling the PWS from nearby grid sites</p></li>
+<li><p>Evaluating the damage states and average loss ratio given the damage and loss functions as well as the sampled PWS</p></li>
+</ol>
+<p>Following these steps, <a class="reference internal" href="#hand-calc"><span class="std std-numref">Fig. 3.9.2.1</span></a> compares the hand-calculated loss ratios and the simulated
 results, which are in good agreement.</p>
 <div class="align-center figure" id="hand-calc">
 <a class="reference internal image-reference" href="../../../_images/SimuVSHandCalc1.png"><img alt="../../../_images/SimuVSHandCalc1.png" src="../../../_images/SimuVSHandCalc1.png" style="width: 300px;" /></a>

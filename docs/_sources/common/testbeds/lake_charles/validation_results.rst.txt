@@ -4,23 +4,25 @@
 Validation Results
 **************************
 
-This section discusses damage and loss results from three comparative and validation studies with different emphases.
-The :ref:`lbl-testbed_LC_surf-zillow_year_built_results` explores utilizing year built based on two data resources 
-(NSI and Zillow). As discussed in :ref:`lbl-testbed_LC_asset_description`, the Zillow-based model tends to predict 
-higher year predictions (more recent constructions) than the NSI-based model, especially for the south bound of the 
-city. This is reflected by the fact that Zillow-based damage and loss in that region is lower than the NSI-based results.
-The :ref:`lbl-testbed_LC_validation_steer` contrasts the HAZUS-based damage states versus the visual-inspection damage 
-estimation by StEER and explores influence of uncertainty in building attributes and peak wind speed. Several notable 
-trends between building damage and building attribute type will be discussed and reasoned.
-The :ref:`lbl-testbed_LC_validation_fema` focuses on validating the testbed damage estimation with available data 
-(573 overlapped buildings) found in FEMA Historical Damage Assessment Database. The testbed results are found to
-be slightly overestimated on the damage for the least damage state (DS-0) and suggest future investigations are still 
-needed.
+This section discusses damage and loss results from three comparative and validation studies with different emphases:
+
+#. The :ref:`lbl-testbed_LC_surf-zillow_year_built_results` first explores the implications of utilizing year built based on two data resources 
+   (NSI and Zillow). As discussed in :ref:`lbl-testbed_LC_asset_description`, the Zillow-based model tends to predict 
+   higher year predictions (more recent constructions) than the NSI-based model, especially for the southern edge on the 
+   city. This is reflected by the fact that Zillow-based damage and loss in that region is lower than the NSI-based results.
+   A parametric study is also conducted to further illustrate and rationalize the influence from year built in the testbed.
+#. The :ref:`lbl-testbed_LC_validation_steer` contrasts the testbeds damage estimates versus the visually-assigned damage 
+   states from StEER members and explores influence of uncertainty in building attributes and peak wind speed. Several notable 
+   trends between building damage and building attribute type will be discussed and reasoned.
+#. The :ref:`lbl-testbed_LC_validation_fema` focuses on validating the testbed damage estimates against the FEMA
+   Historical Damage Assessment Database (573 records associated with this testbed). The testbed results are found to
+   slightly overestimate the damage for the undamaged state (DS-0) which suggests that future investigations are still 
+   needed given uncertainties around the methodology used to generate the FEMA data.
 
 .. _lbl-testbed_LC_surf-zillow_year_built_results:
 
-SURF-Zillow Year Built Results
-=============================
+Influence of Year Built (Zillow vs. NSI and Parametric Study)
+==============================================================
 
 The year built is a critical attribute as it triggers attribute assignments by various rulesets. 
 As discussed in :ref:`lbl-testbed_LC_asset_description`, different sources of data were used 
@@ -30,8 +32,9 @@ information for many of the residual buildings in the studied region. The implic
 sources of year built information to project damage is explored in :numref:`ds_zillow_comp`, noting the 
 contrast map that depicts the difference between the damage state projected by SURF-NSI and that projected 
 by Zillow. Note that the difference is not prominent in downtown Lake Charles, although divergence is noted 
-southwest of the city where the Zillow set predicts relatively lower damage states. Provided in 
-:numref:`PDS_cdf` are the the CDF distributions of probability of exceeding DS-2 and DS-3. 
+southwest of the city where the Zillow set predicts relatively lower damage states. Compared in 
+:numref:`PDS_cdf` are the the CDF distributions of expected damage states (NSI vs. Zillow) as well as the 
+probability of exceeding DS-2 and DS-3.  
 
 .. figure:: figure/DS_Zillow_Comp.png
    :name: ds_zillow_comp
@@ -39,15 +42,46 @@ southwest of the city where the Zillow set predicts relatively lower damage stat
    :figclass: align-center
    :width: 700
 
-   SURF-NSI vs. SURF-Zillow: expected damage state.
+   Comparison of expected damage states (NSI vs. Zillow).
 
 .. figure:: figure/PDS_cdf.png
    :name: pds_cdf
    :align: center
    :figclass: align-center
-   :width: 500
+   :width: 700
 
-   SURF-NSI vs. SURF-Zillow: CDFs of probability of exceeding DS-2 and DS-3.
+   CDFs of expected DS and probability of exceeding DS-2 and DS-3.
+
+In order to investigate the cause and rationalize the observed influence from year built, a parametric study is conducted for 
+a single-family house (ID = 2 in :numref:`bldg_inv_lc`). The original building record is expanded to 51 different buildings 
+by varying the year built only (i.e., from 1970 to 2020). For each building, expected loss ratio is estimated with 50 
+realizations to consider the uncertainty from the random sampling in the rulesets. The black curves in :numref:`year_built_infl` 
+plot the individual realizations of expected loss ratio against different year built values. The red curve shows the mean value 
+based on the 50 realizations at each year built. It is clear to see that the building 
+performance gets improved following major code revisions. For example, labeled by the yellow dashed line at 2000, the IRC 2000-2009 
+requires 8d nails (with spacing 6"/6") for sheating thickness of 1" (as default in this testbed) for basic wind speeds greater than 
+100 mph which enhances the building performance (reducing the loss ratio); while this ultimate wind speed is lifted to 130 mph (just 
+above the DWSII of the building) after 2016 accepting the use of spacing to 6"/12" which in turns slightly degrades the 
+building performance. Similarly, the other year built divisions also reflected by the rulesets would influence the damage and loss 
+assessments. In general, we see improved building performance (low damage states) as code revisions by years (:numref:`year_built_infl_bin`).
+
+.. figure:: figure/WSF1_LossRatio_HazusClass.png
+   :name: year_built_infl
+   :align: center
+   :figclass: align-center
+   :width: 700
+
+   Expected loss ratio vs. year built (WSF1, Gable Roof, Roof Slope=0.21)
+
+.. figure:: figure/ExpectedDS_yearbin_CDFs.png
+   :name: year_built_infl_bin
+   :align: center
+   :figclass: align-center
+   :width: 400
+
+   CDFs of expected DS by year bins (NSI results).
+
+
 
 .. _lbl-testbed_LC_validation_steer:
 

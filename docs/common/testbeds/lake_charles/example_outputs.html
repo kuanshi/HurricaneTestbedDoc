@@ -137,7 +137,11 @@
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">3.6. Damage and Loss Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">3.7. Uncertainty Quantification</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.8. Example Outputs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#regional-results-nsi-based-year-built">3.8.1. Regional Results (NSI-Based Year Built)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-testbed">3.8.1. Running Testbed</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#r2d-interface">R2D Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#regional-results-nsi-based-year-built">3.8.2. Regional Results (NSI-Based Year Built)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sample_results.html">3.9. Verification Results</a></li>
@@ -231,19 +235,93 @@
             
   <div class="section" id="example-outputs">
 <span id="lbl-testbed-lc-example-outputs"></span><h1><span class="section-number">3.8. </span>Example Outputs<a class="headerlink" href="#example-outputs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="running-testbed">
+<h2><span class="section-number">3.8.1. </span>Running Testbed<a class="headerlink" href="#running-testbed" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="r2d-interface">
+<h3>R2D Interface<a class="headerlink" href="#r2d-interface" title="Permalink to this headline">¶</a></h3>
+<p>One approach to run the testbed simulation is via the
+<a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt">R2D application</a>
+After successfully download and launch, the major steps for setting up the run are listed as follows:</p>
+<ol class="arabic">
+<li><p>Setting the <strong>Units</strong> in the <strong>GI</strong> panel as shown in <a class="reference internal" href="#r2d-gi"><span class="std std-numref">Fig. 3.8.1.1</span></a> and checking interested output files.</p>
+<div class="align-center figure" id="r2d-gi">
+<a class="reference internal image-reference" href="../../../_images/R2D_GI.png"><img alt="../../../_images/R2D_GI.png" src="../../../_images/R2D_GI.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.1.1 </span><span class="caption-text">R2D GI setup.</span><a class="headerlink" href="#r2d-gi" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Downloading and unzipping the <a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">HurricaneLaura_MappedPWS</a>.
+Setting the <strong>Event File Listing Wind Field</strong> in the <strong>HAZ</strong> panel to the “EventGrid.csv” in the unzipped “IMs” folder.
+The app would automatically load the directory (<a class="reference internal" href="#r2d-haz"><span class="std std-numref">Fig. 3.8.1.2</span></a>).</p>
+<div class="align-center figure" id="r2d-haz">
+<a class="reference internal image-reference" href="../../../_images/R2D_HAZ.png"><img alt="../../../_images/R2D_HAZ.png" src="../../../_images/R2D_HAZ.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.1.2 </span><span class="caption-text">R2D HAZ setup.</span><a class="headerlink" href="#r2d-haz" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Downloading the <a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">BIM_LakeCharles_Full.csv</a>.
+Selecting <strong>CSV to BIM</strong> in the <strong>ASD</strong> panel and setting the <strong>Import Path</strong> to “BIM_LakeCharles_Full.csv” (<a class="reference internal" href="#r2d-asd"><span class="std std-numref">Fig. 3.8.1.3</span></a>).
+Specifying the building IDs that you would like to include in the simulation.</p>
+<div class="align-center figure" id="r2d-asd">
+<a class="reference internal image-reference" href="../../../_images/R2D_ASD.png"><img alt="../../../_images/R2D_ASD.png" src="../../../_images/R2D_ASD.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.1.3 </span><span class="caption-text">R2D ASD setup.</span><a class="headerlink" href="#r2d-asd" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Setting the <strong>Regional Mapping</strong> and <strong>SimCenterEvent</strong> in the <strong>HTA</strong> panel (e.g., <a class="reference internal" href="#r2d-hta"><span class="std std-numref">Fig. 3.8.1.4</span></a>) where the <strong>Event Units</strong> should be
+“Feet” and the <strong>Event Type</strong> should be “Hurricane”.</p>
+<div class="align-center figure" id="r2d-hta">
+<a class="reference internal image-reference" href="../../../_images/R2D_HTA.png"><img alt="../../../_images/R2D_HTA.png" src="../../../_images/R2D_HTA.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.1.4 </span><span class="caption-text">R2D HTA setup.</span><a class="headerlink" href="#r2d-hta" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Setting the “Building Modeling” in <strong>MOD</strong> panel to “None”.</p>
+<div class="align-center figure" id="r2d-mod">
+<a class="reference internal image-reference" href="../../../_images/R2D_MOD.png"><img alt="../../../_images/R2D_MOD.png" src="../../../_images/R2D_MOD.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.1.5 </span><span class="caption-text">R2D MOD setup.</span><a class="headerlink" href="#r2d-mod" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Setting the “Building Analysis Engine” in <strong>ANA</strong> panel to “IMasEDP”.</p>
+<div class="align-center figure" id="r2d-ana">
+<a class="reference internal image-reference" href="../../../_images/R2D_ANA.png"><img alt="../../../_images/R2D_ANA.png" src="../../../_images/R2D_ANA.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.1.6 </span><span class="caption-text">R2D ANA setup.</span><a class="headerlink" href="#r2d-ana" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Setting the “Damage and Loss Method” in <strong>DL</strong> panel to “HAZUS MH HU”. Downloading the rulset script from
+<a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">DesignSafe PRJ-3207</a> and setting the <strong>Auto populate script</strong> to
+“auto_HU_LA.py” (<a class="reference internal" href="#r2d-dl"><span class="std std-numref">Fig. 3.8.1.7</span></a>).</p>
+<div class="align-center figure" id="r2d-dl">
+<a class="reference internal image-reference" href="../../../_images/R2D_DL.png"><img alt="../../../_images/R2D_DL.png" src="../../../_images/R2D_DL.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.1.7 </span><span class="caption-text">R2D DL setup.</span><a class="headerlink" href="#r2d-dl" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Setting the “UQ Application” in <strong>UQ</strong> panel to “None”.</p>
+<div class="align-center figure" id="r2d-uq">
+<a class="reference internal image-reference" href="../../../_images/R2D_UQ.png"><img alt="../../../_images/R2D_UQ.png" src="../../../_images/R2D_UQ.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.1.8 </span><span class="caption-text">R2D UQ setup.</span><a class="headerlink" href="#r2d-uq" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p>After setting up the simulation, please click the <strong>RUN</strong> to execute the analysis. Once the simulation completed,
+the app would direct you to the <strong>RES</strong> panel (<a class="reference internal" href="#r2d-res"><span class="std std-numref">Fig. 3.8.1.9</span></a>) where you could examine and export the results.</p>
+<div class="align-center figure" id="r2d-res">
+<a class="reference internal image-reference" href="../../../_images/R2D_RES.png"><img alt="../../../_images/R2D_RES.png" src="../../../_images/R2D_RES.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.1.9 </span><span class="caption-text">R2D RES panel.</span><a class="headerlink" href="#r2d-res" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
 <div class="section" id="regional-results-nsi-based-year-built">
-<h2><span class="section-number">3.8.1. </span>Regional Results (NSI-Based Year Built)<a class="headerlink" href="#regional-results-nsi-based-year-built" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.8.2. </span>Regional Results (NSI-Based Year Built)<a class="headerlink" href="#regional-results-nsi-based-year-built" title="Permalink to this headline">¶</a></h2>
 <p>The geospatial distribution of estimated wind damage states and losses under Hurricane Laura
-are shown in <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.1.1</span></a> (a) and (b), respectively. Referring to <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.1.1</span></a> (c), most of the buildings
+are shown in <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.1</span></a> (a) and (b), respectively. Referring to <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.1</span></a> (c), most of the buildings
 in the studied region (85%) have relatively low to moderate damage (expected Damage State less than 2.0)
-due to the wind hazard. Referring to <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.1.1</span></a> (c), about 20% buildings would expected damage states lower than
+due to the wind hazard. Referring to <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.1</span></a> (c), about 20% buildings would expected damage states lower than
 DS-1 and only about 5% buildings would expect to have damage states exceeding DS-3.
-The CDF of resulting loss ratios is shown in <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.1.1</span></a> (d) where about 40% buildings would expect
+The CDF of resulting loss ratios is shown in <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.1</span></a> (d) where about 40% buildings would expect
 a loss less than 10% of the total reconstruction cost, and about 30% buildings could see a loss more than 20% of the total
-reconstruction cost.</p>
+reconstruction cost.
+These results can be accessed in the <a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">DesignSafe project</a>, along with the Jupyter
+notebook used to visualize the results.</p>
 <div class="align-center figure" id="dl-and-cdf-lc">
 <a class="reference internal image-reference" href="../../../_images/DS_LS_CDF.png"><img alt="../../../_images/DS_LS_CDF.png" src="../../../_images/DS_LS_CDF.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.8.1.1 </span><span class="caption-text">Estimated regional damage states and loss ratios.</span><a class="headerlink" href="#dl-and-cdf-lc" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.8.2.1 </span><span class="caption-text">Estimated regional damage states and loss ratios.</span><a class="headerlink" href="#dl-and-cdf-lc" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

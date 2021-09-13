@@ -290,15 +290,15 @@ later in <a class="reference internal" href="#addinfo-ruleset"><span class="std 
 </tr>
 <tr class="row-even"><td><p>Wood, Multi-Unit/Hotel/Motel 1 story</p></td>
 <td><p>WMUH1</p></td>
-<td><p>RES3*, RES5, RES6, COM</p></td>
+<td><p>RES3, COM1</p></td>
 </tr>
 <tr class="row-odd"><td><p>Wood, Multi-Unit/Hotel/Motel 2 stories</p></td>
 <td><p>WMUH2</p></td>
-<td><p>RES3*, RES5, RES6, COM</p></td>
+<td><p>RES3, COM1</p></td>
 </tr>
 <tr class="row-even"><td><p>Wood, Multi-Unit/Hotel/Motel 3+ stories</p></td>
 <td><p>WMUH3</p></td>
-<td><p>RES3*, RES5, RES6, COM</p></td>
+<td><p>RES3, COM1</p></td>
 </tr>
 </tbody>
 </table>
@@ -317,7 +317,7 @@ later in <a class="reference internal" href="#addinfo-ruleset"><span class="std 
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Building Class Rulesets - Wind</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Wind.pdf">HAZUS Building Class Rulesets - Wind.pdf</a></p></td>
+<td><p><a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">HAZUS Building Class Rulesets - Wind.pdf</a></p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindClassRulesets.py">WindClassRulesets</a></p></td>
 </tr>
 </tbody>
@@ -326,7 +326,7 @@ later in <a class="reference internal" href="#addinfo-ruleset"><span class="std 
 <div class="section" id="building-attributes">
 <h2><span class="section-number">3.4.2. </span>Building Attributes<a class="headerlink" href="#building-attributes" title="Permalink to this headline">¶</a></h2>
 <p>Within each of these building classes, e.g., wood single-family homes 1-2+ stories, the HAZUS Hurricane
-Technical Manual (<a class="reference internal" href="uncertainty_quantification.html#fema21" id="id1"><span>[FEMA21]</span></a>) further differentiates buildings based on asset attributes and the hazard type
+Technical Manual (<a class="reference internal" href="#fema21" id="id1"><span>[FEMA21]</span></a>) further differentiates buildings based on asset attributes and the hazard type
 (e.g., wind vs. flood) for the purpose of loss estimation. These attributes define key features of the
 load path and components (e.g., roof shape, secondary water resistance, roof deck attachment, roof-wall
 connection, shutters, garage), and the number of attributes necessary to describe a given building varies.</p>
@@ -404,7 +404,7 @@ as part of the community’s use and adaptation of this workflow in its research
 </table>
 <p>Note that rulesets for assigning wind loss attributes call upon two meta-variables relevant to wind losses
 for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based the design wind
-speed at the asset location (Building Inventory field “DSWII”) and the flood zone (building inventory field
+speed at the asset location (Building Inventory field “DWSII”) and the flood zone (building inventory field
 <strong>FloodZone</strong>). These rules used to assign these meta-variables are provided in
 <a class="reference internal" href="#addinfo-ruleset-metavar"><span class="std std-numref">Table 3.4.2.2</span></a>. Also note that the roof shape (building inventory field <strong>RoofShape</strong>),
 derived from aerial imagery, and terrain roughness (building inventory field <strong>Terrain</strong>), derived from
@@ -425,7 +425,7 @@ assigned in the <a class="reference external" href="https://nheri-simcenter.gith
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Attribute Assignment - Wind (Meta-Variable)</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20Meta-Variables.pdf">Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf</a></p></td>
+<td><p><a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf</a></p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindMetaVarRulesets.py">WindMetaVarRulesets</a></p></td>
 </tr>
 </tbody>
@@ -538,11 +538,11 @@ cross-referenced in <a class="reference internal" href="#addinfo-ruleset-wood"><
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (WSF1-2)</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WSF1-2.pdf">Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf</a></p></td>
+<td><p><a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf</a></p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWSFRulesets.py">WindWSFRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (WMUH1-3)</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WMUH1-3.pdf">Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf</a></p></td>
+<td><p><a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf</a></p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWMUHRulesets.py">WindWMUHRulesets</a></p></td>
 </tr>
 </tbody>

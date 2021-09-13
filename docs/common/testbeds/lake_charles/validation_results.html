@@ -140,7 +140,7 @@
 <li class="toctree-l2"><a class="reference internal" href="example_outputs.html">3.8. Example Outputs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample_results.html">3.9. Verification Results</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.10. Validation Results</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#surf-zillow-year-built-results">3.10.1. SURF-Zillow Year Built Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#influence-of-year-built-zillow-vs-nsi-and-parametric-study">3.10.1. Influence of Year Built (Zillow vs. NSI and Parametric Study)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#validation-steer">3.10.2. Validation: StEER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#validation-fema-historical-geospatial-damage-assessment">3.10.3. Validation: FEMA Historical Geospatial Damage Assessment</a></li>
 </ul>
@@ -234,20 +234,23 @@
             
   <div class="section" id="validation-results">
 <span id="lbl-testbed-lc-validation-results"></span><h1><span class="section-number">3.10. </span>Validation Results<a class="headerlink" href="#validation-results" title="Permalink to this headline">¶</a></h1>
-<p>This section discusses damage and loss results from three comparative and validation studies with different emphases.
-The <a class="reference internal" href="#lbl-testbed-lc-surf-zillow-year-built-results"><span class="std std-ref">SURF-Zillow Year Built Results</span></a> explores utilizing year built based on two data resources
+<p>This section discusses damage and loss results from three comparative and validation studies with different emphases:</p>
+<ol class="arabic simple">
+<li><p>The <a class="reference internal" href="#lbl-testbed-lc-surf-zillow-year-built-results"><span class="std std-ref">Influence of Year Built (Zillow vs. NSI and Parametric Study)</span></a> first explores the implications of utilizing year built based on two data resources
 (NSI and Zillow). As discussed in <a class="reference internal" href="asset_description.html#lbl-testbed-lc-asset-description"><span class="std std-ref">Asset Description</span></a>, the Zillow-based model tends to predict
-higher year predictions (more recent constructions) than the NSI-based model, especially for the south bound of the
+higher year predictions (more recent constructions) than the NSI-based model, especially for the southern edge on the
 city. This is reflected by the fact that Zillow-based damage and loss in that region is lower than the NSI-based results.
-The <a class="reference internal" href="#lbl-testbed-lc-validation-steer"><span class="std std-ref">Validation: StEER</span></a> contrasts the HAZUS-based damage states versus the visual-inspection damage
-estimation by StEER and explores influence of uncertainty in building attributes and peak wind speed. Several notable
-trends between building damage and building attribute type will be discussed and reasoned.
-The <a class="reference internal" href="#lbl-testbed-lc-validation-fema"><span class="std std-ref">Validation: FEMA Historical Geospatial Damage Assessment</span></a> focuses on validating the testbed damage estimation with available data
-(573 overlapped buildings) found in FEMA Historical Damage Assessment Database. The testbed results are found to
-be slightly overestimated on the damage for the least damage state (DS-0) and suggest future investigations are still
-needed.</p>
-<div class="section" id="surf-zillow-year-built-results">
-<span id="lbl-testbed-lc-surf-zillow-year-built-results"></span><h2><span class="section-number">3.10.1. </span>SURF-Zillow Year Built Results<a class="headerlink" href="#surf-zillow-year-built-results" title="Permalink to this headline">¶</a></h2>
+A parametric study is also conducted to further illustrate and rationalize the influence from year built in the testbed.</p></li>
+<li><p>The <a class="reference internal" href="#lbl-testbed-lc-validation-steer"><span class="std std-ref">Validation: StEER</span></a> contrasts the testbeds damage estimates versus the visually-assigned damage
+states from StEER members and explores influence of uncertainty in building attributes and peak wind speed. Several notable
+trends between building damage and building attribute type will be discussed and reasoned.</p></li>
+<li><p>The <a class="reference internal" href="#lbl-testbed-lc-validation-fema"><span class="std std-ref">Validation: FEMA Historical Geospatial Damage Assessment</span></a> focuses on validating the testbed damage estimates against the FEMA
+Historical Damage Assessment Database (573 records associated with this testbed). The testbed results are found to
+slightly overestimate the damage for the undamaged state (DS-0) which suggests that future investigations are still
+needed given uncertainties around the methodology used to generate the FEMA data.</p></li>
+</ol>
+<div class="section" id="influence-of-year-built-zillow-vs-nsi-and-parametric-study">
+<span id="lbl-testbed-lc-surf-zillow-year-built-results"></span><h2><span class="section-number">3.10.1. </span>Influence of Year Built (Zillow vs. NSI and Parametric Study)<a class="headerlink" href="#influence-of-year-built-zillow-vs-nsi-and-parametric-study" title="Permalink to this headline">¶</a></h2>
 <p>The year built is a critical attribute as it triggers attribute assignments by various rulesets.
 As discussed in <a class="reference internal" href="asset_description.html#lbl-testbed-lc-asset-description"><span class="std std-ref">Asset Description</span></a>, different sources of data were used
 to predict the YearBuilt engaging both the National Structural Inventory (NSI) (with SURF correcting some
@@ -256,15 +259,36 @@ information for many of the residual buildings in the studied region. The implic
 sources of year built information to project damage is explored in <a class="reference internal" href="#ds-zillow-comp"><span class="std std-numref">Fig. 3.10.1.1</span></a>, noting the
 contrast map that depicts the difference between the damage state projected by SURF-NSI and that projected
 by Zillow. Note that the difference is not prominent in downtown Lake Charles, although divergence is noted
-southwest of the city where the Zillow set predicts relatively lower damage states. Provided in
-<a class="reference internal" href="#pds-cdf"><span class="std std-numref">Fig. 3.10.1.2</span></a> are the the CDF distributions of probability of exceeding DS-2 and DS-3.</p>
+southwest of the city where the Zillow set predicts relatively lower damage states. Compared in
+<a class="reference internal" href="#pds-cdf"><span class="std std-numref">Fig. 3.10.1.2</span></a> are the the CDF distributions of expected damage states (NSI vs. Zillow) as well as the
+probability of exceeding DS-2 and DS-3.</p>
 <div class="align-center figure" id="ds-zillow-comp">
 <a class="reference internal image-reference" href="../../../_images/DS_Zillow_Comp.png"><img alt="../../../_images/DS_Zillow_Comp.png" src="../../../_images/DS_Zillow_Comp.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.1.1 </span><span class="caption-text">SURF-NSI vs. SURF-Zillow: expected damage state.</span><a class="headerlink" href="#ds-zillow-comp" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.1.1 </span><span class="caption-text">Comparison of expected damage states (NSI vs. Zillow).</span><a class="headerlink" href="#ds-zillow-comp" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="pds-cdf">
-<a class="reference internal image-reference" href="../../../_images/PDS_cdf.png"><img alt="../../../_images/PDS_cdf.png" src="../../../_images/PDS_cdf.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.1.2 </span><span class="caption-text">SURF-NSI vs. SURF-Zillow: CDFs of probability of exceeding DS-2 and DS-3.</span><a class="headerlink" href="#pds-cdf" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../_images/PDS_cdf.png"><img alt="../../../_images/PDS_cdf.png" src="../../../_images/PDS_cdf.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.10.1.2 </span><span class="caption-text">CDFs of expected DS and probability of exceeding DS-2 and DS-3.</span><a class="headerlink" href="#pds-cdf" title="Permalink to this image">¶</a></p>
+</div>
+<p>In order to investigate the cause and rationalize the observed influence from year built, a parametric study is conducted for
+a single-family house (ID = 2 in <a class="reference internal" href="asset_description.html#bldg-inv-lc"><span class="std std-numref">Table 3.2.4.1</span></a>). The original building record is expanded to 51 different buildings
+by varying the year built only (i.e., from 1970 to 2020). For each building, expected loss ratio is estimated with 50
+realizations to consider the uncertainty from the random sampling in the rulesets. The black curves in <a class="reference internal" href="#year-built-infl"><span class="std std-numref">Fig. 3.10.1.3</span></a>
+plot the individual realizations of expected loss ratio against different year built values. The red curve shows the mean value
+based on the 50 realizations at each year built. It is clear to see that the building
+performance gets improved following major code revisions. For example, labeled by the yellow dashed line at 2000, the IRC 2000-2009
+requires 8d nails (with spacing 6”/6”) for sheating thickness of 1” (as default in this testbed) for basic wind speeds greater than
+100 mph which enhances the building performance (reducing the loss ratio); while this ultimate wind speed is lifted to 130 mph (just
+above the DWSII of the building) after 2016 accepting the use of spacing to 6”/12” which in turns slightly degrades the
+building performance. Similarly, the other year built divisions also reflected by the rulesets would influence the damage and loss
+assessments. In general, we see improved building performance (low damage states) as code revisions by years (<a class="reference internal" href="#year-built-infl-bin"><span class="std std-numref">Fig. 3.10.1.4</span></a>).</p>
+<div class="align-center figure" id="year-built-infl">
+<a class="reference internal image-reference" href="../../../_images/WSF1_LossRatio_HazusClass.png"><img alt="../../../_images/WSF1_LossRatio_HazusClass.png" src="../../../_images/WSF1_LossRatio_HazusClass.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.10.1.3 </span><span class="caption-text">Expected loss ratio vs. year built (WSF1, Gable Roof, Roof Slope=0.21)</span><a class="headerlink" href="#year-built-infl" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="year-built-infl-bin">
+<a class="reference internal image-reference" href="../../../_images/ExpectedDS_yearbin_CDFs.png"><img alt="../../../_images/ExpectedDS_yearbin_CDFs.png" src="../../../_images/ExpectedDS_yearbin_CDFs.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.10.1.4 </span><span class="caption-text">CDFs of expected DS by year bins (NSI results).</span><a class="headerlink" href="#year-built-infl-bin" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="validation-steer">
