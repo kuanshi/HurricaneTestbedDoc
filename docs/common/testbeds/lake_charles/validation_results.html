@@ -161,7 +161,8 @@
 (NSI and Zillow). As discussed in <a class="reference internal" href="asset_description.html#lbl-testbed-lc-asset-description"><span class="std std-ref">Asset Description</span></a>, the Zillow-based model tends to predict
 higher year predictions (more recent constructions) than the NSI-based model, especially for the southern edge on the
 city. This is reflected by the fact that Zillow-based damage and loss in that region is lower than the NSI-based results.
-A parametric study is also conducted to further illustrate and rationalize the influence from year built in the testbed.</p></li>
+Following the parametric study in <a class="reference internal" href="sample_results.html#lbl-testbed-lc-verification-rulesets"><span class="std std-ref">Verification of Rulesets</span></a>,
+the observed trend in damage and loss with respect to year built is discussed.</p></li>
 <li><p>The <a class="reference internal" href="#lbl-testbed-lc-validation-steer"><span class="std std-ref">Validation: StEER</span></a> contrasts the testbeds damage estimates versus the visually-assigned damage
 states from StEER members and explores influence of uncertainty in building attributes and peak wind speed. Several notable
 trends between building damage and building attribute type will be discussed and reasoned.</p></li>
@@ -182,7 +183,12 @@ contrast map that depicts the difference between the damage state projected by S
 by Zillow. Note that the difference is not prominent in downtown Lake Charles, although divergence is noted
 southwest of the city where the Zillow set predicts relatively lower damage states. Compared in
 <a class="reference internal" href="#pds-cdf"><span class="std std-numref">Fig. 3.10.1.2</span></a> are the the CDF distributions of expected damage states (NSI vs. Zillow) as well as the
-probability of exceeding DS-2 and DS-3.</p>
+probability of exceeding DS-2 and DS-3.  <a class="reference internal" href="#year-built-infl-bin"><span class="std std-numref">Fig. 3.10.1.3</span></a> plots the cumulative distributions of
+expected damage states for four different year built bins: Pre 1960, 1960-1979, 1980-1999, and Post 2000.
+In general, we see improved building performance (low damage states) as code revisions by years
+as recalling the parametric study in <a class="reference internal" href="sample_results.html#lbl-testbed-lc-verification-rulesets"><span class="std std-ref">Verification of Rulesets</span></a>, the dominate building type is
+WSF1 (<a class="reference internal" href="overview.html#fig-inventorypinechart"><span class="std std-numref">Fig. 3.1.4.3</span></a>) whose wind-induced loss is particularly sensitive to nail spacing requirements
+varied by years.</p>
 <div class="align-center figure" id="ds-zillow-comp">
 <a class="reference internal image-reference" href="../../../_images/DS_Zillow_Comp.png"><img alt="../../../_images/DS_Zillow_Comp.png" src="../../../_images/DS_Zillow_Comp.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.10.1.1 </span><span class="caption-text">Comparison of expected damage states (NSI vs. Zillow).</span><a class="headerlink" href="#ds-zillow-comp" title="Permalink to this image"></a></p>
@@ -191,26 +197,9 @@ probability of exceeding DS-2 and DS-3.</p>
 <a class="reference internal image-reference" href="../../../_images/PDS_cdf.png"><img alt="../../../_images/PDS_cdf.png" src="../../../_images/PDS_cdf.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.10.1.2 </span><span class="caption-text">CDFs of expected DS and probability of exceeding DS-2 and DS-3.</span><a class="headerlink" href="#pds-cdf" title="Permalink to this image"></a></p>
 </div>
-<p>In order to investigate the cause and rationalize the observed influence of year built, a parametric study is conducted for
-a single-family house (ID = 2 in <a class="reference internal" href="asset_description.html#bldg-inv-lc"><span class="std std-numref">Table 3.2.4.1</span></a>). The original building record is expanded to 51 different buildings
-by varying the year built only (i.e., from 1970 to 2020). For each building, expected loss ratio is estimated with 50
-realizations to consider the uncertainty from the random sampling in the rulesets. The black curves in <a class="reference internal" href="#year-built-infl"><span class="std std-numref">Fig. 3.10.1.3</span></a>
-plot the individual realizations of expected loss ratio against different year built values. The red curve shows the mean value
-based on the 50 realizations at each year built. It is clear to see that the building
-performance improves following major code revisions. For example, labeled by the yellow dashed line at 2000, the IRC 2000-2009
-requires 8d nails (with spacing 6”/6”) for sheathing thickness of 1” (as default in this testbed) for basic wind speeds greater than
-100 mph which enhances the building performance (reducing the loss ratio); while this ultimate wind speed is increased to 130 mph (just
-above the DWSII of the building) after 2016 accepting the use of spacing to 6”/12” which in turns slightly degrades the
-building performance. Similarly, the other year built divisions also reflected by the rulesets would influence the damage and loss
-assessments. In general, we see improved building performance (low damage states) as code revisions by years (<a class="reference internal" href="#year-built-infl-bin"><span class="std std-numref">Fig. 3.10.1.4</span></a>)
-and the particular importance of nail spacing requirements for sheathing in reducing wind-induced losses for this class of building.</p>
-<div class="align-center figure" id="year-built-infl">
-<a class="reference internal image-reference" href="../../../_images/WSF1_LossRatio_HazusClass.png"><img alt="../../../_images/WSF1_LossRatio_HazusClass.png" src="../../../_images/WSF1_LossRatio_HazusClass.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.1.3 </span><span class="caption-text">Expected loss ratio vs. year built (WSF1, Gable Roof, Roof Slope=0.21)</span><a class="headerlink" href="#year-built-infl" title="Permalink to this image"></a></p>
-</div>
 <div class="align-center figure" id="year-built-infl-bin">
 <a class="reference internal image-reference" href="../../../_images/ExpectedDS_yearbin_CDFs.png"><img alt="../../../_images/ExpectedDS_yearbin_CDFs.png" src="../../../_images/ExpectedDS_yearbin_CDFs.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.1.4 </span><span class="caption-text">CDFs of expected DS by year bins (NSI results).</span><a class="headerlink" href="#year-built-infl-bin" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.1.3 </span><span class="caption-text">CDFs of expected DS by year bins (NSI results).</span><a class="headerlink" href="#year-built-infl-bin" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="validation-steer">
