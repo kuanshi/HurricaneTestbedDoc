@@ -96,10 +96,9 @@ reducing wind-induced losses for this class of building.
 
    Expected loss ratio vs. year built (WSF1, Gable Roof, Roof Slope=0.21)
 
-A similar study is also conducted for two multi-unit wood building with year of construction varying from 1970 to 2020.
+A similar study is also conducted for a multi-unit wood building (i.e., WMUH1) with year of construction varying from 1970 to 2020.
 For each building, expected loss ratio is estimated with 50 realizations to consider the uncertainty from the random sampling in the rulesets.
-The first building has one story (i.e., WMUH1) with a hip roof and a roof slope of 0.25. :numref:`year_built_infl_wmuh1` plots individual 
-realizations of expected loss ratio in black and average in red. Two year divisions (1987 and 2000) are noticed where buildings are 
+:numref:`year_built_infl_wmuh1` plots individual realizations of expected loss ratio in black and average in red. Two year divisions (1987 and 2000) are noticed where buildings are 
 estimated to have different performances. Further investigating the cause of this trend indicates that the building from 1988 to 2000 are classified
 by our ruleset to have the second water resistance (SWR) given the roof slope is less than 0.33, whereas for the pre-1988 and post-2000 buildings
 random samplings are conducted to assign SWR to the building by chances (30% for pre-1988 and 60% for post-2000, which also explains that on average 
