@@ -150,9 +150,9 @@
            <div itemprop="articleBody">
              
   <div class="section" id="regional-site-response-assessment">
-<span id="lbl-example-rdt-srt"></span><h1><span class="section-number">6.3. </span>Regional Site Response Assessment<a class="headerlink" href="#regional-site-response-assessment" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-example-rdt-srt"></span><h1><span class="section-number">6.3. </span>Regional Site Response Assessment<a class="headerlink" href="#regional-site-response-assessment" title="Permalink to this headline"></a></h1>
 <div class="section" id="problem-statement">
-<h2><span class="section-number">6.3.1. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3.1. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline"></a></h2>
 <p>Site response analysis is commonly performed to analyze the propagation of seismic wave through soil. As shown in <a class="reference internal" href="#fig-siteresponse"><span class="std std-numref">Fig. 6.3.1.1</span></a>,
 one-dimensional response analyses, as a simplified method, assume that all boundaries are horizontal and that the response of a soil deposit is
 predominately caused by SH-waves propagating vertically from the underlying bedrock. Ground surface response is usually the major output from
@@ -160,18 +160,18 @@ these analyses, together with profile plots such as peak horizontal acceleration
 maximum shear strain and excess pore pressure ratio plots are also important.</p>
 <div class="align-center figure" id="id6">
 <span id="fig-siteresponse"></span><a class="reference internal image-reference" href="../../../../../_images/siteResponse.png"><img alt="../../../../../_images/siteResponse.png" src="../../../../../_images/siteResponse.png" style="width: 538.0px; height: 287.5px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6.3.1.1 </span><span class="caption-text">Simplified 1D site response analysis (courtesy of Pedro Arduino)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6.3.1.1 </span><span class="caption-text">Simplified 1D site response analysis (courtesy of Pedro Arduino)</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
 </div>
 <p>This example demonstrates a small-scale regional earthquake risk assessment which performs site response simulation for a group of 20 sites
 located in the San Francisco Bay area. The sites are distributed in space in a 4x5 grid, within a 3x3 grid of event sites. At each event site,
 5 ground motion records of similar intensity are assigned.</p>
 <div class="align-center figure" id="id7">
 <span id="figcontext"></span><a class="reference internal image-reference" href="../../../../../_images/example.png"><img alt="../../../../../_images/example.png" src="../../../../../_images/example.png" style="width: 1083.2px; height: 429.8px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6.3.1.2 </span><span class="caption-text">Location of testbed sites</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6.3.1.2 </span><span class="caption-text">Location of testbed sites</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="methodology">
-<h2><span class="section-number">6.3.2. </span>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3.2. </span>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline"></a></h2>
 <p>In this example, the coordinates of a list of sites are known and peak ground accelerations at these sites are of interest. A summary of the RDT
 procedure for the site response analysis is summarized here:</p>
 <ol class="arabic simple">
@@ -208,7 +208,7 @@ procedure for the site response analysis is summarized here:</p>
 </pre></div>
 </div>
 <div class="section" id="obtaining-vs30-data">
-<h3><span class="section-number">6.3.2.1. </span>Obtaining Vs30 Data<a class="headerlink" href="#obtaining-vs30-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2.1. </span>Obtaining Vs30 Data<a class="headerlink" href="#obtaining-vs30-data" title="Permalink to this headline"></a></h3>
 <p>Vs30 data can be obtained using <strong>EQHazard</strong> tool. EQHazard is a console application developed by the SimCenter to facilitate performing seismic hazard analysis(SHA) for regional earthquake simulations.
 The application makes use of OpenSHA to perform deterministic SHA. This application is developed using Java to facilitate the use of OpenSHA Java library. It is worth noting that this tool is most suitable
 for research applications where SHA needs to be performed for many sites given a single earthquake scenario, such as using a grid of sites for regional simulations. Several site data sources have been included in EQHazard, such as CGS/Wills VS30 Map (2015),
@@ -225,7 +225,7 @@ Global Vs30 from Topographic Slope (Wald &amp; Allen 2008), and more.</p>
 <p>Python script <strong>getVs30.py</strong> provides a wrapper for EQHazard. It uses the site coordinates from input_params.csv and
 a template scenario file, <em>Scenario.json</em>, to obtain Vs30 data. An updated input file, <em>input_params_srt.csv</em>, is then created with Vs30 data populated as shown in <a class="reference internal" href="#tab-inputs-srt"><span class="std std-numref">Table 6.3.2.1.1</span></a>. In this case, CGS/Wills VS30 Map (2015) is used.</p>
 <span id="tab-inputs-srt"></span><table class="docutils align-default" id="id8">
-<caption><span class="caption-number">Table 6.3.2.1.1 </span><span class="caption-text">Input Parameters with Vs30 Data Obtained Using EQHazard</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.3.2.1.1 </span><span class="caption-text">Input Parameters with Vs30 Data Obtained Using EQHazard</span><a class="headerlink" href="#id8" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 7%" />
 <col style="width: 7%" />
@@ -564,7 +564,7 @@ a template scenario file, <em>Scenario.json</em>, to obtain Vs30 data. An update
 </table>
 </div>
 <div class="section" id="obtaining-depth-to-bedrock">
-<h3><span class="section-number">6.3.2.2. </span>Obtaining Depth to Bedrock<a class="headerlink" href="#obtaining-depth-to-bedrock" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2.2. </span>Obtaining Depth to Bedrock<a class="headerlink" href="#obtaining-depth-to-bedrock" title="Permalink to this headline"></a></h3>
 <p>The depth to bedrock can be obtained using several datasets. For example, SoilGrid250 map provides absolute depth to bedrock (in cm) predicted using the global compilation of soil ground observations.
 Accuracy assessment of the maps is available in Hengl <span id="id1">[]</span> and can be downloaded <a class="reference download external" download="" href="https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/f36117ea-9be5-4afd-bb7d-7a3e77bf392a"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>.
 In this dataset, the depth to bedrock is considered as “depth (in cm) from the ground surface to the contact with coherent (continuous) bedrock.”
@@ -573,7 +573,7 @@ different shear wave velocity and it might vary dramatically, e.g., western U.S.
 760 m/s, as the sites are located in western U.S..</p>
 <div class="align-center figure" id="id9">
 <span id="fig-dtr"></span><img alt="../../../../../_images/US_Depth_To_Rock.png" src="../../../../../_images/US_Depth_To_Rock.png" />
-<p class="caption"><span class="caption-number">Fig. 6.3.2.2.1 </span><span class="caption-text">Depth to bedrock (Cropped from SoilGrid250 to show continental U.S., 10 km resolution)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6.3.2.2.1 </span><span class="caption-text">Depth to bedrock (Cropped from SoilGrid250 to show continental U.S., 10 km resolution)</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
 </div>
 <p>Example python script to obtain the data is shown below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rioxarray</span> <span class="k">as</span> <span class="nn">rxr</span>
@@ -593,7 +593,7 @@ different shear wave velocity and it might vary dramatically, e.g., western U.S.
 </div>
 </div>
 <div class="section" id="generating-soil-profile-using-svm">
-<h3><span class="section-number">6.3.2.3. </span>Generating Soil Profile Using SVM<a class="headerlink" href="#generating-soil-profile-using-svm" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2.3. </span>Generating Soil Profile Using SVM<a class="headerlink" href="#generating-soil-profile-using-svm" title="Permalink to this headline"></a></h3>
 <p>Once the depth to rock is obtained, the next step is to generate soil profile based on Vs30. Amplitude, frequency content and duration of ground shaking are important parameters in ground motion modeling and are
 heavily dependent on crustal material properties. The Sediment Velocity Model (SVM) “translates VS30 and a proxy which describes stiffness of the near surface sediments into a 1D velocity profile” (Shi and Asimaki, 2018, <span id="id2">[]</span>).</p>
 <p>Datasets of soil parameters only exist for specific locations and there is no way to collect adequate data on all regions. For this reason, there is a need for a method which can determine these crustal
@@ -606,11 +606,11 @@ Moreover, the CVM-H has an optional geotechnical layer (GTL) option which replac
 a constraint for a minimum number of points needed to fully describe a soil column. Gmax at depth is also obtained from this shear wave velocity profile. The results of the test case are presented in <a class="reference internal" href="#fig-vs"><span class="std std-numref">Fig. 6.3.2.3.1</span></a>.</p>
 <div class="align-center figure" id="id10">
 <span id="fig-vs"></span><img alt="../../../../../_images/Vs.png" src="../../../../../_images/Vs.png" />
-<p class="caption"><span class="caption-number">Fig. 6.3.2.3.1 </span><span class="caption-text">Generated shear wave velocity profile based on SVM</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6.3.2.3.1 </span><span class="caption-text">Generated shear wave velocity profile based on SVM</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="including-soil-nonlinearity">
-<h3><span class="section-number">6.3.2.4. </span>Including Soil Nonlinearity<a class="headerlink" href="#including-soil-nonlinearity" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2.4. </span>Including Soil Nonlinearity<a class="headerlink" href="#including-soil-nonlinearity" title="Permalink to this headline"></a></h3>
 <p>By default, <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/Elastic_Isotropic_Material">elastic isotropic material</a> is assigned to the soil column due to limited available information. However, Nonlinearity can be incorporated into workflow by switching the constitutive model to other nonlinear model, for example,
 the multiaxial cyclic plasticity model proposed by Borja and Amies <span id="id4">[]</span>. This simple total stress-based bounding surface plasticity model for clays was developed to accommodate multiaxial stress reversals. The model was constructed based on the idea
 of a vanishing elastic region undergoing pure translation inside a bounding surface, and an interpolation function for hardening modulus which varies with stress distance of the elastic region from the unloading point.
@@ -618,10 +618,10 @@ The model can be applied to cohesive soils undergoing undrained stress reversals
 <a class="reference external" href="https://opensees.berkeley.edu/wiki/index.php/J2CyclicBoundingSurface_Material">here</a>.</p>
 <div class="align-center figure" id="id11">
 <span id="fig-ba94"></span><a class="reference internal image-reference" href="../../../../../_images/CTC_Fig3_Comparison.png"><img alt="../../../../../_images/CTC_Fig3_Comparison.png" src="../../../../../_images/CTC_Fig3_Comparison.png" style="width: 450.0px; height: 450.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6.3.2.4.1 </span><span class="caption-text">Example behavior of Borja and Amies model</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6.3.2.4.1 </span><span class="caption-text">Example behavior of Borja and Amies model</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
 </div>
 <table class="colwidths-given docutils align-default" id="id12">
-<caption><span class="caption-number">Table 6.3.2.4.1 </span><span class="caption-text">Input for elastic material</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.3.2.4.1 </span><span class="caption-text">Input for elastic material</span><a class="headerlink" href="#id12" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 14%" />
 <col style="width: 29%" />
@@ -648,7 +648,7 @@ The model can be applied to cohesive soils undergoing undrained stress reversals
 </table>
 <p>The example input parameters for using Borja and Amies are summarized in the following table:</p>
 <table class="colwidths-given docutils align-default" id="id13">
-<caption><span class="caption-number">Table 6.3.2.4.2 </span><span class="caption-text">Input for multiaxial cyclic plasticity model for clays (Borja and Amies, <span id="id5">[]</span>)</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.3.2.4.2 </span><span class="caption-text">Input for multiaxial cyclic plasticity model for clays (Borja and Amies, <span id="id5">[]</span>)</span><a class="headerlink" href="#id13" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 15%" />
@@ -694,7 +694,7 @@ The model can be applied to cohesive soils undergoing undrained stress reversals
 <p>where <code class="docutils literal notranslate"><span class="pre">Su_rat</span></code> is the ratio between undrain shear strength and initial vertical stress.</p>
 </div>
 <div class="section" id="adding-surface-structural-model">
-<h3><span class="section-number">6.3.2.5. </span>Adding Surface Structural Model<a class="headerlink" href="#adding-surface-structural-model" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2.5. </span>Adding Surface Structural Model<a class="headerlink" href="#adding-surface-structural-model" title="Permalink to this headline"></a></h3>
 <p>A structure model can also be added to the workflow. In this case, the structure model uses the <a class="reference internal" href="../../../architecture/desktop/applications/modelingApps.html#lblmodelingapp"><span class="std std-ref">OpenSeesPyInput</span></a> modeling application as discussed in <a class="reference internal" href="../eqAssessment.html#lbleqassessment"><span class="std std-ref">Earthquake Assessment</span></a>.
 The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>.
 Functions are included which record the peak response as EDPs for each of the EDP types specified in the EDP_specs.json file.</p>
@@ -712,7 +712,7 @@ Functions are included which record the peak response as EDPs for each of the ED
 </div>
 </div>
 <div class="section" id="performing-analysis">
-<h3><span class="section-number">6.3.2.6. </span>Performing Analysis<a class="headerlink" href="#performing-analysis" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2.6. </span>Performing Analysis<a class="headerlink" href="#performing-analysis" title="Permalink to this headline"></a></h3>
 <p>Configurations for RDT workflow are defined in <strong>rWHALE_config_SRT.json</strong>. In this example, the application for Modeling and Simulation is OpenSeesInputSRT and OpenSees-Simulation-SRT, respectively.</p>
 <p>For each site, two additional input files for OpenSees are created during analysis: <strong>freefield_config.tcl</strong> and <strong>freefield_material.tcl</strong>. <strong>freefield_config.tcl</strong> defines the discretization of the profile and applied input motion(s).</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c"># site response configuration file</span>
@@ -798,7 +798,7 @@ for example, xInput.vel and xInput.time defiles velocity and time series, respec
 <p><strong>EDP_1-19.csv</strong>: reports statistics on the EDP results from simulating 5 ground motions for each building asset.
 The statistics reported are the median and lognormal standard deviation of peak ground acceleration (shown as PFA) in two directions.</p>
 <span id="tab-edp-results"></span><table class="docutils align-default" id="id14">
-<caption><span class="caption-number">Table 6.3.2.6.1 </span><span class="caption-text">EDP Results</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.3.2.6.1 </span><span class="caption-text">EDP Results</span><a class="headerlink" href="#id14" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 20%" />
@@ -959,7 +959,7 @@ The statistics reported are the median and lognormal standard deviation of peak 
 </div>
 </div>
 <div class="section" id="appendix">
-<h2><span class="section-number">6.3.3. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3.3. </span>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline"></a></h2>
 <p>Configurations for RDT workflow:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
 <span class="linenos"> 2</span>  <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;rWHALE_&quot;</span><span class="p">,</span>

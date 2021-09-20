@@ -130,16 +130,16 @@
            <div itemprop="articleBody">
              
   <div class="section" id="reliability-analysis">
-<span id="lbl-dakotareliability"></span><h1>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-dakotareliability"></span><h1>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline"></a></h1>
 <p>Reliability methods are another class of probabilistic algorithms used for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike forward methods, provide PDFs and CDFs about user-specified response and probability levels, i.e., given a set of uncertain input variables, they model the probability that the response output is below or above a certain level.  As a consequence of concentrating on only specific response outputs, these models are often more efficient when calculating responses in the tails of the response distributions (events with low probability) since the number of samples required by a forward method to resolve a low probability can be prohibitive.</p>
 <p>Reliability methods can be split into local and global methods, as elaborated in the following sections.</p>
 <div class="section" id="local-reliability-methods">
-<h2>Local Reliability Methods<a class="headerlink" href="#local-reliability-methods" title="Permalink to this headline">¶</a></h2>
+<h2>Local Reliability Methods<a class="headerlink" href="#local-reliability-methods" title="Permalink to this headline"></a></h2>
 <p>Local reliability methods include the Mean Value method and a family of most probable point (MPP) search methods. Each of these methods is gradient-based, employing local approximations and/or local optimization methods. The user selects the local method using the pull-down menu.</p>
 <p>The default local reliability method is the most probable point (MPP) method. For the MPP method, the user provides the following inputs:</p>
 <div class="align-center figure" id="id1">
 <span id="figlocalmpp"></span><img alt="common/user_manual/usage/desktop/hydro/figures/localReliabilityMPP.png" src="common/user_manual/usage/desktop/hydro/figures/localReliabilityMPP.png" />
-<p class="caption"><span class="caption-text">Local reliability analysis using the MPP option.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Local reliability analysis using the MPP option.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </div>
 <ol class="arabic simple">
 <li><p>The first input involves the selection of the MPP search method from the following options:</p></li>
@@ -163,16 +163,16 @@
 <p>As shown in the figure below, the user selects either to use response levels or probability levels. The user then inputs the levels.</p>
 <div class="align-center figure" id="id2">
 <span id="figlocalmv"></span><img alt="common/user_manual/usage/desktop/hydro/figures/localReliabilityMVFOSM.png" src="common/user_manual/usage/desktop/hydro/figures/localReliabilityMVFOSM.png" />
-<p class="caption"><span class="caption-text">Local reliability analysis using the MVFOSM option.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Local reliability analysis using the MVFOSM option.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="global-reliability-methods">
-<h2>Global Reliability Methods<a class="headerlink" href="#global-reliability-methods" title="Permalink to this headline">¶</a></h2>
+<h2>Global Reliability Methods<a class="headerlink" href="#global-reliability-methods" title="Permalink to this headline"></a></h2>
 <p>Local reliability methods, while computationally efficient, do not always work. When confronted with a limit state function that is nonsmooth, local gradient-based optimizers may stall due to gradient inaccuracy and fail to converge to an MPP. Moreover, suppose the limit state is multimodal (multiple MPPs). In that case, a gradient-based local method can, at best, locate only one local MPP solution. Finally, an approximation to the limit state at this MPP may fail to adequately capture the contour of a highly nonlinear limit state. Global reliability methods are designed to handle nonsmooth and multimodal failure surfaces. They do this by creating global approximations based on Gaussian process models. They accurately resolve a particular contour of a response function and then estimate probabilities using multimodal adaptive importance sampling.</p>
 <p>The user specifies if the Gaussian process is created in x-space (original) or u-space (transformed). The user also selects the response quantity levels (there is no option available for probability levels) and a seed.</p>
 <div class="align-center figure" id="id3">
 <span id="figglobalreliability"></span><img alt="common/user_manual/usage/desktop/hydro/figures/globalReliability.png" src="common/user_manual/usage/desktop/hydro/figures/globalReliability.png" />
-<p class="caption"><span class="caption-text">Global reliability analysis.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Global reliability analysis.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
