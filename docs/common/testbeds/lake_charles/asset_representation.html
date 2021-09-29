@@ -155,7 +155,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="asset-representation">
-<span id="lbl-testbed-lc-asset-representation"></span><h1><span class="section-number">3.4. </span>Asset Representation<a class="headerlink" href="#asset-representation" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-lc-asset-representation"></span><h1><span class="section-number">3.4. </span>Asset Representation<a class="headerlink" href="#asset-representation" title="Permalink to this headline"></a></h1>
 <p>This section discusses the translation of asset descriptions into representations
 of structures suitable for simulation within workflow, in this case consistent with
 the HAZUS description of building classes and associated attributes, which becomes
@@ -163,21 +163,22 @@ the default data schema. Thus the description of assets below is organized accor
 to the HAZUS conventions for classifying buildings and organizing damage and loss data
 according to attributes associated with those building classes.</p>
 <p>The following discussion will reference a number of rulesets initially developed for the
-<a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a> testbed to enable various assignments of these HAZUS building classes
-and corresponding attributes.Details of these rulesets are available to users in one of two forms:</p>
+<a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a>
+testbed to enable various assignments of these HAZUS building classes
+and corresponding attributes. Details of these rulesets are available to users in one of two forms:</p>
 <ol class="arabic simple">
-<li><p>Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation
-justifying the proposed rule, with provenance information for any sources engaged in that
-rule’s development.</p></li>
-<li><p>Scripts (in Python) curated in GitHub that implement the ruleset’s logic for this testbed.</p></li>
+<li><p>Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation justifying the proposed rule, with provenance information for any sources engaged in that rule’s development.</p></li>
+<li><p>Scripts (in Python) that implement the ruleset’s logic for this testbed. Users wishing to execute the testbed in its current form are recommended to download the Python rulesets from DesignSafe. Users wishing to adapt the rulesets to potentially change the way attributes are assigned to buildings, are encouraged to access the Python implementation of the rulesets in GitHub.</p></li>
 </ol>
-<p>Each section provides a table linking the relevant PDFs and Scripts. Note that
-all of the rulesets introduced herein are tiered, initiating by assigning all assets
-a default value for its building classification or a given attribute based on the primary
-rule. This ensures that every asset receives a HAZUS building class and related attribute
-assignments, regardless of data sparsity.</p>
+<p>Both of these repositories also include additional documentation (PDFs) justifying the proposed rule,
+with provenance information for any sources engaged in that rule’s development.
+Note that all of the rulesets introduced herein are tiered, initiating by assigning all assets a
+default value for its building classification or a given attribute based on the primary rule.
+This ensures that every asset receives a HAZUS building class and related attribute assignments,
+regardless of data sparsity. The sections below detail the ruleset development,
+closing with a table linking the relevant PDFs from DesignSafe and Python scripts from GitHub.</p>
 <div class="section" id="building-classifications">
-<span id="lbl-testbed-lc-asset-representation-building-classification"></span><h2><span class="section-number">3.4.1. </span>Building Classifications<a class="headerlink" href="#building-classifications" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-testbed-lc-asset-representation-building-classification"></span><h2><span class="section-number">3.4.1. </span>Building Classifications<a class="headerlink" href="#building-classifications" title="Permalink to this headline"></a></h2>
 <p>HAZUS classifies buildings based on a more nuanced interpretation of Occupancy Class
 (see building inventory field <strong>OccupancyClass</strong>) based on other attributes of relevance
 for a given hazard type.</p>
@@ -188,7 +189,7 @@ Wood, Multi-Unit/Hotel/Model (WMUH). These HAZUS building classifications are li
 <a class="reference internal" href="#bldg-class"><span class="std std-numref">Table 3.4.1.1</span></a>, and the corresponding rulesets (PDFs and Python scripts) are cross-referenced
 later in <a class="reference internal" href="#addinfo-ruleset"><span class="std std-numref">Table 3.4.1.2</span></a>.</p>
 <table class="docutils align-center" id="bldg-class">
-<caption><span class="caption-number">Table 3.4.1.1 </span><span class="caption-text">HAZUS building classification for wind loss assessment.</span><a class="headerlink" href="#bldg-class" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.4.1.1 </span><span class="caption-text">HAZUS building classification for wind loss assessment.</span><a class="headerlink" href="#bldg-class" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -224,7 +225,7 @@ later in <a class="reference internal" href="#addinfo-ruleset"><span class="std 
 </tbody>
 </table>
 <table class="docutils align-center" id="addinfo-ruleset">
-<caption><span class="caption-number">Table 3.4.1.2 </span><span class="caption-text">Additional details for rulesets assigning HAZUS building class</span><a class="headerlink" href="#addinfo-ruleset" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.4.1.2 </span><span class="caption-text">Additional details for rulesets assigning HAZUS building class</span><a class="headerlink" href="#addinfo-ruleset" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -245,9 +246,9 @@ later in <a class="reference internal" href="#addinfo-ruleset"><span class="std 
 </table>
 </div>
 <div class="section" id="building-attributes">
-<h2><span class="section-number">3.4.2. </span>Building Attributes<a class="headerlink" href="#building-attributes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.2. </span>Building Attributes<a class="headerlink" href="#building-attributes" title="Permalink to this headline"></a></h2>
 <p>Within each of these building classes, e.g., wood single-family homes 1-2+ stories, the HAZUS Hurricane
-Technical Manual (<a class="reference internal" href="asset_description.html#fema21" id="id1"><span>[FEMA21]</span></a>) further differentiates buildings based on asset attributes and the hazard type
+Technical Manual (<a class="reference internal" href="#fema21" id="id1"><span>[FEMA21]</span></a>) further differentiates buildings based on asset attributes and the hazard type
 (e.g., wind vs. flood) for the purpose of loss estimation. These attributes define key features of the
 load path and components (e.g., roof shape, secondary water resistance, roof deck attachment, roof-wall
 connection, shutters, garage), and the number of attributes necessary to describe a given building varies.</p>
@@ -268,7 +269,7 @@ International Residential Code and International Building Code, Louisiana has a 
 framework and code eras that would require adaptation of the rulesets. Such adaptations are encouraged
 as part of the community’s use and adaptation of this workflow in its research.</p>
 <table class="colwidths-given docutils align-center" id="wind-bldg-attri">
-<caption><span class="caption-number">Table 3.4.2.1 </span><span class="caption-text">Building attributes for wind loss assessment for WSF and WMUH.</span><a class="headerlink" href="#wind-bldg-attri" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.4.2.1 </span><span class="caption-text">Building attributes for wind loss assessment for WSF and WMUH.</span><a class="headerlink" href="#wind-bldg-attri" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 65%" />
@@ -332,7 +333,7 @@ derived from aerial imagery, and terrain roughness (building inventory field <st
 Land Use Land Cover data, are also attributes required by the HAZUS wind loss model. As these were already
 assigned in the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_representation.html">Atlantic County, NJ testbed Asset Representation</a>, they are not discussed again herein.</p>
 <table class="docutils align-center" id="addinfo-ruleset-metavar">
-<caption><span class="caption-number">Table 3.4.2.2 </span><span class="caption-text">Additional details for rulesets for meta-variables in wind loss attribute assignment in HAZUS</span><a class="headerlink" href="#addinfo-ruleset-metavar" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.4.2.2 </span><span class="caption-text">Additional details for rulesets for meta-variables in wind loss attribute assignment in HAZUS</span><a class="headerlink" href="#addinfo-ruleset-metavar" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -355,7 +356,7 @@ assigned in the <a class="reference external" href="https://nheri-simcenter.gith
 in this testbed. See the <a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_representation.html">Atlantic County, NJ testbed Asset Representation</a>, the source of these rulesets,
 for additional rulesets guiding attribute assignments for other building classes and hazards.</p>
 <div class="section" id="wind-loss-attributes-for-wood-buildings">
-<h3>Wind Loss Attributes for Wood Buildings<a class="headerlink" href="#wind-loss-attributes-for-wood-buildings" title="Permalink to this headline">¶</a></h3>
+<h3>Wind Loss Attributes for Wood Buildings<a class="headerlink" href="#wind-loss-attributes-for-wood-buildings" title="Permalink to this headline"></a></h3>
 <p>The wind loss model in HAZUS classifies wooden buildings into five building classes:</p>
 <ol class="arabic simple">
 <li><p>two for single family homes (WSF1 and WSF2) and</p></li>
@@ -369,7 +370,7 @@ code editions and construction norms at that time. They are applied in this test
 purposes only. The corresponding time-evolving rulesets (PDFs and Python scripts) are
 cross-referenced in <a class="reference internal" href="#addinfo-ruleset-wood"><span class="std std-numref">Table 3.4.2.5</span></a>.</p>
 <table class="docutils align-center" id="wsf-attri">
-<caption><span class="caption-number">Table 3.4.2.3 </span><span class="caption-text">Additional HAZUS attributes assigned for wood single family (WSF) homes: wind losses.</span><a class="headerlink" href="#wsf-attri" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.4.2.3 </span><span class="caption-text">Additional HAZUS attributes assigned for wood single family (WSF) homes: wind losses.</span><a class="headerlink" href="#wsf-attri" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -405,7 +406,7 @@ cross-referenced in <a class="reference internal" href="#addinfo-ruleset-wood"><
 </tbody>
 </table>
 <table class="docutils align-center" id="wmuh-attri">
-<caption><span class="caption-number">Table 3.4.2.4 </span><span class="caption-text">Additional HAZUS attributes assigned for wood multi-unit home (WMUH): wind losses.</span><a class="headerlink" href="#wmuh-attri" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.4.2.4 </span><span class="caption-text">Additional HAZUS attributes assigned for wood multi-unit home (WMUH): wind losses.</span><a class="headerlink" href="#wmuh-attri" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -445,7 +446,7 @@ cross-referenced in <a class="reference internal" href="#addinfo-ruleset-wood"><
 </tbody>
 </table>
 <table class="docutils align-center" id="addinfo-ruleset-wood">
-<caption><span class="caption-number">Table 3.4.2.5 </span><span class="caption-text">Additional details for rulesets assigning wind loss attributes for wood buildings</span><a class="headerlink" href="#addinfo-ruleset-wood" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.4.2.5 </span><span class="caption-text">Additional details for rulesets assigning wind loss attributes for wood buildings</span><a class="headerlink" href="#addinfo-ruleset-wood" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -479,7 +480,7 @@ adopted this mitigation practice. Practices around SWR, particularly for contemp
 construction, are likely to be different in Louisiana, warranting further refinements
 to these rulesets by users</p>
 <table class="docutils align-center" id="swr-attri">
-<caption><span class="caption-number">Table 3.4.2.6 </span><span class="caption-text">Ruleset for determining the Second Water Resistance attribute for WSF homes.</span><a class="headerlink" href="#swr-attri" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.4.2.6 </span><span class="caption-text">Ruleset for determining the Second Water Resistance attribute for WSF homes.</span><a class="headerlink" href="#swr-attri" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
