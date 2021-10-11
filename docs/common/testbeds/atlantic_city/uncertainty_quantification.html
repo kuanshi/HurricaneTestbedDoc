@@ -153,13 +153,13 @@
            <div itemprop="articleBody">
              
   <div class="section" id="uncertainty-quantification">
-<span id="lbl-testbed-ac-uncertainty-quantification"></span><h1><span class="section-number">2.7. </span>Uncertainty Quantification<a class="headerlink" href="#uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-ac-uncertainty-quantification"></span><h1><span class="section-number">2.7. </span>Uncertainty Quantification<a class="headerlink" href="#uncertainty-quantification" title="Permalink to this headline"></a></h1>
 <p>Multiple sources of uncertainty are considered in this testbed including: the uncertainty in
 asset representation, hazard characterization, and damage and loss assessment. For these uncertainty
 sources, different strategies were implemented in the workflow to quantify their influence. THe following
 sections will introduce the details about each component.</p>
 <div class="section" id="in-asset-representation">
-<h2><span class="section-number">2.7.1. </span>In Asset Representation<a class="headerlink" href="#in-asset-representation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7.1. </span>In Asset Representation<a class="headerlink" href="#in-asset-representation" title="Permalink to this headline"></a></h2>
 <p>As discussed in <a class="reference internal" href="asset_representation.html#lbl-testbed-ac-asset-representation"><span class="std std-ref">Asset Representation</span></a>, the HAZUS Hurricane Technical Manual differentiates
 buildings based on asset attibutes for the subjected hazard type (wind or storm surge). These attributes
 are the buildings properties or structure features that would influence the
@@ -170,10 +170,10 @@ indicates that roughly 45% of house owners were likely to apply shutters on some
 asset representation (ruleset), a pre-2000 house has 45% probability to be assigned to have shutters, and 55%
 probability to be assigned with no shutter. Note that the resulting HAZUS building type is deterministic for
 each individual sample while the uncertainty induced by different possible attribute options are evaluted
-via multiple random realizations. <a class="reference internal" href="../lake_charles/uncertainty_quantification.html#uq-rulesets"><span class="std std-numref">Table 3.7.1.1</span></a> summarizes the three building attributes whose values
+via multiple random realizations. <a class="reference internal" href="#uq-rulesets"><span class="std std-numref">Table 2.7.1.1</span></a> summarizes the three building attributes whose values
 are randomly generated in this testbed.</p>
 <table class="docutils align-center" id="uq-rulesets">
-<caption><span class="caption-number">Table 2.7.1.1 </span><span class="caption-text">Random sampling in the rulesets.</span><a class="headerlink" href="#uq-rulesets" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.7.1.1 </span><span class="caption-text">Random sampling in the rulesets.</span><a class="headerlink" href="#uq-rulesets" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -202,7 +202,7 @@ are randomly generated in this testbed.</p>
 </table>
 </div>
 <div class="section" id="in-hazard-characterization">
-<h2><span class="section-number">2.7.2. </span>In Hazard Characterization<a class="headerlink" href="#in-hazard-characterization" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7.2. </span>In Hazard Characterization<a class="headerlink" href="#in-hazard-characterization" title="Permalink to this headline"></a></h2>
 <p>Given a specific category of hurricane, there are two different sources of uncertainty for site peak wind speed
 and storm surge values: (1) the uncertainty induced by possible different storm tracks, storm radii, storm
 translational speeds, central pressures, or handing angles (which is usually termed as epistemic uncertainty);
@@ -223,11 +223,11 @@ sampling is performed along with the multiple realizations from the epistemic un
 two uncertainty sources are considered simultaneously.</p>
 <div class="align-center figure" id="nearestneighbors">
 <a class="reference internal image-reference" href="../../../_images/nn.png"><img alt="../../../_images/nn.png" src="../../../_images/nn.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.7.2.1 </span><span class="caption-text">Nearest-neighbors method for sampling site hazard uncertainty.</span><a class="headerlink" href="#nearestneighbors" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.7.2.1 </span><span class="caption-text">Nearest-neighbors method for sampling site hazard uncertainty.</span><a class="headerlink" href="#nearestneighbors" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="in-damage-and-loss-assessment">
-<h2><span class="section-number">2.7.3. </span>In Damage and Loss Assessment<a class="headerlink" href="#in-damage-and-loss-assessment" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7.3. </span>In Damage and Loss Assessment<a class="headerlink" href="#in-damage-and-loss-assessment" title="Permalink to this headline"></a></h2>
 <p>The testbed implemented <span class="xref std std-ref">pelicun</span> (Probabilistic Estimation of Losses, Injuries, and Community resilience Under
 Natural disasters) to quantify damage (damage states) and loss (in the form of decision variables, e.g., loss ratio).
 Uncertainty from the hazard characterization step is first considered by the random sampling module in pelicun to

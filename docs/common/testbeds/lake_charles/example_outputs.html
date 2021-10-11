@@ -226,23 +226,50 @@ the app would direct you to the <strong>RES</strong> panel (<a class="reference 
 <a class="reference internal image-reference" href="../../../_images/R2D_RES.png"><img alt="../../../_images/R2D_RES.png" src="../../../_images/R2D_RES.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.8.1.9 </span><span class="caption-text">R2D RES panel.</span><a class="headerlink" href="#r2d-res" title="Permalink to this image"></a></p>
 </div>
+<p>For simulating the damage and loss for a large region of interest, it would be efficient to submit and run the job
+to <a class="reference external" href="https://www.designsafe-ci.org/">DesignSafe</a> on <a class="reference external" href="https://www.tacc.utexas.edu/systems/stampede2">Stampede2</a>.
+This can be done in R2D by clicking <strong>RUN at DesignSafe</strong> (one would need to have a valid
+<a class="reference external" href="https://www.designsafe-ci.org/account/register/">DesignSafe account</a> for login and access the computing resource).
+The individual building simulations are paralleled when being conducted on Stampede2 which accelerate the process, e.g.,
+for the entire building inventory in this testbed, it takes about 10 minutes using 240 Skylake (SKX) cores to complete
+the simulation and result post-processing.</p>
+<p>Users could monitor the job status and retrieve result data by <strong>GET from DesignSafe</strong> button (<a class="reference internal" href="#r2d-get-ds"><span class="std std-numref">Fig. 3.8.1.10</span></a>). The retrieved data include
+four major result files, i.e., <em>BIM.hdf</em>, <em>EDP.hdf</em>, <em>DM.hdf</em>, and <em>DV.hdf</em>. While R2D provides basic visualization
+functionalities (<a class="reference internal" href="#r2d-res"><span class="std std-numref">Fig. 3.8.1.9</span></a>), users could access the data which are downloaded under the remote work directory, e.g.,
+<em>/Documents/R2D/RemoteWorkDir</em> (this directory is machine specific and can be found in <strong>File-&gt;Preferences-&gt;Remote Jobs Directory</strong>).
+Once having these result files, users could extract and process interested information - the next section will use
+the results from this testbed as an example to discuss more details.</p>
+<div class="align-center figure" id="r2d-get-ds">
+<a class="reference internal image-reference" href="../../../_images/get_from_designsafe.png"><img alt="../../../_images/get_from_designsafe.png" src="../../../_images/get_from_designsafe.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.1.10 </span><span class="caption-text">R2D GET from DesignSafe.</span><a class="headerlink" href="#r2d-get-ds" title="Permalink to this image"></a></p>
+</div>
 </div>
 </div>
 <div class="section" id="regional-results-nsi-based-year-built">
 <h2><span class="section-number">3.8.2. </span>Regional Results (NSI-Based Year Built)<a class="headerlink" href="#regional-results-nsi-based-year-built" title="Permalink to this headline"></a></h2>
-<p>The geospatial distribution of estimated wind damage states and losses under Hurricane Laura
-are shown in <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.1</span></a> (a) and (b), respectively. Referring to <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.1</span></a> (c), most of the buildings
-in the studied region (85%) have relatively low to moderate damage (expected Damage State less than 2.0)
-due to the wind hazard. Referring to <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.1</span></a> (c), about 20% buildings would expected damage states lower than
+<p>The <em>BIM.hdf</em> file saves the building information models with populated building attributes as described in
+<a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>. The <em>EDP.hdf</em> summarizes the EDP realizations. The <em>DM.hdf</em> and
+<em>DV.hdf</em> files summarizes the statistics of damage states and estimated loss metrics. These results of this testbed
+can be accessed in the <a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">DesignSafe project</a>, along with the Jupyter
+notebook used to visualize them, which will be also discussed here.</p>
+<p><a class="reference internal" href="#terrain-swr"><span class="std std-numref">Fig. 3.8.2.1</span></a> (a) and (b) show the sample figures for the geospatial distribution of populated
+terrain type and second water resistance of the building inventory. The influence of different building
+attributes on the damage and loss results will be investigated in <a class="reference internal" href="validation_results.html#lbl-testbed-lc-validation-results"><span class="std std-ref">Validation Results</span></a>
+The geospatial distribution of estimated wind damage states and losses under Hurricane Laura
+are shown in <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.2</span></a> (a) and (b), respectively. Referring to <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.2</span></a> (c), most of the buildings
+in the studied region (75%) have relatively low to moderate damage (expected Damage State less than 2.0)
+due to the wind hazard. Referring to <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.2</span></a> (c), about 5% buildings would expected damage states lower than
 DS-1 and only about 5% buildings would expect to have damage states exceeding DS-3.
-The CDF of resulting loss ratios is shown in <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.1</span></a> (d) where about 40% buildings would expect
-a loss less than 10% of the total reconstruction cost, and about 30% buildings could see a loss more than 20% of the total
-reconstruction cost.
-These results can be accessed in the <a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">DesignSafe project</a>, along with the Jupyter
-notebook used to visualize the results.</p>
+The CDF of resulting loss ratios is shown in <a class="reference internal" href="#dl-and-cdf-lc"><span class="std std-numref">Fig. 3.8.2.2</span></a> (d) where about 20% buildings would expect
+a loss less than 10% of the total reconstruction cost, and about 30% buildings could see a loss more than 35% of the total
+reconstruction cost.</p>
+<div class="align-center figure" id="terrain-swr">
+<a class="reference internal image-reference" href="../../../_images/BIM_data.png"><img alt="../../../_images/BIM_data.png" src="../../../_images/BIM_data.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.8.2.1 </span><span class="caption-text">Terrain and second water resistance features populated and used in the simulation.</span><a class="headerlink" href="#terrain-swr" title="Permalink to this image"></a></p>
+</div>
 <div class="align-center figure" id="dl-and-cdf-lc">
 <a class="reference internal image-reference" href="../../../_images/DS_LS_CDF.png"><img alt="../../../_images/DS_LS_CDF.png" src="../../../_images/DS_LS_CDF.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.8.2.1 </span><span class="caption-text">Estimated regional damage states and loss ratios.</span><a class="headerlink" href="#dl-and-cdf-lc" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 3.8.2.2 </span><span class="caption-text">Estimated regional damage states and loss ratios.</span><a class="headerlink" href="#dl-and-cdf-lc" title="Permalink to this image"></a></p>
 </div>
 </div>
 </div>

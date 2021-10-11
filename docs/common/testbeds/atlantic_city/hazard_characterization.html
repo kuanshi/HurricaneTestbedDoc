@@ -162,7 +162,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="hazard-characterization">
-<span id="lbl-testbed-ac-hazard-characterization"></span><h1><span class="section-number">2.3. </span>Hazard Characterization<a class="headerlink" href="#hazard-characterization" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-ac-hazard-characterization"></span><h1><span class="section-number">2.3. </span>Hazard Characterization<a class="headerlink" href="#hazard-characterization" title="Permalink to this headline"></a></h1>
 <p>Both the wind and flood hazards affect the building inventory in this testbed. As the initial implementation of
 the regional assessment workflow incorporates the HAZUS Hurricane Damage and Loss Assessment methodology,
 hazards are quantified by two intensity measures: Peak Wind Speed (PWS) and Peak Water Depth (PWD).
@@ -174,7 +174,7 @@ either a historical scenario or a synthetic storm scenario, as discussed in the 
 Note that as part of the Asset Representation Process (see <a class="reference internal" href="asset_representation.html#lbl-testbed-ac-asset-representation"><span class="std std-ref">Asset Representation</span></a>), the design wind speeds from
 ASCE 7 are already included for each building footprint for reference.</p>
 <div class="section" id="synthetic-storm-scenario">
-<span id="lbl-testbed-ac-hazard-characterization-synthetic"></span><h2><span class="section-number">2.3.1. </span>Synthetic Storm Scenario<a class="headerlink" href="#synthetic-storm-scenario" title="Permalink to this headline">¶</a></h2>
+<span id="lbl-testbed-ac-hazard-characterization-synthetic"></span><h2><span class="section-number">2.3.1. </span>Synthetic Storm Scenario<a class="headerlink" href="#synthetic-storm-scenario" title="Permalink to this headline"></a></h2>
 <p>An Atlantic City landfall scenario was generated using the Storm Hazard Projection Tool developed in the
 NJcoast project ([<a class="reference internal" href="#njcoast20">NJCoast20</a>]). The constructed hazard scenario uses NJcoast’s basic simulation option,
 which identifies the 25 hurricane tracks from the SHP tool’s surrogate model that match the targeted
@@ -184,7 +184,7 @@ Beach Patrol Station (39.348308° N, -74.452544° W) under average tides. This s
 to inundate coastal areas in the testbed geography and generate significant wave run-up in some
 locales. The SHP Tool generates these through the following underlying computational models.</p>
 <div class="section" id="wind-modeling">
-<h3>Wind Modeling<a class="headerlink" href="#wind-modeling" title="Permalink to this headline">¶</a></h3>
+<h3>Wind Modeling<a class="headerlink" href="#wind-modeling" title="Permalink to this headline"></a></h3>
 <p>The SHP Tool generates its wind fields using a highly efficient, linear analytical model for the boundary
 layer winds of a moving hurricane developed by Snaiki and Wu ([<a class="reference internal" href="#snaiki17a">Snaiki17a</a>], [<a class="reference internal" href="#snaiki17b">Snaiki17b</a>]).
 To account for the exposure in each New Jersey county, an effective roughness length (weighted average)
@@ -213,11 +213,11 @@ entire hurricane time history - so the inland cities are subjected to slightly h
 the coastal cities.</p>
 <div class="align-center figure" id="pws">
 <a class="reference internal image-reference" href="../../../_images/pws.png"><img alt="../../../_images/pws.png" src="../../../_images/pws.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.1.15 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.15 </span><span class="caption-text">Interpolated peak wind speed (3s-gust) for each asset in the inventory.</span><a class="headerlink" href="#pws" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="storm-surge-modeling">
-<span id="lbl-testbed-ac-hazard-characterization-storm"></span><h3>Storm Surge Modeling<a class="headerlink" href="#storm-surge-modeling" title="Permalink to this headline">¶</a></h3>
+<span id="lbl-testbed-ac-hazard-characterization-storm"></span><h3>Storm Surge Modeling<a class="headerlink" href="#storm-surge-modeling" title="Permalink to this headline"></a></h3>
 <p>Coastal hazard descriptions use the outputs of the aforementioned SHP Tool, which estimates storm
 surge and total run up due to the breaking of near-shore waves for an arbitrary hurricane scenario
 using surrogate modeling techniques (<a class="reference internal" href="#jia13" id="id1"><span>[Jia13]</span></a>, <a class="reference internal" href="#jia15" id="id2"><span>[Jia15]</span></a>). The SHP Tool
@@ -244,11 +244,11 @@ in this test, only the peak water depth (PWD) was considered, which will be used
 Flood Damage and Loss Assessment.</p>
 <div class="align-center figure" id="pwd">
 <a class="reference internal image-reference" href="../../../_images/pwd.png"><img alt="../../../_images/pwd.png" src="../../../_images/pwd.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.1.16 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.1.16 </span><span class="caption-text">Interpolated peak water depth for each asset in the inventory.</span><a class="headerlink" href="#pwd" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="multiple-category-analysis-mca">
-<h3>Multiple Category Analysis (MCA)<a class="headerlink" href="#multiple-category-analysis-mca" title="Permalink to this headline">¶</a></h3>
+<h3>Multiple Category Analysis (MCA)<a class="headerlink" href="#multiple-category-analysis-mca" title="Permalink to this headline"></a></h3>
 <p>Note that the resulting 3s-gust PWS values by this Category-5 hurricane is much higher than
 the design wind speed specified by ASCE 7-16 (<a class="reference internal" href="../lake_charles/overview.html#asce16" id="id6"><span>[ASCE16]</span></a>) for the Atlantic County which ranges
 from 105 mph to 115 mph. Since this extreme scenario bears a small likelihood, this testbed
@@ -256,7 +256,7 @@ also scales the wind and flood water field down to lower categories to conduct t
 Multiple Category Analysis to exam the building performance under different intense scenarios
 (<a class="reference internal" href="#hurricane-cat"><span class="std std-numref">Table 2.3.1.1</span></a>) and were used later in the Verification Results (see <a class="reference internal" href="sample_results.html#lbl-testbed-ac-sample-results"><span class="std std-ref">Verification Results</span></a>).</p>
 <table class="docutils align-default" id="hurricane-cat">
-<caption><span class="caption-number">Table 2.3.1.1 </span><span class="caption-text">Scaled peak wind speed and peak water depth for different hurricane categories.</span><a class="headerlink" href="#hurricane-cat" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.3.1.1 </span><span class="caption-text">Scaled peak wind speed and peak water depth for different hurricane categories.</span><a class="headerlink" href="#hurricane-cat" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 34%" />
 <col style="width: 16%" />
@@ -288,7 +288,7 @@ Multiple Category Analysis to exam the building performance under different inte
 <p>Users can access the synthetic wind field and storm surge inputs for the defined scenario, as well as the suite
 created for the MCA (<a class="reference internal" href="#synthetic-data"><span class="std std-numref">Table 2.3.1.2</span></a>).</p>
 <table class="docutils align-center" id="synthetic-data">
-<caption><span class="caption-number">Table 2.3.1.2 </span><span class="caption-text">Access points for synthetic storm scenario files</span><a class="headerlink" href="#synthetic-data" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.3.1.2 </span><span class="caption-text">Access points for synthetic storm scenario files</span><a class="headerlink" href="#synthetic-data" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -310,7 +310,7 @@ created for the MCA (<a class="reference internal" href="#synthetic-data"><span 
 </div>
 </div>
 <div class="section" id="historical-storm-scenario">
-<h2><span class="section-number">2.3.2. </span>Historical Storm Scenario<a class="headerlink" href="#historical-storm-scenario" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3.2. </span>Historical Storm Scenario<a class="headerlink" href="#historical-storm-scenario" title="Permalink to this headline"></a></h2>
 <p>Hindcast simulations of historical storm events are equally valuable, particularly when they are coupled
 with observations of damage and loss across an inventory. As such this testbed includes the option to use
 existing hindcast data from established community providers as input to the loss estimation workflow.
@@ -322,7 +322,7 @@ by FEMA and the State of New Jersey, the wind and storm surge intensities in the
 less than those observed in the more northern counties. Nonetheless, these historical inputs are provided
 to demonstrate the workflow’s ability to support hindcast evaluations of damage and loss in actual storm events.</p>
 <div class="section" id="id10">
-<h3>Wind Modeling<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<h3>Wind Modeling<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
 <p>Hindcast wind fields for this event were made available by Peter Vickery and Applied Research Associates (ARA).
 Their hurricane model derives wind speeds based on numerically solving the differential equations of a
 translating storm and iteratively calibrating based on field observations over the weeks following an event.
@@ -330,7 +330,7 @@ The ARA_Example.zip provides the peak 3-s gust peak wind speed field of Hurrican
 directly used in the presented hurricane workflow, as visualized in <a class="reference internal" href="#ara-pws"><span class="std std-numref">Fig. 2.3.2.2</span></a> for Atlantic County.</p>
 <div class="align-center figure" id="ara-pws">
 <a class="reference internal image-reference" href="../../../_images/ARA_PWS.png"><img alt="../../../_images/ARA_PWS.png" src="../../../_images/ARA_PWS.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.2.2 </span><span class="caption-text">ARA 3-s gust peak wind speed (3-s gust at 10 m) in Atlantic County during Hurricane Sandy.</span><a class="headerlink" href="#ara-pws" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.2 </span><span class="caption-text">ARA 3-s gust peak wind speed (3-s gust at 10 m) in Atlantic County during Hurricane Sandy.</span><a class="headerlink" href="#ara-pws" title="Permalink to this image"></a></p>
 </div>
 <p>Alternatively, users can also use other available wind field resources. For instance,
 <a class="reference external" href="https://www.rms.com/event-response/hwind/legacy-archive/storms">RMS Legacy Archive</a> provides access to
@@ -339,7 +339,7 @@ for an alternate description of the field. Similar to the ARA peak wind speed fi
 would first convert the data from other resources to the format as shown in <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/ARA_Example.zip">ARA_Example.zip</a>.</p>
 </div>
 <div class="section" id="id11">
-<h3>Storm Surge Modeling<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h3>Storm Surge Modeling<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h3>
 <p>ADCIRC hindcast of Superstorm Sandy was generated by the Westerink Group at the University of Notre Dame and
 made available to the SimCentetr. <a class="reference internal" href="#adcirc-pwd"><span class="std std-numref">Fig. 2.3.2.3</span></a> shows the peak storm surge from the hindcast. Note that
 the scope of the hindcast focused on the heavier-impacted regions of New York and Northern New Jersey,
@@ -351,18 +351,18 @@ systems and at any point inland of the grid points shown in <a class="reference 
 the presented hurricane workflow.</p>
 <div class="align-center figure" id="adcirc-pwd">
 <a class="reference internal image-reference" href="../../../_images/ADCIRC_PWD.png"><img alt="../../../_images/ADCIRC_PWD.png" src="../../../_images/ADCIRC_PWD.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.2.3 </span><span class="caption-text">Simulated storm surge field of Hurricane Sandy by ADCIRC (by courtesy of Dr. Westerink).</span><a class="headerlink" href="#adcirc-pwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.3 </span><span class="caption-text">Simulated storm surge field of Hurricane Sandy by ADCIRC (by courtesy of Dr. Westerink).</span><a class="headerlink" href="#adcirc-pwd" title="Permalink to this image"></a></p>
 </div>
 <div class="align-center figure" id="adcirc-waterelev">
 <a class="reference internal image-reference" href="../../../_images/ADCIRC_waterelev.png"><img alt="../../../_images/ADCIRC_waterelev.png" src="../../../_images/ADCIRC_waterelev.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.2.4 </span><span class="caption-text">Simulated water elevation of Hurricane Sandy by ADCIRC (Atlantic County).</span><a class="headerlink" href="#adcirc-waterelev" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.4 </span><span class="caption-text">Simulated water elevation of Hurricane Sandy by ADCIRC (Atlantic County).</span><a class="headerlink" href="#adcirc-waterelev" title="Permalink to this image"></a></p>
 </div>
 <div class="align-center figure" id="adcirc-sitepwd">
 <a class="reference internal image-reference" href="../../../_images/ADCIRC_sitePWD.png"><img alt="../../../_images/ADCIRC_sitePWD.png" src="../../../_images/ADCIRC_sitePWD.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.2.5 </span><span class="caption-text">Simulated water depth over land for Hurricane Sandy by ADCIRC (Atlantic County).</span><a class="headerlink" href="#adcirc-sitepwd" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.2.5 </span><span class="caption-text">Simulated water depth over land for Hurricane Sandy by ADCIRC (Atlantic County).</span><a class="headerlink" href="#adcirc-sitepwd" title="Permalink to this image"></a></p>
 </div>
 <table class="docutils align-center" id="superstorm-data">
-<caption><span class="caption-number">Table 2.3.2.1 </span><span class="caption-text">Access points for Superstorm Sandy files</span><a class="headerlink" href="#superstorm-data" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2.3.2.1 </span><span class="caption-text">Access points for Superstorm Sandy files</span><a class="headerlink" href="#superstorm-data" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />

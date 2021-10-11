@@ -155,7 +155,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="overview">
-<span id="lbl-testbed-lc-overview"></span><h1><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-lc-overview"></span><h1><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h1>
 <p>This testbed for regional hurricane risk assessment of Lake Charles, LA under wind hazards adopts an approach
 consistent with that developed for the Atlantic County testbed. Its intent is to (1) explore the possibility
 of using advanced machine learning and artificial intelligence techniques to populate/predict important
@@ -168,7 +168,7 @@ of the backend regional resilience assessment workflow. This documentation speci
 the Lake Charles inventory. Sample results are presented to verify the workflow and validate its different aspects
 against multiple published datasets.</p>
 <div class="section" id="rationale">
-<h2><span class="section-number">3.1.1. </span>Rationale<a class="headerlink" href="#rationale" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.1. </span>Rationale<a class="headerlink" href="#rationale" title="Permalink to this headline"></a></h2>
 <p>As detailed in <a class="reference internal" href="#roueche20" id="id1"><span>[Roueche20]</span></a>, Hurricane Laura made landfall as a strong Category 4 storm near Cameron, LA in the
 early hours of 27 August 2020, tying the Last Island Hurricane of 1856 as the strongest land-falling hurricane
 in Louisiana history. Wind speeds are estimated to have reached or exceeded the design wind speeds for Risk
@@ -201,14 +201,14 @@ augmenting sparse inventory data in a given region, e.g., semantically describin
 by artificial intelligence.</p>
 </div>
 <div class="section" id="capabilities-supported-hazards">
-<h2><span class="section-number">3.1.2. </span>Capabilities &amp; Supported Hazards<a class="headerlink" href="#capabilities-supported-hazards" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.2. </span>Capabilities &amp; Supported Hazards<a class="headerlink" href="#capabilities-supported-hazards" title="Permalink to this headline"></a></h2>
 <p>The testbed supports the transition from census-block-level loss projections to asset-level projections that assess
 the damage to individual buildings under hurricane-induced wind hazards. Water penetration due to the breach of building
 envelopes and/or wind-borne debris impact are also captured in the damage and loss modeling, though the physics of
 these phenomena themselves are not explicitly modeled. Storm surge, flood and other rainfall-induced hazards are
 not included in the current implementation. Moreover, the inventory focuses only on wood-frame
 residential construction. These intentional focuses of the current implementation leave ample room for further
-community-led development. The adoption of HAZUS loss estimation frameworks <a class="reference internal" href="../sf_bay_area/overview.html#fema18" id="id6"><span>[FEMA18]</span></a> takes advantage of a process developed
+community-led development. The adoption of HAZUS loss estimation frameworks <a class="reference internal" href="#fema18" id="id6"><span>[FEMA18]</span></a> takes advantage of a process developed
 in Atlantic County, NJ for assigning attributes to specific building footprints using time-evolving heuristic
 rulesets grounded in local codes/standards and normative practice. As this testbed demonstrates a quick
 “spin-up” after a hurricane, the rulesets from New Jersey are directly applied; while many of the practices
@@ -216,7 +216,7 @@ are common, further refinements of the workflow should revise these rulesets to 
 specific regulations and mitigation measures in Lake Charles.</p>
 </div>
 <div class="section" id="current-implementation">
-<h2><span class="section-number">3.1.3. </span>Current Implementation<a class="headerlink" href="#current-implementation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.3. </span>Current Implementation<a class="headerlink" href="#current-implementation" title="Permalink to this headline"></a></h2>
 <p>For the initial implementation of the backend workflow, asset description adopts an augmented parcel and
 available hindcast wind fields provide the Peak Wind Speed (PWS) during the hurricane (used as hazard
 intensity measure). In lieu of a structural analysis model, assets are assigned attributes associated
@@ -225,7 +225,7 @@ methodology for hurricanes thus enables these intensity measures to be related t
 damage and loss, based on the building class and assigned attributes.</p>
 </div>
 <div class="section" id="available-inventories">
-<h2><span class="section-number">3.1.4. </span>Available Inventories<a class="headerlink" href="#available-inventories" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1.4. </span>Available Inventories<a class="headerlink" href="#available-inventories" title="Permalink to this headline"></a></h2>
 <p>The constructed building inventory developed for Lake Charles is accessible via DesignSafe.
 This testbed includes 30,078 buildings including 26,517 residential buildings and 3,561 commercial buildings
 (classified by BRAILS, more details will be introduced in <a class="reference internal" href="asset_description.html#lbl-testbed-lc-asset-description"><span class="std std-ref">Asset Description</span></a>)
@@ -234,11 +234,11 @@ Year Built of the buildings in the inventory.  <a class="reference internal" hre
 of the occupancy classes in the inventory.</p>
 <div class="align-center figure" id="id7">
 <span id="fig-yearbuilt"></span><a class="reference internal image-reference" href="../../../_images/YearBuilt.png"><img alt="../../../_images/YearBuilt.png" src="../../../_images/YearBuilt.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.4.1 </span><span class="caption-text">Geospatial visualization of the building inventory by year built.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.4.1 </span><span class="caption-text">Geospatial visualization of the building inventory by year built.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </div>
 <div class="align-center figure" id="id8">
 <span id="fig-occupancyclass"></span><a class="reference internal image-reference" href="../../../_images/OccupancyClass.png"><img alt="../../../_images/OccupancyClass.png" src="../../../_images/OccupancyClass.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.4.2 </span><span class="caption-text">Geospatial visualization of the building inventory by occupancy class.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.4.2 </span><span class="caption-text">Geospatial visualization of the building inventory by occupancy class.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
 </div>
 <p><a class="reference internal" href="#fig-inventorypinechart"><span class="std std-numref">Fig. 3.1.4.3</span></a> summarizes characteristics of the testbed inventory, including distribution by
 year built, occupancy class, and number of stories.
@@ -247,7 +247,7 @@ before 1980), with a dominance of low-rise (1-2 stories) buildings (approximatel
 98% of inventory buildings). About 88% of buildings are of residential use.</p>
 <div class="align-center figure" id="id9">
 <span id="fig-inventorypinechart"></span><a class="reference internal image-reference" href="../../../_images/InventoryPineChart.png"><img alt="../../../_images/InventoryPineChart.png" src="../../../_images/InventoryPineChart.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.1.4.3 </span><span class="caption-text">Distribution of building characteristics of the building inventory.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.4.3 </span><span class="caption-text">Distribution of building characteristics of the building inventory.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="roueche20"><span class="brackets"><a class="fn-backref" href="#id1">Roueche20</a></span></dt>
