@@ -149,28 +149,28 @@
            <div itemprop="articleBody">
              
   <div class="section" id="standard-wind-speed-conversions">
-<span id="lbl-testbed-ac-wind-speed-conversion"></span><h1><span class="section-number">2.12. </span>Standard Wind Speed Conversions<a class="headerlink" href="#standard-wind-speed-conversions" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-testbed-ac-wind-speed-conversion"></span><h1><span class="section-number">2.12. </span>Standard Wind Speed Conversions<a class="headerlink" href="#standard-wind-speed-conversions" title="Permalink to this headline"></a></h1>
 <p>Since the wind speed (<span class="math notranslate nohighlight">\(V(600s, 10m, z_0)\)</span>) from the NJcoast SHP Tool is averaged over the time window of 1 hour,
 a number of standard conversions parse the wind speed to the 3-second and open-terrain PWS
 (i.e., <span class="math notranslate nohighlight">\(V(3s, 10m, Exposure C)\)</span>):</p>
 <p>1. Computing <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(z_g\)</span> by ASCE 7-16 ([<a class="reference internal" href="#asce16">ASCE16</a>]) Equation C26.10-3 and C26.10-4
 taking <span class="math notranslate nohighlight">\(c_1 = 5.65, c_2 = 450\)</span> for units in m):</p>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-pws-conversion-0">
-<span class="eqno">(2.12.1)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-pws-conversion-0" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\alpha_{SHP} = c_1z_0^{-0.133}\\z_{g,SHP} = c2z_0^{0.125}\end{aligned}\end{align} \]</div>
+<span class="eqno">(2.12.1)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-pws-conversion-0" title="Permalink to this equation"></a></span>\[ \begin{align}\begin{aligned}\alpha_{SHP} = c_1z_0^{-0.133}\\z_{g,SHP} = c2z_0^{0.125}\end{aligned}\end{align} \]</div>
 <ol class="arabic simple" start="2">
 <li><p>Computing the gradient height <span class="math notranslate nohighlight">\(V(600s, z_g, z_0)\)</span> using the power law expression:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-pws-conversion-1">
-<span class="eqno">(2.12.2)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-pws-conversion-1" title="Permalink to this equation">¶</a></span>\[V(600s, z_g, z_0) = V(600s, 10m, z_0) \times (\frac{z_{g,SHP}}{10m})^{1/\alpha_{SHP}}\]</div>
+<span class="eqno">(2.12.2)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-pws-conversion-1" title="Permalink to this equation"></a></span>\[V(600s, z_g, z_0) = V(600s, 10m, z_0) \times (\frac{z_{g,SHP}}{10m})^{1/\alpha_{SHP}}\]</div>
 <p>3. Computing the Exposure C (open-terrain) wind speed at 10m height <span class="math notranslate nohighlight">\(V(600s, 10m, Exposure C)\)</span>, with
 <span class="math notranslate nohighlight">\(\alpha_C = 9.5\)</span> and <span class="math notranslate nohighlight">\(z_{g,C} = 274.32 m\)</span> ([<a class="reference internal" href="#asce16">ASCE16</a>]):</p>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-pws-conversion-2">
-<span class="eqno">(2.12.3)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-pws-conversion-2" title="Permalink to this equation">¶</a></span>\[V(600s, 10m, Exposure C) = V(600s, z_{g,C}, z_0) \times (\frac{10m}{z_g})^{1/\alpha_C}\]</div>
+<span class="eqno">(2.12.3)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-pws-conversion-2" title="Permalink to this equation"></a></span>\[V(600s, 10m, Exposure C) = V(600s, z_{g,C}, z_0) \times (\frac{10m}{z_g})^{1/\alpha_C}\]</div>
 <ol class="arabic simple" start="4">
 <li><p>Converting the result to 3s-gust wind speed using the ESDU conversion [<a class="reference internal" href="#esdu02">ESDU02</a>]:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-common-testbeds-atlantic-city-pws-conversion-3">
-<span class="eqno">(2.12.4)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-pws-conversion-3" title="Permalink to this equation">¶</a></span>\[V(3s, 10m, Exposure C) = V(600s, 10m, Exposure C) \times \frac{C(3s)}{C(600s)}\]</div>
+<span class="eqno">(2.12.4)<a class="headerlink" href="#equation-common-testbeds-atlantic-city-pws-conversion-3" title="Permalink to this equation"></a></span>\[V(3s, 10m, Exposure C) = V(600s, 10m, Exposure C) \times \frac{C(3s)}{C(600s)}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C(3s) = 1.52\)</span> and <span class="math notranslate nohighlight">\(C(600s) = 1.05\)</span> are the Gust Factor from the ESDU conversion.</p>
 <dl class="citation">
 <dt class="label" id="asce16"><span class="brackets">ASCE16</span></dt>

@@ -131,20 +131,20 @@
            <div itemprop="articleBody">
              
   <div class="section" id="sensitivity-analysis">
-<span id="lbl-dakotasensitivity"></span><h1>Sensitivity analysis<a class="headerlink" href="#sensitivity-analysis" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-dakotasensitivity"></span><h1>Sensitivity analysis<a class="headerlink" href="#sensitivity-analysis" title="Permalink to this headline"></a></h1>
 <p>Global sensitivity analysis is used to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. Global sensitivity analysis helps users understand the overall impact of different sources of uncertainties and their interactions and accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables. Sensitivity index can also be used to identify the input variables for which additional experimentation/research may reduce the uncertainty in the initial specification.</p>
 <p><strong>Sobol indices</strong> are widely used variance-based global sensitivity measures with two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> quantifies the fraction of variance in QoI attributed to specific input random variable(s) but without considering the interactive effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account.</p>
 <p>Given an output of a model <span class="math notranslate nohighlight">\(y=g(\boldsymbol{x})\)</span> and input random variables <span class="math notranslate nohighlight">\(\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}\)</span>, the first-order main and total effect indices of each input variable are defined as</p>
 <div class="math notranslate nohighlight" id="equation-si">
-<span class="eqno">()<a class="headerlink" href="#equation-si" title="Permalink to this equation">¶</a></span>\[S_i=\frac{\text{Var}_{x_i}[\text{E}_{\boldsymbol{x}_{\sim i}}[y|x_i]]}{\text{Var}[y]}, \qquad i=1, \cdots ,d\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-si" title="Permalink to this equation"></a></span>\[S_i=\frac{\text{Var}_{x_i}[\text{E}_{\boldsymbol{x}_{\sim i}}[y|x_i]]}{\text{Var}[y]}, \qquad i=1, \cdots ,d\]</div>
 <div class="math notranslate nohighlight" id="equation-sit">
-<span class="eqno">()<a class="headerlink" href="#equation-sit" title="Permalink to this equation">¶</a></span>\[S_i^T=\frac{\text{E}_{\boldsymbol{x}_{\sim i}}[\text{Var}_{x_i}[y|\boldsymbol{x}_{\sim i}]]}{\text{Var}[y]},  \qquad  i=1, \cdots ,d\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-sit" title="Permalink to this equation"></a></span>\[S_i^T=\frac{\text{E}_{\boldsymbol{x}_{\sim i}}[\text{Var}_{x_i}[y|\boldsymbol{x}_{\sim i}]]}{\text{Var}[y]},  \qquad  i=1, \cdots ,d\]</div>
 <p>respectively, where <span class="math notranslate nohighlight">\(\boldsymbol{x}_{\sim i}\)</span> indicates the set of all input variables except <span class="math notranslate nohighlight">\(x_i\)</span>. Currently, this engine supports first-order main and total effect indices.</p>
 <p><strong>Dakota Sensitivity Analysis</strong> is based on the efficient Monte Carlo method (see the paper of <a class="reference internal" href="#weirs12" id="id1"><span>[Weirs12]</span></a> referred in Dakota Technical manual <a class="reference internal" href="#adams20" id="id2"><span>[Adams20]</span></a>). The user has two options to generate the samples on which the statistics are created: Monte Carlo and Latin Hypercube Sampling (LHS). For both, they are required, as shown in the figure below, to specify the number of samples and a seed.</p>
 <p>The sensitivity analysis results will show both the main effect and total effect <a class="reference external" href="https://en.wikipedia.org/wiki/Variance-based_sensitivity_analysis">Sobol indices</a> for each RV for each of the QoI.</p>
 <div class="align-center figure" id="id3">
 <span id="figsensitivity"></span><img alt="../../../../../_images/SensitivityAnalysis.png" src="../../../../../_images/SensitivityAnalysis.png" />
-<p class="caption"><span class="caption-text">Sensitivity analysis input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Sensitivity analysis input panel.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

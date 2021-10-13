@@ -131,9 +131,9 @@
            <div itemprop="articleBody">
              
   <div class="section" id="best-practices">
-<span id="lbl-bestpractices"></span><h1>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-bestpractices"></span><h1>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline"></a></h1>
 <div class="section" id="errors-and-uncertainties">
-<h2>Errors and uncertainties<a class="headerlink" href="#errors-and-uncertainties" title="Permalink to this headline">¶</a></h2>
+<h2>Errors and uncertainties<a class="headerlink" href="#errors-and-uncertainties" title="Permalink to this headline"></a></h2>
 <p>There are several sources of errors that are often observed in CFD simulations. These include:</p>
 <ol class="arabic simple">
 <li><p>The model is described by the Navier-Stokes equations. The exact N-S equations are solved when Direct Numerical Simulations (DNS) are employed. However, when the RANS approach is involved, as in HydroUQ, this involves approximations that could lead to errors and uncertainties. Thus, selecting the correct parameters is paramount.</p></li>
@@ -141,7 +141,7 @@
 </ol>
 </div>
 <div class="section" id="froude-number">
-<h2>Froude number<a class="headerlink" href="#froude-number" title="Permalink to this headline">¶</a></h2>
+<h2>Froude number<a class="headerlink" href="#froude-number" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>One of the essential non-dimensional numbers that describe different flow regimes for open channel flow. It is a dimensionless quantity that is a ratio of the inertial and gravitational forces as <span class="math notranslate nohighlight">\(Fr = \frac{V}{\sqrt{gD}}\)</span>. Here <code class="docutils literal notranslate"><span class="pre">V</span></code> is the water velocity, <code class="docutils literal notranslate"><span class="pre">D</span></code> is the hydraulic depth across the cross-sectional area of the flow, and <code class="docutils literal notranslate"><span class="pre">g</span></code> is the gravity.</p></li>
 <li><p>It is important to calculate if the flow is sub-critical (Fr &lt; 1) or critical (Fr = 1) or supercritical (Fr &gt; 1). Critical flows are often unstable and set up standing waves between sub and supercritical flows.</p></li>
@@ -149,7 +149,7 @@
 </ol>
 </div>
 <div class="section" id="spatial-discretization">
-<h2>Spatial discretization<a class="headerlink" href="#spatial-discretization" title="Permalink to this headline">¶</a></h2>
+<h2>Spatial discretization<a class="headerlink" href="#spatial-discretization" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>Mesh checking is always essential. R2D app performs a mesh check, and the log is available for review after the simulation is complete. It is much recommended to review this.</p></li>
 <li><p>Mesh convergence study is critical to ensuring good and reliable results using CFD simulations. Thus, it is strongly recommended to estimate the error by refining the mesh, if possible.</p></li>
@@ -160,7 +160,7 @@
 <p># Avoid highly skewed cells so that the angles between gridlines are orthogonal or near orthogonal. Angles with less than 40-degrees or greater than 140-degrees may lead to numerical instabilities or unsatisfactory results.</p>
 </div>
 <div class="section" id="temporal-discretization">
-<h2>Temporal discretization<a class="headerlink" href="#temporal-discretization" title="Permalink to this headline">¶</a></h2>
+<h2>Temporal discretization<a class="headerlink" href="#temporal-discretization" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>It is suggested to take a small timestep to start with so that it can be automatically increased to check the influence of timesteps on the results.</p></li>
 <li><p>The timestep size should be decided based on the <a class="reference external" href="https://en.wikipedia.org/wiki/Courant%E2%80%93Friedrichs%E2%80%93Lewy_condition">Courant-Friedrichs-Lewy (CFL) condition</a> . Yet, it should also be small enough to capture any transient phenomena of interest.</p></li>
@@ -168,7 +168,7 @@
 </ol>
 </div>
 <div class="section" id="boundary-conditions">
-<h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<h2>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">EVT</span></code> requires one to provide six boundary conditions for the six standard patches <code class="docutils literal notranslate"><span class="pre">Entry</span></code>, <code class="docutils literal notranslate"><span class="pre">Exit</span></code>, <code class="docutils literal notranslate"><span class="pre">Right</span></code>, <code class="docutils literal notranslate"><span class="pre">Left</span></code>, <code class="docutils literal notranslate"><span class="pre">Bottom</span></code> and <code class="docutils literal notranslate"><span class="pre">Top</span></code>.</p></li>
 <li><p>If no boundary condition is specified for a particular patch, it is assumed to be <code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">empty</span></code> by default. Presently, R2D app only allows specification of the velocity and pressure boundary conditions. If you would like to specify other parameters, please write to us at <a class="reference internal" href="../../../bugs.html#lblbugs"><span class="std std-ref">Bugs &amp; Feature Requests</span></a>.</p></li>
@@ -178,7 +178,7 @@
 </ol>
 </div>
 <div class="section" id="sw-cfd-domain-sizes">
-<h2>SW-CFD domain sizes<a class="headerlink" href="#sw-cfd-domain-sizes" title="Permalink to this headline">¶</a></h2>
+<h2>SW-CFD domain sizes<a class="headerlink" href="#sw-cfd-domain-sizes" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>Note that each degree of latitude is approximately 69 miles (111 km apart). At the Equator, the distance is 68.703 miles (110.567 km); at Tropic of Cancer and Capricorn, it is 68.94 miles (110.948 km), and at the poles, it is 69.94 miles (111.699 km).</p></li>
 <li><p>60 minutes = 1 degree</p></li>
@@ -187,13 +187,13 @@
 </ol>
 </div>
 <div class="section" id="turbulence-modeling">
-<h2>Turbulence modeling<a class="headerlink" href="#turbulence-modeling" title="Permalink to this headline">¶</a></h2>
+<h2>Turbulence modeling<a class="headerlink" href="#turbulence-modeling" title="Permalink to this headline"></a></h2>
 <ol class="arabic">
 <li><p>Compute the Reynolds number to determine if the flow is turbulent. Do not use turbulent models for laminar flows.</p></li>
 <li><p>Estimate the y+ and the thickness of the first cell layer. The ideal distance of the first node from the wall <span class="math notranslate nohighlight">\(\Delta y\)</span> can be estimated to be</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-hydro-bestpractices-0">
-<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-hydro-bestpractices-0" title="Permalink to this equation">¶</a></span>\[\Delta y = L \cdot y^{+} \cdot \sqrt{74} \cdot {Re}_{L}^{-13/14}\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-hydro-bestpractices-0" title="Permalink to this equation"></a></span>\[\Delta y = L \cdot y^{+} \cdot \sqrt{74} \cdot {Re}_{L}^{-13/14}\]</div>
 </div></blockquote>
 </li>
 </ol>
@@ -201,7 +201,7 @@
 <blockquote>
 <div><div class="align-center figure" id="id1">
 <span id="yplusform"></span><a class="reference internal image-reference" href="../../../../../_images/yplus.png"><img alt="../../../../../_images/yplus.png" src="../../../../../_images/yplus.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-text">The variation of non-dimensional velocity and distance</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">The variation of non-dimensional velocity and distance</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </div>
 </div></blockquote>
 <ol class="arabic">
@@ -210,7 +210,7 @@
 <blockquote>
 <div><div class="align-center figure" id="id2">
 <span id="viscousyplus"></span><a class="reference internal image-reference" href="../../../../../_images/Viscousyplus.png"><img alt="../../../../../_images/Viscousyplus.png" src="../../../../../_images/Viscousyplus.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">Resolution of the viscous sub-layer</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Resolution of the viscous sub-layer</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </div>
 </div></blockquote>
 </li>
@@ -221,7 +221,7 @@
 </ol>
 </div>
 <div class="section" id="user-errors">
-<h2>User errors<a class="headerlink" href="#user-errors" title="Permalink to this headline">¶</a></h2>
+<h2>User errors<a class="headerlink" href="#user-errors" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>Check for details in the geometry. Do not over-simplify the geometry without an understanding of the given problem.</p></li>
 <li><p>Inaccurate use of boundary conditions, poor-quality grids are commonly observed user errors.</p></li>
@@ -229,7 +229,7 @@
 </ol>
 </div>
 <div class="section" id="checking-results">
-<h2>Checking results<a class="headerlink" href="#checking-results" title="Permalink to this headline">¶</a></h2>
+<h2>Checking results<a class="headerlink" href="#checking-results" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>Check the overall mass balance.</p></li>
 <li><p>Check whether the values and distribution of values of velocities, forces, and pressures are realistic.</p></li>

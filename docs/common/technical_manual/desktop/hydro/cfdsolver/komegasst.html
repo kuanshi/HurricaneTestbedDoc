@@ -131,7 +131,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="k-omega-sst-model">
-<h1>k-Omega SST model<a class="headerlink" href="#k-omega-sst-model" title="Permalink to this headline">¶</a></h1>
+<h1>k-Omega SST model<a class="headerlink" href="#k-omega-sst-model" title="Permalink to this headline"></a></h1>
 <p>The k-<span class="math notranslate nohighlight">\(\omega\)</span> Shear Stress Transport (SST) turbulence model was originally proposed by <a class="reference internal" href="#me1994" id="id1"><span>[Me1994]</span></a> as a two-equation eddy-viscosity model. The version available in Hydro-UQ is based on the implementation of <a class="reference internal" href="#mekula2003" id="id2"><span>[MeKuLa2003]</span></a> which is available through OpenFOAM.</p>
 <p>The standard k-<span class="math notranslate nohighlight">\(\omega\)</span> model is well suited for simulating the flow in the sub-viscous layer while the k-<span class="math notranslate nohighlight">\(\epsilon\)</span> model is ideal for predicting the flow slightly away from the wall. Further on, the standard k-<span class="math notranslate nohighlight">\(\omega\)</span> is more suitable for low-Reynolds number flows, highly nonlinear, often sensitive to the initial guess and thus more difficult to converge.</p>
 <p>Alternatively, the k-<span class="math notranslate nohighlight">\(\omega\)</span> SST is a hybrid model that combines the advantages of the k-<span class="math notranslate nohighlight">\(\omega\)</span> and k-<span class="math notranslate nohighlight">\(\epsilon\)</span> models by switching between them. The k-<span class="math notranslate nohighlight">\(\omega\)</span> SST model uses the k-<span class="math notranslate nohighlight">\(\omega\)</span> model is used near the wall and switches to the k-<span class="math notranslate nohighlight">\(\epsilon\)</span> model as it approaches the free-stream. The SST models are generally less sensitive to the free-stream conditions and avoid build-up of excessive turbulent kinetic energy near <a class="reference external" href="https://en.wikipedia.org/wiki/Stagnation_point">stagnation points</a> as compared to the usual k-<span class="math notranslate nohighlight">\(\epsilon\)</span> models.</p>
@@ -140,22 +140,22 @@
 <li><p>For turbulence kinetic energy <span class="math notranslate nohighlight">\((k)\)</span></p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-0">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-0" title="Permalink to this equation">¶</a></span>\[\frac{D}{Dt} \left(\rho k\right) = \nabla \cdot \left( \rho D_k \nabla k \right) + \rho G - \frac{2}{3} \rho k \left(\nabla \cdot \mathbf{u}\right) - \rho \beta^{*} \omega k + S_k\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-0" title="Permalink to this equation"></a></span>\[\frac{D}{Dt} \left(\rho k\right) = \nabla \cdot \left( \rho D_k \nabla k \right) + \rho G - \frac{2}{3} \rho k \left(\nabla \cdot \mathbf{u}\right) - \rho \beta^{*} \omega k + S_k\]</div>
 </div></blockquote>
 </li>
 <li><p>For turbulence specific dissipation rate <span class="math notranslate nohighlight">\((\omega)\)</span></p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-1">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-1" title="Permalink to this equation">¶</a></span>\[\frac{D}{Dt} \left(\rho \omega\right) = \nabla \cdot \left( \rho D_k \nabla \omega \right) + \frac{\rho \gamma G}{\nu} - \frac{2}{3} \rho \gamma \omega \left(\nabla \cdot \mathbf{u}\right) - \rho \beta \omega^2 - \rho \left(F_1 - 1 \right) CD_{k\omega} + S_{\omega}\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-1" title="Permalink to this equation"></a></span>\[\frac{D}{Dt} \left(\rho \omega\right) = \nabla \cdot \left( \rho D_k \nabla \omega \right) + \frac{\rho \gamma G}{\nu} - \frac{2}{3} \rho \gamma \omega \left(\nabla \cdot \mathbf{u}\right) - \rho \beta \omega^2 - \rho \left(F_1 - 1 \right) CD_{k\omega} + S_{\omega}\]</div>
 </div></blockquote>
 </li>
 </ul>
 <p>The turbulence viscosity is obtained as</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-2">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-2" title="Permalink to this equation">¶</a></span>\[\nu_t = a_1 \frac{k}{\text{max} \left( a_1, \omega, b_1, F_{23} \right)}\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-hydro-cfdsolver-komegasst-2" title="Permalink to this equation"></a></span>\[\nu_t = a_1 \frac{k}{\text{max} \left( a_1, \omega, b_1, F_{23} \right)}\]</div>
 <p>A more comprehensive overview on the k-Epsilon model is discussed in the below video</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/myv-ityFnS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
 <dl class="citation">
 <dt class="label" id="me1994"><span class="brackets"><a class="fn-backref" href="#id1">Me1994</a></span></dt>
 <dd><p>F.R. Menter, “Two-equation eddy-viscosity turbulence models for engineering applications,” AIAA Journal, vol. 32(8), pp. 1598-1605 (1994)</p>

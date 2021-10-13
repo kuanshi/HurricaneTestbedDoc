@@ -143,13 +143,13 @@
            <div itemprop="articleBody">
              
   <div class="section" id="earthquake-assessment">
-<span id="lbleqassessment"></span><h1><span class="section-number">6.1. </span>Earthquake Assessment<a class="headerlink" href="#earthquake-assessment" title="Permalink to this headline">¶</a></h1>
+<span id="lbleqassessment"></span><h1><span class="section-number">6.1. </span>Earthquake Assessment<a class="headerlink" href="#earthquake-assessment" title="Permalink to this headline"></a></h1>
 <p>This example is a small-scale regional earthquake risk assessment which performs response simulation and damage/loss estimation for a group of 20 buildings. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight <code class="docutils literal notranslate"><span class="pre">W</span></code>, yield strength <code class="docutils literal notranslate"><span class="pre">f_yield</span></code>, and fundamental period <code class="docutils literal notranslate"><span class="pre">T1</span></code>. The buildings are distributed in space in a 4x5 grid, within a 3x3 grid of event sites. At each event site, 5 ground motion records of similar intensity are assigned.</p>
 <div class="align-center figure">
 <img alt="../../../../_images/regionalearthquakeexample.png" src="../../../../_images/regionalearthquakeexample.png" />
 </div>
 <div class="section" id="inputs">
-<h2><span class="section-number">6.1.1. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1.1. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline"></a></h2>
 <p>The example input files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/9d1170da0a9ec0e257f8cfcbae5c671f/example_eq.zip"><code class="xref download docutils literal notranslate"><span class="pre">example_eq.zip</span></code></a>. For more information about required input files, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">Inputs</span></a>.</p>
 <ol class="arabic simple">
 <li><p><strong>Configuration file</strong>: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.</p></li>
@@ -246,7 +246,7 @@
 </ol>
 <p><strong>Building source file:</strong></p>
 <table class="docutils align-center" id="id1">
-<caption><span class="caption-number">Table 6.1.1.1 </span><span class="caption-text">input_params.csv</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.1.1.1 </span><span class="caption-text">input_params.csv</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 8%" />
@@ -550,7 +550,7 @@
 </ol>
 <p><strong>Event grid file:</strong></p>
 <table class="docutils align-center" id="id2">
-<caption><span class="caption-number">Table 6.1.1.2 </span><span class="caption-text">EventGrid.csv</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.1.1.2 </span><span class="caption-text">EventGrid.csv</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -603,7 +603,7 @@
 </table>
 <p><strong>Site file:</strong></p>
 <table class="docutils align-center" id="id3">
-<caption><span class="caption-number">Table 6.1.1.3 </span><span class="caption-text">site0.csv</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.1.1.3 </span><span class="caption-text">site0.csv</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -981,7 +981,7 @@
 </ol>
 </div>
 <div class="section" id="run-workflow">
-<h2><span class="section-number">6.1.2. </span>Run Workflow<a class="headerlink" href="#run-workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1.2. </span>Run Workflow<a class="headerlink" href="#run-workflow" title="Permalink to this headline"></a></h2>
 <p>The workflow can be executed by uploading the appropriate files to <a class="reference internal" href="../../architecture/desktop/run-manually/runRemote.html#lblrunremote"><span class="std std-ref">DesignSafe</span></a>, or by running the example on your <a class="reference internal" href="../../architecture/desktop/run-manually/runLocal.html#lblrunlocal"><span class="std std-ref">local desktop</span></a>, using the following <em>initialization command</em> in the terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/R2D_workflow.py&quot;</span> <span class="s2">&quot;C:/rWHALE/cantilever_example/rWHALE_config_eq.json&quot;</span> <span class="o">--</span><span class="n">registry</span> <span class="s2">&quot;C:/rWHALE/applications/Workflow/WorkflowApplications.json&quot;</span> <span class="o">--</span><span class="n">referenceDir</span> <span class="s2">&quot;C:/rWHALE/cantilever_example/input_data/&quot;</span> <span class="o">-</span><span class="n">w</span> <span class="s2">&quot;C:/rWHALE/cantilever_example/results&quot;</span>
 </pre></div>
@@ -1012,13 +1012,13 @@ cantilever_example
 </div>
 </div>
 <div class="section" id="outputs">
-<h2><span class="section-number">6.1.3. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1.3. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline"></a></h2>
 <p>The example output files can be downloaded here: <a class="reference download internal" download="" href="../../../../_downloads/d6cbb7f7e871d08dfebeb4dd03de42a5/output_data_eq.zip"><code class="xref download docutils literal notranslate"><span class="pre">output_data_eq.zip</span></code></a>. For more information about the output files produced, refer to <a class="reference internal" href="../../architecture/desktop/file-types/Outputs.html#lbloutputs"><span class="std std-ref">Outputs</span></a>.</p>
 <ol class="arabic simple">
 <li><p><strong>EDP_1-19.csv</strong>: reports statistics on the EDP results from simulating 5 ground motions for each building asset. The statistics reported are the median and lognormal standard deviation of peak interstory drift (PID) and peak floor acceleration (PFA) in two directions.</p></li>
 </ol>
 <table class="docutils align-center" id="id4">
-<caption><span class="caption-number">Table 6.1.3.1 </span><span class="caption-text">EDP_1-19.csv</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.1.3.1 </span><span class="caption-text">EDP_1-19.csv</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 8%" />
 <col style="width: 8%" />
@@ -1365,7 +1365,7 @@ cantilever_example
 <li><p><strong>DM_1-19.csv</strong>: reports collapse probability and damage state probability for each building asset.</p></li>
 </ol>
 <table class="docutils align-center" id="id5">
-<caption><span class="caption-number">Table 6.1.3.2 </span><span class="caption-text">DM_1-19.csv</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.1.3.2 </span><span class="caption-text">DM_1-19.csv</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 4%" />
 <col style="width: 4%" />
@@ -1928,7 +1928,7 @@ cantilever_example
 <li><p><strong>DV_1-19.csv</strong>: reports decision variable estimates (repair cost, repair time, injuries) for each building asset.</p></li>
 </ol>
 <table class="docutils align-center" id="id6">
-<caption><span class="caption-number">Table 6.1.3.3 </span><span class="caption-text">DV_1-19.csv</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.1.3.3 </span><span class="caption-text">DV_1-19.csv</span><a class="headerlink" href="#id6" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 2%" />
 <col style="width: 2%" />

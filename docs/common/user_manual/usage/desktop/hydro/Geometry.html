@@ -130,10 +130,10 @@
            <div itemprop="articleBody">
              
   <div class="section" id="geometry">
-<span id="lbl-geometry"></span><h1>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-geometry"></span><h1>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline"></a></h1>
 <p>There are four aspects related to the definition of geometry, namely geometry of the ocean floor or wave flume, buildings or specimens, floating bodies, and shallow water to CFD interface. This section discusses the setup of all aspects of geometry.</p>
 <div class="section" id="bathymetry">
-<h2>Bathymetry<a class="headerlink" href="#bathymetry" title="Permalink to this headline">¶</a></h2>
+<h2>Bathymetry<a class="headerlink" href="#bathymetry" title="Permalink to this headline"></a></h2>
 <p>The geometry can be provided either in terms of the bathymetry of the ocean floor, an STL file, or the wave flume digital twin. The geometry definition is based on the type of <code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">type</span></code> chosen in the <a class="reference internal" href="Project.html#lbl-projsett"><span class="std std-ref">Project settings</span></a>. The geometry definition for each of the simulation types has been outlined below.</p>
 <details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
@@ -147,7 +147,7 @@ Shallow-water to CFD coupling<div class="summary-down docutils">
 <p class="card-text">The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../../../../../_images/SWCFD.png"><img alt="../../../../../_images/SWCFD.png" src="../../../../../_images/SWCFD.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">UI for loading bathymetry and shallow-water solution files</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">UI for loading bathymetry and shallow-water solution files</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -168,7 +168,7 @@ Bathymetry<div class="summary-down docutils">
 <p class="card-text">The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
 <div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../../../../../_images/Bathy.png"><img alt="../../../../../_images/Bathy.png" src="../../../../../_images/Bathy.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">UI for loading bathymetry of the ocean floor</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">UI for loading bathymetry of the ocean floor</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -198,7 +198,7 @@ STL file<div class="summary-down docutils">
 <p class="card-text">The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
 <div class="align-center figure" id="id3">
 <a class="reference internal image-reference" href="../../../../../_images/STLfile.png"><img alt="../../../../../_images/STLfile.png" src="../../../../../_images/STLfile.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">UI for loading the geometry as <code class="docutils literal notranslate"><span class="pre">STL</span></code> files</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">UI for loading the geometry as <code class="docutils literal notranslate"><span class="pre">STL</span></code> files</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -219,12 +219,12 @@ Wave flume<div class="summary-down docutils">
 <p class="card-text">The flume geometry can be defined using the standard flume definition. Here, a common flume geometry for the Large Wave Flume at the O.H. Hinsdale Wave Research Laboratory in Oregon State University. This is selected as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Flume02</span></code>.</p>
 <div class="align-center figure" id="id4">
 <span id="flume02"></span><a class="reference internal image-reference" href="../../../../../_images/Flume02.png"><img alt="../../../../../_images/Flume02.png" src="../../../../../_images/Flume02.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Using the standard wave flume geometry</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Using the standard wave flume geometry</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
 </div>
 <p class="card-text">The geometry of the wave flume is defined by providing the coordinates of the external profile of the wave flume, as shown below.</p>
 <div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../../_images/WaveFlumeGeo.png"><img alt="../../../../../_images/WaveFlumeGeo.png" src="../../../../../_images/WaveFlumeGeo.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">The coordinates representing the external profile of the wave flume</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">The coordinates representing the external profile of the wave flume</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
 </div>
 <p class="card-text">The coordinates of the standard wave flume are provided below.</p>
 <div class="highlight-Fortran notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">2.085</span><span class="p">,</span><span class="mi">0</span>
@@ -242,7 +242,7 @@ Wave flume<div class="summary-down docutils">
 <p class="card-text">Alternatively, the user can define their own custom wave-flume geometry, as shown below. Here, the user needs to specify the <code class="docutils literal notranslate"><span class="pre">x</span></code> (along the length) and <code class="docutils literal notranslate"><span class="pre">z</span></code> (along the height) coordinates in a tabular format. Additionally, breadth also needs to be provided to define the wave flume geometry uniquely. This is similar to the geometry defined above for the standard OSU flume. HydroUQ constructs the STL files necessary for the CFD simulation process using the provided coordinates and the breadth.</p>
 <div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../../_images/Flume01.png"><img alt="../../../../../_images/Flume01.png" src="../../../../../_images/Flume01.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Defining a custom wave-flume geometry</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Defining a custom wave-flume geometry</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -253,16 +253,16 @@ Wave flume<div class="summary-down docutils">
 </div>
 </details></div>
 <div class="section" id="sw-cfd-interface">
-<h2>SW-CFD interface<a class="headerlink" href="#sw-cfd-interface" title="Permalink to this headline">¶</a></h2>
+<h2>SW-CFD interface<a class="headerlink" href="#sw-cfd-interface" title="Permalink to this headline"></a></h2>
 <p>The shallow-water to CFD interface can only be defined for the simulation type where CFD is used to resolve the shallow-water solutions. The interface is specified using a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file and uploaded as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">SWCFDInter</span></code>.</p>
 <div class="align-center figure" id="id7">
 <span id="swcfdinter"></span><a class="reference internal image-reference" href="../../../../../_images/swcfd_Interface.png"><img alt="../../../../../_images/swcfd_Interface.png" src="../../../../../_images/swcfd_Interface.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Uploading the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file that defines the interface</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Uploading the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file that defines the interface</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </div>
 <p>Consider the problem description as shown in the <code class="xref std std-numref docutils literal notranslate"><span class="pre">SWCFDInter2</span></code>. Consider an event (earthquake on a fault or low-pressure due to a hurricane) represented by the red line on the left. The shallow-water solvers are used over the Ocean domain. In order to provide a high-fidelity solution for the structural response, the shallow-water domain is further refined using 3D CFD. The yellow boxes represent the shallow water to CFD interfaces. This interface information is provided in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p>
 <div class="align-center figure" id="id8">
 <span id="swcfdinter2"></span><a class="reference internal image-reference" href="../../../../../_images/SWCFD02.png"><img alt="../../../../../_images/SWCFD02.png" src="../../../../../_images/SWCFD02.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Visual depiction of the shallow water to CFD interface</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Visual depiction of the shallow water to CFD interface</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
 </div>
 <p>A typical interface file is shown below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Entry</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
@@ -287,12 +287,12 @@ Wave flume<div class="summary-down docutils">
 </div>
 </div>
 <div class="section" id="buildings-specimens">
-<h2>Buildings/specimens<a class="headerlink" href="#buildings-specimens" title="Permalink to this headline">¶</a></h2>
+<h2>Buildings/specimens<a class="headerlink" href="#buildings-specimens" title="Permalink to this headline"></a></h2>
 <p>Buildings or specimens can be defined in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code>. It is important here to note that there can be two types of buildings: (a) Building of interest for which the structural response is measured (b) Other neighboring buildings that impact the flow fields.</p>
 <p>These can either be defined manually in a tabular format or parametrically as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">BuildDef</span></code>.</p>
 <div class="align-center figure" id="id9">
 <span id="builddef"></span><a class="reference internal image-reference" href="../../../../../_images/Building.png"><img alt="../../../../../_images/Building.png" src="../../../../../_images/Building.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Building definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Building definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
 </div>
 <p>For the manual definition of the building, a tabular format is used for the user to specify:</p>
 <ol class="arabic">
@@ -333,7 +333,7 @@ Wave flume<div class="summary-down docutils">
 <blockquote>
 <div><div class="align-center figure" id="id10">
 <span id="buildshape"></span><a class="reference internal image-reference" href="../../../../../_images/BuildShape.png"><img alt="../../../../../_images/BuildShape.png" src="../../../../../_images/BuildShape.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Building shape definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Building shape definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
 </div>
 </div></blockquote>
 </li>
@@ -341,14 +341,14 @@ Wave flume<div class="summary-down docutils">
 <blockquote>
 <div><div class="align-center figure" id="id11">
 <span id="builddist"></span><a class="reference internal image-reference" href="../../../../../_images/BuildDist.png"><img alt="../../../../../_images/BuildDist.png" src="../../../../../_images/BuildDist.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Building distribution definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Building distribution definition in the <code class="docutils literal notranslate"><span class="pre">EVT</span></code></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
 </div>
 </div></blockquote>
 </li>
 </ol>
 </div>
 <div class="section" id="floating-bodies">
-<h2>Floating bodies<a class="headerlink" href="#floating-bodies" title="Permalink to this headline">¶</a></h2>
+<h2>Floating bodies<a class="headerlink" href="#floating-bodies" title="Permalink to this headline"></a></h2>
 <p>The present version of the HydroUQ does not facilitate floating bodies. These would be added to the upcoming versions of R2D app.</p>
 </div>
 </div>
