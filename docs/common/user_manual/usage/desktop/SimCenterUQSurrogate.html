@@ -249,7 +249,7 @@
 <li><p><strong>Kernel function</strong>: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions are additionally supported.</p></li>
 <li><p><strong>Add Linear Trend Function</strong>: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is unchecked, ie. no trend function.</p></li>
 <li><p><strong>Log-space Transform of QoI</strong>: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is unchecked, ie. original physical coordinate.</p></li>
-<li><p><strong>Design of Experiments options</strong>: User may select the Adaptive DoE method and the number of the initial design of experiments (DoE) manually. The default method is “pareto” and the default number of DoE is 4 times the number of random variables.</p></li>
+<li><p><strong>Design of Experiments options</strong>: User may select the Adaptive DoE method and the number of the initial design of experiments (DoE) manually. The default is “none” and the default number of DoE is 4 times the number of random variables.</p></li>
 <li><p><strong>Nugget Variances</strong>: User may define nugget variances or bounds of the nugget variances if needed. The default is “optimize”.</p></li>
 </ul>
 <p>Additionally, users may populate the initial samples directly from data files by activating <strong>Start with Existing Dataset</strong></p>
@@ -266,7 +266,7 @@
 <ul class="simple">
 <li><p>Each text file is a numeric table with the columns separated by a tab, space, or comma. Multiple headers can be presented following the symbol %.</p></li>
 <li><p>The number of rows corresponds to the number of training data samples.</p></li>
-<li><p>Train Points (Input): The number of columns should match the number of RVs presented in the <strong>RV tab</strong> and also match with required inputs of the simulation model provided in the <strong>FEM tab</strong>. <strong>The order of the columns should match thoses of the random variables presented in the RV tab</strong> (See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.9.2.3.4</span></a> and <a class="reference internal" href="#figsim7"><span class="std std-numref">Fig. 2.9.2.3.11</span></a> for example.)</p></li>
+<li><p>Train Points (Input): The number of columns should match the number of RVs presented in the <strong>RV tab</strong> and also match with required inputs of the simulation model provided in the <strong>FEM tab</strong>. <strong>The order of the columns should match thoses of the random variables presented in the RV tab</strong> (See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.9.2.3.4</span></a> and <a class="reference internal" href="#figsim7"><span class="std std-numref">Fig. 2.9.2.3.10</span></a> for example.)</p></li>
 <li><p>System Responses (Output): The number of columns  and the order of columns should match the QoI quantities presented in <strong>QoI tab</strong>.</p></li>
 <li><p>Both files need to be provided, and the number of columns for the two files should be the same.</p></li>
 <li><p>See <a class="reference internal" href="#figsim4"><span class="std std-numref">Fig. 2.9.2.3.4</span></a> for example input data sheets.</p></li>
@@ -344,23 +344,19 @@
 <p>For each fidelity models, either model, data, or both can be provided for each fidelity level.</p>
 <div class="align-center figure" id="id11">
 <span id="figsimmf2"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF2.png"><img alt="../../../../_images/SimUQ_surrogate_MF2.png" src="../../../../_images/SimUQ_surrogate_MF2.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.9.2.3.8 </span><span class="caption-text">An option to define high-fidelity simulation model</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 2.9.2.3.8 </span><span class="caption-text">Providing a simulation model for the high-fidelity response</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
 </div>
 <div class="align-center figure" id="id12">
-<span id="figsimmf3"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF2.png"><img alt="../../../../_images/SimUQ_surrogate_MF2.png" src="../../../../_images/SimUQ_surrogate_MF2.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.9.2.3.9 </span><span class="caption-text">An option to define high-fidelity simulation model</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
-</div>
-<div class="align-center figure" id="id13">
-<span id="figsimmf4"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF3.png"><img alt="../../../../_images/SimUQ_surrogate_MF3.png" src="../../../../_images/SimUQ_surrogate_MF3.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.9.2.3.10 </span><span class="caption-text">An option to define high-fidelity simulation model and datafile. The datafile format is same as those used for Case 3.</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+<span id="figsimmf3"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_surrogate_MF3.png"><img alt="../../../../_images/SimUQ_surrogate_MF3.png" src="../../../../_images/SimUQ_surrogate_MF3.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.9.2.3.9 </span><span class="caption-text">Directly providing input(RV)-response(QoI) data pair of high-fidelity model</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
 </div>
 </div>
 <div class="section" id="rv-random-variables-tab">
 <h3>RV (Random Variables) Tab<a class="headerlink" href="#rv-random-variables-tab" title="Permalink to this headline"></a></h3>
 <p><strong>Case 1 and 2</strong>: The bounds of RVs need to cover the domain of interest in future applications, while it should not be unnecessarily stretched. <strong>Input type</strong> and <strong>Distribution</strong> should be set to <strong>Parameters</strong> and <strong>Uniform</strong>. When dataset is provided, make sure to match the order of RVs in the <strong>RV tab</strong> to the order of data columns. Any correlation values will be ignored.</p>
-<div class="align-center figure" id="id14">
+<div class="align-center figure" id="id13">
 <span id="figsim7"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate7_SimUQ.jpg"><img alt="../../../../_images/Surrogate7_SimUQ.jpg" src="../../../../_images/Surrogate7_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.9.2.3.11 </span><span class="caption-text">Example of RV tab</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 2.9.2.3.10 </span><span class="caption-text">Example of RV tab</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
 </div>
 <p><strong>Case 3</strong>: <strong>RV data tab</strong> will be populated automatically as soon as the dataset is imported.</p>
 </div>
@@ -422,9 +418,9 @@
 </li>
 <li><p>Additionally <strong>scatter plot</strong> between the predicted and exact responses are presented: Well-trained model will form a clear diagonal line while poorly trained model are more scattered around.</p></li>
 </ul>
-<div class="align-center figure" id="id15">
+<div class="align-center figure" id="id14">
 <span id="figsim8"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate8_SimUQ.jpg"><img alt="../../../../_images/Surrogate8_SimUQ.jpg" src="../../../../_images/Surrogate8_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.9.2.3.12 </span><span class="caption-text">Well-trained surrogate (left) and poorly trained surrogate (right) models</span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 2.9.2.3.11 </span><span class="caption-text">Well-trained surrogate (left) and poorly trained surrogate (right) models</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -442,13 +438,13 @@
 <li><p><strong>Save GP Info</strong>: This is a report generated for user reference. It contains the GP model parameter and other information. The default file name is <code class="docutils literal notranslate"><span class="pre">GPresults.out</span></code>.</p></li>
 <li><p><strong>RV Data</strong>, <strong>QoI Data</strong>:It saves the samples of RV and QoI. The default file names are <code class="docutils literal notranslate"><span class="pre">X.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">Y.txt</span></code>, respectively. <strong>IMPORTANT</strong>: To continue surrogate modeling with additional simulations, save the RV and QoI sample files using this button and import them as initial points. Refer to the ‘Start with Existing Dataset’ option in Case 1.</p></li>
 </ul>
-<div class="align-center figure" id="id16">
+<div class="align-center figure" id="id15">
 <span id="figsim9"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate9_SimUQ.jpg"><img alt="../../../../_images/Surrogate9_SimUQ.jpg" src="../../../../_images/Surrogate9_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.9.2.3.13 </span><span class="caption-text">Saving options</span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 2.9.2.3.12 </span><span class="caption-text">Saving options</span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
 </div>
-<div class="align-center figure" id="id17">
+<div class="align-center figure" id="id16">
 <span id="figsim10"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate10_SimUQ.jpg"><img alt="../../../../_images/Surrogate10_SimUQ.jpg" src="../../../../_images/Surrogate10_SimUQ.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.9.2.3.14 </span><span class="caption-text">Example outputs from saving options</span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 2.9.2.3.13 </span><span class="caption-text">Example outputs from saving options</span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="patsialis2021"><span class="brackets"><a class="fn-backref" href="#id1">Patsialis2021</a></span></dt>
