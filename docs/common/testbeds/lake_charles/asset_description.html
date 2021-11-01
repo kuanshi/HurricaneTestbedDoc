@@ -225,7 +225,7 @@ model are available on <a class="reference external" href="https://doi.org/10.17
 </tr>
 <tr class="row-odd"><td><p><strong>YearBuilt</strong></p></td>
 <td><p>Year of Construction</p></td>
-<td><p>Integer (4-digit)</p></td>
+<td><p>Integer</p></td>
 <td><p>StreetView</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>NumberOfStories</strong></p></td>
@@ -238,70 +238,70 @@ model are available on <a class="reference external" href="https://doi.org/10.17
 <td><p>Floating point number</p></td>
 <td><p>ATC API (ASCE 7)</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>FloodZone</strong></p></td>
-<td><p>FEMA FloodZone designation as defined by Flood Insurance Rate Maps</p></td>
-<td><p><a class="reference external" href="https://snmapmod.snco.us/fmm/document/fema-flood-zone-definitions.pdf">FEMA designation</a></p></td>
-<td><p>User specified</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>AvgJanTemp</strong></p></td>
+<tr class="row-even"><td><p><strong>AvgJanTemp</strong></p></td>
 <td><p>Average temperature in January below or above critial value of 25F.</p></td>
 <td><p>Choices: Above, Below</p></td>
 <td><p>User specified</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>RoofShape</strong></p></td>
+<tr class="row-odd"><td><p><strong>RoofShape</strong></p></td>
 <td><p>Roof classified into equivalent hip, gable or flat</p></td>
 <td><p>Choices: Hip, Gable, Flat</p></td>
 <td><p>Aerial Imagery</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>RoofSlope</strong></p></td>
+<tr class="row-even"><td><p><strong>RoofSlope</strong></p></td>
 <td><p>Slope of roof (ratio of rise/vertical over run/horizontal dimensions) covering the majority of the dwelling.</p></td>
 <td><p>Floating point number</p></td>
 <td><p>Aerial + StreetView Imagery</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>MeanRoofHt</strong></p></td>
+<tr class="row-odd"><td><p><strong>MeanRoofHt</strong></p></td>
 <td><p>Mean height of roof system in ft</p></td>
 <td><p>Floating point number</p></td>
 <td><p>Aerial + StreetView Imagery</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Garage</strong></p></td>
+<tr class="row-even"><td><p><strong>Garage</strong></p></td>
 <td><p>Assessor-provided type of garage.</p></td>
 <td><p>Choices: 0, 1</p></td>
 <td><p>StreetView</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>LULC</strong></p></td>
+<tr class="row-odd"><td><p><strong>LULC</strong></p></td>
 <td><p>Land Use Land Cover class</p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/LULC.json">LULC conversion</a></p></td>
 <td><p><a class="reference external" href="http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html">WebGIS</a></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>PlanArea</strong></p></td>
+<tr class="row-even"><td><p><strong>PlanArea</strong></p></td>
 <td><p>Plan area (optional)</p></td>
 <td><p>Floating point number (optional)</p></td>
 <td><p>User defined or estimated from polygon</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>AnalysisDefault</strong></p></td>
+<tr class="row-odd"><td><p><strong>AnalysisDefault</strong></p></td>
 <td><p>Defines the default level of fidelity for analysis</p></td>
 <td><p>Choices: 1, 2, 3 (optional)</p></td>
 <td><p>User defined</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>WindowArea</strong></p></td>
+<tr class="row-even"><td><p><strong>WindowArea</strong></p></td>
 <td><p>Window area ratio</p></td>
 <td><p>Floating point number (optional, default 0.2)</p></td>
 <td><p>User defined</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>WindZone</strong></p></td>
+<tr class="row-odd"><td><p><strong>WindZone</strong></p></td>
 <td><p>Rating of the amount of wind pressure a manufactured home</p></td>
 <td><p>Choice: I, II, III, IV (optional, default I)</p></td>
 <td><p>User defined</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>RoofSystem</strong></p></td>
+<tr class="row-even"><td><p><strong>RoofSystem</strong></p></td>
 <td><p>Roof system</p></td>
 <td><p>Choices: Wood, OWSJ (optional, default Wood)</p></td>
 <td><p>User defined</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>SheatingTickness</strong></p></td>
-<td><p>Thickness of sheathing</p></td>
+<tr class="row-odd"><td><p><strong>SheatingThickness</strong></p></td>
+<td><p>Thickness of sheathing (inch)</p></td>
 <td><p>Floating point number (optional, default 1.0)</p></td>
 <td><p>User defined</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FloodZone</strong></p></td>
+<td><p>FEMA FloodZone designation as defined by Flood Insurance Rate Maps</p></td>
+<td><p><a class="reference external" href="https://snmapmod.snco.us/fmm/document/fema-flood-zone-definitions.pdf">FEMA designation</a> (optional, default X)</p></td>
+<td><p>User specified</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Representation Attribute</strong></p></td>
 <td><p><strong>Description</strong></p></td>
@@ -359,7 +359,7 @@ model are available on <a class="reference external" href="https://doi.org/10.17
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>TerrainRoughness</strong></p></td>
-<td><p>HAZUS-defined terrain classification (x100( based on LULC data</p></td>
+<td><p>HAZUS-defined terrain classification (x100) based on LULC data</p></td>
 <td><p>Choices: 3, 15, 35, 70, 100</p></td>
 <td><p>Rulesets (see <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>)</p></td>
 </tr>
@@ -671,388 +671,8 @@ based on NOAA average daily temperature. Referring <a class="reference internal"
 <div class="section" id="populated-inventories">
 <h2><span class="section-number">3.2.4. </span>Populated Inventories<a class="headerlink" href="#populated-inventories" title="Permalink to this headline"></a></h2>
 <p>Executing this three-phase process resulted in the assignment of all required attributes at the asset description
-stage of the workflow for the Lake Charles building inventory, and <a class="reference internal" href="#bldg-inv-lc"><span class="std std-numref">Table 3.2.4.1</span></a> shows example data samples.
+stage of the workflow for the Lake Charles building inventory, and <code class="xref std std-numref docutils literal notranslate"><span class="pre">bldg_inv_lc</span></code> shows example data samples.
 The entire inventory can be accessed <a class="reference external" href="https://doi.org/10.17603/ds2-jpj2-zx14">here</a>.</p>
-<table class="colwidths-given docutils align-center" id="bldg-inv-lc">
-<caption><span class="caption-number">Table 3.2.4.1 </span><span class="caption-text">Illustrative sample of building in Lake Charles Inventory.</span><a class="headerlink" href="#bldg-inv-lc" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 6%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 6%" />
-<col style="width: 5%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 8%" />
-<col style="width: 6%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 8%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>BldgID</p></td>
-<td><p>RoofShape</p></td>
-<td><p>FloodZone</p></td>
-<td><p>PlanArea</p></td>
-<td><p>Longitude</p></td>
-<td><p>Latitude</p></td>
-<td><p>LULC</p></td>
-<td><p>DWSII</p></td>
-<td><p>BuildingType</p></td>
-<td><p>OccupancyClass</p></td>
-<td><p>AvgJanTemp</p></td>
-<td><p>Garage</p></td>
-<td><p>NumberOfStories</p></td>
-<td><p>MeanRoofHt</p></td>
-<td><p>RoofSlope</p></td>
-<td><p>YearBuilt</p></td>
-</tr>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>Hip</p></td>
-<td><p>X</p></td>
-<td><p>744.6</p></td>
-<td><p>-93.1864</p></td>
-<td><p>30.2696</p></td>
-<td><p>43</p></td>
-<td><p>128.7</p></td>
-<td><p>Wood</p></td>
-<td><p>RES3</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>15</p></td>
-<td><p>0.25</p></td>
-<td><p>1962</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>Gable</p></td>
-<td><p>X</p></td>
-<td><p>250.2</p></td>
-<td><p>-93.1882</p></td>
-<td><p>30.2600</p></td>
-<td><p>11</p></td>
-<td><p>129</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>12.97</p></td>
-<td><p>0.21</p></td>
-<td><p>1970</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>Gable</p></td>
-<td><p>X</p></td>
-<td><p>170.4</p></td>
-<td><p>-93.1875</p></td>
-<td><p>30.2605</p></td>
-<td><p>11</p></td>
-<td><p>129</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>16.28</p></td>
-<td><p>0.22</p></td>
-<td><p>1969</p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>Gable</p></td>
-<td><p>X</p></td>
-<td><p>141.9</p></td>
-<td><p>-93.1829</p></td>
-<td><p>30.2601</p></td>
-<td><p>11</p></td>
-<td><p>129</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>1</p></td>
-<td><p>2</p></td>
-<td><p>34.58</p></td>
-<td><p>0.12</p></td>
-<td><p>1974</p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>Gable</p></td>
-<td><p>X</p></td>
-<td><p>269.8</p></td>
-<td><p>-93.1823</p></td>
-<td><p>30.2644</p></td>
-<td><p>11</p></td>
-<td><p>128.9</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>14.22</p></td>
-<td><p>0.33</p></td>
-<td><p>1968</p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>Gable</p></td>
-<td><p>X</p></td>
-<td><p>159.7</p></td>
-<td><p>-93.1757</p></td>
-<td><p>30.2664</p></td>
-<td><p>11</p></td>
-<td><p>128.8</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>16.06</p></td>
-<td><p>0.3</p></td>
-<td><p>1957</p></td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p>Flat</p></td>
-<td><p>X</p></td>
-<td><p>775.8</p></td>
-<td><p>-93.2158</p></td>
-<td><p>30.2353</p></td>
-<td><p>14</p></td>
-<td><p>129.9</p></td>
-<td><p>Wood</p></td>
-<td><p>COM1</p></td>
-<td><p>Above</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>16.52</p></td>
-<td><p>0.13</p></td>
-<td><p>1942</p></td>
-</tr>
-<tr class="row-odd"><td><p>8</p></td>
-<td><p>Hip</p></td>
-<td><p>X</p></td>
-<td><p>256.6</p></td>
-<td><p>-93.2125</p></td>
-<td><p>30.2240</p></td>
-<td><p>11</p></td>
-<td><p>130.2</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>16.18</p></td>
-<td><p>0.16</p></td>
-<td><p>1950</p></td>
-</tr>
-<tr class="row-even"><td><p>9</p></td>
-<td><p>Hip</p></td>
-<td><p>X</p></td>
-<td><p>142.6</p></td>
-<td><p>-93.2101</p></td>
-<td><p>30.2249</p></td>
-<td><p>11</p></td>
-<td><p>130.2</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>2</p></td>
-<td><p>22.68</p></td>
-<td><p>0.11</p></td>
-<td><p>1944</p></td>
-</tr>
-<tr class="row-odd"><td><p>10</p></td>
-<td><p>Flat</p></td>
-<td><p>X</p></td>
-<td><p>3796.1</p></td>
-<td><p>-93.2105</p></td>
-<td><p>30.2280</p></td>
-<td><p>12</p></td>
-<td><p>130.1</p></td>
-<td><p>Wood</p></td>
-<td><p>COM1</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>16.97</p></td>
-<td><p>0.05</p></td>
-<td><p>1946</p></td>
-</tr>
-<tr class="row-even"><td><p>11</p></td>
-<td><p>Hip</p></td>
-<td><p>X</p></td>
-<td><p>682</p></td>
-<td><p>-93.2091</p></td>
-<td><p>30.2284</p></td>
-<td><p>12</p></td>
-<td><p>130.1</p></td>
-<td><p>Wood</p></td>
-<td><p>COM1</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>13.61</p></td>
-<td><p>0.12</p></td>
-<td><p>1943</p></td>
-</tr>
-<tr class="row-odd"><td><p>12</p></td>
-<td><p>Hip</p></td>
-<td><p>X</p></td>
-<td><p>290.2</p></td>
-<td><p>-93.2092</p></td>
-<td><p>30.2295</p></td>
-<td><p>11</p></td>
-<td><p>130.1</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>2</p></td>
-<td><p>28.98</p></td>
-<td><p>0.33</p></td>
-<td><p>1941</p></td>
-</tr>
-<tr class="row-even"><td><p>13</p></td>
-<td><p>Gable</p></td>
-<td><p>X</p></td>
-<td><p>229.1</p></td>
-<td><p>-93.2133</p></td>
-<td><p>30.2303</p></td>
-<td><p>12</p></td>
-<td><p>130</p></td>
-<td><p>Wood</p></td>
-<td><p>RES3</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>2</p></td>
-<td><p>30.38</p></td>
-<td><p>0.45</p></td>
-<td><p>1941</p></td>
-</tr>
-<tr class="row-odd"><td><p>14</p></td>
-<td><p>Gable</p></td>
-<td><p>X</p></td>
-<td><p>213.2</p></td>
-<td><p>-93.1995</p></td>
-<td><p>30.2516</p></td>
-<td><p>11</p></td>
-<td><p>129.3</p></td>
-<td><p>Wood</p></td>
-<td><p>RES3</p></td>
-<td><p>Above</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>13.48</p></td>
-<td><p>0.65</p></td>
-<td><p>1959</p></td>
-</tr>
-<tr class="row-even"><td><p>15</p></td>
-<td><p>Gable</p></td>
-<td><p>X</p></td>
-<td><p>124.5</p></td>
-<td><p>-93.1915</p></td>
-<td><p>30.2503</p></td>
-<td><p>11</p></td>
-<td><p>129.3</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>17.19</p></td>
-<td><p>0.17</p></td>
-<td><p>1955</p></td>
-</tr>
-<tr class="row-odd"><td><p>16</p></td>
-<td><p>Gable</p></td>
-<td><p>X</p></td>
-<td><p>128.1</p></td>
-<td><p>-93.1912</p></td>
-<td><p>30.2503</p></td>
-<td><p>11</p></td>
-<td><p>129.3</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>1</p></td>
-<td><p>2</p></td>
-<td><p>31.5</p></td>
-<td><p>0.92</p></td>
-<td><p>1956</p></td>
-</tr>
-<tr class="row-even"><td><p>17</p></td>
-<td><p>Gable</p></td>
-<td><p>X</p></td>
-<td><p>202.1</p></td>
-<td><p>-93.1935</p></td>
-<td><p>30.2514</p></td>
-<td><p>11</p></td>
-<td><p>129.3</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>15.95</p></td>
-<td><p>0.69</p></td>
-<td><p>1959</p></td>
-</tr>
-<tr class="row-odd"><td><p>18</p></td>
-<td><p>Flat</p></td>
-<td><p>X</p></td>
-<td><p>98.4</p></td>
-<td><p>-93.1908</p></td>
-<td><p>30.2519</p></td>
-<td><p>11</p></td>
-<td><p>129.3</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>16.93</p></td>
-<td><p>0.65</p></td>
-<td><p>1955</p></td>
-</tr>
-<tr class="row-even"><td><p>19</p></td>
-<td><p>Hip</p></td>
-<td><p>X</p></td>
-<td><p>193.4</p></td>
-<td><p>-93.1957</p></td>
-<td><p>30.2522</p></td>
-<td><p>11</p></td>
-<td><p>129.3</p></td>
-<td><p>Wood</p></td>
-<td><p>RES1</p></td>
-<td><p>Above</p></td>
-<td><p>1</p></td>
-<td><p>2</p></td>
-<td><p>30.1</p></td>
-<td><p>1.28</p></td>
-<td><p>1958</p></td>
-</tr>
-<tr class="row-odd"><td><p>20</p></td>
-<td><p>Hip</p></td>
-<td><p>X</p></td>
-<td><p>302.9</p></td>
-<td><p>-93.1942</p></td>
-<td><p>30.2545</p></td>
-<td><p>11</p></td>
-<td><p>129.2</p></td>
-<td><p>Wood</p></td>
-<td><p>RES3</p></td>
-<td><p>Above</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>15</p></td>
-<td><p>0.25</p></td>
-<td><p>1959</p></td>
-</tr>
-</tbody>
-</table>
 <dl class="citation">
 <dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id7">ATC20</a></span></dt>
 <dd><p>ATC (2020b), ATC Hazards By Location, <a class="reference external" href="https://hazards.atcouncil.org/">https://hazards.atcouncil.org/</a>, Applied Technology Council, Redwood City, CA.</p>
