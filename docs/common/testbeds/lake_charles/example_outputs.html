@@ -259,7 +259,10 @@ the results from this testbed as an example to discuss more details.</p>
 <a class="reference internal" href="asset_representation.html#lbl-testbed-lc-asset-representation"><span class="std std-ref">Asset Representation</span></a>. The <em>EDP.hdf</em> summarizes the EDP realizations. The <em>DM.hdf</em> and
 <em>DV.hdf</em> files summarizes the statistics of damage states and estimated loss metrics. These results of this testbed
 can be accessed in the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/04.%20Output:%20Results">DesignSafe project</a>, along with the Jupyter
-notebook used to visualize them, which will be also discussed here.</p>
+notebook used to visualize them. The zip file consists of (1) four result hdf files (<em>BIM.hdf</em>, <em>EDP.hdf</em>, <em>DM.hdf</em>, and <em>DV.hdf</em>), (2)
+four parsed result files (in .csv), (3) Input inventory csv file, (4) two jupyter notebook scripts, and (5) a requirement txt file listing the
+dependencies. <em>post-process.ipynb</em> can be run locally and first-time users are suggested to run the first cell to install necessary packages, and
+<em>post-processing_designsafe.ipynb</em> can be run on DesignSafe Jupyter Notebook if one uploads the entire folder to the Data Depot.</p>
 <p><a class="reference internal" href="#terrain-swr"><span class="std std-numref">Fig. 3.8.2.1</span></a> (a) and (b) show the sample figures for the geospatial distribution of populated
 terrain type and second water resistance of the building inventory. The influence of different building
 attributes on the damage and loss results will be investigated in <a class="reference internal" href="validation_results.html#lbl-testbed-lc-validation-results"><span class="std std-ref">Validation Results</span></a>
