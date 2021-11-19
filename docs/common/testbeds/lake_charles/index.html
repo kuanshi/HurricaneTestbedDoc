@@ -168,6 +168,16 @@ workflow in the context of Lake Charles, Louisiana under Hurricane Laura. While 
 are unchanged in a given application context, this testbed specifically demonstrates how inventory generation
 capacities and existing heuristic rulesets grounded in codes/standards and normative construction practices in coastal
 communities can be engaged to rapidly generate these loss estimations following a major hurricane.</p>
+<p>This documentation is intended to introduce the implementation of the SimCenter hurricane regional loss
+modeling workflow in the context of Lake Charles, Louisiana under Hurricane Laura. While certain aspects of
+the workflow are unchanged in a given application context, this testbed specifically demonstrates how
+inventory generation capacities and existing heuristic rulesets grounded in codes/standards and normative
+construction practices in coastal communities can be engaged to rapidly generate these loss estimations
+following a major hurricane. Users are encouraged to read the documentation front to back, beginning
+from <a class="reference internal" href="overview.html#lbl-testbed-lc-overview"><span class="std std-ref">Overview</span></a>, to deepen their understanding of the implementation and the underlying
+assumptions/limitations. Those already familiar with the concept of hurricane loss estimation can go immediately to
+<a class="reference internal" href="example_outputs.html#lbl-testbed-lc-getting-started"><span class="std std-ref">Getting Started</span></a> for step-by-step instructions on how to execute the testbed and interact
+with its results.</p>
 <p><strong>Versioning</strong></p>
 <p>Since this documentation will continue to evolve when features are added and as software capabilities improve, documentation,
 associated input files, results, and rulesets will be updated over time. The applications are hosted in NHERI-SimCenter
@@ -181,7 +191,8 @@ of the rulesets. A dedicated GitHub repository has been created for the rulesets
 </ol>
 <p>Both types of repositories are version-controlled. This version history of the documentation is tracked in <a class="reference internal" href="#software-version-lc"><span class="std std-numref">Table 3.2</span></a>
 and the versions of all applications and rulesets of the current version of the testbed are reported in <a class="reference internal" href="#software-version-lc"><span class="std std-numref">Table 3.2</span></a>.
-<a class="reference internal" href="#brails-version-lc"><span class="std std-numref">Table 3.3</span></a> provides the versions of BRAILS and its various classifiers used in the generation of results herein.</p>
+<a class="reference internal" href="#brails-version-lc"><span class="std std-numref">Table 3.3</span></a> provides the versions of BRAILS and its various classifiers used in the generation of results herein.
+Note when accessing the project in DesignSafe, please check that the version drop down is set the the latest available version.</p>
 <table class="docutils align-center" id="doc-version-lc">
 <caption><span class="caption-number">Table 3.1 </span><span class="caption-text">Testbed Version History</span><a class="headerlink" href="#doc-version-lc" title="Permalink to this table"></a></caption>
 <colgroup>
@@ -197,8 +208,8 @@ and the versions of all applications and rulesets of the current version of the 
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Initial release</p></td>
-<td><p>v1.0</p></td>
-<td><p>10/2021</p></td>
+<td><p>v1.1</p></td>
+<td><p>11/2021</p></td>
 </tr>
 </tbody>
 </table>
@@ -231,7 +242,7 @@ to execute in 15 minutes using five Skylake (SKX) nodes (96 cores) on <a class="
 </td>
 </tr>
 <tr class="row-even"><td><p>DesignSafe Project PRJ-3207</p></td>
-<td><p>v4.0</p></td>
+<td><p>v4</p></td>
 <td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3207v3">Data Depot</a></p></td>
 </tr>
 </tbody>
@@ -293,7 +304,8 @@ and extend the inventory down into Cameron Parish and other areas significantly 
 </ol>
 <p>The revised damage and loss models or extensions to the heuristic rulesets can be contributed back to the SimCenter
 to expand the capabilities of this community software.</p>
-<p>If you have any feedback or questions, please check out the <a class="reference external" href="http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=22.0">SimCenter Regional Testbeds</a> and please also use the forum to post your comments and suggestions.</p>
+<p>If you have any feedback or questions, please check out the <a class="reference external" href="http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=22.0">SimCenter Regional Testbeds</a>.
+This forum can also be browsed for additional updates, answers to Frequently Asked Questions, and suggestions from the SimCenter team and user community.</p>
 <div class="toctree-wrapper compound" id="lbl-testbeds-manual">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">3.1. Overview</a><ul>
