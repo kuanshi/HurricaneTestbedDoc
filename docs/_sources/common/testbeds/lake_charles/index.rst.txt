@@ -139,7 +139,6 @@ If you have any feedback or questions, please check out the `SimCenter Regional 
 .. _lbl-testbeds-manual:
 
 .. toctree-filt::
-   :maxdepth: 1
 
    overview
    asset_description
@@ -148,7 +147,7 @@ If you have any feedback or questions, please check out the `SimCenter Regional 
    response_simulation
    damage_and_loss
    uncertainty_quantification
-   example_outputs
+   Getting Started<example_outputs>
    sample_results
    validation_results
    future_refinements

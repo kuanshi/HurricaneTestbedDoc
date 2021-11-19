@@ -25,7 +25,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="3.10. Validation Results" href="validation_results.html" />
-    <link rel="prev" title="3.8. Example Outputs" href="example_outputs.html" />
+    <link rel="prev" title="3.8. Getting Started" href="example_outputs.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -99,7 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="response_simulation.html">3.5. Response Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">3.6. Damage and Loss Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">3.7. Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">3.8. Example Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">3.8. Getting Started</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.9. Verification Results</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#building-inventory">3.9.1. Building Inventory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hand-calculation">3.9.2. Hand Calculation</a></li>
@@ -107,7 +107,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="validation_results.html">3.10. Validation Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="future_refinements.html">3.11. Opportunity Areas for Future Refinements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_refinements.html">3.11. Research Opportunities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">3.12. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feedback_request.html">3.13. Feedback</a></li>
 </ul>
@@ -584,7 +584,7 @@ The second aspect involves examinations of damage and loss results from the test
 building attribute on the building performance, i.e., if the results is rational then the corresponding rulesets
 are verified. As an example of this process, the construction year (YearBuilt) is focused in this section.</p>
 <p>In order to investigate the cause and rationalize potential influence of year built, a parametric study is conducted for
-a single-family house (ID = 2 in <a class="reference internal" href="asset_description.html#bldg-inv-lc"><span class="std std-numref">Table 3.2.4.1</span></a>). The original building record is expanded to 51 different buildings
+a single-family house (ID = 2 in <code class="xref std std-numref docutils literal notranslate"><span class="pre">bldg_inv_lc</span></code>). The original building record is expanded to 51 different buildings
 by varying the year built only (i.e., from 1970 to 2020). For each building, expected loss ratio is estimated with 50
 realizations to consider the uncertainty from the random sampling in the rulesets. The black curves in <a class="reference internal" href="#year-built-infl"><span class="std std-numref">Fig. 3.9.3.1</span></a>
 plots the individual realizations of expected loss ratio against different year built values. The red curve shows the mean value
