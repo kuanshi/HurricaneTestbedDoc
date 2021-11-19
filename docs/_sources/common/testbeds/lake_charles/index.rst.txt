@@ -114,7 +114,7 @@ two primary audiences/use cases:
 
 Such individuals may not wish to generate their own inventories, but require some background in order to meaningfully 
 interpret results. This documentation will enhance their understanding of the various assumptions made in generating 
-these inventories and assigning the attributes required for the adopted loss models. Please see :ref:`lbl-testbed_LC_example_outputs`
+these inventories and assigning the attributes required for the adopted loss models. Please see :ref:`lbl-testbed_LC_getting_started`
 for a detailed description about how to conduct the run of this testbed. 
 
 **Case 2**: Users who wish to use this testbed as a validation event can compare the damage/loss estimates from this 

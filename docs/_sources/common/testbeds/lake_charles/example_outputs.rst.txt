@@ -1,4 +1,4 @@
-.. _lbl-testbed_LC_example_outputs:
+.. _lbl-testbed_LC_getting_started:
 
 **************************
 Getting Started
