@@ -158,7 +158,7 @@
 testbed runs with the emphasis on verifying the estimated loss ratios by hand-calculations.</p>
 <div class="section" id="building-inventory">
 <h2><span class="section-number">3.9.1. </span>Building Inventory<a class="headerlink" href="#building-inventory" title="Permalink to this headline"></a></h2>
-<p>From the entire building inventory, 109 buildings are randomly selected
+<p>From the entire building inventory, 98 buildings are randomly selected
 (examples are shown in <a class="reference internal" href="#sample-table"><span class="std std-numref">Table 3.9.1.1</span></a> and the full inventory can be accessed
 <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/table/veri_sample.csv">here</a>).
 <a class="reference internal" href="#scatter-matrix"><span class="std std-numref">Fig. 3.9.1.1</span></a> shows the data distributions of the built year, surface
@@ -527,19 +527,19 @@ roughness (i.e., Terrain), roof shape, number of stories, and occupancy class.</
 <tr class="row-odd"><td><p>20</p></td>
 <td><p>Gable</p></td>
 <td><p>X</p></td>
-<td><p>345</p></td>
+<td><p>605</p></td>
 <td><p>-93.24</p></td>
 <td><p>30.14</p></td>
-<td><p>76</p></td>
+<td><p>21</p></td>
 <td><p>133.1</p></td>
 <td><p>Wood</p></td>
-<td><p>COM1</p></td>
+<td><p>RES1</p></td>
 <td><p>Above</p></td>
+<td><p>0</p></td>
+<td><p>0.28</p></td>
 <td><p>1</p></td>
-<td><p>0.18</p></td>
-<td><p>1</p></td>
-<td><p>15.4</p></td>
-<td><p>1991</p></td>
+<td><p>17</p></td>
+<td><p>1987</p></td>
 </tr>
 </tbody>
 </table>
@@ -584,7 +584,7 @@ The second aspect involves examinations of damage and loss results from the test
 building attribute on the building performance, i.e., if the results is rational then the corresponding rulesets
 are verified. As an example of this process, the construction year (YearBuilt) is focused in this section.</p>
 <p>In order to investigate the cause and rationalize potential influence of year built, a parametric study is conducted for
-a single-family house (ID = 2 in <code class="xref std std-numref docutils literal notranslate"><span class="pre">bldg_inv_lc</span></code>). The original building record is expanded to 51 different buildings
+a single-family house (ID = 2 in <a class="reference internal" href="asset_description.html#bldg-inv-lc"><span class="std std-numref">Table 3.2.4.1</span></a>). The original building record is expanded to 51 different buildings
 by varying the year built only (i.e., from 1970 to 2020). For each building, expected loss ratio is estimated with 50
 realizations to consider the uncertainty from the random sampling in the rulesets. The black curves in <a class="reference internal" href="#year-built-infl"><span class="std std-numref">Fig. 3.9.3.1</span></a>
 plots the individual realizations of expected loss ratio against different year built values. The red curve shows the mean value
