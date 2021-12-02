@@ -170,7 +170,7 @@ After successfully downloading and launching, the major steps for setting up the
 <p class="caption"><span class="caption-number">Fig. 3.8.1.1 </span><span class="caption-text">R2D GI setup.</span><a class="headerlink" href="#r2d-gi" title="Permalink to this image"></a></p>
 </div>
 </li>
-<li><p>Download and unzip the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/02.%20Input:%20HAZ%20-%20Hazard%20Characterization">HurricaneLaura_MappedPWS</a>.
+<li><p>Download and unzip the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/02.%20Input:%20HAZ%20-%20Hazard%20Characterization">HurricaneLaura_MappedPWS</a>.
 Set the <strong>Event File Listing Wind Field</strong> in the <strong>HAZ</strong> panel to the “EventGrid.csv” in the unzipped “IMs” folder.
 The app would automatically load the directory (<a class="reference internal" href="#r2d-haz"><span class="std std-numref">Fig. 3.8.1.2</span></a>). And the <strong>Units of Event Input File</strong> should be
 “Miles per hour”.</p>
@@ -179,7 +179,7 @@ The app would automatically load the directory (<a class="reference internal" hr
 <p class="caption"><span class="caption-number">Fig. 3.8.1.2 </span><span class="caption-text">R2D HAZ setup.</span><a class="headerlink" href="#r2d-haz" title="Permalink to this image"></a></p>
 </div>
 </li>
-<li><p>Download the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/01.%20Input:%20BIM%20-%20Building%20Inventory%20Data">BIM_LakeCharles_Full.csv</a> (under <strong>01. Input: BIM - Building Inventory Data</strong> folder).
+<li><p>Download the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/01.%20Input:%20BIM%20-%20Building%20Inventory%20Data">BIM_LakeCharles_Full.csv</a> (under <strong>01. Input: BIM - Building Inventory Data</strong> folder).
 Select <strong>CSV to BIM</strong> in the <strong>ASD</strong> panel and set the <strong>Import Path</strong> to “BIM_LakeCharles_Full.csv” (<a class="reference internal" href="#r2d-asd"><span class="std std-numref">Fig. 3.8.1.3</span></a>).
 Specify the building IDs that you would like to include in the simulation (e.g., 1-26516 for the entire inventory - note this may take very long time to run
 on a local machine, so it is suggested to first test with a small sample like 1-100 locally and then submit the entire run to DesignSafe - see more details in <a class="reference internal" href="#r2d-run-ds"><span class="std std-numref">Fig. 3.8.1.10</span></a>).</p>
@@ -207,7 +207,7 @@ on a local machine, so it is suggested to first test with a small sample like 1-
 </div>
 </li>
 <li><p>Set the “Damage and Loss Method” in <strong>DL</strong> panel to “HAZUS MH HU”. Download the rulset scripts from
-<a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation/scripts">DesignSafe PRJ-3207</a>
+<a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation/scripts">DesignSafe PRJ-3207</a>
 (under <strong>03. Input: DL - Rulesets for Asset Representation/scripts</strong> folder) and
 set the <strong>Auto populate script</strong> to “auto_HU_LA.py” (<a class="reference internal" href="#r2d-dl"><span class="std std-numref">Fig. 3.8.1.7</span></a>). Note please place the rulset scripts
 in an individual folder so that the application could copy and load them later.</p>
@@ -267,7 +267,7 @@ assignment process, the output <em>BIM.hdf</em> file will have fewer buildings t
 As such, this expanded inventory file output by R2D should be used for subsequent analyses, rather than
 the original inventory used to run the simulation in Step 3 above. The <em>EDP.hdf</em> summarizes the EDP realizations. The <em>DM.hdf</em> and
 <em>DV.hdf</em> files summarizes the statistics of damage states and estimated loss metrics. These results of this testbed
-can be accessed in the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/04.%20Output:%20Results">DesignSafe project</a>, along with the Jupyter
+can be accessed in the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/04.%20Output:%20Results">DesignSafe project</a>, along with the Jupyter
 notebook used to visualize them. The zip file consists of (1) four result hdf files (<em>BIM.hdf</em>, <em>EDP.hdf</em>, <em>DM.hdf</em>, and <em>DV.hdf</em>), (2)
 four parsed result files (in .csv), (3) Input inventory csv file, (4) two jupyter notebook scripts, and (5) a requirement txt file listing the
 dependencies. <em>post-process.ipynb</em> can be run locally and first-time users are suggested to run the first cell to install necessary packages, and
