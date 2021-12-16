@@ -236,7 +236,7 @@ model is available on DesignSafe PRJ-3314.</p>
 <td><p>Classification of level of engineering used in design process: Choices: Engineered (E), Pre-Engineered, (PE) Marginally Engineered (ME), Non-Engineered (NE)</p></td>
 <td><p>Choices: E, PE, ME, NE</p></td>
 </tr>
-<tr class="row-even"><td><p>YearBuiltNJDEP</p></td>
+<tr class="row-even"><td><p>YearBuilt</p></td>
 <td><p>Assessor-provided Year of Construction from NJDEP Footprints</p></td>
 <td><p>Integer (4-digit)</p></td>
 </tr>
@@ -244,9 +244,9 @@ model is available on DesignSafe PRJ-3314.</p>
 <td><p>Assessor-provided Year of Construction from MODIV</p></td>
 <td><p>Integer (4-digit)</p></td>
 </tr>
-<tr class="row-even"><td><p>NumberofStories0</p></td>
+<tr class="row-even"><td><p>NumberofStories</p></td>
 <td><p>Assessor-provided number of stories</p></td>
-<td><p>Integer (4-digit)</p></td>
+<td><p>Integer</p></td>
 </tr>
 <tr class="row-odd"><td><p>NumberofStories1</p></td>
 <td><p>Number of stories estimated via image processing</p></td>
@@ -256,7 +256,7 @@ model is available on DesignSafe PRJ-3314.</p>
 <td><p>Number of units in the property (commercial or residential)</p></td>
 <td><p>Integer</p></td>
 </tr>
-<tr class="row-odd"><td><p>PlanArea0</p></td>
+<tr class="row-odd"><td><p>PlanArea</p></td>
 <td><p>Plan area in square feet from assessor databases</p></td>
 <td><p>Floating point number</p></td>
 </tr>
@@ -340,7 +340,7 @@ model is available on DesignSafe PRJ-3314.</p>
 <td><p>Assessor-provided type of garage.</p></td>
 <td><p>Floating point number</p></td>
 </tr>
-<tr class="row-even"><td><p>Terrain</p></td>
+<tr class="row-even"><td><p>TerrainRoughness</p></td>
 <td><p>HAZUS-defined terrain classifications (x100) based on LULC data</p></td>
 <td><p>Choices: 3, 15, 35, 70, 100</p></td>
 </tr>
@@ -364,27 +364,27 @@ model is available on DesignSafe PRJ-3314.</p>
 <td><p>Underlying roof structure, applies only to masonry buildings</p></td>
 <td><p>Choices: Wood, OWSJ</p></td>
 </tr>
-<tr class="row-even"><td><p>HPR</p></td>
+<tr class="row-even"><td><p>HazardProneRegion</p></td>
 <td><p>Defines Hazard Prone Regions (HPR) for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
-<tr class="row-odd"><td><p>WBD</p></td>
+<tr class="row-odd"><td><p>WindBorneDebris</p></td>
 <td><p>Defines Wind Borne Debris (WBD) for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
-<tr class="row-even"><td><p>SWR</p></td>
+<tr class="row-even"><td><p>SecondaryWaterResistance</p></td>
 <td><p>Defines Secondary Water Resistance (SWR) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MSF1-2, MMUH1-3</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
-<tr class="row-odd"><td><p>RoofCvr</p></td>
+<tr class="row-odd"><td><p>RoofCover</p></td>
 <td><p>Defines roof cover for the purposes of Hazus wind vulnerability assignments for WMUH1-3, MMUH1-3, MERBL-M-H, MECBL-M-H, MLRI, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL)  and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
 <td><p>Choices: N/A, BUR, SPM</p></td>
 </tr>
-<tr class="row-even"><td><p>RoofQual</p></td>
+<tr class="row-even"><td><p>RoofQuality</p></td>
 <td><p>Defines roof cover quality for the purposes of Hazus wind vulnerability assignments for WMUH1-3, MMUH1-3, MLRI</p></td>
 <td><p>Choices: N/A, poor, good</p></td>
 </tr>
-<tr class="row-odd"><td><p>RDA-Wood</p></td>
+<tr class="row-odd"><td><p>RoofDeckAttachmentW</p></td>
 <td><p>Defines Roof Deck Attachment (RDA) for wood for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2</p></td>
 <td><p>Choices: A, B, C, D</p></td>
 </tr>
@@ -392,19 +392,19 @@ model is available on DesignSafe PRJ-3314.</p>
 <td><p>Defines Roof Deck Attachment (RDA) for OWSJ for the purposes of Hazus wind vulnerability assignments for MSF1-2</p></td>
 <td><p>Choices: smtl standard, smtl superior, cshl standard, cshl superior</p></td>
 </tr>
-<tr class="row-odd"><td><p>R2WC</p></td>
+<tr class="row-odd"><td><p>RoofToWallConnection</p></td>
 <td><p>Defines Roof to Wall Connection (R2WC) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2</p></td>
 <td><p>Choices: strap, toe-nail</p></td>
 </tr>
-<tr class="row-even"><td><p>shutters</p></td>
+<tr class="row-even"><td><p>Shutters</p></td>
 <td><p>Defines use of window opening protection for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MERBL-M-H, MECBL-M-H, MMUH1-3,MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H, SPMBS-M-L, MH94HUDI-II-III, MH76HUD, MHPHUD and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL)  and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
-<tr class="row-odd"><td><p>Agarage</p></td>
+<tr class="row-odd"><td><p>AugmentedGarage</p></td>
 <td><p>Defines presence of attached garage for the purposes of Hazus wind vulnerability assignments for WSF1-2, MSF1-2</p></td>
 <td><p>Choices: none, SFBC 1994, standard, weak</p></td>
 </tr>
-<tr class="row-even"><td><p>Mreinf</p></td>
+<tr class="row-even"><td><p>MasonryReinforcing</p></td>
 <td><p>Defines presence of reinforcement in masonry walls for the purposes of Hazus wind vulnerability assignments for MSF1-2, MLRI, MLRM1, MLRM2, MMUH1-3</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
@@ -412,11 +412,11 @@ model is available on DesignSafe PRJ-3314.</p>
 <td><p>Defines property of OWSJ required for Hazus wind vulnerability assignments for MSF1-2</p></td>
 <td><p>Choices: cshl, smtl</p></td>
 </tr>
-<tr class="row-even"><td><p>Metal-RDA</p></td>
+<tr class="row-even"><td><p>RoofDeckAttachmentM</p></td>
 <td><p>Defines Metal Roof Deck Attachment (RDA) for purposes of Hazus wind vulnerability assessments for MLRI, MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, SPMBS-M-L and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL) and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
 <td><p>Choices: standard, superior</p></td>
 </tr>
-<tr class="row-odd"><td><p>RDage</p></td>
+<tr class="row-odd"><td><p>RoofDeckAge</p></td>
 <td><p>Defines roof deck age for the purposes of Hazus wind vulnerability assessments for MLRM1, MLRM2, SPMBS-M-L and Fire Stations (HUEFFS), Elementary Schools (HUEFSS)</p></td>
 <td><p>Choices: new/avg, old</p></td>
 </tr>
@@ -432,7 +432,7 @@ model is available on DesignSafe PRJ-3314.</p>
 <td><p>Defines likely sources of wind debris for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL) and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
 <td><p>Choices: Res/Comm, Varies by Direction, Residential, None, A, B, C, D</p></td>
 </tr>
-<tr class="row-odd"><td><p>WWR</p></td>
+<tr class="row-odd"><td><p>WindowWallRatio</p></td>
 <td><p>Defines window to wall ratio (WWR) for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)</p></td>
 <td><p>Choices: low, medium, high</p></td>
 </tr>
