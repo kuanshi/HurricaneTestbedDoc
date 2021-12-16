@@ -430,7 +430,7 @@ The second is 56 residences assessed by StEER for which roof types were one of t
 e.g., removing all roofs labeled as “Complex” according to StEER’s distinct image labeling standards.
 The validation process is documented
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">here</a>.
-The confusion matrices are presented in <a class="reference internal" href="#roof-shape-vali"><span class="std std-numref">Fig. 3.2.2.2</span></a>. These matrices visually present
+The confusion matrices are presented in <a class="reference internal" href="../atlantic_city/asset_description.html#roof-shape-vali"><span class="std std-numref">Fig. 2.2.2.7</span></a>. These matrices visually present
 the comparison between the predictions and actual data and should have values of 1.0 along the diagonal
 if the classification is perfect, affirming the accuracy of the classification by the roof shape classifier.</p>
 <div class="align-center figure" id="roof-shape-vali">
@@ -491,12 +491,12 @@ designed to perform counts at the individual building level.</p>
 <p>For a random image dataset of buildings captured using arbitrary camera orientations (also
 termed in the wild images), the developed floor detection model was determined to capture
 the number of floors information of buildings with an accuracy of 86%.
-<a class="reference internal" href="#num-stories-vali"><span class="std std-numref">Fig. 3.2.2.6</span></a> (a) provides a breakdown of this accuracy measure for
+<a class="reference internal" href="../atlantic_city/asset_description.html#num-stories-vali"><span class="std std-numref">Fig. 2.2.2.2</span></a> (a) provides a breakdown of this accuracy measure for
 different prediction classes (i.e. the confusion matrix of model classifications).
 It was also observed that if the image dataset is established such that building images
 are captured with minimal obstructions, the building is at the center of the image, and
 perspective distortions are limited, the number of floors detections were performed at an
-accuracy level of 94.7% by the model. <a class="reference internal" href="#num-stories-vali"><span class="std std-numref">Fig. 3.2.2.6</span></a> (b)
+accuracy level of 94.7% by the model. <a class="reference internal" href="../atlantic_city/asset_description.html#num-stories-vali"><span class="std std-numref">Fig. 2.2.2.2</span></a> (b)
 shows the confusion matrix for the model predicting on the “cleaned” image data.
 In quantifying both accuracy levels, a test set of 3,000 images randomly selected
 across all counties of a companion testbed in New Jersey, excluding Atlantic County (site of that
@@ -517,7 +517,7 @@ the average of these dimensions.</p>
 <a class="reference internal image-reference" href="../../../_images/BldgElev.png"><img alt="../../../_images/BldgElev.png" src="../../../_images/BldgElev.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.2.7 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image"></a></p>
 </div>
-<p>The MeanRoofHt is based on the following AI technique. <a class="reference internal" href="#mean-roof-ht-app"><span class="std std-numref">Fig. 3.2.2.8</span></a>
+<p>The MeanRoofHt is based on the following AI technique. <a class="reference internal" href="../atlantic_city/asset_description.html#mean-roof-ht-app"><span class="std std-numref">Fig. 2.2.2.4</span></a>
 plots the predicted roof height versus the number of floors of the inventory.</p>
 <p>As in any single-image metrology application, extracting the building elevations from imagery requires:</p>
 <ol class="arabic simple">
@@ -550,7 +550,7 @@ facade segmentation dataset of 30,000 images supplemented with relevant portions
 dataset. The peak model performance was attained using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a> at a learning rate of 0.001
 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world dimensions were
 attained by use of field of view and camera distance information collected for each street-level imagery.</p>
-<p><a class="reference internal" href="#mean-roof-ht-app"><span class="std std-numref">Fig. 3.2.2.8</span></a> shows a scatter plot of the AI predicted mean roof heights vs AI-predicted number of floors.
+<p><a class="reference internal" href="../atlantic_city/asset_description.html#mean-roof-ht-app"><span class="std std-numref">Fig. 2.2.2.4</span></a> shows a scatter plot of the AI predicted mean roof heights vs AI-predicted number of floors.
 A general trend observed in this plot is that the roof height increases with the number of floors,
 which is in line with the general intuition.</p>
 <div class="align-center figure" id="mean-roof-ht-app">
@@ -562,7 +562,7 @@ which is in line with the general intuition.</p>
 <h4>Attribute: RoofSlope<a class="headerlink" href="#attribute-roofslope" title="Permalink to this headline"></a></h4>
 <p>RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the
-<a class="reference internal" href="#lbl-testbed-lc-asset-description-meanroofht"><span class="std std-ref">Attribute: MeanRoofHt</span></a>
+<a class="reference internal" href="../atlantic_city/asset_description.html#lbl-testbed-lc-asset-description-meanroofht"><span class="std std-ref">Attribute: MeanRoofHt</span></a>
 section. Roof run is determined as half the smaller dimension of the building, as determined from
 the dimensions of the building footprint. <a class="reference internal" href="#mean-slope-app"><span class="std std-numref">Fig. 3.2.2.9</span></a> displays the AI-predicted mean roof height versus the
 AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.</p>
@@ -581,7 +581,7 @@ engineering judgement. The following attributes are obtained or derived from thi
 <div class="section" id="attribute-dws-ii">
 <h3>Attribute: DWS II<a class="headerlink" href="#attribute-dws-ii" title="Permalink to this headline"></a></h3>
 <p>Design Wind Speed for Risk Category II construction in mph (ASCE 7-16), was obtained by queries to the
-<a class="reference external" href="https://hazards.atcouncil.org/">ATC Hazards by Location API</a> (<a class="reference internal" href="#atc20" id="id7"><span>[ATC20]</span></a>).</p>
+<a class="reference external" href="https://hazards.atcouncil.org/">ATC Hazards by Location API</a> (<a class="reference internal" href="../atlantic_city/asset_description.html#atc20" id="id7"><span>[ATC20]</span></a>).</p>
 </div>
 <div class="section" id="attribute-lulc">
 <h3>Attribute: LULC<a class="headerlink" href="#attribute-lulc" title="Permalink to this headline"></a></h3>
@@ -598,7 +598,7 @@ as shown in <a class="reference internal" href="#year-built-nsi"><span class="st
 <a class="reference internal image-reference" href="../../../_images/YearBuiltNSI.png"><img alt="../../../_images/YearBuiltNSI.png" src="../../../_images/YearBuiltNSI.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.1 </span><span class="caption-text">National Structure Inventory data points.</span><a class="headerlink" href="#year-built-nsi" title="Permalink to this image"></a></p>
 </div>
-<p>To address this issue, <a class="reference external" href="https://github.com/NHERI-SimCenter/SURF">SURF</a> (<a class="reference internal" href="#wang19" id="id9"><span>[Wang19]</span></a>) is employed to construct and train a neural
+<p>To address this issue, <a class="reference external" href="https://github.com/NHERI-SimCenter/SURF">SURF</a> (<a class="reference internal" href="../atlantic_city/asset_description.html#wang19" id="id9"><span>[Wang19]</span></a>) is employed to construct and train a neural
 network on the year built information from
 National Structure Inventory (NSI). The neural network is then used to predict the year built
 information for each building based on the spatial patterns it learned from the NSI dataset.

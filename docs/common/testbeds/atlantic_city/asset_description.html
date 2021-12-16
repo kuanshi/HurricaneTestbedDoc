@@ -94,7 +94,11 @@
 <li class="toctree-l2"><a class="reference internal" href="overview.html">2.1. Overview</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Asset Description</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#phase-i-attribute-definition">2.2.1. Phase I: Attribute Definition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#phase-ii-footprint-selection">2.2.2. Phase II: Footprint Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase-ii-inventory-generation">2.2.2. Phase II: Inventory Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#phase-ii-footprint-selection">Phase II: Footprint Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ai-ml-techniques-combined-with-computer-vision">AI/ML Techniques combined with Computer Vision</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#phase-iii-augmentation-using-third-party-data">2.2.3. Phase III: Augmentation Using Third-Party Data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#phase-iv-augmentation-using-computer-vision-methods">2.2.4. Phase IV: Augmentation Using Computer Vision Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#populated-inventories">2.2.5. Populated Inventories</a></li>
@@ -105,8 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="response_simulation.html">2.5. Response Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">2.6. Damage and Loss Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">2.7. Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.8. Verification Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">2.9. Example Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">2.8. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.9. Verification Results</a></li>
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
@@ -156,32 +160,22 @@
              
   <div class="section" id="asset-description">
 <span id="lbl-testbed-ac-asset-description"></span><h1><span class="section-number">2.2. </span>Asset Description<a class="headerlink" href="#asset-description" title="Permalink to this headline"></a></h1>
-<p>This section describes how a large-scale building inventory was constructed using a phased approach that
-augments tax assessor data, using machine learning and computer vision algorithm to address errors/omissions and
-generate all attributes required for the corresponding loss assessment. It is emphasized that the intent
-is to demonstrate how an inventory could be constructed and not to address potential errors, omissions or
-inaccuracies in the source data, i.e., source data are assumed to be accurate and no additional quality
-assurance was conducted outside of addressing glaring omissions or errors.</p>
-<p>In the process of assembling this inventory, a number of scripts were developed to facilitate the actions
-described in the following sections. While these scripts were not intended to be production-quality
-software and were written assuming a particular data format/endpoint which may change over time, they
-do provide an example of the type of operations necessary to assemble a building inventory and thus
-are made available at GitHub as an illustrative example.</p>
+<p>This section describes how a large-scale building inventory was constructed in two phases. The initial
+phase of this work involved identifying the attributes needed. The second phase comprised
+obtaining these attributes for each building using machine learning and
+computer vision techniques to create a core set of attributes. The remaining attributes were
+then obtained using other data sources as discussed below.</p>
 <div class="section" id="phase-i-attribute-definition">
 <h2><span class="section-number">2.2.1. </span>Phase I: Attribute Definition<a class="headerlink" href="#phase-i-attribute-definition" title="Permalink to this headline"></a></h2>
 <p>All the attributes required for loss estimation were first identified to develop the Building Inventory
-data model, which catalogs each attribute, its purpose, its format (alphanumeric, floating point number,
-etc.), the data source used to define that attribute and the field(s) needed from that data source, any
-transformations of that source data necessary to align with the units or conventions used in the Building
-Inventory, and any relevant details explaining notations, assumptions, or reference documents.  These
-fields are summarized in <a class="reference internal" href="#tab-bldginventory"><span class="std std-numref">Table 2.2.1.1</span></a> with full details of each field
-available on DesignSafe, for both the Atlantic County Inventory and the Flood-Exposed/Exploratory Inventory.
-The Building Inventory data model should be comprehensive, encompassing all attributes required for loss
-estimation, although these may be populated in the Building Inventory at different points in the workflow,
-e.g., a number of attributes needed for loss estimation are populated during the Asset Representation stage
-(see <a class="reference internal" href="asset_representation.html#lbl-testbed-ac-asset-representation"><span class="std std-ref">Asset Representation</span></a>).</p>
-<span id="tab-bldginventory"></span><table class="colwidths-given docutils align-center" id="bldg-inv-dm">
-<caption><span class="caption-number">Table 2.2.1.1 </span><span class="caption-text">Building Inventory data model.</span><a class="headerlink" href="#bldg-inv-dm" title="Permalink to this table"></a></caption>
+data model. This Building Inventory data model presented in <a class="reference internal" href="#tab-bldg-inv-data-model-ac"><span class="std std-numref">Table 2.2.1.1</span></a>
+provides a set of attributes that are assigned to each asset to form the building inventory file
+serving as input to the workflow. For each attribute a row in the table is provided. Each row has a number
+of columns: the attribute name, description, format (such as alphanumeric, floating-point number), the data source used to define that attribute.
+An expanded version of <a class="reference internal" href="#tab-bldg-inv-data-model-ac"><span class="std std-numref">Table 2.2.1.1</span></a> with the full details of this data
+model is available on DesignSafe PRJ-3314.</p>
+<table class="colwidths-given docutils align-center" id="tab-bldg-inv-data-model-ac">
+<caption><span class="caption-number">Table 2.2.1.1 </span><span class="caption-text">Building Inventory data model for Atlantic County Inventory.</span><a class="headerlink" href="#tab-bldg-inv-data-model-ac" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 60%" />
@@ -203,7 +197,7 @@ e.g., a number of attributes needed for loss estimation are populated during the
 <td><p>Alphanumeric</p></td>
 </tr>
 <tr class="row-even"><td><p>City</p></td>
-<td><p>Typically assessor field for property location – city.</p></td>
+<td><p>Typically assessor field for property location city.</p></td>
 <td><p>Alphanumeric</p></td>
 </tr>
 <tr class="row-odd"><td><p>State</p></td>
@@ -490,8 +484,18 @@ Coastal/V-Zone</p></td>
 </tbody>
 </table>
 </div>
+<div class="section" id="phase-ii-inventory-generation">
+<h2><span class="section-number">2.2.2. </span>Phase II: Inventory Generation<a class="headerlink" href="#phase-ii-inventory-generation" title="Permalink to this headline"></a></h2>
+<p>This section describes how the large-scale building inventory was constructed for Atlantic County using
+a phased approach that used machine learning, computer vision algorithm and data distributions to
+generate all attributes required for the corresponding loss assessment. It is emphasized that the intent is
+to demonstrate how an inventory could be constructed and not to address potential errors, omissions or
+inaccuracies in the source data, i.e., source data are assumed to be accurate, and no additional
+quality assurance was conducted outside of addressing glaring omissions or errors.</p>
+<p>For each of the attributes identified in <a class="reference internal" href="#tab-bldg-inv-data-model-ac"><span class="std std-numref">Table 2.2.1.1</span></a>,
+a description of the attribute and information on how the data was identified and validated is presented.</p>
 <div class="section" id="phase-ii-footprint-selection">
-<h2><span class="section-number">2.2.2. </span>Phase II: Footprint Selection<a class="headerlink" href="#phase-ii-footprint-selection" title="Permalink to this headline"></a></h2>
+<h3>Phase II: Footprint Selection<a class="headerlink" href="#phase-ii-footprint-selection" title="Permalink to this headline"></a></h3>
 <p>Inventory development initiated with the Footprint Data generated by the New Jersey Department of
 Environmental Protection (NJDEP). These NJDEP footprints include flood-exposed properties cataloged
 in two geodatabases encompassing approximately 453,000 footprints across the entire state:</p>
@@ -507,6 +511,165 @@ spaced buildings. This issue was resolved by a combination of manual inspections
 segmentation algorithm to the satellite images obtained for the buildings. This resulted in the
 <strong>Atlantic County Inventory</strong>.</p>
 </div>
+<div class="section" id="ai-ml-techniques-combined-with-computer-vision">
+<h3>AI/ML Techniques combined with Computer Vision<a class="headerlink" href="#ai-ml-techniques-combined-with-computer-vision" title="Permalink to this headline"></a></h3>
+<p>Most of the key building attributes were generated using SimCenter’s
+<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/index.html">BRAILS</a>. The following
+is a brief description of how these attributes were obtained and the utilized methods were validated.</p>
+<div class="section" id="attribute-numberofstories">
+<h4>Attribute: NumberOfStories<a class="headerlink" href="#attribute-numberofstories" title="Permalink to this headline"></a></h4>
+<p>This attribute is determined by CityBuilder using an object detection procedure. A detection model that
+can automatically detect rows of building windows was established to generate the image-based detections
+of visible floor locations from street-level images. The model was trained on the
+<a class="reference external" href="https://arxiv.org/abs/1911.09070">EfficientDet-D7 architecture</a> with a dataset of 60,000 images,
+using 80% for training, 15% for validation, and 5% testing of the model. In order to ensure faster model
+convergence, initial weights of the model were set to model weights of the (pretrained) object detection
+model that, at the time, achieved state-of-the-art performance on the
+<a class="reference external" href="https://cocodataset.org/#download">2017 COCO Detection set</a>. For this
+specific implementation, the peak model performance was achieved using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a> at a learning
+rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a> shows examples of the
+floor detections performed by the model.</p>
+<div class="align-center figure" id="num-stories-detection">
+<a class="reference internal image-reference" href="../../../_images/NumOfStoriesDetection1.png"><img alt="../../../_images/NumOfStoriesDetection1.png" src="../../../_images/NumOfStoriesDetection1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.1 </span><span class="caption-text">Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.</span><a class="headerlink" href="#num-stories-detection" title="Permalink to this image"></a></p>
+</div>
+<p>For an image, the described floor detection model generates the bounding box output for its
+detections and calculates the confidence level associated with each detection
+(see <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a>). A post-processor that converts stacks of neighboring
+bounding boxes into floor counts was developed to convert this output into floor counts.
+Recognizing an image may contain multiple buildings at a time, this post-processor was
+designed to perform counts at the individual building level.</p>
+<p>For a random image dataset of buildings captured using arbitrary camera orientations (also
+termed in the wild images), the developed floor detection model was determined to capture
+the number of floors information of buildings with an accuracy of 86%.
+<a class="reference internal" href="#num-stories-vali"><span class="std std-numref">Fig. 2.2.2.2</span></a> (a) provides a breakdown of this accuracy measure for
+different prediction classes (i.e. the confusion matrix of model classifications).
+It was also observed that if the image dataset is established such that building images
+are captured with minimal obstructions, the building is at the center of the image, and
+perspective distortions are limited, the number of floors detections were performed at an
+accuracy level of 94.7% by the model. <a class="reference internal" href="#num-stories-vali"><span class="std std-numref">Fig. 2.2.2.2</span></a> (b)
+shows the confusion matrix for the model predicting on the “cleaned” image data.
+In quantifying both accuracy levels, a test set of 3,000 images randomly selected
+across all counties of a companion testbed in New Jersey, excluding Atlantic County (site of that
+testbed), was utilized.</p>
+<div class="align-center figure" id="num-stories-vali">
+<a class="reference internal image-reference" href="../../../_images/NumOfStoriesVali1.png"><img alt="../../../_images/NumOfStoriesVali1.png" src="../../../_images/NumOfStoriesVali1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.2 </span><span class="caption-text">Confusion matrices for the number of floors predictor used in this study.</span><a class="headerlink" href="#num-stories-vali" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="attribute-meanroofht">
+<span id="lbl-testbed-ac-asset-description-meanroofht"></span><h4>Attribute: MeanRoofHt<a class="headerlink" href="#attribute-meanroofht" title="Permalink to this headline"></a></h4>
+<p>The elevation of the bottom plane of the roof (lowest edge of roof line) and elevation of the roof
+(peak of gable or apex of hip) are estimated with respect to grade (in feet) from street-level imagery.
+These geometric properties are defined visually for common residential coastal typologies in
+<a class="reference internal" href="../lake_charles/asset_description.html#building-elevation"><span class="std std-numref">Fig. 3.2.2.7</span></a>. The mean height of the roof system is then derived as
+the average of these dimensions.</p>
+<div class="align-center figure" id="building-elevation">
+<a class="reference internal image-reference" href="../../../_images/BldgElev1.png"><img alt="../../../_images/BldgElev1.png" src="../../../_images/BldgElev1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.3 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image"></a></p>
+</div>
+<p>The MeanRoofHt is based on the following AI technique. <a class="reference internal" href="#mean-roof-ht-app"><span class="std std-numref">Fig. 2.2.2.4</span></a>
+plots the predicted roof height versus the number of floors of the inventory.</p>
+<p>As in any single-image metrology application, extracting the building elevations from imagery requires:</p>
+<ol class="arabic simple">
+<li><p>Rectification of image perspective distortions, typically introduced during capturing of an image capture.</p></li>
+<li><p>Determining the pixel counts representing the distances between ends of the objects or surfaces of interest
+(e.g., for first-floor height, the orthogonal distance between the ground and first-floor levels).</p></li>
+<li><p>Converting these pixel counts to real-world dimensions by matching a reference measurement with the
+corresponding pixel count.</p></li>
+</ol>
+<p>Given that the number of street-level images available for a building can be limited and sparsely spaced,
+a single image rectification approach was deemed most applicable for regional-scale inventory
+development. The first step in image rectification requires detecting line segments on the front
+face of the building. This is performed by using the <a class="reference external" href="https://arxiv.org/abs/1905.03246">L-CNN</a>
+end-to-end wireframe parsing method. Once the segments are detected, vertical and horizontal lines
+on the front face of the building are automatically detected using
+<a class="reference external" href="https://dl.acm.org/doi/10.1145/358669.358692">RANSAC</a> line fitting based on the
+assumptions that line segments on this face are the predominant source of line segments in the image
+and the orientation of these line segments change linearly with their horizontal or vertical position
+depending on their predominant orientation. The Another support vector model implemented for image
+rectification focuses on the street-facing plane of the building in an image, and, based on the
+Manhattan World assumption, (i.e., all surfaces in the world are aligned with two horizontal and
+one vertical dominant directions) iteratively transforms the image such that horizontal edges on the
+facade plain lie parallel to each other, and its vertical edges are orthogonal to the horizontal edges.</p>
+<p>In order to automate the process of obtaining the pixel counts for the ground elevations, a facade
+segmentation model was trained to automatically label ground, facade, door, window, and roof pixels
+in an image. The segmentation model was trained using
+<a class="reference external" href="https://arxiv.org/abs/1706.05587">DeepLabV3 architecture on a ResNet-101 backbone</a>, pretrained on
+<a class="reference external" href="http://host.robots.ox.ac.uk/pascal/VOC/voc2012/">PASCAL VOC 2012 segmentation dataset</a>, using a
+facade segmentation dataset of 30,000 images supplemented with relevant portions of ADE20K segmentation
+dataset. The peak model performance was attained using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a> at a learning rate of 0.001
+(batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world dimensions were
+attained by use of field of view and camera distance information collected for each street-level imagery.</p>
+<p><a class="reference internal" href="#mean-roof-ht-app"><span class="std std-numref">Fig. 2.2.2.4</span></a> shows a scatter plot of the AI predicted mean roof heights vs AI-predicted number of floors.
+A general trend observed in this plot is that the roof height increases with the number of floors,
+which is in line with the general intuition.</p>
+<div class="align-center figure" id="mean-roof-ht-app">
+<a class="reference internal image-reference" href="../../../_images/MeanRoofHtApp1.png"><img alt="../../../_images/MeanRoofHtApp1.png" src="../../../_images/MeanRoofHtApp1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.4 </span><span class="caption-text">AI-predicted MeanRoofHt versus number of floors.</span><a class="headerlink" href="#mean-roof-ht-app" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="attribute-roofslope">
+<h4>Attribute: RoofSlope<a class="headerlink" href="#attribute-roofslope" title="Permalink to this headline"></a></h4>
+<p>RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained
+by determining the difference between the bottom plane and apex elevations of the roof as defined in the
+<a class="reference internal" href="#lbl-testbed-ac-asset-description-meanroofht"><span class="std std-ref">Attribute: MeanRoofHt</span></a>
+section. Roof run is determined as half the smaller dimension of the building, as determined from
+the dimensions of the building footprint. <a class="reference internal" href="#mean-slope-app"><span class="std std-numref">Fig. 2.2.2.5</span></a> displays the AI-predicted mean roof height versus the
+AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.</p>
+<div class="align-center figure" id="mean-slope-app">
+<a class="reference internal image-reference" href="../../../_images/RoofSlopeApp1.png"><img alt="../../../_images/RoofSlopeApp1.png" src="../../../_images/RoofSlopeApp1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.5 </span><span class="caption-text">AI-predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#mean-slope-app" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="attribute-roofshape">
+<h4>Attribute: RoofShape<a class="headerlink" href="#attribute-roofshape" title="Permalink to this headline"></a></h4>
+<p>The RoofShape is obtained by CityBuilder using the BRAILS Roof shape module. The roof shape module
+determines roof shape based on a satellite image obtained for the building. The module uses machine
+learning, specifically it utilizes a convolutional neural network that has been trained on satellite
+images. In AI/ML terminology the Roof Shape module is an image classifier: it takes an image and
+classifies it into one of three categories used in HAZUS: gable, hip, or flat as shown in
+<a class="reference internal" href="#roof-shape-ac"><span class="std std-numref">Fig. 2.2.2.6</span></a>. The original training of the AI model utilized 6,000 images obtained from google
+satellite imagery in conjunction with roof labels obtained from
+<a class="reference external" href="https://www.openstreetmap.org/">Open Street Maps</a>. As many roofs have more complex shapes, a
+similitude measure is used to determine which of these roof geometries is the best match to a given roof.
+More details of the classifier can be found
+<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/roofClassifier.html">here</a>.
+The trained classifier was employed here to classify the roof information for Lake Charles.</p>
+<div class="align-center figure" id="roof-shape-ac">
+<a class="reference internal image-reference" href="../../../_images/RoofShape1.png"><img alt="../../../_images/RoofShape1.png" src="../../../_images/RoofShape1.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.6 </span><span class="caption-text">Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by Hazus.</span><a class="headerlink" href="#roof-shape-ac" title="Permalink to this image"></a></p>
+</div>
+<p>The performance of the roof shape classifier was validated against two ground truth datasets.
+The first is comprised of 125 manually labeled satellite images sampled from OpenStreetMap from
+across the US, retaining only those with unobstructed views of building roofs (a cleaned dataset).
+The second is 56 residences assessed by StEER for which roof types were one of the three HAZUS classes,
+e.g., removing all roofs labeled as “Complex” according to StEER’s distinct image labeling standards.
+The validation process is documented
+<a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">here</a>.
+The confusion matrices are presented in <a class="reference internal" href="#roof-shape-vali-ac"><span class="std std-numref">Fig. 2.2.2.7</span></a>. These matrices visually present
+the comparison between the predictions and actual data and should have values of 1.0 along the diagonal
+if the classification is perfect, affirming the accuracy of the classification by the roof shape classifier.</p>
+<div class="align-center figure" id="roof-shape-vali-ac">
+<a class="reference internal image-reference" href="../../../_images/RoofShapeVali1.png"><img alt="../../../_images/RoofShapeVali1.png" src="../../../_images/RoofShapeVali1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.7 </span><span class="caption-text">Validation of BRAILS predicted roof shapes to roof shapes from OpenStreetMap and StEER.</span><a class="headerlink" href="#roof-shape-vali-ac" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>Attribute: RoofSlope<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h4>
+<p>RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained
+by determining the difference between the bottom plane and apex elevations of the roof as defined in the
+<a class="reference internal" href="#lbl-testbed-ac-asset-description-meanroofht"><span class="std std-ref">Attribute: MeanRoofHt</span></a>
+section. Roof run is determined as half the smaller dimension of the building, as determined from
+the dimensions of the building footprint. <a class="reference internal" href="#mean-slope-app-ac"><span class="std std-numref">Fig. 2.2.2.8</span></a> displays the AI-predicted mean roof height versus the
+AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.</p>
+<div class="align-center figure" id="mean-slope-app-ac">
+<a class="reference internal image-reference" href="../../../_images/RoofSlopeApp1.png"><img alt="../../../_images/RoofSlopeApp1.png" src="../../../_images/RoofSlopeApp1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.2.2.8 </span><span class="caption-text">AI-predicted RoofSlope versus mean roof height.</span><a class="headerlink" href="#mean-slope-app-ac" title="Permalink to this image"></a></p>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="phase-iii-augmentation-using-third-party-data">
 <h2><span class="section-number">2.2.3. </span>Phase III: Augmentation Using Third-Party Data<a class="headerlink" href="#phase-iii-augmentation-using-third-party-data" title="Permalink to this headline"></a></h2>
 <p>Attributes were then parsed from third-party data providers to populate all required attributes in the Building
@@ -515,8 +678,8 @@ attributes necessary to conduct standard FEMA risk assessments. Specifically, al
 Basic Attributes (<a class="reference internal" href="#tab-basicattri"><span class="std std-numref">Table 2.2.3.1</span></a>). A subset of the data, including Atlantic County, had additional Advanced
 Attributes required by HAZUS User Defined Facilities (UDF) Module (<a class="reference internal" href="#tab-udfattri"><span class="std std-numref">Table 2.2.3.2</span></a>) and FEMA Substantial Damage
 Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span class="std std-numref">Table 2.2.3.3</span></a>).</p>
-<span id="tab-basicattri"></span><table class="docutils align-center" id="id8">
-<caption><span class="caption-number">Table 2.2.3.1 </span><span class="caption-text">NJDEP basic attributes available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id8" title="Permalink to this table"></a></caption>
+<span id="tab-basicattri"></span><table class="docutils align-center" id="id17">
+<caption><span class="caption-number">Table 2.2.3.1 </span><span class="caption-text">NJDEP basic attributes available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id17" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -571,8 +734,8 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tr>
 </tbody>
 </table>
-<span id="tab-udfattri"></span><table class="colwidths-given docutils align-center" id="id9">
-<caption><span class="caption-number">Table 2.2.3.2 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
+<span id="tab-udfattri"></span><table class="colwidths-given docutils align-center" id="id18">
+<caption><span class="caption-number">Table 2.2.3.2 </span><span class="caption-text">Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.</span><a class="headerlink" href="#id18" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 85%" />
@@ -747,8 +910,8 @@ Estimator (SDE) Tool (<a class="reference internal" href="#tab-sdeattri"><span c
 </tbody>
 </table>
 <p>For the Atlantic County Inventory, any buildings not included in the NJDEP footprints had attributes encompassed
-by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called <strong>MODIV</strong>) (<a class="reference internal" href="#modiv" id="id1"><span>[MODIV]</span></a>) as defined in
-the MODIV User Manual (<a class="reference internal" href="#modiv18" id="id2"><span>[MODIV18]</span></a>). This notably affected attributes such as OccupancyClass, BuildingType and FoundationType,
+by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called <strong>MODIV</strong>) (<a class="reference internal" href="#modiv" id="id4"><span>[MODIV]</span></a>) as defined in
+the MODIV User Manual (<a class="reference internal" href="#modiv18" id="id5"><span>[MODIV18]</span></a>). This notably affected attributes such as OccupancyClass, BuildingType and FoundationType,
 whose rulesets (PDFs and Python scripts) are cross-referenced in <a class="reference internal" href="#addinfo-ruleset-njdep"><span class="std std-numref">Table 2.2.3.4</span></a>.
 In all cases where attributes were derived from MODIV data, whose fields can be sparsely populated, default
 values were initially assigned to ensure that every footprint would have the attributes required to execute
@@ -787,10 +950,10 @@ vulnerable attribute option). These initial assignments were then updated if add
 <p>Some attributes in the Building Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus
 remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data
 from the following third-party sources:
-1. <strong>Locations of essential facilities</strong> were sourced from NJ Office of Information Technology (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id3"><span>[NJGIN20]</span></a>)
-2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="../lake_charles/asset_description.html#atc20" id="id4"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7
-3. <strong>Terrain features</strong> (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id5"><span>[NJGIN20]</span></a>)</p>
-<p>See the Transformation and Detail columns in the PDFs listed in <a class="reference internal" href="#tab-bldginventory"><span class="std std-numref">Table 2.2.1.1</span></a> for specifics of how each attribute
+1. <strong>Locations of essential facilities</strong> were sourced from NJ Office of Information Technology (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id6"><span>[NJGIN20]</span></a>)
+2. <strong>ATC Hazards</strong> by Location API (<a class="reference internal" href="#atc20" id="id7"><span>[ATC20]</span></a>) was used to query Design Wind Speeds as defined in ASCE 7
+3. <strong>Terrain features</strong> (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data <a class="reference internal" href="#njgin20" id="id8"><span>[NJGIN20]</span></a>)</p>
+<p>See the Transformation and Detail columns in the PDFs listed in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab-bldgInventory</span></code> for specifics of how each attribute
 was assigned using these various third-party data sources.</p>
 </div>
 <div class="section" id="phase-iv-augmentation-using-computer-vision-methods">
@@ -805,45 +968,21 @@ non-integer values were often reported, creating incompatibilities with the inte
 defaults used in Hazus. Thus image-based floor detections were used to estimate this
 attribute for the larger Flood-Exposed Inventory, and as a means to cross-validate
 values reported in NJDEP and MOD IV for consistency with Hazus conventions.</p>
-<p>An object object detection model that can automatically detect rows of building windows was
-established to generate the image-based detections from street-level. The model was trained on the
-EfficientDet-D7 architecture with a dataset of 60,000 images, using 80% for training, 15%
-for validation, and 5% testing of the model. In order to ensure faster model convergence,
-initial weights of the model were set to model weights of the (pretrained) object detection
-model that, at the time, achieved state-of-the-art performance on the 2017 COCO Detection set.
-For this specific implementation, the peak model performance was achieved using the Adam optimizer
-at a learning rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a> shows examples of the
-floor detections performed by the model.</p>
-<div class="align-center figure" id="num-stories-detection">
+<p>A detection model that can automatically detect rows of building windows was established to generate the image-based detections of visible floor locations from street-level images. The model was trained on the <a class="reference external" href="https://arxiv.org/abs/1911.09070">EfficientDet-D7 architecture</a> with a dataset of 60,000 images, using 80% for training, 15% for validation, and 5% testing of the model. In order to ensure faster model convergence, initial weights of the model were set to model weights of the (pretrained) object detection model that, at the time, achieved state-of-the-art performance on the <a class="reference external" href="https://cocodataset.org/#download">2017 COCO Detection set</a>. For this specific implementation, the peak model performance was achieved using the <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam optimizer</a> at a learning rate of 0.0001 (batch size: 2), after 50 epochs. <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a> shows examples of the floor detections performed by the model.</p>
+<div class="align-center figure" id="id12">
 <a class="reference internal image-reference" href="../../../_images/number_of_stories_detection.png"><img alt="../../../_images/number_of_stories_detection.png" src="../../../_images/number_of_stories_detection.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.4.1 </span><span class="caption-text">Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.</span><a class="headerlink" href="#num-stories-detection" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.4.1 </span><span class="caption-text">Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
 </div>
-<p>For an image, the described floor detection model generates the bounding box output for its
-detections and calculates the confidence level associated with each detection. A post-processor
-that converts stacks of neighboring bounding boxes into floor counts was developed to convert
-this output into floor counts. Recognizing an image may contain multiple buildings at a time,
-this post-processor was designed to perform counts at the individual building-level.</p>
-<p>For a random building image dataset, where images were captured using arbitrary camera
-orientations (also termed “in-the-wild” images), the developed floor detection model
-was determined to identify the number of stories with an accuracy of 86%.
-<a class="reference internal" href="#num-story-confusion"><span class="std std-numref">Fig. 2.2.4.2</span></a> (a) provides a breakdown of this accuracy measure for different
-prediction classes (i.e., the confusion matrix of model classifications).
-It was also observed that if the image dataset is established such that building
-images are captured with minimal obstructions, the building is at the center of the
-image, and perspective distortions are limited (termed “cleaned” data), the model
-identified the number of stories at an accuracy level of 94.7%.
-<a class="reference internal" href="#num-story-confusion"><span class="std std-numref">Fig. 2.2.4.2</span></a> (b)  shows the confusion matrix for the model predicting on the
-“cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images
-randomly selected across all New Jersey counties, excluding Atlantic County, was utilized.</p>
-<div class="align-center figure" id="num-story-confusion">
-<a class="reference internal image-reference" href="../../../_images/num_story_confusion.png"><img alt="../../../_images/num_story_confusion.png" src="../../../_images/num_story_confusion.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.4.2 </span><span class="caption-text">Confusion matrices for the number of stories predictor. The maxtrix one the left shows
-the model’s prediction accuracy when tested on “in-the-wild” images. The matrix on the
-right depicts the model accuracy on the “cleaned” imagery.</span><a class="headerlink" href="#num-story-confusion" title="Permalink to this image"></a></p>
-</div>
+<p>For an image, the described floor detection model generates the bounding box output for its  detections and calculates the confidence level associated with each detection (see <a class="reference internal" href="../lake_charles/asset_description.html#num-stories-detection"><span class="std std-numref">Fig. 3.2.2.5</span></a>). A post-processor that converts stacks of neighboring bounding boxes into floor counts was developed to convert this output into floor counts. Recognizing an image may contain multiple buildings at a time, this post-processor was designed to perform counts at the individual building level.</p>
+<p>For a random image dataset of buildings captured using arbitrary camera orientations (also termed in the wild images), the developed floor detection model was determined to capture the number of floors information of buildings with an accuracy of 86%. <a class="reference internal" href="#num-stories-vali"><span class="std std-numref">Fig. 2.2.2.2</span></a> (a) provides a breakdown of this accuracy measure for different prediction classes (i.e. the confusion matrix of model classifications). It was also observed that if the image dataset is established such that building images are captured with minimal obstructions, the building is at the center of the image, and perspective distortions are limited, the number of floors detections were performed at an accuracy level of 94.7% by the model. <a class="reference internal" href="#num-stories-vali"><span class="std std-numref">Fig. 2.2.2.2</span></a> (b) shows the confusion matrix for the model predicting on the “cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images randomly selected across all counties of a companion testbed in New Jersey, excluding Atlantic County (site of that testbed), was utilized.</p>
 </dd>
 </dl>
 </li>
+</ol>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../../../_images/NumOfStoriesVali1.png"><img alt="../../../_images/NumOfStoriesVali1.png" src="../../../_images/NumOfStoriesVali1.png" style="width: 600px;" /></a>
+</div>
+<ol class="arabic" start="2">
 <li><dl>
 <dt><strong>Building Elevations</strong>: Building elevations are not available in state inventory data and required for both</dt><dd><p>wind and flood loss modeling, with the exception of first floor height estimates provided
 in the NJDEP inventory. Hence, the elevation of the bottom plane of the roof (lowest edge
@@ -852,9 +991,9 @@ floor as determined from base of door’s height, all defined with respect to gr
 were estimated from street-level imagery. These geometric properties are defined visually
 for common residential coastal typologies in <a class="reference internal" href="../lake_charles/asset_description.html#building-elevation"><span class="std std-numref">Fig. 3.2.2.7</span></a>. The mean height of the roof system
 is then derived from the aforementioned roof elevations.</p>
-<div class="align-center figure" id="building-elevation">
+<div class="align-center figure" id="id13">
 <a class="reference internal image-reference" href="../../../_images/building_elevation.png"><img alt="../../../_images/building_elevation.png" src="../../../_images/building_elevation.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.4.3 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#building-elevation" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.4.2 </span><span class="caption-text">Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
 </div>
 <p>As in any single-image metrology application, extracting the building elevations require:
 1. Rectification of image perspective distortions, typically introduced during image capture,
@@ -890,7 +1029,7 @@ edge detections performed on satellite images.</p>
 <li><dl>
 <dt><strong>Roof Geometry</strong>: Roof shape and slope are not available in state inventory data and required for wind loss</dt><dd><blockquote>
 <div><p>modeling. The SimCenter developed application Building Recognition using Artificial
-Intelligence at Large Scales, BRAILS (<a class="reference internal" href="../lake_charles/asset_description.html#wang19" id="id6"><span>[Wang19]</span></a>), is used to interpret satellite images
+Intelligence at Large Scales, BRAILS (<a class="reference internal" href="#wang19" id="id14"><span>[Wang19]</span></a>), is used to interpret satellite images
 of building roofs, which are collected from Google Maps. The satellite images are labeled
 with shape types to form a dataset, upon which a Convolutional Neural Network (CNN) is
 trained so that it can give rapid predictions of roof types when given new images of roofs.
@@ -898,13 +1037,13 @@ The footprint centroid (Latitude and Longitude in Building Inventory) is used as
 location index when downloading images
 automatically from Google Maps. While more complex roof shapes could in theory be classified,
 the current use of HAZUS damage and loss functions required the use of similitude measures
-to define each roof as an “effective” gable, hip or flat geometry (<a class="reference internal" href="../lake_charles/asset_description.html#roof-shape"><span class="std std-numref">Fig. 3.2.2.1</span></a>). Using BRAILS, this
+to define each roof as an “effective” gable, hip or flat geometry (<a class="reference internal" href="#roof-shape"><span class="std std-numref">Fig. 2.2.4.3</span></a>). Using BRAILS, this
 classification was achieved with approximately 90.3% accuracy based on validation studies.
 The detailed validation process can be found in
 <a class="reference external" href="https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html">BRAILS online documentation</a>.</p>
 <div class="align-center figure" id="roof-shape">
 <a class="reference internal image-reference" href="../../../_images/roof_shape.png"><img alt="../../../_images/roof_shape.png" src="../../../_images/roof_shape.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2.4.4 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="../lake_charles/asset_description.html#wang19" id="id7"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2.4.3 </span><span class="caption-text">Roof type classification by BRAILS (<a class="reference internal" href="#wang19" id="id15"><span>[Wang19]</span></a>).</span><a class="headerlink" href="#roof-shape" title="Permalink to this image"></a></p>
 </div>
 </div></blockquote>
 <p>Roof slope is calculated as the ratio between the roof height and half the depth of the
@@ -1916,22 +2055,22 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 </tbody>
 </table>
 <dl class="citation">
-<dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id4">ATC20</a></span></dt>
+<dt class="label" id="atc20"><span class="brackets"><a class="fn-backref" href="#id7">ATC20</a></span></dt>
 <dd><p>ATC (2020b), ATC Hazards By Location, <a class="reference external" href="https://hazards.atcouncil.org/">https://hazards.atcouncil.org/</a>, Applied Technology Council, Redwood City, CA.</p>
 </dd>
-<dt class="label" id="njgin20"><span class="brackets">NJGIN20</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id5">2</a>)</span></dt>
+<dt class="label" id="njgin20"><span class="brackets">NJGIN20</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id8">2</a>)</span></dt>
 <dd><p>NJ Geographic Information Network, State of New Jersey, <a class="reference external" href="https://njgin.nj.gov/njgin/#!/">https://njgin.nj.gov/njgin/#!/</a></p>
 </dd>
-<dt class="label" id="wang19"><span class="brackets">Wang19</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id7">2</a>)</span></dt>
+<dt class="label" id="wang19"><span class="brackets">Wang19</span><span class="fn-backref">(<a href="#id14">1</a>,<a href="#id15">2</a>)</span></dt>
 <dd><p>Wang C. (2019), NHERI-SimCenter/SURF: v0.2.0 (Version v0.2.0). Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.3463676">http://doi.org/10.5281/zenodo.3463676</a></p>
 </dd>
 <dt class="label" id="microsoft2018"><span class="brackets">Microsoft2018</span></dt>
 <dd><p>Microsoft (2018) US Building Footprints. <a class="reference external" href="https://github.com/Microsoft/USBuildingFootprints">https://github.com/Microsoft/USBuildingFootprints</a></p>
 </dd>
-<dt class="label" id="modiv"><span class="brackets"><a class="fn-backref" href="#id1">MODIV</a></span></dt>
+<dt class="label" id="modiv"><span class="brackets"><a class="fn-backref" href="#id4">MODIV</a></span></dt>
 <dd><p>Parcels and MOD-IV of Atlantic County, NJ. NJGIN Open Data, <a class="reference external" href="https://njogis-newjersey.opendata.arcgis.com/datasets/680b02ff9b4348409a2f4ccd4c238215">https://njogis-newjersey.opendata.arcgis.com/datasets/680b02ff9b4348409a2f4ccd4c238215</a>.</p>
 </dd>
-<dt class="label" id="modiv18"><span class="brackets"><a class="fn-backref" href="#id2">MODIV18</a></span></dt>
+<dt class="label" id="modiv18"><span class="brackets"><a class="fn-backref" href="#id5">MODIV18</a></span></dt>
 <dd><p>Department of the Treasury, State of New Jersey (2018), MOD IV User Manual. <a class="reference external" href="https://www.state.nj.us/treasury/taxation/pdf/lpt/modIVmanual.pdf">https://www.state.nj.us/treasury/taxation/pdf/lpt/modIVmanual.pdf</a></p>
 </dd>
 </dl>

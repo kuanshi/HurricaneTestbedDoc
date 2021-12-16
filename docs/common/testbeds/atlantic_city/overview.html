@@ -104,8 +104,8 @@
 <li class="toctree-l2"><a class="reference internal" href="response_simulation.html">2.5. Response Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="damage_and_loss.html">2.6. Damage and Loss Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uncertainty_quantification.html">2.7. Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.8. Verification Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">2.9. Example Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_outputs.html">2.8. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_results.html">2.9. Verification Results</a></li>
 <li class="toctree-l2"><a class="reference internal" href="future_refinements.html">2.10. Opportunity Areas for Future Refinements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="best_practices.html">2.11. Best Practices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pws_conversion.html">2.12. Standard Wind Speed Conversions</a></li>
@@ -160,7 +160,7 @@ an approach consistent with that developed for earthquake hazards. Its intent is
 scaffolding upon which community developers can progressively contribute refinements that increase the fidelity
 and capacities of the backend regional resilience assessment workflow. This documentation specifically demonstrates
 the process of: (1) asset description, (2) hazard characterization, (3) asset representation, (4) damage and loss
-modeling for the Atlantic County inventory. This inventory is partitioned into three different versions to provide
+modeling for the Atlantic County inventory. This inventory is partitioned into two different versions to provide
 users greater flexibility in balancing computational demands with their research interests. Sample results are
 presented to verify the workflow and demonstrate its usage.</p>
 <div class="section" id="rationale">
@@ -193,7 +193,7 @@ riverline flooding, are not capture.
 Supported building classes include residential, commercial and industrial construction, critical facilities,
 and manufactured homes, constructed of wood, steel, reinforced concrete and masonry. The adoption of HAZUS
 loss estimation frameworks constrains the current testbed to buildings 6 stories and under and only the
-building classes currently supported by HAZUS (<a class="reference internal" href="../lake_charles/damage_and_loss.html#fema18a" id="id3"><span>[FEMA18a]</span></a>, <a class="reference internal" href="../lake_charles/damage_and_loss.html#fema18b" id="id4"><span>[FEMA18b]</span></a>).</p>
+building classes currently supported by HAZUS (<a class="reference internal" href="#fema18a" id="id3"><span>[FEMA18a]</span></a>, <a class="reference internal" href="#fema18b" id="id4"><span>[FEMA18b]</span></a>).</p>
 </div>
 <div class="section" id="current-implementation">
 <h2><span class="section-number">2.1.3. </span>Current Implementation<a class="headerlink" href="#current-implementation" title="Permalink to this headline"></a></h2>
@@ -207,7 +207,7 @@ based on the building class and assigned attributes.</p>
 </div>
 <div class="section" id="available-inventories">
 <h2><span class="section-number">2.1.4. </span>Available Inventories<a class="headerlink" href="#available-inventories" title="Permalink to this headline"></a></h2>
-<p>Three different building inventories have been developed for the Atlantic County testbed and can be accessed on DesignSafe.</p>
+<p>Two different building inventories have been developed for the Atlantic County testbed and can be accessed on DesignSafe.</p>
 <p><strong>Atlantic County Inventory</strong>: Full inventory of 100,721 buildings in the 23 municipalities of Atlantic County,
 described based on a variety of data sources (<a class="reference internal" href="#fig-buildingclassaci"><span class="std std-numref">Fig. 2.1.4.1</span></a>). The buildings in this inventory are exposed to wind
 only OR the combination of wind and floodplain hazards.</p>
@@ -226,44 +226,32 @@ in Atlantic County.</p>
 <span id="fig-buildingclassfei"></span><a class="reference internal image-reference" href="../../../_images/new_inventory_map.png"><img alt="../../../_images/new_inventory_map.png" src="../../../_images/new_inventory_map.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.1.4.2 </span><span class="caption-text">Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
 </div>
-<p><strong>Exploration Inventory</strong>: A subset of 1000 buildings drawn from the Flood-Exposed Inventory intended to provide
-a less computationally demanding implementation for new users or for those wishing to test the development of new
-contributions to the workflow (<a class="reference internal" href="#fig-buildingclassei"><span class="std std-numref">Fig. 2.1.4.3</span></a>). This inventory encompasses the five coastal municipalities
-experiencing the most damage under the synthetic storm scenario described later in <a class="reference internal" href="hazard_characterization.html#lbl-testbed-ac-hazard-characterization-synthetic"><span class="std std-ref">Synthetic Storm Scenario</span></a>.
-From each of these municipalities, properties are randomly sampled, proportional to the total number of buildings
-in that municipalitiy and ensuring that the distribution of construction material of buildings in the sample is
-representative of the underlying distribution for the full population. The buildings in this inventory are exposed to the combination of
-wind and floodplain hazards.</p>
-<div class="align-center figure" id="id7">
-<span id="fig-buildingclassei"></span><a class="reference internal image-reference" href="../../../_images/new_inventory_map_expl.png"><img alt="../../../_images/new_inventory_map_expl.png" src="../../../_images/new_inventory_map_expl.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.3 </span><span class="caption-text">Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
-</div>
 <p>The following figures summarize characteristics of these inventories, including distribution by municipality
-(<a class="reference internal" href="#fig-distassetmunicipality"><span class="std std-numref">Fig. 2.1.4.4</span></a>), by year built (<a class="reference internal" href="../sf_bay_area/overview.html#fig-distbuiltyear"><span class="std std-numref">Fig. 1.1.4.2</span></a>), by occupancy (<a class="reference internal" href="../sf_bay_area/overview.html#fig-occupancytype"><span class="std std-numref">Fig. 1.1.4.3</span></a>),
-by number of stories (<a class="reference internal" href="../sf_bay_area/overview.html#fig-numstory"><span class="std std-numref">Fig. 1.1.4.4</span></a>) and by primary construction material (<a class="reference internal" href="../sf_bay_area/overview.html#fig-constrmaterial"><span class="std std-numref">Fig. 1.1.4.5</span></a>).
+(<a class="reference internal" href="#fig-distassetmunicipality"><span class="std std-numref">Fig. 2.1.4.3</span></a>), by year built (<a class="reference internal" href="#fig-distbuiltyear"><span class="std std-numref">Fig. 2.1.4.4</span></a>), by occupancy (<a class="reference internal" href="#fig-occupancytype"><span class="std std-numref">Fig. 2.1.4.5</span></a>),
+by number of stories (<a class="reference internal" href="#fig-numstory"><span class="std std-numref">Fig. 2.1.4.6</span></a>) and by primary construction material (<a class="reference internal" href="#fig-constrmaterial"><span class="std std-numref">Fig. 2.1.4.7</span></a>).
 Notably, these inventories are typified by older vintages of construction (79% of Atlantic County buildings were constructed
 before 1980), with a dominance of low-rise (1-2 stories), residential, wood frame construction (approximately
 90% of Atlantic County buildings). Steel and reinforced concrete construction is more prevalent in downtown
 Atlantic City.</p>
+<div class="align-center figure" id="id7">
+<span id="fig-distassetmunicipality"></span><a class="reference internal image-reference" href="../../../_images/num_building_city_twoset.png"><img alt="../../../_images/num_building_city_twoset.png" src="../../../_images/num_building_city_twoset.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.3 </span><span class="caption-text">Distribution of number of buildings by municipality.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</div>
 <div class="align-center figure" id="id8">
-<span id="fig-distassetmunicipality"></span><a class="reference internal image-reference" href="../../../_images/num_building_city_allset.png"><img alt="../../../_images/num_building_city_allset.png" src="../../../_images/num_building_city_allset.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.4 </span><span class="caption-text">Distribution of number of buildings by municipality.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+<span id="fig-distbuiltyear"></span><a class="reference internal image-reference" href="../../../_images/built_year_allset.png"><img alt="../../../_images/built_year_allset.png" src="../../../_images/built_year_allset.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.4 </span><span class="caption-text">Distribution of year built for buildings.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
 </div>
 <div class="align-center figure" id="id9">
-<span id="fig-distbuiltyear"></span><a class="reference internal image-reference" href="../../../_images/built_year_allset.png"><img alt="../../../_images/built_year_allset.png" src="../../../_images/built_year_allset.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.5 </span><span class="caption-text">Distribution of year built for buildings.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+<span id="fig-occupancytype"></span><a class="reference internal image-reference" href="../../../_images/occupancy_type_allset.png"><img alt="../../../_images/occupancy_type_allset.png" src="../../../_images/occupancy_type_allset.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.5 </span><span class="caption-text">Distribution of occupancy types.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
 </div>
 <div class="align-center figure" id="id10">
-<span id="fig-occupancytype"></span><a class="reference internal image-reference" href="../../../_images/occupancy_type_allset.png"><img alt="../../../_images/occupancy_type_allset.png" src="../../../_images/occupancy_type_allset.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.6 </span><span class="caption-text">Distribution of occupancy types.</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+<span id="fig-numstory"></span><a class="reference internal image-reference" href="../../../_images/story_number_allset.png"><img alt="../../../_images/story_number_allset.png" src="../../../_images/story_number_allset.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.6 </span><span class="caption-text">Distribution of total story numbers for buildings.</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
 </div>
 <div class="align-center figure" id="id11">
-<span id="fig-numstory"></span><a class="reference internal image-reference" href="../../../_images/story_number_allset.png"><img alt="../../../_images/story_number_allset.png" src="../../../_images/story_number_allset.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.7 </span><span class="caption-text">Distribution of total story numbers for buildings.</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
-</div>
-<div class="align-center figure" id="id12">
 <span id="fig-constrmaterial"></span><a class="reference internal image-reference" href="../../../_images/building_type_allset.png"><img alt="../../../_images/building_type_allset.png" src="../../../_images/building_type_allset.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.4.8 </span><span class="caption-text">Distribution of primary construction material types.</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.7 </span><span class="caption-text">Distribution of primary construction material types.</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="fema18a"><span class="brackets"><a class="fn-backref" href="#id3">FEMA18a</a></span></dt>
